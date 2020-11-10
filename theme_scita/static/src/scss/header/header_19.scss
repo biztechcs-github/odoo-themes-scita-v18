@@ -115,24 +115,8 @@ header {
 		    	}
 			}
 		}
-		#top_menu_container{
-			flex-direction: unset;
-		}
-		.navbar-collapse {
-			@media (min-width:768px){
-				flex: 0 0 auto;
-			}
-		}
 		#top_menu {
-			@media (min-width: 768px) and (max-width: 1899px){
-				max-width: 1000px;
-			}
-			@media (min-width: 768px) and (max-width: 1199px){
-				max-width: 550px;
-			}
-			@media (min-width: 768px) and (max-width: 991px){
-				max-width: 400px;
-			}
+			flex-grow: 1;
 			@media (max-width: 767px){
 				text-align: left !important;
 			}
@@ -156,6 +140,12 @@ header {
 			-webkit-box-pack: end;
 			-ms-flex-pack: end;
 			justify-content: flex-end;
+			flex:0 0 40%;
+			max-width: 40%;
+			@media (max-width: 767px){
+				flex:0 0 80%;
+				max-width: 80%;
+			}
 			.personal-info {
 				ul {
 					li {

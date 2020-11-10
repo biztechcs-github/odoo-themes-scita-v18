@@ -162,11 +162,9 @@ header {
 			}
 		}
 		.navbar-collapse {
-			flex-grow: 1;
-			flex:0 0 60%;
-			max-width: 60%;
-			flex-basis: auto;
+			flex-grow: 0;
 			@media (max-width: 1279px){
+				width: 60%;
 				.navbar-nav {
 					margin-left: 0 !important;
 					@media (max-width:767px){

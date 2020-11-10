@@ -138,6 +138,8 @@ header {
 			display: none;
 		}
 		#top_menu {
+			flex:0 0 100%;
+			max-width: 100%;
 			li {
 				a {
 					color: $light-color;

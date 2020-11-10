@@ -1752,9 +1752,37 @@ body{
     	font-size: 18px;
 	}
 }
-
+/*color option for customizer disable start */
 .snippet-option-ThemeColors{
 	we-row{
 		display: none !important;
+	}
+	we-select[data-color="o-cc1-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc2-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc3-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc4-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc5-link"]{
+		display: none !important;
+	}
+	.o_we_cc_preview_wrapper{
+		span.o_we_color_combination_btn_btn{
+			display:none !important;
+		}
+	}
+}
+/*color option for customizer disable end */
+.oe_website_login_container {
+	form {
+		label {
+			color: $dark-color;
+		}
 	}
 }

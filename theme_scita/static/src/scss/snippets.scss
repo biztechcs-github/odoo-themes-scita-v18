@@ -634,6 +634,7 @@ body #wrapwrap{
 
 		    .banner-title{
 		    	font-size: 55px;
+		    	color: $dark-color;
 		    	margin-bottom: 0;
 		    	font-weight: bold;
 		    	margin-top: 50px;
@@ -1158,6 +1159,7 @@ body #wrapwrap{
 						@include justify-align-content;
 						@include flexwrap;
 						.d-count {
+							color: $dark-color;
 							background: fade-out($dark-color, 0.8);
 							@include flex;
 							@include justify-align-content;
@@ -1207,6 +1209,7 @@ body #wrapwrap{
 			.sct_sub_title {
 				p {
 					margin: 20px 0;
+					color: $dark-color;
 					@media (max-width: 1199px){
 						margin: 10px 0;
 					}
@@ -2435,6 +2438,7 @@ body #wrapwrap{
     				}
 					.box_degit {
 						background: $light-color;
+						color: $dark-color;
 						padding: 5px 0 8px;
 						-webkit-box-shadow: 0px 15px 44px -13px rgba(82,11,32,0.7);
 						-moz-box-shadow: 0px 15px 44px -13px rgba(82,11,32,0.7);
@@ -2619,7 +2623,7 @@ body #wrapwrap{
 		padding-left: 20px;
 	}
 	h4 {
-		color: $dark-color;
+		/*color: $dark-color;*/
 		font-size: $head-label;
 		font-weight: 700;
 		margin-bottom: 5px;
@@ -2630,7 +2634,7 @@ body #wrapwrap{
 	p{
 		font-size: 13px;
 		font-weight: 600;
-		color: #7b7b7b;
+		/*color: #7b7b7b;*/
 		margin-bottom: 0;
 	}
 }
@@ -2945,6 +2949,7 @@ body #wrapwrap{
 		width: 100%;
 		text-align: center;
 		margin-bottom: 50px;
+		color: $dark-color;
 		@media (max-width: 1023px){
 			margin-bottom: 35px;
 		}
@@ -3018,6 +3023,7 @@ body #wrapwrap{
 			.sct_cat_title {
 				font-size: $title + 10;
 				font-weight: 700;
+				color: $dark-color;
 				@media (max-width: 1599px){
 					font-size: $title + 8;
 				}
@@ -3027,6 +3033,7 @@ body #wrapwrap{
 			}
 			.sct_simple_text {
 				font-size: $title;
+				color: $dark-color;
 				border-bottom: 1px solid $dark-color;
 				padding-bottom: 15px; 
 			}
@@ -3098,6 +3105,7 @@ body #wrapwrap{
 						font-weight: 700;
 						font-size: $title + 10;
 						margin-bottom: 0;
+						color: $dark-color;
 						@media (max-width: 1599px){
 							font-size: $title + 6;
 						}
@@ -3107,6 +3115,7 @@ body #wrapwrap{
 					}
 					p {
 						font-size: $title + 2;
+						color: $dark-color;
 						margin: 17px 0;
 						@media (max-width: 1023px){
 							font-size: $title;
@@ -3273,6 +3282,9 @@ body #wrapwrap{
 										font-size: $title - 2;
 									}
 								}
+							}
+							.pink-box {
+								color: $dark-color;
 							}
 							.price {
 								font-size: $title + 7;
@@ -4856,6 +4868,7 @@ body #wrapwrap{
 					    vertical-align: top;
 					    position: relative;
 					    width: 100%;
+					    color: $dark-color;
 					    &:after {
 					    	content: "";
 						    position: absolute;
@@ -4878,6 +4891,7 @@ body #wrapwrap{
 				}
 				.author {
 					margin: 15px 0;
+					color: $dark-color;
 				}
 				.read_link {
 					display: inline-block;
@@ -5125,6 +5139,7 @@ body #wrapwrap{
 			}
 			.sct_simple_text {
 				margin: 30px 0 40px;
+				color: $dark-color;
 			}
 		}
 	}
@@ -5163,7 +5178,7 @@ body #wrapwrap{
 			}
 			.sct_simple_text {
 				margin: 25px 0 35px;
-				color: fade-out($dark-color, 0.2);
+				/*color: fade-out($dark-color, 0.2);*/
 				height: 120px;
 			    overflow: hidden;
 			    display: inline-block;
@@ -6004,7 +6019,7 @@ body #wrapwrap{
 						.sct_blog_name {
 							font-weight: bold;
 							font-size: $title + 5;
-							color: $dark-color;
+							/*color: $dark-color;*/
 							padding-bottom: 15px;
 							margin-bottom: 15px;
 							border-bottom: 1px solid fade-out($dark-color, 0.8);
@@ -6399,7 +6414,7 @@ body #wrapwrap{
 			.sct_title {
 				font-size: $title;
 				font-weight: bold;
-				color: $dark-color;
+				/*color: $dark-color;*/
 				margin-bottom: 10px;
 				@media (max-width: 1199px){
 					font-size: $title - 2;
@@ -6448,7 +6463,7 @@ body #wrapwrap{
 			.sct_simple_text {
 				margin-bottom: 0;
 				margin-top: 50px;
-				color: fade-out($dark-color, 0.5);
+				/*color: fade-out($dark-color, 0.5);*/
 				font-size: $font-body + 1;
 				@media (max-width: 1600px){
 					margin-top: 40px;
@@ -7089,10 +7104,10 @@ body #wrapwrap{
 			font-weight: bold;
 			font-size: $title;
 			margin: 15px 0;
-			color: $dark-color;
+			/*color: $dark-color;*/
 		}
 		.sct_simple_text {
-			color: $dark-color;
+			/*color: $dark-color;*/
 		}
 	}
 	.row {
@@ -7165,7 +7180,7 @@ body #wrapwrap{
 				.sct_title {
 					font-size: $title - 2;
 					font-weight: bold;
-					color: $dark-color;
+					/*color: $dark-color;*/
 					margin-bottom: 5px;
 				}
 				.sct_simple_text {
@@ -7653,7 +7668,7 @@ body #wrapwrap{
 					.sct_title {
 						font-weight: bold;
 						font-size: $title;
-						color: $dark-color;
+						/*color: $dark-color;*/
 						margin-bottom: 20px;
 						@media (max-width: 1023px){
 							margin-bottom: 10px;
@@ -7745,7 +7760,7 @@ body #wrapwrap{
 				.sct_text_info {
 					.sct_title {
 						font-weight: bold;
-						color: $dark-color;
+						/*color: $dark-color;*/
 						margin-bottom: 20px;
 						font-size: $title;
 					}
@@ -9711,7 +9726,7 @@ body #wrapwrap{
 					margin: 15px 0;
 					.sct_work_title {
 						font-weight: bold;
-						color: $dark-color;
+						/*color: $dark-color;*/
 						font-size: $title;
 						margin-bottom: 15px;
 					}
@@ -9913,7 +9928,7 @@ body #wrapwrap{
 			.sct_title {
 				font-size: $title + 10;
 				font-weight: bold;
-				color: $dark-color;
+				/*color: $dark-color;*/
 				margin-bottom: 30px;
 				@media (max-width: 1199px){
 					font-size: $title;
@@ -11232,7 +11247,7 @@ body #wrapwrap{
 			    			list-style-type: none;
 			    			li {
 			    				font-size: $font-body;
-			    				color: $dark-color;
+			    				/*color: $dark-color;*/
 			    				.fa {
 			    					color: $theme;
 			    					margin-right: 10px;
@@ -11357,6 +11372,7 @@ body #wrapwrap{
 			}
 		}
 		.sct_simple_text {
+			color: $dark-color;
 			margin-bottom: 30px;
 		}
 		.timer_counter_div {
@@ -12349,11 +12365,11 @@ body #wrapwrap{
 						font-weight: bold;
 						margin-bottom: 10px;
 						font-size: $title;
-						color: $dark-color;
+						/*color: $dark-color;*/
 					}
 					.blog-content {
 						margin-bottom: 0;
-						color: $dark-color;
+						/*color: $dark-color;*/
 					}
 				}
 				+ .sct_blog_desc {

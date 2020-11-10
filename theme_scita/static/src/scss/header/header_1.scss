@@ -35,9 +35,6 @@ header {
 			display: none;
 		}
 	}
-	#top_menu_container {
-		flex-direction: unset;
-	}
 	.top-header {
 		padding: 20px 0;
 		@media(max-width: 991px){
@@ -121,7 +118,7 @@ header {
 			}
 		}
 		.navbar-collapse {
-			flex-grow: 0;
+			max-width: 70%;
 			@media (max-width: 1279px){
 				width: 60%;
 				.navbar-nav {
