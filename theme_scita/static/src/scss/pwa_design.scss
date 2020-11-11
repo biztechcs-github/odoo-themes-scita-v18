@@ -1,0 +1,38 @@
+.mobile-deive-popup {
+    .pwa-icon-img{
+        float: left;
+        height: 50px;
+        width: 50px;
+        margin-right: 1rem;
+    }
+    .pwa-small-img{
+        display: inline-block; 
+        height: 20px;
+    }
+    p{
+        font-size: 14px;
+    }
+    background-color: #ffffff;
+    box-shadow: 0 1px 10px #b9b9b9;
+    display: none;
+    padding: 10px 10px 0px 10px;
+    position: fixed;
+    bottom: 0;
+    z-index: 1002;
+}
+.pwa_off_section{
+    .pwa_off_image{
+        max-width: 100%;
+    }
+    text-align: center; 
+    margin-top: 10px;
+    margin-bottom: 10px;   
+}
+@media all and (display-mode: standalone) {
+    #wrapwrap.event {
+        #top,
+        #bottom {
+            display: block !important;
+        }
+    }
+}
