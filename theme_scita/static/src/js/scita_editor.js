@@ -1784,7 +1784,6 @@ odoo.define('theme_scita.scita_editor_js', function(require) {
         },
         _computeWidgetState(methodName, params) {
             this.$target.parent().removeClass('sct_img_effect1 sct_img_effect2 sct_img_effect3 sct_img_effect4 sct_img_effect5')
-            console.log('widget class',this.$target.attr('class'))
             if(this.$target.attr('class') != undefined)
             {
                 var newclassName = this.$target.attr('class').match("sct_img_effect(.)");
