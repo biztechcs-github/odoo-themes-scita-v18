@@ -8,7 +8,7 @@ Perfect for E-Commerce, Fashion, IT, Furniture and other 35+ industries.''',
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com/',
     'category': 'Theme/Ecommerce',
-    'version': '13.0.1.2.8',
+    'version': '14.0.1.0.0',
     'license': 'OPL-1',
     'description': '''Theme Scita
 Business theme
@@ -65,7 +65,6 @@ publish unpublish product
 AMP Support
     ''',
     'depends': [
-        # 'website_theme_install',
         'sale_management',
         'website_sale',
         'website_sale_comparison',
