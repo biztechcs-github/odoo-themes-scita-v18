@@ -189,10 +189,12 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 
                                 },
                             });
-                            setTimeout(function(){
-                                var divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a').width(); 
-                                $('.retail_featured_product_1 .cs-product .pwp-img a').height(divWidth);
-                            },400);
+                            $(document).ajaxComplete(function() {
+                                setTimeout(function(){
+                                    var divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a').width(); 
+                                    $('.retail_featured_product_1 .cs-product .pwp-img a').height(divWidth);
+                                },100);
+                            });
                         });
 
                     }
@@ -263,10 +265,12 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 },
                             });
                         });
-                        setTimeout(function(){
-                            var divWidth = $('.fashion_featured_product_1 .cs-product .pwp-img a').width(); 
-                            $('.fashion_featured_product_1 .cs-product .pwp-img a').height(divWidth);
-                        },400);
+                        $(document).ajaxComplete(function() {
+                            setTimeout(function(){
+                                var divWidth = $('.fashion_featured_product_1 .cs-product .pwp-img a').width(); 
+                                $('.fashion_featured_product_1 .cs-product .pwp-img a').height(divWidth);
+                            },100);
+                        });
                     }
                 });
             }

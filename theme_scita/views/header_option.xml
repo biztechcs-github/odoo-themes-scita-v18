@@ -792,7 +792,7 @@
                     </div>
                 </div>
                 <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
-                    <div id="my_wish" class='nav-item sct_wsale_my_wish'>
+                    <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
                             <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
@@ -1144,7 +1144,7 @@
                     </div>
                 </div>
                 <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
-                    <div id="my_wish" class='nav-item sct_wsale_my_wish'>
+                    <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
                             <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
@@ -1912,7 +1912,7 @@
                 </div>
 
                 <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
-                    <div id="my_wish" class='nav-item sct_wsale_my_wish'>
+                    <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
                             <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
@@ -2223,7 +2223,7 @@
                     </div>
                 </div>
                 <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
-                    <div id="my_wish" class='nav-item sct_wsale_my_wish'>
+                    <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
                             <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
@@ -2400,7 +2400,7 @@
                     </div>
                 </div>
                 <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
-                    <div id="my_wish" class='nav-item sct_wsale_my_wish'>
+                    <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
                             <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
