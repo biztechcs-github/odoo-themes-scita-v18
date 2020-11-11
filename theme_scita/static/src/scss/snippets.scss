@@ -2623,7 +2623,6 @@ body #wrapwrap{
 		padding-left: 20px;
 	}
 	h4 {
-		/*color: $dark-color;*/
 		font-size: $head-label;
 		font-weight: 700;
 		margin-bottom: 5px;
@@ -2634,7 +2633,6 @@ body #wrapwrap{
 	p{
 		font-size: 13px;
 		font-weight: 600;
-		/*color: #7b7b7b;*/
 		margin-bottom: 0;
 	}
 }
@@ -3716,7 +3714,6 @@ body #wrapwrap{
     }
 }*/
 .sct_blue_text {
-	/*color: #3a147d;*/
 	font-size: 25px;
 	font-weight: bold;
 	position: relative;
@@ -5020,7 +5017,6 @@ body #wrapwrap{
 .left_right_seprator {
 	font-size: $subtitle + 7;
 	font-weight: bold;
-	/*color: $dark-color;*/
 	position: relative;
 	display: inline-block;
 	margin: 0;
@@ -5178,7 +5174,6 @@ body #wrapwrap{
 			}
 			.sct_simple_text {
 				margin: 25px 0 35px;
-				/*color: fade-out($dark-color, 0.2);*/
 				height: 120px;
 			    overflow: hidden;
 			    display: inline-block;
@@ -6019,7 +6014,6 @@ body #wrapwrap{
 						.sct_blog_name {
 							font-weight: bold;
 							font-size: $title + 5;
-							/*color: $dark-color;*/
 							padding-bottom: 15px;
 							margin-bottom: 15px;
 							border-bottom: 1px solid fade-out($dark-color, 0.8);
@@ -6414,7 +6408,6 @@ body #wrapwrap{
 			.sct_title {
 				font-size: $title;
 				font-weight: bold;
-				/*color: $dark-color;*/
 				margin-bottom: 10px;
 				@media (max-width: 1199px){
 					font-size: $title - 2;
@@ -6463,7 +6456,6 @@ body #wrapwrap{
 			.sct_simple_text {
 				margin-bottom: 0;
 				margin-top: 50px;
-				/*color: fade-out($dark-color, 0.5);*/
 				font-size: $font-body + 1;
 				@media (max-width: 1600px){
 					margin-top: 40px;
@@ -7104,10 +7096,6 @@ body #wrapwrap{
 			font-weight: bold;
 			font-size: $title;
 			margin: 15px 0;
-			/*color: $dark-color;*/
-		}
-		.sct_simple_text {
-			/*color: $dark-color;*/
 		}
 	}
 	.row {
@@ -7180,7 +7168,6 @@ body #wrapwrap{
 				.sct_title {
 					font-size: $title - 2;
 					font-weight: bold;
-					/*color: $dark-color;*/
 					margin-bottom: 5px;
 				}
 				.sct_simple_text {
@@ -7668,7 +7655,6 @@ body #wrapwrap{
 					.sct_title {
 						font-weight: bold;
 						font-size: $title;
-						/*color: $dark-color;*/
 						margin-bottom: 20px;
 						@media (max-width: 1023px){
 							margin-bottom: 10px;
@@ -7760,7 +7746,6 @@ body #wrapwrap{
 				.sct_text_info {
 					.sct_title {
 						font-weight: bold;
-						/*color: $dark-color;*/
 						margin-bottom: 20px;
 						font-size: $title;
 					}
@@ -9726,7 +9711,6 @@ body #wrapwrap{
 					margin: 15px 0;
 					.sct_work_title {
 						font-weight: bold;
-						/*color: $dark-color;*/
 						font-size: $title;
 						margin-bottom: 15px;
 					}
@@ -9928,7 +9912,6 @@ body #wrapwrap{
 			.sct_title {
 				font-size: $title + 10;
 				font-weight: bold;
-				/*color: $dark-color;*/
 				margin-bottom: 30px;
 				@media (max-width: 1199px){
 					font-size: $title;
@@ -11247,7 +11230,6 @@ body #wrapwrap{
 			    			list-style-type: none;
 			    			li {
 			    				font-size: $font-body;
-			    				/*color: $dark-color;*/
 			    				.fa {
 			    					color: $theme;
 			    					margin-right: 10px;

@@ -27,8 +27,10 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale_comparison.add_to_compare')
         self.disable_view_customize('website_sale.products_add_to_cart')
         self.disable_view_customize('website_sale_wishlist.add_to_wishlist')
+        self.disable_view_customize('website_sale.product_custom_text')
+        self.disable_view_customize('website_sale.product_picture_magnify_auto')
         self.disable_view('website_sale_comparison.product_add_to_compare')
-        # self.disable_view('website_theme_install.customize_modal')
+
     @api.model
     def _toggle_view_customize(self, xml_id, active):
         obj = self.env.ref(xml_id)

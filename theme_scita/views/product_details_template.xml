@@ -79,25 +79,17 @@
                     </div>
                 </div>
                 <div class='sct-other-desciption'>
-                    <p class="text-muted">
-                      30-day money-back guarantee
-                      Free Shipping in U.S.
-                      Buy now, get in 2 days
-                    </p>
                 </div>
             </div>
         </xpath>
         <xpath expr="//div[@id='product_details']//hr[@t-if='product.description_sale']" position="replace"/>
-        <xpath expr="//div[@id='product_details']/p[hasclass('text-muted')]" position="replace"/>
         <xpath expr="//div[@id='product_details']/div" position="replace"/>
         <xpath expr="//div[@id='product_details']/hr" position="replace"/>
         <xpath expr="//div[@id='product_details']/h1[@itemprop='name']" position="replace">
             <div class='sct-main-name-rating'>
                 <h1 class='sct-prod-name' itemprop="name" t-field="product.name">Product Name</h1>
                 <ul class="ratings" t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                    <!-- <t t-set="rates" t-value="product.rating_get_stats([('website_published', '=', True)])"/> -->
                     <t t-call="portal.message_thread">
-                        <!-- <t t-if="rates and rates.get('avg')" t-set="rating_val" t-value="rates.get('avg')"/> -->
                         <t t-set="object" t-value="product"/>
                         <t t-set="only_rating" t-value="1"/>
                         <t t-set="display_rating" t-value="True"/>
@@ -169,7 +161,15 @@
             <attribute name="class">col-md-7</attribute>
         </xpath>
     </template>
-
+    <template id="scita_product_custom_text" inherit_id="theme_scita.theme_scita_product_details" active="True" customize_show="True" name="Terms and Conditions">
+        <xpath expr="//div[hasclass('sct-other-desciption')]" position="inside">
+            <p class="text-muted">
+                <a href="/shop/terms">Terms and Conditions</a><br/>
+                30-day money-back guarantee<br/>
+                Shipping: 2-3 Business Days
+            </p>
+        </xpath>
+    </template>
     <!-- Discussion inherited to display in tabs -->
     <template active="True" customize_show="True" id="theme_scita_rating" inherit_id="theme_scita.theme_scita_product_details" name="Scita Discussion and Ratings">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
@@ -297,9 +297,7 @@
                                     </h3>
                                     <div class="pink-box">
                                         <ul class="ratings" t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                                            <!-- <t t-set="rates" t-value="sug_product.rating_get_stats([('website_published', '=', True)])"/> -->
                                             <t t-call="portal.message_thread">
-                                                <!-- <t t-if="rates and rates.get('avg')" t-set="rating_val" t-value="rates.get('avg')"/> -->
                                                 <t t-set="object" t-value="sug_product"/>
                                                 <t t-set="only_rating" t-value="1"/>
                                                 <t t-set="display_rating" t-value="True"/>
@@ -312,7 +310,6 @@
                                             <span class="product_price mt16" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
                                                 <b>
                                                     <t t-if="True">
-                                                        <!-- compatibility 12.0 -->
                                                         <del style="white-space: nowrap;" t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                                     </t>
                                                     <span t-esc="combination_info['price']" t-if="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
@@ -339,35 +336,6 @@
             </div>
         </xpath>
     </template>
-    <!-- cokkie manage -->
-    <!-- <template id="message" name="Cookies notice">
-        <div class="container-fluid cc-cookies alert alert-warning" id="website_cookie_notice" role="alert" t-att-class="'container-fluid cc-cookies alert alert-warning %s' % website.msg_position if website.msg_position else 'container-fluid cc-cookies alert alert-warning'" t-if="request and             not request.session.get('accepted_cookies')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-10">
-                        <t t-esc="website.msg_cookie" t-options="{'widget': 'html'}"/>
-                    </div>
-                    <div class="col-sm-2 text-center">
-                        <a class="btn btn-primary scita_cstm_btn " href="#">
-                            <t t-esc="website.msg_button"/>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-    <template id="cookiebanner" inherit_id="website.layout">
-        <xpath expr="//header" position="before">
-            <t t-if="website and website.is_cookie">
-                <t t-call="theme_scita.message"/>
-            </t>
-        </xpath>
-    </template> -->
-    <!-- <record id="website_sale.product_variants" model="ir.ui.view">
-        <field eval="False" name="customize_show"/>
-        <field eval="False" name="active"/>
-    </record> -->
-
     <template active="False" customize_show="True" id="scita_product_variants" inherit_id="theme_scita.theme_scita_product_details" name="List View of Variants">
         <xpath expr="//t[@t-placeholder='select']" position="replace">
             <t t-if="not product.has_dynamic_attributes() and not product._has_no_variant_attributes() and not product._has_is_custom_values()">
@@ -413,7 +381,7 @@
     </template>
     <!-- template -->
     <template active="True" customize_show="True" id="theme_scita_zipcode_menu" inherit_id="theme_scita.theme_scita_product_details" name="Zip Code Checker">
-        <xpath expr="//div[@id='product_details']//div[hasclass('sct-other-desciption')]//p[hasclass('text-muted')]" position="before">
+        <xpath expr="//div[@id='product_details']//div[hasclass('sct-other-desciption')]" position="inside">
             <div class="sct_zip_div">
                 <h4 class='sct_deliever_msg'>
                     <strong class="deliver">
