@@ -10,7 +10,7 @@ import json
 
 
 class CustomAMP(WebsiteSale):
-    
+
     @http.route(['/shop/product/amp/<model("product.template"):product>'],
                 type='http', auth="public", website=True)
     def custom_amp_view(self, product, category='', search='', **post):
@@ -23,19 +23,19 @@ class CustomAMP(WebsiteSale):
             attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
             attrib_set = {v[1] for v in attrib_values}
 
-            keep = QueryURL('/shop/amp', category=category and category.id, search=search, attrib=attrib_list)
+            keep = QueryURL('/shop/amp', category=category and category.id,
+                            search=search, attrib=attrib_list)
             values = {
                 'main_object': product,
                 'product': product,
-                'category':category,
+                'category': category,
                 'categories': categs,
-                'keep':keep,
+                'keep': keep,
             }
 
             return request.render("theme_scita.apm_product_view", values)
         else:
             raise NotFound()
-            
 
     @http.route([
         '''/shop/amp''',
@@ -55,7 +55,7 @@ class CustomAMP(WebsiteSale):
                 category = Category
 
             page_no = request.env['product.per.page.no'].sudo().search(
-                    [('set_default_check', '=', True)])
+                [('set_default_check', '=', True)])
             if page_no:
                 ppg = int(page_no.name)
             else:
@@ -71,11 +71,13 @@ class CustomAMP(WebsiteSale):
             domain = self._get_search_domain(search, category, attrib_values)
             if request.session.get('default_paging_no'):
                 ppg = int(request.session.get('default_paging_no'))
-            keep = QueryURL('/shop/amp', category=category and int(category), search=search, attrib=attrib_list, order=post.get('order'))
+            keep = QueryURL('/shop/amp', category=category and int(category),
+                            search=search, attrib=attrib_list, order=post.get('order'))
 
             pricelist_context, pricelist = WebsiteSale._get_pricelist_context(self)
 
-            request.context = dict(request.context, pricelist=pricelist.id, partner=request.env.user.partner_id)
+            request.context = dict(request.context, pricelist=pricelist.id,
+                                   partner=request.env.user.partner_id)
 
             url = "/shop/amp"
             if search:
@@ -89,7 +91,8 @@ class CustomAMP(WebsiteSale):
             website_domain = request.website.website_domain()
             categs_domain = [('parent_id', '=', False)] + website_domain
             if search:
-                search_categories = Category.search([('product_tmpl_ids', 'in', search_product.ids)] + website_domain).parents_and_self
+                search_categories = Category.search(
+                    [('product_tmpl_ids', 'in', search_product.ids)] + website_domain).parents_and_self
                 categs_domain.append(('id', 'in', search_categories.ids))
             else:
                 search_categories = Category
@@ -99,13 +102,16 @@ class CustomAMP(WebsiteSale):
                 url = "/shop/amp/category/%s" % slug(category)
 
             product_count = len(search_product)
-            pager = request.website.pager(url=url, total=product_count, page=page, step=ppg, scope=7, url_args=post)
-            products = Product.search(domain, limit=ppg, offset=pager['offset'], order=self._get_search_order(post))
+            pager = request.website.pager(url=url, total=product_count,
+                                          page=page, step=ppg, scope=7, url_args=post)
+            products = Product.search(
+                domain, limit=ppg, offset=pager['offset'], order=self._get_search_order(post))
 
             ProductAttribute = request.env['product.attribute']
             if products:
                 # get all products without limit
-                attributes = ProductAttribute.search([('product_tmpl_ids', 'in', search_product.ids)])
+                attributes = ProductAttribute.search(
+                    [('product_tmpl_ids', 'in', search_product.ids)])
             else:
                 attributes = ProductAttribute.browse(attributes_ids)
 
@@ -140,4 +146,3 @@ class CustomAMP(WebsiteSale):
             return request.render("theme_scita.apm_shop_page_view", values)
         else:
             raise NotFound()
-

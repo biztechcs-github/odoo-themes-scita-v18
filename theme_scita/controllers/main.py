@@ -52,7 +52,6 @@ class ScitaSliderSettings(http.Controller):
         }
         return values
 
-
     @http.route(['/theme_scita/blog_get_options'], type='json', auth="public", website=True)
     def scita_get_slider_options(self):
         slider_options = []
@@ -217,7 +216,7 @@ class ScitaSliderSettings(http.Controller):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
             return request.render("theme_scita.theme_scita_category_slider_4_view", values)
-    
+
     @http.route(['/theme_scita/scita_image_effect_config'], type='json', auth='public', website=True)
     def category_image_dynamic_slider(self, **post):
         slider_data = request.env['category.slider.config'].search(
@@ -362,7 +361,8 @@ class ScitaSliderSettings(http.Controller):
             'thumb_width': cur_website.thumb_width,
         }
         return values
-    # For new brand snippet and product and category snippet 
+    # For new brand snippet and product and category snippet
+
     @http.route(['/theme_scita/brand_get_options'], type='json', auth="public", website=True)
     def custom_brand_get_options(self):
         slider_options = []
@@ -398,7 +398,7 @@ class ScitaSliderSettings(http.Controller):
                 [('id', '=', int(post.get('slider-type')))])
             values = {
                 'slider_header': slider_header,
-                'website_brands':slider_header.collections_brands
+                'website_brands': slider_header.collections_brands
             }
         return request.render("theme_scita.custom_scita_brand_slider_view", values)
 
@@ -414,14 +414,14 @@ class ScitaSliderSettings(http.Controller):
 
     # Zipcode delivery status
     @http.route(['/shop/zipcode'], type='json', auth="public", website=True)
-    def scita_get_delivery_zipcode(self,zip_code,**post):
+    def scita_get_delivery_zipcode(self, zip_code, **post):
         if zip_code:
             zip_obj = request.env['delivery.zipcode'].search(
-            [('name', '=', zip_code)])
+                [('name', '=', zip_code)])
             if zip_obj.id:
-                return {'status' : True}
+                return {'status': True}
             else:
-                return {'status' : False}
+                return {'status': False}
         else:
             return {'zip': 'notavailable'}
 
@@ -449,10 +449,10 @@ class ScitaSliderSettings(http.Controller):
                 'slider_details': slider_header,
                 'slider_header': slider_header,
                 'compute_currency': compute_currency,
-                'products' : slider_header.collection_of_products
+                'products': slider_header.collection_of_products
             }
             return request.render("theme_scita.sct_product_snippet_1_view", values)
-    
+
     @http.route(['/product/product_snippet_data_two'], type='http', auth='public', website=True)
     def product_snippet_data_two(self, **post):
         context, pool = dict(request.context), request.env
@@ -477,7 +477,7 @@ class ScitaSliderSettings(http.Controller):
                 'slider_details': slider_header,
                 'slider_header': slider_header,
                 'compute_currency': compute_currency,
-                'products' : slider_header.collection_of_products
+                'products': slider_header.collection_of_products
             }
             return request.render("theme_scita.sct_product_snippet_2_view", values)
 
@@ -490,12 +490,12 @@ class ScitaSliderSettings(http.Controller):
             slider_options.append({'id': record.id,
                                    'name': record.name})
         return slider_options
-        
-    @http.route(['/deals-of-the-day'],type="http", auth="public", website=True)
+
+    @http.route(['/deals-of-the-day'], type="http", auth="public", website=True)
     def products(self, **post):
         product = request.env['product.template'].search([('deal_product', '=', True)])
-        values = {'deal_products' : product}
-        return request.render("theme_scita.biz_deal_page",values)
+        values = {'deal_products': product}
+        return request.render("theme_scita.biz_deal_page", values)
 
 
 class ScitaShop(WebsiteSale):
@@ -592,7 +592,8 @@ class ScitaShop(WebsiteSale):
 
             domain = self._get_search_domain(search, category, attrib_values)
             pricelist_context, pricelist = self._get_pricelist_context()
-            request.context = dict(request.context, pricelist=pricelist.id, partner=request.env.user.partner_id)
+            request.context = dict(request.context, pricelist=pricelist.id,
+                                   partner=request.env.user.partner_id)
 
             url = "/shop"
             if search:
@@ -641,7 +642,8 @@ class ScitaShop(WebsiteSale):
                 price_list = []
                 if match_product:
                     for prod in match_product:
-                        context = dict(request.env.context, quantity=1, pricelist=website_pricelist.id if website_pricelist else False)
+                        context = dict(request.env.context, quantity=1,
+                                       pricelist=website_pricelist.id if website_pricelist else False)
                         prod_template = prod.with_context(context)
 
                         list_price = prod_template.price_compute('list_price')[prod_template.id]
@@ -658,20 +660,23 @@ class ScitaShop(WebsiteSale):
                             price_product_list = []
                             if match_product:
                                 for prod in match_product:
-                                    context = dict(request.env.context, quantity=1, pricelist=website_pricelist.id if website_pricelist else False)
+                                    context = dict(
+                                        request.env.context, quantity=1, pricelist=website_pricelist.id if website_pricelist else False)
                                     prod_template = prod.with_context(context)
 
-                                    list_price = prod_template.price_compute('list_price')[prod_template.id]
+                                    list_price = prod_template.price_compute('list_price')[
+                                        prod_template.id]
                                     price_tmp = prod_template.price if website_pricelist else list_price
                                     if price_tmp and price_tmp >= float(request.session['min1']) and price_tmp <= float(request.session['max1']):
                                         price_product_list.append(prod.id)
-                            domain += [('id', 'in',price_product_list)]
-                            request.session["pricerange"] = str(request.session['min1']) + "-To-" + str(request.session['max1'])
+                            domain += [('id', 'in', price_product_list)]
+                            request.session["pricerange"] = str(
+                                request.session['min1']) + "-To-" + str(request.session['max1'])
 
                         if session.get('min1') and session['min1']:
                             values['min1'] = session["min1"]
                             values['max1'] = session["max1"]
-            
+
             search_product = Product.search(domain, order=self._get_search_order(post))
             website_domain = request.website.website_domain()
             categs_domain = [('parent_id', '=', False)] + website_domain
@@ -682,7 +687,7 @@ class ScitaShop(WebsiteSale):
             else:
                 search_categories = Category
             categs = Category.search(categs_domain)
-            
+
             if cate_for_price:
                 request.session['curr_category'] = float(cate_for_price)
             if request.session.get('default_paging_no'):
@@ -727,29 +732,29 @@ class ScitaShop(WebsiteSale):
                 'keep': keep,
                 'search_categories_ids': search_categories.ids,
                 'layout_mode': layout_mode,
-                'brand_set' : brand_set,
-                'domain' : domain,
+                'brand_set': brand_set,
+                'domain': domain,
             })
             if category:
                 values['main_object'] = category
             return request.render("website_sale.products", values)
         else:
             return super(ScitaShop, self).shop(page=page, category=category, search=search, ppg=ppg, **post)
-    
+
     @http.route(['''/allcategories''',
-    '''/allcategories/category/<model("product.public.category"):category>'''
-    ],type='http', auth="public", website=True)
-    def shop_by_get_category(self,category=None,**post):
+                 '''/allcategories/category/<model("product.public.category"):category>'''
+                 ], type='http', auth="public", website=True)
+    def shop_by_get_category(self, category=None, **post):
         cat = {}
         shop_category = None
         if category:
             if category.child_id:
                 child = category.child_id
-                cat.update({'pro' : child})
+                cat.update({'pro': child})
         else:
             shop_category = child_cat_ids = request.env['product.public.category'].sudo().search(
                 [('parent_id', '=', None)], order='name asc')
-            cat.update({'pro' : shop_category})
+            cat.update({'pro': shop_category})
         return request.render("theme_scita.shop_by_category", cat)
 
     def get_brands_data(self, product_count, product_label):
@@ -773,43 +778,47 @@ class ScitaShop(WebsiteSale):
                 type='http', auth='public', website=True)
     def get_brand_slider(self, **post):
         if post.get('slider-type'):
-            slider_header = request.env['brand.snippet.config'].sudo().search([('id', '=', int(post.get('slider-type')))])
+            slider_header = request.env['brand.snippet.config'].sudo().search(
+                [('id', '=', int(post.get('slider-type')))])
             values = {
                 'slider_header': slider_header,
-                'website_brands':slider_header.collections_brands
+                'website_brands': slider_header.collections_brands
             }
             return request.render(
-            "theme_scita.retial_brand_snippet_1", values)
+                "theme_scita.retial_brand_snippet_1", values)
 
     @http.route(['/shop/get_box_brand_slider'],
                 type='http', auth='public', website=True)
     def get_box_brand_slider(self, **post):
         if post.get('slider-type'):
-            slider_header = request.env['brand.snippet.config'].sudo().search([('id', '=', int(post.get('slider-type')))])
+            slider_header = request.env['brand.snippet.config'].sudo().search(
+                [('id', '=', int(post.get('slider-type')))])
             values = {
                 'slider_header': slider_header,
-                'website_brands':slider_header.collections_brands
+                'website_brands': slider_header.collections_brands
             }
             return request.render(
-            "theme_scita.box_brand_snippet_4", values)
+                "theme_scita.box_brand_snippet_4", values)
 
     @http.route(['/shop/get_it_brand'],
                 type='http', auth='public', website=True)
     def get_it_brand(self, **post):
         if post.get('slider-type'):
-            slider_header = request.env['brand.snippet.config'].sudo().search([('id', '=', int(post.get('slider-type')))])
+            slider_header = request.env['brand.snippet.config'].sudo().search(
+                [('id', '=', int(post.get('slider-type')))])
             values = {
                 'slider_header': slider_header,
-                'website_brands':slider_header.collections_brands
+                'website_brands': slider_header.collections_brands
             }
             return request.render(
-            "theme_scita.it_brand_snippet_1", values)
+                "theme_scita.it_brand_snippet_1", values)
 
     @http.route('/update_my_wishlist', type="http", auth="public", website=True)
     def qv_update_my_wishlist(self, **kw):
         if kw['prod_id']:
             self.add_to_wishlist(product_id=int(kw['prod_id']))
         return
+
     @http.route(['/product_category_img_slider'], type='http', auth='public', website=True)
     def config_cat_product(self, **post):
         context, pool = dict(request.context), request.env
@@ -851,21 +860,23 @@ class ScitaShop(WebsiteSale):
             slider_options.append({'id': record.id,
                                    'name': record.name})
         return slider_options
-        
+
     @http.route(['/theme_scita/get_current_wishlist'], type='json', auth="public", website=True)
     def get_current_wishlist(self):
         values = request.env['product.wishlist'].with_context(display_default_code=False).current()
-        return request.env['ir.ui.view']._render_template("theme_scita.wishlist_products",dict(wishes=values))
+        return request.env['ir.ui.view']._render_template("theme_scita.wishlist_products", dict(wishes=values))
     # Dynamic video banner url get start
+
     @http.route(['/video/video_url_get'],
                 type='http', auth='public', website=True)
     def get_video_banner_url(self, **post):
         values = {
-        "video_url": post.get('video_url')
+            "video_url": post.get('video_url')
         }
         return request.render(
             "theme_scita.sct_dynamic_banner_video_1", values)
     # Dynamic video banner url get End
+
     @http.route(['/shop/cart/update_custom'], type='json', auth="public", methods=['GET', 'POST'], website=True, csrf=False)
     def cart_update_custom(self, product_id, add_qty=1, set_qty=0, **kw):
         """This route is called when adding a product to cart (no options)."""
@@ -889,23 +900,25 @@ class ScitaShop(WebsiteSale):
             no_variant_attribute_values=no_variant_attribute_values
         )
         return True
+
     @http.route(['/shop/cart/hover_update'], type='http', auth="public", website=True, sitemap=False)
     def cart_hover_update(self, **kw):
         order = request.website.sale_get_order()
         values = {
-        'website_sale_order': order,
+            'website_sale_order': order,
         }
         return request.render("theme_scita.hover_total", values, headers={'Cache-Control': 'no-cache'})
 
-    @http.route("/shop/variant_change", auth="public", website=True, type='json',methods=['POST'])
-    def on_variant_change(self,pro_id):
+    @http.route("/shop/variant_change", auth="public", website=True, type='json', methods=['POST'])
+    def on_variant_change(self, pro_id):
         product = request.env['product.product'].sudo().search(
             [('id', '=', int(pro_id))])
         values = {
-                'is_default_code_disp':request.website.is_default_code,
-                'default_code' : product.default_code,
+            'is_default_code_disp': request.website.is_default_code,
+            'default_code': product.default_code,
         }
         return values
+
 
 class PWASupport(http.Controller):
 
@@ -945,10 +958,11 @@ class PWASupport(http.Controller):
     def pwa_manifest(self, website_id=None):
         qweb = request.env["ir.qweb"].sudo()
         website = request.env['website']
-        current_website = website.search([('id', '=', website_id)]) if website_id else request.website
+        current_website = website.search(
+            [('id', '=', website_id)]) if website_id else request.website
         pwa_app_name = current_website.pwa_app_name or 'PWA App'
         pwa_app_short_name = current_website.pwa_app_short_name or 'PWA Application'
-        image_72 = website.image_url(current_website, 'pwa_app_icon_512', '72x72') 
+        image_72 = website.image_url(current_website, 'pwa_app_icon_512', '72x72')
         image_96 = website.image_url(current_website, 'pwa_app_icon_512', '96x96')
         image_128 = website.image_url(current_website, 'pwa_app_icon_512', '128x128')
         image_144 = website.image_url(current_website, 'pwa_app_icon_512', '144x144')

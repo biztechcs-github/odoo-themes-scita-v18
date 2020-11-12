@@ -22,9 +22,11 @@ class CustomResConfiguration(models.TransientModel):
     enable_disable_text = fields.Boolean(string='Enable text panel',
                                          related='website_id.enable_disable_text',
                                          help='Enable/Disable text which is visible on the image in multi image.', readonly=False)
-    color_opt_thumbnail = fields.Selection(related='website_id.color_opt_thumbnail', readonly=False)
-    
-    thumbnail_panel_position = fields.Selection(related='website_id.thumbnail_panel_position', readonly=False)
+    color_opt_thumbnail = fields.Selection(
+        related='website_id.color_opt_thumbnail', readonly=False)
+
+    thumbnail_panel_position = fields.Selection(
+        related='website_id.thumbnail_panel_position', readonly=False)
     change_thumbnail_size = fields.Boolean(string="Change thumbnail size",
                                            related="website_id.change_thumbnail_size", readonly=False
                                            )
@@ -37,7 +39,8 @@ class CustomResConfiguration(models.TransientModel):
     # For brand setting
     is_brand_display = fields.Boolean(
         string="Brand display in product page", related="website_id.is_brand_display", readonly=False)
-    brand_display_option = fields.Selection(related="website_id.brand_display_option", readonly=False)
+    brand_display_option = fields.Selection(
+        related="website_id.brand_display_option", readonly=False)
     is_default_code = fields.Boolean(
         string="Default code display in product page", related="website_id.is_default_code", readonly=False)
     # For social setting
@@ -45,4 +48,5 @@ class CustomResConfiguration(models.TransientModel):
         string="Social share is display in product page", related="website_id.is_social_display", readonly=False)
     is_amp_enable = fields.Boolean(
         string="Enable AMP", related="website_id.is_amp_enable", readonly=False)
-    product_display_grid =fields.Selection(related="website_id.product_display_grid", readonly=False)
+    product_display_grid = fields.Selection(
+        related="website_id.product_display_grid", readonly=False)
