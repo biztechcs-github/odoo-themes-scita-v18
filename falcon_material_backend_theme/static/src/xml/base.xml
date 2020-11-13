@@ -6,6 +6,42 @@
             </a>
         </li>
     </t>
+    <t t-inherit="mail.Discuss" t-inherit-mode="extension">
+        <xpath expr="//*[hasclass('o_Discuss')]" position="attributes">
+            <attribute name='class'>o_Discuss o_content</attribute>
+        </xpath>
+    </t>
+    <t t-inherit="web.ControlPanel" t-inherit-mode="extension">
+        <xpath expr="//*[hasclass('o_control_panel')]" position="attributes">
+            <attribute name='class'>o_cp_controller o_control_panel</attribute>
+        </xpath>
+        <xpath expr="//*[hasclass('o_search_options')]" position="replace">
+            <div class="btn-group o_search_options position-static"
+                    role="search"
+                    t-ref="searchViewButtons"
+                    >
+                <div>
+                    <t t-if="props.withSearchBar">
+                        <FilterMenu t-if="props.searchMenuTypes.includes('filter')"
+                            class="o_filter_menu"
+                            fields="fields"
+                        />
+                        <GroupByMenu t-if="props.searchMenuTypes.includes('groupBy')"
+                            class="o_group_by_menu"
+                            fields="fields"
+                        />
+                        <ComparisonMenu t-if="props.searchMenuTypes.includes('comparison') and model.get('filters', f => f.type === 'comparison').length"
+                            class="o_comparison_menu"
+                        />
+                        <FavoriteMenu t-if="props.searchMenuTypes.includes('favorite')"
+                            class="o_favorite_menu"
+                        />
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </t>
+    
     <t t-name="mail.systray.MessagingMenu">
         <li class="o_mail_systray_item o_chat_menu">
             <a class="dropdown-toggle o-no-caret" data-toggle="dropdown" data-display="static" aria-expanded="false" title="Conversations" href="#" role="button">
