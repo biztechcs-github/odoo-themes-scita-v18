@@ -646,7 +646,7 @@
                             </div>
                             <div class="col-md-4 col-sm-4 logo">
                                 <t t-call="website.placeholder_header_brand">
-                                    <t t-set="_link_class" t-value="'m-0'"/>
+                                    <t t-set="_link_class" t-value="''"/>
                                 </t>
                             </div>
                             <div class="col-md-4 col-sm-4 right_info">
@@ -890,7 +890,7 @@
             <attribute name="t-attf-class" add="sct_header_disp" separator=" "/>
         </xpath>
         <xpath expr="//header//nav" position="replace">
-            <nav data-name="Navbar" class="navbar navbar-expand-md navbar-light flex-lg-column o_colored_level o_cc shadow-sm py-0">
+            <nav data-name="Navbar" class="navbar navbar-expand-md navbar-light o_colored_level o_cc shadow-sm">
                 <div id="top_menu_container" class="container">
                     <!-- Nav -->
                     <t t-call="website.placeholder_header_brand">
@@ -1828,7 +1828,7 @@
                             </div>
                             <div class="col-md-4 col-4 logo-sec">
                                 <t t-call="website.placeholder_header_brand">
-                                    <t t-set="_link_class" t-value="'m-0'"/>
+                                    <t t-set="_link_class" t-value="''"/>
                                 </t>
                             </div>
                             <div class="col-md-4 col-2 hm-search-toggle">

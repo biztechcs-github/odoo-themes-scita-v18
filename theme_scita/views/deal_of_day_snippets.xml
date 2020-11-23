@@ -8,7 +8,7 @@
                     <div class='col-md-12 sct_promo_banner'>
                         <section>
                             <div class="sct-left-side">
-                                <img src="/web/image/theme_scita.sct_deal_snippet_1_image_1" class="img img-fluid mx-auto" alt="For Men Offer"/>
+                                <img src="/web/image/theme_scita.sct_deal_snippet_1_image_1" class="img img-fluid mx-auto" alt="For Men Offer" loading=""/>
                                 <div class='deal_content'>
                                     <div class='sct_title'>
                                         <h2 class='title_banner'>Deals of the day</h2>
