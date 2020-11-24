@@ -131,7 +131,11 @@
             <t t-set='current_website_obj' t-value="website_obj.sudo().get_current_website()" />  
             <div class="mobile-deive-popup" t-if='current_website_obj.is_app_pwa'>
                 <img t-att-src="request.env['website'].image_url(current_website_obj, 'pwa_app_icon_512', '50x50')" class='img pwa-icon-img'/>
-                <p>To install this Web App in your ISO device press<img src="/theme_scita/static/src/img/PWA/mobile_icon.png" class='pwa-small-img'/> and then Add to Home Screen.</p>
+                <p>
+                    <button type="button" class='sct_pwa_iphone_close float-right'>X
+                    </button>
+                    To install this Web App in your ISO device press<img src="/theme_scita/static/src/img/PWA/mobile_icon.png" class='pwa-small-img'/> and then Add to Home Screen.
+                </p>
             </div>
         </xpath>
     </template>
