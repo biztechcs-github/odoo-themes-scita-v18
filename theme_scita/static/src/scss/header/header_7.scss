@@ -29,7 +29,6 @@ body {
 			background: $dark-color;
 	  	}
 	  	#top_menu_container {
-	  		flex-direction: unset;
 	  		@media (max-width: 767px){
     			position: relative !important;
     		}
@@ -149,6 +148,7 @@ body {
 	    		}
 	    	}
 	    	.navbar-collapse {
+	    		max-width: 70%;
 	    		@media (max-width: 767px){
     				padding: 15px;
     				background: fade-out($dark-color, 0.1);
