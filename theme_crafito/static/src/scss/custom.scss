@@ -1728,7 +1728,7 @@ http://jaredhardy.com/minimal-devices/
       width: 100%;
       background-color: darken($light-color, 10%);
 
-      span.o_default_snippet_text {
+      span.crt_price_clr_blue, span.o_default_snippet_text {
         line-height: 53px;
         color: lighten($dark-color, 20%);
         font-weight: bold;
@@ -1764,7 +1764,7 @@ http://jaredhardy.com/minimal-devices/
     overflow: hidden;
 
     .purchase {
-      span.o_default_snippet_text {
+      span.crt_price_clr_blue, span.o_default_snippet_text {
         width: 70%;
         height: 100%;
         float: left;
@@ -1960,8 +1960,8 @@ http://jaredhardy.com/minimal-devices/
     padding: 20px;
   }
   .pricing--yonten .pricing__item:nth-child(2) {
-    border-right: none;
-    border-left: none;
+    border-right-width: 0;
+    border-left-width: 0;
   }
 }
 .pricing--yonten .pricing__item:hover {
@@ -3239,7 +3239,11 @@ http://jaredhardy.com/minimal-devices/
 /* ---------------------------------------------------*/
 
 .banner2{
-
+    .carousel-indicators {
+      li {
+        height: 3px !important;
+      }
+    }
     .carousel-item {
     width: 100%;
     background-repeat: no-repeat;
@@ -3395,6 +3399,11 @@ http://jaredhardy.com/minimal-devices/
     }
     &.right {
       right: 0;
+    }
+  }
+  .carousel-indicators {
+    li {
+      height: 3px !important;
     }
   }
 }
@@ -7440,6 +7449,9 @@ header .header-middle .h-cart > ul > li .h-cart-inner {
 .cs-product .pwp-img {
   z-index: 0;
   padding: 10px;
+}
+.js_sale .cs-product .pwp-img {
+  padding: 10px 0;
 }
 .modal-open .cs-product .pwp-img { 
   z-index: unset; 

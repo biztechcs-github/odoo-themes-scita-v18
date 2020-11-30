@@ -113,7 +113,7 @@ a:hover{
 		display: none;
 	}
 }
-.caret {
+/*.caret {
     display: inline-block;
     width: 0;
     height: 0;
@@ -123,7 +123,7 @@ a:hover{
     border-top: 4px solid \9;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
-}
+}*/
 
 
 
@@ -278,3 +278,206 @@ body {
 		// }
 	}
 }
+
+/*color option for customizer disable start */
+.snippet-option-ThemeColors{
+	we-row{
+		display: none !important;
+	}
+	we-row.o_we_full_row{
+		display: block !important;
+	}
+	we-select[data-color="o-cc1-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc2-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc3-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc4-link"]{
+		display: none !important;
+	}
+	we-select[data-color="o-cc5-link"]{
+		display: none !important;
+	}
+	.o_we_cc_preview_wrapper{
+		span.o_we_color_combination_btn_btn{
+			display:none !important;
+		}
+	}
+}
+/*color option for customizer disable end */
+/*popup cart page design start*/
+body{
+	.mycart-popover{
+			max-width: 380px;
+			min-width: 370px;
+			border: 0;
+			border-radius: 5px;
+			box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
+			display:none;
+			@media (min-width:1200px)
+			{
+				display:block;
+			}
+			.popover-header{
+				display:none;
+			}
+			.popover-body{
+				.alert{
+					border-color: #ededed;
+					font-size:$font-size-body;
+					text-align: center;
+					margin: 0px auto;
+				}
+				#crafito_hover_total{
+					padding: 0rem 1rem 0rem 0rem;
+				    overflow: auto;
+				    max-height:230px;
+					.crafito_cart_lines{
+						border-bottom: 1px #EEE solid;
+						padding:13px 15px 15px 15px;
+    					@media (max-width:576px){
+							flex-wrap:unset;
+						}
+						&:last-child{
+							border-bottom: none !important;
+						}
+						.cart_item_details{
+							padding-left: 0px;
+							.cart_item_name{
+								a{
+									display:inline-block;
+									font-size:14px;
+									color:$theme;
+									font-weight: 600;
+									margin-bottom:5px;
+								}
+							}
+							.cart_qty_amt{
+								margin: 0px;
+								font-size: 12px;
+								color:$dark-color;
+								font-weight: 600;
+							}
+							.css_quantity{
+								width: 110px;
+								margin-top: 10px;
+								height:30px;
+								.input-group-prepend,.input-group-append{
+									a{
+										border: 1px solid #d9d9d9;
+										border-radius: 0px;
+										font-size: 13px;
+										padding: 0rem 0.75rem;
+										color:$dark-color;
+										line-height: 30px;
+										&:hover{
+											color:$theme;
+										}
+									}
+								}
+								input.form-control{
+									text-align: center;
+									font-size: 14px;
+								}
+							}
+						}
+						.cart_item_image{
+							padding: 0;
+							span{
+								display: block;
+								img{
+									object-fit:contain;
+									height:80px;
+									width: 70px;
+									padding: 5px;
+									border: 1px solid #ededed;
+									display:block;
+									margin-left: auto;
+									@media (max-width:576px){
+										width:80px;
+									}
+								}
+							}
+							.crafito_cart_popup_remove{
+								color:$dark-color;
+    							position: absolute;
+    							width: 20px;
+    							height: 20px;
+    							border-radius: 50%;
+    							border: 1px solid #ededed;
+    							box-shadow: 0px 4px 10px 0 rgba(0, 0, 0, 0.1);
+    							text-align: center;
+    							top: -10px;
+    							right: -8px;
+    							span{
+    								font-size: 10px;
+								    position: relative;
+								    text-align: center;
+								    display: inline-block;
+								    margin: 0 auto;
+    							}
+							}
+						}
+					}
+				}
+				.cart_total_div{
+					table{
+						tbody{
+							tr{
+								td{
+									font-size: 13px;
+									padding: 0.5rem 0;
+								}
+							}
+						}
+					}
+					#order_untaxed{
+						border-top: 1px dashed #ededed;
+					}
+					#order_total td {
+						font-weight: 600;
+					}
+					.text-right{
+							text-align:left !important;
+					}
+					.text-xl-right{
+							text-align:right !important;
+					}
+				    .button-box{
+						display: block;
+						text-align: center;
+						.view-all{
+							display: block;
+							line-height: 32px;
+							background-color:#fff;
+							color:#000;
+							border-color:#000;
+							&:hover{
+								background-color:#000;
+								color:#fff;
+								border-color:#000;
+							}
+						}
+						.proceed {
+							display: block;
+							line-height: 32px;
+							&:hover{
+								background-color:#fff;
+								color:#000;
+								border-color:#000;
+							}
+						}
+					}
+				}
+			}
+	}
+	.js_cart_lines{
+		text-align: center;
+    	font-size: 18px;
+	}
+}
+/*popup cart page design start*/

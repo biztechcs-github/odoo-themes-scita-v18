@@ -37,6 +37,8 @@
             <script src="/theme_crafito/static/src/js/crafito_custom.js" type="text/javascript"/>
             <script src="/theme_crafito/static/src/js/rating_state.js" type="text/javascript"/>
             <script src="/theme_crafito/static/src/js/crafito_common_custom.js" type="text/javascript"/>
+            <script src="/theme_crafito/static/src/js/crafito_cart_hover.js" type="text/javascript"/>
+            
         </xpath>
     </template>
 

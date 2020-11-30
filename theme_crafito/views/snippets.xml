@@ -3,7 +3,7 @@
         <!-- Home Slider snippet -->
         <template id="s_theme_crafito_homes_slider_snippet" name="Home Slider">
             <section class="s_carousel_wrapper">
-                <div class="s_carousel s_carousel_default carousel slide s_theme_crafito_homes_slider_snippet" data-interval="10000" data-ride="carousel" id="myCarousel">
+                <div class="banner s_carousel s_carousel_default carousel slide s_theme_crafito_homes_slider_snippet" data-interval="10000" data-ride="carousel" id="myCarousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li class="active" data-slide-to="0" data-target="#myCarousel"/>
@@ -84,7 +84,7 @@
         <!-- Home Slider snippet 2 -->
         <template id="s_theme_crafito_homes_slider_snippet_2" name="Home Slider 2">
             <section class="s_carousel_wrapper">
-                <div class="s_carousel s_carousel_default carousel slide s_theme_crafito_homes_slider_snippet_2" data-interval="10000" data-ride="carousel" id="myCarousel_2">
+                <div class="banner2 s_carousel s_carousel_default carousel slide s_theme_crafito_homes_slider_snippet_2" data-interval="10000" data-ride="carousel" id="myCarousel_2">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
                         <li class="active" data-slide-to="0" data-target="#myCarousel_2"/>
@@ -1325,7 +1325,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
@@ -1351,7 +1351,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
@@ -1377,7 +1377,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
@@ -1414,7 +1414,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i aria-hidden="true" class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
@@ -1440,7 +1440,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
@@ -1466,7 +1466,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
@@ -1492,7 +1492,7 @@
                                             / month</i>
                                     </p>
                                     <div class="purchase ">
-                                        <span>purchase</span>
+                                        <span class='crt_price_clr_blue'>purchase</span>
                                         <i class="fa fa-arrow-right pull-right"/>
                                     </div>
                                     <ul class="text-capitalize">
