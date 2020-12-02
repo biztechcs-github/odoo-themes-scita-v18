@@ -1035,3 +1035,58 @@ header.cst_crafito_header.o_header_affixed {
 	}
 }
 /*12-11-2020 end*/
+.navbar-light .navbar-nav .default-megamenu-class {
+	.nav-link {
+		color: $dark-color;
+	}
+	h2, h3, h4, h5, h6 {
+		color: $dark-color;
+	}
+}
+.navbar-light .navbar-nav .nav-item.o_extra_menu_items {
+	> .dropdown-menu {
+		.default-megamenu-class {
+			.o_mega_menu{
+				padding: 0 !important;
+			}
+			.col-lg-3, .col-lg-4 {
+				padding: 0 !important;
+			}
+		}
+		.apt_pager_megamenu {
+			.mega-dropdown-menu {
+				padding: 0 !important;
+				.dropdown-header {
+					padding: 0;
+				}
+				.footer {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+		.apt_cat_megamenu {
+			.mega-dropdown-menu {
+				padding: 0 !important;
+				.col-xs-12 {
+					padding: 0;
+				}
+				.footer {
+					padding-left: 0;
+					padding-right: 0;
+				}
+			}
+		}
+		.menu-category-list {
+			ul {
+				list-style: none;
+				a {
+					color: $dark-color;
+				}
+				ul {
+					padding-inline-start: 20px;
+				}
+			}
+		}
+	}
+}

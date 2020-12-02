@@ -263,56 +263,6 @@
         </xpath>
     </template>
     <template id="custom_cart_popover" inherit_id="website_sale.cart_popover" name="Crafito Cart Popover">
-       <!--  <xpath expr="//div[@t-if='not website_sale_order or not website_sale_order.website_order_line']" position="attributes">
-              <attribute name='class'></attribute>
-        </xpath> -->
-        <!-- <xpath expr="//t[@t-if='website_sale_order and website_sale_order.website_order_line']" position="replace">
-            <div id="cart_total" t-if="website_sale_order and website_sale_order.website_order_line">
-                <div class="cart-content">
-                    <div class="product-desc">
-                        <t t-as="line" t-foreach="website_sale_order.website_order_line">
-                            <div class="pd-row">
-                                <span class="product-img" t-if="line.product_id and line.product_id.product_tmpl_id and line.product_id.product_tmpl_id.image_1920">
-                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                        <span t-esc="line.product_id.image_256" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;, &quot;alt-field&quot;: &quot;name&quot;}"/>
-                                    </a>
-                                </span>
-                                <span class="product-img" t-if="line.product_id and line.product_id.product_tmpl_id and not line.product_id.product_tmpl_id.image_1920">
-                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                        <img src="/web/static/src/img/placeholder.png"/>
-                                    </a>
-                                </span>
-                                <div class="product-detail">
-                                    <p class="product-name">
-                                        <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                            <t t-esc="line.product_id.name"/>
-                                        </a>
-                                    </p>
-                                    <p>
-                                        <span class="theme_crafito_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
-                                        <span t-esc="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                        <span class="price">
-                                            <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">Details</a></span>
-                                    </p>
-                                </div>
-                            </div>
-                        </t>
-                        <div class="total" id="crafito_cart">
-                            <div class="row" id="order_total">
-                                <label>Subtotal:</label>
-                                <span>
-                                    <span style="white-space: nowrap;" t-esc="website.sale_get_order().amount_total" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="button-box">
-                            <a class="view-all btn" href="/shop/cart">View all</a>
-                            <a class="proceed btn" href="/shop/checkout">Checkout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </xpath> -->
         <xpath expr="//t[@t-if='website_sale_order and website_sale_order.website_order_line']" position="replace">
             <div id="crafito_hover_total" t-if="website_sale_order and website_sale_order.website_order_line">
                 <t t-as="line" t-foreach="website_sale_order.website_order_line">
@@ -540,7 +490,16 @@
             </div>
         </xpath>
     </template>
-    
+    <template id="footer_copyright_add_class" inherit_id="portal.frontend_layout" name="Footer copyright add class">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm','text-center', 'text-sm-right')]" position="attributes">
+            <attribute name='class' add="o_hidden" separator=" "/>
+        </xpath>
+    </template>
+    <template id="footer_copyright_debug_mode" inherit_id="web.debug_icon" name="Footer copyright Debug Mode add class">
+        <xpath expr="//a[hasclass('o_debug_mode')]" position="attributes">
+            <attribute name='class' add="o_hidden" separator=" "/>
+        </xpath>
+    </template>
 
     <template active="False" id="footer_copyright_with_payment" inherit_id="portal.frontend_layout" name='footer Copyright With Payment'>
         <xpath expr="//div[hasclass('o_footer_copyright')]" position='attributes'>
@@ -551,6 +510,9 @@
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="inside">
             <div class="payment-icons"/>
+        </xpath>
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
+            <attribute name='class' add="align-items-center" separator=" "></attribute>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
             <attribute name='class' add="copyright" separator=" "/>
@@ -1169,10 +1131,10 @@
     <!-- Related Products -->
     <template active="False" customize_show="True" id="theme_crafito_related_products" inherit_id="theme_crafito.theme_crafito_product_details" name="Crafito Related Products">
         <xpath expr="//div[@itemscope='itemscope']/section//div[hasclass('col-md-6')]" position="attributes">
-            <attribute name="class">col-md-4</attribute>
+            <attribute name="t-att-class">'col-md-4' if product.related_product_ids else 'col-md-6'</attribute>
         </xpath> 
         <xpath expr="//div[@itemscope='itemscope']/section//div[hasclass('col-md-6', 'col-lg-6','col-xl-6', 'product-detail')]" position="attributes">
-            <attribute name='class'>col-md-4 col-lg-4 col-xl-4 product-detail</attribute>
+            <attribute name="t-att-class">'col-md-4 col-lg-4 col-xl-4 product-detail' if product.related_product_ids else 'col-md-6 col-lg-6 col-xl-6 product-detail'</attribute>
         </xpath>
         <xpath expr="//div[@itemscope='itemscope']/section//div[@id='product_details']" position="after">
             <div class="left-related-products col-md-4 col-lg-4" t-if="product.related_product_ids">
