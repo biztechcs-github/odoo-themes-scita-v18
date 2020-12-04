@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <template id='theme_customize' inherit_id='website.snippet_options' name='Theme Customize'>
+        <xpath expr='//div[@data-js="ThemeColors"]//we-row[hasclass("o_we_theme_colors_selector")]' position='after'>
+            <we-colorpicker data-name="color_theme_opt" title="Theme color"
+                            data-customize-website-color="" data-color="theme"
+                            data-use-css-color="true"/>
+        </xpath>
+        <xpath expr='//div[@data-js="ThemeColors"]//we-row[hasclass("o_we_theme_colors_selector")]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-selector="#wrapwrap > header"]//we-select[@data-variable="header-template"]' position='inside'>
+            <we-button title="Mobicraft Header"
+                       data-name="mobicraft_header"
+                       data-customize-website-views="theme_mobicraft.theme_mobicraft_header_layout, theme_mobicraft.custom_header_cart_link, theme_mobicraft.custom_header_wishlist_link"
+                       data-customize-website-variable="'mobicraft_header'"
+                       data-img="/theme_mobicraft/static/src/img/icons/tabs.png"/>
+        </xpath>
+        <xpath expr='//we-select[@data-variable="footer-template"]' position='inside'>
+            <we-button title="Mobicraft footer"
+                   data-customize-website-views="theme_mobicraft.theme_mobicraft_footer_customize,theme_mobicraft.footer_copyright"
+                   data-customize-website-variable="'mobicraft_footer'"
+                   data-img="/theme_mobicraft/static/src/img/icons/tabs.png"/>
+        </xpath>
+
+        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="btn-primary-outline"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="btn-secondary-outline"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]/we-collapse[2]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]/we-collapse[4]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-input[@data-variable="btn-border-width"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-checkbox[@data-variable="btn-ripple"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="link-underline"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="HeaderNavbar"]//we-select[@id="option_header_dropdown"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+    </template>
+</odoo>

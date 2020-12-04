@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="_assets_primary_variables" inherit_id='website._assets_primary_variables'>
+            <xpath expr="//link[last()]" position="after">
+                <link rel="stylesheet" type="text/scss" href="/theme_mobicraft/static/src/scss/primary_variable.scss"/>
+            </xpath>
+        </template>
+        <!-- Assets Frontend -->
+        <template id="asset_frontend" inherit_id="website.assets_frontend" name="Theme Mobicraft assets frontend">
+            <xpath expr="." position="inside">
+                <link href="/theme_mobicraft/static/src/css/owl.carousel.css" rel="stylesheet"/>
+                <link href="/theme_mobicraft/static/src/css/unite-gallery.css" rel="stylesheet"/>
+                <link href="/theme_mobicraft/static/src/skins/alexis/alexis.css" rel="stylesheet"/>
+                <link href="/theme_mobicraft/static/src/css/ion.rangeSlider.css" rel="stylesheet"/>
+                <link href="/theme_mobicraft/static/src/css/ion.rangeSlider.skinHTML5.css" rel="stylesheet"/>
+                <link href="/theme_mobicraft/static/src/css/theme_mobicraft.css" rel="stylesheet"/>
+                <script src="/theme_mobicraft/static/src/js/unitegallery.min.js" type="text/javascript"/>
+                <script src="/theme_mobicraft/static/src/js/ug-theme-compact.js" type="text/javascript"/>
+                <script src="/theme_mobicraft/static/src/js/ion.rangeSlider.min.js" type="text/javascript"/>
+                <link href="/theme_mobicraft/static/src/scss/options/colors/colors.scss" rel="stylesheet" type="text/scss"/>        
+                <link href="/theme_mobicraft/static/src/scss/mixins.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/web.scss" rel="stylesheet" type="text/scss"/>                <link href="/theme_mobicraft/static/src/scss/box-layout.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/header.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/footer.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/product.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/style.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/theme_common.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/css/style.css" rel="stylesheet" type="text/css"/>
+                <script src="/theme_mobicraft/static/src/js/custom.js" type="text/javascript"/>
+                <script src="/theme_mobicraft/static/src/js/owl.carousel.min.js" type="text/javascript"/>
+                <script src="/theme_mobicraft/static/src/js/theme_mobicraft_frontend.js" type="text/javascript"/>
+                <script src="/theme_mobicraft/static/src/js/theme_mobicraft.js" type="text/javascript"/>
+                <script src="/theme_mobicraft/static/src/js/rating_state.js" type="text/javascript"/>
+            </xpath>
+        </template>
+        <template id="assets_editor" inherit_id="website.assets_editor" name="Theme Mobicraft assets editor">
+            <xpath expr="." position="inside">
+                <script src="/theme_mobicraft/static/src/js/theme_mobicraft_editor.js" type="text/javascript"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>
