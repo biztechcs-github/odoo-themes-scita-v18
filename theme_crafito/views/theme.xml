@@ -1325,7 +1325,7 @@
                         <div class="pwp-info">
                             <h3 class="pwpi-title">
                                 <a itemprop="name" t-att-href="keep('/shop/product/%s' % slug(product), page=(pager['page']['num'] if pager['page']['num']&gt;1 else None))" t-field="product.name"/>
-                                <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger" title="This product is unpublished.">Unpublished</a>
+                                <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger float-right" title="This product is unpublished.">Unpublished</a>
                             </h3>
                             <ul class="ratings" t-if="request.website.viewref('theme_crafito.theme_crafito_rating').active">
                                 <t t-set="rates" t-value="product.sudo().rating_get_stats()"/>
@@ -1997,6 +1997,15 @@
                     </div>
                 </section>
             </div>
+        </xpath>
+    </template>
+    <template id="crafito_product_custom_text" inherit_id="theme_crafito.theme_crafito_product_details" active="True" customize_show="True" name="Terms and Conditions">
+        <xpath expr="//div[@id='product_details']" position="inside">
+            <p class="text-muted" style="margin-top: 20px;border-top: 1px solid #e6e8ec;">
+                <a href="/shop/terms">Terms and Conditions</a><br/>
+                30-day money-back guarantee<br/>
+                Shipping: 2-3 Business Days
+            </p>
         </xpath>
     </template>
 </odoo>
