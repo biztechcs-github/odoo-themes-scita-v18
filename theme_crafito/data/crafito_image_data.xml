@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="theme_crafito.crafito_about_us_snippet_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_about_us_snippet_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/about.png</field>
+        </record>
+        <record id="theme_crafito.crafito_home_slider_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_home_slider_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/pc.png</field>
+        </record>
+        <record id="theme_crafito.crafito_emphasized_services_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_emphasized_services_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/service-img.png</field>
+        </record>
+        <record id="theme_crafito.crafito_contact_us_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_contact_us_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/contact-us-bg.png</field>
+        </record>
+        <record id="theme_crafito.crafito_why_choose_us_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_why_choose_us_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/tab.png</field>
+        </record>
+        <record id="theme_crafito.crafito_why_choose_us_snippet_img_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_why_choose_us_snippet_img_2.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/mob.png</field>
+        </record>
+        <record id="theme_crafito.crafito_testimonial_1_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_testimonial_1_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/avatar1.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_about_company_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_about_company_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/iphone.png</field>
+        </record>
+        <record id="theme_crafito.crafito_pricing_table_2_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_pricing_table_2_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/pricing-table-bg.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_service_tab2_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_service_tab2_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/section-image-1.png</field>
+        </record>
+        <record id="theme_crafito.crafito_service_tab2_snippet_img_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_service_tab2_snippet_img_2.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/section-image-2.png</field>
+        </record>
+        <record id="theme_crafito.crafito_service_tab2_snippet_img_3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_service_tab2_snippet_img_3.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/section-image-3.png</field>
+        </record>
+        <record id="theme_crafito.crafito_service_tab2_snippet_img_4" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_service_tab2_snippet_img_4.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/section-image-4.png</field>
+        </record>
+        <record id="theme_crafito.crafito_service_tab4_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_service_tab4_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/mac-img-1.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_about_me_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_about_me_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/photoshop.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_about_me_snippet_img_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_about_me_snippet_img_2.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/illustrator.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_about_me_snippet_img_3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_about_me_snippet_img_3.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/premier.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_coming_soon_mode_one_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_coming_soon_mode_one_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/coming-soon-1.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_coming_soon_mode_two_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_coming_soon_mode_two_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/coming-soon-page.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_block_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_block_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/adsb-5.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_block_snippet_img_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_block_snippet_img_2.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/adsb-4.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_block_snippet_img_3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_block_snippet_img_3.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/adsb-2.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_block_snippet_img_4" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_block_snippet_img_4.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/adsb-3.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_block_snippet_img_5" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_block_snippet_img_5.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/adsb-2.jpg</field>
+        </record>
+        <record id="theme_crafito.crafito_subscribe_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_subscribe_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/newsletter-bg.png</field>
+        </record>
+        <record id="theme_crafito.crafito_text_img_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_text_img_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/men-bg.png</field>
+        </record>
+        <record id="theme_crafito.crafito_img_text_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_img_text_snippet_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/women-bg.png</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_collection_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_collection_snippet_img_1.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/event-1.png</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_collection_snippet_img_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_collection_snippet_img_2.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/event-2.png</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_collection_snippet_img_3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_collection_snippet_img_3.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/event-3.png</field>
+        </record>
+        <record id="theme_crafito.crafito_promo_collection_snippet_img_4" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_promo_collection_snippet_img_4.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/event-4.png</field>
+        </record>
+        <record id="theme_crafito.crafito_upper_banner_snippet_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">crafito_upper_banner_snippet_img_1.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_crafito/static/src/img/title-bg.jpg</field>
+        </record>
+        
+        
+    </data>
+</odoo>

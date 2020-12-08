@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800italic,800);
+
+// Colors
+$o-color-palette1: o-safe-nth($o-color-palettes, $o-color-palette-number, ()) !default;
+// Original color palette can contain override of the default combinations (so keep 'null' values for this merge)
+$o-color-palette1: map-merge($-combination-additions, $o-color-palette);
+$o-color-palette1: map-merge($o-base-color-palette, o-map-omit($o-color-palette));
+
+$font-family:       'Open Sans', sans-serif;
+$font-size-base:    14px;
+$font-size-body:    14px;
+$title:             18px;
+
+
+$top-header-bg:     #ff6464;
+$header-bg:         #fff;
+$theme:             #13b2d9;
+@if map-has-key($o-color-palette1, 'theme') {
+   $theme:   map-get($o-color-palette1, 'theme');
+}
+$theme2nd:          #ff772d;
+@if map-has-key($o-color-palette1, 'theme') {
+   $theme2nd:   map-get($o-color-palette1, 'theme2nd');
+}
+$light-color:       #ffffff;
+$dark-color:        #3a424c;
+$body-color:        #ff6464;
+$footer-bg:         #161b1e;
+$footer-text:       #b3b3b3;
+$new-label-color:   #39b54a;
+$sale-label-color:  #f7941d;
+
+ $img-path:         '../img/';

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id='snippet_options_add' inherit_id='website.snippet_options' name='Theme add options'>
+        <xpath expr='//div[@data-selector="#wrapwrap > header"]//we-select[@data-variable="header-template"]' position='inside'>
+            <we-button title="Crafito Header"
+                       data-name="crafito_header"
+                       data-customize-website-views="theme_crafito.theme_crafito_header_layout,theme_crafito.custom_header_cart_link,theme_crafito.custom_header_wishlist_link"
+                       data-customize-website-variable="'crafito_header'"
+                       data-img="/theme_crafito/static/src/img/snippet_icons/header-1.png"/>
+        </xpath>
+        <xpath expr='//we-select[@data-variable="footer-template"]' position='inside'>
+            <we-button title="Crafito Footer"
+                   data-customize-website-views="theme_crafito.theme_crafito_footer_customize,theme_crafito.footer_copyright"
+                   data-customize-website-variable="'Footer-1'"
+                   data-img="/theme_crafito/static/src/img/snippet_icons/footer-1.png"/>
+        </xpath>
+        <xpath expr='//div[@data-js="ThemeColors"]//we-row[hasclass("o_we_theme_colors_selector")]' position='after'>
+            <we-row string="Theme Color" class="o_we_full_row">
+                <we-colorpicker data-name="color_theme_opt_1" title="Theme color"
+                            data-customize-website-color="" data-color="theme"
+                            data-use-css-color="true"/>
+                <we-colorpicker data-name="color_theme_opt_2" title="Choose your colors"
+                            data-customize-website-color="" data-color="theme2nd"
+                            data-use-css-color="true"/>
+            </we-row>
+        </xpath>
+        <xpath expr='//div[@data-js="ThemeColors"]//we-row[hasclass("o_we_theme_colors_selector")]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="btn-primary-outline"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="btn-secondary-outline"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]/we-collapse[2]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]/we-collapse[4]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-input[@data-variable="btn-border-width"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-checkbox[@data-variable="btn-ripple"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="link-underline"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+        <xpath expr='//div[@data-js="HeaderNavbar"]//we-select[@id="option_header_dropdown"]' position='attributes'>
+            <attribute name='class'>o_hidden</attribute>
+        </xpath>
+    </template>
+</odoo>
