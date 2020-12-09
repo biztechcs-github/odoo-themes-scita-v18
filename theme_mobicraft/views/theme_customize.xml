@@ -19,7 +19,7 @@
         </xpath>
         <xpath expr='//we-select[@data-variable="footer-template"]' position='inside'>
             <we-button title="Mobicraft footer"
-                   data-customize-website-views="theme_mobicraft.theme_mobicraft_footer_customize,theme_mobicraft.footer_copyright"
+                   data-customize-website-views="theme_mobicraft.theme_mobicraft_footer_customize,theme_mobicraft.footer_copyright,theme_mobicraft.footer_mobicraft_copyright"
                    data-customize-website-variable="'mobicraft_footer'"
                    data-img="/theme_mobicraft/static/src/img/icons/tabs.png"/>
         </xpath>

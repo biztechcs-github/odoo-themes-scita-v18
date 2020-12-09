@@ -14,8 +14,6 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale.product_comment')
         self.disable_view_customize('website_sale.recommended_products')
         self.disable_view_customize('website_sale.product_variants')
-        # self.disable_view_customize('website_sale.ecom_show_extra_fields')
-        # other template
         self.disable_view_customize('website_sale.search_count_box')
         self.disable_view_customize('website_sale.products_list_view')
         self.disable_view_customize('website_sale.add_grid_or_list_option')
@@ -24,13 +22,12 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale.products_categories')
         self.disable_view_customize('website_sale.products_description')
         self.disable_view_customize('website_sale.products_add_to_cart')
-        # self.disable_view_customize('website_sale_comparison.add_to_compare')
-        # self.disable_view_customize('website_sale_wishlist.add_to_wishlist')
-        self.disable_view('website_sale_comparison.product_add_to_compare')
-        self.disable_view('website_sale.product_picture_magnify')
+        self.disable_view_customize('website_sale.product_picture_magnify')
         self.disable_view_customize('website_sale.products_images_full')
-        self.disable_view('website_sale.product_picture_magnify_auto')
-
+        self.disable_view_customize('website_sale.product_picture_magnify_auto')
+        self.disable_view_customize('website_sale.ecom_show_extra_fields')
+        self.disable_view_customize('website_sale.product_custom_text')
+        self.disable_view('website_sale_comparison.product_add_to_compare')
 
     @api.model
     def _toggle_view_customize(self, xml_id, active):

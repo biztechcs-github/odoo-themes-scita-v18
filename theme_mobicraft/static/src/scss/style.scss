@@ -182,3 +182,10 @@ header {
         padding-top: 0;
     }
 }
+.home_banner_mobi {
+    .carousel-item {
+        .container {
+            position: static;
+        }
+    }
+}
