@@ -72,7 +72,7 @@ backend theme
     'live_test_url': 'https://theme-falcon-material-v13.appjetty.com/web/login',
     'images': [
         'static/description/splash-screen.png',
-        'static/description/splash-screen_screenshot.png',
+        'static/description/splash-screen_screenshot.gif',
     ],
     'price': 191.00,
     'currency': 'EUR',
