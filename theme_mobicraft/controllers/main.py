@@ -549,16 +549,6 @@ class ThememobicraftBrandSlider(WebsiteSale):
         else:
             return super(ThememobicraftBrandSlider, self).shop(page=page, category=category, brand=brand, search=search, ppg=ppg, **post)
 
-    
-    # @http.route()
-    # def cart_update_json(self, product_id, line_id=None, add_qty=None, set_qty=None, display=True):
-    #     result = super(ThememobicraftBrandSlider, self).cart_update_json(
-    #         product_id, line_id, add_qty, set_qty, display)
-    #     order = request.website.sale_get_order()
-    #     result.update({'theme_mobicraft.hover_total': request.env['ir.ui.view']._render_template("theme_mobicraft.hover_total", {
-    #         'website_sale_order': order})
-    #     })
-    #     return result
 
     @http.route(['/mobicraft_theme/get_brand_slider'], type='http', auth='public', website=True)
     def get_brand_slider(self, **post):

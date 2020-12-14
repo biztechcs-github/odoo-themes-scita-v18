@@ -1,358 +1,331 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-        <template id="theme_mobicraft_viewport" inherit_id="website.layout">
-            <xpath expr="//t//meta" position="after">
-                <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-            </xpath>
-        </template>
-        <template active="False" customize_show="True" id="layout_top_move" inherit_id="website.layout" name='Scroll To Top'>
-            <xpath expr="//footer" position="after">
-                <a class="cd-top cd-is-visible" href="#">
-                    <i class="fa fa-chevron-up"/>
-                </a>
-            </xpath>
-        </template>
-        <template id="custom_cart_popover" inherit_id="website_sale.cart_popover" name="Mobicraft Cart Popover">
-            <xpath expr="//t[@t-if='website_sale_order and website_sale_order.website_order_line']" position="replace">
-                <div id="mobicraft_hover_total" t-if="website_sale_order and website_sale_order.website_order_line">
-                    <t t-as="line" t-foreach="website_sale_order.website_order_line">
-                        <div class="row mobicraft_cart_lines">
-                            <div class="col-sm-9 cart_item_details">
-                                <div class="cart_item_name">
-                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                        <t t-esc="line.product_id.name"/>
-                                    </a>
-                                </div>
-                                <p class="cart_qty_amt">
-                                    <span class="theme_mobicraft_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
-                                    <span t-esc="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                </p>
-                                <div class="css_quantity input-group td-qty">
-                                    <div class="input-group-prepend">
-                                        <a t-attf-href="#" class="btn btn-link js_add_cart_json d-none d-md-inline-block" aria-label="Remove one" title="Remove one">
-                                            <i class="fa fa-minus"></i>
-                                        </a>
-                                    </div>
-                                    <input type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
-                                    <div class="input-group-append">
-                                        <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json d-none d-md-inline-block" aria-label="Add one" title="Add one">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 cart_item_image">
-                                <span t-field="line.product_id.image_128" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'img-fluid'}" />
-
-                                <a href="#" class="mobicraft_cart_popup_remove" t-att-data-id="line.id" title="Remove From Cart">
-                                    <span class="fa fa-times" />
+    <template id="theme_mobicraft_viewport" inherit_id="website.layout">
+        <xpath expr="//t//meta" position="after">
+            <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+        </xpath>
+    </template>
+    <template active="False" customize_show="True" id="layout_top_move" inherit_id="website.layout" name='Scroll To Top'>
+        <xpath expr="//footer" position="after">
+            <a class="cd-top cd-is-visible" href="#">
+                <i class="fa fa-chevron-up"/>
+            </a>
+        </xpath>
+    </template>
+    <template id="custom_cart_popover" inherit_id="website_sale.cart_popover" name="Mobicraft Cart Popover">
+        <xpath expr="//t[@t-if='website_sale_order and website_sale_order.website_order_line']" position="replace">
+            <div id="mobicraft_hover_total" t-if="website_sale_order and website_sale_order.website_order_line">
+                <t t-as="line" t-foreach="website_sale_order.website_order_line">
+                    <div class="row mobicraft_cart_lines">
+                        <div class="col-sm-9 cart_item_details">
+                            <div class="cart_item_name">
+                                <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                                    <t t-esc="line.product_id.name"/>
                                 </a>
                             </div>
+                            <p class="cart_qty_amt">
+                                <span class="theme_mobicraft_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
+                                <span t-esc="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            </p>
+                            <div class="css_quantity input-group td-qty">
+                                <div class="input-group-prepend">
+                                    <a t-attf-href="#" class="btn btn-link js_add_cart_json d-none d-md-inline-block" aria-label="Remove one" title="Remove one">
+                                        <i class="fa fa-minus"></i>
+                                    </a>
+                                </div>
+                                <input type="text" class="js_quantity form-control quantity" t-att-data-line-id="line.id" t-att-data-product-id="line.product_id.id" t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+                                <div class="input-group-append">
+                                    <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json d-none d-md-inline-block" aria-label="Add one" title="Add one">
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </t>
-                </div>
-                <div class="cart_total_div" t-if="website_sale_order and website_sale_order.website_order_line">
-                    <t t-call="website_sale.total">
-                        <t t-set='hide_coupon'>True</t>
-                    </t>
-                    <div class="button-box">
-                        <a class="view-all btn btn-primary mb-2" href="/shop/cart">View all</a>
-                        <a class="proceed btn btn-primary" href="/shop/checkout">Checkout</a>
+                        <div class="col-sm-3 cart_item_image">
+                            <span t-field="line.product_id.image_128" t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'img-fluid'}" />
+
+                            <a href="#" class="mobicraft_cart_popup_remove" t-att-data-id="line.id" title="Remove From Cart">
+                                <span class="fa fa-times" />
+                            </a>
+                        </div>
                     </div>
+                </t>
+            </div>
+            <div class="cart_total_div" t-if="website_sale_order and website_sale_order.website_order_line">
+                <t t-call="website_sale.total">
+                    <t t-set='hide_coupon'>True</t>
+                </t>
+                <div class="button-box">
+                    <a class="view-all btn btn-primary mb-2" href="/shop/cart">View all</a>
+                    <a class="proceed btn btn-primary" href="/shop/checkout">Checkout</a>
                 </div>
-            </xpath>
-        </template>
-        <template active="False" id="theme_mobicraft_header_layout" inherit_id="website.layout" name='Header'>
-            <xpath expr="//header//nav" position="replace">
-                <div class="oe_structure">
-                    <nav data-name="Navbar" class="navbar navbar-expand-lg navbar-light o_colored_level o_cc shadow-sm">
-                        <div class="header-top">
-                            <div class="container">
-                                <div class="ht-top">
-                                    <ul>
-                                        <li class="lang-options">
-                                            <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) > 1) or editable)" class="language-bar" id="lang">
-                                                <t t-call="website.placeholder_header_language_selector">
-                                                    <t t-set="_div_classes" t-value="'ml-2'"/>
+            </div>
+        </xpath>
+    </template>
+    <template active="False" id="theme_mobicraft_header_layout" inherit_id="website.layout" name='Header'>
+        <xpath expr="//header//nav" position="replace">
+            <div class="oe_structure">
+                <nav data-name="Navbar" class="navbar navbar-expand-lg navbar-light o_colored_level o_cc shadow-sm">
+                    <div class="header-top">
+                        <div class="container">
+                            <div class="ht-top">
+                                <ul>
+                                    <li class="lang-options">
+                                        <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) > 1) or editable)" class="language-bar" id="lang">
+                                            <t t-call="website.placeholder_header_language_selector">
+                                                <t t-set="_div_classes" t-value="'ml-2'"/>
+                                            </t>
+                                        </ul>
+                                    </li>
+                                    <li class="ht-price-list">
+                                        <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
+                                        <div class="currency_bar" t-if="len(website_sale_pricelists) >1">
+                                            <t t-call="website_sale.pricelist_list"/>
+                                        </div>
+                                    </li>
+                                    <t t-if="website.user_id != user_id">
+                                        <li>Welcome, <b><t t-esc="user_id.name"/></b></li>
+                                        <li><a href="/my/home">My account</a></li>
+                                        <li><a role="menuitem" t-attf-href="/web/session/logout?redirect=/">Logout</a></li>
+                                    </t>
+                                    <!-- Sign In -->
+                                    <t t-call="portal.placeholder_user_sign_in">
+                                        <t t-set="_item_class" t-value=""/>
+                                        <t t-set="_link_class" t-value=""/>
+                                    </t>
+                                    <t t-if="website.user_id == user_id">
+                                        <li t-if="request.env['res.users']._get_signup_invitation_scope() == 'b2c'">
+                                            <a href="/web/signup">Register</a>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="header-middle">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-4 logo">
+                                    <t t-call="website.placeholder_header_brand">
+                                        <t t-set="_link_class" t-value="'m-0'"/>
+                                    </t>
+                                </div>
+                                <div class="col-md-6 col-sm-8 hm-right">
+                                    <div class="hm-search">
+                                        <t t-call="website_sale.website_sale_products_search_box">
+                                            <t t-set="action" t-value="'/shop'"/>
+                                            <t t-if="attrib_values">
+                                                <t t-foreach="attrib_values" t-as="a">
+                                                    <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
                                                 </t>
-                                            </ul>
-                                        </li>
-                                        <li class="ht-price-list">
-                                            <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) >1">
-                                                <t t-call="website_sale.pricelist_list"/>
-                                            </div>
-                                        </li>
-                                        <t t-if="website.user_id != user_id">
-                                            <li>Welcome, <b><t t-esc="user_id.name"/></b></li>
-                                            <li><a href="/my/home">My account</a></li>
-                                            <li><a role="menuitem" t-attf-href="/web/session/logout?redirect=/">Logout</a></li>
+                                            </t>
                                         </t>
-                                        <!-- Sign In -->
-                                        <t t-call="portal.placeholder_user_sign_in">
-                                            <t t-set="_item_class" t-value=""/>
-                                            <t t-set="_link_class" t-value=""/>
+                                    </div>
+                                    <ul class="hm-cart">
+                                        <t t-call="website_sale.header_cart_link">
+                                            <t t-set="_icon" t-value="True"/>
+                                            <t t-set="_item_class" t-value="'item-no'"/>
+                                            <t t-set="_link_class" t-value="'top-link-checkout'"/>
                                         </t>
-                                        <t t-if="website.user_id == user_id">
-                                            <li t-if="request.env['res.users']._get_signup_invitation_scope() == 'b2c'">
-                                                <a href="/web/signup">Register</a>
-                                            </li>
+                                        <t t-call="website_sale_wishlist.header_wishlist_link">
+                                            <t t-set="_icon" t-value="True"/>
+                                            <t t-set="_item_class" t-value="'item-no my_wish'"/>
+                                            <t t-set="_link_class" t-value="'top-link-checkout'"/>
                                         </t>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                        <div class="header-middle">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-6 col-sm-4 logo">
-                                        <t t-call="website.placeholder_header_brand">
-                                            <t t-set="_link_class" t-value="'m-0'"/>
-                                        </t>
-                                    </div>
-                                    <div class="col-md-6 col-sm-8 hm-right">
-                                        <div class="hm-search">
-                                            <t t-call="website_sale.website_sale_products_search_box">
-                                                <t t-set="action" t-value="'/shop'"/>
-                                                <t t-if="attrib_values">
-                                                    <t t-foreach="attrib_values" t-as="a">
-                                                        <input type="hidden" name="attrib" t-att-value="'%s-%s' % (a[0], a[1])" />
-                                                    </t>
-                                                </t>
-                                            </t>
-                                        </div>
-                                        <ul class="hm-cart">
-                                            <t t-call="website_sale.header_cart_link">
-                                                <t t-set="_icon" t-value="True"/>
-                                                <t t-set="_item_class" t-value="'item-no'"/>
-                                                <t t-set="_link_class" t-value="'top-link-checkout'"/>
-                                            </t>
-                                            <t t-call="website_sale_wishlist.header_wishlist_link">
-                                                <t t-set="_icon" t-value="True"/>
-                                                <t t-set="_item_class" t-value="'item-no my_wish'"/>
-                                                <t t-set="_link_class" t-value="'top-link-checkout'"/>
-                                            </t>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="header-nav">
-                            <div id="top_menu_container" class="container">
-                                <!-- Nav -->
-                                <t t-call="website.navbar_toggler"/>
-                                <div id="top_menu_collapse" class="collapse navbar-collapse">
-                                    <t t-call="website.navbar_nav">
-                                        <t t-set="_nav_class" t-value="''"/>
-                                        <!-- Menu -->
-                                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
-                                            <t t-call="website.submenu">
-                                                <t t-set="item_class" t-value="'nav-item'"/>
-                                                <t t-set="link_class" t-value="'nav-link'"/>
-                                            </t>
+                    </div>
+                    <div class="header-nav">
+                        <div id="top_menu_container" class="container">
+                            <!-- Nav -->
+                            <t t-call="website.navbar_toggler"/>
+                            <div id="top_menu_collapse" class="collapse navbar-collapse">
+                                <t t-call="website.navbar_nav">
+                                    <t t-set="_nav_class" t-value="''"/>
+                                    <!-- Menu -->
+                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                        <t t-call="website.submenu">
+                                            <t t-set="item_class" t-value="'nav-item'"/>
+                                            <t t-set="link_class" t-value="'nav-link'"/>
                                         </t>
                                     </t>
-                                </div>
+                                </t>
                             </div>
                         </div>
-                    </nav>
-                </div>
-            </xpath>
-        </template>
+                    </div>
+                </nav>
+            </div>
+        </xpath>
+    </template>
 
-        <template id="theme_mobicraft_layout_logo_show" inherit_id="theme_mobicraft.theme_mobicraft_header_layout" active="True" name="Show Logo">
-            <xpath expr="//div[hasclass('header-middle')]//div[hasclass('logo')]" position="replace">
-                <div class="col-md-6 col-sm-4 logo">
-                    <a href="/" class='navbar-brand logo'>
-                        <span t-field="website.logo" t-options="{'widget': 'image'}" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" />
-                    </a>
-                </div>
-            </xpath>
-        </template>
+    <template id="theme_mobicraft_layout_logo_show" inherit_id="theme_mobicraft.theme_mobicraft_header_layout" active="True" name="Show Logo">
+        <xpath expr="//div[hasclass('header-middle')]//div[hasclass('logo')]" position="replace">
+            <div class="col-md-6 col-sm-4 logo">
+                <a href="/" class='navbar-brand logo'>
+                    <span t-field="website.logo" t-options="{'widget': 'image'}" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" />
+                </a>
+            </div>
+        </xpath>
+    </template>
 
 
-        <!-- Custom Footer -->
-        <template active="False" id="theme_mobicraft_footer_customize" inherit_id="website.layout" name='footer'>
-            <xpath expr="//div[@id='footer']" position="replace">
-                <div id="footer" class="oe_structure oe_structure_solo" t-if="not no_footer">
-                    <div class="footer-top hidden-print">
-                        <div class="container"> 
-                            <div class="row">
-                                <div class="footer-content">
-                                    <div class="col-md-3 col-sm-4 footer-col">
-                                        <section class="fot-col fot-address">
-                                            <h3 class="diff-title">Contact Us</h3>
-                                            <div class="address-list">
-                                                <address itemscope="itemscope" itemtype="http://schema.org/Organization">
-                                                    <div t-field="res_company.partner_id" t-options="{                                                     'widget': 'contact',                                                     'fields': ['address']}"/>
-                                                </address>
-                                                <p class="call-us">
-                                                    <span>
-                                                        <a t-attf-href="tel: #{res_company.phone}">
-                                                            <i class="fa fa-phone"/>
-                                                            <span t-field="res_company.phone"/>
+    <!-- Custom Footer -->
+    <template active="False" id="theme_mobicraft_footer_customize" inherit_id="website.layout" name='footer'>
+        <xpath expr="//div[@id='footer']" position="replace">
+            <div id="footer" class="oe_structure oe_structure_solo" t-if="not no_footer">
+                <div class="footer-top hidden-print">
+                    <div class="container"> 
+                        <div class="row">
+                            <div class="footer-content">
+                                <div class="col-md-3 col-sm-4 footer-col">
+                                    <section class="fot-col fot-address">
+                                        <h3 class="diff-title">Contact Us</h3>
+                                        <div class="address-list">
+                                            <address itemscope="itemscope" itemtype="http://schema.org/Organization">
+                                                <div t-field="res_company.partner_id" t-options="{                                                     'widget': 'contact',                                                     'fields': ['address']}"/>
+                                            </address>
+                                            <p class="call-us">
+                                                <span>
+                                                    <a t-attf-href="tel: #{res_company.phone}">
+                                                        <i class="fa fa-phone"/>
+                                                        <span t-field="res_company.phone"/>
+                                                    </a>
+                                                </span>
+                                            </p>
+                                            <a t-att-href="'mailto:%s' % res_company.email">
+                                                <i class="fa fa-envelope-o"/>
+                                                <span t-field="res_company.email" t-ignore="true"/>
+                                            </a>
+                                        </div>
+                                    </section>
+                                </div>
+                                <div class="col-md-2 col-sm-3 footer-col">
+                                    <section class="fot-col fot-link">
+                                        <h3 class="diff-title">Quick Links</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Security</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Privacy</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Text Messaging</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Legal</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Supply chain</a>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                <div class="col-md-2 col-sm-3 footer-col">
+                                    <section class="fot-col fot-link">
+                                        <h3 class="diff-title">Support</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="#">Help</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Gift Cards</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Order Status</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Free Shipping</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Returns &amp; Exchanges</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">International</a>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                <div class="col-md-2 col-sm-2 footer-col">
+                                    <section class="fot-col fot-link">
+                                        <h3 class="diff-title">About Us</h3>
+                                        <ul>
+                                            <li>
+                                                <a href="#">About Us</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Jobs</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Affiliates</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Meet The Maker</a>
+                                            </li>
+                                            <li>
+                                                <a href="#">Contact</a>
+                                            </li>
+                                        </ul>
+                                    </section>
+                                </div>
+                                <div class="col-md-3 col-sm-12 newsletter-div">
+                                    <section>
+                                        <t t-if="request.website.viewref('theme_mobicraft.theme_mobicraft_layout_logo_show').active">
+                                            <a class="bottom-logo img img-responsive" href="/">
+                                                <span t-field="website.logo" t-options="{'widget': 'image'}" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" />
+                                            </a>
+                                        </t>
+                                        <div class="bottom-social-links">
+                                            <ul>
+                                                <t t-if="website.social_facebook">
+                                                    <li>
+                                                        <a t-att-href="website.social_facebook">
+                                                            <i class="fa fa-facebook"/>
                                                         </a>
-                                                    </span>
-                                                </p>
-                                                <a t-att-href="'mailto:%s' % res_company.email">
-                                                    <i class="fa fa-envelope-o"/>
-                                                    <span t-field="res_company.email" t-ignore="true"/>
-                                                </a>
-                                            </div>
-                                        </section>
-                                    </div>
-                                    <div class="col-md-2 col-sm-3 footer-col">
-                                        <section class="fot-col fot-link">
-                                            <h3 class="diff-title">Quick Links</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Security</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Privacy</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Text Messaging</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Legal</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Supply chain</a>
-                                                </li>
+                                                    </li>
+                                                </t>
+                                                <t t-if="website.social_twitter">
+                                                    <li>
+                                                        <a t-att-href="website.social_twitter">
+                                                            <i class="fa fa-twitter"/>
+                                                        </a>
+                                                    </li>
+                                                </t>
+                                                <t t-if="website.social_github">
+                                                    <li>
+                                                        <a t-att-href="website.social_github">
+                                                            <i class="fa fa-github"/>
+                                                        </a>
+                                                    </li>
+                                                </t>
+                                                <t t-if="website.social_linkedin">
+                                                    <li>
+                                                        <a t-att-href="website.social_linkedin">
+                                                            <i class="fa fa-linkedin"/>
+                                                        </a>
+                                                    </li>
+                                                </t>
+                                                <t t-if="website.social_youtube">
+                                                    <li>
+                                                        <a t-att-href="website.social_youtube">
+                                                            <i class="fa fa-youtube"/>
+                                                        </a>
+                                                    </li>
+                                                </t>
                                             </ul>
-                                        </section>
-                                    </div>
-                                    <div class="col-md-2 col-sm-3 footer-col">
-                                        <section class="fot-col fot-link">
-                                            <h3 class="diff-title">Support</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">Help</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Gift Cards</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Order Status</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Free Shipping</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Returns &amp; Exchanges</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">International</a>
-                                                </li>
-                                            </ul>
-                                        </section>
-                                    </div>
-                                    <div class="col-md-2 col-sm-2 footer-col">
-                                        <section class="fot-col fot-link">
-                                            <h3 class="diff-title">About Us</h3>
-                                            <ul>
-                                                <li>
-                                                    <a href="#">About Us</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Jobs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Affiliates</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Meet The Maker</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Contact</a>
-                                                </li>
-                                            </ul>
-                                        </section>
-                                    </div>
-                                    <div class="col-md-3 col-sm-12 newsletter-div">
-                                        <section>
-                                            <t t-if="request.website.viewref('theme_mobicraft.theme_mobicraft_layout_logo_show').active">
-                                                <a class="bottom-logo img img-responsive" href="/">
-                                                    <span t-field="website.logo" t-options="{'widget': 'image'}" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" />
-                                                </a>
-                                            </t>
-                                            <div class="bottom-social-links">
-                                                <ul>
-                                                    <t t-if="website.social_facebook">
-                                                        <li>
-                                                            <a t-att-href="website.social_facebook">
-                                                                <i class="fa fa-facebook"/>
-                                                            </a>
-                                                        </li>
-                                                    </t>
-                                                    <t t-if="website.social_twitter">
-                                                        <li>
-                                                            <a t-att-href="website.social_twitter">
-                                                                <i class="fa fa-twitter"/>
-                                                            </a>
-                                                        </li>
-                                                    </t>
-                                                    <t t-if="website.social_github">
-                                                        <li>
-                                                            <a t-att-href="website.social_github">
-                                                                <i class="fa fa-github"/>
-                                                            </a>
-                                                        </li>
-                                                    </t>
-                                                    <t t-if="website.social_linkedin">
-                                                        <li>
-                                                            <a t-att-href="website.social_linkedin">
-                                                                <i class="fa fa-linkedin"/>
-                                                            </a>
-                                                        </li>
-                                                    </t>
-                                                    <t t-if="website.social_youtube">
-                                                        <li>
-                                                            <a t-att-href="website.social_youtube">
-                                                                <i class="fa fa-youtube"/>
-                                                            </a>
-                                                        </li>
-                                                    </t>
-                                                </ul>
-                                            </div>
-                                        </section>
-                                    </div>
+                                        </div>
+                                    </section>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </xpath>
-        </template>
-        <!-- <template active="False" id="footer_copyright" inherit_id="portal.frontend_layout" name='Copyright'>
-            <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
-                <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
-            </xpath>
-            <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="inside">
-                <div class="payment-icons">
-                    <t t-as="icon" t-foreach="request.website.theme_mobicraft_payment_icons()">
-                        <span t-field="icon.image" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;alt-field&quot;: &quot;name&quot;}"/>
-                    </t>
-                </div>
-            </xpath>
-            <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="before">
-                <div class='row sct-right-top-row'>
-                    <div class="col-md-7 sct_left_side">
-                        <div class='links'>
-                            <ul>
-                                <li><a href="#">Terms &amp; Condition</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </xpath>
-            <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
-                <attribute name='class'>container</attribute>
-            </xpath>
-        </template> -->
+            </div>
+        </xpath>
+    </template>
     <template id="footer_copyright_add_class" inherit_id="portal.frontend_layout" name="Footer copyright add class">
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm','text-center', 'text-sm-right')]" position="attributes">
             <attribute name='class' add="o_hidden" separator=" "/>
@@ -466,7 +439,6 @@
             <xpath expr="//div[@itemscope='itemscope']/section" position="attributes">
                 <attribute name="t-attf-class">container mt8 product-view oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}</attribute>
             </xpath>
-            <!-- Theme breadcrumb -->
             <xpath expr="//div[@itemscope='itemscope']/section" position="before">
                 <section class="page-title">
                     <div class="container">
@@ -999,25 +971,23 @@
             </xpath>
             <xpath expr="//div[@id='products_grid']//table" position="before">
                 <div id="theme_mobicraft_products_grid_view">
-                    <!-- <div class='row'> -->
-                        <t t-as="tr_product" t-foreach="bins">
-                            <t t-as="td_product" t-foreach="tr_product">
-                                <t t-if="td_product">
-                                <t t-set="product" t-value="td_product['product']"/>
-                                <div class="col-md-6 col-sm-6 list-items" t-if="website.product_display_grid == '2'">
-                                    <t t-call="theme_mobicraft.theme_mobicraft_products_item"/>
-                                </div>
-                                <div class="col-md-4 col-sm-6 list-items" t-if="website.product_display_grid == '3'">
-                                    <t t-call="theme_mobicraft.theme_mobicraft_products_item"/>
-                                </div>
-                                <div class="col-md-3 col-sm-6 list-items" t-if="website.product_display_grid == '4'">
-                                    <t t-call="theme_mobicraft.theme_mobicraft_products_item"/>
-                                </div>
+                    <t t-as="tr_product" t-foreach="bins">
+                        <t t-as="td_product" t-foreach="tr_product">
+                            <t t-if="td_product">
+                            <t t-set="product" t-value="td_product['product']"/>
+                            <div class="col-md-6 col-sm-6 list-items" t-if="website.product_display_grid == '2'">
+                                <t t-call="theme_mobicraft.theme_mobicraft_products_item"/>
+                            </div>
+                            <div class="col-md-4 col-sm-6 list-items" t-if="website.product_display_grid == '3'">
+                                <t t-call="theme_mobicraft.theme_mobicraft_products_item"/>
+                            </div>
+                            <div class="col-md-3 col-sm-6 list-items" t-if="website.product_display_grid == '4'">
+                                <t t-call="theme_mobicraft.theme_mobicraft_products_item"/>
+                            </div>
 
-                                </t>
                             </t>
                         </t>
-                    <!-- </div> -->
+                    </t>
                 </div>
             </xpath>
         </template>

@@ -200,7 +200,7 @@ odoo.define('theme_mobicraft.custom_js', function(require) {
             $('ul#description_reviews_tabs > li').removeClass('active')
             $('div#description_reviews_tabs_contents > div').removeClass('active')
             $('ul#description_reviews_tabs > li:nth-child(2)').addClass('active')
-            $('div#description_reviews_tabs_contents > div:nth-child(2)').addClass('active')
+            $('div#description_reviews_tabs_contents > div#reviews').addClass('active')
         });
 
         // Toggle global search

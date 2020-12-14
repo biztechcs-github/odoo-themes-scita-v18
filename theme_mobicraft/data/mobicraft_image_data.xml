@@ -43,6 +43,12 @@
             <field name="type">url</field>
             <field name="url">/theme_mobicraft/static/src/img/big-promo-1.jpg</field>
         </record>
+        <record id="theme_mobicraft.mobi_big_promo_image_png" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_big_promo_image.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/big-promo-1.png</field>
+        </record>
         <record id="theme_mobicraft.mobi_single_banner_text" model="ir.attachment">
             <field name="public" eval="True"/>
             <field name="name">mobi_single_banner_text.jpg</field>

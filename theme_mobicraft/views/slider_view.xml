@@ -94,12 +94,6 @@
                     <group>
                         <field name="active"/>
                     </group>
-                    <!-- <group string="Brand Cover">
-                        <field name="brand_cover" nolabel="1" widget="image"/>
-                    </group>
-                    <group string="Description">
-                        <field name="brand_description" nolabel="1" options="{'style-inline': true}" widget="html"/>
-                    </group> -->
                 </sheet>
             </form>
             </field>
