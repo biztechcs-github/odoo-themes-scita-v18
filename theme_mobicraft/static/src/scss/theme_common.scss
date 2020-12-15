@@ -362,8 +362,9 @@ body{
 										padding: 0rem 0.75rem;
 										color:$dark-color;
 										line-height: 30px;
+										margin-left: 0;
 										&:hover{
-											color:$theme;
+											color:#ffffff;
 										}
 									}
 								}
@@ -634,3 +635,11 @@ body .navbar .o_extra_menu_items.show > ul > li > a.dropdown-toggle {
 		}
 	}
 }
+
+/*color option for customizer disable start */
+.snippet-option-ThemeColors{
+	we-collapse{
+		display: none !important;	
+	}
+}
+/*color option for customizer disable end */

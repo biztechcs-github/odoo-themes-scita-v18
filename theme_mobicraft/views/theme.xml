@@ -366,15 +366,7 @@
             <attribute name='class'>container footer-bottom-div</attribute>
         </xpath>
     </template>
-    <template id="mobicrafy_product_custom_text" inherit_id="theme_mobicraft.theme_mobicraft_product_details" active="True" customize_show="True" name="Terms and Conditions">
-        <xpath expr="//div[@id='product_details']" position="inside">
-            <p class="text-muted">
-                <a href="/shop/terms">Terms and Conditions</a><br/>
-                30-day money-back guarantee<br/>
-                Shipping: 2-3 Business Days
-            </p>
-        </xpath>
-    </template>
+    
         <!-- Multi image feature for products -->
         <template id="website_multiple_image_product_slider" inherit_id="website_sale.product" name="Multi-Image Product" active="True" customize_show="True">
             <xpath expr="//section[@id='product_detail']//div[hasclass('col-md-6')]" position="replace">
@@ -1611,6 +1603,15 @@
     <template id="footer_mobicraft_copyright" inherit_id="website.layout" name="Footer Mobicraft" active="False">
         <xpath expr="//div[hasclass('o_footer_copyright')]" position="attributes">
             <attribute name="class" add="footer-btm" separator=" "/>
+        </xpath>
+    </template>
+    <template id="mobicrafy_product_custom_text" inherit_id="theme_mobicraft.theme_mobicraft_product_details" active="True" customize_show="True" name="Terms and Conditions">
+        <xpath expr="//div[@id='product_details']" position="inside">
+            <p class="text-muted">
+                <a href="/shop/terms">Terms and Conditions</a><br/>
+                30-day money-back guarantee<br/>
+                Shipping: 2-3 Business Days
+            </p>
         </xpath>
     </template>
 </odoo>

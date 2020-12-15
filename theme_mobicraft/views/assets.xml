@@ -20,7 +20,8 @@
                 <script src="/theme_mobicraft/static/src/js/ion.rangeSlider.min.js" type="text/javascript"/>
                 <link href="/theme_mobicraft/static/src/scss/options/colors/colors.scss" rel="stylesheet" type="text/scss"/>        
                 <link href="/theme_mobicraft/static/src/scss/mixins.scss" rel="stylesheet" type="text/scss"/>
-                <link href="/theme_mobicraft/static/src/scss/web.scss" rel="stylesheet" type="text/scss"/>                <link href="/theme_mobicraft/static/src/scss/box-layout.scss" rel="stylesheet" type="text/scss"/>
+                <link href="/theme_mobicraft/static/src/scss/web.scss" rel="stylesheet" type="text/scss"/>                
+                <link href="/theme_mobicraft/static/src/scss/box-layout.scss" rel="stylesheet" type="text/scss"/>
                 <link href="/theme_mobicraft/static/src/scss/header.scss" rel="stylesheet" type="text/scss"/>
                 <link href="/theme_mobicraft/static/src/scss/footer.scss" rel="stylesheet" type="text/scss"/>
                 <link href="/theme_mobicraft/static/src/scss/product.scss" rel="stylesheet" type="text/scss"/>
