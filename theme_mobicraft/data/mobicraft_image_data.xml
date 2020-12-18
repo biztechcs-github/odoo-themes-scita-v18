@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    	<record id="theme_mobicraft.mobi_home_slider_img_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_home_slider_img_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/banner_bg.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_home_slider_img_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_home_slider_img_2.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/banner_bg_2.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_single_banner" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_single_banner.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/blue-chair.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_promo_collection_1" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_promo_collection_1.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/promo-1.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_promo_collection_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_promo_collection_2.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/promo-2.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_promo_collection_3" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_promo_collection_3.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/promo-3.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_big_promo_image" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_big_promo_image.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/big-promo-1.jpg</field>
+        </record>
+        <record id="theme_mobicraft.mobi_big_promo_image_png" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_big_promo_image.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/big-promo-1.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_single_banner_text" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_single_banner_text.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/only-text-bg.jpg</field>
+        </record>
+        <record id="theme_mobicraft.mobi_newsleter_image" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_newsleter_image.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/newsletter-bg.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_testinomial_quote" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_testinomial_quote.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/quote.png</field>
+        </record>
+        <record id="theme_mobicraft.mobi_testinomial_client" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">mobi_newsleter_image.jpg</field>
+            <field name="type">url</field>
+            <field name="url">/theme_mobicraft/static/src/img/client.png</field>
+        </record>
+    </data>
+</odoo>
