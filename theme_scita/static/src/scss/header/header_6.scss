@@ -229,8 +229,8 @@ body #oe_main_menu_navbar + #wrapwrap .o_header_affixed{
 	bottom: 0;
 	z-index: 9999;
 	background-color: $light-color;
-	padding: 50px 30px 20px;
-	width: 350px;
+	padding: 50px 30px 20px !important;
+	width: 350px !important;
 	overflow-y: auto;
 	@include transition(all, 0.5s, ease);
 	display: block !important;
@@ -239,7 +239,7 @@ body #oe_main_menu_navbar + #wrapwrap .o_header_affixed{
 	    @include transition(all, 0.5s, ease);
 	}
 	@media (max-width: 359px){
-		width: 90%;
+		width: 90% !important;
 	}
 	#close_cstm_nav_toggle {
 		position: absolute;
