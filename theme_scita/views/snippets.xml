@@ -190,12 +190,12 @@
 
                                 <div class="tab-content">
                                     <t t-if="slider_details.no_of_collection == '2'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
                                         <t t-foreach="slider_details.collection_2_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -213,7 +213,7 @@
                                     </t>
 
                                     <t t-if="slider_details.no_of_collection == '3'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
                                         <t t-foreach="slider_details.collection_2_ids" t-as="product">
@@ -221,7 +221,7 @@
                                         </t>
                                         <t t-foreach="slider_details.collection_3_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -246,7 +246,7 @@
                                     </t>
 
                                     <t t-if="slider_details.no_of_collection == '4'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
                                         <t t-foreach="slider_details.collection_2_ids" t-as="product">
@@ -257,7 +257,7 @@
                                         </t>
                                         <t t-foreach="slider_details.collection_4_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -289,7 +289,7 @@
                                     </t>
 
                                     <t t-if="slider_details.no_of_collection == '5'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
                                         <t t-foreach="slider_details.collection_2_ids" t-as="product">
@@ -303,7 +303,7 @@
                                         </t>
                                         <t t-foreach="slider_details.collection_5_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -422,7 +422,10 @@
                         <form action="/shop/cart/update" method="post">
                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                             <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                             <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart">ADD TO CART</button> 
+                             <!-- <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart">ADD TO CART</button>  -->
+                             <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                                ADD TO CART
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -431,8 +434,11 @@
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
                         <div class="qvp-btn" id="quick_view_product">
-                            <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
+                            <!-- <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
                                 <i class="fa fa-eye"/>
+                            </button> -->
+                            <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
+                                <span class="fa fa-eye"/>
                             </button>
                         </div>
                         <t t-if="request.website.viewref('theme_scita.add_to_wishlist').active and product.product_variant_ids">
@@ -479,8 +485,8 @@
                 </div>
                 <div class="row bottom-row content justify-content-center">
                     <t t-foreach="products" t-as="product">
-                        <t t-call='theme_scita.quick_view_model'/>
-                        <t t-call='theme_scita.quick_view_model_add_cart'/>
+                        <!-- <t t-call='theme_scita.quick_view_model'/> -->
+                        <!-- <t t-call='theme_scita.quick_view_model_add_cart'/> -->
                         <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
                         <div class="col-md-4 col-lg-3 col-6 grid_product">
                             <div class="cs-product" t-att-data-publish="product.website_published and 'on' or 'off'">
@@ -553,7 +559,10 @@
                                         <form action="/shop/cart/update" method="post">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                             <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                                            <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
+                                            <!-- <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
+                                                <span class="fa fa-eye"/>
+                                            </button> -->
+                                            <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                                                 <span class="fa fa-eye"/>
                                             </button>
                                             <t t-if="request.website.viewref('theme_scita.add_to_compare').active and product.product_variant_ids">
@@ -563,7 +572,10 @@
                                                 <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                                                 <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart"></span></a>
                                             </t>
-                                            <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart">
+                                            <!-- <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart">
+                                                <span class="icon-basket"></span>
+                                            </button> -->
+                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
                                                 <span class="icon-basket"></span>
                                             </button>
                                         </form>
@@ -611,8 +623,8 @@
                 </div>
                 <div class="row bottom-row content justify-content-center">
                     <t t-foreach="products" t-as="product">
-                        <t t-call='theme_scita.quick_view_model'/>
-                        <t t-call='theme_scita.quick_view_model_add_cart'/>
+                        <!-- <t t-call='theme_scita.quick_view_model'/> -->
+                        <!-- <t t-call='theme_scita.quick_view_model_add_cart'/> -->
                         <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
                         <div class="col-md-4 col-lg-3 col-6 grid_product">
                             <div class="cs-product" t-att-data-publish="product.website_published and 'on' or 'off'">
@@ -686,7 +698,10 @@
                                         <form action="/shop/cart/update" method="post">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                             <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                                            <button type="button" class="btn scita_cstm_btn qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
+                                            <!-- <button type="button" class="btn scita_cstm_btn qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
+                                                <span class="fa fa-eye"/>
+                                            </button> -->
+                                            <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                                                 <span class="fa fa-eye"/>
                                             </button>
                                             <t t-if="request.website.viewref('theme_scita.add_to_compare').active and product.product_variant_ids">
@@ -696,7 +711,10 @@
                                                 <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                                                 <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart"></span></a>
                                             </t>
-                                            <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart">
+                                            <!-- <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart">
+                                                <span class="icon-basket"></span>
+                                            </button> -->
+                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
                                                 <span class="icon-basket"></span>
                                             </button>
                                         </form>
@@ -985,7 +1003,10 @@
                             <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                             <a class="btn btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="icon-heart"></span></a>
                         </t>
-                        <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart"><span class="icon-basket"></span></button>
+                        <!-- <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)" title="Shopping Cart"><span class="icon-basket"></span></button> -->
+                        <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                            <span class="icon-basket"/>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -1118,14 +1139,14 @@
 
                                 <div class="tab-content">
                                     <t t-if="slider_details.no_of_collection == '2'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
                                         <t t-foreach="slider_details.collection_2_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel fashion_cro" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -1143,7 +1164,7 @@
                                     </t>
 
                                     <t t-if="slider_details.no_of_collection == '3'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
@@ -1154,7 +1175,7 @@
                                         <t t-foreach="slider_details.collection_3_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel fashion_cro" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -1179,7 +1200,7 @@
                                     </t>
 
                                     <t t-if="slider_details.no_of_collection == '4'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
@@ -1195,7 +1216,7 @@
                                         <t t-foreach="slider_details.collection_4_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel fashion_cro" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">
@@ -1227,7 +1248,7 @@
                                     </t>
 
                                     <t t-if="slider_details.no_of_collection == '5'">
-                                        <t t-foreach="slider_details.collection_1_ids" t-as="product">
+                                        <!-- <t t-foreach="slider_details.collection_1_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
                                         </t>
@@ -1246,7 +1267,7 @@
                                         <t t-foreach="slider_details.collection_5_ids" t-as="product">
                                             <t t-call='theme_scita.quick_view_model'/>
                                             <t t-call='theme_scita.quick_view_model_add_cart'/>
-                                        </t>
+                                        </t> -->
                                         <div class="active multi_hide" t-att-id="'fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)">
                                             <div class="owl-carousel fashion_cro" t-att-id="'multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" t-if="slider_details">
                                                 <t t-foreach="slider_details.collection_1_ids" t-as="product">

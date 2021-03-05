@@ -359,3 +359,10 @@ class website(models.Model):
             ]
         })
         return res
+        
+    def get_categories(self, category=None):
+        cat = {}
+        shop_category = request.env['product.public.category'].sudo().search(
+            [('parent_id', '=', None)], order='name asc')
+        cat.update({'categ': shop_category})
+        return cat

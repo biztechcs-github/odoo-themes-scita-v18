@@ -120,6 +120,7 @@ AMP Support
         'views/deal_of_day_page.xml',
         'views/pwa_config_view.xml',
         'views/pwa_template.xml',
+        'views/header_option_extended.xml',
     ],
     'support': 'support@appjetty.com',
     'live_test_url': 'http://theme-scita-v13.appjetty.com/',

@@ -178,6 +178,12 @@
                        data-customize-website-views="theme_scita.option_service_header_5,theme_scita.header_service_style_assets_5"
                        data-customize-website-variable="'scita_serice_header_5'"
                        data-img="/theme_scita/static/src/img/snippet_icon/service-header-5.png"/>
+            <we-button title="Scita Header 22"
+                       data-name="scita_header_22"
+                       data-customize-website-views="theme_scita.option_header_2,theme_scita.header_style_assets_2,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link,
+                       theme_scita.asset_mobile_category, theme_scita.product_details_categories, theme_scita.theme_product_details_category"
+                       data-customize-website-variable="'scita_header_22'"
+                       data-img="/theme_scita/static/src/img/snippet_icon/header-2.png"/>
         </xpath>
 
         <xpath expr='//we-select[@data-variable="footer-template"]' position='inside'>

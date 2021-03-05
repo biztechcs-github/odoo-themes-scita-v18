@@ -150,7 +150,7 @@
     <!-- layout top move arrow -->
     <template active="False" customize_show="True" id="layout_top_move" inherit_id="website.layout" name='Scroll To Top'>
         <xpath expr="//footer" position="after">
-            <a class="cd-top cd-is-visible" href="#">
+            <a class="cd-top" href="#">
                 <i class="fa fa-chevron-up"/>
             </a>
         </xpath>
@@ -931,10 +931,10 @@
     </template>
     <!-- Products Items -->
     <template active="True" customize_show="False" id="theme_scita_products_item" inherit_id="website_sale.products_item" name="Scita Product item">
-        <xpath expr="//form" position="attributes">
+        <!-- <xpath expr="//form" position="attributes">
             <attribute name="style">display: none;</attribute>
-        </xpath>
-        <xpath expr="//form" position="before">
+        </xpath> -->
+        <xpath expr="//form" position="replace">
             <form action="/shop/cart/update" method="post">
                 <input name="csrf_token" t-att-value="request.csrf_token()" type="hidden"/>
                 <div itemscope="itemscope" itemtype="http://schema.org/Product">
@@ -1175,10 +1175,10 @@
             </div>
         </xpath>
         
-        <xpath expr="//div[@id='products_grid']//table" position="attributes">
+       <!--  <xpath expr="//div[@id='products_grid']//table" position="attributes">
             <attribute name="style">display:none;</attribute>
-        </xpath>
-        <xpath expr="//div[@id='products_grid']//table" position="before">
+        </xpath> -->
+        <xpath expr="//div[@id='products_grid']//table" position="replace">
             <div id="theme_scita_products_grid_view">
                 <div class='row sct_list_box'>
                     <t t-as="tr_product" t-foreach="bins">
@@ -1316,7 +1316,10 @@
                 </t>
                 <t t-else=''>
                     <div class="ajax_cart_template">
-                        <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)"><span class="icon-basket"/></button>
+                        <!-- <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)"><span class="icon-basket"/></button> -->
+                        <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                            <span class="icon-basket"/>
+                        </button>
                     </div>
                 </t>
             </t>
@@ -1347,12 +1350,13 @@
     </template>
     <!-- QuickView Enable Disable option -->
     <template id="quick_view_option" inherit_id="theme_scita.theme_scita_products_item" active="True" customize_show="True" name="Quick View" priority="22">
-        <xpath expr="//form" position="before">
+       <!--  <xpath expr="//form" position="before">
             <t t-call='theme_scita.quick_view_model'/>
-        </xpath>
+        </xpath> -->
         <xpath expr="//div[hasclass('sct-hover-info')]" position="inside">
             <t t-if="product.product_variant_ids">
-                <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
+                <!-- <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View"> -->
+                <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                     <span class="fa fa-eye"/>
                 </button>
             </t>
@@ -1566,4 +1570,137 @@
         </div>
     </template>
      <!--  cart modal popup End-->
+    <!--  Quick view  popup start-->
+    <template id="quickview_popup" inherit_id="web.frontend_layout">
+        <xpath expr="//div[@id='wrapwrap']/main" position="inside">
+            <div class="modal fade quickview-modal modal_shown" id="shop_quick_view_modal"/>
+            <div class="modal fade quickview-modal-cart modal_shown" id="shop_cart_view_modal"/>
+        </xpath>
+    </template>
+    <template id='shop_quick_view_modal'>
+        <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class='pro_title'>
+                        <t t-esc="product.name"/>
+                    </h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span Class="mdl_close">X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row quick">
+                        <div class="left-row col-md-5">
+                            <div class="quick-product-image">
+                                <a t-att-href="'/shop/product/%s' % slug(product)">
+                                    <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
+                                </a>
+                                <!-- <t t-call="theme_scita.quick_view_image_variant_change"/> -->
+                            </div>
+                            <div class="pink-box">
+                                <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
+                                    <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
+                                    <t t-set="prod_curr_rate" t-value="0"/>
+                                    <t t-set="is_half_star" t-value="0"/>
+                                    <t t-foreach="range(0, 5)" t-as="every_prod_rate">
+                                      <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
+                                      <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
+                                        <i class="fa fa-star"/>
+                                      </t>
+                                      <t t-else="">
+                                        <t t-if="rating_val % 1 &gt; 0.01 and rating_val % 1 &lt; 0.99 and is_half_star == 0">
+                                          <i class="fa fa-star-half-o"/>
+                                          <t t-set="is_half_star" t-value="1"/>
+                                        </t>
+                                        <t t-else="">
+                                          <i class="fa fa-star-o"/>
+                                        </t>
+                                      </t>
+                                    </t>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right-row col-md-7" id="product_details">
+                            <div class="product-info">
+                                <t t-if="product.description_sale">
+                                    <div class="website-description">
+                                        <p t-field="product.description_sale"/>
+                                    </div>
+                                </t>
+                                <form t-if="product._is_add_to_cart_possible()" action="/shop/cart/update" method="POST">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                                    <t t-set="combination" t-value="product._get_first_possible_combination()"/>
+                                    <div class="js_product js_main_product">
+                                        <!-- quick_view_product -->
+                                        <t t-placeholder="select">
+                                            <input type="hidden" class="product_id" name="product_id" t-att-value="product.product_variant_id.id" />
+                                            <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
+                                            <t t-if="combination" t-call="sale.variants">
+                                                <t t-set="ul_class" t-value="'flex-column'"/>
+                                                <t t-set="parent_combination" t-value="None"/>
+                                            </t>
+                                            <t t-else="">
+                                                <ul class="d-none js_add_cart_variants"
+                                                    t-att-data-attribute_exclusions="{'exclusions: []'}"/>
+                                            </t>
+                                        </t>
+                                        <t class="col-md-12 price" t-call="website_sale.product_price" />
+                                        <div class="css_quantity input-group">
+                                            <div class="input-group-prepend">
+                                                <a t-attf-href="#" class="btn btn-secondary js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                    <i class="fa fa-minus"></i>
+                                                </a>
+                                            </div>
+                                            <input type="text" class="form-control quantity" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                                            <div class="input-group-append">
+                                                <a t-attf-href="#" class="btn btn-secondary float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                                                    <i class="fa fa-plus"></i>
+                                                </a>
+                                            </div>
+                                            <a role="button" class="btn btn-primary btn-lg a-submit d-block js_check_product d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+                                        </div>
+                                        <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                        <div id="product_option_block"/>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!--  Quick view  popup End -->
+    <template id='shop_cart_view_modal'>
+        <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="sct-cart-modal-main">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">X
+                        </button>
+                        <div class='sct-left-m-side'>
+                            <a t-att-href="'/shop/product/%s' % slug(product)">
+                                <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
+                            </a>
+                        </div>
+                        <div class='sct-right-m-side'>
+                            <h3 class='sct-pro-title'>
+                                <t t-esc="product.name"/>
+                            </h3>
+                            <div class="sct-prod-line">
+                                <span>Product successfully added to your</span>
+                                <a type="button" href="/shop/cart">shopping cart</a>
+                            </div>
+                            <div class="sct-cart-modal-btn">
+                                <a role="button" id="cnt_shopping" class="btn btn-primary" href="javascript:void(0)" data-dismiss="modal"><span>Continue Shopping</span></a>
+                                <a role="button" id="checkout_shopping" class="btn btn-primary" href="/shop/checkout?express=1"><span>Process Checkout</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
 </odoo>

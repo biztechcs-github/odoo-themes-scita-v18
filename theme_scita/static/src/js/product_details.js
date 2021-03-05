@@ -451,5 +451,49 @@ odoo.define('theme_scita.cart_hover', function (require) {
             }, 300);
         }
     });
+    // For quickview Start
+    publicWidget.registry.quickView = publicWidget.Widget.extend({
+        selector: "div#wrapwrap",
+        events: {
+            'click .quick_view_sct_btn': 'quickViewData',
+            'click .cart_view_sct_btn': 'cartViewData',
+        },
+        quickViewData: function(ev) {
+            var element = ev.currentTarget;
+            var product_id = $(element).attr('data-id');
+            ajax.jsonRpc('/theme_scita/shop/quick_view', 'call',{'product_id':product_id}).then(function(data) {
+                var sale = new publicWidget.registry.WebsiteSale();
 
+                    $("#shop_quick_view_modal").html(data);
+                    $("#shop_quick_view_modal").modal();
+                    sale.init();
+                    $(".quick_cover").css("display", "block");
+                    $("[data-attribute_exclusions]").on("change", function(ev) {
+                        sale.onChangeVariant(ev);
+                    });
+                    $("[data-attribute_exclusions]").trigger("change");
+                    $(".css_attribute_color input").click(function(ev){
+                        sale._changeColorAttribute(ev);
+                    });
+                    $(".a-submit").on("click", function(ev) {
+                        sale._onClickAdd(ev);
+                    });
+                    $("a.js_add_cart_json").on("click", function(ev) {
+                        sale._onClickAddCartJSON(ev);
+                    });
+                    $("input[name='add_qty']").on("change", function(ev) {
+                        sale._onChangeAddQuantity(ev);
+                    });
+            });
+        },
+        cartViewData: function(ev) {
+            var element = ev.currentTarget;
+            var product_id = $(element).attr('data-id');
+            ajax.jsonRpc('/theme_scita/shop/cart_view', 'call',{'product_id':product_id}).then(function(data) {
+                $("#shop_cart_view_modal").html(data);
+                $("#shop_cart_view_modal").modal();
+            });
+        }
+    });
+    // For quickview End
 });

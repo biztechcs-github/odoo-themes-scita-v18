@@ -58,7 +58,7 @@
                           outline: none;
                           background: var(--main-bg-color);
                           z-index: 9999;
-                          bottom: 60px;
+                          bottom: 130px;
                           right: 20px;
                           position: fixed;
                           opacity: 0;
@@ -339,6 +339,73 @@
                         .sct-cat-sidebar .sct-close-icon:focus { outline: none; }
                         .sct-cat-sidebar .side-menu { height: 100vh; box-sizing: border-box; padding-bottom: 50px;}
                         .sct-cat-sidebar .side-menu-head { padding: 20px; font-size: 20px; background-color: var(--main-font-color); color: var(--main-white-color); margin:0; border-bottom:1px solid #d9d9d9; }
+                        #product_detail {
+                            padding-bottom: 50px;
+                        }
+                        .ab-mob-view {
+                            position: fixed;
+                            left: 0;
+                            bottom: 0;
+                            background-color: white;
+                            width: 100%;
+                            z-index: 999;
+                            border-top: 1px solid #929292;
+                            padding: 5px 2px;
+                            display:flex;
+                            flex-wrap: wrap;
+                            box-sizing: border-box;
+                        }
+
+                        .ab-mob-view .ab-icons {
+                            flex: 0 0 20%;
+                            max-width: 20%;
+                            text-align: center;
+                            -ms-flex-item-align: center;
+                            -ms-grid-row-align: center;
+                            align-self: center;
+                        }
+
+                        .ab-mob-view .ab-icons .btn-link {
+                            padding: 5px 2px;
+                            width: 100%;
+                            display: block;
+                            background:transparent;
+                        }
+
+                        .ab-mob-view .ab-icons .btn-link a {
+                            width: 100%;
+                            display: block;
+                        }
+
+                        .ab-mob-view .ab-icons .btn-link span {
+                            display: block;
+                            color: #929292;
+                        }
+
+                        .ab-mob-view .ab-icons .btn-link span.fa {
+                            font-size: 24px;
+                        }
+
+                        .ab-mob-view .ab-icons .btn-link span.name-text {
+                            font-weight: bold;
+                            padding-top: 3px;
+                            font-size: 14px;
+                        }
+
+                        @media (max-width: 410px) {
+                            .ab-mob-view .ab-icons .btn-link span.name-text {
+                                font-size: 12px;
+                            }
+                        }
+
+                        .ab-mob-view .ab-icons:hover {
+                            border-radius: 8px;
+                            background-color: rgba(128, 128, 128, 0.4);
+                        }
+
+                        .ab-mob-view .ab-icons:hover .btn-link span {
+                            color: grey;
+                        }
                         <t t-raw="custom_css or ''" name="custom_css"/>
                     </style>
                 </head>
@@ -431,7 +498,57 @@
                         </script>
                     </amp-animation>
                     <button id="scrollToTopButton" on="tap:top.scrollTo(duration=200)" class="scrollToTop"><i class="fa fa-chevron-up"></i></button>
-                    <!-- Scroll to top End -->
+                    
+                    <div class="ab-mob-view d-flex flex-wrap d-md-none">
+                        <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
+                            <button class="btn btn-link" type="button">
+                                <a class="redirect-home" href="/">
+                                    <span class="fa fa-home"/>
+                                    <span class="name-text">Home</span>
+                                </a>
+                            </button>
+                        </div>
+                        <div class="ab-icons ab-category">
+                            <button class="btn btn-link" data-target="#product_category_list" on="tap:cat_sidebar.toggle" type="button">
+                                <span class="fa fa-th-large"/>
+                                <span class="name-text">Categories</span>
+                            </button>
+                        </div>
+                        <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
+                            <button class="btn btn-link" type="button">
+                                <a class="redirect-cart-page" href="/shop/cart">
+                                    <span class="fa fa-shopping-bag"/>
+                                    <span class="name-text">Bag</span>
+                                </a>
+                            </button>
+                        </div>
+                        <div t-att-class="'ab-icons ab-help active' if request.httprequest.path == '/help' else 'ab-icons ab-help' ">
+                            <button class="btn btn-link" type="button">
+                                <a class="redirect-help" href="/help">
+                                    <span class="fa fa-question-circle"/>
+                                    <span class="name-text">Help</span>
+                                </a>
+                            </button>
+                        </div>
+                        <div t-att-class="'ab-icons ab-myaccount active' if request.httprequest.path == '/my/home' or request.httprequest.path == '/web/login'  else 'ab-icons ab-myaccount' ">
+                            <t t-if="not user_id._is_public()">
+                                <button class="btn btn-link" type="button">
+                                    <a class="redirect-my-account" href="/my/home">
+                                        <span class="fa fa-user-circle"/>
+                                        <span class="name-text">Account</span>
+                                    </a>
+                                </button>
+                            </t>
+                            <t t-else="">
+                                <button class="btn btn-link d-md-none" type="button">
+                                    <a class="redirect-my-account" href="/web/login">
+                                        <span class="fa fa-user-circle"/>
+                                        <span class="name-text">My Account</span>
+                                    </a>
+                                </button>
+                            </t>
+                        </div>
+                    </div>
                 </body>
             </html>
         </t>
@@ -469,6 +586,21 @@
                             </t>
                         </t>
                     </ul>
+                </div>
+            </amp-sidebar>
+            <amp-sidebar id="cat_sidebar" layout="nodisplay" side="right" class="sct-cat-sidebar">
+                <div class="side-menu" id="amp_category_sidebar">
+                    <button on="tap:cat_sidebar.close" class="sct-close-icon">x</button>
+                    <h1 class="side-menu-head">Categories</h1>
+                    <div class="sct-cust-cat">
+                        <!-- <h2 class="sct-cat-tile">Categories</h2> -->
+                        <ul class="nav nav-pills nav-stacked mt16 sct-dw">
+                            <li t-att-class=" '' if category else 'active' "><a t-att-href="keep('/shop/amp',category=0)">All Products</a></li>
+                            <t t-foreach="categories" t-as="c">
+                               <t t-call="theme_scita.apm_category_list_view"/>
+                            </t>
+                        </ul>
+                    </div>
                 </div>
             </amp-sidebar>
         </xpath>
@@ -801,7 +933,7 @@
                 .fixed-footer {
                     position: fixed;
                     z-index: 9;
-                    bottom: 0;
+                    bottom: 67px;
                     left: 0;
                     right: 0;
                     text-align: center;
@@ -814,7 +946,7 @@
                 .fixed-footer .sct-btn .fa { font-size: 16px; padding-right: 7px; }
                 .fixed-footer .sct-btn:focus { outline: none; }
                 .oe_website_sale {
-                    margin-bottom: 80px;
+                    margin-bottom: 110px;
                 }
                 #my_sort_by .sct-box {
                     position: fixed;
@@ -891,7 +1023,7 @@
                     .sct_list_box .list-items { width: 45%; margin-bottom: 20px; }
                     .menu_head .sct-catg span { display: none; }
                     .fixed-footer { padding: 0; }
-                    .oe_website_sale { margin-bottom: 50px; }
+                    .oe_website_sale { margin-bottom: 110px; }
                     .sct_list_box .list-items .o_wsale_product_information .o_wsale_products_item_title a { font-size: 14px; }
                     .fixed-footer { background-color: var(--main-bg-color); }
                     .fixed-footer .sct-btn { padding: 15px 5px; display: inline-block; vertical-align: middle; width: 50%; box-shadow: none; color: var(--main-white-color); font-size: 16px; text-align: center; background-color: transparent; border: none; }
@@ -1170,6 +1302,27 @@
                 .oe_website_sale .sct-cus-variant .sct-color-atrb .css_attribute_color { width: 18px; height: 18px; border-radius: 50%; }
                 .oe_website_sale .sct-cus-variant .sct-color-atrb .css_attribute_color input { width: auto; height: auto; margin: 0; }
                 .oe_website_sale .sct-cus-variant .sct-color-atrb li { margin-right: 5px; }
+                .sct-cat-sidebar { padding:0; width: 350px; }
+                .sct-cat-sidebar .sct-close-icon { position: absolute; z-index: 9; right: 10px; top: 15px; color: var(--main-white-color); font-size: 24px; background: transparent; border: none; padding: 0; width: 30px; text-align: center; cursor: pointer; height: 30px; }
+                .sct-cat-sidebar .side-menu { height: 100vh; box-sizing: border-box; padding-bottom: 50px;}
+                .sct-cat-sidebar .side-menu-head { padding: 20px; font-size: 20px; background-color: var(--main-font-color); color: var(--main-white-color); margin:0; border-bottom:1px solid #d9d9d9; }
+                .sct-cat-sidebar .sct-dw li + li  { border-top: 1px solid var(--main-bg-color); }
+                .sct-cat-sidebar .sct-dw li a { display: block; padding: 0 20px; line-height: 40px; }
+                .sct-cat-sidebar .sct-dw li header { background-color: transparent; border: 0; padding-right: 50px; }
+                .sct-cat-sidebar .sct-dw li header .fa { position: absolute; z-index: 9; right: 10px; top: 0; bottom: 0; margin: auto; text-align: center; background-color: var(--main-bg-color); color: var(--main-white-color); width: 30px; height: 30px; line-height: 30px; cursor: pointer;}
+                .sct-cat-sidebar .sct-dw li ul { padding-left: 0; background-color: #d9d9d9; }
+                .sct-cat-sidebar .sct-dw li.active { background-color: #f0f0f0; }
+                .sct-cat-sidebar .sct-dw li header[aria-expanded="true"] .fa:before { content: "\f068"; }
+                .sct-cat-sidebar .sct-cat-tile { margin-top: 10px; font-size: 20px; color: var(--main-font-color); font-weight: bold; margin: 0; padding: 0 20px; line-height: 40px; border-bottom: 1px solid #d9d9d9; }
+                .sct-cat-sidebar .amp_form_view ul { padding: 0; }
+                .sct-cat-sidebar .amp_form_view { padding: 0 20px; }
+                .sct-cat-sidebar .amp_form_view .sct-sub-atr-title { font-size: 16px; padding: 0; margin-bottom: 10px; margin-top: 10px; color: var(--main-font-color); border-bottom: 1px solid #d9d9d9; padding-bottom: 10px; }
+                .sct-cat-sidebar .amp_form_view .css_attribute_color input { margin: 8px; height: 13px; }
+                .sct-cat-sidebar .amp_form_view .css_attribute_color { display: inline-block; border: 1px solid #999999; text-align: center; }
+                .sct-cat-sidebar .amp_form_view .css_attribute_color.active { border: 3px ridge #66ee66; }
+                .sct-cat-sidebar .amp_form_view .css_attribute_color.active input { margin: 6px; }
+                .sct-cat-sidebar .amp_form_view .form-control { width: 100%; border-radius: 0; box-shadow: none; }
+                .sct-cat-sidebar .amp_form_view .amp_apply_btn { border: none; box-shadow: none; background: var(--main-bg-color); padding: 0 25px; line-height: 35px; color: var(--main-white-color); font-size: 16px; font-weight: bold; cursor: pointer; }
                 @media (min-width:992px){
                     .prod-detail .sct-prod-img .img { max-width:80%;}
                 }
