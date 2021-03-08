@@ -56,7 +56,7 @@ backend theme
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com',
     'support': 'support@appjetty.com',
-    'depends': ['base_setup', 'web_editor'],
+    'depends': ['base_setup', 'web_editor', 'mail'],
     'data': [
         'views/template.xml',
         'data/data.xml',
