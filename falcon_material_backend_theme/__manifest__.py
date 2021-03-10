@@ -51,7 +51,7 @@ backend theme
     ''',
     'summary': 'Customizable Backend Theme Based on Material Design',
     'category': 'Theme/Backend',
-    'version': '14.0.1.0.0',
+    'version': '14.0.1.0.1',
     'license': 'OPL-1',
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com',
