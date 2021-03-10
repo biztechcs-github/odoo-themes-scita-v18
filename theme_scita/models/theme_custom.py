@@ -30,6 +30,8 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale.product_custom_text')
         self.disable_view_customize('website_sale.product_picture_magnify_auto')
         self.disable_view('website_sale_comparison.product_add_to_compare')
+        self.enable_view('website.header_hoverable_dropdown')
+
 
     @api.model
     def _toggle_view_customize(self, xml_id, active):

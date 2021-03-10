@@ -1296,9 +1296,6 @@
         </xpath>
     </template>
     <template id="scita_add_to_cart" inherit_id="theme_scita.theme_scita_products_item" active="True" customize_show="True" name="Add To Cart" priority="26">
-        <xpath expr="//form" position="before">
-            <t t-call='theme_scita.quick_view_model_add_cart'/>
-        </xpath>
         <xpath expr="//div[hasclass('sct-hover-info')]" position="inside">
             <t t-if="product.product_variant_ids">
                 
@@ -1310,13 +1307,14 @@
                     </t>
                     <t t-else=''>
                         <div class="ajax_cart_template">
-                            <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)"><span class="icon-basket"/></button>
+                            <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                                <span class="icon-basket"/>
+                            </button>
                         </div>
                     </t>
                 </t>
                 <t t-else=''>
                     <div class="ajax_cart_template">
-                        <!-- <button class="button btn btn-cart a-submit" data-toggle="modal" t-att-data-target="'#myQuickViewCartModal-%s' %(product.id)"><span class="icon-basket"/></button> -->
                         <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
                             <span class="icon-basket"/>
                         </button>
@@ -1350,12 +1348,8 @@
     </template>
     <!-- QuickView Enable Disable option -->
     <template id="quick_view_option" inherit_id="theme_scita.theme_scita_products_item" active="True" customize_show="True" name="Quick View" priority="22">
-       <!--  <xpath expr="//form" position="before">
-            <t t-call='theme_scita.quick_view_model'/>
-        </xpath> -->
         <xpath expr="//div[hasclass('sct-hover-info')]" position="inside">
             <t t-if="product.product_variant_ids">
-                <!-- <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View"> -->
                 <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                     <span class="fa fa-eye"/>
                 </button>
@@ -1535,41 +1529,6 @@
     </template>
     <!-- My Account page changes End -->
 
-    <!--  cart modal popup start-->
-    <template id='quick_view_model_add_cart'>
-        <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
-        <div class="modal fade quickview-modal-cart " role="dialog" t-att-id="'myQuickViewCartModal-%s' %(product.id)" tabindex="-1">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="sct-cart-modal-main">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">X
-                            </button>
-                            <div class='sct-left-m-side'>
-                                <a t-att-href="'/shop/product/%s' % slug(product)">
-                                    <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
-                                </a>
-                            </div>
-                            <div class='sct-right-m-side'>
-                                <h3 class='sct-pro-title'>
-                                    <t t-esc="product.name"/>
-                                </h3>
-                                <div class="sct-prod-line">
-                                    <span>Product successfully added to your</span>
-                                    <a type="button" href="/shop/cart">shopping cart</a>
-                                </div>
-                                <div class="sct-cart-modal-btn">
-                                    <a role="button" id="cnt_shopping" class="btn btn-primary" href="javascript:void(0)" data-dismiss="modal"><span>Continue Shopping</span></a>
-                                    <a role="button" id="checkout_shopping" class="btn btn-primary" href="/shop/checkout?express=1"><span>Process Checkout</span></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-     <!--  cart modal popup End-->
     <!--  Quick view  popup start-->
     <template id="quickview_popup" inherit_id="web.frontend_layout">
         <xpath expr="//div[@id='wrapwrap']/main" position="inside">
@@ -1596,7 +1555,6 @@
                                 <a t-att-href="'/shop/product/%s' % slug(product)">
                                     <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
                                 </a>
-                                <!-- <t t-call="theme_scita.quick_view_image_variant_change"/> -->
                             </div>
                             <div class="pink-box">
                                 <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">

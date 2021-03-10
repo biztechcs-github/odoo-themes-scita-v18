@@ -19,6 +19,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
     });
     //End megamemu
      $(document).ready(function(){
+        if ($('div').hasClass("o_offcanvas_menu_backdrop")){
+            $(".o_offcanvas_menu_backdrop").parent().addClass("sct_off_canvas");
+        }
         $(window).trigger('scroll');
         //mobile filter overlay script
         $('.sct_btm_mobile .btn-link').on("click",function() {

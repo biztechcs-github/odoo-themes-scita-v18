@@ -334,6 +334,7 @@ odoo.define('theme_scita.cart_hover', function (require) {
     var ajax = require('web.ajax');
     var core = require('web.core');
     var wSaleUtils = require('website_sale.utils');
+    var sAnimations = require('website.content.snippets.animation');
     var timeout;
 
     publicWidget.registry.scita_cart_popup = publicWidget.Widget.extend({
@@ -496,4 +497,12 @@ odoo.define('theme_scita.cart_hover', function (require) {
         }
     });
     // For quickview End
+    // For hoverableDropdown extend start
+    publicWidget.registry.hoverableDropdown = publicWidget.registry.hoverableDropdown.extend({
+        events: _.extend({}, publicWidget.RootWidget.prototype.events || {}, {
+            'mouseenter .li-mega-menu': '_onMouseEnter',
+            'mouseleave .li-mega-menu': '_onMouseLeave',
+        }),
+    });
+    // For hoverableDropdown extend End
 });

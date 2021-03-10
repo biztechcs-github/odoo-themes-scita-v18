@@ -14,7 +14,6 @@
 		                                <div class="container">
 		                                    <div class="row product-detail justify-content-center">
 		                                        <t t-as="product" t-foreach="deal_products">
-		                                            <t t-call='theme_scita.quick_view_model'/>
 		                                            <t t-set="combination_info" t-value="product._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
 		                                            <div class="col-md-3 col-sm-6 list-items">
 		                                                <div class="cs-product" t-att-data-publish="product.website_published and 'on' or 'off'">
@@ -46,7 +45,7 @@
 		                                                    <div class="pwd-desc">
 		                                                        <div class="pink-box">
 		                                                                <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-		                                                                    <div t-set="rating_val" t-value="product.sudo().rating_get_stats([('website_published', '=', True)]).get('avg') / 2"/>
+		                                                                    <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
 		                                                                    <t t-set="prod_curr_rate" t-value="0"/>
 		                                                                    <t t-set="is_half_star" t-value="0"/>
 		                                                                    <t t-foreach="range(0, 5)" t-as="every_prod_rate">
@@ -87,9 +86,9 @@
 		                                                            <form action="/shop/cart/update" method="post">
 		                                                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
 		                                                                <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-		                                                                <button type="button" class="btn scita_cstm_btn  qbtn" data-toggle="modal" t-att-data-target="'#myQuickViewModal-%s' %(product.id)" title="Quick View">
-		                                                                    <span class="fa fa-eye"/>
-		                                                                </button>
+		                                                                <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
+														                    <span class="fa fa-eye"/>
+														                </button>
 		                                                                <t t-if="request.website.viewref('theme_scita.add_to_compare').active and product.product_variant_ids">
 		                                                                   <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-balance-scale"></span></a>
 		                                                                </t>
