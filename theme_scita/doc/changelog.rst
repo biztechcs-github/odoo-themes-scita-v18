@@ -15,3 +15,14 @@ Bug Fix
 *************************
 
 1. Fixed box layout design issue.
+
+
+*************************
+New Enhancements and Improvement
+*************************
+
+1. Added new Header with mobile responsive bottom panel.
+2. Fixed issue for scroll to top.
+3. Fixed issue for header menu on hover.
+4. Fixed issue header language for multiwebsite compatible.
+5. Improved code for quick view, ajax cart and shop page.

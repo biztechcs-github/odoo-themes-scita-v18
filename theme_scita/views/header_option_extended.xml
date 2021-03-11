@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="help_page" model="ir.ui.view">
+        <field name="name">Help</field>
+        <field name="type">qweb</field>
+        <field name="key">theme_scita.help_page</field>
+        <field name="arch" type="xml">
+            <t name="Help" t-name="theme_scita.help_page">
+                <t t-call="website.layout">
+                    <div id="wrap">
+                        <div class="oe_structure"/>
+                        <h1>Welcome to help page</h1>
+                        <div class="oe_structure"/>
+                    </div>
+                </t>
+            </t>
+        </field>
+    </record>
+    <record id="menu_help_page" model="website.page">
+        <field name="name">Help</field>
+        <field name="url">/help</field>
+        <field name="view_id" ref="theme_scita.help_page"/>
+        <field name="website_indexed">True</field>
+        <field name="website_published">True</field>
+    </record>
+    <template active="False" id="asset_mobile_category" inherit_id="website.assets_frontend" name="Frontend">
+        <xpath expr="//link[last()]" position="after">
+            <link href="/theme_scita/static/src/scss/mobile_category.scss" rel="stylesheet" type="text/scss"/>
+            <script src="/theme_scita/static/src/js/mobile_view.js" type="text/javascript"/>
+        </xpath>
+    </template>
+    <template active="False" id="product_details_categories" name="cat list">
+        <li class="view-category-item">
+            <i class="fa fa-plus" data-toggle="collapse" t-att-data-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>
+            <a t-att-href="'/shop/category/%s' % slug(category)">
+                <span class="ab_categ_name" t-field="category.name"/>
+            </a>
+            <div class="collapse" t-att-id="'collapse_category'+str(category.id)" t-if="category.child_id">
+                <ul class="nav nav-pills flex-column nav-hierarchy" t-if="category.child_id">
+                    <t t-as="category" t-foreach="category.child_id">
+                        <t t-call="theme_scita.product_details_categories"/>
+                    </t>
+                </ul>
+            </div>
+        </li>
+    </template>
+    <template active="False" id="theme_product_details_category" inherit_id="website.layout" name="category">
+        <xpath expr="//footer" position="before">
+            <div class="collapse" id="product_category_list">
+                <div class="ab_ctaeg_view">
+                    <h3 class="ab_category_title">Categories</h3>
+                    <span class="ab-category-close d-md-none" data-target="#product_category_list" data-toggle="collapse">X</span>
+                </div>
+                <div class="accordion" id="ab_cat_drop_down">
+                    <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
+                        <t t-set="cat" t-value="website.get_categories(category)"/>
+                        <t t-as="category" t-foreach="cat.get('categ')">
+                            <t t-call="theme_scita.product_details_categories"/>
+                        </t>
+                    </ul>
+                </div>
+            </div>
+            <div class="ab-mob-view d-flex flex-wrap d-md-none">
+                <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-home" href="/">
+                            <span class="fa fa-home"/>
+                            <span class="name-text">Home</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="ab-icons ab-category">
+                    <button class="btn btn-link" data-target="#product_category_list" data-toggle="collapse" type="button">
+                        <span class="fa fa-th-large"/>
+                        <span class="name-text">Categories</span>
+                    </button>
+                </div>
+                <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-cart-page" href="/shop/cart">
+                            <span class="fa fa-shopping-bag"/>
+                            <span class="name-text">Bag</span>
+                        </a>
+                    </button>
+                </div>
+                <div t-att-class="'ab-icons ab-help active' if request.httprequest.path == '/help' else 'ab-icons ab-help' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-help" href="/help">
+                            <span class="fa fa-question-circle"/>
+                            <span class="name-text">Help</span>
+                        </a>
+                    </button>
+                </div>
+                <div t-att-class="'ab-icons ab-myaccount active' if request.httprequest.path == '/my/home' or request.httprequest.path == '/web/login'  else 'ab-icons ab-myaccount' ">
+                    <t t-if="not user_id._is_public()">
+                        <button class="btn btn-link" type="button">
+                            <a class="redirect-my-account" href="/my/home">
+                                <span class="fa fa-user-circle"/>
+                                <span class="name-text">Account</span>
+                            </a>
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <button class="btn btn-link d-md-none" type="button">
+                            <a class="redirect-my-account" href="/web/login">
+                                <span class="fa fa-user-circle"/>
+                                <span class="name-text">My Account</span>
+                            </a>
+                        </button>
+                    </t>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

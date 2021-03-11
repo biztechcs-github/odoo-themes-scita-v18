@@ -1366,9 +1366,9 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
             <attribute name='class' add="sct-fot-belt" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <!-- <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
             <attribute name='class' add="description" separator=" "/>
-        </xpath>
+        </xpath> -->
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
             <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
         </xpath>
@@ -1382,6 +1382,9 @@
                     <span t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name" t-field="website.footer_logo" t-options="{'widget': 'image'}"/>
                 </a>
             </div>
+        </xpath>
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+            <attribute name='class'>col-sm text-sm-left text-muted description</attribute>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
             <attribute name='class'>container sct-pd-0</attribute>

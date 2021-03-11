@@ -1000,3 +1000,14 @@ class PWASupport(http.Controller):
     def pwa_offline_page(self):
         values = {}
         return request.render("theme_scita.pwa_offline_template", values)
+
+    @http.route("/theme_scita/shop/quick_view", type="json", auth="public", website=True)
+    def scita_quick_view_data(self,product_id=None):
+        product = request.env['product.template'].browse(int(product_id))
+        return request.env['ir.ui.view']._render_template("theme_scita.shop_quick_view_modal", {'product':product})
+        
+    @http.route("/theme_scita/shop/cart_view", type="json", auth="public", website=True)
+    def scita_cart_view_data(self,product_id=None):
+        product = request.env['product.template'].browse(int(product_id))
+        return request.env['ir.ui.view']._render_template("theme_scita.shop_cart_view_modal", {'product':product})
+
