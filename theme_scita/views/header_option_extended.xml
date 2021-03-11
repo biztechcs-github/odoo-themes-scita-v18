@@ -9,7 +9,88 @@
                 <t t-call="website.layout">
                     <div id="wrap">
                         <div class="oe_structure"/>
-                        <h1>Welcome to help page</h1>
+                        <section class="accordion_v_1 o_colored_level" data-disp="accordion" data-snippet="accordion_v_1" data-name="Accordion Snippet 1">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed sct_top_row">
+                                    <div class="col-md-12 o_colored_level">
+                                        <h2 class="section-title o_default_snippet_text">Frequently Ask Question</h2>
+                                    </div>
+                                </div>
+                                <div class="container sct_btm_row">
+                                    <div id="myCollapse" class="accordion" role="tablist">
+                                        <div class="card bg-white" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1615462402837">Does hudly work with car?</a>
+                                            <div class="collapse show" role="tabpanel" id="myCollapseTab1615462402837">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry1.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-white" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1615462402838">Does hudly work with my phone?</a>
+                                            <div class="collapse" role="tabpanel" id="myCollapseTab1615462402838">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry2.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-white" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myCollapse" data-target="#myCollapseTab1615462402839">Lorem Ipsum is simply dummy text?</a>
+                                            <div class="collapse" role="tabpanel" id="myCollapseTab1615462402839">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry3.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="accordion_v_2 o_colored_level" data-disp="accordion" data-snippet="accordion_v_2" data-name="Accordion Snippet 2">
+                            <div class="container">
+                                <div class="row s_nb_column_fixed sct_top_row">
+                                    <div class="col-md-12 o_colored_level">
+                                        <h2 class="section-title o_default_snippet_text">Frequently Ask Question</h2>
+                                    </div>
+                                </div>
+                                <div class="container sct_btm_row">
+                                    <div id="myAccorningCollapse" class="accordion" role="tablist">
+                                        <div class="card bg-white active" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header o_default_snippet_text" data-parent="#myAccorningCollapse" data-target="#myCollapseTab1615462414596">Does hudly work with car?</a>
+                                            <div class="collapse show" role="tabpanel" id="myCollapseTab1615462414596">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry1.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-white" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myAccorningCollapse" data-target="#myCollapseTab1615462414597">Does hudly work with my phone?</a>
+                                            <div class="collapse" role="tabpanel" id="myCollapseTab1615462414597">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry2.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-white" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myAccorningCollapse" data-target="#myCollapseTab1615462414598">Lorem Ipsum is simply dummy text?</a>
+                                            <div class="collapse" role="tabpanel" id="myCollapseTab1615462414598">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry3.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card bg-white" data-name="Item">
+                                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header o_default_snippet_text" data-parent="#myAccorningCollapse" data-target="#myCollapseTab1615462414599">Lorem Ipsum is simply dummy text?</a>
+                                            <div class="collapse" role="tabpanel" id="myCollapseTab1615462414599">
+                                                <div class="card-body">
+                                                    <p class="sct_simple_text o_default_snippet_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry3.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                         <div class="oe_structure"/>
                     </div>
                 </t>

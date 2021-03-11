@@ -2662,9 +2662,9 @@
         </record>
         <record id="theme_scita.sct_sports_c_1_obj" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_sports_c_1_obj.jpg</field>
+            <field name="name">sct_sports_c_1_obj.png</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/scita_demo_img/sports/c-obj-1.jpg</field>
+            <field name="url">/theme_scita/static/src/img/scita_demo_img/sports/c-obj-1.png</field>
         </record>
         <record id="theme_scita.sct_sports_c_2" model="ir.attachment">
             <field name="public" eval="True"/>
@@ -2674,9 +2674,9 @@
         </record>
         <record id="theme_scita.sct_sports_c_2_obj" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_sports_c_2_obj.jpg</field>
+            <field name="name">sct_sports_c_2_obj.png</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/scita_demo_img/sports/c-obj-2.jpg</field>
+            <field name="url">/theme_scita/static/src/img/scita_demo_img/sports/c-obj-2.png</field>
         </record>
         <record id="theme_scita.sct_sports_c_3" model="ir.attachment">
             <field name="public" eval="True"/>
@@ -2686,9 +2686,9 @@
         </record>
         <record id="theme_scita.sct_sports_c_3_obj" model="ir.attachment">
             <field name="public" eval="True"/>
-            <field name="name">sct_sports_c_3_obj.jpg</field>
+            <field name="name">sct_sports_c_3_obj.png</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/scita_demo_img/sports/c-obj-3.jpg</field>
+            <field name="url">/theme_scita/static/src/img/scita_demo_img/sports/c-obj-3.png</field>
         </record>
         <record id="theme_scita.sct_sports_d_o_d" model="ir.attachment">
             <field name="public" eval="True"/>
