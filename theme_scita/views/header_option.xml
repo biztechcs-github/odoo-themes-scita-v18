@@ -95,7 +95,7 @@
                                     </a>
                                     <div class="toggle-config o_hidden">
                                         <div class="options">
-                                            <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                            <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                 <label>Language</label>
                                                 <t t-call="website.placeholder_header_language_selector">
                                                     <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -271,7 +271,7 @@
                                     </a>
                                     <div class="toggle-config o_hidden">
                                         <div class="options">
-                                            <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                            <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                 <label>Language</label>
                                                 <t t-call="website.placeholder_header_language_selector">
                                                     <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -353,7 +353,7 @@
                                     </a>
                                     <div class="toggle-config o_hidden">
                                         <div class="options">
-                                            <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                            <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                 <label>Language</label>
                                                 <t t-call="website.placeholder_header_language_selector">
                                                     <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -804,7 +804,7 @@
                         </div>
                     </div>
                 </t>
-                <div class="lang-opt" t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
+                <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
                     <span data-toggle="collapse" data-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
@@ -928,7 +928,7 @@
                                     </a>
                                     <div class="toggle-config o_hidden">
                                         <div class="options">
-                                            <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                            <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                 <label>Language</label>
                                                 <t t-call="website.placeholder_header_language_selector">
                                                     <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -1293,7 +1293,7 @@
                                     </a>
                                     <div class="toggle-config o_hidden">
                                         <div class="options">
-                                            <div t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                            <div t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                 <label>Language</label>
                                                 <t t-call="website.placeholder_header_language_selector">
                                                     <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -1353,7 +1353,7 @@
                             <div class="col-md-4 col-6 upper-left-side">
                                 <div class="h-left">
                                     <ul class="nav lan_pricelist">
-                                        <li t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
+                                        <li t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
                                             <t t-call="website.placeholder_header_language_selector">
                                                 <t t-set="_div_classes" t-value="'ml-2'"/>
                                             </t>
@@ -1491,7 +1491,7 @@
                                     <li class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
                                         <t t-call="website_sale.pricelist_list"/>
                                     </li>
-                                    <li t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
+                                    <li t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
                                         <t t-call="website.placeholder_header_language_selector">
                                             <t t-set="_div_classes" t-value="'ml-2'"/>
                                         </t>
@@ -1729,7 +1729,7 @@
                                     <li class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
                                         <t t-call="website_sale.pricelist_list"/>
                                     </li>
-                                    <li t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                    <li t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                         <t t-call="website.placeholder_header_language_selector">
                                             <t t-set="_div_classes" t-value="'ml-2'"/>
                                         </t>
@@ -1924,7 +1924,7 @@
                         </div>
                     </div>
                 </t>
-                <div class="lang-opt" t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
+                <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
                     <span data-toggle="collapse" data-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
@@ -2058,7 +2058,7 @@
                                             </a>
                                             <div class="toggle-config o_hidden">
                                                 <div class="options">
-                                                    <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                                    <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                         <label>Language</label>
                                                         <t t-call="website.placeholder_header_language_selector">
                                                             <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -2235,7 +2235,7 @@
                         </div>
                     </div>
                 </t>
-                <div class="lang-opt" t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
+                <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
                     <span data-toggle="collapse" data-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
@@ -2412,7 +2412,7 @@
                         </div>
                     </div>
                 </t>
-                <div class="lang-opt" t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
+                <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
                     <span data-toggle="collapse" data-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
@@ -2776,7 +2776,7 @@
                                             </a>
                                             <div class="toggle-config o_hidden">
                                                 <div class="options">
-                                                    <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                                    <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                         <label>Language</label>
                                                         <t t-call="website.placeholder_header_language_selector">
                                                             <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -2916,7 +2916,7 @@
                                     </a>
                                     <div class="toggle-config o_hidden">
                                         <div class="options">
-                                            <ul t-if="request.env['ir.ui.view'].sudo().search([('key', '=', 'website.header_language_selector')]).active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
+                                            <ul t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
                                                 <label>Language</label>
                                                 <t t-call="website.placeholder_header_language_selector">
                                                     <t t-set="_div_classes" t-value="'ml-2'"/>
