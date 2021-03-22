@@ -1384,7 +1384,7 @@
             </div>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
-            <attribute name='class'>col-sm text-sm-left text-muted description</attribute>
+            <attribute name='class'>col-sm text-sm-left text-md-right text-muted description</attribute>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
             <attribute name='class'>container sct-pd-0</attribute>
