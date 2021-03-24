@@ -205,7 +205,7 @@
                                                 </ul>
                                             </div>
                                             <div class="col-md-6 sct-right-side">
-                                                <form action="/website_form/" method="post" data-model_name="mail.mail" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
+                                                <form action="/website_form/" method="post" t-att-data-model_name="'crm.lead' if request.env['ir.module.module'].sudo().search([('name', '=', 'website_crm'),('state','=','installed')]) else 'mail.mail'" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
                                                     <div class="form-group row form-field o_website_form_required_custom">
                                                         <div class="col-12">
                                                             <input type="text" placeholder="Name*" class="form-control o_website_form_input" name="contact_name" t-att-value="request.params.get('contact_name', '')" required=""/>
@@ -236,6 +236,12 @@
                                                             <textarea class="form-control o_website_form_input" placeholder="Your Question*" name="description" required=""><t t-esc="request.params.get('description', '')"/></textarea>
                                                         </div>
                                                     </div>
+                                                    <div class="form-group row form-field d-none">
+                                                            <div class="col-12">
+                                                                <label class="col-form-label" for="email_to">Email To</label>
+                                                                <input type="hidden" class="form-control o_website_form_input" name="email_to" t-att-value="res_company.email"/>
+                                                            </div>
+                                                        </div>
                                                     <div class="form-group row">
                                                         <div class="col-12">
                                                             <a href="#" role="button" class="btn btn-primary btn-lg o_website_form_send">Send</a>
@@ -273,7 +279,7 @@
                                         </div>
                                         <div class="row justify-content-between bottom-row">
                                             <div class="col-md-7 sct-left">
-                                                <form action="/website_form/" method="post" data-model_name="mail.mail" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
+                                                <form action="/website_form/" method="post" t-att-data-model_name="'crm.lead' if request.env['ir.module.module'].sudo().search([('name', '=', 'website_crm'),('state','=','installed')]) else 'mail.mail'" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group form-field o_website_form_required_custom">
@@ -319,6 +325,12 @@
                                                                 <div class="data">
                                                                     <textarea class="form-control o_website_form_input" name="description" required=""><t t-esc="request.params.get('description', '')"/></textarea>
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row form-field d-none">
+                                                            <div class="col-md-12">
+                                                                <label class="col-form-label" for="email_to">Email To</label>
+                                                                <input type="hidden" class="form-control o_website_form_input" name="email_to" t-att-value="res_company.email"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -458,7 +470,7 @@
                                         </div>
                                         <div class="row bottom-row">
                                             <div class="col-md-12">
-                                                <form action="/website_form/" method="post" data-model_name="mail.mail" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
+                                                <form action="/website_form/" method="post" t-att-data-model_name="'crm.lead' if request.env['ir.module.module'].sudo().search([('name', '=', 'website_crm'),('state','=','installed')]) else 'mail.mail'" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group form-field o_website_form_required_custom">
@@ -498,6 +510,12 @@
                                                                 <div class="data">
                                                                     <textarea class="form-control o_website_form_input"  placeholder="Your Question*" name="description" required=""><t t-esc="request.params.get('description', '')"/></textarea>
                                                                 </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row form-field d-none">
+                                                            <div class="col-md-12">
+                                                                <label class="col-form-label" for="email_to">Email To</label>
+                                                                <input type="hidden" class="form-control o_website_form_input" name="email_to" t-att-value="res_company.email"/>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -542,7 +560,7 @@
                                         </div>
                                         <div class="row middle-row">
                                             <div class="col-md-12">
-                                                <form action="/website_form/" method="post" data-model_name="mail.mail" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
+                                                <form action="/website_form/" method="post" t-att-data-model_name="'crm.lead' if request.env['ir.module.module'].sudo().search([('name', '=', 'website_crm'),('state','=','installed')]) else 'mail.mail'" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
                                                     <div class="form-group row form-field o_website_form_required_custom">
                                                         <label class="col-lg-3 col-md-4 col-form-label" for="contact_name">Your Name</label>
                                                         <div class="col-lg-7 col-md-8">
@@ -577,6 +595,14 @@
                                                         <label class="col-lg-3 col-md-4 col-form-label" for="description">Your Question</label>
                                                         <div class="col-lg-7 col-md-8">
                                                             <textarea class="form-control o_website_form_input" name="description" required=""><t t-esc="request.params.get('description', '')"/></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group row form-field d-none">
+                                                        <div class="col-lg-3 col-md-4">
+                                                            <label class="col-form-label" for="email_to">Email To</label>
+                                                        </div>
+                                                        <div class="col-lg-7 col-md-8">
+                                                            <input type="hidden" class="form-control o_website_form_input" name="email_to" t-att-value="res_company.email"/>
                                                         </div>
                                                     </div>
                                                     <div class="form-group row">
@@ -683,7 +709,7 @@
                                             </div>
                                             <div class="col-md-6 sct-right">
                                                 <div class="sct-box">
-                                                    <form action="/website_form/" method="post" data-model_name="mail.mail" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
+                                                    <form action="/website_form/" method="post" t-att-data-model_name="'crm.lead' if request.env['ir.module.module'].sudo().search([('name', '=', 'website_crm'),('state','=','installed')]) else 'mail.mail'" data-success_page="/contactus-thank-you" class="s_website_form container-fluid" enctype="multipart/form-data" data-editable-form="false">
                                                         <div class="form-group row form-field o_website_form_required_custom">
                                                             <div class="col-12">
                                                                 <input type="text" placeholder="Name*" class="form-control o_website_form_input" name="contact_name" t-att-value="request.params.get('contact_name', '')" required=""/>
@@ -712,6 +738,12 @@
                                                         <div class="form-group row form-field o_website_form_required_custom">
                                                             <div class="col-12">
                                                                 <textarea class="form-control o_website_form_input" placeholder="Your Question*" name="description" required=""><t t-esc="request.params.get('description', '')"/></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row form-field d-none">
+                                                            <div class="col-12">
+                                                                <label class="col-form-label" for="email_to">Email To</label>
+                                                                <input type="hidden" class="form-control o_website_form_input" name="email_to" t-att-value="res_company.email"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row">

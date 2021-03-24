@@ -32,3 +32,4 @@ Improvement
 *************************
 
 1. Improve footer copyright design
+2. Fixed issue for our contactus form.
