@@ -26,3 +26,10 @@ New Enhancements and Improvement
 3. Fixed issue for header menu on hover.
 4. Fixed issue header language for multiwebsite compatible.
 5. Improved code for quick view, ajax cart and shop page.
+
+*************************
+Improvement
+*************************
+
+1. Improve footer copyright design
+2. Fixed issue for our contactus form.
