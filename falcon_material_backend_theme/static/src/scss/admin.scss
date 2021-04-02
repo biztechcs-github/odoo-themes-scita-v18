@@ -2252,3 +2252,43 @@ html .o_loading {
 	}
 }
 /*theme loader style end*/
+
+/*responsive fron screen design*/
+html .o_web_client > .o_main .o_action_manager {
+	.o_control_panel {
+		.o_cp_bottom {
+			.o_cp_bottom_right {
+				align-items: center;
+				.o_search_options {
+					.o_dropdown {
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+		@media (max-width: 1199px) {
+			.o_cp_bottom_right > .o_cp_switch_buttons > .btn:first-child {
+				margin-left: 0;	
+			}
+			.o_cp_top {
+				flex-wrap: wrap;
+			}
+			.o_cp_bottom {
+				flex-wrap: wrap;
+				.o_cp_bottom_right {
+					flex-wrap: wrap;
+					margin-top: 10px;
+					.btn-group {
+						.o_dropdown {
+							button {
+								.o_dropdown_title, .fa.float-right {
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
