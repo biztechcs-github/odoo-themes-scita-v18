@@ -113,6 +113,9 @@
         </xpath>
     </template>
     <template id="web_login_background_template" inherit_id="web.layout">
+        <xpath expr="//head/meta[last()]" position="after">
+            <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+        </xpath>
         <xpath expr="//head" position="inside">
             <t t-set='login_page_back_on' t-value="request.env['ir.config_parameter'].sudo().get_param('is_login_background')"/>
             <t t-set='login_page_back_type' t-value="request.env['ir.config_parameter'].sudo().get_param('is_back_img_color')"/>
