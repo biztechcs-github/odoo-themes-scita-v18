@@ -33,3 +33,10 @@ Improvement
 
 1. Improve footer copyright design
 2. Fixed issue for our contactus form.
+
+*************************
+Bug Fix
+*************************
+
+1. Fixed the issue of languaue in https for dynamic snippet
+2. Fixed the issue of owl rtl slider

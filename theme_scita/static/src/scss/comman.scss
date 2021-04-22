@@ -1800,3 +1800,9 @@ body header .navbar-expand-lg .navbar-collapse {
 		}
 	}
 }
+.owl-carousel.owl-rtl .owl-item {
+    float: left !important;
+}
+.owl-carousel.owl-rtl {
+    direction: ltr !important;
+}

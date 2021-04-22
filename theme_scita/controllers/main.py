@@ -62,47 +62,47 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def scita_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.theme_scita_blog_slider_view", values)
+            return request.website.viewref("theme_scita.theme_scita_blog_slider_view")._render(values)
 
-    @http.route(['/theme_scita/health_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/health_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def health_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.health_blog_slider_view", values)
+            return request.website.viewref("theme_scita.health_blog_slider_view")._render(values)
 
-    @http.route(['/theme_scita/second_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/second_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def second_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.scita_blog_2_slider_view", values)
+            return request.website.viewref("theme_scita.scita_blog_2_slider_view")._render(values)
 
-    @http.route(['/theme_scita/third_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/third_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def third_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.scita_blog_3_slider_view", values)
+            return request.website.viewref("theme_scita.scita_blog_3_slider_view")._render(values)
 
-    @http.route(['/theme_scita/six_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/six_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def six_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.scita_blog_6_slider_view", values)
+            return request.website.viewref("theme_scita.scita_blog_6_slider_view")._render(values)
 
-    @http.route(['/theme_scita/forth_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/forth_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def forth_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.scita_blog_4_slider_view", values)
+            return request.website.viewref("theme_scita.scita_blog_4_slider_view")._render(values)
 
-    @http.route(['/theme_scita/fifth_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/fifth_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def fifth_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.scita_blog_5_slider_view", values)
+            return request.website.viewref("theme_scita.scita_blog_5_slider_view")._render(values)
 
     @http.route(['/theme_scita/seven_blog_get_dynamic_slider'], type='http', auth='public', website=True)
     def seven_get_dynamic_slider(self, **post):
@@ -110,11 +110,11 @@ class ScitaSliderSettings(http.Controller):
             values = self.get_blog_data(post.get('slider-type'))
             return request.render("theme_scita.scita_blog_7_slider_view", values)
 
-    @http.route(['/theme_scita/eight_blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/eight_blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def eight_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             values = self.get_blog_data(post.get('slider-type'))
-            return request.render("theme_scita.scita_blog_8_slider_view", values)
+            return request.website.viewref("theme_scita.scita_blog_8_slider_view")._render(values)
 
     @http.route(['/theme_scita/blog_image_effect_config'], type='json', auth='public', website=True)
     def scita_product_image_dynamic_slider(self, **post):
@@ -129,57 +129,57 @@ class ScitaSliderSettings(http.Controller):
         return values
 
     # for Client slider
-    @http.route(['/theme_scita/get_clients_dynamically_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/get_clients_dynamically_slider'], type='json', auth='public', website=True)
     def get_clients_dynamically_slider(self, **post):
         values = self.get_clients_data()
-        return request.render("theme_scita.theme_scita_client_slider_view", values)
+        return request.website.viewref("theme_scita.theme_scita_client_slider_view")._render(values)
 
-    @http.route(['/theme_scita/second_get_clients_dynamically_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/second_get_clients_dynamically_slider'], type='json', auth='public', website=True)
     def second_get_clients_dynamically_slider(self, **post):
         values = self.get_clients_data()
-        return request.render("theme_scita.second_client_slider_view", values)
+        return request.website.viewref("theme_scita.second_client_slider_view")._render(values)
 
-    @http.route(['/theme_scita/third_get_clients_dynamically_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/third_get_clients_dynamically_slider'], type='json', auth='public', website=True)
     def third_get_clients_dynamically_slider(self, **post):
         values = self.get_clients_data()
-        return request.render("theme_scita.third_client_slider_view", values)
+        return request.website.viewref("theme_scita.third_client_slider_view")._render(values)
 
     # our team
 
-    @http.route(['/biztech_emp_data_one/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_one/employee_data'], type='json', auth='public', website=True)
     def get_team_one_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.it_our_team_view", values)
+        return request.website.viewref("theme_scita.it_our_team_view")._render(values)
 
-    @http.route(['/biztech_emp_data_two/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_two/employee_data'], type='json', auth='public', website=True)
     def get_team_two_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.our_team_varient_2_view", values)
+        return request.website.viewref("theme_scita.our_team_varient_2_view")._render(values)
 
-    @http.route(['/biztech_emp_data_three/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_three/employee_data'], type='json', auth='public', website=True)
     def get_team_three_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.our_team_varient_3_view", values)
+        return request.website.viewref("theme_scita.our_team_varient_3_view")._render(values)
 
-    @http.route(['/biztech_emp_data_four/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_four/employee_data'], type='json', auth='public', website=True)
     def get_team_four_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.our_team_varient_4_view", values)
+        return request.website.viewref("theme_scita.our_team_varient_4_view")._render(values)
 
-    @http.route(['/biztech_emp_data_five/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_five/employee_data'], type='json', auth='public', website=True)
     def get_team_five_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.our_team_varient_5_view", values)
+        return request.website.viewref("theme_scita.our_team_varient_5_view")._render(values)
 
-    @http.route(['/biztech_emp_data_six/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_six/employee_data'], type='json', auth='public', website=True)
     def get_team_six_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.our_team_varient_6_view", values)
+        return request.website.viewref("theme_scita.our_team_varient_6_view")._render(values)
 
-    @http.route(['/biztech_emp_data_seven/employee_data'], type='http', auth='public', website=True)
+    @http.route(['/biztech_emp_data_seven/employee_data'], type='json', auth='public', website=True)
     def get_team_seven_dynamically_slider(self, **post):
         values = self.get_teams_data()
-        return request.render("theme_scita.our_team_varient_7_view", values)
+        return request.website.viewref("theme_scita.our_team_varient_7_view")._render(values)
 
     # For Category slider
 
@@ -193,29 +193,29 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/category_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/category_get_dynamic_slider'], type='json', auth='public', website=True)
     def category_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
-            return request.render("theme_scita.theme_scita_cat_slider_view", values)
+            return request.website.viewref("theme_scita.theme_scita_cat_slider_view")._render(values)
 
-    @http.route(['/theme_scita/second_get_dynamic_cat_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/second_get_dynamic_cat_slider'], type='json', auth='public', website=True)
     def second_get_dynamic_cat_slider(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
-            return request.render("theme_scita.second_cat_slider_view", values)
+            return request.website.viewref("theme_scita.second_cat_slider_view")._render(values)
 
-    @http.route(['/theme_scita/category_slider_3'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/category_slider_3'], type='json', auth='public', website=True)
     def category_slider_value(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
-            return request.render("theme_scita.theme_scita_category_slider_3_view", values)
+            return request.website.viewref("theme_scita.theme_scita_category_slider_3_view")._render(values)
 
-    @http.route(['/theme_scita/category_slider_4'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/category_slider_4'], type='json', auth='public', website=True)
     def category_slider_four(self, **post):
         if post.get('slider-id'):
             values = self.get_categories_data(post.get('slider-id'))
-            return request.render("theme_scita.theme_scita_category_slider_4_view", values)
+            return request.website.viewref("theme_scita.theme_scita_category_slider_4_view")._render(values)
 
     @http.route(['/theme_scita/scita_image_effect_config'], type='json', auth='public', website=True)
     def category_image_dynamic_slider(self, **post):
@@ -240,7 +240,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/product_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/product_get_dynamic_slider'], type='json', auth='public', website=True)
     def product_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             slider_header = request.env['product.slider.config'].sudo().search(
@@ -251,7 +251,7 @@ class ScitaSliderSettings(http.Controller):
             values.update({
                 'slider_details': slider_header.collections_products,
             })
-            return request.render("theme_scita.theme_scita_product_slider_view", values)
+            return request.website.viewref("theme_scita.theme_scita_product_slider_view")._render(values)
 
     @http.route(['/theme_scita/product_image_effect_config'], type='json', auth='public', website=True)
     def product_image_dynamic_slider(self, **post):
@@ -276,7 +276,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/retial/product_multi_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/retial/product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
     def retail_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -302,9 +302,9 @@ class ScitaSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'compute_currency': compute_currency,
             }
-            return request.render("theme_scita.scita_multi_cat_slider_view", values)
+            return request.website.viewref("theme_scita.scita_multi_cat_slider_view")._render(values)
 
-    @http.route(['/fashion/fashion_product_multi_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/fashion/fashion_product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
     def fashion_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -330,7 +330,7 @@ class ScitaSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'compute_currency': compute_currency,
             }
-            return request.render("theme_scita.fashion_multi_cat_slider_view", values)
+            return request.website.viewref("theme_scita.fashion_multi_cat_slider_view")._render(values)
 
     @http.route(['/theme_scita/product_multi_image_effect_config'], type='json', auth='public', website=True)
     def product_multi_product_image_dynamic_slider(self, **post):
@@ -373,7 +373,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_scita/custom_pro_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/custom_pro_get_dynamic_slider'], type='json', auth='public', website=True)
     def custom_pro_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['product.category.img.slider.config'].sudo().search(
@@ -388,9 +388,9 @@ class ScitaSliderSettings(http.Controller):
                 values.update(
                     {'slider_details': slider_header.collections_category})
             values.update({'slider_type': slider_header.prod_cat_type})
-            return request.render("theme_scita.custom_scita_cat_slider_view", values)
+            return request.website.viewref("theme_scita.custom_scita_cat_slider_view")._render(values)
 
-    @http.route(['/theme_scita/custom_get_brand_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_scita/custom_get_brand_slider'], type='json', auth='public', website=True)
     def custom_get_brand_slider(self, **post):
         keep = QueryURL('/theme_scita/custom_get_brand_slider', brand_id=[])
         if post.get('slider-type'):
@@ -400,7 +400,7 @@ class ScitaSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'website_brands': slider_header.collections_brands
             }
-        return request.render("theme_scita.custom_scita_brand_slider_view", values)
+        return request.website.viewref("theme_scita.custom_scita_brand_slider_view")._render(values)
 
     @http.route(['/theme_scita/pro_get_options'], type='json', auth="public", website=True)
     def get_slider_options(self):
@@ -425,7 +425,7 @@ class ScitaSliderSettings(http.Controller):
         else:
             return {'zip': 'notavailable'}
 
-    @http.route(['/product_column_five'], type='http', auth='public', website=True)
+    @http.route(['/product_column_five'], type='json', auth='public', website=True)
     def get_product_column_five(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -451,9 +451,9 @@ class ScitaSliderSettings(http.Controller):
                 'compute_currency': compute_currency,
                 'products': slider_header.collection_of_products
             }
-            return request.render("theme_scita.sct_product_snippet_1_view", values)
+            return request.website.viewref("theme_scita.sct_product_snippet_1_view")._render(values)
 
-    @http.route(['/product/product_snippet_data_two'], type='http', auth='public', website=True)
+    @http.route(['/product/product_snippet_data_two'], type='json', auth='public', website=True)
     def product_snippet_data_two(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -479,7 +479,7 @@ class ScitaSliderSettings(http.Controller):
                 'compute_currency': compute_currency,
                 'products': slider_header.collection_of_products
             }
-            return request.render("theme_scita.sct_product_snippet_2_view", values)
+            return request.website.viewref("theme_scita.sct_product_snippet_2_view")._render(values)
 
     @http.route(['/theme_scita/product_configuration'], type='json', auth="public", website=True)
     def snippet_get_product_configuration(self):
@@ -775,7 +775,7 @@ class ScitaShop(WebsiteSale):
         return value
 
     @http.route(['/shop/get_brand_slider'],
-                type='http', auth='public', website=True)
+                type='json', auth='public', website=True)
     def get_brand_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['brand.snippet.config'].sudo().search(
@@ -784,11 +784,11 @@ class ScitaShop(WebsiteSale):
                 'slider_header': slider_header,
                 'website_brands': slider_header.collections_brands
             }
-            return request.render(
-                "theme_scita.retial_brand_snippet_1", values)
+            return request.website.viewref(
+                "theme_scita.retial_brand_snippet_1")._render(values)
 
     @http.route(['/shop/get_box_brand_slider'],
-                type='http', auth='public', website=True)
+                type='json', auth='public', website=True)
     def get_box_brand_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['brand.snippet.config'].sudo().search(
@@ -797,11 +797,11 @@ class ScitaShop(WebsiteSale):
                 'slider_header': slider_header,
                 'website_brands': slider_header.collections_brands
             }
-            return request.render(
-                "theme_scita.box_brand_snippet_4", values)
+            return request.website.viewref(
+                "theme_scita.box_brand_snippet_4")._render(values)
 
     @http.route(['/shop/get_it_brand'],
-                type='http', auth='public', website=True)
+                type='json', auth='public', website=True)
     def get_it_brand(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['brand.snippet.config'].sudo().search(
@@ -810,8 +810,8 @@ class ScitaShop(WebsiteSale):
                 'slider_header': slider_header,
                 'website_brands': slider_header.collections_brands
             }
-            return request.render(
-                "theme_scita.it_brand_snippet_1", values)
+            return request.website.viewref(
+                "theme_scita.it_brand_snippet_1")._render(values)
 
     @http.route('/update_my_wishlist', type="http", auth="public", website=True)
     def qv_update_my_wishlist(self, **kw):
@@ -819,7 +819,7 @@ class ScitaShop(WebsiteSale):
             self.add_to_wishlist(product_id=int(kw['prod_id']))
         return
 
-    @http.route(['/product_category_img_slider'], type='http', auth='public', website=True)
+    @http.route(['/product_category_img_slider'], type='json', auth='public', website=True)
     def config_cat_product(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -849,7 +849,7 @@ class ScitaShop(WebsiteSale):
         if slider_header.prod_cat_type == 'category':
             values.update({'slider_details': slider_header.collections_category})
         values.update({'slider_type': slider_header.prod_cat_type})
-        return request.render("theme_scita.product_category_img_slider_config_view", values)
+        return request.website.viewref("theme_scita.product_category_img_slider_config_view")._render(values)
 
     @http.route(['/theme_scita/product_category_slider'], type='json', auth="public", website=True)
     def get_product_category(self):

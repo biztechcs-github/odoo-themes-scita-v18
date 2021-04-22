@@ -22,7 +22,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                $.get("/theme_scita/category_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/category_get_dynamic_slider", 'call', {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -52,7 +52,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                $.get("/theme_scita/second_get_dynamic_cat_slider", {
+                ajax.jsonRpc("/theme_scita/second_get_dynamic_cat_slider", 'call', {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -83,7 +83,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-prod-slider-id');
-                $.get("/theme_scita/product_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/product_get_dynamic_slider", 'call',{
                     'slider-id': self.$target.attr('data-prod-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -104,6 +104,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 autoplay: res.auto_rotate,
                                 autoplayTimeout:res.auto_play_time,
                                 autoplayHoverPause:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 responsive: {
                                     0: {
                                         items: 1,
@@ -153,7 +154,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/retial/product_multi_get_dynamic_slider", {
+                ajax.jsonRpc("/retial/product_multi_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -173,6 +174,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 nav:false,
                                 rewind:true,
                                 items: 4,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 responsive: {
                                     0: {
                                         items: 1,
@@ -226,7 +228,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/fashion/fashion_product_multi_get_dynamic_slider", {
+                ajax.jsonRpc("/fashion/fashion_product_multi_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -245,6 +247,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 autoplayHoverPause:true,
                                 margin:25,
                                 items: 5,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 responsive: {
                                     0: {
                                         items: 1,
@@ -291,7 +294,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                $.get("/shop/get_brand_slider", {
+                ajax.jsonRpc("/shop/get_brand_slider", 'call', {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -305,7 +308,8 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                             rewind:true,
                             autoplay:true,
                             autoplayTimeout:4000,
-                            autoplayHoverPause:true,                           
+                            autoplayHoverPause:true,
+                            rtl: _t.database.parameters.direction === 'rtl',
                             responsive: {
                                 0: {
                                     items: 2
@@ -350,7 +354,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                $.get("/shop/get_box_brand_slider", {
+                ajax.jsonRpc("/shop/get_box_brand_slider", 'call', {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -404,7 +408,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                $.get("/shop/get_it_brand", {
+                ajax.jsonRpc("/shop/get_it_brand", 'call', {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -435,7 +439,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -471,7 +475,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/health_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/health_blog_get_dynamic_slider", 'call',{
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -507,7 +511,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/second_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/second_blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -525,6 +529,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 autoplay: res.auto_rotate,
                                 autoplayTimeout:res.auto_play_time,
                                 autoplayHoverPause:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 nav: false,
                                 rewind:true,
                                 responsive: {
@@ -570,7 +575,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/third_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/third_blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -590,6 +595,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 nav: false,
                                 dots:false,
                                 rewind:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 responsive: {
                                     0: {
                                         items: 1,
@@ -627,7 +633,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/forth_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/forth_blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -663,7 +669,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/six_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/six_blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -699,7 +705,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/fifth_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/fifth_blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -719,6 +725,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 autoplayTimeout:res.auto_play_time,
                                 autoplayHoverPause:true,
                                 nav: false,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 responsive: {
                                     0: {
                                         items: 1,
@@ -756,7 +763,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_scita/eight_blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/eight_blog_get_dynamic_slider", 'call',{
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -776,6 +783,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                                 rewind:true,
                                 nav: false,
                                 dots:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 responsive: {
                                     0: {
                                         items: 1,
@@ -813,7 +821,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/theme_scita/get_clients_dynamically_slider", {}).then(function(data) {
+                ajax.jsonRpc("/theme_scita/get_clients_dynamically_slider", 'call',{}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -826,6 +834,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                             dots:false,
                             autoplayTimeout:4000,
                             autoplayHoverPause:true,
+                            rtl: _t.database.parameters.direction === 'rtl',
                             responsive: {
                                 0: {
                                     items: 1,
@@ -864,7 +873,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/theme_scita/second_get_clients_dynamically_slider", {}).then(function(data) {
+                ajax.jsonRpc("/theme_scita/second_get_clients_dynamically_slider", 'call', {}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -888,7 +897,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/theme_scita/third_get_clients_dynamically_slider", {}).then(function(data) {
+                ajax.jsonRpc("/theme_scita/third_get_clients_dynamically_slider", 'call', {}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -910,7 +919,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_one/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_one/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#myourteam').owlCarousel({
@@ -924,6 +933,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         autoplayTimeout:4000,
                         autoplayHoverPause:true,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -959,7 +969,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_two/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_two/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#v_2_myourteam').owlCarousel({
@@ -973,6 +983,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         autoplayHoverPause:true,
                         dots:false,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -1008,7 +1019,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_three/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_three/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#v_3_myourteam').owlCarousel({
@@ -1022,6 +1033,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         autoplayTimeout:4000,
                         autoplayHoverPause:true,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -1057,7 +1069,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_four/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_four/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#v_4_myourteam').owlCarousel({
@@ -1071,6 +1083,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         autoplayHoverPause:true,
                         dots:false,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -1106,7 +1119,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_five/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_five/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#v_5_myourteam').owlCarousel({
@@ -1120,6 +1133,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         autoplayHoverPause:true,
                         dots:false,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -1149,7 +1163,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_six/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_six/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#v_6_myourteam').owlCarousel({
@@ -1163,6 +1177,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         items:3,
                         dots:false,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -1195,7 +1210,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_seven/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_seven/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('#v_7_myourteam').owlCarousel({
@@ -1209,6 +1224,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         autoplayTimeout:4000,
                         autoplayHoverPause:true,
                         autoHeight: false,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         responsive:{
                             0:{
                                 items:1
@@ -1249,7 +1265,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                $.get("/theme_scita/category_slider_3", {
+                ajax.jsonRpc("/theme_scita/category_slider_3", 'call',{
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1265,6 +1281,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                             dots:false,
                             autoplayTimeout:2500,
                             autoplayHoverPause:true,
+                            rtl: _t.database.parameters.direction === 'rtl',
                             responsive:{
                                 0:{
                                     items:1
@@ -1303,7 +1320,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                $.get("/theme_scita/category_slider_4", {
+                ajax.jsonRpc("/theme_scita/category_slider_4", 'call', {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1319,6 +1336,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                             dots:false,
                             autoplayTimeout:2500,
                             autoplayHoverPause:true,
+                            rtl: _t.database.parameters.direction === 'rtl',
                             responsive:{
                                 0:{
                                     items:1
@@ -1366,7 +1384,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-prod-cat-slider-type');
-                $.get("/theme_scita/custom_pro_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_scita/custom_pro_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-prod-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1404,7 +1422,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                $.get("/theme_scita/custom_get_brand_slider", {
+                ajax.jsonRpc("/theme_scita/custom_get_brand_slider", 'call', {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -1441,7 +1459,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/product_category_img_slider", {
+                ajax.jsonRpc("/product_category_img_slider", 'call', {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1477,7 +1495,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/product_column_five", {
+                ajax.jsonRpc("/product_column_five",'call', {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1517,7 +1535,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/product/product_snippet_data_two", {
+                ajax.jsonRpc("/product/product_snippet_data_two", 'call', {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
