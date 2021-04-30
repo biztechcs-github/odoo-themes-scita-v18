@@ -1,5 +1,7 @@
 odoo.define('theme_mobicraft.custom_js', function(require) {
     'use strict';
+    var core = require('web.core');
+    var _t = core._t;
     
     $(window).on("scroll",function() {
         if ($(window).scrollTop() >= 41) {
@@ -132,6 +134,7 @@ odoo.define('theme_mobicraft.custom_js', function(require) {
             loop: true,
             autoPlay: 7000,
             stopOnHover: true,
+            rtl: _t.database.parameters.direction === 'rtl',
             navigation: true,
             responsive: {
                 0: {

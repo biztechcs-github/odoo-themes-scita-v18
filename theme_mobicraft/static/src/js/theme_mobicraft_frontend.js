@@ -31,7 +31,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-prod-cat-slider-type');
-                $.get("/theme_mobicraft/pro_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_mobicraft/pro_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-prod-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -49,6 +49,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                                 autoPlay: res.auto_rotate && res.auto_play_time,
                                 stopOnHover: true,
                                 nav:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 loop: false,
                                 rewind:true,
                                 dots:false,
@@ -99,7 +100,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/mobicraft_theme/get_brand_slider", {
+                ajax.jsonRpc("/mobicraft_theme/get_brand_slider", 'call', {
                     'brand_count': self.$target.attr('data-brand-count') || 0,
                     'brand_label': self.$target.attr('data-brand-label') || '',
                 }).then(function(data) {
@@ -115,6 +116,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                             rewind:true,
                             dots:false,
                             responsiveClass: true,
+                            rtl: _t.database.parameters.direction === 'rtl',
                             responsive: {
                                 0: {
                                     items: 1,
@@ -162,7 +164,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_mobicraft/blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_mobicraft/blog_get_dynamic_slider", 'call',  {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -181,6 +183,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                                 autoPlay: res.auto_rotate && res.auto_play_time,
                                 stopOnHover: true,
                                 nav:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 loop: false,
                                 rewind:true,
                                 dots:false,
@@ -233,7 +236,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/theme_mobicraft/product_multi_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_mobicraft/product_multi_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -242,7 +245,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                         $(".oe_multi_category_slider").removeClass('o_hidden');
 
                         ajax.jsonRpc('/theme_mobicraft/product_multi_image_effect_config', 'call', {
-                            'slider_type': slider_type
+                            'slider_type': slider_type,
                         }).then(function(res) {
                             $('.multi_hide .owl-carousel').owlCarousel({
                                 margin: 10,
@@ -251,6 +254,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                                 autoPlay: res.sliding_speed,
                                 stopOnHover: true,
                                 nav:true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 dots:false,
                                 loop: false,
                                 rewind:true,
@@ -305,7 +309,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                $.get("/theme_mobicraft/category_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_mobicraft/category_get_dynamic_slider", 'call', {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -314,7 +318,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                         $(".oe_cat_slider").removeClass('o_hidden');
 
                         ajax.jsonRpc('/theme_mobicraft/category_image_effect_config', 'call', {
-                            'slider_id': slider_id
+                            'slider_id': slider_id,
                         }).then(function(res) {
                             $('div#' + res.s_id).owlCarousel({
                                 margin: 10,
@@ -325,6 +329,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
                                 dots:false,
                                 items: res.counts,
                                 autoPlay: res.auto_rotate && res.auto_play_time,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 stopOnHover: true,
                                 responsive: {
                                     0: {
@@ -361,7 +366,7 @@ odoo.define('theme_mobicraft.theme_mobicraft_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-featured_prod-slider-id');
-                $.get("/theme_mobicraft/featured_product_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_mobicraft/featured_product_get_dynamic_slider", 'call', {
                     'slider-id': self.$target.attr('data-featured-prod-slider-id') || '',
                 }).then(function(data) {
                     if (data) {

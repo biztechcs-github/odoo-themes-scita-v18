@@ -82,7 +82,7 @@
                             </h4>
                         </div>
                         <div class="psb-inner products-slider-section">
-                            <div class="owl-carousel" t-att-id="'%s' % (slider_header.id)" t-if="slider_details">
+                            <div class="owl-carousel" t-att-id="'mobi_cat_slider-%s' % (slider_header.id)" t-if="slider_details">
                                 <t t-as="slide" t-foreach="slider_details">
                                     <t t-set="combination_info" t-value="slide._get_combination_info(only_template=True, add_qty=add_qty or 1, pricelist=pricelist)"/>
                                     <div class="cs-product">
@@ -789,7 +789,7 @@
                             <t t-esc="slider_header.name"/>
                         </h4>
                     </div>
-                    <div class="owl-carousel" t-att-id="'%s-%s' % (slider_header.name.lower().replace (' ', '-'), slider_header.id)" t-if="slider_details">
+                    <div class="owl-carousel" t-att-id="'mobi_cat_slider-%s' % (slider_header.id)" t-if="slider_details">
                         <t t-as="slide" t-foreach="slider_details">
                             <div class="cs-cat">
                                 <div class="cs-img">

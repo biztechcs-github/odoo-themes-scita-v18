@@ -643,3 +643,9 @@ body .navbar .o_extra_menu_items.show > ul > li > a.dropdown-toggle {
 	}
 }
 /*color option for customizer disable end */
+.owl-carousel.owl-rtl .owl-item {
+    float: left !important;
+}
+.owl-carousel.owl-rtl {
+    direction: ltr !important;
+}

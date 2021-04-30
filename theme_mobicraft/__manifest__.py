@@ -37,7 +37,7 @@ mobile custom theme
 bootstrap theme
     ''',
     'category': 'Theme/Ecommerce',
-    'version': '14.0.1.0.0',
+    'version': '14.0.1.0.1',
     'license': 'OPL-1',
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com',

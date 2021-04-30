@@ -2856,7 +2856,7 @@
                             <t t-esc="slider_header.name"/>
                         </h3>
                     </div>
-                    <div class="owl-carousel" t-att-id="'%s-%s' % (slider_header.name.lower().replace (' ', '-'), slider_header.id)" t-if="slider_details">
+                    <div class="owl-carousel" t-att-id="'crafito_cat_slider-%s' % (slider_header.id)" t-if="slider_details">
                         <t t-as="slide" t-foreach="slider_details">
                             <div class="cs-cat">
                                 <div class="cs-img">
