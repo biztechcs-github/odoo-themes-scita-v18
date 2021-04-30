@@ -1,6 +1,9 @@
 // Owl slider
 odoo.define('theme_scita.scita_general_js', function(require) {
     "use strict";
+
+    var core = require('web.core');
+    var _t = core._t;
     // for megamenu  menu_style_3
     // var ajax = require('web.ajax');
 
@@ -72,11 +75,12 @@ odoo.define('theme_scita.scita_general_js', function(require) {
         $("section.accordion_v_2 a.card-header").click(function(e) {
              $(this).parent().toggleClass('active');
         });
-    // recommended_products_slider
+        // recommended_products_slider
         $('div#recommended_products_slider').owlCarousel({
             margin: 20,
             responsiveClass: true,
             items: 4,
+            rtl: _t.database.parameters.direction === 'rtl',
             // loop: true,
             autoPlay: 7000,
             stopOnHover: true,

@@ -5,6 +5,8 @@ odoo.define('theme_crafito.crafito_custom_js', function(require) {
     var VariantMixin = require('sale.VariantMixin');
     var sAnimations = require('website.content.snippets.animation');
     var api;
+    var core = require('web.core');
+    var _t = core._t;
     $(function() {
         
         $('li#customize-menu').on('click',function() {
@@ -276,6 +278,7 @@ odoo.define('theme_crafito.crafito_custom_js', function(require) {
             // loop: true,
             autoPlay: 7000,
             stopOnHover: true,
+            rtl: _t.database.parameters.direction === 'rtl',
             navigation: true,
             responsive: {
                 0: {

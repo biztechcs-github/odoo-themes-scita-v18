@@ -28,7 +28,7 @@ class ThememobicraftSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_mobicraft/pro_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_mobicraft/pro_get_dynamic_slider'], type='json', auth='public', website=True)
     def get_dynamic_slider(self, **post):
         uid, context, pool = request.uid, dict(request.context), request.env
         if post.get('slider-type'):
@@ -56,14 +56,14 @@ class ThememobicraftSliderSettings(http.Controller):
                 'slider_details': slider_header.collections_product,
                 'compute_currency': compute_currency,
             }
-            return request.render("theme_mobicraft.theme_mobicraft_pro_cat_slider_view", values)
+            return request.website.viewref("theme_mobicraft.theme_mobicraft_pro_cat_slider_view")._render(values)
 
     @http.route(['/theme_mobicraft/pro_image_effect_config'], type='json', auth='public', website=True)
     def product_image_dynamic_slider(self, **post):
         slider_data = request.env['mobicraft.product.slider.config'].sudo().search(
             [('id', '=', int(post.get('slider_type')))])
         values = {
-            's_id': slider_data.id,
+            's_id': 'mobi_cat_slider-' + str(slider_data.id),
             'counts': slider_data.no_of_counts,
             'auto_rotate': slider_data.auto_rotate,
             'auto_play_time': slider_data.sliding_speed,
@@ -80,7 +80,7 @@ class ThememobicraftSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_mobicraft/blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_mobicraft/blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def king_blog_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['mobicraft.blog.slider.config'].sudo().search(
@@ -90,7 +90,7 @@ class ThememobicraftSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'blog_slider_details': slider_header.collections_blog_post,
             }
-            return request.render("theme_mobicraft.theme_mobicraft_blog_slider_view", values)
+            return request.website.viewref("theme_mobicraft.theme_mobicraft_blog_slider_view")._render(values)
 
     @http.route(['/theme_mobicraft/blog_image_effect_config'], type='json', auth='public', website=True)
     def king_blog_product_image_dynamic_slider(self, **post):
@@ -132,7 +132,7 @@ class ThememobicraftSliderSettings(http.Controller):
         }
         return values
 
-    @http.route(['/theme_mobicraft/category_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_mobicraft/category_get_dynamic_slider'], type='json', auth='public', website=True)
     def category_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             slider_header = request.env['mobicraft.category.slider.config'].sudo().search(
@@ -184,7 +184,8 @@ class ThememobicraftSliderSettings(http.Controller):
             values.update({
                 'slider_details': slider_header.collections_category,
             })
-            return request.render("theme_mobicraft.theme_mobicraft_cat_slider_view", values)
+            print("-------kkkk-----",values)
+            return request.website.viewref("theme_mobicraft.theme_mobicraft_cat_slider_view")._render(values)
 
     # For multi product slider
     @http.route(['/theme_mobicraft/product_multi_get_options'], type='json', auth="public", website=True)
@@ -207,7 +208,7 @@ class ThememobicraftSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_mobicraft/product_multi_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_mobicraft/product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
     def product_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -235,7 +236,7 @@ class ThememobicraftSliderSettings(http.Controller):
                 'compute_currency': compute_currency,
             }
 
-            return request.render("theme_mobicraft.theme_mobicraft_multi_cat_slider_view", values)
+            return request.website.viewref("theme_mobicraft.theme_mobicraft_multi_cat_slider_view")._render(values)
 
     @http.route(['/theme_mobicraft/product_multi_image_effect_config'], type='json', auth='public', website=True)
     def product_multi_product_image_dynamic_slider(self, **post):
@@ -260,7 +261,7 @@ class ThememobicraftSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_mobicraft/featured_product_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_mobicraft/featured_product_get_dynamic_slider'], type='json', auth='public', website=True)
     def featured_product_get_dynamic_slider(self, **post):
         pool = request.env
         context = dict(request.context)
@@ -288,7 +289,7 @@ class ThememobicraftSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'compute_currency': compute_currency,
             }
-            return request.render("theme_mobicraft.theme_mobicraft_featured_product_slider_view", values)
+            return request.website.viewref("theme_mobicraft.theme_mobicraft_featured_product_slider_view")._render(values)
 
     @http.route(['/theme_mobicraft/featured_product_image_effect_config'], type='json', auth='public', website=True)
     def featured_product_image_dynamic_slider(self, **post):
@@ -550,7 +551,7 @@ class ThememobicraftBrandSlider(WebsiteSale):
             return super(ThememobicraftBrandSlider, self).shop(page=page, category=category, brand=brand, search=search, ppg=ppg, **post)
 
 
-    @http.route(['/mobicraft_theme/get_brand_slider'], type='http', auth='public', website=True)
+    @http.route(['/mobicraft_theme/get_brand_slider'], type='json', auth='public', website=True)
     def get_brand_slider(self, **post):
         keep = QueryURL('/mobicraft_theme/get_brand_slider', brand_id=[])
 
@@ -569,7 +570,7 @@ class ThememobicraftBrandSlider(WebsiteSale):
         if post.get('brand_label'):
             value['brand_header'] = post.get('brand_label')
 
-        return request.render("theme_mobicraft.theme_mobicraft_brand_slider_view", value)
+        return request.website.viewref("theme_mobicraft.theme_mobicraft_brand_slider_view")._render(value)
 
     @http.route(['/theme_mobicraft/removeattribute'], type='json', auth='public', website=True)
     def remove_selected_attribute(self, **post):

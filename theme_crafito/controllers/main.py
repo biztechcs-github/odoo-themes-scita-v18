@@ -27,7 +27,7 @@ class CrafitoSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_crafito/blog_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/blog_get_dynamic_slider'], type='json', auth='public', website=True)
     def crafito_get_dynamic_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['blog.slider.config'].sudo().search(
@@ -36,7 +36,8 @@ class CrafitoSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'blog_slider_details': slider_header.collections_blog_post,
             }
-            return request.render("theme_crafito.theme_crafito_blog_slider_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_blog_slider_view")._render(values)
+
 
     @http.route(['/theme_crafito/blog_image_effect_config'], type='json', auth='public', website=True)
     def crafito_product_image_dynamic_slider(self, **post):
@@ -51,14 +52,14 @@ class CrafitoSliderSettings(http.Controller):
         return values
 
     # For Client slider
-    @http.route(['/theme_crafito/get_clients_dynamically_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/get_clients_dynamically_slider'], type='json', auth='public', website=True)
     def get_clients_dynamically_slider(self, **post):
         client_data = request.env['res.partner'].sudo().search(
             [('add_to_slider', '=', True)])
         values = {
             'client_slider_details': client_data,
         }
-        return request.render("theme_crafito.theme_crafito_client_slider_view", values)
+        return request.website.viewref("theme_crafito.theme_crafito_client_slider_view")._render(values)
 
     # For multi product slider
     @http.route(['/theme_crafito/product_multi_get_options'], type='json', auth="public", website=True)
@@ -71,7 +72,7 @@ class CrafitoSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_crafito/product_multi_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
     def crafito_product_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
         if post.get('slider-type'):
@@ -96,7 +97,7 @@ class CrafitoSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'compute_currency': compute_currency
             }
-            return request.render("theme_crafito.theme_crafito_multi_cat_slider_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_multi_cat_slider_view")._render(values)
 
     @http.route(['/theme_crafito/product_multi_image_effect_config'], type='json', auth='public', website=True)
     def crafito_product_multi_product_image_dynamic_slider(self, **post):
@@ -110,7 +111,7 @@ class CrafitoSliderSettings(http.Controller):
         }
         return values
 
-    @http.route(['/theme_crafito/newsone_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/newsone_get_dynamic_slider'], type='json', auth='public', website=True)
     def crafito_get_dynamic_newsone_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['blog.slider.config'].sudo().search(
@@ -119,9 +120,9 @@ class CrafitoSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'blog_slider_details': slider_header.collections_blog_post,
             }
-            return request.render("theme_crafito.theme_crafito_news1_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_news1_view")._render(values)
 
-    @http.route(['/theme_crafito/newstwo_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/newstwo_get_dynamic_slider'], type='json', auth='public', website=True)
     def crafito_get_dynamic_newstwo_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['blog.slider.config'].sudo().search(
@@ -130,9 +131,9 @@ class CrafitoSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'blog_slider_details': slider_header.collections_blog_post,
             }
-            return request.render("theme_crafito.theme_crafito_news2_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_news2_view")._render(values)
 
-    @http.route(['/theme_crafito/theme_new_hardware_blog'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/theme_new_hardware_blog'], type='json', auth='public', website=True)
     def crafito_get_dynamic_hardwareblog_slider(self, **post):
         if post.get('slider-type'):
             slider_header = request.env['blog.slider.config'].sudo().search(
@@ -141,7 +142,7 @@ class CrafitoSliderSettings(http.Controller):
                 'slider_header': slider_header,
                 'blog_slider_details': slider_header.collections_blog_post,
             }
-            return request.render("theme_crafito.theme_crafito_hardware_blog_snippet_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_hardware_blog_snippet_view")._render(values)
 
     # Coming soon snippet
     @http.route(['/biztech_comming_soon/soon_data'], type="http", auth="public", website=True)
@@ -160,20 +161,20 @@ class CrafitoSliderSettings(http.Controller):
         return emp
 
     # For team snippet
-    @http.route(['/biztech_emp_data_one/employee_data'], type="http", auth="public", website=True)
+    @http.route(['/biztech_emp_data_one/employee_data'], type="json", auth="public", website=True)
     def get_one_employee_details_custom(self, **post):
         emp = self.find_snippet_employee()
-        return request.render("theme_crafito.theme_crafito_team_one", emp)
+        return request.website.viewref("theme_crafito.theme_crafito_team_one")._render(emp)
 
-    @http.route(['/biztech_emp_data/employee_data'], type="http", auth="public", website=True)
+    @http.route(['/biztech_emp_data/employee_data'], type="json", auth="public", website=True)
     def get_employee_detail_custom(self, **post):
         emp = self.find_snippet_employee()
-        return request.render("theme_crafito.theme_crafito_team_two", emp)
+        return request.website.viewref("theme_crafito.theme_crafito_team_two")._render(emp)
 
-    @http.route(['/biztech_emp_data_three/employee_data'], type="http", auth="public", website=True)
+    @http.route(['/biztech_emp_data_three/employee_data'], type="json", auth="public", website=True)
     def get_employee_detail_custom_1(self, **post):
         emp = self.find_snippet_employee()
-        return request.render("theme_crafito.theme_crafito_team_three", emp)
+        return request.website.viewref("theme_crafito.theme_crafito_team_three")._render(emp)
 
     # For Category slider
     @http.route(['/theme_crafito/category_get_options'], type='json', auth="public", website=True)
@@ -186,7 +187,7 @@ class CrafitoSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_crafito/category_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/category_get_dynamic_slider'], type='json', auth='public', website=True)
     def category_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             slider_header = request.env['category.slider.config'].sudo().search(
@@ -201,14 +202,14 @@ class CrafitoSliderSettings(http.Controller):
             values.update({
                 'slider_details': slider_header.collections_category,
             })
-            return request.render("theme_crafito.theme_crafito_cat_slider_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_cat_slider_view")._render(values)
 
     @http.route(['/theme_crafito/category_image_effect_config'], type='json', auth='public', website=True)
     def category_image_dynamic_slider(self, **post):
         slider_data = request.env['category.slider.config'].search(
             [('id', '=', int(post.get('slider_id')))])
         values = {
-            's_id': slider_data.name.lower().replace(' ', '-') + '-' + str(slider_data.id),
+            's_id': 'crafito_cat_slider-' + str(slider_data.id),
             'counts': slider_data.no_of_counts,
             'auto_rotate': slider_data.auto_rotate,
             'auto_play_time': slider_data.sliding_speed,
@@ -251,7 +252,7 @@ class CrafitoSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_crafito/product_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/product_get_dynamic_slider'], type='json', auth='public', website=True)
     def product_get_dynamic_slider(self, **post):
         if post.get('slider-id'):
             slider_header = request.env['product.slider.config'].sudo().search(
@@ -262,7 +263,7 @@ class CrafitoSliderSettings(http.Controller):
             values.update({
                 'slider_details': slider_header.collections_products,
             })
-            return request.render("theme_crafito.theme_crafito_product_slider_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_product_slider_view")._render(values)
 
     @http.route(['/theme_crafito/product_image_effect_config'], type='json', auth='public', website=True)
     def product_image_dynamic_slider(self, **post):
@@ -287,7 +288,7 @@ class CrafitoSliderSettings(http.Controller):
                                    'name': record.name})
         return slider_options
 
-    @http.route(['/theme_crafito/featured_product_get_dynamic_slider'], type='http', auth='public', website=True)
+    @http.route(['/theme_crafito/featured_product_get_dynamic_slider'], type='json', auth='public', website=True)
     def featured_product_get_dynamic_slider(self, **post):
         uid, context, pool = request.uid, dict(request.context), request.env
         if post.get('slider-id'):
@@ -314,7 +315,7 @@ class CrafitoSliderSettings(http.Controller):
                 'compute_currency': compute_currency,
                 'slider_header': slider_header
             }
-            return request.render("theme_crafito.theme_crafito_featured_product_slider_view", values)
+            return request.website.viewref("theme_crafito.theme_crafito_featured_product_slider_view")._render(values)
 
     @http.route(['/theme_crafito/featured_product_image_effect_config'], type='json', auth='public', website=True)
     def featured_product_image_dynamic_slider(self, **post):
@@ -328,11 +329,11 @@ class CrafitoSliderSettings(http.Controller):
         }
         return values
 
-    @http.route(['/theme_crafito/event_slider/get_data'], type="http", auth="public", website=True)
+    @http.route(['/theme_crafito/event_slider/get_data'], type="json", auth="public", website=True)
     def get_event_data(self, **post):
         events = request.env['event.type'].sudo().search([])
         values = {'main_events_category': events}
-        return request.render("theme_crafito.theme_crafito_events_view", values)
+        return request.website.viewref("theme_crafito.theme_crafito_events_view")._render(values)
 
 
 class CrafitoEcommerceShop(WebsiteSale):

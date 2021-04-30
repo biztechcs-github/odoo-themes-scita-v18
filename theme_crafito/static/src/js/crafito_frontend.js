@@ -58,7 +58,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                $.get("/theme_crafito/blog_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/blog_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -73,6 +73,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                                 responsiveClass: true,
                                 items: res.counts,
                                 loop: true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 autoplay: res.auto_rotate,
                                 autoplayTimeout:res.auto_play_time,
                                 autoplayHoverPause:true,
@@ -120,7 +121,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/theme_crafito/get_clients_dynamically_slider", {}).then(function(data) {
+                ajax.jsonRpc("/theme_crafito/get_clients_dynamically_slider", 'call', {}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -129,6 +130,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                             margin: 10,
                             responsiveClass: true,
                             nav: false,
+                            rtl: _t.database.parameters.direction === 'rtl',
                             responsive: {
                                 0: {
                                     items: 1,
@@ -172,7 +174,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                $.get("/theme_crafito/product_multi_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/product_multi_get_dynamic_slider", 'call', {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -266,7 +268,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                $.get("/theme_crafito/category_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/category_get_dynamic_slider", 'call', {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -280,6 +282,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                             $('div#' + res.s_id).owlCarousel({
                                 margin: 10,
                                 responsiveClass: true,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 items: res.counts,
                                 loop: true,
                                 autoplay: res.auto_rotate,
@@ -329,7 +332,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-prod-slider-id');
-                $.get("/theme_crafito/product_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/product_get_dynamic_slider", 'call', {
                     'slider-id': self.$target.attr('data-prod-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -347,6 +350,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                                 loop: true,
                                 autoplay: res.auto_rotate,
                                 autoplayTimeout:res.auto_play_time,
+                                rtl: _t.database.parameters.direction === 'rtl',
                                 autoplayHoverPause:true,
                                 responsive: {
                                     0: {
@@ -392,7 +396,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-featured_prod-slider-id');
-                $.get("/theme_crafito/featured_product_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/featured_product_get_dynamic_slider", 'call', {
                     'slider-id': self.$target.attr('data-featured-prod-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -591,7 +595,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                 })
@@ -614,7 +618,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_one/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_one/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                 })
@@ -637,13 +641,14 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
                 });
             }
             if (!this.editableMode) {
-                $.get("/biztech_emp_data_three/employee_data", {}).then(function(data) {
+                ajax.jsonRpc("/biztech_emp_data_three/employee_data", 'call', {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     $('div#our_team_3').owlCarousel({
                         center: true,
                         items: 2,
                         loop: true,
+                        rtl: _t.database.parameters.direction === 'rtl',
                         margin: 10,
                         responsive: {
                             0: {
@@ -676,7 +681,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-newsone-slider-type');
-                $.get("/theme_crafito/newsone_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/newsone_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-newsone-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -709,7 +714,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-newstwo-slider-type');
-                $.get("/theme_crafito/newstwo_get_dynamic_slider", {
+                ajax.jsonRpc("/theme_crafito/newstwo_get_dynamic_slider", 'call', {
                     'slider-type': self.$target.attr('data-newstwo-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -741,7 +746,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-hardware-newblog-slider-type');
-                $.get("/theme_crafito/theme_new_hardware_blog", {
+                ajax.jsonRpc("/theme_crafito/theme_new_hardware_blog", 'call', {
                     'slider-type': self.$target.attr('data-hardware-newblog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -770,7 +775,7 @@ odoo.define('theme_crafito.crafito_frontend_js', function(require) {
 
             }
             if (!this.editableMode) {
-                $.get("/theme_crafito/event_slider/get_data", {}).then(function(data) {
+                ajax.jsonRpc("/theme_crafito/event_slider/get_data", 'call', {}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
