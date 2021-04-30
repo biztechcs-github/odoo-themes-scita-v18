@@ -76,7 +76,6 @@ odoo.define('theme_scita.scita_general_js', function(require) {
              $(this).parent().toggleClass('active');
         });
         // recommended_products_slider
-        console.log("-----------calllllllll-------", _t.database.parameters.direction);
         $('div#recommended_products_slider').owlCarousel({
             margin: 20,
             responsiveClass: true,
