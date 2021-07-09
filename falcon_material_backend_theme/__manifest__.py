@@ -74,6 +74,6 @@ backend theme
         'static/description/splash-screen.png',
         'static/description/splash-screen_screenshot.gif',
     ],
-    'price': 191.00,
+    'price': 149.00,
     'currency': 'EUR',
 }

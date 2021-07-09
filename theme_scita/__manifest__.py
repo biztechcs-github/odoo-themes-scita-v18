@@ -130,7 +130,7 @@ AMP Support
         'static/description/splash-screen_screenshot.gif',
     ],
     'application': True,
-    'price': 198.00,
+    'price': 149.00,
     'currency': 'EUR',
     'installable': True,
 }
