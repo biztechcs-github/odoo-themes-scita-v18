@@ -87,7 +87,7 @@ theme for ecommerce store
         'static/description/splash-screen_screenshot.png',
     ],
     'application': True,
-    'price': 155.00,
+    'price': 99.00,
     'currency': 'EUR',
     'installable': True,
 }
