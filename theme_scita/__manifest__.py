@@ -123,8 +123,8 @@ AMP Support
         'views/header_option_extended.xml',
     ],
     'support': 'support@appjetty.com',
-    'live_test_url': 'http://theme-scita-v13.appjetty.com/',
-    # 'live_test_url': 'https://theme-scita-v14.appjetty.com/',
+    # 'live_test_url': 'http://theme-scita-v13.appjetty.com/',
+    'live_test_url': 'https://theme-scita-v14.appjetty.com/',
     'images': [
         'static/description/splash-screen.png',
         'static/description/splash-screen_screenshot.gif',
