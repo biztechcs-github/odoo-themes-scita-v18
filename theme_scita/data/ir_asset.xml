@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="theme_scita.primary_variables_font_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.primary_variables_font_scss</field>
+        <field name="name">Primary variables Font SCSS</field>
+        <field name="bundle">web._assets_primary_variables</field>
+        <field name="directive">before</field>
+        <field name="path">/theme_scita/static/src/scss/scita_fonts.scss</field>
+        <field name="target">/website/static/src/scss/primary_variables.scss</field>
+    </record>
+
+    <!-- <record id="theme_scita.primary_variables_scita_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.primary_variables_scita_scss</field>
+        <field name="name">Primary variables Scita SCSS</field>
+        <field name="bundle">web._assets_primary_variables</field>
+        <field name="path">/theme_scita/static/src/scss/scita_primary_variables.scss</field>
+    </record> -->
+    <!-- <record id="theme_scita.scita_owl_carousel_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_owl_carousel_css</field>
+        <field name="name">Scita Owl Carousel CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/css/owl.carousel.css</field>
+    </record>
+    <record id="theme_scita.scita_animate_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_animate_css</field>
+        <field name="name">Scita Animate CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/css/animate.css</field>
+    </record>
+    <record id="theme_scita.scita_rangeslider_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_rangeslider_css</field>
+        <field name="name">Scita Rangeslider CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/css/ion.rangeSlider.css</field>
+    </record>
+    <record id="theme_scita.scita_rangeslider_skinHTML5_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_rangeslider_skinHTML5_css</field>
+        <field name="name">Scita Rangeslider skinHTML5 CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/css/ion.rangeSlider.skinHTML5.css</field>
+    </record>
+    <record id="theme_scita.scita_base_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_base_css</field>
+        <field name="name">Scita Base CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/css/base.css</field>
+    </record>
+    <record id="theme_scita.scita_unite_gallery_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_unite_gallery_css</field>
+        <field name="name">Scita Unite Gallery CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/css/unite-gallery.css</field>
+    </record>
+    <record id="theme_scita.scita_line_icons_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_line_icons_css</field>
+        <field name="name">Scita Line Icons CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/fonts/line-icons.css</field>
+    </record>
+    <record id="theme_scita.scita_themify_icons_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_themify_icons_css</field>
+        <field name="name">Scita Line Icons CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/fonts/themify-icons.css</field>
+    </record>
+    <record id="theme_scita.scita_skins_alexis_css" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_skins_alexis_css</field>
+        <field name="name">Scita alexis CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/skins/alexis/alexis.css</field>
+    </record>
+    <record id="theme_scita.scita_web_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_web_scss</field>
+        <field name="name">Scita Web CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/web.scss</field>
+    </record>
+    <record id="theme_scita.scita_variable_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_variable_scss</field>
+        <field name="name">Scita Variable CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/variable.scss</field>
+    </record>
+    <record id="theme_scita.scita_mixins_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_mixins_scss</field>
+        <field name="name">Scita Mixins CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/mixins.scss</field>
+    </record>
+    <record id="theme_scita.scita_comman_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_comman_scss</field>
+        <field name="name">Scita Comman CSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/comman.scss</field>
+    </record>
+    <record id="theme_scita.scita_snippets_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_snippets_scss</field>
+        <field name="name">Scita Snippets SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/snippets.scss</field>
+    </record>
+    <record id="theme_scita.scita_megamenu_style_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_megamenu_style_scss</field>
+        <field name="name">Scita Megamenu Style SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/megamenu_style.scss</field>
+    </record>
+    <record id="theme_scita.scita_product_style_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_product_style_scss</field>
+        <field name="name">Scita Product Style SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/product_style.scss</field>
+    </record>
+    <record id="theme_scita.scita_checkout_style_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_checkout_style_scss</field>
+        <field name="name">Scita Checkout Style SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/checkout_style.scss</field>
+    </record>
+    <record id="theme_scita.scita_demo_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_demo_scss</field>
+        <field name="name">Scita demo sCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/demo/demo.scss</field>
+    </record>
+    <record id="theme_scita.scita_cms_pages_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_cms_pages_scss</field>
+        <field name="name">Scita Cms Pages sCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/cms_pages.scss</field>
+    </record>
+    <record id="theme_scita.scita_default_header_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_default_header_scss</field>
+        <field name="name">Scita Default Header SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/header/default_header.scss</field>
+    </record>
+    <record id="theme_scita.scita_default_footer_scss" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_default_footer_scss</field>
+        <field name="name">Scita Default Footer SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/scss/footer/default_footer.scss</field>
+    </record>
+    <record id="theme_scita.scita_owl_carousel_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_owl_carousel_js</field>
+        <field name="name">Scita Owl Carousel JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/owl.carousel.min.js</field>
+    </record>
+    <record id="theme_scita.scita_ion_rangeSlider_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_ion_rangeSlider_js</field>
+        <field name="name">Scita Ion RangeSlider JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/ion.rangeSlider.min.js</field>
+    </record>
+    <record id="theme_scita.scita_ug_theme_compact_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_ug_theme_compact_js</field>
+        <field name="name">Scita Ug Theme Compact JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/ug-theme-compact.js</field>
+    </record>
+    <record id="theme_scita.scita_unitegallery_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_unitegallery_js</field>
+        <field name="name">Scita Unitegallery JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/unitegallery.min.js</field>
+    </record>
+    <record id="theme_scita.scita_general_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_general_js</field>
+        <field name="name">Scita General JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/scita_general.js</field>
+    </record>
+    <record id="theme_scita.scita_fronted_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_fronted_js</field>
+        <field name="name">Scita Fronted JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/scita_fronted.js</field>
+    </record>
+    <record id="theme_scita.scita_timer_fronted_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_timer_fronted_js</field>
+        <field name="name">Scita Timer Fronted JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/timer_fronted.js</field>
+    </record>
+    <record id="theme_scita.scita_rating_state_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_rating_state_js</field>
+        <field name="name">Scita Rating State JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/rating_state.js</field>
+    </record> -->
+    <!-- <record id="theme_scita.scita_product_details_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_product_details_js</field>
+        <field name="name">Scita Product Details JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/product_details.js</field>
+    </record> -->
+    <!-- <record id="theme_scita.scita_see_more_brand_js" model="theme.ir.asset">
+        <field name="key">theme_scita.scita_see_more_brand_js</field>
+        <field name="name">Scita See More Brand JS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">/theme_scita/static/src/js/see_more_brand.js</field>
+    </record> -->
+    <record id="theme_scita.theme_scita_button_option_1" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_1</field>
+        <field name="name">Theme Scita Button Option 1</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_styles.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="True"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_2" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_2</field>
+        <field name="name">Theme Scita Button Option 2</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_2.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_3" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_3</field>
+        <field name="name">Theme Scita Button Option 3</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_3.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_4" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_4</field>
+        <field name="name">Theme Scita Button Option 4</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_4.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_5" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_5</field>
+        <field name="name">Theme Scita Button Option 5</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_5.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_6" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_6</field>
+        <field name="name">Theme Scita Button Option 6</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_6.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_7" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_7</field>
+        <field name="name">Theme Scita Button Option 7</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_7.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <record id="theme_scita.theme_scita_button_option_8" model="theme.ir.asset">
+        <field name="key">theme_scita.theme_scita_button_option_8</field>
+        <field name="name">Theme Scita Button Option 8</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="directive">before</field>
+        <field name="path">theme_scita/static/src/scss/button/button_style_8.scss</field>
+        <field name="target">/theme_scita/static/src/scss/comman.scss</field>
+        <field name="active" eval="False"/>
+    </record>
+    <!-- <record id="theme_scita.s_banner_parallax_000_scss" model="theme.ir.asset">
+        <field name="key">theme_common.s_banner_parallax_000_scss</field>
+        <field name="name">Banner parallax 000 SCSS</field>
+        <field name="bundle">web.assets_frontend</field>
+        <field name="path">theme_common/static/src/old_snippets/s_banner_parallax/000.scss</field>
+        <field name="active" eval="False"/>
+    </record> -->
+    <!-- <template id="theme_scita_button_option_1_view" name="Button Style View 1" active='True'>
+        <t t-call-assets="theme_scita.theme_scita_button_option_1"/>
+    </template>
+    <template id="theme_scita_button_option_2_view" name="Button Style View 2" active='False'>
+        <t t-call-assets="theme_scita.theme_scita_button_option_2"/>
+    </template> -->
+</odoo>
