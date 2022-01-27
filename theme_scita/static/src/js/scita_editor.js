@@ -222,7 +222,7 @@ odoo.define('theme_scita.scita_editor_js', function(require) {
             var self = this;
             this._super();
             this.$target.removeClass("hidden");
-            this.$target.find('.oe_multi_category_slider .owl-carousel').empty();
+            this.$target.find('.oe_multi_category_slider').empty();
             if (!editMode) {
                 self.$el.find(".oe_multi_category_slider").on("click", _.bind(self.multi_category_slider, self));
             }
@@ -239,7 +239,7 @@ odoo.define('theme_scita.scita_editor_js', function(require) {
         },
 
         cleanForSave: function() {
-            $('.oe_multi_category_slider .owl-carousel').empty();
+            $('.oe_multi_category_slider').empty();
         },
 
         multi_category_slider: function(type, value) {

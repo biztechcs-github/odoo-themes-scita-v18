@@ -88,18 +88,6 @@ class ProductTemplate(models.Model):
     def action_product_unpublish(self):
         self.is_published = False
 
-    # @api.model
-    # def _search_get_detail(self, website, order, options):
-    #     res=super(ProductTemplate,self)._search_get_detail(website=website,order=order,options=options)
-    #     print("\n\n\n res",res)
-    #     brandlistdomain = options.get('brandlistdomain')
-
-    #     if brandlistdomain:
-    #         print("\n\n\brandlistdomain",brandlistdomain)
-    #         res['base_domain'] = res['base_domain'].append([('product_brand_id', 'in', brandlistdomain)])
-    #         print("\n\n\n domain",res['base_domain'])
-            
-    #     return res
     @api.model
     def _search_get_detail(self, website, order, options):
         with_image = options['displayImage']

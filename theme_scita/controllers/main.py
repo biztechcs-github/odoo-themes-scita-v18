@@ -282,7 +282,6 @@ class ScitaSliderSettings(http.Controller):
     @http.route(['/retial/product_multi_get_dynamic_slider'], type='json', auth='public', website=True)
     def retail_multi_get_dynamic_slider(self, **post):
         context, pool = dict(request.context), request.env
-        print("\n\n\n slider-type",post.get('slider-type'))
         if post.get('slider-type'):
             slider_header = request.env['multi.slider.config'].sudo().search(
                 [('id', '=', int(post.get('slider-type')))])
@@ -504,55 +503,6 @@ class ScitaSliderSettings(http.Controller):
 
 class ScitaShop(WebsiteSale):
 
-    # def _get_search_domain(self, search, category, attrib_values, search_in_description=True):
-    #     domains = [request.website.sale_product_domain()]
-    #     if search:
-    #         for srch in search.split(" "):
-    #             subdomains = [
-    #                 [('name', 'ilike', srch)],
-    #                 [('product_variant_ids.default_code', 'ilike', srch)]
-    #             ]
-    #             if search_in_description:
-    #                 subdomains.append([('description', 'ilike', srch)])
-    #                 subdomains.append([('description_sale', 'ilike', srch)])
-    #             domains.append(expression.OR(subdomains))
-
-    #     if category:
-    #         domains.append([('public_categ_ids', 'child_of', int(category))])
-    #     brand_list = request.httprequest.args.getlist('brand')
-    #     brand_set = set([int(v) for v in brand_list])
-    #     print("\n\n\n\n _get_search_domain brand",brand_list)
-    #     if brand_list:
-    #         brandlistdomain = list(map(int, brand_list))
-    #         domains.append([('product_brand_id', 'in', brandlistdomain)])
-    #         # domain += [('product_brand_id', 'in', brandlistdomain)]
-    #         # bran = []
-    #         # brand_obj = request.env['product.brands'].sudo().search(
-    #         #     [('id', 'in', brandlistdomain)])
-    #         # if brand_obj:
-    #         #     for vals in brand_obj:
-    #         #         if vals.name not in bran:
-    #         #             bran.append((vals.name, vals.id))
-    #         #     if bran:
-    #         #         request.session["brand_name"] = bran
-    #     if attrib_values:
-    #         attrib = None
-    #         ids = []
-    #         for value in attrib_values:
-    #             print("\n\n value",value)
-    #             if not attrib:
-    #                 attrib = value[0]
-    #                 ids.append(value[1])
-    #             elif value[0] == attrib:
-    #                 ids.append(value[1])
-    #             else:
-    #                 domains.append([('attribute_line_ids.value_ids', 'in', ids)])
-    #                 attrib = value[0]
-    #                 ids = [value[1]]
-    #         if attrib:
-    #             domains.append([('attribute_line_ids.value_ids', 'in', ids)])
-    #     print("\n\n\n  _get_search_domain domains",domains)
-    #     return expression.AND(domains)
 
     @http.route(['/shop/pager_selection/<model("product.per.page.no"):pl_id>'], type='http', auth="public", website=True)
     def product_page_change(self, pl_id, **post):
@@ -824,20 +774,20 @@ class ScitaShop(WebsiteSale):
                 req_ctx = request.context.copy()
                 req_ctx.setdefault('brand_id', int(brands))
                 request.context = req_ctx
-            # page_no = request.env['product.per.page.no'].sudo().search(
-            #     [('set_default_check', '=', True)])
-            # if page_no:
-            #     ppg = int(page_no.name)
-            # else:
-            #     ppg = request.env['website'].get_current_website().shop_ppg or 20
-            if ppg:
-                try:
-                    ppg = int(ppg)
-                    post['ppg'] = ppg
-                except ValueError:
-                    ppg = False
-            if not ppg:
+            page_no = request.env['product.per.page.no'].sudo().search(
+                [('set_default_check', '=', True)])
+            if page_no:
+                ppg = int(page_no.name)
+            else:
                 ppg = request.env['website'].get_current_website().shop_ppg or 20
+            # if ppg:
+            #     try:
+            #         ppg = int(ppg)
+            #         post['ppg'] = ppg
+            #     except ValueError:
+            #         ppg = False
+            # if not ppg:
+            #     ppg = request.env['website'].get_current_website().shop_ppg or 20
 
             ppr = request.env['website'].get_current_website().shop_ppr or 4
 
@@ -846,6 +796,8 @@ class ScitaShop(WebsiteSale):
             attributes_ids = {v[0] for v in attrib_values}
             attrib_set = {v[1] for v in attrib_values}
 
+            if request.session.get('default_paging_no'):
+                ppg = int(request.session.get('default_paging_no'))
             keep = QueryURL('/shop', category=category and int(category), search=search, attrib=attrib_list, min_price=min_price, max_price=max_price, order=post.get('order'))
 
             pricelist_context, pricelist = self._get_pricelist_context()
@@ -928,23 +880,6 @@ class ScitaShop(WebsiteSale):
             if category:
                 url = "/shop/category/%s" % slug(category)
 
-                
-            # if brand_list:
-            #     brandlistdomain = list(map(int, brand_list))
-            #     # print("=============brandlistdomain---------",brandlistdomain)
-            #     # domain += [('product_brand_id', 'in', brandlistdomain)]
-            #     search_product = search_product.filtered(lambda i: i.product_brand_id.id in brandlistdomain)
-            #     bran = []
-            #     brand_obj = request.env['product.brands'].sudo().search(
-            #         [('id', 'in', brandlistdomain)])
-            #     if brand_obj:
-            #         for vals in brand_obj:
-            #             if vals.name not in bran:
-            #                 bran.append((vals.name, vals.id))
-            #         if bran:
-            #             request.session["brand_name"] = bran
-            #     if not brand_list:
-            #         request.session["brand_name"] = ''
             pager = request.website.pager(url=url, total=product_count, page=page, step=ppg, scope=7, url_args=post)
             offset = pager['offset']
             products = search_product[offset:offset + ppg]

@@ -130,10 +130,10 @@
                 </div>
             </div>
         </xpath>
-        <xpath expr="//div[@itemprop='description']" position="replace"/>
-            <!-- <attribute name="style">display:none;</attribute>
+        <!-- <xpath expr="//div[@itemprop='description']" position="replace"/>
+            <attribute name="style">display:none;</attribute>
         </xpath> -->
-        <xpath expr="//div[@itemprop='description']" position="before">
+        <xpath expr="//div[@itemprop='description']" position="replace">
             <section class='sct-description-tab o_shop_discussion_rating'>
                 <div class="container" id="website_description">
                     <div class="pd-more-info">

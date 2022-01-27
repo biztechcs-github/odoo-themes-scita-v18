@@ -228,6 +228,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
             if($(".oe_website_sale").length === 0){
                 $("div#wrap").addClass("oe_website_sale");
             }
+            if($(".js_sale").length === 0){
+                $("div#wrap").addClass("js_sale");
+            }
             if($(".js_cart_summary").length === 0){
                 $("div.oe_cart").removeClass("col-xl-8");
             }

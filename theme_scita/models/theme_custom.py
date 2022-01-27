@@ -31,7 +31,7 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale.product_picture_magnify_auto')
         self.disable_view_customize('website_sale.products_images_full')
         self.disable_view_customize('website_sale.filter_products_price')
-        
+        self.disable_view_customize('website_sale.product_share_buttons')
         self.disable_view('website_sale_comparison.product_add_to_compare')
         self.enable_view('website.header_hoverable_dropdown')
 

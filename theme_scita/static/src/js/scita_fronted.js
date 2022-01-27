@@ -137,6 +137,8 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
         disabledInEditableMode: false,
         start: function() {
             var self = this;
+            console.log("o $startTarget",this.$startTarget)
+            console.log("o startTarget",this.startTarget)
             if (this.editableMode) {
                 var $multi_cat_slider = $('#wrapwrap').find('.oe_multi_category_slider');
                 var multi_cat_name = _t("Multi Product Slider")
