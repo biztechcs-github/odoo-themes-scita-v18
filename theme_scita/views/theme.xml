@@ -126,7 +126,6 @@
             <t t-set="enable_left_column" t-value="True"/>
         </xpath>
         <xpath expr="//div[@id='products_grid_before']" position="inside">
-            test
             <div t-if="available_min_price != available_max_price" id="o_wsale_price_range_option">
                 <div class="left-title">
                     <h4 class='attrb_title'>Price</h4>
