@@ -3,7 +3,7 @@
 
 from odoo import api, fields, models, tools
 from odoo.addons.website_sale.controllers import main
-
+from odoo.addons.http_routing.models.ir_http import unslug
 
 class ProductPublicCategory(models.Model):
 

@@ -1267,7 +1267,7 @@
             <t t-set="enable_left_column" t-value="True"/>
         </xpath>
         <xpath expr="//div[@id='sct_shop_product_filter']" position="inside">
-            <div id="wsale_products_categories_collapse">
+            <div id="wsale_products_categories_collapse" class='products_categories'>
                 <ul class="nav nav-pills nav-stacked category_nav">
                     <li t-att-class=" '' if category else 'active' ">
                         <h4 class='attrb_title'><a t-att-href="keep('/shop',category=0)">All Products</a></h4>
