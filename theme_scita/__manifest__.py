@@ -127,6 +127,11 @@ AMP Support
         'static/description/splash-screen.png',
         'static/description/splash-screen_screenshot.gif',
     ],
+    "cloc_exclude": [
+        "static/**/*",
+        "data/**/*",
+        "views/**/*"
+    ],
     'application': True,
     'price': 149.00,
     'currency': 'EUR',
