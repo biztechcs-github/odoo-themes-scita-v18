@@ -30,7 +30,7 @@
         background: transparent;
         position: fixed;
     }
-    header {
+    header { 
         &.o_header_affixed {
             > .oe_structure {
                 display: none;
@@ -1075,10 +1075,19 @@
                             box-shadow: 0px 5px 17px -5px rgba(0,0,0,0.75);
                             button.btn {
                                 position: absolute;
-                                right: 0;
+                                right: -1px;
                                 top: 0;
                                 left: auto;
                                 z-index: 9;
+                                background: $dark-color;
+                                border: none;
+                                line-height: 37px;
+                                padding: 0 0.75rem;
+                                border-radius: 0;
+                                &:hover {
+                                    color: $dark-color;
+                                    background: #ffffff;
+                                }
                             }
                             form {
                                 position: relative;
@@ -4019,6 +4028,8 @@
                     .hm-search {
                         input {
                             padding-right: 50px;
+                            border: none;
+                            line-height: 25px;
                         }
                         .header-search {
                             position: fixed;
@@ -4037,10 +4048,19 @@
                             box-shadow: 0px 5px 17px -5px rgba(0,0,0,0.75);
                             button.btn {
                                 position: absolute;
-                                right: 0;
+                                right: -1px;
                                 top: 0;
                                 left: auto;
                                 z-index: 9;
+                                background: $dark-color;
+                                border: none;
+                                line-height: 37px;
+                                padding: 0 0.75rem;
+                                border-radius: 0;
+                                &:hover {
+                                    color: $dark-color;
+                                    background: #ffffff;
+                                }
                             }
                             form {
                                 position: relative;
@@ -8300,10 +8320,19 @@
                             box-shadow: 0px 5px 17px -5px rgba(0,0,0,0.75);
                             button.btn {
                                 position: absolute;
-                                right: 0;
+                                right: -1;
                                 top: 0;
                                 left: auto;
                                 z-index: 9;
+                                background: $dark-color;
+                                border: none;
+                                line-height: 37px;
+                                padding: 0 0.75rem;
+                                border-radius: 0;
+                                &:hover {
+                                    color: $dark-color;
+                                    background: #ffffff;
+                                }
                             }
                             form {
                                 position: relative;

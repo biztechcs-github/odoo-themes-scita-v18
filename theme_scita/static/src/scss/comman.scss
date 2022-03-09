@@ -1837,3 +1837,22 @@ body header .navbar-expand-lg .navbar-collapse {
 		}
 	}
 }
+.js_sale {
+	.tab-content {
+		#product_full_spec {
+			border: none;
+		}
+	}
+}
+.sct-cst-pro-page {
+	#oe_structure_website_sale_product_2 {
+		display: none;
+	}
+}
+.o_searchbar_form {
+	~ .table-responsive {
+		.dropdown-item {
+			white-space: normal !important;
+		}
+	}
+}
