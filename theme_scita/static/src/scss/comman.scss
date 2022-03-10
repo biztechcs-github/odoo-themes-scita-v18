@@ -191,8 +191,14 @@ header{
 					.dropdown-menu {
 						@media (min-width: 768px){
 							display: block;
-							right: 0;
-							left: auto;
+							/*right: 0;
+							left: auto;*/
+							.dropdown-item {
+								padding: 5px 10px;
+								&:hover {
+									color: #fff !important;
+								}
+							}
 						}
 					}
 				}
@@ -1834,6 +1840,25 @@ body header .navbar-expand-lg .navbar-collapse {
 			position: absolute;
 			color: #fff;
 			top: -4px;
+		}
+	}
+}
+.js_sale {
+	.tab-content {
+		#product_full_spec {
+			border: none;
+		}
+	}
+}
+.sct-cst-pro-page {
+	#oe_structure_website_sale_product_2 {
+		display: none;
+	}
+}
+.o_searchbar_form {
+	~ .table-responsive {
+		.dropdown-item {
+			white-space: normal !important;
 		}
 	}
 }
