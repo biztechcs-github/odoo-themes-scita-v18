@@ -176,7 +176,7 @@
             <attribute name="t-if">not submenu.is_megamenu and submenu.is_visible and not (submenu.child_id or submenu.is_mega_menu)</attribute>
         </xpath>
         <xpath expr="//li[2]" position="attributes">
-            <attribute name="t-elif">not submenu.is_megamenu and submenu.is_mega_menu and submenu.is_visible </attribute>
+            <attribute name="t-elif">not submenu.is_megamenu and submenu.is_mega_menu and submenu.is_visible or not submenu.is_megamenu and submenu.child_id.filtered(lambda menu: menu.is_visible)</attribute>
         </xpath>
         <xpath expr="//li" position="after">
             <!-- Category megamenu -->

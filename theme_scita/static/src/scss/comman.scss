@@ -191,8 +191,14 @@ header{
 					.dropdown-menu {
 						@media (min-width: 768px){
 							display: block;
-							right: 0;
-							left: auto;
+							/*right: 0;
+							left: auto;*/
+							.dropdown-item {
+								padding: 5px 10px;
+								&:hover {
+									color: #fff !important;
+								}
+							}
 						}
 					}
 				}
