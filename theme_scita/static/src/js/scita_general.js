@@ -404,7 +404,6 @@ odoo.define('theme_scita.scita_general_js', function(require) {
     });
     function waitForElementToDisplay(selector, time) {
         if(document.querySelector(selector)!=null) {
-            console.log("load general js ");
             $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
             $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
             $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
@@ -433,7 +432,6 @@ odoo.define('theme_scita.scita_general_js', function(require) {
             $("select#selSnippetCat").on('change',function(){
                 if($("select#selSnippetCat").val()=='banner')
                 {
-                    console.log("select#selSnippetCat general js ",$("select#selSnippetCat").val());
                     $("#scita_snippets [data-disp=banner]").parent().removeClass("o_hidden");
                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");

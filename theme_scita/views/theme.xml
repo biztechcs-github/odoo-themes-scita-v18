@@ -255,7 +255,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -331,7 +331,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -407,7 +407,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -483,7 +483,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -528,7 +528,7 @@
                     </div>
                     <div class="row" t-if="submenu.display_menu_footer">
                         <div class="footer">
-                            <t t-out="submenu.menu_footer"/>
+                            <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                         </div>
                     </div>
                 </ul>
@@ -575,7 +575,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -616,7 +616,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -657,7 +657,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -698,7 +698,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -735,7 +735,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -767,7 +767,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -799,7 +799,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -831,7 +831,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -868,7 +868,7 @@
                         </div>
                         <div class="row" t-if="submenu.display_menu_footer">
                             <div class="footer">
-                                <t t-out="submenu.menu_footer"/>
+                                <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                             </div>
                         </div>
                     </ul>
@@ -897,7 +897,7 @@
                     </div>
                     <div class="row" t-if="submenu.display_menu_footer">
                         <div class="footer">
-                            <t t-out="submenu.menu_footer"/>
+                            <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                         </div>
                     </div>
                 </ul>
@@ -938,7 +938,7 @@
                     </div>
                     <div class="row" t-if="submenu.display_menu_footer">
                         <div class="footer">
-                            <t t-out="submenu.menu_footer"/>
+                            <t t-out="submenu.menu_footer" t-options="{'widget': 'html'}"/>
                         </div>
                     </div>
                 </ul>
@@ -1419,6 +1419,7 @@
                     <div class='sct_portal_info d-flex justify-content-between align-items-center'>
                         <h3 class='sct_portal_title'><t t-esc="title"/></h3>
                         <div class='sct_portal_icon'>
+
                             <t t-if="url=='/my/quotes'">
                                 <span class='fa fa-2x fa-file-text-o'/>
                             </t>
@@ -1443,11 +1444,32 @@
                             <t t-if="url=='/my/timesheets'">
                                 <span class='fa fa-2x fa-calendar-times-o'/>
                             </t>
+                            <t t-if="url=='/my/leads'">
+                                <span class='fa fa-2x fa-cubes'/>
+                            </t>
+                            <t t-if="url=='/my/appointments'">
+                                <span class='fa fa-2x fa-cubes'/>
+                            </t>
+                            <t t-if="url=='/my/rfq'">
+                                <span class='fa fa-2x fa-file-text-o'/>
+                            </t>
+                            <t t-if="url=='/my/tickets'">
+                                <span class='fa fa-2x fa-ticket'/>
+                            </t>
+                            <t t-if="url=='/my/signatures'">
+                                <span class='fa fa-2x fa-sign-language'/>
+                            </t>
+                            <t t-if="url=='/my/subscription'">
+                                <span class='fa fa-2x fa-key'/>
+                            </t>
                         </div>
                     </div>
                     <div class='sct_btn_cnt_div d-flex justify-content-between align-items-center'>
                         <div class='sct_portal_cnt'>
-                            <span class="sct_total_count" t-esc="count"/>
+                            <t t-if="placeholder_count">
+                                <span class="sct_total_count" t-att-data-placeholder_count="placeholder_count">
+                                </span>
+                            </t>
                         </div>
                         <a t-att-href="url" t-att-title="title" class="btn sct_btn_view">View
                         </a>

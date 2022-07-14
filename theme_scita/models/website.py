@@ -325,7 +325,7 @@ class website(models.Model):
                 if url_args.get('sort_id'):
                     del url_args['sort_id']
                 if not url_args.get('tag') and not url_args.get('range1') and not url_args.get('range2') and not url_args.get('max1') and not url_args.get('min1') and not url_args.get('sort_id'):
-                    _url = "%s?%s" % (_url, werkzeug.url_encode(url_args))
+                    _url = "%s?%s" % (_url, werkzeug.urls.url_encode(url_args))
             return _url
         res.update({
             # Overrite existing

@@ -413,7 +413,6 @@ odoo.define('theme_scita.cart_hover', function (require) {
                 $.get("/shop/cart", {
                     type: 'popover',
                 }).then(function(data) {
-                    console.log("data",data)
                     $(".mycart-popover .popover-body").html(data);
                     $('.mycart-popover .js_add_cart_json').off('click').on('click',function(ev) {
                         ev.preventDefault();

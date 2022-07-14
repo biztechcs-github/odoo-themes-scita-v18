@@ -9,8 +9,6 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
         disabledInEditableMode: false,
         start: function() {
             var self = this;
-            console.log("start of categories snippet");
-            console.log("this editableMode",this.editableMode);
             if (this.editableMode) {
                 var $cate_slider = $('#wrapwrap').find('#theme_scita_custom_category_slider');
                 var cat_name = _t("Category Slider")
@@ -137,8 +135,6 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
         disabledInEditableMode: false,
         start: function() {
             var self = this;
-            console.log("o $startTarget",this.$startTarget)
-            console.log("o startTarget",this.startTarget)
             if (this.editableMode) {
                 var $multi_cat_slider = $('#wrapwrap').find('.oe_multi_category_slider');
                 var multi_cat_name = _t("Multi Product Slider")
