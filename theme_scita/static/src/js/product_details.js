@@ -404,7 +404,7 @@ odoo.define('theme_scita.cart_hover', function (require) {
                     return;
                 }
                 if (!data.cart_quantity) {
-                    return window.location = '/shop/cart';
+                    return window.location = window.location.href;
                 }
                 wSaleUtils.updateCartNavBar(data);
                 $input.val(data.quantity);
