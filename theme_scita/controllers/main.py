@@ -1024,25 +1024,25 @@ class ScitaShop(WebsiteSale):
             else:
                 pricelist = pool.get('product.pricelist').browse(
                     context['pricelist'])
-        context.update({'pricelist': pricelist.id})
-        from_currency = pool['res.users'].sudo().browse(
-            SUPERUSER_ID).company_id.currency_id
-        to_currency = pricelist.currency_id
+            context.update({'pricelist': pricelist.id})
+            from_currency = pool['res.users'].sudo().browse(
+                SUPERUSER_ID).company_id.currency_id
+            to_currency = pricelist.currency_id
 
-        def compute_currency(price): return pool['res.currency']._convert(
-            price, from_currency, to_currency, fields.Date.today())
-        values = {
-            'slider_header': slider_header,
-            'slider_details': slider_header,
-            'slider_header': slider_header,
-            'compute_currency': compute_currency,
-        }
-        if slider_header.prod_cat_type == 'product':
-            values.update({'slider_details': slider_header.collections_product})
-        if slider_header.prod_cat_type == 'category':
-            values.update({'slider_details': slider_header.collections_category})
-        values.update({'slider_type': slider_header.prod_cat_type})
-        return request.website.viewref("theme_scita.product_category_img_slider_config_view")._render(values)
+            def compute_currency(price): return pool['res.currency']._convert(
+                price, from_currency, to_currency, fields.Date.today())
+            values = {
+                'slider_header': slider_header,
+                'slider_details': slider_header,
+                'slider_header': slider_header,
+                'compute_currency': compute_currency,
+            }
+            if slider_header.prod_cat_type == 'product':
+                values.update({'slider_details': slider_header.collections_product})
+            if slider_header.prod_cat_type == 'category':
+                values.update({'slider_details': slider_header.collections_category})
+            values.update({'slider_type': slider_header.prod_cat_type})
+            return request.website.viewref("theme_scita.product_category_img_slider_config_view")._render(values)
 
     @http.route(['/theme_scita/product_category_slider'], type='json', auth="public", website=True)
     def get_product_category(self):

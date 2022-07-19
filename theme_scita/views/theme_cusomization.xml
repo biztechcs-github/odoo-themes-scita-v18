@@ -1,6 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <template id='snippet_options_add' inherit_id='website.snippet_options' name='Theme add options'>
+        <xpath expr='//div[@data-selector="#wrapwrap > header nav.navbar .navbar-brand img"]' position='attributes'>
+            <attribute name='data-selector'>#wrapwrap > header .navbar-brand img</attribute>
+        </xpath>
         <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="btn-secondary-outline"]' position='after'>
             <we-select string="Buttons" data-variable="btn-style-template" data-reload="/">
                 <we-button title="Buttons Style 1"

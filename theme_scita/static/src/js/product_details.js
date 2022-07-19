@@ -404,7 +404,7 @@ odoo.define('theme_scita.cart_hover', function (require) {
                     return;
                 }
                 if (!data.cart_quantity) {
-                    return window.location = '/shop/cart';
+                    return window.location = window.location.href;
                 }
                 wSaleUtils.updateCartNavBar(data);
                 $input.val(data.quantity);
@@ -413,7 +413,6 @@ odoo.define('theme_scita.cart_hover', function (require) {
                 $.get("/shop/cart", {
                     type: 'popover',
                 }).then(function(data) {
-                    console.log("data",data)
                     $(".mycart-popover .popover-body").html(data);
                     $('.mycart-popover .js_add_cart_json').off('click').on('click',function(ev) {
                         ev.preventDefault();
