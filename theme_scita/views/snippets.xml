@@ -106,12 +106,12 @@
                                     <t t-if="slider_details.no_of_collection == '2'">
                                         <li class="my-test">
                                             <a 
-                                            t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="my-test">
-                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
@@ -120,17 +120,17 @@
                                     <t t-if="slider_details.no_of_collection == '3'">
                                         <li class="">
                                             <a 
-                                            t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
@@ -138,22 +138,22 @@
 
                                     <t t-if="slider_details.no_of_collection == '4'">
                                         <li class="">
-                                            <a t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            <a t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)"  data-toggle="tab">
+                                            <a t-att-href="'#multi-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)"  data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
@@ -161,27 +161,27 @@
 
                                     <t t-if="slider_details.no_of_collection == '5'">
                                         <li class="">
-                                            <a t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            <a t-att-href="'#multi-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#multi-collection5-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#multi-collection5-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_5'/>
                                             </a>
                                         </li>
@@ -710,7 +710,7 @@
                              </a>
                         </div>
                         <div class='cst_sct_content'>
-                            <t t-raw='slider_header.links'/>
+                            <t t-out='slider_header.links'/>
                         </div>
                     </div>
                     <div class='col-md-9 cst_sct_right_side'>
@@ -899,12 +899,12 @@
 
                                     <t t-if="slider_details.no_of_collection == '2'">
                                         <li class="my-test">
-                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="my-test">
-                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
@@ -912,17 +912,17 @@
 
                                     <t t-if="slider_details.no_of_collection == '3'">
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
@@ -930,22 +930,22 @@
 
                                     <t t-if="slider_details.no_of_collection == '4'">
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
@@ -953,27 +953,27 @@
 
                                     <t t-if="slider_details.no_of_collection == '5'">
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab" class="active show">
+                                            <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
                                                 <t t-esc='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
                                         <li class="">
-                                            <a t-att-href="'#fashion-collection5-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-toggle="tab">
+                                            <a t-att-href="'#fashion-collection5-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
                                                 <t t-esc='slider_details.label_collection_5'/>
                                             </a>
                                         </li>

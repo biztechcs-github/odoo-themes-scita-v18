@@ -10,7 +10,7 @@
                         <p class='sct_simple_text'>Contact us any suitable way and make an appointment with the doctor whose help you need! Visit us at the scheduled time and get your treatment.</p>
                         <div class='sct_play_btn'>
                            
-                                <a class="btn static-youtube" style="background-image: url('/web/image/theme_scita.sct_adveertis_snippet_3_img_2');" data-src="http://www.youtube.com/v/GlIzuTQGgzs" data-target="#youtube_id">
+                                <a class="btn static-youtube" style="background-image: url('/web/image/theme_scita.sct_adveertis_snippet_3_img_2');" data-src="http://www.youtube.com/v/GlIzuTQGgzs" data-bs-target="#youtube_id">
                                 </a>
                                 
                                 <div class="data-youtube o_hidden">

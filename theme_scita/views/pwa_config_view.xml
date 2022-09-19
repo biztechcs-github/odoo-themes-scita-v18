@@ -6,7 +6,7 @@
         <field name="model">res.config.settings</field>
         <field name="inherit_id" ref="theme_scita.res_config_settings_view_form"/>
         <field name="arch" type="xml">
-            <div id="webmaster_settings" position="after">
+            <div id="website_email_marketing" position="after">
                 <h2>PWA Website</h2>
                 <div class="row mt16 o_settings_container">
                     <div class="col-md-12 o_setting_box">
@@ -68,7 +68,7 @@
                                  Application icons used for shortcut and splashscreen. (Required Image File must be PNG format)
                             </div>
                             <div class="mt5">
-                                <field name="pwa_app_icon_512" widget="image" height='100px' width='100px'/>
+                                <field name="pwa_app_icon_512" widget="image" options="{'size': [64, 64]}"/>
                             </div>
                         </div>
                     </div>

@@ -2,18 +2,15 @@ odoo.define('theme_scita.editor_js',function(require) {
 'use strict';
     var ajax = require('web.ajax');
     var core = require('web.core');
-    var weContext = require('web_editor.context');
     var options = require('web_editor.snippets.options');
-    var wUtils = require('website.utils');
     var qweb = core.qweb;
     var _t = core._t;
-    ajax.loadXML('/theme_scita/static/src/xml/theme_scita.xml', qweb);
+    // ajax.loadXML('/theme_scita/static/src/xml/theme_scita.xml', qweb);
     var set_timer = options.Class.extend({
         popup_template_id: "editor_new_product_slider_template",
         popup_title: _t("Modify Time"),
         date_configure: function(type,value) {
             var self = this;
-            
             $('#datetimepicker1').datetimepicker({ 
             });
             let today = new Date(),
@@ -31,7 +28,7 @@ odoo.define('theme_scita.editor_js',function(require) {
             self.$modal.find("input#date").min=today;
             
             self.$modal.appendTo('body');
-            self.$modal.modal();
+            self.$modal.modal('show');
             var $sub_data = self.$modal.find("#biztech_coumtdown_btn");
             var $can = self.$modal.find("#biz_cancle");
             $sub_data.on('click', function() {

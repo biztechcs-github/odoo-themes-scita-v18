@@ -17,10 +17,10 @@ odoo.define('theme_scita.quick_view', function(require) {
     require("web.zoomodoo");
     const {extraMenuUpdateCallbacks} = require('website.content.menu');
     const dom = require('web.dom');
-    var xml_load = ajax.loadXML(
-        '/website_sale_stock/static/src/xml/website_sale_stock_product_availability.xml',
-        QWeb
-    );
+    // var xml_load = ajax.loadXML(
+    //     '/website_sale_stock/static/src/xml/website_sale_stock_product_availability.xml',
+    //     QWeb
+    // );
 
     // For quickview Start
     publicWidget.registry.quickView = publicWidget.Widget.extend({
@@ -36,17 +36,18 @@ odoo.define('theme_scita.quick_view', function(require) {
                 var sale = new publicWidget.registry.WebsiteSale();
 
                     $("#shop_quick_view_modal").html(data);
-                    $("#shop_quick_view_modal").modal();
+                    $("#shop_quick_view_modal").modal('show');
                     var WebsiteSale = new publicWidget.registry.WebsiteSale();
                     WebsiteSale.init();
                     var combination = [];
-                    xml_load.then(function () {
-                        var $message = $(QWeb.render(
-                            'website_sale_stock.product_availability',
-                            combination
-                        ));
-                        $('div.availability_messages').html($message);
-                    });
+                    // xml_load.then(function () {
+                        // var $message = $(QWeb.render(
+                        //     'website_sale_stock.product_availability',
+                        //     combination
+                        // ));
+                        // console.log(combination, $message)
+                        // $('div.availability_messages').html($message);
+                    // });
                     $(".quick_cover").css("display", "block");
                     $("[data-attribute_exclusions]").on("change", function(ev) {
                         WebsiteSale.onChangeVariant(ev);
@@ -72,7 +73,7 @@ odoo.define('theme_scita.quick_view', function(require) {
             var product_id = $(element).attr('data-id');
             ajax.jsonRpc('/theme_scita/shop/cart_view', 'call',{'product_id':product_id}).then(function(data) {
                 $("#shop_cart_view_modal").html(data);
-                $("#shop_cart_view_modal").modal();
+                $("#shop_cart_view_modal").modal('show');
             });
         }
     });

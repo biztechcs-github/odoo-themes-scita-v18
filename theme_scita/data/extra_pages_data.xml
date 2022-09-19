@@ -876,14 +876,14 @@
                                           <span>
                                             <font style="color: rgb(0, 0, 0);">or</font>
                                           </span>
-                                          <a href="#" class="btn btn-primary scita_cstm_btn" data-original-title="" title="" aria-describedby="tooltip557703">Contact Us</a>
+                                          <a href="#" class="btn btn-primary scita_cstm_btn" data-bs-original-title="" title="" aria-describedby="tooltip557703">Contact Us</a>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                             </section>
-                            <section class="newsletter_varient_5" data-disp="newsletter" data-name="Newsletter Snippet 5">
+                            <section class="newsletter_varient_5" data-disp="newsletter" data-name="Newsletter Snippet 5" data-list-id="0">
                                 <div class="container-fluid">
                                   <div class="row sct_btm_row">
                                     <div class="col-md-6 sct_news_box">
@@ -893,13 +893,11 @@
                                       </div>
                                     </div>
                                     <div class="col-md-6 sct_control_box">
-                                      <div class="input-group js_subscribe" data-list-id="1">
+                                      <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                                         <div class="newsletter_box">
-                                          <input class="popup_subscribe_email js_subscribe_email form-control" placeholder="Please Enter Your Email*" type="email"/>
-                                          <span class="input-group-btn">
-                                            <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn o_default_snippet_text" href="#">Submit</a>
-                                            <a class="btn btn-success js_subscribed_btn o_hidden o_default_snippet_text d-none" disabled="disabled" href="#">Thanks</a>
-                                          </span>
+                                          <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" type="email"/>
+                                          <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn o_default_snippet_text" href="#">Submit</a>
+                                          <a class="btn btn-success js_subscribed_btn o_hidden o_default_snippet_text d-none" disabled="disabled" href="#">Thanks</a>
                                           <div class="alert alert-success o_hidden o_default_snippet_text">Thanks for your subscription!</div>
                                         </div>
                                       </div>
@@ -946,7 +944,7 @@
                                       <p><br/>Write one or two paragraphs describing your product or services. <br/>To be successful your content needs to be useful to your readers.</p>
                                       <p>Start with the customer – find out what they want and give it to them.</p>
                                       <div class="s_btn text-left pt16 pb16" data-name="Buttons">
-                                        <a href="#" class="btn btn-primary" data-original-title="" title="" aria-describedby="tooltip618155">Read More</a>
+                                        <a href="#" class="btn btn-primary" data-bs-original-title="" title="" aria-describedby="tooltip618155">Read More</a>
                                       </div>
                                     </div>
                                     <div class="col-lg-6 pt16 pb16">
@@ -1041,27 +1039,27 @@
                                         <div class="card-header">
                                           <ul class="nav nav-tabs card-header-tabs" role="tablist">
                                             <li class="nav-item">
-                                              <a class="nav-link active" id="nav_tabs_link_1581576277869_33" data-toggle="tab" href="#nav_tabs_content_1581576277869_33" role="tab" aria-controls="nav_tabs_content_1581576277869_33" aria-selected="true">
+                                              <a class="nav-link active" id="nav_tabs_link_1581576277869_33" data-bs-toggle="tab" href="#nav_tabs_content_1581576277869_33" role="tab" aria-controls="nav_tabs_content_1581576277869_33" aria-selected="true">
                                                 <img src="/theme_scita/static/src/img/health/health-exp-thumb-1.jpg" class="img img-fluid" alt="Expert"/>
                                               </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a class="nav-link" id="nav_tabs_link_1581576277869_34" data-toggle="tab" href="#nav_tabs_content_1581576277869_34" role="tab" aria-controls="nav_tabs_content_1581576277869_34" aria-selected="false">
+                                              <a class="nav-link" id="nav_tabs_link_1581576277869_34" data-bs-toggle="tab" href="#nav_tabs_content_1581576277869_34" role="tab" aria-controls="nav_tabs_content_1581576277869_34" aria-selected="false">
                                                 <img src="/theme_scita/static/src/img/health/health-exp-thumb-2.jpg" class="img img-fluid" alt="Expert"/>
                                               </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a class="nav-link" id="nav_tabs_link_1581576277869_35" data-toggle="tab" href="#nav_tabs_content_1581576277869_35" role="tab" aria-controls="nav_tabs_content_1581576277869_35" aria-selected="false">
+                                              <a class="nav-link" id="nav_tabs_link_1581576277869_35" data-bs-toggle="tab" href="#nav_tabs_content_1581576277869_35" role="tab" aria-controls="nav_tabs_content_1581576277869_35" aria-selected="false">
                                                 <img src="/theme_scita/static/src/img/health/health-exp-thumb-3.jpg" class="img img-fluid" alt="Expert"/>
                                               </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a class="nav-link" id="nav_tabs_link_1581576277869_36" data-toggle="tab" href="#nav_tabs_content_1581576277869_36" role="tab" aria-controls="nav_tabs_content_1581576277869_36" aria-selected="false">
+                                              <a class="nav-link" id="nav_tabs_link_1581576277869_36" data-bs-toggle="tab" href="#nav_tabs_content_1581576277869_36" role="tab" aria-controls="nav_tabs_content_1581576277869_36" aria-selected="false">
                                                 <img src="/theme_scita/static/src/img/health/health-exp-thumb-4.jpg" class="img img-fluid" alt="Expert"/>
                                               </a>
                                             </li>
                                             <li class="nav-item">
-                                              <a class="nav-link" id="nav_tabs_link_1581576277869_37" data-toggle="tab" href="#nav_tabs_content_1581576277869_37" role="tab" aria-controls="nav_tabs_content_1581576277869_37" aria-selected="false">
+                                              <a class="nav-link" id="nav_tabs_link_1581576277869_37" data-bs-toggle="tab" href="#nav_tabs_content_1581576277869_37" role="tab" aria-controls="nav_tabs_content_1581576277869_37" aria-selected="false">
                                                 <img src="/theme_scita/static/src/img/health/health-exp-thumb-5.jpg" class="img img-fluid" alt="Expert"/>
                                               </a>
                                             </li>

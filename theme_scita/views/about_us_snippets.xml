@@ -108,19 +108,19 @@
 	                            <!-- Nav tabs -->
 	                            <ul class="nav nav-tabs" role="tablist">
 	                                <li class="nav-item">
-	                                    <a class="nav-link active" data-toggle="tab" href="#about_4_item1">What we do</a>
+	                                    <a class="nav-link active" id="nav_tabs_link_01" data-bs-toggle="tab" href="#about_4_item1" role="tab" aria-controls="about_4_item1" aria-selected="true">What we do</a>
 	                                </li>
 	                                <li class="nav-item">
-	                                    <a class="nav-link" data-toggle="tab" href="#about_4_item2">Client results</a>
+	                                    <a class="nav-link" id="nav_tabs_link_02" data-bs-toggle="tab" href="#about_4_item2" role="tab" aria-controls="about_4_item2" aria-selected="true">Client results</a>
 	                                </li>
 	                                <li class="nav-item">
-	                                    <a class="nav-link" data-toggle="tab" href="#about_4_item3">
+	                                    <a class="nav-link" id="nav_tabs_link_03" data-bs-toggle="tab" href="#about_4_item3" role="tab" aria-controls="about_4_item3" aria-selected="true">
 	                                    Social impact</a>
 	                                </li>
 	                            </ul>
 	                            <!-- Tab panes -->
 	                            <div class="tab-content">
-	                                <div class="tab-pane fade in active show" id="about_4_item1" role="tabpanel">
+	                                <div class="tab-pane fade in active show" id="about_4_item1" role="tabpanel" aria-labelledby="nav_tabs_link_01">
 	                                    <div class='row sct_serv_row'>
 	                                        <div class='col-md-12'>
 	                                        	<div class='sct_base_class'>
@@ -134,7 +134,7 @@
 	                                        </div>
 	                                    </div>
 	                                </div>
-	                                <div class="tab-pane fade" id="about_4_item2" role="tabpanel">
+	                                <div class="tab-pane fade" id="about_4_item2" role="tabpanel" aria-labelledby="nav_tabs_link_02">
 	                                    <div class='row sct_serv_row'>
 	                                        <div class='col-md-12'>
 	                                        	<div class='sct_base_class'>
@@ -148,7 +148,7 @@
 	                                        </div>
 	                                    </div>
 	                                </div>
-	                                <div class="tab-pane fade" id="about_4_item3" role="tabpanel">
+	                                <div class="tab-pane fade" id="about_4_item3" role="tabpanel" aria-labelledby="nav_tabs_link_03">
 	                                    <div class='row sct_serv_row'>
 	                                        <div class='col-md-12'>
 	                                        	<div class='sct_base_class'>
@@ -213,7 +213,7 @@
                 <div class="container sct_btm_row">
                     <div id="myCollapse" class="accordion" role="tablist">
                         <div class="card bg-white" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>
                             <div class="collapse show" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry1.</p>
@@ -221,7 +221,7 @@
                             </div>
                         </div>
                         <div class="card bg-white" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Does hudly work with my phone?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Does hudly work with my phone?</a>
                             <div class="collapse" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry2.</p>
@@ -229,7 +229,7 @@
                             </div>
                         </div>
                         <div class="card bg-white" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum is simply dummy text?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum is simply dummy text?</a>
                             <div class="collapse" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry3.</p>
@@ -252,7 +252,7 @@
                 <div class="container sct_btm_row">
                     <div id="myAccorningCollapse" class="accordion" role="tablist">
                         <div class="card bg-white active" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>
                             <div class="collapse show" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry1.</p>
@@ -260,7 +260,7 @@
                             </div>
                         </div>
                         <div class="card bg-white" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Does hudly work with my phone?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Does hudly work with my phone?</a>
                             <div class="collapse" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry2.</p>
@@ -268,7 +268,7 @@
                             </div>
                         </div>
                         <div class="card bg-white" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum is simply dummy text?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum is simply dummy text?</a>
                             <div class="collapse" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry3.</p>
@@ -276,7 +276,7 @@
                             </div>
                         </div>
                         <div class="card bg-white" data-name="Item">
-                            <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum is simply dummy text?</a>
+                            <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum is simply dummy text?</a>
                             <div class="collapse" role="tabpanel">
                                 <div class="card-body">
                                     <p class="sct_simple_text">Lorem Ipsum is simply dummy text of the printing and typesetting industry3.</p>

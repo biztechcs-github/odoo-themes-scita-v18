@@ -73,11 +73,11 @@
                         <field name="name"/>
                         <field name="alt"/>
                         <field name="attach_type" widget="radio"/>
-                        <field attrs="{'invisible': [('attach_type', '=', 'video')]}" class="oe_avatar" height="64" name="image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;}" widget="image" width="64"/>
+                        <field attrs="{'invisible': [('attach_type', '=', 'video')]}" class="oe_avatar" name="image" options="{&quot;preview_image&quot;:&quot;image_medium&quot; ,'size': [64, 64]}" widget="image"/>
                         <field attrs="{'invisible': [('attach_type', '=', 'image')]}" name="video_type"/>
                     </group>
                     <group col="4">
-                        <field attrs="{'invisible': ['|', ('attach_type', '=', 'image'), ('video_type', '=', 'youtube')]}" class="oe_avatar" height="64" name="cover_image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;}" widget="image" width="64"/>
+                        <field attrs="{'invisible': ['|', ('attach_type', '=', 'image'), ('video_type', '=', 'youtube')]}" class="oe_avatar" name="cover_image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;,'size': [64, 64]}" widget="image"/>
                     </group>
                     <group>
                         <field attrs="{'invisible': ['|', ('attach_type', '=', 'image'), ('video_type', '=', 'html5video')]}" name="video_id"/>
@@ -98,7 +98,7 @@
                 <field name="name"/>
                 <field name="alt"/>
                 <field name="attach_type"/>
-                <field attrs="{'invisible': [('attach_type', '=', 'video')]}" height="64px" name="image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;}" widget="image" width="64"/>
+                <field attrs="{'invisible': [('attach_type', '=', 'video')]}" name="image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;, 'size': [64, 64]}" widget="image"/>
                 <field attrs="{'invisible': [('attach_type', '=', 'image')]}" name="video_type"/>
                 <field attrs="{'invisible': [('attach_type', '=', 'image')]}" name="video_id"/>
                 <field name="sequence"/>

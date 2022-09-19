@@ -19,7 +19,7 @@
                         <t t-set="additional_title" t-value="main_object.name"/>
                     </t>
                     <t t-if="not title">
-                        <t t-set="title"><t t-if="additional_title"><t t-raw="additional_title"/> | </t><t t-esc="(website or res_company).name"/></t>
+                        <t t-set="title"><t t-if="additional_title"><t t-out="additional_title"/> | </t><t t-esc="(website or res_company).name"/></t>
                     </t>
                     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
                     <meta name="description" t-att-content="main_object and 'website_meta_description' in main_object                     and main_object.website_meta_description or website_meta_description"/>
@@ -35,7 +35,7 @@
                         <meta property="og:url" t-att-content="request.httprequest.url_root+request.httprequest.path[1:end]"/>
                     </t>
                     <title><t t-esc="title"/></title>
-                    <t t-raw="head or ''" name="layout_head"/>
+                    <t t-out="head or ''" name="layout_head"/>
                     <style amp-boilerplate="amp-boilerplate">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
                     <noscript><style amp-boilerplate="amp-boilerplate">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
                     </noscript>
@@ -406,7 +406,7 @@
                         .ab-mob-view .ab-icons:hover .btn-link span {
                             color: grey;
                         }
-                        <t t-raw="custom_css or ''" name="custom_css"/>
+                        <t t-out="custom_css or ''" name="custom_css"/>
                     </style>
                 </head>
                 <body>
@@ -456,7 +456,7 @@
                             </div>
                         </div>
                         <main>
-                            <t t-raw="0"/>
+                            <t t-out="0"/>
                         </main>
                     </div>
                     </div>
@@ -509,7 +509,7 @@
                             </button>
                         </div>
                         <div class="ab-icons ab-category">
-                            <button class="btn btn-link" data-target="#product_category_list" on="tap:cat_sidebar.toggle" type="button">
+                            <button class="btn btn-link" data-bs-target="#product_category_list" on="tap:cat_sidebar.toggle" type="button">
                                 <span class="fa fa-th-large"/>
                                 <span class="name-text">Categories</span>
                             </button>
@@ -778,7 +778,7 @@
                         <div class="sct-box">
                             <t t-foreach="website_sale_sortable" t-as="sortby">
                                 <a role="menuitem" t-att-href="keep('/shop/amp', order=sortby[1])" class="sort-links">
-                                    <span t-raw="sortby[0]"/>
+                                    <span t-out="sortby[0]"/>
                                 </a>
                             </t>
                             <button class="sct-close" on="tap:my_sort_by.hide">X</button>

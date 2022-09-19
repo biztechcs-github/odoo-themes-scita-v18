@@ -39,19 +39,19 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#item1">1</a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#item1">1</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#item2">2</a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#item2">2</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#item3">3</a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#item3">3</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#item4">4</a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#item4">4</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#item5">5</a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#item5">5</a>
                                 </li>
                             </ul>
                         </div>
@@ -225,8 +225,8 @@
                         <div class="sct_base_class">
                             <div id="myContentCollapse" class="accordion" role="tablist">
                                 <div class="card bg-white" data-name="Item">
-                                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>
-                                    <div class="collapse show" role="tabpanel" data-parent="#myContentCollapse">
+                                    <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>
+                                    <div class="collapse show" role="tabpanel" data-bs-parent="#myContentCollapse">
                                         <div class="card-body">
                                             <ul class="sct_unorder_list">
                                                 <li>
@@ -240,8 +240,8 @@
                                     </div>
                                 </div>
                                 <div class="card bg-white" data-name="Item">
-                                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Does hudly work with my phone?</a>
-                                    <div class="collapse" role="tabpanel" data-parent="#myContentCollapse">
+                                    <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Does hudly work with my phone?</a>
+                                    <div class="collapse" role="tabpanel" data-bs-parent="#myContentCollapse">
                                         <div class="card-body">
                                             <ul class="sct_unorder_list">
                                                 <li>
@@ -255,8 +255,8 @@
                                     </div>
                                 </div>
                                 <div class="card bg-white" data-name="Item">
-                                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum 1 is simply dummy text?</a>
-                                    <div class="collapse" role="tabpanel" data-parent="#myContentCollapse">
+                                    <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum 1 is simply dummy text?</a>
+                                    <div class="collapse" role="tabpanel" data-bs-parent="#myContentCollapse">
                                         <div class="card-body">
                                             <ul class="sct_unorder_list">
                                                 <li>
@@ -270,8 +270,8 @@
                                     </div>
                                 </div>
                                 <div class="card bg-white" data-name="Item">
-                                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum 2 is simply dummy text?</a>
-                                    <div class="collapse" role="tabpanel" data-parent="#myContentCollapse">
+                                    <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum 2 is simply dummy text?</a>
+                                    <div class="collapse" role="tabpanel" data-bs-parent="#myContentCollapse">
                                         <div class="card-body">
                                             <ul class="sct_unorder_list">
                                                 <li>
@@ -285,8 +285,8 @@
                                     </div>
                                 </div>
                                 <div class="card bg-white" data-name="Item">
-                                    <a href="#" role="tab" data-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum 3 is simply dummy text?</a>
-                                    <div class="collapse" role="tabpanel" data-parent="#myContentCollapse">
+                                    <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="false" class="collapsed card-header">Lorem Ipsum 3 is simply dummy text?</a>
+                                    <div class="collapse" role="tabpanel" data-bs-parent="#myContentCollapse">
                                         <div class="card-body">
                                             <ul class="sct_unorder_list">
                                                 <li>

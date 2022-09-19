@@ -67,6 +67,7 @@ AMP Support
     'depends': [
         'sale_management',
         'website_sale',
+        'website_sale_stock',
         'website_sale_comparison',
         'website_sale_wishlist',
         'hr',
@@ -170,6 +171,7 @@ AMP Support
             'theme_scita/static/src/js/scita_fronted.js',
             'theme_scita/static/src/js/timer_fronted.js',
             'theme_scita/static/src/js/rating_state.js',
+            '/portal_rating/static/src/xml/portal_chatter.xml',
             'theme_scita/static/src/js/product_details.js',
             'theme_scita/static/src/js/see_more_brand.js',
             'theme_scita/static/src/js/header.js',
@@ -178,12 +180,14 @@ AMP Support
             'theme_scita/static/src/scss/pwa_design.scss',
             'theme_scita/static/src/js/pwa_implementation.js',
             'theme_scita/static/src/js/quick_view.js',
+            '/website_sale_stock/static/src/xml/**/*',
             ('before', '/theme_scita/static/src/scss/comman.scss', 'theme_scita/static/src/scss/button/button_styles.scss'),
         ],
-        'website.assets_editor': [
+        'website.assets_wysiwyg': [
             'theme_scita/static/src/js/scita_editor.js',
             'theme_scita/static/src/js/timer_editor.js',
             'theme_scita/static/src/js/google_map_editor.js',
+            '/theme_scita/static/src/xml/**/*',
         ],
     }
 }

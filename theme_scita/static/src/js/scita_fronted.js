@@ -808,6 +808,7 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
         disabledInEditableMode: false,
         start: function() {
             var self = this;
+            console.log("Hello")
             if (this.editableMode) {
                 var $client_slider = $('#wrapwrap').find('#theme_scita_custom_client_slider');
                 var client_name = _t("Client Slider")

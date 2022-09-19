@@ -128,6 +128,7 @@
     </template>  
     <template id="pwa_mobile_device_popup" inherit_id="web.frontend_layout" name='Mobile Device PWA Popup'>
          <xpath expr="//div[@id='wrapwrap']/main" position="inside">
+            <t t-set='website_obj' t-value="request.env['website']" />
             <t t-set='current_website_obj' t-value="website_obj.sudo().get_current_website()" />  
             <div class="mobile-deive-popup" t-if='current_website_obj.is_app_pwa'>
                 <img t-att-src="request.env['website'].image_url(current_website_obj, 'pwa_app_icon_512', '50x50')" class='img pwa-icon-img'/>

@@ -818,7 +818,7 @@
                     </ul>
                 </div>
                 <div class="my-cart">
-                    <span data-toggle="collapse" id="mycart_collapse" data-target="#show-cart">Cart
+                    <span data-bs-toggle="collapse" id="mycart_collapse" data-bs-target="#show-cart">Cart
                         <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
                         <span class="theme_scita_cart_quantity my_cart_quantity" t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
                     </span>
@@ -835,7 +835,7 @@
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
-                            <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
+                            <span data-bs-toggle="collapse" data-bs-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
                                 Wishlist
                                 <span t-attf-class="my_wish_quantity o_animate_blink theme_scita_wish_quantity label label-primary" t-esc="wishcount or 0"/>
                             </span>
@@ -845,7 +845,7 @@
                     </div>
                 </t>
                 <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
-                    <span data-toggle="collapse" data-target="#add-language">Language</span>
+                    <span data-bs-toggle="collapse" data-bs-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
                             <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -1180,7 +1180,7 @@
                     </ul>
                 </div>
                 <div class="my-cart">
-                    <span data-toggle="collapse" id="mycart_collapse" data-target="#show-cart">Cart
+                    <span data-bs-toggle="collapse" id="mycart_collapse" data-bs-target="#show-cart">Cart
                         <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
                         <span class="theme_scita_cart_quantity my_cart_quantity" t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
                     </span>
@@ -1197,7 +1197,7 @@
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
-                            <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
+                            <span data-bs-toggle="collapse" data-bs-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
                                 Wishlist
                                 <span t-attf-class="my_wish_quantity o_animate_blink theme_scita_wish_quantity label label-primary" t-esc="wishcount or 0"/>
                             </span>
@@ -1580,7 +1580,7 @@
                                         </t>
                                         <t t-if="website.user_id != user_id">
                                             <div class="btn-group">
-                                                <button class="btn dropdown-toggle btn-default" data-caret="true" data-toggle="dropdown" type="button">
+                                                <button class="btn dropdown-toggle btn-default" data-caret="true" data-bs-toggle="dropdown" type="button">
                                                     <b><t t-esc="user_id.name"/></b>
                                                 </button>
                                                 <ul class="dropdown-menu" role="menu">
@@ -1977,7 +1977,7 @@
                     </ul>
                 </div>
                 <div class="my-cart">
-                    <span data-toggle="collapse" id="mycart_collapse" data-target="#show-cart">Cart
+                    <span data-bs-toggle="collapse" id="mycart_collapse" data-bs-target="#show-cart">Cart
                         <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
                         <span class="theme_scita_cart_quantity my_cart_quantity" t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
                     </span>
@@ -1995,7 +1995,7 @@
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
-                            <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
+                            <span data-bs-toggle="collapse" data-bs-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
                                 Wishlist
                                 <span t-attf-class="my_wish_quantity o_animate_blink theme_scita_wish_quantity label label-primary" t-esc="wishcount or 0"/>
                             </span>
@@ -2005,7 +2005,7 @@
                     </div>
                 </t>
                 <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
-                    <span data-toggle="collapse" data-target="#add-language">Language</span>
+                    <span data-bs-toggle="collapse" data-bs-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
                             <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -2299,7 +2299,7 @@
                     </ul>
                 </div>
                 <div class="my-cart">
-                    <span data-toggle="collapse" id="mycart_collapse" data-target="#show-cart">Cart
+                    <span data-bs-toggle="collapse" id="mycart_collapse" data-bs-target="#show-cart">Cart
                         <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
                         <span class="theme_scita_cart_quantity my_cart_quantity" t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
                     </span>
@@ -2316,7 +2316,7 @@
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
-                            <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
+                            <span data-bs-toggle="collapse" data-bs-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
                                 Wishlist
                                 <span t-attf-class="my_wish_quantity o_animate_blink theme_scita_wish_quantity label label-primary" t-esc="wishcount or 0"/>
                             </span>
@@ -2326,7 +2326,7 @@
                     </div>
                 </t>
                 <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
-                    <span data-toggle="collapse" data-target="#add-language">Language</span>
+                    <span data-bs-toggle="collapse" data-bs-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
                             <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -2481,7 +2481,7 @@
                     </ul>
                 </div>
                 <div class="my-cart">
-                    <span data-toggle="collapse" id="mycart_collapse" data-target="#show-cart">Cart
+                    <span data-bs-toggle="collapse" id="mycart_collapse" data-bs-target="#show-cart">Cart
                         <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
                         <span class="theme_scita_cart_quantity my_cart_quantity" t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
                     </span>
@@ -2498,7 +2498,7 @@
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
-                            <span data-toggle="collapse" data-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
+                            <span data-bs-toggle="collapse" data-bs-target="#show-wishlist" id="wishlish_collapse" class="sct-cst-wl">
                                 Wishlist
                                 <span t-attf-class="my_wish_quantity o_animate_blink theme_scita_wish_quantity label label-primary" t-esc="wishcount or 0"/>
                             </span>
@@ -2508,7 +2508,7 @@
                     </div>
                 </t>
                 <div class="lang-opt" t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
-                    <span data-toggle="collapse" data-target="#add-language">Language</span>
+                    <span data-bs-toggle="collapse" data-bs-target="#add-language">Language</span>
                     <div id="add-language" class="collapse">
                         <t t-call="website.placeholder_header_language_selector">
                             <t t-set="_div_classes" t-value="'ml-2'"/>
@@ -3491,13 +3491,13 @@
             </div>
         </xpath>
     </template>
-    <template id="website_sale_cstm_price_list" inherit_id="website_sale.pricelist_list" name="Inherit website price list">
-        <xpath expr="//a[hasclass('dropdown-toggle')]" position="attributes"> 
-            <attribute name='class'>dropdown-toggle btn</attribute> 
+<!--     <template id="website_sale_cstm_price_list" inherit_id="website_sale.pricelist_list" name="Inherit website price list">
+        <xpath expr="//a[@role='button']" position="attributes"> 
+            <attribute name='t-attf-class'>dropdown-toggle btn</attribute> 
         </xpath> 
-    </template>
+    </template> -->
     <template  id="search_btn_primary_class_remove" inherit_id="website.website_search_box">
-        <xpath expr="//div[hasclass('input-group-append')]//button" position="attributes">
+        <xpath expr="//button" position="attributes">
             <attribute name='class'>btn oe_search_button</attribute>
         </xpath>
     </template>

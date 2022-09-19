@@ -6,7 +6,7 @@ odoo.define('theme_scita.snippet_map_editor_js', function(require) {
     var qweb = core.qweb;
     var _t = core._t;
 
-    ajax.loadXML('/theme_scita/static/src/xml/s_google_snippet_modal.xml', qweb);
+    // ajax.loadXML('/theme_scita/static/src/xml/s_google_snippet_modal.xml', qweb);
 
     options.registry.s_google_map = options.Class.extend({
         start: function(editMode) {
@@ -32,7 +32,7 @@ odoo.define('theme_scita.snippet_map_editor_js', function(require) {
             var self = this;
             self.$modal = $(qweb.render("theme_scita.s_google_map_modal"));
             self.$modal.appendTo('body');
-            self.$modal.modal();
+            self.$modal.modal('show');
             // address_html_code
             var $address_data = self.$modal.find("#set_map_data");
             $address_data.on('click', function() {
@@ -66,7 +66,7 @@ odoo.define('theme_scita.snippet_map_editor_js', function(require) {
             var self = this;
             self.$modal = $(qweb.render("theme_scita.s_google_map_content_modal"));
             self.$modal.appendTo('body');
-            self.$modal.modal();
+            self.$modal.modal('show');
             var $address_set_btn = self.$modal.find("#set_map_data_content");
             $address_set_btn.on('click', function() {
                 var html_ecode = self.$modal.find("textarea#address_content_html_code").val();

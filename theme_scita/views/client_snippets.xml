@@ -76,7 +76,7 @@
                             <div class='row'>
                                 <div class='col-md-12'>
                                     <section class="sct_test_slider s_carousel_wrapper">
-                                        <div id="mymixCarousel" class="s_carousel carousel quotecarousel slide" data-interval="10000">
+                                        <div id="mymixCarousel" class="s_carousel carousel quotecarousel slide" data-bs-interval="10000">
                                             
                                             <div class="carousel-inner">
                                                 <div class="carousel-item active">
@@ -125,11 +125,11 @@
                                                 </div>
                                             </div>
                                             <div class='carousel-control'>
-                                                <div class="carousel-control-prev" data-target="#mymixCarousel" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                                <div class="carousel-control-prev" data-bs-target="#mymixCarousel" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
                                                     <span class="carousel-control-prev-icon"/>
                                                     <span class="sr-only">Previous</span>
                                                 </div>
-                                                <div class="carousel-control-next" data-target="#mymixCarousel" data-slide="next" role="img" aria-label="Next" title="Next">
+                                                <div class="carousel-control-next" data-bs-target="#mymixCarousel" data-bs-slide="next" role="img" aria-label="Next" title="Next">
                                                     <span class="carousel-control-next-icon"/>
                                                     <span class="sr-only">Next</span>
                                                 </div>

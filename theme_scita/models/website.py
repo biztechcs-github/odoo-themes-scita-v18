@@ -157,7 +157,7 @@ class website(models.Model):
         which are supported by payment acquirers that are published
         """
         return self.env['payment.icon'].sudo().search([
-            ('acquirer_ids.state', 'in', ['enabled', 'test'])], limit=5)
+            ('provider_ids.state', 'in', ['enabled', 'test'])], limit=5)
 
     # for product brand
     def get_product_brands(self, category, **post):

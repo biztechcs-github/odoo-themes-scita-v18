@@ -57,7 +57,7 @@
                 <div class='row s_nb_column_fixed sct_btm_row'>
                     <div class='col-md-12'>
                         <div class="sct_health_btn">
-                            <a class="btn btn-primary scita_cstm_btn  btn_border" href="/contectus"><span>View All</span></a>
+                            <a class="btn btn-primary scita_cstm_btn  btn_border" href="/contactus"><span>View All</span></a>
                         </div>
                     </div>
                 </div>

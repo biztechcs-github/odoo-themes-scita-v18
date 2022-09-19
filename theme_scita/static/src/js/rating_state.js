@@ -5,7 +5,7 @@ odoo.define('theme_scita.rating_state_js', function(require) {
     var core = require('web.core');
     var qweb = core.qweb;
 
-    ajax.loadXML('/portal_rating/static/src/xml/portal_chatter.xml', qweb);
+    // ajax.loadXML('/portal_rating/static/src/xml/portal_chatter.xml', qweb);
     var PortalChatter = require('portal.chatter').PortalChatter;
  
     PortalChatter.include({

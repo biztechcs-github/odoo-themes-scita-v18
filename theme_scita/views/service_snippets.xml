@@ -826,22 +826,22 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#serv_10_item1"><span class='nav_title'>Grids</span></a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#serv_10_item1"><span class='nav_title'>Grids</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_10_item2"><span class='nav_title'>Lorem</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_10_item2"><span class='nav_title'>Lorem</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_10_item3"><span class='nav_title'>Consectetur</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_10_item3"><span class='nav_title'>Consectetur</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_10_item4"><span class='nav_title'>Tempor</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_10_item4"><span class='nav_title'>Tempor</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_10_item5"><span class='nav_title'>Labore</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_10_item5"><span class='nav_title'>Labore</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_10_item6"><span class='nav_title'>Labore</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_10_item6"><span class='nav_title'>Labore</span></a>
                                 </li>
                             </ul>
                             <!-- Tab panes -->
@@ -1074,14 +1074,14 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#serv_12_item1">
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#serv_12_item1">
                                     <span class="fa fa-tree"></span> <strong>Graphic Design</strong></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_12_item2"><span class="fa fa-globe"/><strong>Web Design</strong></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_12_item2"><span class="fa fa-globe"/><strong>Web Design</strong></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#serv_12_item3">
+                                    <a class="nav-link" data-bs-toggle="tab" href="#serv_12_item3">
                                     <span class="fa fa-camera"/><strong>Photography</strong></a>
                                 </li>
                             </ul>
@@ -1186,7 +1186,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link active"
                                             id="nav_tabs_link_1"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_1"
                                             role="tab"
                                             aria-controls="nav_tabs_content_1"
@@ -1203,7 +1203,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             id="nav_tabs_link_2"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_2"
                                             role="tab"
                                             aria-controls="nav_tabs_content_2"
@@ -1220,7 +1220,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             id="nav_tabs_link_3"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_3"
                                             role="tab"
                                             aria-controls="nav_tabs_content_3"
@@ -1238,7 +1238,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             id="nav_tabs_link_4"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_4"
                                             role="tab"
                                             aria-controls="nav_tabs_content_3"
@@ -1395,7 +1395,7 @@
                                     <div class="col-md-4 tabs">
                                         <ul class="nav nav-tabs tabs-left" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" data-toggle="tab" name="home1" href="#home1">
+                                                <a class="nav-link active" data-bs-toggle="tab" name="home1" href="#home1">
                                                     <div class='tab_icon'>
                                                         <div class='tab_img'>
                                                             <img src="/web/image/theme_scita.sct_service_snippet_15_icon_1_light" class="img img-fluid light_img" alt=" Neurology"/>
@@ -1406,7 +1406,7 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" name="profile1" href="#profile1">
+                                                <a class="nav-link" data-bs-toggle="tab" name="profile1" href="#profile1">
                                                     <div class='tab_icon'>
                                                         <div class='tab_img'>
                                                             <img src="/web/image/theme_scita.sct_service_snippet_15_icon_2_light" class="img img-fluid light_img" alt=" Dental"/>
@@ -1417,7 +1417,7 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" name="messages1" href="#messages1">
+                                                <a class="nav-link" data-bs-toggle="tab" name="messages1" href="#messages1">
                                                     <div class='tab_icon'>
                                                         <div class='tab_img'>
                                                             <img src="/web/image/theme_scita.sct_service_snippet_15_icon_3_light" class="img img-fluid light_img" alt=" X-ray"/>
@@ -1428,7 +1428,7 @@
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link" data-toggle="tab" name="settings1" href="#settings1">
+                                                <a class="nav-link" data-bs-toggle="tab" name="settings1" href="#settings1">
                                                     <div class='tab_icon'>
                                                         <div class='tab_img'>
                                                             <img src="/web/image/theme_scita.sct_service_snippet_15_icon_4_light" class="img img-fluid light_img" alt=" Pulmonary"/>

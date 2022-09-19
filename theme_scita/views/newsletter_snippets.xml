@@ -2,7 +2,7 @@
 <odoo>
 	<!-- Newsletter -->
     <template id="scita_sign_up_newsletter" name="Newsletter Snippet 2">
-        <section class="container s_text_block_image_fw oe_img_bg oe_custom_bg retial_newsletter1 sign-up-container" style="background-image: url(/theme_scita/static/src/img/retail/nl-bg.jpg);" data-disp="newsletter">
+        <section class="container s_text_block_image_fw oe_img_bg oe_custom_bg retial_newsletter1 sign-up-container" style="background-image: url(/theme_scita/static/src/img/retail/nl-bg.jpg);" data-disp="newsletter" data-list-id="0">
             <div class='row'>
                 <div class="col-md-12">
                     <div class='newsletter_title'>
@@ -10,13 +10,11 @@
                         <p>If you are unable to load any pages, check your comput.</p>
                     </div>
                 
-                    <div class="input-group js_subscribe" data-list-id="0">
+                    <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                         <div class='newsletter_box'>
-                            <input class="popup_subscribe_email js_subscribe_email form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
-                            <span class="input-group-btn">
-                                <a class="btn js_subscribe_btn" href="#">Submit</a>
-                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
-                            </span>
+                            <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
+                            <a class="btn js_subscribe_btn" href="#">Submit</a>
+                            <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
                             <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                         </div>
                     </div>
@@ -26,7 +24,7 @@
     </template>
     <!-- retail Newsletter -->
     <template id="retail_sign_up_newsletter" name="Newsletter Snippet 3">
-        <section class="s_text_block_image_fw oe_img_bg oe_custom_bg retial_newsletter_2 sign-up-container" style="background-image: url(/theme_scita/static/src/img/retail/nwesletter-bg.png);" data-disp="newsletter">
+        <section class="s_text_block_image_fw oe_img_bg oe_custom_bg retial_newsletter_2 sign-up-container" style="background-image: url(/theme_scita/static/src/img/retail/nwesletter-bg.png);" data-disp="newsletter" data-list-id="0">
             <div class='container'>
                 <div class='row'>
                     <div class="col-md-12">
@@ -35,13 +33,11 @@
                             <p>If you are unable to load any pages, check your comput.</p>
                         </div>
                     
-                        <div class="input-group js_subscribe" data-list-id="0">
+                        <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <div class='newsletter_box'>
-                                <input class="popup_subscribe_email js_subscribe_email form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
-                                <span class="input-group-btn">
-                                    <a class="btn js_subscribe_btn" href="#">Submit</a>
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
-                                </span>
+                                <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
+                                <a class="btn js_subscribe_btn" href="#">Submit</a>
+                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
@@ -52,7 +48,7 @@
     </template>
     <!-- It Newslatter -->
     <template id="it_sign_up_newsletter" name="Newsletter Snippet 1">
-        <section class="it_sign_up_newsletter" data-disp="newsletter">
+        <section class="it_sign_up_newsletter" data-disp="newsletter" data-list-id="0">
             <div class="container">
                 <div class='row sct_top_row'>
                     <div class="col-md-12">
@@ -61,15 +57,12 @@
                 </div>
                 <div class='row sct_btm_row'>
                     <div class="col-md-12">
-                        <div class="input-group js_subscribe" data-list-id="0">
+                        <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
                             <div class='newsletter_box'>
-                                <input class="popup_subscribe_email js_subscribe_email form-control" placeholder="Enter Your Email..."  type="email"/>
-                                <span class="input-group-btn">
-                                    <a class="btn btn-primary scita_cstm_btn  js_subscribe_btn it_btn" href="#">Submit</a>
-
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
-                                </span>
+                                <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Enter Your Email..."  type="email" name="email"/>
+                                <a class="btn btn-primary scita_cstm_btn js_subscribe_btn it_btn" href="#">Submit</a>
+                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
@@ -80,7 +73,7 @@
     </template>
     <!-- Fashion Newslatter -->
     <template id="fashion_sign_up_newsletter" name="Newsletter Snippet 4">
-        <section class="fashion_sign_up_newsletter" style="background-image: url(/theme_scita/static/src/img/fashion/fashion-nl-bg.jpg);" data-disp="newsletter">
+        <section class="fashion_sign_up_newsletter" style="background-image: url(/theme_scita/static/src/img/fashion/fashion-nl-bg.jpg);" data-disp="newsletter" data-list-id="0">
             <div class="container">
                 <div class='row'>
                     <div class="col-md-12 sct_news_border">
@@ -89,13 +82,11 @@
                             <p class='sct_simple_text'>Subscribe now to get 15% off on any product</p>
                         </div>
                     
-                        <div class="input-group js_subscribe" data-list-id="0">
+                        <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <div class='newsletter_box'>
-                                <input class="popup_subscribe_email js_subscribe_email form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
-                                <span class="input-group-btn">
-                                    <a class="btn js_subscribe_btn" href="#">Submit <span class="ti-arrow-right"></span></a>
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
-                                </span>
+                                <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
+                                <a class="btn js_subscribe_btn" href="#">Submit <span class="ti-arrow-right"></span></a>
+                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
@@ -105,7 +96,7 @@
         </section>
     </template>
 	<template id="newsletter_varient_5" name="Newsletter Snippet 5">
-        <section class="newsletter_varient_5" data-disp="newsletter">
+        <section class="newsletter_varient_5" data-disp="newsletter" data-list-id="0">
             <div class="container-fluid">
                 <div class='row sct_btm_row'>
                 	<div class="col-md-6 sct_news_box">
@@ -115,14 +106,11 @@
                         </div>
                     </div>
                     <div class="col-md-6 sct_control_box">
-                        <div class="input-group js_subscribe" data-list-id="0">
+                        <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <div class='newsletter_box'>
-                                <input class="popup_subscribe_email js_subscribe_email form-control" placeholder="Please Enter Your Email*"  type="email"/>
-                                <span class="input-group-btn">
-                                    <a class="btn btn-primary scita_cstm_btn  js_subscribe_btn sct_blue_btn" href="#">Submit</a>
-
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
-                                </span>
+                                <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" name="email" type="email"/>
+                                <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn" href="#">Submit</a>
+                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>

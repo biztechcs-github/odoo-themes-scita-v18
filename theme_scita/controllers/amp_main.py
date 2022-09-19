@@ -6,6 +6,7 @@ from odoo.addons.http_routing.models.ir_http import slug
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import TableCompute
 from odoo.addons.website.controllers.main import QueryURL
+from datetime import datetime
 import json
 
 
@@ -74,10 +75,18 @@ class CustomAMP(WebsiteSale):
             keep = QueryURL('/shop/amp', category=category and int(category),
                             search=search, attrib=attrib_list, order=post.get('order'))
 
-            pricelist_context, pricelist = WebsiteSale._get_pricelist_context(self)
+            # pricelist_context, pricelist = WebsiteSale._get_pricelist_context(self)
+            # request.context = dict(request.context, pricelist=pricelist.id,
+            #                        partner=request.env.user.partner_id)
+            now = datetime.timestamp(datetime.now())
+            pricelist = request.env['product.pricelist'].browse(request.session.get('website_sale_current_pl'))
+            if not pricelist or request.session.get('website_sale_pricelist_time', 0) < now - 60*60: # test: 1 hour in session
+                pricelist = website.get_current_pricelist()
+                request.session['website_sale_pricelist_time'] = now
+                request.session['website_sale_current_pl'] = pricelist.id
 
-            request.context = dict(request.context, pricelist=pricelist.id,
-                                   partner=request.env.user.partner_id)
+            request.update_context(pricelist=pricelist.id, partner=request.env.user.partner_id)
+
 
             url = "/shop/amp"
             if search:

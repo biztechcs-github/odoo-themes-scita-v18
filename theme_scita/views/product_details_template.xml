@@ -2,10 +2,12 @@
 <odoo>
     <!-- Multi image feature for products -->
     <template active="True" customize_show="True" id="theme_scita_multiple_image_product_slider" inherit_id="website_sale.product" name="Product Multi Image">
-        <xpath expr="//section[@id='product_detail']//div[hasclass('col-md-6')]" position="replace">
+        <xpath expr="//section[@id='product_detail']//div[@id='product_detail_main']//div[1]" position="replace">
             <div class="col-md-5 sct_product_side">
                 <t t-if="not product.multi_image">
-                    <t t-call="website_sale.shop_product_carousel"/>
+                    <t t-if="website.product_page_image_width != 'none'">
+                        <t t-call="website_sale.shop_product_images"/>
+                    </t>
                 </t>
                 <t t-if="product.multi_image and website.get_multiple_images(product.id)">
                     <span itemprop="image">
@@ -31,7 +33,9 @@
                     </span>
                 </t>
                 <t t-if="product.multi_image and not website.get_multiple_images(product.id)">
-                    <t t-call="website_sale.shop_product_carousel"/>
+                    <t t-if="website.product_page_image_width != 'none'">
+                        <t t-call="website_sale.shop_product_images"/>
+                    </t>
                 </t>
             </div>
         </xpath>
@@ -139,7 +143,7 @@
                     <div class="pd-more-info">
                         <ul class="nav nav-tabs" id="description_reviews_tabs" role="tablist">
                             <li class="" role="presentation">
-                                <a aria-controls="more_info" class="active show" data-toggle="tab" href="#description" role="tab">Description</a>
+                                <a aria-controls="more_info" class="active show" data-bs-toggle="tab" href="#description" role="tab">Description</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="description_reviews_tabs_contents">
@@ -163,7 +167,7 @@
     <template active="True" customize_show="True" id="theme_scita_rating" inherit_id="theme_scita.theme_scita_product_details" name="Scita Discussion and Ratings">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
             <li role="presentation">
-                <a aria-controls="reviews" data-toggle="tab" href="#reviews" role="tab">Reviews 
+                <a aria-controls="reviews" data-bs-toggle="tab" href="#reviews" role="tab">Reviews 
                     <t t-if="len(product.website_message_ids)">
                         <span class="review_label">
                             (
@@ -212,7 +216,7 @@
     <template id="scita_product_description_table" inherit_id="theme_scita.theme_scita_product_details" customize_show="True" active="False" name="Product Specification Table">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
             <li role="presentation">
-                <a aria-controls="reviews" data-toggle="tab" href="#specification" role="tab">Specification 
+                <a aria-controls="reviews" data-bs-toggle="tab" href="#specification" role="tab">Specification 
                 </a>
             </li>
         </xpath>
@@ -227,7 +231,7 @@
                                 <table class='table table-striped table-sm table-hover'>
                                     <t t-foreach="categories" t-as="category">
                                         <t t-if="len(categories) > 1">
-                                            <tr class="clickable" data-toggle="collapse" t-att-data-target="'.o_ws_category_%d' % category.id">
+                                            <tr class="clickable" data-bs-toggle="collapse" t-att-data-bs-target="'.o_ws_category_%d' % category.id">
                                                 <th class="text-left" t-att-colspan="2">
                                                     <span t-if="category" t-field="category.name"/>
                                                     <span t-else="">Uncategorized</span>
@@ -440,7 +444,7 @@
     <template id="scita_ecom_show_extra_fields" inherit_id="theme_scita.theme_scita_product_details" active="False" customize_show="True" name="Show Extra Fields">
         <xpath expr="//div[@id='website_description']/div/ul" position="inside">
             <li role="presentation">
-                <a aria-controls="extra_fields" data-toggle="tab" href="#sct_extra_fields" role="tab">Extra Details
+                <a aria-controls="extra_fields" data-bs-toggle="tab" href="#sct_extra_fields" role="tab">Extra Details
                 </a>
             </li>
         </xpath>

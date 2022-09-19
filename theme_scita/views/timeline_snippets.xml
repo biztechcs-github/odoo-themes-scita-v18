@@ -87,13 +87,13 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#timeline_2_item1"><span class='nav_title'>Planning</span></a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#timeline_2_item1"><span class='nav_title'>Planning</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#timeline_2_item2"><span class='nav_title'>Marketing</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#timeline_2_item2"><span class='nav_title'>Marketing</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#timeline_2_item3"><span class='nav_title'>Growth</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#timeline_2_item3"><span class='nav_title'>Growth</span></a>
                                 </li>
                             </ul>
                             <!-- Tab panes -->
@@ -212,7 +212,7 @@
                                 <div class="col-lg-3 col-md-4 sct-left-side">
                                     <ul class="nav nav-tabs" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#timeline_3_item1">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#timeline_3_item1">
                                                 <div class='sct_nav_base'>
                                                     <div class='sct_nav_left'>
                                                         <h3 class='sct_title'>1</h3>
@@ -224,7 +224,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#timeline_3_item2">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#timeline_3_item2">
                                                 <div class='sct_nav_base'>
                                                     <div class='sct_nav_left'>
                                                         <h3 class='sct_title'>2</h3>
@@ -236,7 +236,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#timeline_3_item3">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#timeline_3_item3">
                                                 <div class='sct_nav_base'>
                                                     <div class='sct_nav_left'>
                                                         <h3 class='sct_title'>3</h3>
@@ -248,7 +248,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#timeline_3_item4">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#timeline_3_item4">
                                                 <div class='sct_nav_base'>
                                                     <div class='sct_nav_left'>
                                                         <h3 class='sct_title'>4</h3>
@@ -260,7 +260,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#timeline_3_item5">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#timeline_3_item5">
                                                 <div class='sct_nav_base'>
                                                     <div class='sct_nav_left'>
                                                         <h3 class='sct_title'>5</h3>
@@ -272,7 +272,7 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#timeline_3_item6">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#timeline_3_item6">
                                                 <div class='sct_nav_base'>
                                                     <div class='sct_nav_left'>
                                                         <h3 class='sct_title'>6</h3>

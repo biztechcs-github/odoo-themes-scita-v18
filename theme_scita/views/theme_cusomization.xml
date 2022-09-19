@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <template id='snippet_options_add' inherit_id='website.snippet_options' name='Theme add options'>
-        <xpath expr='//div[@data-selector="#wrapwrap > header nav.navbar .navbar-brand img"]' position='attributes'>
+        <!-- <xpath expr='//div[@data-selector="#wrapwrap > header nav.navbar .navbar-brand img"]' position='attributes'>
             <attribute name='data-selector'>#wrapwrap > header .navbar-brand img</attribute>
-        </xpath>
+        </xpath> -->
         <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-variable="btn-secondary-outline"]' position='after'>
             <we-select string="Buttons" data-variable="btn-style-template" data-reload="/">
                 <we-button title="Buttons Style 1"
@@ -64,22 +64,22 @@
                        data-name="scita_header_1"
                        data-customize-website-views="theme_scita.option_header_1,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link"
                        data-customize-website-variable="'scita_header_1'"
-                       data-img="theme_scita/static/src/img/snippet_icon/header-1.png"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/header-1.png"/>
             <we-button title="Scita Header 2"
                        data-name="scita_header_2"
                        data-customize-website-views="theme_scita.option_header_2,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link"
                        data-customize-website-variable="'scita_header_2'"
-                       data-img="theme_scita/static/src/img/snippet_icon/header-2.png"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/header-2.png"/>
             <we-button title="Scita Header 3"
                        data-name="scita_header_3"
                        data-customize-website-views="theme_scita.option_header_3,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link"
                        data-customize-website-variable="'scita_header_3'"
-                       data-img="theme_scita/static/src/img/snippet_icon/header-3.png"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/header-3.png"/>
             <we-button title="Scita Header 4"
                        data-name="scita_header_4"
                        data-customize-website-views="theme_scita.option_header_4,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link"
                        data-customize-website-variable="'scita_header_4'"
-                       data-img="theme_scita/static/src/img/snippet_icon/header-4.png"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/header-4.png"/>
             <we-button title="Scita Header 5"
                        data-name="scita_header_5"
                        data-customize-website-views="theme_scita.option_header_5,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link"

@@ -16,7 +16,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link active"
                                             id="nav_tabs_link_1"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_1"
                                             role="tab"
                                             aria-controls="nav_tabs_content_1"
@@ -25,7 +25,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             id="nav_tabs_link_2"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_2"
                                             role="tab"
                                             aria-controls="nav_tabs_content_2"
@@ -34,7 +34,7 @@
                                     <li class="nav-item">
                                         <a class="nav-link"
                                             id="nav_tabs_link_3"
-                                            data-toggle="tab"
+                                            data-bs-toggle="tab"
                                             href="#nav_tabs_content_3"
                                             role="tab"
                                             aria-controls="nav_tabs_content_3"
@@ -151,16 +151,16 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#portfolio_1_item1"><span class='nav_title'>Finance</span></a>
+                                    <a class="nav-link active" data-bs-toggle="tab" href="#portfolio_1_item1"><span class='nav_title'>Finance</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#portfolio_1_item2"><span class='nav_title'>Market</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#portfolio_1_item2"><span class='nav_title'>Market</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#portfolio_1_item3"><span class='nav_title'>Development</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#portfolio_1_item3"><span class='nav_title'>Development</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#portfolio_1_item4"><span class='nav_title'>Branding</span></a>
+                                    <a class="nav-link" data-bs-toggle="tab" href="#portfolio_1_item4"><span class='nav_title'>Branding</span></a>
                                 </li>
                             </ul>
                             <!-- Tab panes -->

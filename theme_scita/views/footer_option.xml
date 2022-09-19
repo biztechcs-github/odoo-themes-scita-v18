@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <template id="footer_copyright_add_class" inherit_id="portal.frontend_layout" name="Footer copyright add class">
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm','text-center', 'text-sm-right')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('col-sm','text-center', 'text-sm-end')]" position="attributes">
             <attribute name='class' add="o_hidden" separator=" "/>
         </xpath>
     </template>
-    <template id="footer_copyright_debug_mode" inherit_id="web.debug_icon" name="Footer copyright Debug Mode add class">
+<!--     <template id="footer_copyright_debug_mode" inherit_id="web.debug_icon" name="Footer copyright Debug Mode add class">
         <xpath expr="//a[hasclass('o_debug_mode')]" position="attributes">
             <attribute name='class' add="o_hidden" separator=" "/>
         </xpath>
-    </template>
+    </template> -->
     <template active="False" id="option_footer_1" inherit_id="website.layout" name='Scita footer 1'>
         <xpath expr="//div[@id='footer']" position="replace">
             <div id="footer" class="oe_structure oe_structure_solo" t-if="not no_footer">
@@ -107,7 +107,7 @@
                 </t>
             </div>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class' add="sct-copyright-text" separator=" "/>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
@@ -228,7 +228,7 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
             <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class'>col-sm text-center text-muted sct-copyright-text</attribute>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
@@ -552,10 +552,10 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
             <attribute name='class' add="sct-fot-belt" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class' add="sct-static-link" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//t[@t-call='web.debug_icon']" position="before">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="before">
             <ul class='sct-link-ul'>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Sliders</a></li>
@@ -924,10 +924,10 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
             <attribute name='class' add="sct-fot-belt" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class' add="description" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//t[@t-call='web.debug_icon']" position="before">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="before">
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500sLorem.</p>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
@@ -1150,7 +1150,7 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
             <attribute name='class' add="sct-fot-belt" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class' add="description" separator=" "/>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
@@ -1260,7 +1260,7 @@
                 <div class="container">
                     <div class="row sct-top-row">
                         <div class="col-lg-3 col-sm-6 sct-links">
-                            <h4 class='sct_collapse_enable' data-target="#sct_link_option_1" data-toggle="collapse">Policy &amp; Provision</h4>
+                            <h4 class='sct_collapse_enable' data-bs-target="#sct_link_option_1" data-bs-toggle="collapse">Policy &amp; Provision</h4>
                             <ul class="collapse d-sm-block sct_collapse_enable_ul" id="sct_link_option_1">
                                 <li><a href="#">Payment Method</a></li>
                                 <li><a href="#">Delivery</a></li>
@@ -1270,7 +1270,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-3 col-sm-6 sct-links">
-                            <h4 class='sct_collapse_enable' data-target="#sct_link_option_2" data-toggle="collapse">More Info</h4>
+                            <h4 class='sct_collapse_enable' data-bs-target="#sct_link_option_2" data-bs-toggle="collapse">More Info</h4>
                             <ul class="collapse d-sm-block sct_collapse_enable_ul" id="sct_link_option_2">
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">Sliders</a></li>
@@ -1280,7 +1280,7 @@
                             </ul>
                         </div>
                         <div class="col-lg-3 col-sm-6 sct-links">
-                            <h4 class='sct_collapse_enable' data-target="#sct_link_option_3" data-toggle="collapse">More Info</h4>
+                            <h4 class='sct_collapse_enable' data-bs-target="#sct_link_option_3" data-bs-toggle="collapse">More Info</h4>
                             <ul class="collapse d-sm-block sct_collapse_enable_ul" id="sct_link_option_3">
                                 <li><a href="#">Home</a></li>
                                 <li><a href="#">Blog</a></li>
@@ -1291,7 +1291,7 @@
                         </div>
                         <div class="col-lg-3 col-sm-6 contact_us">
                             <div class="comp_name">
-                                <h4 class='sct_collapse_enable' data-target="#sct_link_option_4" data-toggle="collapse">Address</h4>
+                                <h4 class='sct_collapse_enable' data-bs-target="#sct_link_option_4" data-bs-toggle="collapse">Address</h4>
                             </div>
                             <div class="sct-fot-address collapse d-sm-block sct_collapse_enable_ul" id="sct_link_option_4">
                                 <ul>
@@ -1372,7 +1372,7 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
             <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="before">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="before">
             <div class="col-sm text-center sct-fot-about">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
             </div>
@@ -1383,8 +1383,8 @@
                 </a>
             </div>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
-            <attribute name='class'>col-sm text-sm-left text-md-right text-muted description</attribute>
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
+            <attribute name='class'>col-sm text-sm-start text-md-right text-muted description</attribute>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
             <attribute name='class'>container sct-pd-0</attribute>
@@ -1693,7 +1693,7 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
             <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class'>col-sm text-center text-muted sct-copyright-text</attribute>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]" position="attributes">
@@ -1803,13 +1803,13 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
             <attribute name='class' add="sct-fot-belt" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class' add="description" separator=" "/>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
             <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="before">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="before">
             <div class="col-sm text-center sct-fot-address">
                 <ul>
                     <li>
@@ -1823,7 +1823,7 @@
                 </ul>
             </div>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="after">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="after">
             <div class="col-sm text-center sct-scocial-icon-footer">
                 <a class="btn btn-sm btn-link" t-att-href="website.social_facebook" t-if="website.social_facebook">
                     <i class="fa fa-facebook"/>
@@ -2042,13 +2042,13 @@
         <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('row')]" position="attributes">
             <attribute name='class' add="sct-fot-belt" separator=" "/>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="attributes">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="attributes">
             <attribute name='class' add="sct-copyright" separator=" "/>
         </xpath>
         <xpath expr="//div[hasclass('o_footer_copyright')]//span[hasclass('o_footer_copyright_name')]" position="replace">
             <span class="o_footer_copyright_name mr-2">Copyright © 2019 Scita All Rights Reserved.</span>
         </xpath>
-        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-left','text-muted')]" position="before">
+        <xpath expr="//div[hasclass('o_footer_copyright')]//div[hasclass('container','py-3')]//div[hasclass('col-sm','text-center','text-sm-start','text-muted')]" position="before">
             <div class="col-sm text-center text-left sct-scocial-icon-footer">
                 <a class="btn btn-sm btn-link" t-att-href="website.social_facebook" t-if="website.social_facebook">
                     <i class="fa fa-facebook"/>
