@@ -7,7 +7,7 @@
                 <div class="modal-content" id="s_media_block_modal">
                     <div class="modal-header">
                         <h4 class="modal-title">Blog Slider Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal container-fluid" role="form">
@@ -34,7 +34,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Coming Soon</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body">
                         <div class="row">
@@ -78,7 +78,7 @@
                 <div class="modal-content" id="s_media_block_modal_prod">
                     <div class="modal-header">
                         <h4 class="modal-title">Products Slider Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal container-fluid" role="form">
@@ -105,7 +105,7 @@
                 <div class="modal-content" id="s_media_block_modal">
                     <div class="modal-header">
                         <h4 class="modal-title">Category Slider Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal" role="form">
@@ -131,7 +131,7 @@
                 <div class="modal-content" id="s_media_block_modal">
                     <div class="modal-header">
                         <h4 class="modal-title">Multi Product Slider Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal container-fluid" role="form">
@@ -200,7 +200,7 @@
                 <div class="modal-content" id="s_media_block_modal">
                     <div class="modal-header">
                         <h4 class="modal-title">Product Category Img Slider Config</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal" role="form">
@@ -226,7 +226,7 @@
                 <div class="modal-content" id="s_media_block_modal">
                     <div class="modal-header">
                         <h4 class="modal-title">Product Snippet Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal" role="form">
@@ -252,7 +252,7 @@
                 <div class="modal-content" id="s_media_block_modal">
                     <div class="modal-header">
                         <h4 class="modal-title">Video Banner Configuration</h4>
-                        <button aria-hidden="true" class="close" data-bs-dismiss="modal" id="cancel" type="button">×</button>
+                        <button aria-hidden="true" class="btn-close" data-bs-dismiss="modal" id="cancel" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal container-fluid" role="form">

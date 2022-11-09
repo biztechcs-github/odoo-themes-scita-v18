@@ -431,7 +431,7 @@
                             color:$body-color;
                             font-size:$font-base-label;
                         }
-                     }
+                    }
                 }
             }
 
@@ -451,7 +451,6 @@
                     }
                 }
             }
-
             .js_language_selector > .btn-outline-secondary {
                 color:$body-color;
             }
@@ -1785,6 +1784,7 @@
                     @include all-flex;
                 }
              .description{
+                text-align: right !important;
                 @media (max-width:991px){
                     text-align:center !important;
                     @include all-flex;
@@ -2502,6 +2502,9 @@
                     }
                 }
                 .sct-scocial-icon-footer {
+                    width: 100%;
+                    flex: 0 0 100%;
+                    text-align: center;
                     @media (max-width: 767px){
                         text-align: center;
                     }
@@ -2940,6 +2943,7 @@
                     }
                 }
             }
+            
         }
     }
     #o_footer_scrolltop_wrapper{
@@ -2997,6 +3001,7 @@
                     @media (max-width: 575px){
                         margin-left: 15px;
                         margin-right: 15px;
+                        max-width: -webkit-fit-content;max-width: -moz-fit-content;max-width: fit-content;
                     }
                     .com-logo {
                         padding-left: 0;
@@ -3255,6 +3260,9 @@
                     }
                 }
                 .sct-scocial-icon-footer {
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    text-align: center;
                     @media (max-width: 767px){
                         text-align: center;
                     }
@@ -3367,6 +3375,9 @@
                 .sct-scocial-icon-footer {
                     text-align: left;
                     margin-top: 10px;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    text-align: center;
                     @media (max-width: 767px){
                         text-align: center;
                     }
@@ -3441,6 +3452,7 @@
         }
         .sct-service-link {
             padding-top: 70px;
+            padding-bottom: 20px;
             @media (max-width: 1366px){
                 padding-top: 60px;
             }
@@ -3449,6 +3461,7 @@
             }
             @media (max-width: 767px){
                 padding-top: 30px;
+                padding-bottom: 10px;
             }
             ul {
                 li {
@@ -3613,6 +3626,21 @@
                     width: 100%;
                 }
             }
+        }
+    }
+}
+
+// version 16 css starts here 26-09-2022
+
+.js_language_selector {
+    .dropdown-menu, .o_dropdown_menu{
+        min-width: 142px;
+    }
+}
+.o_footer_copyright {
+    .sct-copyright-text {
+        .o_footer_copyright_name {
+            margin-right: 8px;
         }
     }
 }

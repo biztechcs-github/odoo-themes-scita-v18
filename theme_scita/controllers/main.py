@@ -838,20 +838,20 @@ class ScitaShop(WebsiteSale):
                 req_ctx = request.context.copy()
                 req_ctx.setdefault('brand_id', int(brands))
                 request.context = req_ctx
-            page_no = request.env['product.per.page.no'].sudo().search(
-                [('set_default_check', '=', True)])
-            if page_no:
-                ppg = int(page_no.name)
-            else:
+            # page_no = request.env['product.per.page.no'].sudo().search(
+            #     [('set_default_check', '=', True)])
+            # if page_no:
+            #     ppg = int(page_no.name)
+            # else:
+            #     ppg = website.shop_ppg or 20
+            if ppg:
+                try:
+                    ppg = int(ppg)
+                    post['ppg'] = ppg
+                except ValueError:
+                    ppg = False
+            if not ppg:
                 ppg = website.shop_ppg or 20
-            # if ppg:
-            #     try:
-            #         ppg = int(ppg)
-            #         post['ppg'] = ppg
-            #     except ValueError:
-            #         ppg = False
-            # if not ppg:
-            #     ppg = request.env['website'].get_current_website().shop_ppg or 20
 
             ppr = website.shop_ppr or 4
 
@@ -860,9 +860,9 @@ class ScitaShop(WebsiteSale):
             attributes_ids = {v[0] for v in attrib_values}
             attrib_set = {v[1] for v in attrib_values}
 
-            if request.session.get('default_paging_no'):
-                ppg = int(request.session.get('default_paging_no'))
-            keep = QueryURL('/shop', category=category and int(category), search=search, attrib=attrib_list, min_price=min_price, max_price=max_price, order=post.get('order'))
+            # if request.session.get('default_paging_no'):
+            #     ppg = int(request.session.get('default_paging_no'))
+            keep = QueryURL('/shop', **self._shop_get_query_url_kwargs(category=category and int(category), search=search, attrib=attrib_list, min_price=min_price, max_price=max_price, order=post.get('order')))
 
             # pricelist_context, pricelist = self._get_pricelist_context()
             now = datetime.timestamp(datetime.now())
@@ -872,15 +872,15 @@ class ScitaShop(WebsiteSale):
                 request.session['website_sale_pricelist_time'] = now
                 request.session['website_sale_current_pl'] = pricelist.id
 
-
             brand_list = request.httprequest.args.getlist('brand')
             brand_set = set([int(v) for v in brand_list])
             request.update_context(pricelist=pricelist.id, partner=request.env.user.partner_id)
 
-            filter_by_price_enabled = request.website.is_view_active('website_sale.filter_products_price')
+            filter_by_price_enabled = website.is_view_active('website_sale.filter_products_price')
             if filter_by_price_enabled:
-                company_currency = request.website.company_id.currency_id
-                conversion_rate = request.env['res.currency']._get_conversion_rate(company_currency, pricelist.currency_id, request.website.company_id, fields.Date.today())
+                company_currency = website.company_id.currency_id
+                conversion_rate = request.env['res.currency']._get_conversion_rate(
+                    company_currency, pricelist.currency_id, request.website.company_id, fields.Date.today())
             else:
                 conversion_rate = 1
 
@@ -906,58 +906,10 @@ class ScitaShop(WebsiteSale):
                 'brandlistdomain':brandlistdomain,
             }
             # No limit because attributes are obtained from complete product list
-            product_count, details, fuzzy_search_term = request.website._search_with_fuzzy("products_only", search,
-                limit=None, order=self._get_search_order(post), options=options)
-            search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
+            fuzzy_search_term, product_count, search_product = self._shop_lookup_products(attrib_set, options, post, search, website)
+            # search_product = details[0].get('results', request.env['product.template']).with_context(bin_size=True)
 
-            if attrib_set:
-                # Attributes value per attribute
-                attribute_values = request.env['product.attribute.value'].browse(attrib_set)
-                values_per_attribute = defaultdict(lambda: request.env['product.attribute.value'])
-                # In case we have only one value per attribute we can check for a combination using those attributes directly
-                multi_value_attribute = False
-                for value in attribute_values:
-                    values_per_attribute[value.attribute_id] |= value
-                    if len(values_per_attribute[value.attribute_id]) > 1:
-                        multi_value_attribute = True
-
-                def filter_template(template, attribute_values_list):
-                    # Transform product.attribute.value to product.template.attribute.value
-                    attribute_value_to_ptav = dict()
-                    for ptav in template.attribute_line_ids.product_template_value_ids:
-                        attribute_value_to_ptav[ptav.product_attribute_value_id] = ptav.id
-                    possible_combinations = False
-                    for attribute_values in attribute_values_list:
-                        ptavs = request.env['product.template.attribute.value'].browse(
-                            [attribute_value_to_ptav[val] for val in attribute_values if val in attribute_value_to_ptav]
-                        )
-                        if len(ptavs) < len(attribute_values):
-                            # In this case the template is not compatible with this specific combination
-                            continue
-                        if len(ptavs) == len(template.attribute_line_ids):
-                            if template._is_combination_possible(ptavs):
-                                return True
-                        elif len(ptavs) < len(template.attribute_line_ids):
-                            if len(attribute_values_list) == 1:
-                                if any(template._get_possible_combinations(necessary_values=ptavs)):
-                                    return True
-                            if not possible_combinations:
-                                possible_combinations = template._get_possible_combinations()
-                            if any(len(ptavs & combination) == len(ptavs) for combination in possible_combinations):
-                                return True
-                    return False
-
-                # If multi_value_attribute is False we know that we have our final combination (or at least a subset of it)
-                if not multi_value_attribute:
-                    possible_attrib_values_list = [attribute_values]
-                else:
-                    # Cartesian product from dict keys and values
-                    possible_attrib_values_list = [request.env['product.attribute.value'].browse([v.id for v in values]) for
-                                                   values in cartesian_product(*values_per_attribute.values())]
-
-                search_product = search_product.filtered(lambda tmpl: filter_template(tmpl, possible_attrib_values_list))
-
-            filter_by_price_enabled = request.website.is_view_active('theme_scita.scita_price_slider_layout')
+            filter_by_price_enabled = website.is_view_active('website_sale.filter_products_price')
             if filter_by_price_enabled:
                 # TODO Find an alternative way to obtain the domain through the search metadata.
                 Product = request.env['product.template'].with_context(bin_size=True)
@@ -987,44 +939,48 @@ class ScitaShop(WebsiteSale):
                         max_price = max_price if max_price >= available_min_price else available_max_price
                         post['max_price'] = max_price
 
-            website_domain = request.website.website_domain()
+            website_domain = website.website_domain()
             categs_domain = [('parent_id', '=', False)] + website_domain
             if search:
-                search_categories = Category.search([('product_tmpl_ids', 'in', search_product.ids)] + website_domain).parents_and_self
+                search_categories = Category.search(
+                    [('product_tmpl_ids', 'in', search_product.ids)] + website_domain
+                ).parents_and_self
                 categs_domain.append(('id', 'in', search_categories.ids))
             else:
                 search_categories = Category
-            categs = Category.search(categs_domain)
+            categs = lazy(lambda: Category.search(categs_domain))
 
             if category:
                 url = "/shop/category/%s" % slug(category)
 
-            pager = request.website.pager(url=url, total=product_count, page=page, step=ppg, scope=7, url_args=post)
+            pager = website.pager(url=url, total=product_count, page=page, step=ppg, scope=7, url_args=post)
             offset = pager['offset']
             products = search_product[offset:offset + ppg]
 
             ProductAttribute = request.env['product.attribute']
             if products:
                 # get all products without limit
-                attributes = ProductAttribute.search([
+                attributes = lazy(lambda: ProductAttribute.search([
                     ('product_tmpl_ids', 'in', search_product.ids),
                     ('visibility', '=', 'visible'),
-                ])
+                ]))
             else:
-                attributes = ProductAttribute.browse(attributes_ids)
+                attributes = lazy(lambda: ProductAttribute.browse(attributes_ids))
 
             layout_mode = request.session.get('website_sale_shop_layout_mode')
             if not layout_mode:
-                if request.website.viewref('website_sale.products_list_view').active:
+                if website.viewref('website_sale.products_list_view').active:
                     layout_mode = 'list'
                 else:
                     layout_mode = 'grid'
+                request.session['website_sale_shop_layout_mode'] = layout_mode
 
             products_prices = lazy(lambda: products._get_sales_prices(pricelist))
 
             values = {
                 'search': fuzzy_search_term or search,
                 'original_search': fuzzy_search_term and search,
+                'order': post.get('order', ''),
                 'category': category,
                 'attrib_values': attrib_values,
                 'attrib_set': attrib_set,
@@ -1033,7 +989,7 @@ class ScitaShop(WebsiteSale):
                 'add_qty': add_qty,
                 'products': products,
                 'search_count': product_count,  # common for all searchbox
-                'bins': TableCompute().process(products, ppg, ppr),
+                'bins': lazy(lambda: TableCompute().process(products, ppg, ppr)),
                 'ppg': ppg,
                 'ppr': ppr,
                 'categories': categs,
@@ -1041,9 +997,10 @@ class ScitaShop(WebsiteSale):
                 'keep': keep,
                 'search_categories_ids': search_categories.ids,
                 'layout_mode': layout_mode,
-                'brand_set': brand_set,
                 'products_prices': products_prices,
                 'get_product_prices': lambda product: lazy(lambda: products_prices[product.id]),
+                'float_round': tools.float_round,
+                'brand_set': brand_set,
             }
             if filter_by_price_enabled:
                 values['min_price'] = min_price or available_min_price
@@ -1052,6 +1009,7 @@ class ScitaShop(WebsiteSale):
                 values['available_max_price'] = tools.float_round(available_max_price, 2)
             if category:
                 values['main_object'] = category
+            values.update(self._get_additional_shop_values(values))
             return request.render("website_sale.products", values)
         else:
             return super(ScitaShop, self).shop(page=page, category=category, search=search, min_price=min_price, max_price=max_price, ppg=ppg, **post)
@@ -1276,10 +1234,11 @@ class PWASupport(http.Controller):
 
     @http.route("/theme_scita/manifest_file/<int:website_id>", type="http", auth="public")
     def pwa_manifest(self, website_id=None):
-        qweb = request.env["ir.qweb"].sudo()
+        # website = request.env['website'].get_current_website()
         website = request.env['website']
         current_website = website.search(
-            [('id', '=', website_id)]) if website_id else request.website
+            [('id', '=', website_id)]) if website_id else website.get_current_website()
+        qweb = request.env["ir.qweb"].sudo().with_context(website_id=current_website.id, lang=current_website.default_lang_id.code)
         pwa_app_name = current_website.pwa_app_name or 'PWA App'
         pwa_app_short_name = current_website.pwa_app_short_name or 'PWA Application'
         image_72 = website.image_url(current_website, 'pwa_app_icon_512', '72x72')

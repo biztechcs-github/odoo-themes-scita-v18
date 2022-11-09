@@ -9,8 +9,8 @@ class ThemeNew(models.AbstractModel):
     _inherit = 'theme.utils'
 
     def _theme_scita_post_copy(self, mod):
-        self.disable_view_customize('website_sale_wishlist.product_add_to_wishlist')
-        self.disable_view_customize('website_sale.product_quantity')
+        # self.disable_view_customize('website_sale_wishlist.product_add_to_wishlist')
+        # self.disable_view_customize('website_sale.product_quantity')
         self.disable_view_customize('website_sale_comparison.product_attributes_body')
         self.disable_view_customize('website_sale.product_comment')
         # self.disable_view_customize('website_sale.recommended_products')
@@ -26,8 +26,8 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale.products_categories')
         self.disable_view_customize('website_sale.products_description')
         self.disable_view_customize('website_sale_comparison.add_to_compare')
-        self.disable_view_customize('website_sale.products_add_to_cart')
-        self.disable_view_customize('website_sale_wishlist.add_to_wishlist')
+        # self.disable_view_customize('website_sale.products_add_to_cart')
+        # self.disable_view_customize('website_sale_wishlist.add_to_wishlist')
         self.disable_view_customize('website_sale.product_custom_text')
         # self.disable_view_customize('website_sale.product_picture_magnify_auto')
         self.disable_view_customize('website_sale.product_picture_magnify_hover')

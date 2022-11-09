@@ -831,7 +831,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -1193,7 +1193,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -1991,7 +1991,7 @@
                     </div>
                 </div>
 
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -2312,7 +2312,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -2494,7 +2494,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -3645,8 +3645,8 @@
                             </div>
                         </div>
                         <div class="button-box">
-                            <a class="view-all btn" href="/shop/cart">View all</a>
-                            <a class="proceed btn" href="/shop/checkout">Checkout</a>
+                            <a class="view-all btn" t-attf-href="/shop/cart">View all</a>
+                            <a class="proceed btn" t-attf-href="/shop/checkout">Checkout</a>
                         </div>
                     </div>
                 </div>

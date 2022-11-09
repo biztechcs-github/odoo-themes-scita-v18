@@ -136,3 +136,8 @@
   -ms-flex-order:1;
   order:1;
 }
+@mixin jc-flex-end {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}

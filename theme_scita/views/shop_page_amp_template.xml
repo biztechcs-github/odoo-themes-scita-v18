@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="amp_main" name="AMP Custom layout">
-        <t name="AMP Main layout" t-name="theme_scita.layout">&lt;!DOCTYPE html&gt;
+        <t name="AMP Main layout">&lt;!DOCTYPE html&gt;
             <html amp="amp" t-att-lang="lang and lang.replace('_', '-')" t-att-data-website-id="website.id if (editable or translatable) and website else None" t-att-data-editable="'1' if editable else None" t-att-data-translatable="'1' if translatable else None" t-att-data-edit_translations="'1' if edit_translations else None" t-att-data-view-xmlid="xmlid if editable or translatable else None" t-att-data-main-object="repr(main_object) if editable or translatable else None" t-att-data-oe-company-name="res_company.name">
                 <head>
                     <meta charset="utf-8"/>
@@ -805,7 +805,7 @@
                 <div class="p-2 o_wsale_product_information_text">
                     <div class="pink-box">
                         <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                            <span t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg') / 2"/>
+                            <span t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                             <t t-set="prod_curr_rate" t-value="0"/>
                             <t t-set="is_half_star" t-value="0"/>
                             <t t-foreach="range(0, 5)" t-as="every_prod_rate">
@@ -1143,7 +1143,7 @@
                                         <h1 itemprop="name" t-field="product.name" class="sct-prod-name">Product Name</h1>
                                         <div class="pink-box">
                                             <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                                                <span t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg') / 2"/>
+                                                <span t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                                                 <t t-set="prod_curr_rate" t-value="0"/>
                                                 <t t-set="is_half_star" t-value="0"/>
                                                 <t t-foreach="range(0, 5)" t-as="every_prod_rate">

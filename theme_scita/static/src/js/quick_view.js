@@ -45,7 +45,6 @@ odoo.define('theme_scita.quick_view', function(require) {
                         //     'website_sale_stock.product_availability',
                         //     combination
                         // ));
-                        // console.log(combination, $message)
                         // $('div.availability_messages').html($message);
                     // });
                     $(".quick_cover").css("display", "block");

@@ -13,8 +13,10 @@
                     <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                         <div class='newsletter_box'>
                             <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
-                            <a class="btn js_subscribe_btn" href="#">Submit</a>
-                            <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                            <span class="input-group-btn">
+                                <a class="btn js_subscribe_btn" href="#">Submit</a>
+                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                            </span>
                             <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                         </div>
                     </div>
@@ -36,8 +38,10 @@
                         <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
-                                <a class="btn js_subscribe_btn" href="#">Submit</a>
-                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                <span class="input-group-btn">
+                                    <a class="btn js_subscribe_btn" href="#">Submit</a>
+                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
@@ -61,8 +65,10 @@
                             <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
                             <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Enter Your Email..."  type="email" name="email"/>
-                                <a class="btn btn-primary scita_cstm_btn js_subscribe_btn it_btn" href="#">Submit</a>
-                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                <span class="input-group-btn">
+                                    <a class="btn btn-primary scita_cstm_btn js_subscribe_btn it_btn" href="#">Submit</a>
+                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
@@ -85,8 +91,10 @@
                         <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
-                                <a class="btn js_subscribe_btn" href="#">Submit <span class="ti-arrow-right"></span></a>
-                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                <span class="input-group-btn">
+                                    <a class="btn js_subscribe_btn" href="#">Submit <span class="ti-arrow-right"></span></a>
+                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
@@ -109,8 +117,10 @@
                         <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                             <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" name="email" type="email"/>
-                                <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn" href="#">Submit</a>
-                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                <span class="input-group-btn">
+                                    <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn" href="#">Submit</a>
+                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
