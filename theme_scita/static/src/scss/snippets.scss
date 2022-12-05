@@ -1597,7 +1597,7 @@ body #wrapwrap{
 				max-width: 70%;
 			}
 			p {
-				font-size: $font-size-base;
+				font-size: $font-size-base-scita;
 				color: fade-out($dark-color, 0.5);
 				@media (max-width: 767px){
 					margin-bottom: 5px;

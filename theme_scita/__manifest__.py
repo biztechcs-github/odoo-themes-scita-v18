@@ -66,12 +66,17 @@ AMP Support
     ''',
     'depends': [
         'sale_management',
+        'website_sale_product_configurator',
+        'sale_product_configurator',
         'website_sale',
         'website_sale_stock',
         'website_sale_comparison',
         'website_sale_wishlist',
         'hr',
         'website_blog',
+        'purchase',
+        'project',
+        'account',
     ],
     'data': [
         'security/ir.model.access.csv',

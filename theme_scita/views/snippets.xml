@@ -24,11 +24,33 @@
                     data-customize-website-views="theme_scita.theme_scita_rating"
                     data-no-preview="true"
                     data-reload="/"/>
-                <!-- <we-button string="Share"
-                    data-name="attributes_opt"
-                    data-customize-website-views="website_sale.product_share_buttons"
-                    data-no-preview="true"
-                    data-reload="/"/> -->
+            </we-row>
+        </xpath>
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-checkbox" position="replace">
+             <we-checkbox string="Select Quantity"
+                data-customize-website-views="theme_scita.scita_product_quantity"
+                data-no-preview="true"
+                data-reload="/"/>
+       </xpath>
+    </template>
+
+    <template id="snippet_options_wishlist" inherit_id="website_sale_wishlist.snippet_options" name="Wishlist Snippet Options">
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-row[@data-name='o_wsale_buy_now_opt']" position="replace">
+            <we-row string="Cart" class="o_we_full_row" data-name="o_wsale_buy_now_opt">
+                <we-button title="Buy Now"
+                           data-customize-website-views="website_sale.product_buy_now"
+                           data-no-preview="true"
+                           data-reload="/">
+                    <i class="fa fa-fw fa-bolt"/>
+                    Buy Now
+                </we-button>
+                <we-button title="Wishlist"
+                       data-customize-website-views="theme_scita.scita_product_add_to_wishlist"
+                       data-no-preview="true"
+                       data-reload="/">
+                    <i class="fa fa-fw fa-heart"/>
+                    Wishlist
+                </we-button>
             </we-row>
        </xpath>
     </template>

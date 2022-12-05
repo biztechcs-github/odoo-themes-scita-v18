@@ -242,4 +242,27 @@
     <menuitem action="action_delivery_zip_config" id="delivery_zipcodes" name="Delivery Zipcode Configuration" parent="theme_scita.scita_menu_slider_config" sequence="4"/>
     <!-- Zipcode model View end -->
 
+    <!-- Project Kanban View start -->
+    <record id="scita_project_view_extend" model="ir.ui.view">
+        <field name="name">scita.project.view.kanban.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="class">o_kanban_small_column o_kanban_project_tasks flex-wrap</attribute>
+            </xpath>
+        </field>
+    </record>
+    
+    <record id="scita_project_sharing_view_extend" model="ir.ui.view">
+        <field name="name">scita.project.sharing.view.kanban.inherited</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.project_sharing_project_task_view_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//kanban" position="attributes">
+                <attribute name="class">o_kanban_small_column o_kanban_project_tasks flex-wrap</attribute>
+            </xpath>
+        </field>
+    </record>
+    <!-- Project Kanban View end -->
 </odoo>

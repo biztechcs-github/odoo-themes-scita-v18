@@ -105,7 +105,7 @@
                  @include align-content-column-flex;
             }
             .sct-copyright-text{
-                font-size:$font-size-base;
+                font-size:$font-size-base-scita;
                 padding: 0px;
                 @media (max-width:991px){
                     @include order-1;
@@ -410,7 +410,7 @@
            .sct-copyright-text{
                 padding-left: 0;
                 color: fade-out($body-color, 0.5);
-                font-size:$font-size-base;
+                font-size:$font-size-base-scita;
                 span{
                     @media (max-width:991px){
                         @include order-2;
@@ -2012,7 +2012,7 @@
                       >.list-inline{
                         > a{
                             color:$light-grey-color;
-                            font-size:$font-size-base;
+                            font-size:$font-size-base-scita;
                         }
                      }
                    }
@@ -2123,7 +2123,7 @@
                   @include all-flex;
                 }
               .sct-copyright-text{
-                    font-size:$font-size-base;
+                    font-size:$font-size-base-scita;
                     @media (max-width:991px){
                         @include order-1;
                         width: 100%;
@@ -3165,7 +3165,7 @@
                  @include align-content-column-flex;
             }
             .sct-copyright-text{
-                font-size:$font-size-base;
+                font-size:$font-size-base-scita;
                 padding: 0px;
                 @media (max-width:991px){
                     @include order-1;

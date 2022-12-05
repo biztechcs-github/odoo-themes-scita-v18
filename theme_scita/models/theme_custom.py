@@ -9,8 +9,8 @@ class ThemeNew(models.AbstractModel):
     _inherit = 'theme.utils'
 
     def _theme_scita_post_copy(self, mod):
-        # self.disable_view_customize('website_sale_wishlist.product_add_to_wishlist')
-        # self.disable_view_customize('website_sale.product_quantity')
+        self.disable_view_customize('website_sale_wishlist.product_add_to_wishlist')
+        self.disable_view_customize('website_sale.product_quantity')
         self.disable_view_customize('website_sale_comparison.product_attributes_body')
         self.disable_view_customize('website_sale.product_comment')
         # self.disable_view_customize('website_sale.recommended_products')
@@ -35,6 +35,8 @@ class ThemeNew(models.AbstractModel):
         self.disable_view_customize('website_sale.products_thumb_cover')
         self.disable_view_customize('website_sale.filter_products_price')
         self.disable_view_customize('website_sale.product_share_buttons')
+        self.disable_view_customize('website_sale_product_configurator.configure_optional_products_website')
+        self.disable_view_customize('website_sale_product_configurator.product_quantity_config_website')
         # self.disable_view('website_sale_comparison.product_add_to_compare')
         self.enable_view('website.header_hoverable_dropdown')
 

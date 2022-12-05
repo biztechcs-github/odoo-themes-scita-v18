@@ -100,7 +100,7 @@ footer{
 	   .sct-copyright-text{
 			padding-left: 0;
 			color: fade-out($body-color, 0.5);
-			font-size:$font-size-base;
+			font-size:$font-size-base-scita;
 			span{
 				@media (max-width:991px){
 					@include order-2;
