@@ -217,7 +217,7 @@ header{
 				color: $light-color !important;
 			}
 			+ .dropdown-item {
-				border-top: 1px solid $dark-color;
+				// border-top: 1px solid $dark-color;
 			}
 		}
 	}
@@ -1652,6 +1652,7 @@ body{
 										padding: 0rem 0.75rem;
 										color:$dark-color;
 										line-height: 30px;
+										background-color: #e9ecef;
 										&:hover{
 											color:$theme;
 										}
@@ -1660,11 +1661,16 @@ body{
 								input.form-control{
 									text-align: center;
 									font-size: 14px;
+									min-height: 32px !important;
+									background-color: #fefefe;
+									line-height: 16px;
+									min-width: 46px;
 								}
 							}
 						}
 						.cart_item_image{
 							padding: 0;
+							position: relative;
 							span{
 								display: block;
 								img{
@@ -1697,6 +1703,7 @@ body{
 								    text-align: center;
 								    display: inline-block;
 								    margin: 0 auto;
+									top: -1px;
     							}
 							}
 						}
@@ -1709,6 +1716,9 @@ body{
 								td{
 									font-size: 13px;
 									padding: 0.5rem 0;
+								}
+								td.text-end {
+									text-align: left !important;
 								}
 								&:last-child{
 									display: none;
@@ -1861,4 +1871,7 @@ body header .navbar-expand-lg .navbar-collapse {
 			white-space: normal !important;
 		}
 	}
+}
+.sct_banner_1 {
+	overflow: hidden;
 }

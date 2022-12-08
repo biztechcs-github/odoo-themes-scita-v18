@@ -193,7 +193,10 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                             });
                             $(document).ajaxComplete(function() {
                                 setTimeout(function(){
-                                    var divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a').width(); 
+                                    var divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a').width();
+                                    if (divWidth == 0) {
+                                        divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a:visible').width();
+                                    }
                                     $('.retail_featured_product_1 .cs-product .pwp-img a').height(divWidth);
                                 },100);
                             });
@@ -270,7 +273,10 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
                         });
                         $(document).ajaxComplete(function() {
                             setTimeout(function(){
-                                var divWidth = $('.fashion_featured_product_1 .cs-product .pwp-img a').width(); 
+                                var divWidth = $('.fashion_featured_product_1 .cs-product .pwp-img a').width();
+                                if (divWidth == 0) {
+                                    divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a:visible').width();
+                                }
                                 $('.fashion_featured_product_1 .cs-product .pwp-img a').height(divWidth);
                             },100);
                         });
@@ -808,7 +814,6 @@ odoo.define('theme_scita.scita_frontend_js', function(require) {
         disabledInEditableMode: false,
         start: function() {
             var self = this;
-            console.log("Hello")
             if (this.editableMode) {
                 var $client_slider = $('#wrapwrap').find('#theme_scita_custom_client_slider');
                 var client_name = _t("Client Slider")

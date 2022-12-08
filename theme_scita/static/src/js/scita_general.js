@@ -246,7 +246,6 @@ odoo.define('theme_scita.scita_general_js', function(require) {
         var down_index=currentIndex_active;
         $('.myNumCarousel .num').html(''+currentIndex_active+'/'+totalItems+'');
         $(".myNumCarousel .carousel-control-next").on('click',function(){
-            console.log("Hello")
             currentIndex_active = $('.myNumCarousel div.carousel-item.active').index() + 2;
             if (totalItems >= currentIndex_active)
             {
@@ -260,7 +259,6 @@ odoo.define('theme_scita.scita_general_js', function(require) {
             }
         });
         $(".myNumCarousel .carousel-control-prev").on('click',function(){
-            console.log("Hewllo")
             down_index=down_index-1;
             if (down_index >= 1 )
             {
@@ -404,7 +402,6 @@ odoo.define('theme_scita.scita_general_js', function(require) {
     //  $("div#edit-page-menu").on('click',function(){
     //     waitForElementToDisplay("div#scita_snippets",1000);
     // }
-    // console.log("div.o_edit_website_container",$("div.o_edit_website_container"))
     // $("div.o_edit_website_container").on('click',function(){
     //     waitForElementToDisplay("div#scita_snippets",1000);
     // });

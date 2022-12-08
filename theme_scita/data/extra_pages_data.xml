@@ -895,9 +895,11 @@
                                     <div class="col-md-6 sct_control_box">
                                       <div class="input-group s_newsletter_list js_subscribe" data-list-id="0">
                                         <div class="newsletter_box">
-                                          <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" type="email"/>
-                                          <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn o_default_snippet_text" href="#">Submit</a>
-                                          <a class="btn btn-success js_subscribed_btn o_hidden o_default_snippet_text d-none" disabled="disabled" href="#">Thanks</a>
+                                          <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" name="email" type="email"/>
+                                          <span class="input-group-btn">
+                                              <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn o_default_snippet_text" href="#">Submit</a>
+                                              <a class="btn btn-success js_subscribed_btn o_hidden o_default_snippet_text d-none" disabled="disabled" href="#">Thanks</a>
+                                          </span>
                                           <div class="alert alert-success o_hidden o_default_snippet_text">Thanks for your subscription!</div>
                                         </div>
                                       </div>

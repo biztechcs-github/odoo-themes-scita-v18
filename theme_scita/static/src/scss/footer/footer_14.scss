@@ -88,7 +88,7 @@ background-color: $dark-color;
 		      @include all-flex;
 			}
 		  .sct-copyright-text{
-				font-size:$font-size-base;
+				font-size:$font-size-base-scita;
 				@media (max-width:991px){
 					@include order-1;
 					width: 100%;

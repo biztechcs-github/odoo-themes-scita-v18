@@ -831,7 +831,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -1193,7 +1193,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -1991,7 +1991,7 @@
                     </div>
                 </div>
 
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -2312,7 +2312,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -2494,7 +2494,7 @@
                         </ul>
                     </div>
                 </div>
-                <t t-if="request.env.get('product.wishlist') != None and request.website.viewref('theme_scita.add_to_wishlist').active">
+                <t t-if="request.env.get('product.wishlist') != None">
                     <div id="my_wish" class='nav-item sct_wsale_my_wish o_wsale_my_wish'>
                         <t t-set="wishcount" t-value="len(request.env['product.wishlist'].current())"/>
                         <div class="top-link-checkout">
@@ -3559,9 +3559,11 @@
                     <div class="row scita_cart_lines">
                         <div class="col-sm-9 cart_item_details">
                             <div class="cart_item_name">
-                                <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                    <t t-esc="line.product_id.name"/>
-                                </a>
+                                <t t-call="website_sale.cart_line_product_link">
+                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                                        <t t-esc="line.product_id.name"/>
+                                    </a>
+                                </t>
                             </div>
                             <p class="cart_qty_amt">
                                 <span class="theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
@@ -3645,8 +3647,8 @@
                             </div>
                         </div>
                         <div class="button-box">
-                            <a class="view-all btn" href="/shop/cart">View all</a>
-                            <a class="proceed btn" href="/shop/checkout">Checkout</a>
+                            <a class="view-all btn" t-attf-href="/shop/cart">View all</a>
+                            <a class="proceed btn" t-attf-href="/shop/checkout">Checkout</a>
                         </div>
                     </div>
                 </div>
@@ -3722,5 +3724,52 @@
         </xpath>
     </template>
 
+    <template id="template_header_image" inherit_id="website_sale.template_header_image">
+        <xpath expr="//t[@t-call='website_sale.header_cart_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-3'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_default" inherit_id="website_sale_wishlist.template_header_default">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item me-xl-3'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_vertical" inherit_id="website_sale_wishlist.template_header_vertical">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-3'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_slogan" inherit_id="website_sale_wishlist.template_header_slogan">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-3'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_contact" inherit_id="website_sale_wishlist.template_header_contact">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-3'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_boxed" inherit_id="website_sale_wishlist.template_header_boxed">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-3'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_image" inherit_id="website_sale_wishlist.template_header_image">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-2'</attribute>
+        </xpath>
+    </template>
+
+    <template id="template_header_hamburger_full" inherit_id="website_sale_wishlist.template_header_hamburger_full">
+        <xpath expr="//t[@t-call='website_sale_wishlist.header_wishlist_link']/t[@t-set='_item_class']" position="attributes">
+            <attribute name='t-value'>'nav-item ms-xl-2'</attribute>
+        </xpath>
+    </template>
 
 </odoo>

@@ -6,7 +6,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Google Map Snippet Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal" role="form">
@@ -34,7 +34,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h4 class="modal-title">Google Map Snippet Configuration</h4>
-                        <button class="close" data-bs-dismiss="modal" type="button">x</button>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
                     </div>
                     <div class="modal-body" contenteditable="false">
                         <form class="form-horizontal" role="form">

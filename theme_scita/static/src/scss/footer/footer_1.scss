@@ -104,7 +104,7 @@ footer{
 			 @include align-content-column-flex;
 		}
 		.sct-copyright-text{
-			font-size:$font-size-base;
+			font-size:$font-size-base-scita;
 			padding: 0px;
             @media (max-width:991px){
 				@include order-1;

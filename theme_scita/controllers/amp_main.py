@@ -55,14 +55,25 @@ class CustomAMP(WebsiteSale):
             else:
                 category = Category
 
-            page_no = request.env['product.per.page.no'].sudo().search(
-                [('set_default_check', '=', True)])
-            if page_no:
-                ppg = int(page_no.name)
-            else:
-                ppg = result.qcontext['ppg']
+            # page_no = request.env['product.per.page.no'].sudo().search(
+            #     [('set_default_check', '=', True)])
+            # if page_no:
+            #     ppg = int(page_no.name)
+            # else:
+            #     ppg = result.qcontext['ppg']
 
-            ppr = request.env['website'].get_current_website().shop_ppr or 4
+            # ppr = request.env['website'].get_current_website().shop_ppr or 4
+            website = request.env['website'].get_current_website()
+            if ppg:
+                try:
+                    ppg = int(ppg)
+                    post['ppg'] = ppg
+                except ValueError:
+                    ppg = False
+            if not ppg:
+                ppg = website.shop_ppg or 20
+
+            ppr = website.shop_ppr or 4
 
             attrib_list = request.httprequest.args.getlist('attrib')
             attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
@@ -81,7 +92,7 @@ class CustomAMP(WebsiteSale):
             now = datetime.timestamp(datetime.now())
             pricelist = request.env['product.pricelist'].browse(request.session.get('website_sale_current_pl'))
             if not pricelist or request.session.get('website_sale_pricelist_time', 0) < now - 60*60: # test: 1 hour in session
-                pricelist = website.get_current_pricelist()
+                pricelist = request.website.get_current_pricelist()
                 request.session['website_sale_pricelist_time'] = now
                 request.session['website_sale_current_pl'] = pricelist.id
 

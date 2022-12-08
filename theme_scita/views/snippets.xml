@@ -17,6 +17,44 @@
         </section>
     </template>
 
+    <template id="snippet_options" inherit_id="website_sale.snippet_options" name="Comparison Snippet Options">
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-row[@class='o_we_full_row']" position="replace">
+            <we-row string="Customers" class="o_we_full_row">
+                <we-button string="Rating"
+                    data-customize-website-views="theme_scita.theme_scita_rating"
+                    data-no-preview="true"
+                    data-reload="/"/>
+            </we-row>
+        </xpath>
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-checkbox" position="replace">
+             <we-checkbox string="Select Quantity"
+                data-customize-website-views="theme_scita.scita_product_quantity"
+                data-no-preview="true"
+                data-reload="/"/>
+       </xpath>
+    </template>
+
+    <template id="snippet_options_wishlist" inherit_id="website_sale_wishlist.snippet_options" name="Wishlist Snippet Options">
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-row[@data-name='o_wsale_buy_now_opt']" position="replace">
+            <we-row string="Cart" class="o_we_full_row" data-name="o_wsale_buy_now_opt">
+                <we-button title="Buy Now"
+                           data-customize-website-views="website_sale.product_buy_now"
+                           data-no-preview="true"
+                           data-reload="/">
+                    <i class="fa fa-fw fa-bolt"/>
+                    Buy Now
+                </we-button>
+                <we-button title="Wishlist"
+                       data-customize-website-views="theme_scita.scita_product_add_to_wishlist"
+                       data-no-preview="true"
+                       data-reload="/">
+                    <i class="fa fa-fw fa-heart"/>
+                    Wishlist
+                </we-button>
+            </we-row>
+       </xpath>
+    </template>
+
     <template id="custom_scita_product_category_slider_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="custom_scita_product_category_slider"
@@ -395,7 +433,7 @@
                                 <span class="fa fa-eye"/>
                             </button>
                         </div>
-                        <t t-if="request.website.viewref('theme_scita.add_to_wishlist').active and product.product_variant_ids">
+                        <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                             <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                             <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart"></span></a>
                         </t>
@@ -514,10 +552,10 @@
                                             <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                                                 <span class="fa fa-eye"/>
                                             </button>
-                                            <t t-if="request.website.viewref('theme_scita.add_to_compare').active and product.product_variant_ids">
+                                            <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
                                                <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-balance-scale"></span></a>
                                             </t>
-                                            <t t-if="request.website.viewref('theme_scita.add_to_wishlist').active and product.product_variant_ids">
+                                            <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                                                 <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                                                 <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart"></span></a>
                                             </t>
@@ -645,10 +683,10 @@
                                             <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                                                 <span class="fa fa-eye"/>
                                             </button>
-                                            <t t-if="request.website.viewref('theme_scita.add_to_compare').active and product.product_variant_ids">
+                                            <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
                                                <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-balance-scale"></span></a>
                                             </t>
-                                            <t t-if="request.website.viewref('theme_scita.add_to_wishlist').active and product.product_variant_ids">
+                                            <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                                                 <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                                                 <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart"></span></a>
                                             </t>
@@ -840,10 +878,10 @@
                     <form action="/shop/cart/update" method="post">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                        <t t-if="request.website.viewref('theme_scita.add_to_compare').active and product.product_variant_ids">
+                        <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
                            <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-balance-scale"></span></a>
                         </t>
-                        <t t-if="request.website.viewref('theme_scita.add_to_wishlist').active and product.product_variant_ids">
+                        <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                             <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
                             <a class="btn btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="icon-heart"></span></a>
                         </t>
@@ -1300,7 +1338,7 @@
                     <t t-snippet="theme_scita.it_prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-brand.png"/>
 
                     <t t-snippet="theme_scita.fashion_static_brand_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_brand.png"/>
-                    <t t-snippet="theme_scita.custom_scita_brand_custom_slider" t-thumbnail="theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
+                    <t t-snippet="theme_scita.custom_scita_brand_custom_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
                     
 
                     <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
@@ -1462,8 +1500,8 @@
 
                     
                     <!-- product and category snippet -->
-                    <t t-snippet="theme_scita.custom_scita_product_category_slider" t-thumbnail="theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
-                    <t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
+                    <t t-snippet="theme_scita.custom_scita_product_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
+                    <t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
                     <!-- Timeline snippets  -->
                     <t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_1.png"/>
                     <t t-snippet="theme_scita.timeline_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_2.png"/>

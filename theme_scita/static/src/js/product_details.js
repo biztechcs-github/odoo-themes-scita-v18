@@ -434,17 +434,20 @@ odoo.define('theme_scita.cart_hover', function (require) {
         selector: '.o_wsale_my_cart a[href$="/shop/cart"]',
         _onMouseEnter: function (ev) {
             var self = this;
+            self.hovered = true;
             clearTimeout(timeout);
             $(this.selector).not(ev.currentTarget).popover('hide');
             timeout = setTimeout(function () {
-                if (!self.$el.is(':hover') || $('.mycart-popover:visible').length) {
+                if (!self.hovered || $('.mycart-popover:visible').length) {
                     return;
                 }
                 self._popoverRPC = $.get("/shop/cart", {
                     type: 'popover',
                 }).then(function (data) {
                     var cartPopup = new publicWidget.registry.scita_cart_popup();
-                    self.$el.data("bs.popover").config.content = data;
+                    const popover = Popover.getInstance(self.$el[0]);
+                    popover._config.content = data;
+                    popover.setContent(popover.getTipElement());
                     self.$el.popover("show");
                     $(".mycart-popover .popover-body").html(data);
                     $('.popover').on('mouseleave', function () {
