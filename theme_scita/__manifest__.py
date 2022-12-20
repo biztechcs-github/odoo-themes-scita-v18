@@ -131,7 +131,7 @@ AMP Support
     'live_test_url': 'https://theme-scita-v15.appjetty.com/',
     'images': [
         'static/description/splash-screen.png',
-        'static/description/splash-screen_screenshot.gif',
+        'static/description/GIF-v16-2.gif',
     ],
     "cloc_exclude": [
         "static/**/*",
@@ -178,7 +178,7 @@ AMP Support
             'theme_scita/static/src/js/rating_state.js',
             '/portal_rating/static/src/xml/portal_chatter.xml',
             'theme_scita/static/src/js/product_details.js',
-            # 'theme_scita/static/src/js/see_more_brand.js',
+            'theme_scita/static/src/js/see_more_brand.js',
             'theme_scita/static/src/js/wishlist_products.js',
             'theme_scita/static/src/js/header.js',
             'theme_scita/static/src/js/mobile_view.js',

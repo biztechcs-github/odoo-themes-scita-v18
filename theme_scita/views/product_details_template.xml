@@ -175,15 +175,13 @@
         </xpath>
         <xpath expr="//div[@id='website_description']//div[@id='description']" position="after">
             <div class="tab-pane" id="reviews" role="tabpanel">
-                <section class="container">
-                    <div class="row">
-                        <div class='col-md-12'>
-                            <t t-call="portal.message_thread">
-                                <t t-set="object" t-value="product"/>
-                                <t t-set="display_rating" t-value="True"/>
-                            </t>
-                        </div>
-                    </div>
+                <section class="container pt32 pb32">
+                    <t t-call="portal.message_thread">
+                        <t t-set="object" t-value="product"/>
+                        <t t-set="display_rating" t-value="True"/>
+                        <t t-set="message_per_page" t-value="5"/>
+                        <t t-set="two_columns" t-value="true"/>
+                    </t>
                 </section>
             </div>
         </xpath>
@@ -415,7 +413,7 @@
         </xpath>
     </template>
 
-<!--     <template id="scita_product_description_table" inherit_id="theme_scita.theme_scita_product_details" customize_show="True" active="False" name="Product Specification Table">
+    <template id="scita_product_description_table" inherit_id="theme_scita.theme_scita_product_details" customize_show="True" active="False" name="Specification Inside Tab">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
             <li role="presentation">
                 <a aria-controls="reviews" data-bs-toggle="tab" href="#specification" role="tab">Specification 
@@ -465,7 +463,7 @@
                 </section>
             </div>
         </xpath>
-    </template> -->
+    </template>
 
     <!--     <template active="False" customize_show="True" id="scita_product_variants" inherit_id="theme_scita.theme_scita_product_details" name="List View of Variants">
         <xpath expr="//t[@t-placeholder='select']" position="replace">

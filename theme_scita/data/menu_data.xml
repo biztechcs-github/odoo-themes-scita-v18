@@ -494,6 +494,11 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="fashion_promo_snippet_1">
@@ -762,6 +767,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1557130616930" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1557130616930" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1557130616930" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -1249,6 +1259,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1557123595406" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1557123595406" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1557123595406" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -1373,6 +1388,11 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="retial_deal_of_day_banner_snippet_1">
@@ -2284,6 +2304,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1557120239396" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1557120239396" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1557120239396" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -2539,6 +2564,11 @@
                                     <span class="carousel-control-next-icon"/>
                                     <span class="sr-only o_default_snippet_text">Next</span>
                                 </div>
+                                <ol class="carousel-indicators o_hidden">
+                                    <li data-bs-target="#myCarousel1560235308084" data-bs-slide-to="0" class="active"></li>
+                                    <li data-bs-target="#myCarousel1560235308084" data-bs-slide-to="1"></li>
+                                    <li data-bs-target="#myCarousel1560235308084" data-bs-slide-to="2"></li>
+                                </ol>
                             </div>
                             <section class="about_us_v_5 pb0">
                                 <div class="container">
@@ -3007,6 +3037,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1560244023665" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1560244023665" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1560244023665" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -3171,6 +3206,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                  <ol class="carousel-indicators o_hidden">
+                                      <li data-bs-target="#myCarousel1560502915133" data-bs-slide-to="0" class="active"></li>
+                                      <li data-bs-target="#myCarousel1560502915133" data-bs-slide-to="1"></li>
+                                      <li data-bs-target="#myCarousel1560502915133" data-bs-slide-to="2"></li>
+                                  </ol>
                               </div>
                             </section>
                             <section class="it_about_cmp pt56" style="background-image: url(''/web/image/theme_scita.sct_about_us_snippet_1_bg');">
@@ -3626,6 +3666,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1560504988316" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1560504988316" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1560504988316" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -3744,6 +3789,11 @@
                                           <span class="sr-only o_default_snippet_text">Next</span>
                                       </div>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1560833923674" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1560833923674" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1560833923674" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="health_about_hospital">
@@ -4455,6 +4505,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1560942907202" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1560942907202" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1560942907202" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -4687,6 +4742,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1561352072607" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1561352072607" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1561352072607" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="it_about_cmp pt72" style="background-image: url('/web/image/theme_scita.sct_about_us_snippet_1_bg'); background-position: 98.6% 98.44%;">
@@ -5286,6 +5346,11 @@
                                                             <span class="sr-only">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1561614883171" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1561614883171" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1561614883171" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -5463,6 +5528,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1561800282001" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1561800282001" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1561800282001" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="policy_trust_snippet_v_4 oe_custom_bg" style="background-color: rgb(255, 0, 0);">
@@ -6497,6 +6567,11 @@
                                     <span class="carousel-control-next-icon"/>
                                     <span class="sr-only o_default_snippet_text">Next</span>
                                 </div>
+                                <ol class="carousel-indicators o_hidden">
+                                    <li data-bs-target="#myCarousel1562389953979" data-bs-slide-to="0" class="active"></li>
+                                    <li data-bs-target="#myCarousel1562389953979" data-bs-slide-to="1"></li>
+                                    <li data-bs-target="#myCarousel1562389953979" data-bs-slide-to="2"></li>
+                                </ol>
                             </div>
                           </section>
                             <section class="content_snippets_v_9 pb56">
@@ -7024,6 +7099,11 @@
                                                                     <span class="sr-only o_default_snippet_text">Next</span>
                                                                 </div>
                                                             </div>
+                                                            <ol class="carousel-indicators o_hidden">
+                                                                <li data-bs-target="#myCarousel1572945392783" data-bs-slide-to="0" class="active"></li>
+                                                                <li data-bs-target="#myCarousel1572945392783" data-bs-slide-to="1"></li>
+                                                                <li data-bs-target="#myCarousel1572945392783" data-bs-slide-to="2"></li>
+                                                            </ol>
                                                         </div>
                                                     </section>
                                                 </div>
@@ -7229,6 +7309,12 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1562647260703" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1562647260703" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1562647260703" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <!-- <section class="oe_multi_category_slider" data-multi-cat-slider-id="multi-cat-myowl6" data-multi-cat-slider-type="6">
@@ -7978,6 +8064,12 @@
                                     <span class="carousel-control-next-icon"/>
                                     <span class="sr-only o_default_snippet_text">Next</span>
                                 </div>
+
+                                <ol class="carousel-indicators o_hidden">
+                                    <li data-bs-target="#myCarousel1563357326968" data-bs-slide-to="0" class="active"></li>
+                                    <li data-bs-target="#myCarousel1563357326968" data-bs-slide-to="1"></li>
+                                    <li data-bs-target="#myCarousel1563357326968" data-bs-slide-to="2"></li>
+                                </ol>
                               </div>
                             </section>
                             <section class="content_snippets_v_4 pb0">
@@ -8335,6 +8427,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1563360072177" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1563360072177" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1563360072177" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -8619,6 +8716,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1563944536831" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1563944536831" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1563944536831" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="health_about_hospital">
@@ -8945,6 +9047,11 @@
                                                                     <span class="sr-only o_default_snippet_text">Next</span>
                                                                 </div>
                                                             </div>
+                                                            <ol class="carousel-indicators o_hidden">
+                                                                <li data-bs-target="#myCarousel1572946250411" data-bs-slide-to="0" class="active"></li>
+                                                                <li data-bs-target="#myCarousel1572946250411" data-bs-slide-to="1"></li>
+                                                                <li data-bs-target="#myCarousel1572946250411" data-bs-slide-to="2"></li>
+                                                            </ol>
                                                         </div>
                                                     </section>
                                                 </div>
@@ -9030,6 +9137,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1564383611220" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1564383611220" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1564383611220" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="service_varient_2 bg-white-75 oe_custom_bg pt0 pb32">
@@ -9691,6 +9803,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1564384090605" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1564384090605" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1564384090605" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -10313,6 +10430,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1564978789030" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1564978789030" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1564978789030" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="service_varient_13 bg-white oe_custom_bg">
@@ -10893,6 +11015,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1564979518975" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1564979518975" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1564979518975" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -10992,6 +11119,11 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1565238120459" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1565238120459" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1565238120459" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="s_text_image pt32 pb32">
@@ -11218,6 +11350,12 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1565345072772" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1565345072772" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1565345072772" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="about_us_v_5">
@@ -11616,6 +11754,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1565596591016" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1565596591016" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1565596591016" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -12043,6 +12186,11 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1565768191823" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1565768191823" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1565768191823" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -12238,6 +12386,12 @@
                                       <span class="carousel-control-next-icon"/>
                                       <span class="sr-only o_default_snippet_text">Next</span>
                                   </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel1566209149968" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel1566209149968" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel1566209149968" data-bs-slide-to="2"></li>
+                                    </ol>
                               </div>
                             </section>
                             <section class="deal_of_day_banner_2 oe_custom_bg" style="">
@@ -12452,6 +12606,12 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1566212989618" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1566212989618" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1566212989618" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </section>
                                         </div>
@@ -12563,6 +12723,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="it_about_cmp oe_img_bg oe_custom_bg" style="background-image: url('/web/image/theme_scita.sct_law_govt_ab_bg12');">
@@ -13157,6 +13323,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="how_it_work_v_3 bg-white oe_custom_bg">
@@ -13650,6 +13822,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="retial_deal_of_day_banner_snippet_1">
@@ -14007,6 +14185,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="retial_trust_snippet_1 oe_custom_bg" style="">
@@ -14356,6 +14540,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="how_it_work_v_3">
@@ -14710,6 +14900,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="health_about_hospital">
@@ -15179,6 +15375,12 @@
                                                             <span class="sr-only o_default_snippet_text">Next</span>
                                                         </div>
                                                     </div>
+
+                                                    <ol class="carousel-indicators o_hidden">
+                                                        <li data-bs-target="#myCarousel1569320012979" data-bs-slide-to="0" class="active"></li>
+                                                        <li data-bs-target="#myCarousel1569320012979" data-bs-slide-to="1"></li>
+                                                        <li data-bs-target="#myCarousel1569320012979" data-bs-slide-to="2"></li>
+                                                    </ol>
                                                 </div>
                                             </div>
                                         </div>
@@ -15320,6 +15522,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="retial_trust_snippet_1">
@@ -15826,6 +16034,12 @@
                                             <span class="sr-only">Next</span>
                                         </div>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="s_text_image pb0 pt56">
@@ -16055,6 +16269,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                           <section class="service_varient_6">
@@ -16745,6 +16965,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                             <section class="retial_deal_of_day_banner_snippet_1 pt24" data-disp="deal_days" data-name="Deal of the Day Snippet 1">
@@ -17037,6 +17263,12 @@
                                         <span class="carousel-control-next-icon"/>
                                         <span class="sr-only">Next</span>
                                     </div>
+                                    
+                                    <ol class="carousel-indicators o_hidden">
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                                        <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                                    </ol>
                                 </div>
                             </section>
                               <ul/>

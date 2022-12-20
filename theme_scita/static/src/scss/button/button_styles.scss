@@ -55,6 +55,11 @@
     }
 }
 @if o-website-value('btn-style-template') == 'btn_style_3' {
+    .carousel-content{
+        .sct_line_btn{
+            padding: 0;
+        }
+    }
     .btn-primary {
         background: transparent;
         border: 2px solid $theme;

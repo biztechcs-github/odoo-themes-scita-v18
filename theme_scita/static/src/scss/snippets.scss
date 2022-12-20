@@ -11408,10 +11408,15 @@ body #wrapwrap{
 			.counter_timer_div {
 				margin-left: -15px;
 				margin-bottom: 40px;
+				@include flex;
+				@include flexwrap;
+
 				@media (max-width: 575px){
 					margin-bottom: 0;
 				}
+				
 				> span {
+					padding: 0 15px;
 					display: inline-block;
 					@media (max-width: 575px){
 						flex: 0 0 50%;
