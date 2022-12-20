@@ -55,6 +55,12 @@
        </xpath>
     </template>
 
+    <!-- <template id="snippet_options_website_sale_comparison" inherit_id="website_sale_comparison.snippet_options" name="Comparison Snippet Options">
+        <xpath expr="//div[@data-js='WebsiteSaleProductPage']//we-row[@data-name='o_wsale_buy_now_opt']" position="inside">
+            <we-button data-customize-website-views="website_sale_comparison.product_attributes_body">Inside Tab</we-button>
+       </xpath>
+    </template> -->
+
     <template id="custom_scita_product_category_slider_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="custom_scita_product_category_slider"

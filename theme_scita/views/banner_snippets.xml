@@ -69,6 +69,11 @@
                     <span class="carousel-control-next-icon"/>
                     <span class="sr-only">Next</span>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>
@@ -150,6 +155,11 @@
                     <span class="carousel-control-next-icon"/>
                     <span class="sr-only">Next</span>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>
@@ -227,6 +237,11 @@
                     <span class="carousel-control-next-icon"/>
                     <span class="sr-only">Next</span>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>
@@ -307,6 +322,11 @@
                     <span class="carousel-control-next-icon"/>
                     <span class="sr-only">Next</span>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>
@@ -432,6 +452,11 @@
                         <span class="sr-only">Next</span>
                     </div>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>
@@ -514,6 +539,11 @@
                     <span class="carousel-control-next-icon"/>
                     <span class="sr-only">Next</span>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>
@@ -606,6 +636,11 @@
                         </div>
                     </div>
                 </div>
+                <ol class="carousel-indicators o_hidden">
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+                </ol>
             </div>
         </section>
     </template>

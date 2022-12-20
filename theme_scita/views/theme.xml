@@ -46,13 +46,15 @@
                         <h6 class="mb-3">
                             <b class="o_products_attributes_title d-none d-lg-block">Brands</b>
                         </h6>
-                        <div class="flex-column mb-3">
+                        <div class="flex-column mb-3" id="myList">
                             <t t-foreach="brands" t-as="a">
                                 <div class="form-check mb-1">
                                     <input name="brand" t-attf-class="form-check-input brand_{{a.id}}" t-att-checked="'checked' if a.id in brand_set else None" t-attf-id="checkbox_brand_#{a.id}" t-att-value="a.id" type="checkbox"/>
                                     <label class="form-check-label fw-normal" t-attf-for="checkbox_brand_#{a.id}" t-field="a.name"/>
                                 </div>
                             </t>
+                            <a class="o_hidden" id="loadMore">View More</a>
+                            <a class="o_hidden" id="showLess">View Less</a>
                         </div>
                     </div>
                 </div>
@@ -938,6 +940,8 @@
                 </div>
             </section>
         </xpath>
+        <xpath expr="//div[@id='products_grid']/t[@t-call='website_sale.products_breadcrumb']" position="replace">
+        </xpath>
         <!-- <xpath expr="//div[hasclass('products_header', 'btn-toolbar', 'flex-nowrap', 'align-items-center', 'justify-content-between', 'mb-3')]/t[@t-call='website_sale.sort']" position="after">
             <t t-if="products and website.get_pager_selection()">
                 <t t-set="website_ppp" t-value="website.get_pager_selection()"/>
@@ -967,9 +971,6 @@
         </xpath> -->
         <!-- <xpath expr="//div[hasclass('products_pager','d-flex','justify-content-center','pt-5','pb-3')]" position="attributes">
             <attribute name="style">display:none;</attribute>
-        </xpath> -->
-        <!-- <xpath expr="//div[@id='products_grid']//ol" position="attributes">
-            <attribute name="style">display: none;</attribute>
         </xpath> -->
         <!-- <xpath expr="//aside[@id='products_grid_before']" position="attributes">
             <attribute name="class">col-md-3 hidden-xs</attribute>
@@ -1593,6 +1594,19 @@
     <template id="scita_portal_tasks_list" inherit_id="project.portal_tasks_list">
         <xpath expr="//div[hasclass('row', 'flex-nowrap', 'ps-3')]" position="attributes">
             <attribute name="class">row flex-nowrap ps-3 align-items</attribute>
+        </xpath>
+    </template>
+
+    <template id="scita_website_search_box" inherit_id="website.website_search_box">
+        <xpath expr="//div[@role='search']//span[hasclass('oe_search_found')]" position="replace">
+            <t t-if="theme_scita">
+                <span></span>
+            </t>
+            <t t-else="">
+                <span t-if="search" class="oe_search_found">
+                    <small>(<t t-out="search_count or 0"/> found)</small>
+                </span>
+            </t>
         </xpath>
     </template>
 

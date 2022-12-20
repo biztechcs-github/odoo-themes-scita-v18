@@ -102,7 +102,8 @@
                                                 </t>
                                             </ul>
                                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                                 <label>Currency</label>
                                                 <t t-call="website_sale.pricelist_list"/>
                                             </div>
@@ -147,6 +148,7 @@
                                                 <t t-set="_classes" t-valuef="mt8"/>
                                                 <t t-set="search_type" t-valuef="all"/>
                                                 <t t-set="action" t-valuef="/website/search"/>
+                                                <t t-set="theme_scita" t-valuef="True"/>
                                             </t>
                                             <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                 <t t-set="action" t-value="'/shop'"/>
@@ -197,6 +199,7 @@
                                             <t t-set="_classes" t-valuef="mt8"/>
                                             <t t-set="search_type" t-valuef="all"/>
                                             <t t-set="action" t-valuef="/website/search"/>
+                                            <t t-set="theme_scita" t-valuef="True"/>
                                         </t>
                                         <!-- <t t-call="website_sale.website_sale_products_search_box">
                                             <t t-set="action" t-value="'/shop'"/>
@@ -288,7 +291,8 @@
                                                 </t>
                                             </ul>
                                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                                 <label>Currency</label>
                                                 <t t-call="website_sale.pricelist_list"/>
                                             </div>
@@ -370,7 +374,8 @@
                                                 </t>
                                             </ul>
                                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                                 <label>Currency</label>
                                                 <t t-call="website_sale.pricelist_list"/>
                                             </div>
@@ -414,6 +419,7 @@
                                                 <t t-set="_classes" t-valuef="mt8"/>
                                                 <t t-set="search_type" t-valuef="all"/>
                                                 <t t-set="action" t-valuef="/website/search"/>
+                                                <t t-set="theme_scita" t-valuef="True"/>
                                             </t>
                                             <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                 <t t-set="action" t-value="'/shop'"/>
@@ -517,6 +523,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -548,6 +555,7 @@
                                                         <t t-set="_classes" t-valuef="mt8"/>
                                                         <t t-set="search_type" t-valuef="all"/>
                                                         <t t-set="action" t-valuef="/website/search"/>
+                                                        <t t-set="theme_scita" t-valuef="True"/>
                                                     </t>
                                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                         <t t-set="action" t-value="'/shop'"/>
@@ -663,6 +671,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -693,6 +702,7 @@
                                                         <t t-set="_classes" t-valuef="mt8"/>
                                                         <t t-set="search_type" t-valuef="all"/>
                                                         <t t-set="action" t-valuef="/website/search"/>
+                                                        <t t-set="theme_scita" t-valuef="True"/>
                                                     </t>
                                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                         <t t-set="action" t-value="'/shop'"/>
@@ -788,6 +798,7 @@
                         <t t-set="_classes" t-valuef="mt8"/>
                         <t t-set="search_type" t-valuef="all"/>
                         <t t-set="action" t-valuef="/website/search"/>
+                        <t t-set="theme_scita" t-valuef="True"/>
                     </t>
                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                         <t t-set="action" t-value="'/shop'"/>
@@ -854,7 +865,8 @@
                 </div>
                 <div class="currency_opt">
                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                    <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                    <div class="currency_bar" t-if="hasPricelistDropdown">
                         <label>Currency</label>
                         <t t-call="website_sale.pricelist_list"/>
                     </div>
@@ -975,7 +987,8 @@
                                                 </t>
                                             </ul>
                                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                                 <label>Currency</label>
                                                 <t t-call="website_sale.pricelist_list"/>
                                             </div>
@@ -1020,6 +1033,7 @@
                                                 <t t-set="_classes" t-valuef="mt8"/>
                                                 <t t-set="search_type" t-valuef="all"/>
                                                 <t t-set="action" t-valuef="/website/search"/>
+                                                <t t-set="theme_scita" t-valuef="True"/>
                                             </t>
                                             <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                 <t t-set="action" t-value="'/shop'"/>
@@ -1114,6 +1128,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -1321,6 +1336,7 @@
                                             <t t-set="_classes" t-valuef="mt8"/>
                                             <t t-set="search_type" t-valuef="all"/>
                                             <t t-set="action" t-valuef="/website/search"/>
+                                            <t t-set="theme_scita" t-valuef="True"/>
                                         </t>
                                         <!-- <t t-call="website_sale.website_sale_products_search_box">
                                             <t t-set="action" t-value="'/shop'"/>
@@ -1355,7 +1371,8 @@
                                                 </t>
                                             </div>
                                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                                 <label>Currency</label>
                                                 <t t-call="website_sale.pricelist_list"/>
                                             </div>
@@ -1480,6 +1497,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -1548,7 +1566,8 @@
                             <div class="col-md-4 col-7 h-left">
                                 <ul class="nav">
                                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                    <li class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                    <li class="currency_bar" t-if="hasPricelistDropdown">
                                         <t t-call="website_sale.pricelist_list"/>
                                     </li>
                                     <li t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)">
@@ -1642,6 +1661,7 @@
                                                 <t t-set="_classes" t-valuef="mt8"/>
                                                 <t t-set="search_type" t-valuef="all"/>
                                                 <t t-set="action" t-valuef="/website/search"/>
+                                                <t t-set="theme_scita" t-valuef="True"/>
                                             </t>
                                             <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                 <t t-set="action" t-value="'/shop'"/>
@@ -1718,6 +1738,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -1788,6 +1809,7 @@
                                     <t t-set="_classes" t-valuef="mt8"/>
                                     <t t-set="search_type" t-valuef="all"/>
                                     <t t-set="action" t-valuef="/website/search"/>
+                                    <t t-set="theme_scita" t-valuef="True"/>
                                 </t>
                                 <!-- <t t-call="website_sale.website_sale_products_search_box">
                                     <t t-set="action" t-value="'/shop'"/>
@@ -1801,7 +1823,8 @@
                             <div class="col-md-4 col-7 cstm-lang-currency">
                                 <ul class="nav">
                                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                    <li class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                    <li class="currency_bar" t-if="hasPricelistDropdown">
                                         <t t-call="website_sale.pricelist_list"/>
                                     </li>
                                     <li t-if="request.website.viewref('website.header_language_selector').active and ((request.is_frontend_multilang and len(languages) &gt; 1) or editable)" class="language-bar" id="lang">
@@ -1915,6 +1938,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -2014,7 +2038,8 @@
                 </div>
                 <div class="currency_opt">
                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                    <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                    <div class="currency_bar" t-if="hasPricelistDropdown">
                         <label>Currency</label>
                         <t t-call="website_sale.pricelist_list"/>
                     </div>
@@ -2115,6 +2140,7 @@
                                                         <t t-set="_classes" t-valuef="mt8"/>
                                                         <t t-set="search_type" t-valuef="all"/>
                                                         <t t-set="action" t-valuef="/website/search"/>
+                                                        <t t-set="theme_scita" t-valuef="True"/>
                                                     </t>
                                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                         <t t-set="action" t-value="'/shop'"/>
@@ -2150,7 +2176,8 @@
                                                         </t>
                                                     </ul>
                                                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                                    <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                                    <div class="currency_bar" t-if="hasPricelistDropdown">
                                                         <label>Currency</label>
                                                         <t t-call="website_sale.pricelist_list"/>
                                                     </div>
@@ -2269,6 +2296,7 @@
                         <t t-set="_classes" t-valuef="mt8"/>
                         <t t-set="search_type" t-valuef="all"/>
                         <t t-set="action" t-valuef="/website/search"/>
+                        <t t-set="theme_scita" t-valuef="True"/>
                     </t>
                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                         <t t-set="action" t-value="'/shop'"/>
@@ -2335,7 +2363,8 @@
                 </div>
                 <div class="currency_opt">
                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                    <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                    <div class="currency_bar" t-if="hasPricelistDropdown">
                         <label>Currency</label>
                         <t t-call="website_sale.pricelist_list"/>
                     </div>
@@ -2451,6 +2480,7 @@
                         <t t-set="_classes" t-valuef="mt8"/>
                         <t t-set="search_type" t-valuef="all"/>
                         <t t-set="action" t-valuef="/website/search"/>
+                        <t t-set="theme_scita" t-valuef="True"/>
                     </t>
                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                         <t t-set="action" t-value="'/shop'"/>
@@ -2517,7 +2547,8 @@
                 </div>
                 <div class="currency_opt">
                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                    <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                    <div class="currency_bar" t-if="hasPricelistDropdown">
                         <label>Currency</label>
                         <t t-call="website_sale.pricelist_list"/>
                     </div>
@@ -2607,6 +2638,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -2684,7 +2716,8 @@
                                 <t t-set="_div_classes" t-value="'ml-2'"/>
                             </t>
                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                 <t t-call="website_sale.pricelist_list"/>
                             </div>
                         </div>
@@ -2727,6 +2760,7 @@
                                         <t t-set="_classes" t-valuef="mt8"/>
                                         <t t-set="search_type" t-valuef="all"/>
                                         <t t-set="action" t-valuef="/website/search"/>
+                                        <t t-set="theme_scita" t-valuef="True"/>
                                     </t>
                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                         <t t-set="action" t-value="'/shop'"/>
@@ -2804,7 +2838,8 @@
                                 <t t-set="_div_classes" t-value="'ml-2'"/>
                             </t>
                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                 <t t-call="website_sale.pricelist_list"/>
                             </div>
                         </div>
@@ -2858,6 +2893,7 @@
                                                         <t t-set="_classes" t-valuef="mt8"/>
                                                         <t t-set="search_type" t-valuef="all"/>
                                                         <t t-set="action" t-valuef="/website/search"/>
+                                                        <t t-set="theme_scita" t-valuef="True"/>
                                                     </t>
                                                     <!-- <t t-call="website_sale.website_sale_products_search_box">
                                                         <t t-set="action" t-value="'/shop'"/>
@@ -2893,7 +2929,8 @@
                                                         </t>
                                                     </ul>
                                                     <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                                    <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                                    <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                                    <div class="currency_bar" t-if="hasPricelistDropdown">
                                                         <label>Currency</label>
                                                         <t t-call="website_sale.pricelist_list"/>
                                                     </div>
@@ -3004,6 +3041,7 @@
                                             <t t-set="_classes" t-valuef="mt8"/>
                                             <t t-set="search_type" t-valuef="all"/>
                                             <t t-set="action" t-valuef="/website/search"/>
+                                            <t t-set="theme_scita" t-valuef="True"/>
                                         </t>
                                         <!-- <t t-call="website_sale.website_sale_products_search_box">
                                             <t t-set="action" t-value="'/shop'"/>
@@ -3038,7 +3076,8 @@
                                                 </t>
                                             </ul>
                                             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
-                                            <div class="currency_bar" t-if="len(website_sale_pricelists) &gt; 1">
+                                            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                            <div class="currency_bar" t-if="hasPricelistDropdown">
                                                 <label>Currency</label>
                                                 <t t-call="website_sale.pricelist_list"/>
                                             </div>
