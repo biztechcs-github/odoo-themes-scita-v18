@@ -456,6 +456,12 @@
             height: 450px;
             overflow-y: auto;
         }
+        .h-cart li.configuration .toggle-config .currency_bar .dropdown .dropdown-menu.show a:hover {
+            color: $light-color;
+            span {
+                color: $light-color;
+            }
+        }
         .top-header {
             background: $dark-color;
             padding: 10px 0;
@@ -917,9 +923,10 @@
                     padding: 0;
                 }
 
-                .menu_right{
-                    position: static;
-                }
+                // Mobile burger position related comment
+                // .menu_right{
+                //     position: static;
+                // }
             }
         }
 
@@ -1309,6 +1316,29 @@
                 @media (min-width: 768px) {
                     padding-top: 0;
                     padding-bottom: 0;
+                }
+            }
+        }
+        .h-cart li.configuration .toggle-config .dropdown a {
+            color: $light-color;
+            span {
+                color: $light-color !important;
+            }
+            &:hover {
+                color: $dark-color !important;
+                span {
+                    color: $dark-color !important;
+                }
+            }
+        }
+        .h-cart li.configuration .toggle-config .currency_bar .dropdown .dropdown-menu.show a {
+            span {
+                color: $dark-color !important;
+            }
+            &:hover {
+                background-color: $dark-color !important;
+                span {
+                    color: $light-color !important;
                 }
             }
         }
