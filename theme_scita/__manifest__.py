@@ -8,7 +8,7 @@ Perfect for E-Commerce, Fashion, IT, Furniture and other 35+ industries.''',
     'author': 'AppJetty',
     'website': 'https://www.appjetty.com/',
     'category': 'Theme/Ecommerce',
-    'version': '15.0.1.0.2',
+    'version': '16.0.1.0.0',
     'license': 'OPL-1',
     'description': '''Theme Scita
 Business theme
@@ -131,7 +131,7 @@ AMP Support
     'live_test_url': 'https://theme-scita-v15.appjetty.com/',
     'images': [
         'static/description/splash-screen.png',
-        'static/description/GIF-v16-2.gif',
+        'static/description/splash-screen_screenshot.gif',
     ],
     "cloc_exclude": [
         "static/**/*",
