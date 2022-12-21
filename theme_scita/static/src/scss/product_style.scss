@@ -11,6 +11,9 @@
 			-ms-flex-pack: justify;
 			justify-content: space-between;
 			@include align-content;
+			&:before, &:after {
+				display: none !important;
+			}
 			@media (max-width: 767px){
 				-webkit-box-pack: center;
 				-ms-flex-pack: center;
@@ -1930,4 +1933,7 @@
 		}
 	}
 }
-
+.page-item.active .page-link {
+	background-color: $theme;
+    border-color: $theme;
+}
