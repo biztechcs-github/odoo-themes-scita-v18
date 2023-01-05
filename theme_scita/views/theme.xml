@@ -789,7 +789,7 @@
                                             </a>
                                         </div>
                                         <div class='page_info'>
-                                            <div t-out="page.service_content" class="sub_menu_content"/>
+                                            <div t-out="page.service_content" class="sub_menu_content" t-options="{'widget': 'html'}"/>
                                         </div>
                                     </div>
                                 </t>
@@ -817,10 +817,10 @@
                         </div>
                         <div t-att-class="'col-md-3 col-xs-12 banner_simple_desc' if submenu.is_img_banner else 'col-md-6 banner_simple_desc'">
                             <h2 class='sct_head'><t t-esc='submenu.menu_desc'/></h2>
-                            <t t-out="submenu.banner_content"/>
+                            <t t-out="submenu.banner_content" t-options="{'widget': 'html'}" t-if="submenu.banner_content"/>
                         </div>
                         <div t-att-class="'col-md-3 col-xs-12 letter-spacing' if submenu.is_img_banner else 'col-md-6 banner_info_tag letter-spacing'">
-                            <t t-out="submenu.service_content"/>
+                            <t t-out="submenu.service_content" t-options="{'widget': 'html'}"/>
                         </div>
                         
                     </div>
@@ -901,6 +901,11 @@
         </xpath>
     </template>
 
+    <template id="scita_products_add_to_cart" inherit_id="website_sale.products_add_to_cart">
+        <xpath expr="//a[@t-if='product._website_show_quick_add()']" position="attributes">
+            <attribute name="class">btn a-submit</attribute>
+        </xpath>
+    </template>
     <!-- Shop page -->
     <!-- Products page -->
     <template id="theme_scita_sale_products" inherit_id="website_sale.products" name="Theme Scita Products">
