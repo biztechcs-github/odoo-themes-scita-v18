@@ -9,7 +9,7 @@ odoo.define('theme_scita.scita_general_js', function(require) {
         e.stopPropagation()
     });
     //End megamemu
-     $(document).ready(function(){
+    $(document).ready(function(){
         if ($('div').hasClass("o_offcanvas_menu_backdrop")){
             $(".o_offcanvas_menu_backdrop").parent().addClass("sct_off_canvas");
         }
@@ -25,39 +25,37 @@ odoo.define('theme_scita.scita_general_js', function(require) {
             $('#wrapwrap').addClass("sct-mobile-pro-list");
         }
 
-        $('li.position-static').mouseenter(
-            function(){ 
-                if ($("div.o_mega_menu_container_size").length==0)
-                {
-                    $(this).parent().addClass('full-size-megamenu');
-                    $(this).parent().closest('div.container').css("position", "static");
-                }
-                else
-                {
-                    $(this).parent().addClass('container-size-megamenu');
-                    $(this).parent().closest('div.container').css("position", "relative");
-                    
-                }
-            }
-        )
-        $('li.position-static').mouseleave(
-            function(){ 
-                if ($("div.o_mega_menu_container_size").length==0)
-                {
-                    $(this).parent().removeClass('full-size-megamenu');
-                    $(this).parent().closest('div.container').css("position", "relative");
-                }
-                else
-                {
-                   $(this).parent().removeClass('container-size-megamenu');
-                   $(this).parent().closest('div.container').css("position", "relative");
-
-                }
-            }
-        )
+        // $('li.position-static').mouseenter(
+        //     function(){
+        //         if ($("div.o_mega_menu_container_size").length==0)
+        //         {
+        //             $(this).parent().addClass('full-size-megamenu');
+        //             $(this).parent().closest('div.container').css("position", "static");
+        //         }
+        //         else
+        //         {
+        //             $(this).parent().addClass('container-size-megamenu');
+        //             $(this).parent().closest('div.container').css("position", "relative");
+        //         }
+        //     }
+        // )
+        // $('li.position-static').mouseleave(
+        //     function(){
+        //         if ($("div.o_mega_menu_container_size").length==0)
+        //         {
+        //             $(this).parent().removeClass('full-size-megamenu');
+        //             $(this).parent().closest('div.container').css("position", "relative");
+        //         }
+        //         else
+        //         {
+        //            $(this).parent().removeClass('container-size-megamenu');
+        //            $(this).parent().closest('div.container').css("position", "relative");
+        //         }
+        //     }
+        // )
         $('li.position-static').addClass('li-mega-menu');
-        $('li.position-static').removeClass('dropdown');
-        $('li.position-static div').addClass('mega-dropdown-menu');
+        // $('li.position-static').removeClass('dropdown');
+        // $('li.position-static ul').addClass('mega-dropdown-menu');
         // for accordion 2 snippets 
 
         $("section.accordion_v_2 a.card-header").click(function(e) {
@@ -323,11 +321,10 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                 $(this).find('.dropdown-menu').slideToggle();
 
             });
-            $('div.o_extra_menu_items li.li-mega-menu').on('click',function(event) {
-                event.stopImmediatePropagation();
-                $(this).find('.dropdown-menu').slideToggle();
-
-            });
+            // $('div.o_extra_menu_items li.li-mega-menu').on('click',function(event) {
+            //     event.stopImmediatePropagation();
+            //     $(this).find('.dropdown-menu').slideToggle();
+            // });
             var sliderTwo = $('.mm-slider .carousel').carousel({
                 /* your options for slider #2 */
             })

@@ -112,7 +112,7 @@
         </xpath>
         <xpath expr="//li" position="after">
             <!-- Category megamenu -->
-            <li t-att-class="'nav-item li-mega-menu menu_style_1 sct_mega_menu'" t-att-id="'em1_%s'% (submenu.megamenu_type) if submenu.megamenu_type else 'em1-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'cat_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_style_1 sct_mega_menu'" t-att-id="'em1_%s'% (submenu.megamenu_type) if submenu.megamenu_type else 'em1-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'cat_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -419,7 +419,7 @@
                 </t>
             </li>
             <!-- Category Image megamenu -->
-            <li t-att-class="'nav-item li-mega-menu menu_style_2'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'cat_img_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_style_2'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'cat_img_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -464,7 +464,7 @@
                 
             </li>
             <!-- Pages megamenu -->
-            <li t-att-class="'nav-item li-mega-menu menu_service_page'" t-att-id="'s1_%s'% (submenu.megamenu_type) if submenu.megamenu_type else 's1-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'pages_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_style_4 menu_service_page'" t-att-id="'s1_%s'% (submenu.megamenu_type) if submenu.megamenu_type else 's1-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'pages_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -633,7 +633,7 @@
                     </ul>
                 </t>
             </li>
-            <li t-att-class="'nav-item li-mega-menu menu_service_2'" t-att-id="'mm_%s'% (submenu.megamenu_type1) if submenu.megamenu_type1 else 'mm-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'service_page_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_service_2'" t-att-id="'mm_%s'% (submenu.megamenu_type1) if submenu.megamenu_type1 else 'mm-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'service_page_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -766,7 +766,7 @@
                     </ul>
                 </t>
             </li>
-            <li t-att-class="'nav-item li-mega-menu menu_service_1'" t-att-id="'s3_%s'% (submenu.megamenu_type) if submenu.megamenu_type else 's3-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'service_content_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_service_1'" t-att-id="'s3_%s'% (submenu.megamenu_type) if submenu.megamenu_type else 's3-no'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'service_content_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -803,7 +803,7 @@
                     </ul>
                 <!-- </t> -->
             </li>
-            <li t-att-class="'nav-item li-mega-menu menu_service_3'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'service_banner_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_service_3'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'service_banner_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -832,7 +832,7 @@
                 </ul>
             </li>
             <!-- product megamenu -->
-            <li t-att-class="'nav-item li-mega-menu menu_style_3'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'prod_megamenu'">
+            <li t-att-class="'nav-item dropdown position-static li-mega-menu menu_style_3'" t-if="submenu.is_megamenu and submenu.megamenu_view_type == 'prod_megamenu'">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
@@ -1925,4 +1925,9 @@
             </t>
         </xpath>
     </template> -->
+    <template id="scita_submenu" inherit_id="website.submenu" name="Submenu">
+        <xpath expr="//li[contains(@t-attf-class, 'position-static')]" position="attributes">
+            <attribute name="t-attf-class" add="def_mega_menu menu_style_1" separator=" "/>
+        </xpath>
+    </template>
 </odoo>
