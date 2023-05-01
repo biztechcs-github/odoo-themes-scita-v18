@@ -2,6 +2,13 @@ header {
 	.container {
 		position: relative;
 	}
+	.navbar-expand-lg{
+		.container , .o_container_small{
+			padding-left: 15px;
+            padding-right: 15px;
+		}
+
+	}
 	&.sct_header_disp {
 		#default_sign_in, #default_wish_list {
 			display: none !important;
@@ -11,6 +18,54 @@ header {
 		@media (max-width: 767px){
 			max-height: 300px;
 			overflow-y: auto;
+		}
+	}
+	#top_menu{
+		li{
+			&.def_mega_menu{
+				.dropdown-menu {
+					left: 0;
+					.nav{
+						a{
+							color: $dark-color;
+							transition: 0.3s ease;
+							&:hover{
+								color: $theme;
+								transition: 0.3s ease;
+							}
+						}
+					}
+					.s_mega_menu_odoo_menu {
+						.container{
+							background: $light-color;
+						}
+					}
+					.s_mega_menu_odoo_menu_footer{
+						.s_social_media{
+							display: flex;
+							justify-content: center;
+							flex-wrap: wrap;
+							a{
+								margin-left: 10px !important;
+                                margin-right: 10px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.navbar-expand-md{
+		.navbar-nav{
+			.o_extra_menu_items{
+				.dropdown-toggle{
+					&.nav-link{
+						.fa-plus{
+							color: $light-color;
+						}
+					}
+				}
+			}
 		}
 	}
 	ul.navbar-nav {
@@ -129,6 +184,16 @@ header {
 						}
 					}
 				}
+				&.position-static {
+					.dropdown-menu {
+						width: 100% !important;
+					}
+					&.def_mega_menu {
+						.dropdown-menu {
+							padding: 0;
+						}
+					}
+				}
 			}
 			> .nav-link {
 				white-space: nowrap !important;
@@ -209,7 +274,7 @@ header {
 					border-bottom: 1px solid fade-out($dark-color, 0.5);
 					a {
 						@media (max-width: 767px){
-							padding-left: 0 !important;
+							// padding-left: 0 !important;
 							padding-top: 0 !important;
 						}						
 					}
@@ -366,6 +431,7 @@ header {
 				}
 				.inline-block {
 					text-align: center;
+					padding: 0 0.6rem !important;
 					@media (max-width: 575px){
 						padding: 0;	
 					}

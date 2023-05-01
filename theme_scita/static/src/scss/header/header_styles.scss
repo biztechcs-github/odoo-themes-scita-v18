@@ -1,4 +1,33 @@
 @if o-website-value('header-template') == 'scita_header_1' {
+    header{
+         .navbar-expand-md {
+            #top_menu{
+                li{
+                    &.def_mega_menu{
+                        .dropdown-menu {
+                            left: 0;
+                            .nav{
+                                a{
+                                    color: $dark-color;
+                                    transition: 0.3s ease;
+                                    &:hover{
+                                        color: $theme;
+                                        transition: 0.3s ease;
+                                    }
+                                }
+                            }
+                            .s_mega_menu_odoo_menu_footer{
+                                .s_social_media{
+                                    display: flex;
+                                    justify-content: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+         }
+    }
     .homepage {
         header {
             background: transparent;
@@ -8,11 +37,29 @@
             right: 0;
             width: auto;
             top: 0;
+             // 28-4-23 changes
+            // .def_mega_menu {
+            //     .dropdown-menu {
+            //         .nav{
+            //             a{
+            //                 color: $dark-color;
+            //             }
+            //         }
+            //         .s_mega_menu_odoo_menu_footer{
+            //             .s_social_media{
+            //                 display: flex;
+            //                 justify-content: center;
+            //             }
+            //         }
+            //     }
+            // }
             .navbar-expand-md {
                 background: transparent !important;
                 .container{
                     background: fade-out($dark-color, 0.2);
                 }
+               
+               
                 .menu_right{
                     .log_in_user{
                         li{
@@ -602,9 +649,9 @@
                 background: $light-color;
                 padding-top: 0;
                 padding-bottom: 0;
-                @media (max-width: 1199px){
-                    padding: 0;
-                }
+                // @media (max-width: 1199px){
+                //     padding: 0;
+                // }
                 @media (max-width: 767px){
                     position:relative;
                     padding:15px;
@@ -1002,37 +1049,23 @@
                     }
                 }
             }
-            .navbar-collapse {
-                -webkit-box-flex: 1;
-                -ms-flex-positive: 1;
-                flex-grow: 1;
-                @include  jc-flex-end;
-                width: 70%;
-                @media (max-width: 1279px){
-                    width: 60%;
-                    .navbar-nav {
-                        margin-left: 0 !important;
-                        @media (max-width:767px){
-                            text-align: left !important;
-                            li {
-                                width: 100%;
+            #top_menu {
+                align-items: center;
+                .def_mega_menu{
+                    .s_mega_menu_odoo_menu{
+                        .row{
+                           .nav {
+                            a{
+                                padding: 6px 0;
+                                // &:hover{
+                                //     color: $light-color;
+                                //     transition: 0.3s ease;
+                                // }
                             }
+                           } 
                         }
                     }
                 }
-                @media (max-width:767px){
-                    border-top:1px solid $light-grey-color;
-                    margin-top:15px;
-                    padding-top:10px;
-                    max-height: 450px;
-                    overflow-y: auto;
-                }
-                @media (min-width:768px) and (max-width: 991px){
-                    width: 50%;
-                }
-            }
-            #top_menu {
-                align-items: center;
                
                 @media (min-width: 768px){
                     border-left: 1px solid fade-out($light-color, 0.9);
@@ -1108,6 +1141,36 @@
                 }
 
             }
+            .navbar-collapse {
+                -webkit-box-flex: 1;
+                -ms-flex-positive: 1;
+                flex-grow: 1;
+                @include  jc-flex-end;
+                width: 70%;
+                @media (max-width: 1279px){
+                    width: 60%;
+                    .navbar-nav {
+                        margin-left: 0 !important;
+                        @media (max-width:767px){
+                            text-align: left !important;
+                            li {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+                @media (max-width:767px){
+                    border-top:1px solid $light-grey-color;
+                    margin-top:15px;
+                    padding-top:10px;
+                    max-height: 450px;
+                    overflow-y: auto;
+                }
+                @media (min-width:768px) and (max-width: 991px){
+                    width: 50%;
+                }
+            }
+         
 
             .show{
               #top_menu{
@@ -1347,6 +1410,43 @@
 @if o-website-value('header-template') == 'scita_header_4' {
     header {
         background: $light-color;
+         .navbar{
+            &.navbar-light {
+                #top_menu{
+                    .def_mega_menu {
+                        .s_mega_menu_odoo_menu{
+                            .row{
+                               .nav {
+                                a{
+                                    padding: 6px 10px !important;
+                                    &:hover{
+                                        color: $light-color;
+                                        transition: 0.3s ease;
+                                    }
+                                 }
+                               } 
+                            }
+                        }
+                    }
+                    .menu_style_4 , .menu_style_2 ,  .menu_style_1 , .menu_style_3 , .menu_service_3, .menu_service_2 , .menu_service_1 , .menu_service_4{
+                        .dropdown-menu{
+                            .categories{
+                                a{
+                                    transition: 0.3s ease;
+                                    &:hover{
+                                        background: $theme !important;
+                                        color: $light-color !important;
+                                        transition: 0.3s ease ;
+                                       
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+          
+        }
         .top-header {
             background: #dadada;
             padding-top: 5px; 
@@ -1838,6 +1938,43 @@
 @if o-website-value('header-template') == 'scita_header_5' {
     header {
         background: $light-color;
+        // .navbar{
+        //     &.navbar-light {
+        //         #top_menu{
+        //             .def_mega_menu {
+        //                 .s_mega_menu_odoo_menu{
+        //                     .row{
+        //                        .nav {
+        //                         a{
+        //                             padding: 6px 10px !important;
+        //                             &:hover{
+        //                                 color: $light-color;
+        //                                 transition: 0.3s ease;
+        //                                 background: rgba(255, 255, 255, 0.4);
+        //                             }
+        //                          }
+        //                        } 
+        //                     }
+        //                 }
+        //             }
+        //             .menu_style_4 , .menu_style_2 ,  .menu_style_1 , .menu_style_3 , .menu_service_3, .menu_service_2 , .menu_service_1 , .menu_service_4{
+        //                 .dropdown-menu{
+        //                     .categories{
+        //                         a{
+        //                             transition: 0.3s ease;
+        //                             &:hover{
+        //                                 background: rgba(255, 255, 255, 0.4);
+        //                                 color: $light-color;
+        //                                 transition: 0.3s ease ;
+        //                             }
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+          
+        // }
         .top-header {
             border-bottom: 1px solid #d0d0d0;
             padding-top: 5px; 
@@ -9172,6 +9309,7 @@
     header #top_menu_container {
         flex-direction: unset;
     }
+    
     .homepage {
         header {
             background: transparent !important;
