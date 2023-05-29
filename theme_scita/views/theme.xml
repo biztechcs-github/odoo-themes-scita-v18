@@ -119,7 +119,7 @@
                 <t t-set="product_categories" t-value="website.get_public_product_category(submenu)"/>
                 <!-- 1 Column -->
                 <t t-if="submenu.megamenu_type == '1_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-if="not product_categories">
                                 <li class="dropdown-header message">Still, No category assigned to this menu.!!!
@@ -194,7 +194,7 @@
                 </t>
                 <!-- 2 Column -->
                 <t t-if="submenu.megamenu_type == '2_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-if="not product_categories">
                                 <li class="dropdown-header message">Still, No category assigned to this menu.!!!
@@ -269,7 +269,7 @@
                 </t>
                 <!-- 3 Column -->
                 <t t-if="submenu.megamenu_type == '3_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-if="not product_categories">
                                 <li class="dropdown-header message">Still, No category assigned to this menu.!!!
@@ -344,7 +344,7 @@
                 </t>
                 <!-- 4 Column -->
                 <t t-if="submenu.megamenu_type == '4_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-if="not product_categories">
                                 <li class="dropdown-header message">Still, No category assigned to this menu.!!!
@@ -423,7 +423,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
-                <ul class="dropdown-menu mega-dropdown-menu row">
+                <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                     <div class="row">
                         <t t-set="product_categories" t-value="website.get_all_public_product_category(submenu)"/>
                         <t t-if="not product_categories">
@@ -470,7 +470,7 @@
                 </a>
                 <!-- 1 Column -->
                 <t t-if="submenu.megamenu_type == '1_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -511,7 +511,7 @@
                 </t>
                 <!-- 2 Column -->
                 <t t-if="submenu.megamenu_type == '2_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -552,7 +552,7 @@
                 </t>
                 <!-- 3 Column -->
                 <t t-if="submenu.megamenu_type == '3_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -593,7 +593,7 @@
                 </t>
                 <!-- 4 Column -->
                 <t t-if="submenu.megamenu_type == '4_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -639,7 +639,7 @@
                 </a>
                 <!-- 1 Column -->
                 <t t-if="submenu.megamenu_type1 == '1_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row letter-spacing">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -671,7 +671,7 @@
                 </t>
                 <!-- 2 Column -->
                 <t t-if="submenu.megamenu_type1 == '2_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row letter-spacing">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -703,7 +703,7 @@
                 </t>
                 <!-- 2 Column -->
                 <t t-if="submenu.megamenu_type1 == '3_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row letter-spacing">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -735,7 +735,7 @@
                 </t>
                 <!-- 2 Column -->
                 <t t-if="submenu.megamenu_type1 == '4_col'">
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row letter-spacing">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -773,7 +773,7 @@
                 
                 <!-- 2 Column -->
                 <!-- <t t-if="submenu.megamenu_type == '4_col'"> -->
-                    <ul class="dropdown-menu mega-dropdown-menu row">
+                    <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                         <div class="row letter-spacing">
                             <t t-set="parent_id_menu" t-value="website.get_megamenu_pages_count(submenu)"/>
                             <t t-if="parent_id_menu &lt; 1">
@@ -808,9 +808,9 @@
                     <span t-field="submenu.name"/>
                 </a>
                 <!-- 2 Column -->
-                <ul class="dropdown-menu mega-dropdown-menu row">
+                <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                     <div class="row">      
-                        <div t-att-class="'col-md-6 col-xs-12' if submenu.is_img_banner else ''" t-att-style="'order: 2' if submenu.is_img_banner and submenu.img_banner_position=='right' else ''">
+                        <div t-att-class="'col-md-4 col-xs-12' if submenu.is_img_banner else ''" t-att-style="'order: 2' if submenu.is_img_banner and submenu.img_banner_position=='right' else ''">
                             <div class='img_banner_div' t-if='submenu.is_img_banner'>
                                 <img class="img-responsive icon" t-att-alt="submenu.name" t-att-src="website.image_url(submenu, 'img_banner')" loading=""/>
                             </div>
@@ -819,7 +819,7 @@
                             <h2 class='sct_head'><t t-esc='submenu.menu_desc'/></h2>
                             <t t-out="submenu.banner_content" t-options="{'widget': 'html'}" t-if="submenu.banner_content"/>
                         </div>
-                        <div t-att-class="'col-md-3 col-xs-12 letter-spacing' if submenu.is_img_banner else 'col-md-6 banner_info_tag letter-spacing'">
+                        <div t-att-class="'col-md-5 col-xs-12 letter-spacing' if submenu.is_img_banner else 'col-md-6 banner_info_tag letter-spacing'">
                             <t t-out="submenu.service_content" t-options="{'widget': 'html'}"/>
                         </div>
                         
@@ -836,7 +836,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" t-att-href="'%s' % (submenu.url) if submenu.url else ''" t-att-target="'_blank' if submenu.new_window else ''">
                     <span t-field="submenu.name"/>
                 </a>
-                <ul class="dropdown-menu mega-dropdown-menu row">
+                <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                     <div class="row">
                         <t t-if="submenu.megamenu_product_ids">
                             <div t-att-class="'col-md-3 col-xs-12' if submenu.is_img_banner else ''" t-att-style="'order: 2' if submenu.is_img_banner and submenu.img_banner_position=='right' else ''">
@@ -1927,7 +1927,7 @@
     </template> -->
     <template id="scita_submenu" inherit_id="website.submenu" name="Submenu">
         <xpath expr="//li[contains(@t-attf-class, 'position-static')]" position="attributes">
-            <attribute name="t-attf-class" add="def_mega_menu menu_style_1" separator=" "/>
+            <attribute name="t-attf-class" add="def_mega_menu" separator=" "/>
         </xpath>
     </template>
 </odoo>
