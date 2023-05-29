@@ -221,7 +221,7 @@
     </record>
     <record id="action_open_single_product_brand" model="ir.actions.act_window">
         <field name="name">Product Brand</field>
-        <field name="res_model">product.template</field>
+        <field name="res_model">product.brands</field>
         <field name="view_mode">kanban,form,tree</field>
         <field name="target">current</field>
         <field name="domain">[('product_ids', 'in', active_id)]</field>
