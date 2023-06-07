@@ -28,4 +28,22 @@ odoo.define('theme_scita.wishlist_products', function (require) {
 
         },
     });
+    publicWidget.registry.ProductWishlist.include({
+        willStart: function () {
+            var self = this;
+            var def = this._super.apply(this, arguments);
+            var wishDef;
+            if ($('#top_menu .my_wish_quantity').length == 0 && this.wishlistProductIDs.length != +$('.my_wish_quantity').text()) {
+                wishDef = $.get('/shop/wishlist', {
+                    count: 1,
+                }).then(function (res) {
+                    self.wishlistProductIDs = JSON.parse(res);
+                    sessionStorage.setItem('website_sale_wishlist_product_ids', res);
+                });
+            } else {
+                return def;
+            }
+            return Promise.all([def, wishDef]);
+        },
+    });
 });
