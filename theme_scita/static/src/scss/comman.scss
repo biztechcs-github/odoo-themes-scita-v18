@@ -2256,62 +2256,6 @@ body #wrapwrap::-webkit-scrollbar{
 	color: $secondary;
 }
 
-
-// .btn-primary, .primary-btn{
-//     @include flex;
-//     &.solid-btn{
-//         a{
-//             background-color: $secondary;
-//             color: $light-color;
-//             span{
-//                 border-color: $light-color;
-//             }
-//             &:hover{
-//                 background-color:transparent;
-//                 color: $secondary;
-//                 span{
-//                     border-color:  $secondary;
-//                 }
-//             }
-//         }
-//     }
-//     a{
-//         color: $secondary;
-//         text-align: center;
-//         font-size: 14px;
-//         font-weight: bold;
-//         border: 1px solid $secondary;
-//         padding: 6px 14px 8px 14px;
-//         border-radius: 40px;
-//         @include transition(all, 0.3s, ease);
-//         text-transform: capitalize;
-//         @include min768{
-//             padding: 10px 24px 11px;
-//             font-size: 16px;
-//         }
-//         span{
-//             display: block;
-//             height: 8px;
-//             width: 8px;
-//             border-top: 2px solid  $secondary;
-//             border-right: 2px solid  $secondary;
-//             transform: rotate(45deg);
-//             margin-left: 5px;
-//             margin-top: 2px;
-//             @include transition(all, 0.3s, ease);
-//         }
-//         &:hover{
-//             @include transition(all, 0.3s, ease);
-//             background-color: $secondary;
-//             color: $light-color;
-//             span{
-//                 border-color: $light-color;
-//                 @include transition(all, 0.3s, ease);
-//             }
-//         }
-
-//     }
-// }
 .section-title{
     color: $dark-color;
     font-size: 22px;
@@ -2393,16 +2337,4 @@ body #wrapwrap::-webkit-scrollbar{
         font-size: 26px;
     }
     
-}
-
-#oe_snippets{
-	background-color: #fff;
-	.scita_snippets{
-		.o_panel_header{
-			> .fa-stack{
-				display: inline-flex;
-    			margin: 0 5px 5px 0;
-			}
-		}
-	}
 }

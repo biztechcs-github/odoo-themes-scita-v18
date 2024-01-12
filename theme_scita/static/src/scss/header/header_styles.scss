@@ -1907,13 +1907,7 @@
                     background: darken($light-grey-color, 9%) !important;
                     border: 0;
                     box-shadow: none;
-                    // position: absolute;
-                    // top: 0;
-                    // bottom: 0;
-                    // right: 0;
-                    // margin: auto;
                     border-radius: 0 !important;
-                    // padding: 0;
         
                     .fa{
                         color: $black;
@@ -3105,6 +3099,11 @@ header{
                         &:hover,
                         &:focus{
                             color: $light-color !important;
+                        }
+                    }
+                    .mega-dropdown-menu{
+                        .letter-spacing{
+                            padding: 0 15px !important;
                         }
                     }
                 }

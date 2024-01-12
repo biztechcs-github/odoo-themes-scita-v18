@@ -1203,6 +1203,21 @@
         <xpath expr="//t[@t-if='opt_wsale_filter_price and opt_wsale_attributes']" position="inside">
             <t t-set="_classes_title" t-valuef="sct_filter_title"/>
         </xpath>
+        <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']" position="replace"/>
+        <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.add_grid_or_list_option']" position="replace">
+            <div class='sct-filter-grid-wrap d-flex flex-wrap me-3'>
+                <t t-if="is_view_active('website_sale.add_grid_or_list_option')" t-call="website_sale.add_grid_or_list_option">
+                    <t t-set="_classes" t-valuef="d-flex"/>
+                </t>
+                <button t-if="is_view_active('website_sale.sort') or opt_wsale_categories or opt_wsale_attributes or opt_wsale_attributes_top"
+                        t-attf-class="btn btn-{{navClass}} ms-2 position-relative {{not opt_wsale_attributes_top and 'd-lg-none'}}"
+                        data-bs-toggle="offcanvas"
+                        data-bs-target="#o_wsale_offcanvas">
+                    <i class="fa fa-sliders"/>
+                    <span t-if="isFilteringByPrice or attrib_set or tags" t-attf-class="position-absolute top-0 start-100 translate-middle border border-{{navClass}} rounded-circle bg-danger p-1"><span class="visually-hidden">filters active</span></span>
+                </button>
+            </div>
+        </xpath>
     </template>
     
     <template id="products_rating" inherit_id="website_sale.products_item">
@@ -1220,6 +1235,10 @@
                 <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                 <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
             </ul>
+        </xpath>
+        <xpath expr="//div[hasclass('o_wsale_product_information', 'position-relative','d-flex','flex-column','flex-grow-1', 'flex-shrink-1')]" position="attributes">
+            <attribute name='class' add="sct_not_add_to_cart" separator=" "/>
+            <attribute name='id'>sct_add_to_cart_hover</attribute>
         </xpath>
     </template>
     <template id="scita_row_addresses" inherit_id="website_sale.row_addresses" name='Scita Row Address'>
@@ -1534,5 +1553,15 @@
         <xpath expr="//li[contains(@t-attf-class, 'position-static')]" position="attributes">
             <attribute name="t-attf-class" add="def_mega_menu" separator=" "/>
         </xpath>
+    </template>
+    <template id="scita_products_item_enable_add_cart" inherit_id="website_sale.products_item" name="Scita Add To Cart Enable" active='False'>
+        <xpath expr="//div[@id='sct_add_to_cart_hover']" position="attributes">
+            <attribute name='class' remove="sct_not_add_to_cart" separator=" "/>
+        </xpath>
+    </template>
+    <template id="scita_shop_snippet_options" inherit_id="website_sale.snippet_options" name="Scita Shop Editor Options">
+        <xpath expr="//we-button[@data-customize-website-views='website_sale.products_add_to_cart']" position="replace">
+            <we-button title="Add to Cart" class="fa fa-fw fa-shopping-cart o_we_add_to_cart_btn" data-customize-website-views="website_sale.products_add_to_cart,theme_scita.scita_products_item_enable_add_cart" data-no-preview="true" data-reload="/"/>
+       </xpath>
     </template>
 </odoo>

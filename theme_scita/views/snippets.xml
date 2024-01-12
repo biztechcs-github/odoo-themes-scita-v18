@@ -1331,7 +1331,7 @@
         <xpath expr="//div[@id='snippet_structure']" position="before">
             <div class="o_panel" id="scita_snippets">
                 <div class="o_panel_header">
-                    <span class="fa-stack">
+                    <span class="fa-stack d-inline-flex mb-1 me-1">
                         <img src="/theme_scita/static/src/img/scita_small_logo.png" class="img img-fluid" alt="Money back"/>
                     </span>Theme Scita
                     <select id="selSnippetCat" class="scita_snippet_sort">

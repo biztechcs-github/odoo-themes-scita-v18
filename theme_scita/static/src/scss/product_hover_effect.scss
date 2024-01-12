@@ -254,6 +254,17 @@
                                 transform: translateY(50px);
                             }
                         }
+
+                        &.sct_not_add_to_cart{
+                            transform: translate(0);
+
+                            .ratings{
+                                @include min992{
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
                     }
                 }
                 &.out_of_order_product{
@@ -371,7 +382,7 @@
         }
     }
 }
-@if o-website-value('prod-hover-style') == 'prod_hover_style_2' {
+@else if o-website-value('prod-hover-style') == 'prod_hover_style_2' {
     #products_grid{
         .oe_product{
             .o_wsale_product_grid_wrapper{
@@ -627,6 +638,17 @@
                                 transform: translateY(50px);
                             }
                         }
+
+                        &.sct_not_add_to_cart{
+                            transform: translate(0);
+
+                            .ratings{
+                                @include min992{
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
+                            }
+                        }
                     }
                 }
                 &.out_of_order_product{
@@ -743,7 +765,7 @@
         }
     }
 }
-@if o-website-value('prod-hover-style') == 'prod_hover_style_3' {
+@else if o-website-value('prod-hover-style') == 'prod_hover_style_3' {
     #products_grid{
         .oe_product{
             .o_wsale_product_grid_wrapper{
@@ -1098,7 +1120,7 @@
         }
     }
 }
-@if o-website-value('prod-hover-style') == 'prod_hover_style_4' {
+@else if o-website-value('prod-hover-style') == 'prod_hover_style_4' {
     #products_grid{
         .oe_product{
             .o_wsale_product_grid_wrapper{
