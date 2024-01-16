@@ -25,49 +25,47 @@
     }
 }
 @if o-website-value('btn-style-template') == 'btn_style_2' {
-    .btn-primary {
-        .btn-primary{
-            display: inline-flex;
-            @include align-content;
-            @include content-cn;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid $secondary;
-            padding: 6px 14px 8px 14px;
-            border-radius: 40px;
+    .btn-primary{
+        display: inline-flex;
+        @include align-content;
+        @include content-cn;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: bold;
+        border: 1px solid $secondary;
+        padding: 6px 14px 8px 14px;
+        border-radius: 40px;
+        @include transition(all, 0.3s, ease);
+        text-transform: capitalize;
+        background-color: $secondary;
+        color: $light-color;
+        position: relative;
+
+        @include min768{
+            padding: 10px 24px 11px;
+            font-size: 16px;
+        }
+        &::after{
+            content: '';
+            display: block;
+            height: 8px;
+            width: 8px;
+            border-top: 2px solid  $light-color;
+            border-right: 2px solid  $light-color;
+            transform: rotate(45deg);
+            margin-left: 5px;
             @include transition(all, 0.3s, ease);
-            text-transform: capitalize;
-            background-color: $secondary;
-            color: $light-color;
-            position: relative;
-    
-            @include min768{
-                padding: 10px 24px 11px;
-                font-size: 16px;
-            }
+        }
+        &:hover{
+            @include transition(all, 0.3s, ease);
+            background-color:transparent;
+            color: $secondary;
+            border-color: $secondary;
+
             &::after{
-                content: '';
-                display: block;
-                height: 8px;
-                width: 8px;
-                border-top: 2px solid  $light-color;
-                border-right: 2px solid  $light-color;
-                transform: rotate(45deg);
-                margin-left: 5px;
-                @include transition(all, 0.3s, ease);
-            }
-            &:hover{
-                @include transition(all, 0.3s, ease);
-                background-color:transparent;
-                color: $secondary;
                 border-color: $secondary;
-    
-                &::after{
-                    border-color: $secondary;
-                    @include transition(all, 0.3s, ease);
-                }
+                @include transition(all, 0.3s, ease);
             }
         }
     }

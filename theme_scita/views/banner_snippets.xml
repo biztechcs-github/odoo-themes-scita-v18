@@ -465,7 +465,7 @@
                         </div>
                     </div>
                     <!-- #02 -->
-                    <div class="carousel-item oe_custom_bg oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_banner_snippet_6_bg_image');" data-name="Slide">
+                    <div class="carousel-item oe_custom_bg oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_banner_image2_bg_image');" data-name="Slide">
                         <div class="container">
                             <div class="row content align-items-center">
                                 <div class="col-md-6 left-content o_colored_level">
@@ -481,7 +481,7 @@
                                 </div>
                                 <div class="col-md-6 right-image">
                                     <div class="image">
-                                        <img src="/web/image/theme_scita.sct_banner_snippet_6" alt="Automobile parts" title="Automobile parts"/>
+                                        <img src="/web/image/theme_scita.sct_banner_image_2" alt="Automobile parts" title="Automobile parts"/>
                                     </div>
                                 </div>
                             </div>

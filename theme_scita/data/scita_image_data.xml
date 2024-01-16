@@ -3437,6 +3437,18 @@
             <field name="type">url</field>
             <field name="url">/theme_scita/static/src/img/automobile/banner-image.png</field>
         </record>
+        <record id="theme_scita.sct_banner_image2_bg_image" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">sct_banner_image2_bg_image</field>
+            <field name="type">url</field>
+            <field name="url">/theme_scita/static/src/img/automobile/banner-bg-image_2.jpg</field>
+        </record>
+        <record id="theme_scita.sct_banner_image_2" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">banner-image_2.png</field>
+            <field name="type">url</field>
+            <field name="url">/theme_scita/static/src/img/automobile/banner-image_2.png</field>
+        </record>
         <!-- Automobile Snippet End -->
 
         <!-- Top Dealer Snippet Start -->
