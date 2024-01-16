@@ -59,7 +59,7 @@
                     <t t-call="website_sale.product_price" />
                     <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
                     <div class="sct-add-to-cart-mob">
-                        <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="fa fa-shopping-cart"/> Add to Cart</a>
+                        <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="icon-basket"/> Add to Cart</a>
                     </div>
                 </div>
             </div>
