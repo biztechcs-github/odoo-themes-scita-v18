@@ -149,7 +149,8 @@ a{
 /*btn-secondary styling*/
 .btn-secondary {
 	background: #929292;
-	border-radius: 0 !important;
+	border-color: transparent;
+	// border-radius: 0 !important;
 	line-height: 45px !important;
 	text-align: center;
 	padding: 0 20px !important;
@@ -159,6 +160,7 @@ a{
 	}
 	&:hover{
 		background: $dark-color;
+		border-color: transparent;
 	}
 }
 /*btn-secondary styling end*/
@@ -194,9 +196,9 @@ header{
 			}
 			&:hover{
 				.dropdown-menu {
-					@media (min-width: 768px){
-						display: block;
-					}
+					// @media (min-width: 768px){
+					// 	display: block;
+					// }
 				}
 			}
 			&.o_extra_menu_items {
@@ -208,23 +210,23 @@ header{
 					}
 				}
 				> .dropdown-menu.show {
-					@media (min-width: 768px){
-						display: block !important;
-						li {
-							&:hover{
-								.dropdown-menu {
-									display:none;
-								}
-							}
-						}
-					}
+					// @media (min-width: 768px){
+					// 	display: block !important;
+					// 	li {
+					// 		&:hover{
+					// 			.dropdown-menu {
+					// 				display:none;
+					// 			}
+					// 		}
+					// 	}
+					// }
 				}
 			}
 			&.dropdown {
 				&:hover{
 					.dropdown-menu {
 						@media (min-width: 768px){
-							display: block;
+							// display: block;
 							/*right: 0;
 							left: auto;*/
 							.dropdown-item {
@@ -2337,4 +2339,33 @@ body #wrapwrap::-webkit-scrollbar{
         font-size: 26px;
     }
     
+}
+
+// course page style
+.o_wslides_wrap {
+	.o_wslides_home_main {
+		#o_wslides_home_aside_content {
+			.o_wslides_home_aside {
+				img {
+					&.o_object_fit_cover {
+						width: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.toast-body{
+	.btn-primary{
+		color: $light-color;
+
+		&:hover{
+			background-color: transparent;
+
+			&::after{
+				border-color: $black;
+			}
+		}
+	}
 }

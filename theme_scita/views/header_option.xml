@@ -56,12 +56,12 @@
             </div>
     </template>
 
-    <template id="scita_header_cart_link" name="Scita Header Cart" inherit_id="website_sale.header_cart_link">
+    <template id="scita_header_cart_link" name="Scita Header Cart" inherit_id="website_sale.header_cart_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
             <img class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" alt="Cart"/>
         </xpath>
     </template>
-    <template id="scita_header_wishlist_link" name="Scita Header Wishlist" inherit_id="website_sale_wishlist.header_wishlist_link">
+    <template id="scita_header_wishlist_link" name="Scita Header Wishlist" inherit_id="website_sale_wishlist.header_wishlist_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
             <img class='img img-fluid' src="/web/image/theme_scita.sct_wishlist_icon" alt="Wishlist"/>
         </xpath>

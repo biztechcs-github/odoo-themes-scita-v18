@@ -2534,6 +2534,11 @@
 											}
 										}
 									}
+									.sct_vat{
+										font-size: 15px !important;
+										margin-left: 6px;
+										color: $dark-grey-color;
+									}
 									.product_unavailable{
 										font-size: 14px;
 										background: #dc3545;
@@ -2578,7 +2583,7 @@
 													padding-right: 25px !important;
 													padding-left: 25px !important;
 												}
-												&:hover{
+												&:hover, &:active{
 													border-color: $secondary;
 													background: transparent;
 													color: $secondary;

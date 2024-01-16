@@ -378,24 +378,24 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <label class="col-sm-3 control-label text-left">Date: </label>
-                                <div class="form-group col-sm-9">
+                                <label class="col-sm-3 control-label text-left mt-2">Date: </label>
+                                <div class="form-group col-sm-9 mt-2">
                                     <input class="form-control" data-min="0" id="date" name="date" required="required" type="date" t-att-min="new Date().toJSON().split('T')[0]" value="0"/>
                                 </div>
-                                <label class="col-sm-3 control-label text-left">Hours: </label>
-                                <div class="form-group col-sm-9">
+                                <label class="col-sm-3 control-label text-left mt-2">Hours: </label>
+                                <div class="form-group col-sm-9 mt-2">
                                     <input class="form-control" data-min="0" id="hours" name="hours" required="required" type="text" value="0"/>
                                 </div>
-                                <label class="col-sm-3 control-label text-left">Minutes: </label>
-                                <div class="form-group col-sm-9">
+                                <label class="col-sm-3 control-label text-left mt-2">Minutes: </label>
+                                <div class="form-group col-sm-9 mt-2">
                                     <input class="form-control" data-min="0" id="minutes" name="min" required="required" type="text" value="0"/>
                                 </div>
-                                <label class="col-sm-3 control-label text-left">Second: </label>
-                                <div class="form-group col-sm-9">
+                                <label class="col-sm-3 control-label text-left mt-2">Second: </label>
+                                <div class="form-group col-sm-9 mt-2">
                                     <input class="form-control" data-min="0" id="second" name="sec" required="required" type="text" value="0"/>
                                 </div>
-                                <label class="col-sm-3 control-label text-left">Sale Over Message: </label>
-                                <div class="form-group col-sm-9">
+                                <label class="col-sm-3 control-label text-left mt-2">Sale Over Message: </label>
+                                <div class="form-group col-sm-9 mt-2">
                                     <input class="form-control" data-min="0" id="sale_over" name="sale_over" required="required" type="text" value="Sale is expired"/>
                                 </div>
                             </div>

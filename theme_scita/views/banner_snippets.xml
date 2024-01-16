@@ -93,9 +93,7 @@
                                         <p class="text-uppercase title-20">Special Offer</p>
                                         <h2 class="section-title-big"><span class="d-block">Real Time</span> Simple<span class="green-font"> Grocery</span></h2>
                                         <p class="title-26">Exclusive offer get upto <span class="theme-color">20% OFF</span> this week</p>
-                                        <div class="btn-primary  solid-btn d-flex">
-                                            <a href="#" alt-="Shop now" title="Shop now" class=" d-flex align-items-center justify-content-center">Shop now<span class="arrow"></span></a>
-                                        </div>
+                                        <a href="#" alt-="Shop now" title="Shop now" class="btn-primary solid-btn">Shop now<span class="arrow"></span></a>
                                     </div>
                                 </div>
                                 <div class="carousel-item oe_custom_bg oe_img_bg" style="background-image:url('/web/image/theme_scita.sct_banner_slider_image_2')" data-name="Slide">
@@ -103,9 +101,7 @@
                                         <p class="text-uppercase title-20">Special Offer</p>
                                         <h2 class="section-title-big"><span class="d-block">Real Time</span> Simple<span class="green-font"> Grocery</span></h2>
                                         <p class="title-26">Exclusive offer get upto <span class="theme-color">20% OFF</span> this week</p>
-                                        <div class="btn-primary  solid-btn  d-flex">
-                                            <a href="#" alt-="Shop now" title="Shop now" class=" d-flex align-items-center justify-content-center">Shop now<span class="arrow"></span></a>
-                                        </div>
+                                        <a href="#" alt-="Shop now" title="Shop now" class="btn-primary  solid-btn">Shop now<span class="arrow"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -457,9 +453,7 @@
                                         <div class="sct_title ">
                                             <h1 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h1>
                                         </div>
-                                        <div class="btn-primary solid-btn">
-                                            <a href="#" alt-="Shop Now" title="Shop Now" class=" d-flex align-items-center  justify-content-center">Shop Now<span class="arrow"></span></a>
-                                        </div>
+                                        <a href="#" alt-="Shop Now" title="Shop Now" class="btn-primary solid-btn">Shop Now<span class="arrow"></span></a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 right-image">
@@ -482,9 +476,7 @@
                                         <div class="sct_title ">
                                             <h1 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h1>
                                         </div>
-                                        <div class="btn-primary solid-btn">
-                                            <a href="#" alt-="Shop Now" title="Shop Now" class=" d-flex align-items-center  justify-content-center">Shop Now<span class="arrow"></span></a>
-                                        </div>
+                                        <a href="#" alt-="Shop Now" title="Shop Now" class="btn-primary solid-btn">Shop Now<span class="arrow"></span></a>
                                     </div>
                                 </div>
                                 <div class="col-md-6 right-image">
@@ -758,13 +750,12 @@
     </template>
     <!-- for Dynamic Video Banner snippets end -->
     <!-- slider with image start -->
-    <template id="sct_banner_with_side_image_1" name="Banner Slider With Side Image 1">
+    <!-- <template id="sct_banner_with_side_image_1" name="Banner Slider With Side Image 1">
         <section data-disp='banner' class="sct_banner_with_side_image_1 s_carousel_wrapper">
             <div class="container">
                 <div class="row sct_row">
                     <div id="myCarousel" class="col-md-8 s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
                         <div class="carousel-inner">
-                            <!-- #01 -->
                             <div class="carousel-item active oe_custom_bg oe_img_bg pt96 pb96" style="background-image:url('/web/image/theme_scita.sct_banner_slider_1_image_1')" data-name="Slide">
                                 <div class="container">
                                     <div class="row content">
@@ -781,7 +772,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- #02 -->
                             <div class="carousel-item oe_custom_bg oe_img_bg pt96 pb96"  style="background-image:url('/web/image/theme_scita.sct_banner_slider_1_image_2')" data-name="Slide">
                                 <div class="container">
                                     <div class="row content">
@@ -800,7 +790,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- #03 -->
                             <div class="carousel-item oe_custom_bg oe_img_bg pt96 pb96" style="background-image:url('/web/image/theme_scita.sct_banner_slider_1_image_3')"  data-name="Slide">
                                 <div class="container">
                                     <div class="row content">
@@ -820,7 +809,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Controls -->
                         <div class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
                             <span class="carousel-control-prev-icon"/>
                             <span class="sr-only">Previous</span>
@@ -838,5 +826,5 @@
                 </div>
             </div>
         </section>
-    </template>
+    </template> -->
 </odoo>

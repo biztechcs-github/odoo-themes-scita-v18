@@ -64,7 +64,6 @@ class ScitaSliderSettings(http.Controller):
     @http.route(['/theme_scita/top_dealers'], type="http", auth="public", website=True)
     def scita_get_top_dealers(self, **post):
         top_dealers_data = request.env['top.dealers.configuration'].sudo().search([],limit=1)
-        print("\n\n\n top_dealers_data.vendor_ids",top_dealers_data,top_dealers_data.vendor_ids)
         values = {
             'top_dealers_details': top_dealers_data.vendor_ids,
         }
@@ -734,16 +733,11 @@ class ScitaShop(WebsiteSale):
                 category = Category
 
             website = request.env['website'].get_current_website()
+            website_domain = website.website_domain()
             if brands:
                 req_ctx = request.context.copy()
                 req_ctx.setdefault('brand_id', int(brands))
                 request.context = req_ctx
-            # page_no = request.env['product.per.page.no'].sudo().search(
-            #     [('set_default_check', '=', True)])
-            # if page_no:
-            #     ppg = int(page_no.name)
-            # else:
-            #     ppg = website.shop_ppg or 20
             if ppg:
                 try:
                     ppg = int(ppg)
@@ -754,23 +748,36 @@ class ScitaShop(WebsiteSale):
                 ppg = website.shop_ppg or 20
 
             ppr = website.shop_ppr or 4
-
-            attrib_list = request.httprequest.args.getlist('attrib')
+            request_args = request.httprequest.args
+            attrib_list = request_args.getlist('attrib')
             attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
             attributes_ids = {v[0] for v in attrib_values}
             attrib_set = {v[1] for v in attrib_values}
-
-            # if request.session.get('default_paging_no'):
-            #     ppg = int(request.session.get('default_paging_no'))
+            filter_by_tags_enabled = website.is_view_active('website_sale.filter_products_tags')
+            if filter_by_tags_enabled:
+                tags = request_args.getlist('tags')
+                # Allow only numeric tag values to avoid internal error.
+                if tags and all(tag.isnumeric() for tag in tags):
+                    post['tags'] = tags
+                    tags = {int(tag) for tag in tags}
+                else:
+                    post['tags'] = None
+                    tags = {}
             keep = QueryURL('/shop', **self._shop_get_query_url_kwargs(category=category and int(category), search=search, attrib=attrib_list, min_price=min_price, max_price=max_price, order=post.get('order')))
 
             # pricelist_context, pricelist = self._get_pricelist_context()
             now = datetime.timestamp(datetime.now())
-            pricelist = request.env['product.pricelist'].browse(request.session.get('website_sale_current_pl'))
-            if not pricelist or request.session.get('website_sale_pricelist_time', 0) < now - 60*60: # test: 1 hour in session
-                # pricelist = website.get_current_pricelist()
-                current_website = request.website.get_current_website()
-                pricelist = current_website._get_current_pricelist()
+            pricelist = website.pricelist_id
+            if 'website_sale_pricelist_time' in request.session:
+                # Check if we need to refresh the cached pricelist
+                pricelist_save_time = request.session['website_sale_pricelist_time']
+                if pricelist_save_time < now - 60*60:
+                    request.session.pop('website_sale_current_pl', None)
+                    website.invalidate_recordset(['pricelist_id'])
+                    pricelist = website.pricelist_id
+                    request.session['website_sale_pricelist_time'] = now
+                    request.session['website_sale_current_pl'] = pricelist.id
+            else:
                 request.session['website_sale_pricelist_time'] = now
                 request.session['website_sale_current_pl'] = pricelist.id
 
@@ -841,8 +848,16 @@ class ScitaShop(WebsiteSale):
                     if max_price:
                         max_price = max_price if max_price >= available_min_price else available_max_price
                         post['max_price'] = max_price
-
-            website_domain = website.website_domain()
+            ProductTag = request.env['product.tag']
+            if filter_by_tags_enabled and search_product:
+                all_tags = ProductTag.search(
+                    expression.AND([
+                        [('product_ids.is_published', '=', True), ('visible_on_ecommerce', '=', True)],
+                        website_domain
+                    ])
+                )
+            else:
+                all_tags = ProductTag
             categs_domain = [('parent_id', '=', False)] + website_domain
             if search:
                 search_categories = Category.search(
@@ -892,7 +907,9 @@ class ScitaShop(WebsiteSale):
                 prod_available[prod.id] = {
                     'free_qty': int(free_qty),
                 }
-
+            result = {}
+            for cat in Category.search(website_domain):
+                result[cat.id] = request.env['product.template'].search_count([('public_categ_ids', 'child_of', cat.id)])
             values = {
                 'search': fuzzy_search_term or search,
                 'original_search': fuzzy_search_term and search,
@@ -918,7 +935,8 @@ class ScitaShop(WebsiteSale):
                 'get_product_prices': lambda product: lazy(lambda: products_prices[product.id]),
                 'float_round': tools.float_round,
                 'brand_set': brand_set,
-                'prod_available': prod_available
+                'prod_available': prod_available,
+                'result':result
             }
             if filter_by_price_enabled:
                 values['min_price'] = min_price or available_min_price

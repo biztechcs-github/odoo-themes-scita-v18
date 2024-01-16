@@ -39,9 +39,7 @@
                         <div class="left-side oe_img_bg" t-att-style="'background-image: url('+ website.image_url(slider_header, 'img_banner') +')'">
                             <div class="left-disc">
                                 <h3 class="title-30" t-esc='slider_header.banner_text'></h3>
-                                <div class="btn-primary solid-btn d-flex">
-                                    <a t-att-href="slider_header.banner_btn_url" alt-="Shop now" title="Shop now" class=" d-flex align-items-center justify-content-center"><t t-esc="slider_header.banner_btn_text"/> <span class="arrow"></span></a>
-                                </div>
+                                <a t-att-href="slider_header.banner_btn_url" alt-="Shop now" title="Shop now" class='btn-primary solid-btn'><t t-esc="slider_header.banner_btn_text"/> <span class="arrow"></span></a>
                             </div>
                         </div>
                         <div class="right-side">

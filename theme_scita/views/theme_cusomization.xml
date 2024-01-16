@@ -63,27 +63,27 @@
         <xpath expr='//div[@data-selector="#wrapwrap > header"]//we-select[@data-variable="header-template"]' position='inside'>
             <we-button title="Scita Header 1"
                        data-name="scita_header_1"
-                       data-customize-website-views="theme_scita.option_header_1,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link,theme_scita.scita_header_search_box_icon"
+                       data-customize-website-views="theme_scita.option_header_1,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
                        data-customize-website-variable="'scita_header_1'"
                        data-img="/theme_scita/static/src/img/snippet_icon/header-1.png"/>
             <we-button title="Scita Header 2"
                        data-name="scita_header_2"
-                       data-customize-website-views="theme_scita.option_header_2,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link,theme_scita.scita_header_search_box_icon"
+                       data-customize-website-views="theme_scita.option_header_2,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
                        data-customize-website-variable="'scita_header_2'"
                        data-img="/theme_scita/static/src/img/snippet_icon/header-2.png"/>
             <we-button title="Scita Header 3"
                        data-name="scita_header_3"
-                       data-customize-website-views="theme_scita.option_header_3,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link,theme_scita.scita_header_all_category_mobile,theme_scita.scita_header_search_box_icon"
+                       data-customize-website-views="theme_scita.option_header_3,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_mobile,theme_scita.scita_header_all_category_mobile,theme_scita.scita_header_search_box_icon"
                        data-customize-website-variable="'scita_header_3'"
                        data-img="/theme_scita/static/src/img/snippet_icon/grocery-header.png"/>
             <we-button title="Scita Header 4"
                        data-name="scita_header_4"
-                       data-customize-website-views="theme_scita.option_header_4,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link,theme_scita.scita_header_all_category_mobile,theme_scita.scita_header_search_box_icon"
+                       data-customize-website-views="theme_scita.option_header_4,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_mobile,theme_scita.scita_header_all_category_mobile,theme_scita.scita_header_search_box_icon"
                        data-customize-website-variable="'scita_header_4'"
                        data-img="/theme_scita/static/src/img/snippet_icon/Automobile-header.png"/>
             <we-button title="Scita Header 5"
                        data-name="scita_header_5"
-                       data-customize-website-views="theme_scita.option_header_5,theme_scita.custom_header_cart_link,theme_scita.custom_header_wishlist_link,theme_scita.scita_header_search_box_icon"
+                       data-customize-website-views="theme_scita.option_header_5,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
                        data-customize-website-variable="'scita_header_5'"
                        data-img="/theme_scita/static/src/img/snippet_icon/header17-5.png"/>
         </xpath>

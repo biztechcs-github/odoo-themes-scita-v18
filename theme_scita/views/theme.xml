@@ -1564,4 +1564,9 @@
             <we-button title="Add to Cart" class="fa fa-fw fa-shopping-cart o_we_add_to_cart_btn" data-customize-website-views="website_sale.products_add_to_cart,theme_scita.scita_products_item_enable_add_cart" data-no-preview="true" data-reload="/"/>
        </xpath>
     </template>
+    <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
+        <xpath expr="//label" position="after">
+            (<t t-esc="result.get(c.id,0)"/>)
+        </xpath>
+    </template>
 </odoo>

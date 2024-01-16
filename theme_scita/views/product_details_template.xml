@@ -494,4 +494,12 @@
                    data-reload="/"/>
        </xpath>
     </template>
+    <template id="scita_tax_indication" inherit_id="website_sale.tax_indication">
+        <xpath expr='//span' position='attributes'>
+            <attribute name='class'>sct_vat</attribute>
+        </xpath>
+        <xpath expr='//span[@t-else=""]' position='attributes'>
+            <attribute name='class'>sct_vat</attribute>
+        </xpath>
+    </template>
 </odoo>

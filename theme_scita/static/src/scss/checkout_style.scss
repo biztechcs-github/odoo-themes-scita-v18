@@ -329,16 +329,15 @@ body #wrapwrap.o_portal {
 
 // view cart page design
 .o_website_sale_checkout {
-	a{
+	> a{
 		color: $body-color;
 		&:hover{
 			color: $primary;
 		}
 	}
 	.btn-primary{
-		color: $primary;
-		&:focus, &:active, &:hover{
-			color: $light-color;
+		&::after{
+			display: none;
 		}
 	}
 	.card{

@@ -26,31 +26,49 @@
 }
 @if o-website-value('btn-style-template') == 'btn_style_2' {
     .btn-primary {
-        cursor: pointer;
-        background: $primary;
-        line-height: 45px;
-        padding: 0 30px;
-        text-align: center;
-        font-size: $title;
-        font-weight: bold;
-        color: $light-color;
-        border-radius: 40px;
-        -webkit-box-shadow: 0px 2px 14px 0px rgba(27, 27, 27, 0.4);
-        -moz-box-shadow: 0px 2px 14px 0px rgba(27, 27, 27, 0.4);
-        box-shadow: 0px 2px 14px 0px rgba(27, 27, 27, 0.4);
-        border:1px solid transparent;
-        @include transition(all, 0.3s, ease);
-        @media (max-width: 1023px){
-            line-height: 40px;
-            font-size: $title - 2;
-        }
-        &:focus, &:hover, &:active{
-            background:$light-color;
-            color: $dark-color;
-            box-shadow: none;
-            border:1px solid $dark-color;
+        .btn-primary{
+            display: inline-flex;
+            @include align-content;
+            @include content-cn;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            border: 1px solid $secondary;
+            padding: 6px 14px 8px 14px;
+            border-radius: 40px;
             @include transition(all, 0.3s, ease);
-            outline: none;
+            text-transform: capitalize;
+            background-color: $secondary;
+            color: $light-color;
+            position: relative;
+    
+            @include min768{
+                padding: 10px 24px 11px;
+                font-size: 16px;
+            }
+            &::after{
+                content: '';
+                display: block;
+                height: 8px;
+                width: 8px;
+                border-top: 2px solid  $light-color;
+                border-right: 2px solid  $light-color;
+                transform: rotate(45deg);
+                margin-left: 5px;
+                @include transition(all, 0.3s, ease);
+            }
+            &:hover{
+                @include transition(all, 0.3s, ease);
+                background-color:transparent;
+                color: $secondary;
+                border-color: $secondary;
+    
+                &::after{
+                    border-color: $secondary;
+                    @include transition(all, 0.3s, ease);
+                }
+            }
         }
     }
 }
@@ -72,13 +90,8 @@
         letter-spacing: 0.5px;
         border-radius: 0;
         @include transition(all, 0.3s, ease);
-        &:focus, &:hover, &:active {
-            border:2px solid transparent;
-            background: $primary;
-            color: $light-color;
-            @include transition(all, 0.3s, ease);
-            outline: none;
-        }
+        display: inline-block;
+
         @media (max-width: 1023px){
             line-height:40px;
             padding:0 30px;
@@ -86,6 +99,14 @@
         @media (max-width: 767px){
             line-height:40px;
             padding:0 20px;
+        }
+
+        &:focus, &:hover, &:active {
+            border:2px solid transparent;
+            background: $primary;
+            color: $light-color;
+            @include transition(all, 0.3s, ease);
+            outline: none;
         }
     }
 }
@@ -104,6 +125,8 @@
         @include transition(all, 0.3s, ease);
         position: relative;
         z-index: 2;
+        display: inline-block;
+
         &:before{
             position: absolute;
             content: '';
@@ -147,63 +170,79 @@
     }
 }
 @if o-website-value('btn-style-template') == 'btn_style_5' {
-    .btn-primary, .primary-btn{
-        display: inline-flex !important;
-        @include content-cn;
-        background-color: transparent !important;
-        border-radius: 50px;
-
-        &.solid-btn{
-            a{
-                background-color: $secondary;
-                color: $light-color;
-                span{
-                    border-color: $light-color;
-                }
-                &:hover{
-                    background-color:transparent;
-                    color: $secondary;
-                    span{
-                        border-color:  $secondary;
-                    }
-                }
+    .btn-primary {
+        position: relative;
+        z-index: 2;
+        background: $light-color;
+        color: $primary;
+        font-size: 20px;
+        padding: 0 25px;
+        line-height: 45px;
+        font-weight: bold;
+        border: 1px solid $primary;
+        position: relative;
+        z-index: 2;
+        border-radius: 0;
+        margin: 20px 0;
+        
+        @media (max-width:1199px){
+            font-size: 18px;
+            padding: 0 20px;
+            line-height: 40px;
+        }
+        &:before{
+            position: absolute;
+            content: '';
+            left: 0;
+            background: $primary;
+            right: 100%;
+            top: 0;
+            bottom: 0;
+            @include transition(all, 0.3s, ease);
+            z-index: -1;
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            bottom: -10px;
+            left: -10px;
+            right: -10px;
+            z-index: -1;
+            border: 1px solid $primary;
+        }
+        &:hover{
+            border:1px solid $primary;
+            color: $light-color;
+            @include transition(all, 0.3s, ease);
+            background: transparent;
+            outline: none;
+            &:before{
+                right:0;
+                @include transition(all, 0.3s, ease);
             }
         }
-        a{
-            color: $secondary;
-            text-align: center;
-            font-size: 14px;
-            font-weight: bold;
-            border: 1px solid $secondary;
-            padding: 6px 14px 8px 14px;
-            border-radius: 40px;
-            @include transition(all, 0.3s, ease);
-            text-transform: capitalize;
-            @include min768{
-                padding: 10px 24px 11px;
-                font-size: 16px;
+    }
+    .oe_menu_editor{
+        .btn-primary {
+            &:before{
+                position:static;
+                z-index: 1;
+                background-color: transparent;
+                content: "\f044";
             }
-            span{
-                display: block;
-                height: 8px;
-                width: 8px;
-                border-top: 2px solid  $secondary;
-                border-right: 2px solid  $secondary;
-                transform: rotate(45deg);
-                margin-left: 5px;
-                margin-top: 2px;
-                @include transition(all, 0.3s, ease);
+            &:after{
+                position: static;
+                border: none;
             }
-            &:hover{
-                @include transition(all, 0.3s, ease);
-                background-color: $secondary;
-                color: $light-color;
-                span{
-                    border-color: $light-color;
-                    @include transition(all, 0.3s, ease);
-                }
+        }
+    }
+    .oe_seo_configuration, .o_portal_wrap {
+        .btn-primary {
+            &:after{
+                position: static;
+                border: none;
             }
-    
         }
     }
 }
@@ -226,6 +265,8 @@
         position: relative;
         z-index: 2;
         overflow: hidden;
+        display: inline-block;
+
         @media (max-width: 1023px){
             line-height: 40px;
             font-size: $title - 2;
@@ -283,6 +324,8 @@
         position: relative;
         z-index: 2;
         overflow: hidden;
+        display: inline-block;
+
         @media (max-width: 1023px){
             line-height: 40px;
             font-size: $title - 2;
@@ -340,6 +383,8 @@
         letter-spacing: 0.5px;
         border-radius: 0;
         @include transition(all, 0.3s, ease);
+        display: inline-block;
+
         &:focus, &:hover, &:active {
             border:2px solid transparent;
             background: $primary;
