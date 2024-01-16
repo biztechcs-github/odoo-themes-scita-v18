@@ -809,6 +809,7 @@
 	#product_details {
 		@media (max-width: 767px){
 			margin-top: 30px;
+			padding: 0;
 		}
 		h1 {
 			font-size: $title + 4;
@@ -1236,7 +1237,9 @@
 		margin-bottom: 10px;
 		li {
 			padding: 0 15px 9px;
-			min-width: 140px;
+			@include mobiletab{
+				min-width: 140px;
+			}
 
 			a {
 				font-size: 18px;
@@ -2081,7 +2084,7 @@
 .js_sale{
 	.o_wsale_products_grid_before_rail{
 		position: sticky;
-		top: 60px;
+		top: 85px;
 		height: calc(100vh - 70px);
 	}
 	&.quick_view_main_wrap{
@@ -2306,7 +2309,7 @@
 									content: '';
 									position: absolute;
 									left: -12px;
-									top: 6px;
+									top: 7px;
 									border-left: 1px solid $primary;
 									border-top: 1px solid $primary;
 									width: 6px;
@@ -2574,7 +2577,7 @@
 												margin: 0 !important;
 												line-height: 1 !important;
 												padding: 8px !important;
-												font-size: 14px !important;
+												font-size: 13px !important;
 											}
 											padding-top: 10px !important;
 											padding-bottom: 10px !important;
@@ -2795,6 +2798,7 @@
 						margin: 0;
 						flex-wrap: nowrap;
 						overflow: auto;
+						padding-bottom: 1px;
 					}
 					.tab-content{
 						padding: 20px;

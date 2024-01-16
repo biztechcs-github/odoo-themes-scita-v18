@@ -16,7 +16,7 @@
                             position: absolute;
                             background: $light-color;
                             padding: 3px 5px;
-                            top: -26px;
+                            top: -29px;
                             left: 12px;
                             box-shadow: 0px 0px 5px rgba($black, 0.2);
                             border-radius: 4px;
@@ -167,7 +167,7 @@
 
                                     @media (min-width: 768px) {
                                         top: -85px;
-                                        display: block;
+                                        display: flex;
                                     }
 
                                     @media (min-width: 1200px) {
@@ -258,6 +258,13 @@
                         &.sct_not_add_to_cart{
                             transform: translate(0);
 
+                            .o_wsale_product_sub{
+                                .o_wsale_product_btn{
+                                    .btn{
+                                        transform: translate(0px, -30px);
+                                    }
+                                }
+                            }
                             .ratings{
                                 @include min992{
                                     opacity: 1;
@@ -400,7 +407,7 @@
                             position: absolute;
                             background: $light-color;
                             padding: 3px 5px;
-                            top: -26px;
+                            top: -29px;
                             left: 12px;
                             box-shadow: 0px 0px 5px rgba($black, 0.2);
                             border-radius: 4px;
@@ -551,7 +558,7 @@
 
                                     @media (min-width: 768px) {
                                         top: -85px;
-                                        display: block;
+                                        display: flex;
                                     }
 
                                     @media (min-width: 1200px) {
@@ -641,6 +648,14 @@
 
                         &.sct_not_add_to_cart{
                             transform: translate(0);
+
+                            .o_wsale_product_sub{
+                                .o_wsale_product_btn{
+                                    .btn{
+                                        transform: translate(0px, -30px);
+                                    }
+                                }
+                            }
 
                             .ratings{
                                 @include min992{
@@ -1274,31 +1289,6 @@
                     }
                 }
             }
-            // &:hover{
-            //     .o_wsale_product_grid_wrapper{
-            //         .o_wsale_product_information{
-            //             background: $light-color;
-    
-            //             @media (min-width: 992px){
-            //                 transform: translateY(-30px);
-            //             }
-    
-            //             @media (min-width: 992px) {
-            //                 .o_wsale_product_sub{
-            //                     .o_wsale_product_btn{
-            //                         .o_add_wishlist, .quick_view_sct_btn, .o_add_compare{
-            //                             transform: translateX(0);
-            //                         }
-            //                     }
-            //                 }
-            //                 .ratings{
-            //                     opacity: 0;
-            //                     transform: translateY(50px);
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
         }
         &.o_wsale_layout_list{
             .oe_product{
@@ -1405,7 +1395,7 @@
                             position: absolute;
                             background: $light-color;
                             padding: 3px 5px;
-                            top: -26px;
+                            top: -29px;
                             left: 12px;
                             box-shadow: 0px 0px 5px rgba($black, 0.2);
                             border-radius: 4px;
@@ -1556,7 +1546,7 @@
 
                                     @media (min-width: 768px) {
                                         top: -85px;
-                                        display: block;
+                                        display: flex;
                                     }
 
                                     @media (min-width: 1200px) {
@@ -1641,6 +1631,24 @@
                             .ratings{
                                 opacity: 0;
                                 transform: translateY(50px);
+                            }
+                        }
+
+                        &.sct_not_add_to_cart{
+                            transform: translate(0);
+
+                            .o_wsale_product_sub{
+                                .o_wsale_product_btn{
+                                    .btn{
+                                        transform: translate(0px, -30px);
+                                    }
+                                }
+                            }
+                            .ratings{
+                                @include min992{
+                                    opacity: 1;
+                                    transform: translateY(0);
+                                }
                             }
                         }
                     }
@@ -1759,4 +1767,4 @@
             }
         }
     }
-  }
+}

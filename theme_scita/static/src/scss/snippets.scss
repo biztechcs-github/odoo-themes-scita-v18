@@ -8474,20 +8474,6 @@ body #wrapwrap{
 				}
 				.sct_cst_btn {
 					.btn {
-						// color: $light-color;
-						// font-weight: normal;
-						// border-radius: 50px;
-						// padding: 0 25px;
-						// text-align: center;
-						// line-height: 40px;
-						// background: $primary;
-						// border: 1px solid transparent;
-						// &:hover, &:focus, &:active {
-						// 	border:1px solid $primary;
-						// 	background: transparent;
-						// 	color: $primary;
-						// 	box-shadow: none;
-						// }
 						.fa {
 							margin-right: 10px;
 						}
@@ -8601,20 +8587,8 @@ body #wrapwrap{
 				.sct_cst_btn {
 					text-align: center;
 					.btn {
-						// color: $light-color;
-						// font-weight: normal;
-						// border-radius: 50px;
-						// padding: 0 25px;
-						// text-align: center;
-						// line-height: 40px;
-						// background: $primary;
-						// border: 1px solid transparent;
-						// font-weight: bold;
 						&:hover, &:focus, &:active {
-							// border:1px solid $primary;
-							// background: transparent;
 							color: $light-color;
-							// box-shadow: none;
 						}
 						.fa {
 							margin-left: 10px;
@@ -8753,27 +8727,6 @@ body #wrapwrap{
 						.sct_cst_btn {
 							text-align: center;
 							margin-top: 40px;
-							.btn {
-								// background: transparent;
-								// border: 1px solid $dark-color;
-								// color: $dark-color;
-								// line-height: 50px;
-								// text-align: center;
-								// padding: 0 30px;
-								// font-size: $title;
-								// font-weight: bold;
-								// border-radius: 5px;
-								// @media (max-width: 1199px){
-								// 	padding: 0 15px;
-								// 	line-height: 40px;
-								// 	font-size: $title - 2;
-								// }
-								// &:hover{
-								// 	background:$primary;
-								// 	border: 1px solid $primary;
-								// 	color: $light-color;
-								// }
-							}
 						}
 					}
 					&.price_active {
@@ -8930,27 +8883,6 @@ body #wrapwrap{
 			}
 			.sct_cst_btn {
 				margin-top: 30px;
-				.btn {
-					// background: transparent;
-					// border: 1px solid $light-grey-color;
-					// text-align: center;
-					// width: auto;
-					// font-weight: bold;
-					// -webkit-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
-					// box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
-					// line-height: 45px;
-					// border-radius: 5px;
-					// color: $dark-color;
-					// @media (max-width: 1440px){
-					// 	width: auto;
-					// }
-					// &:hover, &:focus, &:active{
-					// 	background:$primary;
-					// 	color: $light-color;
-					// 	box-shadow: none;
-					// 	border: 1px solid transparent;
-					// }
-				}
 			}
 		}
 		.price_active {
@@ -9095,25 +9027,6 @@ body #wrapwrap{
 			.sct_cst_btn {
 				text-align: center;
 				padding: 20px 20px 30px;
-				.btn {
-					// background-color: $primary;
-					// border: 1px solid transparent;
-					// color: $light-color;
-					// font-weight: bold;
-					// border-radius: 50px;
-					// width: 70%;
-					// line-height: 40px;
-					// text-align: center;
-					// @media (max-width: 1440px){
-					// 	width: auto;
-					// }
-					// &:hover, &:active, &:focus{
-					// 	color:$light-color;
-					// 	background-color: transparent;
-					// 	border: 1px solid $primary;
-					// 	box-shadow: none;
-					// }
-				}
 			}
 		}
 	}
@@ -9225,17 +9138,6 @@ body #wrapwrap{
 				.sct_cst_btn {
 					margin-bottom: 30px;
 					margin-top: 10px;
-					.btn {
-						// border-radius: 2px;
-						// padding: 0 20px;
-						// line-height: 40px;
-						// &:hover, &:active, &:focus{
-						// 	color:$light-color;
-						// 	background-color: transparent;
-						// 	border: 1px solid $primary;
-						// 	box-shadow: none;
-						// }
-					}
 				}
 				&:hover{
 					.sct_price_type_div {
@@ -9406,23 +9308,6 @@ body #wrapwrap{
 		.sct_simple_text {
 			max-width: 550px;
 			margin: auto;
-		}
-	}
-	.sct_cst_btn {
-		.btn {
-			// line-height: 40px;
-			// text-align: center;
-			// background-color: $light-color;
-			// border-radius: 50px;
-			// color: $light-color;
-			// border: 1px solid transparent;
-			// padding: 0 30px;
-			// &:hover, &:focus, &:active{
-			// 	background:transparent;
-			// 	color: $primary;
-			// 	border: 1px solid $primary;
-			// 	box-shadow: none !important;
-			// }
 		}
 	}
 }
@@ -10062,11 +9947,6 @@ body #wrapwrap{
 	@media (max-width: 1199px){
 		padding: 50px 0;
 	}
-	// .sct_cst_btn{
-	// 	.btn-primary{
-	// 		background-color: $light-color;
-	// 	}
-	// }
 	.sct_base_class {
 		margin: 10px 0;
 		.sct-left-side {
@@ -11026,16 +10906,7 @@ body #wrapwrap{
 			a {
 				margin-right: 10px;
 				margin-bottom: 10px;
-				// @media (max-width: 575px){
-				// 	margin-bottom: 10px;
-				// 	&:last-child{
-				// 		margin-bottom:0;
-				// 	}
-				// }
 			}
-			// .btn-primary{
-			// 	background-color: $light-color;
-			// }
 		}
 	}
 }
@@ -11578,14 +11449,7 @@ body #wrapwrap{
 				.sct_cst_btn {
 					.btn {
 						background-color: $light-color;
-						// color: $dark-color;
-						// &:hover, &:active, &:focus {
-						// 	color:$light-color;
-						// 	background-color: $dark-color;
-						// 	outline: none;
-						// 	box-shadow: none;
-						// 	border: 1px solid transparent;
-						// }
+						color: $primary;
 					}
 				}
 			}

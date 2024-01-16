@@ -320,6 +320,39 @@
         </xpath>
     </template>
     <template id="scita_ecom_show_extra_fields" inherit_id="theme_scita.theme_scita_product_details" active="False" customize_show="True" name="Show Extra Fields">
+          <xpath expr="//div[@id='website_description']/div/ul" position="inside">
+            <li role="presentation">
+                <a aria-controls="extra_fields" data-bs-toggle="tab" href="#sct_extra_fields" role="tab">Extra Details
+                </a>
+            </li>
+        </xpath>
+        <xpath expr="//div[@id='website_description']//div[@id='description']" position="after">
+            <div class="tab-pane" id="sct_extra_fields" role="tabpanel">
+                <section class="container">
+                    <div class='row'>
+                        <div class='col-lg-8' id='main_extra_fields'>
+                            <table class='table table-striped table-sm table-hover'>
+                                <tr t-foreach='website.shop_extra_field_ids' t-as='field' t-if='product[field.name]'>
+                                        <td class='sct_extra_label'> 
+                                            <t t-esc='field.label'/>:
+                                        </td>
+                                        <t t-if='field.field_id.ttype != "binary"'>
+                                            <td class='sct_extra_value' t-esc='product[field.name]' t-options="{'widget': field.field_id.ttype}"/>
+                                        </t>
+                                        <t t-else=''>
+                                            <td class='sct_extra_value'>
+                                                <a target='_blank' t-attf-href='/web/content/product.template/#{product.id}/#{field.name}?download=1'>
+                                                    <i class='fa fa-file'></i>
+                                                </a>
+                                            </td>
+                                        </t>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </xpath>
     </template>
     <template id="scita_variants" inherit_id="website_sale.variants" name="Sctiat Variants">
         <xpath expr="//li[@t-att-data-attribute_id='ptal.attribute_id.id']" position="attributes">
@@ -366,7 +399,7 @@
             </div>
         </xpath>
     </template>
-    <template id="scita_product_description_table" inherit_id="theme_scita.theme_scita_product_details" customize_show="True" active="False" name="Specification Inside Tab">
+    <template id="scita_product_description_table" inherit_id="theme_scita.theme_scita_product_details" active="False" name="Specification Inside Tab">
         <xpath expr="//div[@id='website_description']/div/ul/li" position="after">
             <li role="presentation">
                 <a aria-controls="reviews" data-bs-toggle="tab" href="#specification" role="tab">Specification 
@@ -492,7 +525,10 @@
                    data-customize-website-views="theme_scita.product_add_to_compare"
                    data-no-preview="true"
                    data-reload="/"/>
-       </xpath>
+        </xpath>
+        <xpath expr="//we-button[@data-customize-website-views='website_sale_comparison.product_attributes_body']" position="after">
+            <we-button data-customize-website-views="theme_scita.scita_product_description_table">Inside Tab</we-button>
+        </xpath>
     </template>
     <template id="scita_tax_indication" inherit_id="website_sale.tax_indication">
         <xpath expr='//span' position='attributes'>
