@@ -154,30 +154,32 @@
                 }
             }
         }
-        .sct_text_block{
-            background-color: rgba($primary, 0.4);
-            padding: 5px;
-
-            .s_text_block{
-                justify-content: center;
-
-                small{
-                    position: relative;
-                    padding: 0 5px;
-
-                    &::before{
-                        content: '';
-                        position: absolute;
-                        top: 3px;
-                        right: -15px;
-                        width: 1px;
-                        height: 80%;
-                        background-color: rgba($black, 0.3);
-                    }
-
-                    &:last-child{
+        .navbar{
+            .sct_text_block, > p{
+                background-color: rgba($primary, 0.4);
+                padding: 5px;
+    
+                .s_text_block{
+                    justify-content: center;
+    
+                    small{
+                        position: relative;
+                        padding: 0 5px;
+    
                         &::before{
-                            display: none;
+                            content: '';
+                            position: absolute;
+                            top: 3px;
+                            right: -15px;
+                            width: 1px;
+                            height: 80%;
+                            background-color: rgba($black, 0.3);
+                        }
+    
+                        &:last-child{
+                            &::before{
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -988,22 +990,20 @@
                     max-width: 12%;
                 }
             }
-    
-            .search_bar{
-                position: relative;
-                width: calc(100% - 40px);
-                order: 1;
-                margin-top: 13px;
+            .search_bar, > p{
                 list-style: none;
+                width: calc(100% - 40px);
                 
                 @include min992{
                     max-width: 460px;
-                    order: 0;
-                    margin: 0;
                 }
                 @include min1340{
                     max-width: 680px;
                 }
+            }
+            .o_searchbar_form{
+                position: relative;
+                width: 100%;
         
                 .search-query{
                     border: 1px solid $light-grey-color !important;
@@ -1028,10 +1028,6 @@
                     border-left: 0;
                     border-radius: 0 50px 50px 0;
                     box-shadow: none;
-                    // position: absolute;
-                    // bottom: 0;
-                    // top: -2px   ;
-                    // right: 14px;
                     padding: 0 10px;
                     height: auto;
         
@@ -1485,7 +1481,7 @@
                 @include min1440{
                     flex: 0 0 230px;
                     max-width: 230px;
-                    padding: 15px 34px;
+                    padding: 15px 32px;
                 }
 
                 p{
@@ -1494,6 +1490,8 @@
 
                 .deal_right{
                     padding-left: 10px;
+                    font-size: 13px;
+                    color: $light-color;
 
                     .nav-link{
                         padding: 0;
@@ -1501,11 +1499,6 @@
                         &:hover{
                             color: $light-color;
                         }
-                    }
-
-                    span{
-                        font-size: 13px;
-                        color: $light-color;
                     }
                 }
             } 
@@ -1884,21 +1877,20 @@
                 }
             }
     
-            .search_bar{
-                position: relative;
+            .search_bar, > p{
                 width: calc(100% - 40px);
-                order: 1;
-                margin-top: 13px;
                 list-style: none;
-                
+
                 @include min992{
                     max-width: 460px;
-                    order: 0;
-                    margin: 0;
                 }
                 @include min1340{
                     max-width: 630px;
                 }
+            }
+            .o_searchbar_form{
+                position: relative;
+                width: 100%;
         
                 .search-query{
                     border: 1px solid darken($light-grey-color, 9%) !important;

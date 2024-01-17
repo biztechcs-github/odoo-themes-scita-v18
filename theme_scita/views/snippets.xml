@@ -760,6 +760,25 @@
                                         <t t-else="">
                                             <t t-set="combination_info" t-value="slide._get_combination_info(only_template=True, add_qty=add_qty or 1)"/>
                                                 <div class="cs-img">
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % slide.product_style_tag_id.color_code">
+                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code" t-esc="slide.product_style_tag_id.name"/>
+                                                    </div>
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'background-color: %s' % slide.product_style_tag_id.color_code">
+                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code" t-esc="slide.product_style_tag_id.name"/>
+                                                    </div>
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style3' and slide.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position">
+                                                        <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % slide.product_style_tag_id.color_code"/>
+                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code" t-esc="slide.product_style_tag_id.name"/>
+                                                    </div>
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style3' and slide.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position">
+                                                        <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % slide.product_style_tag_id.color_code"/>
+                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code" t-esc="slide.product_style_tag_id.name"/>
+                                                    </div>
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position">
+                                                        <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % slide.product_style_tag_id.color_code"/>
+                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code" t-esc="slide.product_style_tag_id.name"/>
+                                                        <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % slide.product_style_tag_id.color_code"/>
+                                                    </div>
                                                     <a t-att-href=" '/shop/product/%s' % slug(slide)">
                                                         <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
                                                     </a>

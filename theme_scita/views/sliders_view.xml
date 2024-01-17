@@ -329,53 +329,22 @@
                                 <field name="color_code" widget='color'/>
                                 <field name="font_color_code" widget='color'/>
                             </group>
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' attrs="{'invisible': ['|',('style', 'in', [False,'style2','style3','style4']),('position', '=','left')]}"/> -->
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style4' and position == 'left'"/>
+                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style4' and position == 'left'"/>
 
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-2.jpg" class="img img-fluid" alt='Tag style 2' attrs="{'invisible': ['|',('style', 'in', [False,'style1','style3','style4']),('position', '=','left')]}"/> -->
                             <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-2.jpg" class="img img-fluid" alt='Tag style 2' invisible="style == 'False' and style == 'style1' and style == 'style3' and style == 'style4' and position == 'left'"/>
 
-
-
-
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-3.jpg" class="img img-fluid" alt='Tag style 3' attrs="{'invisible': ['|',('style', 'in', [False,'style2','style1','style4']),('position', '=','left')]}"/> -->
                             <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-3.jpg" class="img img-fluid" alt='Tag style 3' invisible="style == 'False' and style == 'style2' and style == 'style1' and style == 'style4' and position == 'left'"/>
 
-
-
-
-
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' attrs="{'invisible': ['|',('style', 'in', [False,'style2','style3','style1']),('position', '=','left')]}"/> -->
                             <img width='200px' height='200px' src="/theme_scita/static/src/img/tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style1' and position == 'left'"/>
 
 
-
-
-
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' attrs="{'invisible': ['|',('style', 'in', [False,'style2','style3','style4']),('position', '=','right')]}"/> -->
-
                             <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-1.jpg" class="img img-fluid" alt='Tag style 1' invisible="style == 'False' and style == 'style2' and style == 'style3' and style == 'style4' and position == 'right'"/>
 
-
-
-
-
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-2.jpg" class="img img-fluid" alt='Tag style 2' attrs="{'invisible': ['|',('style', 'in', [False,'style1','style3','style4']),('position', '=','right')]}"/> -->
                             <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-2.jpg" class="img img-fluid" alt='Tag style 2' invisible="style == 'False' and style == 'style1' and style == 'style3' and style == 'style4' and position == 'right'"/>
 
-
-
-
-
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-3.jpg" class="img img-fluid" alt='Tag style 3' attrs="{'invisible': ['|',('style', 'in', [False,'style2','style1','style4']),('position', '=','right')]}"/> -->
                             <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-3.jpg" class="img img-fluid" alt='Tag style 3' invisible="style == 'False' and style == 'style2' and style == 'style1' and style == 'style4' and position == 'right'"/>
 
-
-
-
-
-                            <!-- <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' attrs="{'invisible': ['|',('style', 'in', [False,'style2','style3','style1']),('position', '=','right')]}"/> -->
-                            <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' style="style == 'False' style == 'style2' style == 'style3' style == 'style1' and position == 'right'"/>
+                            <img width='200px' height='200px' src="/theme_scita/static/src/img/left-tag-style-4.jpg" class="img img-fluid" alt='Tag style 4' style="style == 'False' style == 'style2' style == 'style3' style == 'style1' and position == 'right'"/> -->
                             
                         </group>
                     </sheet>

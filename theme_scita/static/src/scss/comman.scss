@@ -1496,7 +1496,6 @@ body.editor_enable {
 			position: relative;
 		    padding: 5px 10px;
 		    display: block;
-		    // background: rgba($primary, 0.4);
 			background: transparent !important;
 		    color: $black !important;
 		    right: 0px;
@@ -1506,12 +1505,6 @@ body.editor_enable {
 			content: "";
 		    position: absolute;
 		    top: 10px;
-		    // left: -10px;
-		    // height: 0;
-		    // width: 0;
-		    // border-top: 15px solid transparent;
-		    // border-bottom: 14px solid transparent;
-		    // border-right: 10px solid $primary;
 			border: 0;
 			left: 0;
 			width: 50%;
@@ -1528,7 +1521,7 @@ body.editor_enable {
 	}
 	&.style4 {
 		padding: 0;
-		top: 20px;
+		top: 10px;
 		.sct-top-right-part {
 			position: absolute;
 		    display: block;
@@ -1635,7 +1628,7 @@ body.editor_enable {
 	}
 }
 
-.oe_product{
+.oe_product, .cs-product, .cs-cat{
 	&:hover{
 		.img_lbl{
 			&.style3{

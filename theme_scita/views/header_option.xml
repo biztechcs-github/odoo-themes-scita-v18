@@ -327,10 +327,10 @@
                 <div class="header_belt">
                     <div class="container">
                         <div class="row align-items-center justify-content-between belt_inner">
-                            <div class="col-md-6">
+                            <div class="col-md-5">
                                 <p>Buy one get one free on first order</p>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-7">
                                 <ul class="d-flex align-items-center justify-content-md-end">
                                     <t t-call="website.placeholder_header_social_links"/>
                                     <li>

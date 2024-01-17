@@ -23,4 +23,4 @@ class TopDealersConfiguration(models.Model):
     @api.onchange('vendor_ids')
     def onchange_vendor_ids(self):
         for vendor in  self.vendor_ids:
-            vendor.product_count = len(self.env['product.template'].search([('seller_ids', 'ilike', self.vendor_id.name)]))
+            vendor.product_count = len(self.env['product.template'].search([('seller_ids', 'ilike', vendor.name)]))

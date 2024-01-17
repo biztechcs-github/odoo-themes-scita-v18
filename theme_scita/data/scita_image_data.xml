@@ -3371,7 +3371,7 @@
             <field name="public" eval="True"/>
             <field name="name">sct_discount_img.jpg</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/grocery/discount_img.png</field>
+            <field name="url">/theme_scita/static/src/img/grocery/discount_img.svg</field>
         </record>
         <record id="theme_scita.sct_menu_burger" model="ir.attachment">
             <field name="public" eval="True"/>

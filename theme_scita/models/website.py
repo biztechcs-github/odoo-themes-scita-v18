@@ -269,91 +269,13 @@ class website(models.Model):
                 return products
         return productsss
 
-    # @api.model
-    # def pager(self, url, total, page=1, step=30, scope=5, url_args=None):
-    #     res = super(website, self). pager(url=url,
-    #                                       total=total,
-    #                                       page=page,
-    #                                       step=step,
-    #                                       scope=scope,
-    #                                       url_args=url_args)
-    #     # Compute Pager
-    #     page_count = int(math.ceil(float(total) / step))
-
-    #     page = max(1, min(int(page if str(page).isdigit() else 1), page_count))
-    #     scope -= 1
-
-    #     pmin = max(page - int(math.floor(scope/2)), 1)
-    #     pmax = min(pmin + scope, page_count)
-
-    #     if pmax - pmin < scope:
-    #         pmin = pmax - scope if pmax - scope > 0 else 1
-
-    #     def get_url(page):
-    #         _url = "%s/page/%s" % (url, page) if page > 1 else url
-    #         if url_args:
-    #             if url_args.get('tag'):
-    #                 del url_args['tag']
-    #             if url_args.get('range1'):
-    #                 del url_args['range1']
-    #             if url_args.get('range2'):
-    #                 del url_args['range2']
-    #             if url_args.get('max1'):
-    #                 del url_args['max1']
-    #             if url_args.get('min1'):
-    #                 del url_args['min1']
-    #             if url_args.get('sort_id'):
-    #                 del url_args['sort_id']
-    #             if not url_args.get('tag') and not url_args.get('range1') and not url_args.get('range2') and not url_args.get('max1') and not url_args.get('min1') and not url_args.get('sort_id'):
-    #                 _url = "%s?%s" % (_url, werkzeug.urls.url_encode(url_args))
-    #         return _url
-    #     res.update({
-    #         # Overrite existing
-    #         "page_start": {
-    #             'url': get_url(pmin),
-    #             'num': pmin
-    #         },
-    #         "page_previous": {
-    #             'url': get_url(max(pmin, page - 1)),
-    #             'num': max(pmin, page - 1)
-    #         },
-    #         "page_next": {
-    #             'url': get_url(min(pmax, page + 1)),
-    #             'num': min(pmax, page + 1)
-    #         },
-    #         "page_end": {
-    #             'url': get_url(pmax),
-    #             'num': pmax
-    #         },
-    #         'page_first': {
-    #             'url': get_url(1),
-    #             'num': 1
-    #         },
-    #         'page_last': {
-    #             'url': get_url(int(res['page_count'])),
-    #             'num': int(res['page_count'])
-    #         },
-    #         'pages': [
-    #             {'url': get_url(page), 'num': page}
-    #             for page in range(pmin, pmax+1)
-    #         ]
-    #     })
-    #     return res
-        
-    # def get_categories(self, category=None):
-    #     cat = {}
-    #     shop_category = request.env['product.public.category'].sudo().search(
-    #         [('parent_id', '=', None)], order='name asc')
-    #     cat.update({'categ': shop_category})
-    #     return cat
-
     def get_all_categories(self):
         categoriess = self.env['product.public.category'].search(
-            [('parent_id', '=', False)])
+            [('parent_id', '=', False),("website_id", "in", [False, request.website.id])])
         return categoriess
 
     # For category menu in topmenu
     def get_child_all_categories(self, child_id):
         child_categories = self.env['product.public.category'].search(
-            [('parent_id', '=', child_id.id)], order="sequence asc")
+            [('parent_id', '=', child_id.id),("website_id", "in", [False, request.website.id])], order="sequence asc")
         return child_categories

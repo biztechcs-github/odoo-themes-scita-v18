@@ -71,7 +71,7 @@
         <field name="model">biztech.deal.of.the.day.configuration</field>
         <field name="mode">primary</field>
         <field name="arch" type="xml">
-             <form string="Product Snippet">
+             <form string="Deal Of The Day Snippet">
                 <sheet>
                     <group>
                         <field name="name"/>
@@ -102,14 +102,14 @@
         <field name="name">deal.of.the.day.snippet.configuration.figma.tree</field>
         <field name="model">biztech.deal.of.the.day.configuration</field>
         <field name="arch" type="xml">
-            <tree string="Product Snippet">
+            <tree string="Deal Of The Day Snippet">
                 <field name="name"/>
             </tree>
         </field>
     </record>
 
     <record id="action_deal_of_the_day_snippet_configuration_figma" model="ir.actions.act_window">
-        <field name="name">Product Snippet</field>
+        <field name="name">Deal Of The Day Snippet</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">biztech.deal.of.the.day.configuration</field>
         <field name="view_mode">tree,form</field>
