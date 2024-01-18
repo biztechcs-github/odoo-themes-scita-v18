@@ -29,7 +29,7 @@
     </template>
     <!-- shop page brand features  -->
 
-    <template id="biztech_website_product_brands" name="Product Brands" inherit_id="website_sale.products_attributes">
+    <template id="biztech_website_product_brands" name="Product Brands" inherit_id="website_sale.products_attributes" customize_show='True'>
         <xpath expr="//form//h6[hasclass('mb-3')]" position="attributes">
             <attribute name='class' add="sct_filter_title" separator=" "/>
         </xpath>

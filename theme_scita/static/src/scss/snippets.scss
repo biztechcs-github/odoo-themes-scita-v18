@@ -3653,7 +3653,7 @@ body #wrapwrap{
 						font-size: 16px;
 						font-weight: 500;
 						color: $secondary;
-						margin: 0 5px;
+						margin: 5px 5px 0;
 						display: block;
 						@include transition(all, 0.5s, ease);
 						@include min992{
@@ -3663,6 +3663,11 @@ body #wrapwrap{
 						&.active {
 							color: $light-color;
 							background-color: $secondary
+						}
+					}
+					&:first-child{
+						a{
+							margin-left: 0;
 						}
 					}
 				}
@@ -13490,6 +13495,8 @@ body #wrapwrap{
 		.cst_sct_right_side {
 			@media (max-width: 767px){
 				margin-top: 20px;
+			}
+			@include min768{
 				width: 78%;
 			}
 			.cst_category-slider-section {
@@ -14525,6 +14532,7 @@ body #wrapwrap{
         margin-bottom: 0;
         flex:0 0 calc(100% - 70px);
         max-width: calc(100% - 70px);
+		text-align: left;
     }  
     .primary-btn{
         flex: 0 0 70px;
@@ -15110,11 +15118,12 @@ body #wrapwrap{
             .left-side{
                 flex: 0 0 100%;
                 max-width: 100%;
-                background-color: #247139;
+                background-color: darken($primary, 30%);
+				background-image: none !important;
+
                 @include min768{
                     flex: 0 0 50%;
                     max-width: 50%;
-                    background-image: url(../images/bestseller.jpg);
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
@@ -15185,25 +15194,16 @@ body #wrapwrap{
                                 background: $light-color;
 								padding: 8px 20px 8px 10px;
                                 .image{
-                                    flex: 0 0 50px;
-                                    max-width: 50px;
-                                    // padding: 0 5px;
-                                    @include min1200{
-                                        flex: 0 0 78px;
-                                        max-width: 78px;
-                                    }
+									flex: 0 0 78px;
+									max-width: 78px;
+
                                     img{
                                         width: auto;
                                     }
                                 }
                                 .disc{
-                                    flex: 0 0 calc(100% - 50px);
-                                    max-width: calc(100% - 50px);
-                                    @include min1200{
-                                        flex: 0 0 calc(100% - 78px);
-                                        max-width: calc(100% - 78px);
-                                    }
-                                    // padding: 0 5px;
+									flex: 0 0 calc(100% - 78px);
+									max-width: calc(100% - 78px);
                                     padding-left: 10px;
                                     .price{
                                         font-weight: normal;

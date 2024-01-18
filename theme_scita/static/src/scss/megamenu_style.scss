@@ -466,6 +466,7 @@ header {
 					a {
 						text-align: center;
 						background-color: #f6f6f6;
+						height: 172px;
 
 						@media (max-width: 767px){
 							padding:0;
@@ -475,12 +476,18 @@ header {
 							height: 100%;
 							object-fit: scale-down;
 						}
+						&:hover{
+							background-color: #f6f6f6;
+						}
 					}
 				}
 				.cat_description {
 					font-size: 15px;
 					color: $dark-color;
 					padding: 0 !important;
+					line-height: normal;
+					color: darken($light-grey-color, 34%);
+
 					@media (max-width: 1199px){
 						font-size: 13px;
 					}

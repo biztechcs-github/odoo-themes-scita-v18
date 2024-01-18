@@ -5,17 +5,15 @@
         <field name="model">product.public.category</field>
         <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='sequence']" position="after">
+            <xpath expr="//field[@name='website_id']" position="after">
                 <field name="include_in_allcategory"/>
                 <field name="include_in_megamenu"/>
                 <field invisible="include_in_megamenu == False" required="include_in_megamenu == True" domain="[('is_megamenu', '=', True), ('megamenu_view_type', 'in', ['cat_megamenu','cat_img_megamenu'])]" name="menu_id"/>
                 <field name="description" invisible="include_in_megamenu == False"/>
-            </xpath>
-            <field name="description" position="after">
                 <field invisible="1" name="linked_product_count"/>
                 <field name="attributes_ids" widget="many2many_tags"/>
                 <field name="attributes_ids_values" widget="many2many_tags"/>
-            </field>
+            </xpath>
         </field>
     </record>
         <!-- Website Menu Form view -->
