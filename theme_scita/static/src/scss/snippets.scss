@@ -218,32 +218,29 @@ body #wrapwrap{
                 .slider-content{
                     position: relative;
                     z-index: 1;
+					max-width: 70%;
+					
+					@include min992{
+						max-width: 54%;
+					}
+
                     .title-20{
                         margin-bottom: 5px;
-                        font-size: 14px;
-                        @media (min-width: 768px){
-                            font-size: 16px;
-                        }
-                        @media (min-width: 1440px){
-                            font-size: 20px;
-                        }
+						line-height: 1.1;
                     }
                     .title-26{
                         margin: 15px 0;
-						font-size: 18px;
-                        @media (min-width: 768px){
-                            font-size: 20px;
-                        }
+						line-height: 1.3;
 						@media (min-width: 1024px){
-							margin: 30px 0;
+							margin: 25px 0 30px;
 						}
-                        @media (min-width: 1440px){
-                            font-size: 26px;
-                        }
+						@include min1440{
+							font-size: 22px;
+						}
+						@include min1600{
+							font-size: 26px;
+						}
                     }
-                }
-                .section-title-big{
-                    max-width: 440px;
                 }
             }
 			.carousel-control-prev, .carousel-control-next{
@@ -287,7 +284,10 @@ body #wrapwrap{
                         padding: 30px 25px;
                         position: relative;
                         z-index: 1;
-						display: block;
+						height: 100%;
+						@include flex;
+						@include justify-content-column-flex;
+						
                         @media (min-width: 768px){
                             padding: 43px 25px;
                         }
@@ -295,24 +295,19 @@ body #wrapwrap{
                             padding: 53px 25px;
                         }
                         .title-20{
-                            font-size: 14px;
 							margin-bottom: 5px;
 							color: $dark-color;
-                            @media (min-width: 768px){
-                                font-size: 16px;
-                            }
-							@media (min-width: 1440px){
-                                font-size: 20px;
-                            }
+							line-height: 1;
                         }
 						.title-26{
 							margin-bottom: 0;
-							font-size: 18px;
 							color: $dark-color;
-							@media (min-width: 768px){
-								font-size: 20px;
+							line-height: 1;
+
+							@include min1440{
+								font-size: 22px;
 							}
-							@media (min-width: 1440px){
+							@include min1600{
 								font-size: 26px;
 							}
 						}
@@ -320,6 +315,7 @@ body #wrapwrap{
                             margin-bottom: 10px;
 							color: $dark-color;
 							font-weight: bolder;
+							line-height: 1;
                             @media (min-width: 1024px){
                                 margin-bottom: 20px; 
                             }
@@ -717,23 +713,10 @@ body #wrapwrap{
             .section-title-big{
                 color: $light-color;
                 margin-bottom: 20px;
-                font-size: 22px;
-                line-height: 1.1;
-                @include min768{
-                    font-size: 28px;
-                }
+                line-height: 1.3;
+
                 @include min1024{
                     margin-bottom: 30px;
-                    font-size: 36px;
-                }
-                @include min1200{
-                    font-size: 40px;
-                }
-                @include min1440{
-                    font-size: 48px;
-                }
-                @include min1600{
-                    font-size: 54px;
                 }
                 @include min1920{
                     font-size: 64px;
@@ -744,7 +727,7 @@ body #wrapwrap{
                     }
                 }
 				.theme-color {
-					color: $primary;
+					color: $secondary
 				}
             }
             .sct_sub_title{
@@ -1444,11 +1427,12 @@ body #wrapwrap{
 .retial_brand_snippet_1{
 	padding: 50px 0;
 	.section-title {
-		text-align: center;
 		margin-bottom: 30px;
 	}
 	.carousel-item {
 		height: 120px;
+		padding: 5px;
+		border: 1px solid #EBE9EE;
 		@include flex;
 		@include flexwrap;
 		@include justify-align-content;
@@ -2856,12 +2840,12 @@ body #wrapwrap{
                 }
                 .s_rating_icons {
                     .s_rating_active_icons {
-                        .fa-star{
+                        .fa{
                             color: #F0B419; 
                         }
                     }
                     .s_rating_inactive_icons{
-                        .fa-star-o{
+                        .fa{
                             color: #F0B419; 
                         }
                     }
@@ -3262,239 +3246,6 @@ body #wrapwrap{
 }
 /*fashion catrgories snippet end*/
 
-/*fashion multi product catrgories snippet snippet*/
-// .fashion_multi_category_slider {
-// 	@include bg-nore-cover;
-// 	padding: 80px 0;
-// 	@media (max-width: 1600px){
-// 		padding: 60px 0;
-// 	}
-// 	@media (max-width: 1439px){
-// 		padding: 50px 0;
-// 	}
-// 	@media (max-width: 1023px){
-// 		padding: 40px 0 50px;
-// 	}
-// 	.container {
-// 		@media (min-width: 1601px){
-// 			max-width: 1650px;
-// 		}
-// 	}
-// 	.lns-inner {
-// 		.row {
-// 			margin-left: 0;
-// 			margin-right: 0;
-// 		}
-// 		.lns-post {
-// 			width: 100%;
-// 			float: left;
-// 			.psb-inner {
-// 				width: 100%;
-// 				.tab-content {
-// 					.owl-dots {
-// 						display: none;
-// 					}
-// 					.owl-item {
-// 						.cs-product {
-// 							position: relative;
-// 							overflow: hidden;
-// 							.pwp-img {
-// 								position: relative;
-// 								a {
-// 									@include flex;
-// 									@include justify-align-content;
-// 									height: 100%;
-// 									img {
-// 										max-height: 100%;
-// 										width: auto;
-// 										-o-object-fit: scale-down;
-//     									object-fit: scale-down;
-// 									}
-// 								}
-// 								.btn_unpub {
-// 						    		position: absolute;
-// 								    left: 0;
-// 								    bottom: 0;
-// 								    right: 0;
-// 								    margin: auto;
-// 								    color: #ffffff;
-// 						    	}
-// 							}
-// 							.sct-hover-info {
-// 								position: absolute;
-// 								right: 0;
-// 								top: 0;
-// 								background: $dark-color;
-// 								padding: 10px 12px;
-// 								z-index: 2;
-// 								opacity: 0;
-// 								margin-top: -100px;
-// 								@include transition(all, 0.5s, ease);
-// 								.btn {
-// 									background: transparent !important;
-// 									border: none;
-// 									padding: 0;
-// 									line-height: normal;
-// 									font-size: $title + 4;
-// 									color: $light-color;
-// 									@include transition(all, 0.3s, ease);
-// 									&:hover{
-// 										background:transparent;
-// 										border: none;
-// 										color: #ff7e00;
-// 										@include transition(all, 0.3s, ease);
-// 									}
-// 								}
-// 								.qvp-btn {
-// 									margin-bottom: 5px;
-// 								}
-// 								@media (max-width: 1199px){
-// 									margin-top: 0;
-// 									opacity:1;
-// 									padding: 8px;
-// 									.btn {
-// 										font-size: $title;
-// 									}
-// 								}
-// 							}
-// 							&:hover{
-// 								.sct-hover-info{
-// 									@include transition(all, 0.5s, ease);
-// 									margin-top: 0;
-// 									opacity: 1;
-// 								}
-// 							}
-// 						}
-// 						/*.pink-box {
-// 							display: none;
-// 						}*/
-// 						.pwd-desc {
-// 							text-align: center;
-// 							padding: 25px 0;
-// 							@media (max-width: 1600px){
-// 								padding: 15px 0;
-// 							}
-// 							.pwpi-title {
-// 								margin-bottom: 5px;
-// 								a {
-// 									font-size: $title;
-// 									font-weight: normal;
-// 									color: fade-out($dark-color, 0.2);
-// 									display: block;
-// 									@media (max-width: 767px){
-// 										font-size: $title - 2;
-// 									}
-// 								}
-// 							}
-// 							.pink-box {
-// 								color: $dark-color;
-// 							}
-// 							.price {
-// 								font-size: $title + 7;
-// 								color: $dark-color;
-// 								font-weight: 700;
-// 								margin-bottom: 0;
-// 								@media (max-width: 1600px){
-// 									font-size: $title + 4;
-// 								}
-// 								@media (max-width: 767px){
-// 									font-size: $title + 2;
-// 								}
-// 							}
-// 							.add_cart_div {
-// 								button.btn {
-// 									font-size: $title - 4;
-// 									font-weight: 700;
-// 									padding: 0;
-// 									background: transparent !important;
-// 									border: none;
-// 									color: #ff7e00;
-// 									&:hover{
-// 										background: transparent !important;
-// 										border: none;
-// 									}
-// 								}
-// 							}
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// 	.title-block {
-// 		.section-title {
-// 			width: 100%;
-// 			text-align: center;
-// 			margin-bottom: 0;
-// 		}
-// 	}
-// 	ul#multi_dynamic_slider_tabs {
-// 		margin: 35px 0 45px;
-// 		@include flex;
-// 		@include justify-align-content;
-// 		border-bottom: none;
-// 		list-style-type: none;
-// 		@media (max-width: 1199px){
-// 			margin: 25px 0 35px;
-// 		}
-// 		li {
-// 			a {
-// 				display: block;
-// 				padding: 0 35px;
-// 				position: relative;
-// 				font-size: $title - 1;
-// 				font-weight: normal;
-// 				color: $dark-color;
-// 				line-height: normal;
-// 				@include transition(all, 0.3s, ease);
-// 				@media (max-width: 767px){
-// 					padding: 3px 17px;
-// 					font-size: $title - 3;
-// 				}
-// 				@media (max-width: 410px){
-// 					padding: 3px 10px;
-// 				}
-// 				&:hover {
-// 					color: #ff7e00;
-// 					@include transition(all, 0.3s, ease);
-// 				}
-// 				&.active {
-// 					font-weight: 700;
-// 					@include transition(all, 0.3s, ease);
-// 					color: $dark-color;
-// 				}
-// 			}
-// 			+ li {
-// 				a {
-// 					&:before{
-// 						position:absolute;
-// 						content: '';
-// 						width: 1px;
-// 						height: 70%;
-// 						top: 0;
-// 						bottom: 0;
-// 						left: 0;
-// 						margin: auto;
-// 						background: $dark-color;
-// 						@media (max-width: 410px){
-// 							display: none;
-// 						}
-// 					}
-// 				}
-// 			}
-// 			&:first-child{
-// 				a {
-// 					padding-left: 0;
-// 				}
-// 			}
-// 			&:last-child{
-// 				a {
-// 					padding-right: 0;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
 .fashion_multi_category_slider, .multi_product_and_category_slider {
 	.add_cart_div {
 		position: relative;
@@ -3526,13 +3277,22 @@ body #wrapwrap{
 			right: 4px;
 			top: 2px;
 			.btn{
-				padding: 2px 9px;
+				padding: 5px;
+				width: 30px;
+				height: 30px;
+				@include flex;
+				@include align-content;
+				@include content-cn;
+				
 				@include min992{
-					padding: 4px 9px;
+					width: 33px;
+					height: 33px;
 				}
 				.fa{
 					font-size: 13px;
 					color: $secondary;
+					line-height: 0;
+
 					@include min992{
 						font-size: 14px;
 					}
@@ -3549,8 +3309,6 @@ body #wrapwrap{
 			padding: 3px;
 			@include transition(all, 0.5s, ease);
 			transform: translateY(-45px);
-			// transform: translateY(0);
-			// z-index: -1;
 			display: flex;
 			flex-wrap: wrap;
 			align-items: stretch;
@@ -3560,7 +3318,7 @@ body #wrapwrap{
 			}
 			.btn-link{
 				background: $light-color;
-				border: 0;
+				border: 1px solid transparent;
 				border-radius: 50px !important;
 				width: 28px;
 				height: 28px;
@@ -3571,6 +3329,10 @@ body #wrapwrap{
 				@include min992{
 					width: 30px;
 					height: 30px;
+				}
+				&:hover{
+					border-color: $secondary;
+					background: transparent;
 				}
 				.fa{
 					font-size: 13px;
@@ -3726,8 +3488,6 @@ body #wrapwrap{
 						.cs-product {
 							.pwp-img{
 								position: relative;
-								// padding: 10px;
-								// border: 1px solid #eeeeee;
 								overflow: hidden;
 								height: 150px;
 								@include min576{
@@ -3768,14 +3528,13 @@ body #wrapwrap{
 								.pwpi-title {
 									margin-bottom: 7px;
 									a {
-										// color: fade-out($dark-color, 0.5);
 										font-size: 16px;
 									}
 								}
 								.price {
 									font-size: 14px;
 									color: $dark-color;
-									font-weight: bold;
+									font-weight: normal;
 									margin-bottom: 0;
 									line-height: normal;
 									@include min992{
@@ -3810,7 +3569,7 @@ body #wrapwrap{
 							}
 						}
 						.ratings{
-							.fa-star, .fa-star-o{
+							.fa{
 								color: #F0B419;
 							}
 						}
@@ -4176,13 +3935,13 @@ body #wrapwrap{
             margin-bottom: 0;
         }
         .promo-block-inner{
-             
             .promo-block{	
-                
                 .promo-block-disc{
                     .title-30{
                         margin-bottom: 10px;
                         max-width: 250px;
+						line-height: 1.3;
+
                         @media (min-width: 768px){
                             margin-bottom: 20px;
                         }
@@ -4226,19 +3985,12 @@ body #wrapwrap{
             }
             .title-36{
                 margin-bottom: 10px;
-                font-size: 18px;
-                @media (min-width: 768px){
-                    max-width: 270px;
-                    font-size: 28px;
-                }
+				line-height: 1.3;
+
                 @media (min-width: 1024px){
                     margin-bottom: 15px;
-                    font-size: 34px;
+					max-width: 270px;
                 }
-                @media (min-width: 1200px){
-                    font-size: 36px;
-                }
-                
             }
             p{
                 font-size: 16px;
@@ -6746,11 +6498,8 @@ body #wrapwrap{
         line-height:1;
         @media (min-width: 768px){
             font-size: 24px;
-            padding: 5px 50px;
+            padding: 5px 65px;
         }
-        // @media (min-width: 1024px){
-        //     font-size: 26px;
-        // }
     }
     .use-code-btn {
         a{
@@ -12308,13 +12057,13 @@ body #wrapwrap{
 /*client slider snippet 1 end*/
 /*brand slider snippet 1*/
 .box_brand_slider {
+	padding: 60px 0;
+	@media (max-width: 1199px){
+		padding: 50px 0;
+	}
 	.box_brand_snippet_4 {
-		padding: 60px 0;
-		@media (max-width: 1199px){
-			padding: 50px 0;
-		}
 		.sct_brand_box {
-			padding: 20px 10px;
+			padding: 10px;
 			background: $light-color;
 			.brand-logo-box {
 				height: 120px;
@@ -12621,17 +12370,15 @@ body #wrapwrap{
 			   .brand-logo{
 				   img{
 					   max-width: 75px;
-					   max-height: 75px;
-					   height: auto;
 					   width: auto;
-					   object-fit: cover;
+					   object-fit: scale-down;
+					   padding: 10px;
+
 					   @media (min-width: 768px){
 						   max-width: 90px;
-						   max-height: 90px;
 					   }
 					   @media (min-width: 1200px){
 						   max-width: 100px;
-						   max-height: 100px;
 					   }
 				   }
 			   }
@@ -12662,15 +12409,22 @@ body #wrapwrap{
              &:hover{
                 color: $primary;
                 @include transition(all, 0.3s, ease);
+
+				.category-logo{
+					border-color: $primary;
+				}
              }
            }
         }
         .item{
             .category-logo{
-                border-radius: 100%;
+                border-radius: 50%;
                 height: 120px;
                 width: 120px;
-                background-color: #f6f6f6;
+                background-color: lighten($light-grey-color, 3%);
+				border: 1px solid transparent;
+				@include transition(all, 0.3s, ease-in);
+
                 @media (min-width: 768px){
                     height: 135px;
                     width: 135px;
@@ -12702,6 +12456,7 @@ body #wrapwrap{
                     font-size: 18px;
                   }
             }
+
         }
         
     }
@@ -13655,16 +13410,12 @@ body #wrapwrap{
 	@media (max-width: 767px){
 		padding: 40px 0;
 	}
-	.cst_top_row {
-		@include min768{
-			margin-bottom: 30px;
-		}
-		.section-title {
-			text-align: center;
-		}
-	}
+
 	.cst_btm_row {
 		.cst_sct_left_side {
+			@include min768{
+				width: 22%;
+			}
 			.cst_sct_img {
 				text-align: center;
 				a {
@@ -13708,6 +13459,7 @@ body #wrapwrap{
 		.cst_sct_right_side {
 			@media (max-width: 767px){
 				margin-top: 20px;
+				width: 78%;
 			}
 			.cst_category-slider-section {
 				.cat_list {
@@ -13798,7 +13550,7 @@ body #wrapwrap{
 							}
 						}
 						.ratings{
-							.fa-star, .fa-star-o{
+							.fa{
 								color: #F0B419;
 							}
 						}
@@ -14562,6 +14314,7 @@ body #wrapwrap{
                     .fa{
                         color: $secondary;
                         font-size: 13px;
+						line-height: 0;
     
                         @include min992{
                             font-size: 14px;
@@ -14763,153 +14516,6 @@ body #wrapwrap{
 
 
 // ----------- new snippets design css 2023-24 -----------
-// sct_banner_9 section css start here
-.sct_banner_9{
-    .sct_banner_row{
-        .banner_slider{
-            .carousel{
-                height: 100%;
-                @include flex;
-            }
-            .carousel-indicators [data-bs-target]{
-                width: 10px;
-                height: 10px;
-                border-radius: 100%;
-                background-color: $light-color;
-                border:unset;
-                @include min1024{
-                    background-color: #ccc;
-                }
-                &.active{
-                    width: 30px;
-                    color:$secondary;
-                    background-color: $secondary;
-                    border-radius: 30px;
-                }
-            }
-            .carousel-indicators{
-                margin-bottom: 22px;
-            }
-            .carousel-item{
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                padding: 40px 30px 60px 30px;
-                height: 100%;
-                position: relative;
-                @include min768{
-                    padding: 60px 30px;
-                }
-                @include min1024{
-                    padding: 99px 50px;
-                }
-                &::after{
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    left: 10px;
-                    right: 10px;
-                    bottom: 10px;
-                    top: 10px;
-                    background: rgba(1, 1, 1, 0.1);
-                    z-index: 0;
-                    @include min1024{
-                        display: none;
-                    }
-                }
-                .slider-content{
-                    position: relative;
-                    z-index: 1;
-                    .title-20{
-                        margin-bottom: 5px;
-                        font-size: 14px;
-                        @include min768{
-                            font-size: 16px;
-                        }
-                        @include min1440{
-                            font-size: 20px;
-                        }
-                    }
-                    .title-26{
-                        margin: 15px 0;
-                        @include min1024{
-                            margin: 30px 0;
-                        }
-                    }
-                }
-                .section-title-big{
-                    max-width: 440px;
-                }
-            }
-        }
-        .sct_deal_main{
-            margin-top: 20px;
-            @include min768{
-                margin-top: 0;
-            }
-            .sct_deal_inner{
-                height: 100%;
-                .sct_top_deal{
-                    height: 50%;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    position: relative;
-                    &:first-child{
-                        margin-bottom: 20px;
-                        @include min768{
-                            margin-bottom: 24px;
-                        }
-                    }
-                    &::after{
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        left: 10px;
-                        right: 10px;
-                        bottom:10px;
-                        top:10px;
-                        background: rgba(1, 1, 1, 0.1);
-                        z-index: 0;
-                        @include min1024{
-                            display: none;
-                        }
-                    }
-                    .top-deal-content{
-                        padding: 30px 25px;
-                        position: relative;
-                        z-index: 1;
-                        @include min768{
-                            padding: 40px 25px;
-                        }
-                        @include min1024{
-                            padding: 55px 25px;
-                        }
-                        .title-20{
-                            font-size: 14px;
-                            @include min768{
-                                font-size: 16px;
-                            }
-                            @include min1440{
-                                font-size: 20px;
-                            }
-                        }
-                        .title-30{
-                            margin-bottom: 10px;
-                            @include min1024{
-                                margin-bottom: 24px; 
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-}
-
-
-// sct_banner_9 section css end here
 
 // Fruits_vegetable_advertisement_banner_1 css start here
 .fruits_vegetable_advertisement_banner_1{
@@ -15311,12 +14917,12 @@ body #wrapwrap{
                 }
                 .s_rating_icons {
                     .s_rating_active_icons {
-                        .fa-star{
+                        .fa{
                             color: #F0B419; 
                         }
                     }
                     .s_rating_inactive_icons{
-                        .fa-star-o{
+                        .fa{
                             color: #F0B419; 
                         }
                     }
@@ -15569,7 +15175,7 @@ body #wrapwrap{
                                     // padding: 0 5px;
                                     padding-left: 10px;
                                     .price{
-                                        font-weight: bold;
+                                        font-weight: normal;
                                         @include transition(all, 0.3s, ease-in);
                                     }
                                     p{
@@ -15584,7 +15190,7 @@ body #wrapwrap{
                                 }
                                 .ratings{
                                     margin: 5px 0;
-                                    .fa-star-o{
+                                    .fa{
                                         color: #F0B419;
                                     }
                                 }
@@ -15731,7 +15337,7 @@ body #wrapwrap{
 	.owl-nav{
 		position: absolute;
 		right: 15px;
-		top: -2px;
+		top: 2px;
 	}
     
 }
@@ -15874,7 +15480,7 @@ body #wrapwrap{
                             }
                         }
                         .ratings{
-                            .fa-star-o{
+                            .fa{
                                 color: #F0B419;
                             }
                         }
@@ -17313,10 +16919,12 @@ body #wrapwrap{
 				.logo {
 					flex: 0 0 76px;
 					max-width: 76px;
+					height: 60px;
 					a {
 						display: block;
+						height: 100%;
 						img {
-							max-height: 100%;
+							height: 100%;
 							object-fit: scale-down;
 						}
 					}

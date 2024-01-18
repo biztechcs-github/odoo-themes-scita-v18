@@ -204,7 +204,7 @@
         <field name="name">top.dealers.tree</field>
         <field name="model">top.dealers.configuration</field>
         <field name="arch" type="xml">
-            <tree string="Zipcodes">
+            <tree string="Top Dealers">
                 <field name="sequence" widget="handle" />
                 <field name="name"/>
                 <field name="vendor_ids" widget='many2many_tags'/>

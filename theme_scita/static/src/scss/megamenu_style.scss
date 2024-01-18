@@ -42,10 +42,12 @@ header {
 					}
 					.nav{
 						a{
-							color: $dark-color !important;
+							color: darken($light-grey-color, 34%) !important;
 							transition: 0.3s ease;
 							padding: 8px 15px !important;
 							display: inline-block;
+							line-height: 1.2;
+
 							&:hover{
 								color: $primary !important;
 								transition: 0.3s ease;
@@ -165,15 +167,18 @@ header {
 									a {
 										width: 80px;
 										margin: auto;
+										padding: 5px;
 									}
 								}
 								.categories {
 									display: block;
-									margin-top: 10px;
+									margin-top: 6px;
 									font-weight: bold;
 									text-align: center !important;
+									line-height: 1.2;
 									a {
 										font-weight: bold !important;
+										color: $dark-color !important;
 										.sct-pro-menu-name {
 											display: block;
 										}
@@ -235,7 +240,7 @@ header {
 					}
 					.categories {
 						a {
-							color: $dark-color !important;
+							color: darken($light-grey-color, 34%) !important;
 							display: inline-block !important;
 							&:hover{
 								color:$primary !important;

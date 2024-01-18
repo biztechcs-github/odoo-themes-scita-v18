@@ -6,6 +6,7 @@
         <field name="inherit_id" ref="website_sale.product_public_category_form_view"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='sequence']" position="after">
+                <field name="include_in_allcategory"/>
                 <field name="include_in_megamenu"/>
                 <field invisible="include_in_megamenu == False" required="include_in_megamenu == True" domain="[('is_megamenu', '=', True), ('megamenu_view_type', 'in', ['cat_megamenu','cat_img_megamenu'])]" name="menu_id"/>
                 <field name="description" invisible="include_in_megamenu == False"/>

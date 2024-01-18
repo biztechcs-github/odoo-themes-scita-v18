@@ -271,11 +271,11 @@ class website(models.Model):
 
     def get_all_categories(self):
         categoriess = self.env['product.public.category'].search(
-            [('parent_id', '=', False),("website_id", "in", [False, request.website.id])])
+            [('include_in_allcategory',"=",True),('parent_id', '=', False),("website_id", "in", [False, request.website.id])])
         return categoriess
 
     # For category menu in topmenu
     def get_child_all_categories(self, child_id):
         child_categories = self.env['product.public.category'].search(
-            [('parent_id', '=', child_id.id),("website_id", "in", [False, request.website.id])], order="sequence asc")
+            [('include_in_allcategory',"=",True),('parent_id', '=', child_id.id),("website_id", "in", [False, request.website.id])], order="sequence asc")
         return child_categories

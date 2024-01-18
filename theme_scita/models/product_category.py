@@ -9,6 +9,8 @@ class ProductPublicCategory(models.Model):
 
     _inherit = 'product.public.category'
 
+    include_in_allcategory = fields.Boolean(
+        string="Enable All Category", help="Include in allcategory", default=True)
     linked_product_count = fields.Integer(string='# of Products')
     include_in_megamenu = fields.Boolean(
         string="Include in mega menu", help="Include in mega menu")

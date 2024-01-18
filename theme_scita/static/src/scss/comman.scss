@@ -2227,7 +2227,7 @@ body #wrapwrap::-webkit-scrollbar{
     }
 }
 .section-title-big{
-    font-size: 24px;
+    font-size: 23px;
     line-height:1;
     font-weight: bolder;
     color: $dark-color;
@@ -2273,13 +2273,13 @@ body #wrapwrap::-webkit-scrollbar{
 }
 .title-20{
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     line-height:normal; 
     color: $dark-color;
     @include min768{
-        font-size: 18px;
+        font-size: 16px;
     }
-    @include min1440{
+    @include min1600{
         font-size: 20px;
     }
 }

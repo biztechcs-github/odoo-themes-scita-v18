@@ -214,6 +214,7 @@ animation.registry.oe_category_slider = animation.Class.extend({
                         autoplayTimeout:4000,
                         autoplayHoverPause:true,
                         rtl: sct_rtl,
+                        dots:false,
                         responsive: {
                                 0:{
                                     items:2
