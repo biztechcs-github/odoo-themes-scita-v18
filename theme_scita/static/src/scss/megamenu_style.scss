@@ -172,7 +172,7 @@ header {
 								}
 								.categories {
 									display: block;
-									margin-top: 6px;
+									margin-top: 0;
 									font-weight: bold;
 									text-align: center !important;
 									line-height: 1.2;
@@ -181,6 +181,13 @@ header {
 										color: $dark-color !important;
 										.sct-pro-menu-name {
 											display: block;
+										}
+									}
+								}
+								&:hover{
+									.categories{
+										a{
+											color: $primary !important;
 										}
 									}
 								}
@@ -455,17 +462,25 @@ header {
 					}
 				}
 				.cat_img {
-					margin: 15px 0 20px;
+					margin: 15px 0;
 					a {
+						text-align: center;
+						background-color: #f6f6f6;
+
 						@media (max-width: 767px){
 							padding:0;
+						}
+						img{
+							width: 100%;
+							height: 100%;
+							object-fit: scale-down;
 						}
 					}
 				}
 				.cat_description {
 					font-size: 15px;
 					color: $dark-color;
-					padding: 10px !important;
+					padding: 0 !important;
 					@media (max-width: 1199px){
 						font-size: 13px;
 					}

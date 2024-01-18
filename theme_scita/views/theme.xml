@@ -502,7 +502,7 @@
                                                     <img class="img-responsive" t-att-alt="category.name" t-att-src="website.image_url(category, 'image_1920')" loading=""/>
                                                 </a>
                                             </li>
-                                            <li class="cat_description">
+                                            <li class="cat_description" t-if="category.description">
                                                 <t t-esc="category.description"/>
                                             </li>
                                              

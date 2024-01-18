@@ -159,6 +159,22 @@ body #wrapwrap{
 		}
 	}
 }
+@keyframes slider_banner_animate {
+    0% {
+	    background-size: 100% 100%;
+	}
+	100% {
+		background-size: 110% 110%;
+	}
+}
+@keyframes banner_animate {
+    0% {
+	    background-size: 100% 100%;
+	}
+	100% {
+		background-size: 103% 103%;
+	}
+}
 // New banner snippet
 .sct_banner_2{
 	padding-top: 20px;
@@ -195,6 +211,13 @@ body #wrapwrap{
                 padding: 40px 30px 60px 30px;
                 height: 100%;
                 position: relative;
+
+				@include min992{
+					animation: slider_banner_animate 3s ease-in-out infinite alternate;
+					-webkit-animation: slider_banner_animate 3s ease-in-out infinite alternate;
+					-moz-animation: slider_banner_animate 3s ease-in-out infinite alternate;
+					-o-webkit-animation: slider_banner_animate 3s ease-in-out infinite alternate;
+				}
                 @media (min-width: 768px){
                     padding: 60px 30px;
                 }
@@ -255,11 +278,19 @@ body #wrapwrap{
             .sct_deal_inner{
                 height: 100%;
                 .sct_top_deal{
-                    background-position: center;
+                    background-position: center !important;
                     background-repeat: no-repeat;
                     background-size: cover;
                     position: relative;
 					height: 100%;
+
+					@include min992{
+						animation: banner_animate 3s ease-in-out infinite alternate;
+						-webkit-animation: banner_animate 3s ease-in-out infinite alternate;
+						-moz-animation: banner_animate 3s ease-in-out infinite alternate;
+						-o-webkit-animation: banner_animate 3s ease-in-out infinite alternate;
+					}
+
                     &:first-child{
                         margin-bottom: 20px;
                         @media (min-width: 768px){
@@ -16971,3 +17002,6 @@ body #wrapwrap{
 	}
 }
 
+.s_countdown{
+	display: none;
+}

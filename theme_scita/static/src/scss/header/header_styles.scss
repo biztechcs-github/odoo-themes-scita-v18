@@ -1309,7 +1309,7 @@
                 }
                 > .nav-item{
                     > .nav-link{
-                        &:hover{
+                        &:hover, &.show, &:active{
                             color: $primary !important;
                         }
                     }
