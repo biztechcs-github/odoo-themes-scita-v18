@@ -2792,6 +2792,12 @@ body #wrapwrap{
 		@include align-content;
 		overflow: hidden;
 		padding-right: 10px;
+
+		img{
+			width: 100%;
+			height: 100%;
+			object-fit: scale-down;
+		}
 	}
 	.sct-right-side{
 		padding-left: 20px;
@@ -13073,7 +13079,7 @@ body #wrapwrap{
             }
             &:hover {
             	.pwpi-title {
-                	color: $primary;
+                	color: $secondary;
                 }
                 .cs-img {
                 	img {
@@ -13595,8 +13601,9 @@ body #wrapwrap{
 					margin-top: 7px;
 					margin-bottom: 0;
 					font-size: 16px;
-					font-weight: 600;
+					font-weight: 400;
 					color: $dark-color;
+					
 					@include min768{
 						font-size: 18px;
 					}
@@ -14755,6 +14762,8 @@ body #wrapwrap{
 		padding: 70px 0;
 	}
     .section-title-wrapper{
+		text-align: center;
+
         .section-title{
             @include min1200{
                 margin-bottom: 45px;
@@ -15855,13 +15864,6 @@ body #wrapwrap{
             position: relative;
             height: 100%;
 
-            @include min1024{
-                padding-bottom: 60px;
-            }
-            @include min1440{
-                padding-bottom: 64px;
-            }
-
             .pwp-img{
                 background-color: #F5F5F5;
                 padding: 20px 18px;
@@ -15880,22 +15882,16 @@ body #wrapwrap{
             }
             .pwd-desc{
                 background: $light-color;
-                padding: 10px 0;
-                
-                @include min1024{
-                    position: absolute;
-                    width: 100%;
-                    left: 0;
-                    top: auto;
-                    @include transition(all, 0.3s, ease);
-                }
+                padding: 12px 0;
+				@include transition(all, 0.3s, ease-in);
 
                 .pwp-info{
                     padding: 0;
                     .pwpi-title{
                         margin-bottom: 5px;
-                        font-size: 16px;
+                        font-size: 15px;
 						-webkit-line-clamp: 1;
+						font-weight: 400;
 
                         @include min1440{
                             font-size: 18px;
@@ -15950,6 +15946,173 @@ body #wrapwrap{
 					@include min768{
 						font-size: 16px;
 					}
+
+					> b{
+						font-weight: 400;
+					}
+				}
+				.sct-hover-info {
+					@include transition(all, 0.3s , ease);
+					@include flex;
+					@include flexwrap ;
+					@include align-content;
+					@include content-sb;
+					margin-top: 5px;
+	
+					@include min1024{
+						position: absolute;
+						width: 100%;
+						left: 0;
+						bottom: 0;
+						transform: translateY(100%);
+						@include transition(all, 0.3s, ease);
+					}
+	
+					.primary-btn{
+						a{
+							background: $secondary;
+							border-color: $secondary;
+							border-radius: unset;
+							color: $light-color;
+							text-transform:uppercase;
+							padding: 6px 10px 7px;
+							font-size: 14px;
+							font-weight: normal;
+							@include min1024{
+								font-weight: bold;
+							}
+							@include min1200{
+								padding: 10px 20px 11px;
+								font-size: 16px;
+							}
+							@include min1600{
+								padding: 10px 30px 11px;
+							}
+							img{
+								margin-right: 8px;
+							}
+							&:hover{
+								color: $primary;
+								background: transparent;
+								.light{
+									display: none;
+									@include transition(all, 0.3s , ease);
+								}
+								.dark{
+									display: block;
+									@include transition(all, 0.3s , ease);
+								}
+							}
+							.dark{
+								@include transition(all, 0.3s , ease);
+								display: none;
+							}
+							.light{
+								@include transition(all, 0.3s , ease);
+							}
+						}
+					}
+					form{
+						@include flex;
+						@include flexwrap;
+						@include content-sb;
+						width: 100%;
+						.btn{
+							width: 35px;
+							padding: 5px 7px;
+							font-size: 14px;
+							@include flex;
+							@include align-content;
+							@include content-cn;
+							@include transition(all, 0.3s, ease-in);
+							margin-right: 3px;
+							&:last-child{
+								margin-right: 0;
+							}
+							@include min768{
+								font-size: 16px;
+							}
+							@include min1200{
+								padding: 9px 7px;
+							}
+							.fa{
+								transform: scale(1);
+								will-change: transform;
+								@include transition(all, 0.3s, ease-in);
+							}
+							&:hover{
+								@include transition(all, 0.3s, ease-in);
+								.fa{
+									color: $secondary;
+									transform: scale(1.2);
+									@include transition(all, 0.3s, ease-in);
+								}
+							}
+							&.cart_view_sct_btn{
+								width: auto;
+								background-color: $secondary;
+								color: $light-color;
+								border-radius: 0;
+								margin-right: 0;
+
+								@include min1200{
+									min-width: 135px;
+								}
+								@include min1440{
+									min-width: 150px;
+								}
+								&:hover{
+									background-color: transparent;
+									border-color: $secondary;
+									color: $secondary;
+								}
+								.icon-basket{
+									margin-right: 4px;
+								}
+							}
+						}
+						a.btn{
+							position: relative;
+							padding: 8px;
+							@include min1024{
+								padding: 5px 7px;
+							}
+							@include min1200{
+								padding: 9px 7px;
+							}
+						}
+						.sct-feature-wrap{
+							@include flex;
+							@include align-content;
+							@media (max-width: 1023px){
+								position: absolute;
+								background-color: $white;
+								border-radius: 4px;
+								top: -23px;
+								transform: translate(-50%, -50%);
+								left: 50%;
+								box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
+								@include transition(all, 0.3s, ease-in);
+							}
+							a{
+								+ a{
+									@media (max-width: 1023px){
+										&::after{
+											content: "";
+											position: absolute;
+											background-color: #EBE9EE;
+											width: 1px;
+											height: 50%;
+											left: -1px;
+											top: 0;
+											bottom: 0;
+											margin: auto;
+										}
+									}
+								}
+							}
+						}
+					}
 				}
             }
             &:hover{
@@ -15969,170 +16132,9 @@ body #wrapwrap{
                     }
                 }
             }
-            .sct-hover-info {
-                // display: none;
-                @include transition(all, 0.3s , ease);
-                @include flex;
-                @include flexwrap ;
-                @include align-content;
-                @include content-sb;
-                margin-top: 5px;
-                .primary-btn{
-                    a{
-                        background: $primary;
-                        border-color: $primary;
-                        border-radius: unset;
-                        color: $light-color;
-                        text-transform:uppercase;
-                        padding: 6px 10px 7px;
-                        font-size: 14px;
-                        font-weight: normal;
-                        @include min1024{
-                            font-weight: bold;
-                        }
-                        @include min1200{
-                            padding: 10px 20px 11px;
-                            font-size: 16px;
-                        }
-                        @include min1600{
-                            padding: 10px 30px 11px;
-                        }
-                        img{
-                            margin-right: 8px;
-                        }
-                        &:hover{
-                            color: $primary;
-                            background: transparent;
-                            .light{
-                                display: none;
-                                @include transition(all, 0.3s , ease);
-                            }
-                            .dark{
-                                display: block;
-                                @include transition(all, 0.3s , ease);
-                            }
-                        }
-                        .dark{
-                            @include transition(all, 0.3s , ease);
-                            display: none;
-                        }
-                        .light{
-                            @include transition(all, 0.3s , ease);
-                        }
-                    }
-                }
-                form{
-                    @include flex;
-					@include flexwrap;
-					@include content-sb;
-					width: 100%;
-                    .btn{
-                        width: 35px;
-                        // height: 35px;
-                        padding: 5px 7px;
-						font-size: 15px;
-                        @include flex;
-                        @include align-content;
-                        @include content-cn;
-                        @include transition(all, 0.3s, ease-in);
-                        margin-right: 3px;
-                        &:last-child{
-                            margin-right: 0;
-                        }
-						@include min768{
-                            font-size: 16px;
-                        }
-                        @include min1200{
-                            padding: 9px 7px;
-                        }
-                        .fa{
-							transform: scale(1);
-							will-change: transform;
-                            @include transition(all, 0.3s, ease-in);
-                        }
-						&:hover{
-							// box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.3);
-							@include transition(all, 0.3s, ease-in);
-							.fa{
-								// opacity: 0.7;
-								color: $primary;
-								transform: scale(1.2);
-								@include transition(all, 0.3s, ease-in);
-							}
-						}
-						&.cart_view_sct_btn{
-							min-width: 120px;
-							width: auto;
-							background-color: $primary;
-							color: $light-color;
-							border-radius: 0;
-							margin-right: 0;
-							@include min576{
-								min-width: 130px;
-							}
-							@include min1200{
-								min-width: 135px;
-							}
-							@include min1440{
-								min-width: 150px;
-							}
-							&:hover{
-								background-color: transparent;
-								border-color: $primary;
-								color: $primary;
-							}
-							.icon-basket{
-								margin-right: 4px;
-							}
-						}
-                    }
-					a.btn{
-						position: relative;
-						padding: 8px;
-						@include min1024{
-							padding: 5px 7px;
-						}
-						@include min1200{
-							padding: 9px 7px;
-						}
-					}
-					.sct-feature-wrap{
-						@include flex;
-						@include align-content;
-						@media (max-width: 1023px){
-							position: absolute;
-							background-color: $white;
-							border-radius: 4px;
-							top: -23px;
-							transform: translate(-50%, -50%);
-							left: 50%;
-							box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
-							@include transition(all, 0.3s, ease-in);
-						}
-						a{
-							+ a{
-								@media (max-width: 1023px){
-									&::after{
-										content: "";
-										position: absolute;
-										background-color: #EBE9EE;
-										width: 1px;
-										height: 50%;
-										left: -1px;
-										top: 0;
-										bottom: 0;
-										margin: auto;
-									}
-								}
-							}
-						}
-					}
-                }
-            }
         }
     }
 }
-// ------------------------------------------------- Furniture homepage  end here ----------------------------------------------------//
 
 
 .multi_hide{
@@ -16247,7 +16249,7 @@ body #wrapwrap{
             .pwpi-title{
                 font-size: 14px;
                 line-height: normal;
-                font-weight: 500;
+                font-weight: 400;
                 color: $dark-color;
                 margin-bottom: 7px;
                 display: -webkit-box;
@@ -16387,10 +16389,10 @@ body #wrapwrap{
 					}
 	
 					&:hover, &.active{
-						color: $primary;
+						color: $secondary;
 	
 						&::after{
-							border-color: $primary;
+							border-color: $secondary;
 						}
 					}
 					@include mobiletab {
