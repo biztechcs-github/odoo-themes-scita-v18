@@ -455,8 +455,8 @@ header {
 				.dropdown-header {
 					border-bottom: 1px solid fade-out($dark-color, 0.5);
 					a {
+						padding-left: 0 !important;
 						@media (max-width: 767px){
-							// padding-left: 0 !important;
 							padding-top: 0 !important;
 						}						
 					}
@@ -499,9 +499,10 @@ header {
 				}
 				.categories {
 					a {
+						padding-left: 0;
+
 						@media (max-width: 767px){
 							padding-top: 0;
-							padding-left: 0;
 						}
 					}
 				}

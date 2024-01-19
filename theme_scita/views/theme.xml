@@ -1200,8 +1200,12 @@
         <xpath expr="//div[@t-if='opt_wsale_categories']//t[@t-call='website_sale.products_categories_list']" position="inside">
             <t t-set="_titleClasses" t-valuef="sct_filter_title"/>
         </xpath>
-        <xpath expr="//t[@t-if='opt_wsale_filter_price and opt_wsale_attributes']" position="inside">
-            <t t-set="_classes_title" t-valuef="sct_filter_title"/>
+        <xpath expr="//t[@t-if='opt_wsale_filter_price and opt_wsale_attributes']" position="replace"/>
+        <xpath expr="//div[@t-if='opt_wsale_categories']" position="after">
+            <t t-if="opt_wsale_filter_price and opt_wsale_attributes" t-call="website_sale.filter_products_price">
+                <t t-set="_classes_title" t-valuef="sct_filter_title"/>
+                <t t-set="_classes" t-valuef="mb-4"/>
+            </t>
         </xpath>
         <xpath expr="//div[@id='products_grid']//button[@data-bs-toggle='offcanvas']" position="replace"/>
         <xpath expr="//div[@id='products_grid']//t[@t-call='website_sale.add_grid_or_list_option']" position="replace">

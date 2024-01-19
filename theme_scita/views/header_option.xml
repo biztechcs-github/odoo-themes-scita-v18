@@ -379,14 +379,14 @@
                                             <img class='img img-fluid' src="/web/image/theme_scita.sct_location_icon" alt="Location"/>
                                         </div>
                                         <t t-set="address_details" t-value="website.get_user_address(request.env.user)"/>
-                                        <div class="delivery_name" t-if="not request.env.user._is_public() and address_details['street']">
+                                        <div class="delivery_name" t-if="not request.env.user._is_public() and address_details['city']">
                                             <span class='user_name'>Delivery to <t t-esc="request.env.user.name"/>,</span>
                                             <div class="contact_address">
-                                                <span t-if="address_details['street']"  t-esc="address_details['street']"/><span t-if="address_details['street']" class='comma'>,</span>
-                                                <span t-if="address_details['street2']"  t-esc="address_details['street2']"/><span t-if="address_details['street2']" class='comma'>,</span>
-                                                <span t-if="address_details['city']"  t-esc="address_details['city']"/><span t-if="address_details['city']" class='comma'>,</span>
-                                                <span t-if="address_details['state_id']"  t-esc="address_details['state_id']"/><span t-if="address_details['state_id']" class='comma'>,</span>
-                                                <span t-if="address_details['country_id']" t-esc="address_details['country_id']"/><span t-if="address_details['zip']">-<t t-esc="address_details['zip']"/></span>
+                                                <!-- <span t-if="address_details['street']"  t-esc="address_details['street']"/><span t-if="address_details['street']" class='comma'>,</span>
+                                                <span t-if="address_details['street2']"  t-esc="address_details['street2']"/><span t-if="address_details['street2']" class='comma'>,</span> -->
+                                                <span t-if="address_details['city']"  t-esc="address_details['city']"/><span t-if="address_details['city']" class='comma'></span>
+                                               <!--  <span t-if="address_details['state_id']"  t-esc="address_details['state_id']"/><span t-if="address_details['state_id']" class='comma'>,</span>
+                                                <span t-if="address_details['country_id']" t-esc="address_details['country_id']"/> --><span t-if="address_details['zip']">-<t t-esc="address_details['zip']"/></span>
                                             </div>
                                         </div>
                                         <a class="delivery_name" t-elif="not request.env.user._is_public() and not request.env.user.street" href="/my/account">

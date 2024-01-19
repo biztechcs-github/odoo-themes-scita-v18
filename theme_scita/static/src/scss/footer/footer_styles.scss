@@ -3977,7 +3977,7 @@
                             font-size: 0;
                             width: 35px;
                             height: 35px;
-                            top: 5px;
+                            top: 6px;
                             right: 5px;
                             z-index: 2;
                             display: block !important;
@@ -3990,6 +3990,9 @@
 
                             &:focus{
                                 box-shadow: none;
+                            }
+                            &::after{
+                                display: none;
                             }
                         }
                         .btn-success{

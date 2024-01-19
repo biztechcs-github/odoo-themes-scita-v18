@@ -1135,7 +1135,7 @@
     
                         .user_name{
                             font-size: $head-label;
-                            text-transform: uppercase;
+                            text-transform: capitalize;
                             font-weight: 400;
                         }
                         .contact_address{
@@ -1290,7 +1290,7 @@
                 
                 @include min992{
                     @include flex-wrap-common;
-                    @include content-sb;
+                    // @include content-sb;
                     @include align-content;
                     flex: 0 0 calc(100% - 386px);
                     max-width: calc(100% - 386px);
@@ -1478,6 +1478,7 @@
                 padding: 10px 17px;
                 border-radius: 4px;
                 width: 100%;
+                margin-left: auto;
                 
                 @include min992{
                     flex: 0 0 180px;
@@ -3613,14 +3614,14 @@ header{
                     width: 100%;
                 
                     @include min992{
-                        margin: 0 13px;
+                        margin: 0 10px;
                         flex: 0 0 180px;
                         max-width: 180px;
                     }
                     @include min1440{
                         flex: 0 0 250px;
                         max-width: 250px;
-                        margin: 0 27px 0 13px;
+                        margin: 0 13px;
                     }
                     .megamenu_dropdown{
                         overflow: visible;
@@ -3848,6 +3849,20 @@ header{
                                 }
                             }
                         }
+                    }
+                }
+            }
+        }
+    }
+}
+header{
+    .oe_structure{
+        .top-header{
+            .search_bar{
+                .o_dropdown_menu{
+                    .dropdown-item{
+                        border-bottom: 1px solid darken($light-grey-color, 9%);
+                        padding: 15px 10px !important;
                     }
                 }
             }

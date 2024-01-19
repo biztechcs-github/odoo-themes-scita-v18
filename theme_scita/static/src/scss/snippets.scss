@@ -159,22 +159,7 @@ body #wrapwrap{
 		}
 	}
 }
-@keyframes slider_banner_animate {
-    0% {
-	    background-size: 100% 100%;
-	}
-	100% {
-		background-size: 110% 110%;
-	}
-}
-@keyframes banner_animate {
-    0% {
-	    background-size: 100% 100%;
-	}
-	100% {
-		background-size: 103% 103%;
-	}
-}
+
 // New banner snippet
 .sct_banner_2{
 	padding-top: 20px;
@@ -211,12 +196,14 @@ body #wrapwrap{
                 padding: 40px 30px 60px 30px;
                 height: 100%;
                 position: relative;
-
+				
 				@include min992{
-					animation: slider_banner_animate 3s ease-in-out infinite alternate;
-					-webkit-animation: slider_banner_animate 3s ease-in-out infinite alternate;
-					-moz-animation: slider_banner_animate 3s ease-in-out infinite alternate;
-					-o-webkit-animation: slider_banner_animate 3s ease-in-out infinite alternate;
+					background-size: 100% 100%;
+					@include transition(all, 0.8s, ease-in-out);
+
+					&:hover{
+						background-size: 110% 110%;
+					}
 				}
                 @media (min-width: 768px){
                     padding: 60px 30px;
@@ -285,10 +272,12 @@ body #wrapwrap{
 					height: 100%;
 
 					@include min992{
-						animation: banner_animate 3s ease-in-out infinite alternate;
-						-webkit-animation: banner_animate 3s ease-in-out infinite alternate;
-						-moz-animation: banner_animate 3s ease-in-out infinite alternate;
-						-o-webkit-animation: banner_animate 3s ease-in-out infinite alternate;
+						background-size: 100% 100%;
+						@include transition(all, 0.8s, ease-in-out);
+	
+						&:hover{
+							background-size: 110% 110%;
+						}
 					}
 
                     &:first-child{
@@ -2822,160 +2811,6 @@ body #wrapwrap{
 	}
 }
 /*fashion trust snippet end*/
-/*fashion testimonial snippet*/
-.client_testimonial_slider{
-    padding: 35px 0;
-    @media (min-width: 768px){
-        padding: 45px 0;
-    }
-    @media (min-width: 1024px){
-        padding: 50px 0;
-    }
-	@media (min-width: 1200px){
-		padding: 60px 0;
-	}
-	@media (min-width: 1440px){
-		padding: 70px 0;
-	}
-    .section-title-wrapper{
-        .section-title{
-            @media (min-width: 1200px){
-                margin-bottom: 45px;
-            }
-        }
-    }
-    .testimonial_slider{
-        max-width: 1204px;
-        margin: 0 auto;
-        .carousel-inner{
-            padding-bottom: 10px;
-            @media (min-width: 768px){
-                padding-bottom: 40px;
-            }
-        }
-        .carousel-indicators{
-            margin-bottom: 0;
-        }
-        .testimonial_block {
-            margin-bottom: 20px;
-            @media (min-width: 768px){
-                margin-bottom: 0;
-            }
-            .testimonial_block_inner{
-                background: #F3F4F8;
-                padding: 25px;
-                @media (min-width: 1024px){
-                    @include flex;
-                    @include flex-wrap-common;
-                    padding: 33px;
-                }
-                .s_rating_icons {
-                    .s_rating_active_icons {
-                        .fa{
-                            color: #F0B419; 
-                        }
-                    }
-                    .s_rating_inactive_icons{
-                        .fa{
-                            color: #F0B419; 
-                        }
-                    }
-                }
-                .sct_left_side {
-                    text-align: center;
-                    @include flex;
-                    @include flexwrap;
-                    @include align-content;
-                    @media (min-width: 1024px){
-                         flex: 0 0 75px;
-                         max-width: 75px;
-                         text-align: left;
-                         align-items: flex-start;
-                    }
-                    .test-icon-wrapper{
-                        flex: 0 0 75px;
-                        max-width: 75px;
-                    }
-                    .test-title-rating{
-                        padding-left: 20px;
-                        flex: 0 0 calc(100% - 75px);
-                        max-width:calc(100% - 75px);
-                        text-align: left;
-                        .title-20{
-                          margin-bottom: 5px;
-                          font-weight: bolder;
-                        }
-                        @media (min-width: 1024px){
-                            display: none;
-                        }
-                    }
-                }
-                .sct_right_side{
-                    position: relative;
-                    @media (min-width: 1024px){
-                        max-width: calc(100% - 75px);
-                        flex: 0 0 calc(100% - 75px);
-                        padding-left: 20px;
-
-                    }
-                    .sct_pers_name{
-                        font-weight: bolder;
-                        margin-bottom: 5px;
-                        text-align: center;
-                        display: none;
-                        // @media (min-width: 768px){
-                        //     display: block;
-                        // }
-                        @media (min-width: 1024px){
-                            text-align: left;
-                            display: block;
-                        }
-                    }
-                    .disc{
-                        margin-top: 10px;
-                        @media (min-width: 1200px){
-                            margin-top: 21px;
-                        }
-                    }
-                    .s_rating{
-                        text-align: center;
-                        display: none;
-                        // @media (min-width: 768px){
-                        //     display: block;
-                        // }
-                        @media (min-width: 1024px){
-                            text-align: left;
-                            display: block;
-                        }
-                        
-                    }
-                    .quote-icon {
-                        position: absolute;
-                        top: -62px;
-                        right: 20px;
-                        width: 30px;
-                        height: 30px;
-                        // @media (min-width: 768px){
-                        //     top: 8px;
-                        // }
-                        @media (min-width: 1024px){
-                            right:60px;
-                            top: 8px;
-                        }
-                        @media (min-width: 1200px){
-                            right:135px;
-                        }
-                        @media (min-width: 1440px){
-                            right:155px;
-                        }
-                    }
-                }
-            }
-        }
-        
-    }
-}
-/*fashion testimonial snippet end*/
 
 /*fashion offer advertise snippet*/
 .fashion_advertisement_banner_1 {
@@ -13508,7 +13343,6 @@ body #wrapwrap{
 					border-left: 1px solid #EBE9EE;
 					height: 100%;
 					.cs-cat {
-						text-align: start;
 						border:1px solid transparent;
 						flex: 0 0 50%;
 						max-width: 50%;
@@ -13519,10 +13353,11 @@ body #wrapwrap{
 						padding: 15px;
 						position: relative;
 						align-self: stretch;
+						@include flex;
+						@include flex-column;
 						.cs-img {
 							height: 140px;
 							text-align: center;
-							// padding: 10px;
 						    @include flex;
 						    @include  justify-align-content;
 						    overflow: hidden;
@@ -13568,6 +13403,9 @@ body #wrapwrap{
 							@include min992{
 								font-size: 16px;
 							}
+						}
+						.add_cart_div{
+							margin-top: auto;
 						}
 						&:hover{
 							.sct-hover-info {
@@ -14949,6 +14787,7 @@ body #wrapwrap{
             .testimonial_block_inner{
                 background: #F3F4F8;
                 padding: 25px;
+				position: relative;
                 @include min1024{
                     @include flex;
                     @include flex-wrap-common;
@@ -15008,7 +14847,6 @@ body #wrapwrap{
                     }
                 }
                 .sct_right_side{
-                    position: relative;
                     @include min1024{
                         max-width: calc(100% - 75px);
                         flex: 0 0 calc(100% - 75px);
@@ -15053,23 +14891,11 @@ body #wrapwrap{
                     }
                     .quote-icon {
                         position: absolute;
-                        top: -62px;
-                        right: 20px;
+                        top: 10px;
+                        right: 10px;
                         width: 30px;
                         height: 30px;
-                        // @include min768{
-                        //     top: 8px;
-                        // }
-                        @include min1024{
-                            right:60px;
-                            top: 8px;
-                        }
-                        @include min1200{
-                            right:135px;
-                        }
-                        @include min1440{
-                            right:155px;
-                        }
+						opacity: 0.2;
                     }
                 }
             }
@@ -15119,7 +14945,10 @@ body #wrapwrap{
                 flex: 0 0 100%;
                 max-width: 100%;
                 background-color: darken($primary, 30%);
-				background-image: none !important;
+
+				@media (max-width: 768px) {
+					background-image: none !important;
+				}
 
                 @include min768{
                     flex: 0 0 50%;
@@ -16040,7 +15869,6 @@ body #wrapwrap{
 
                 @include min1024{
                     padding: 24px 10px;
-                    // height: 330px;
                 }
                 @include min1200{
                     padding: 40px 18px;
@@ -16067,7 +15895,8 @@ body #wrapwrap{
                     .pwpi-title{
                         margin-bottom: 5px;
                         font-size: 16px;
-                        font-weight: bold;
+						-webkit-line-clamp: 1;
+
                         @include min1440{
                             font-size: 18px;
                         }
@@ -16569,6 +16398,10 @@ body #wrapwrap{
 						background-color: $light-grey-color;
 						color: $primary;
 						border-radius: 0;
+						font-size: 15px;
+						white-space: nowrap !important;
+						font-weight: 500;
+						
 						&.active {
 							color: $white;
 							background-color: $primary;

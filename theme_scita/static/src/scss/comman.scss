@@ -70,7 +70,11 @@ img {
 }
 input.form-control {
 	height: unset;
+	transition: none;
 	// border-radius: 0;
+}
+.css_attribute_color input{
+	transition: none;
 }
 .was-validated .form-control:invalid, .form-control.is-invalid, .was-validated .custom-select:invalid, .custom-select.is-invalid {
 	border:1px solid #dc3545 !important;
@@ -2108,6 +2112,15 @@ header{
 				}
 				.o_animate_blink{
 					background-color: $primary !important;
+				}
+			}
+		}
+		.popover-body{
+			.o_comparelist_button{
+				.btn-primary{
+					&::after{
+						display: none;
+					}
 				}
 			}
 		}
