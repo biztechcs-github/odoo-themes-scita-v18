@@ -28,7 +28,14 @@
         </xpath>
     </template>
     <!-- shop page brand features  -->
-
+     <template id="scita_filter_products_tags" inherit_id="website_sale.filter_products_tags" name="Scita Filter Product Tags">
+        <xpath expr="//div[@t-if='all_tags']" position="attributes">
+            <attribute name='class'>accordion-item nav-item border-0 mb-4</attribute>
+        </xpath>
+        <xpath expr="//h6[hasclass('mb-3')]" position="attributes">
+            <attribute name='class' add="sct_filter_title" separator=" "/>
+        </xpath>
+    </template>
     <template id="biztech_website_product_brands" name="Product Brands" inherit_id="website_sale.products_attributes" customize_show='True'>
         <xpath expr="//form//h6[hasclass('mb-3')]" position="attributes">
             <attribute name='class' add="sct_filter_title" separator=" "/>

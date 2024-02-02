@@ -15,7 +15,7 @@
                             <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
                             <span class="input-group-btn">
                                 <a class="btn js_subscribe_btn" href="#">Submit</a>
-                                <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                             </span>
                             <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                         </div>
@@ -40,7 +40,7 @@
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn js_subscribe_btn" href="#">Submit</a>
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
@@ -67,7 +67,7 @@
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Enter Your Email..."  type="email" name="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary scita_cstm_btn js_subscribe_btn it_btn" href="#">Submit</a>
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
@@ -93,7 +93,7 @@
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn js_subscribe_btn" href="#">Submit <span class="ti-arrow-right"></span></a>
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
@@ -119,7 +119,7 @@
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" name="email" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn" href="#">Submit</a>
-                                    <a class="btn btn-success js_subscribed_btn o_hidden" disabled="disabled" href="#">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
                                 <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>

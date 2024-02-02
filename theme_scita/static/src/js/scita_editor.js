@@ -1415,7 +1415,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 jsonrpc('/theme_scita/blog_get_options', {}).then(function(res) {
                     $('#blog_slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
-                        console.log("y",y)
                         $("select[id='blog_slider_type']").append($('<option>', {
                             value: res[y]["id"],
                             text: res[y]["name"]
@@ -1481,9 +1480,7 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
 
                 jsonrpc('/theme_scita/blog_get_options', {}).then(function(res) {
                     $('#blog_slider_type option[value!="0"]').remove();
-                    console.log("editor res",res)
                     $.each(res, function(y) {
-                        console.log("y",y)
                         $("select[id='blog_slider_type']").append($('<option>', {
                             value: res[y]["id"],
                             text: res[y]["name"]

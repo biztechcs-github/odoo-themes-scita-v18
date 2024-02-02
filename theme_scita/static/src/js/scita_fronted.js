@@ -292,8 +292,10 @@ $(document).ready(function(){
                             WebsiteSale._onChangeAddQuantity(ev);
                         });
                         $(document).on('click', '.dropdown-plus', function(ev){
-                            $(ev.currentTarget).next().toggleClass("o_hidden")
-                        });
+                                ev.stopPropagation();
+                                ev.stopImmediatePropagation();
+                                $(ev.currentTarget).next().toggleClass("o_hidden")
+                            });
                         
                         $(document).ajaxComplete(function() {
                             setTimeout(function(){
@@ -1546,6 +1548,13 @@ $(document).ready(function(){
                         self.$target.empty();
                         self.$target.append(data);
                         $(".multi_product_and_category_slider").removeClass('hidden');
+                        $(document).ajaxComplete(function() {
+                            $(document).on('click', '.dropdown-plus', function(ev){
+                                ev.stopPropagation();
+                                ev.stopImmediatePropagation();
+                                $(ev.currentTarget).next().toggleClass("o_hidden")
+                            });
+                        })
                     }
                 });
             }

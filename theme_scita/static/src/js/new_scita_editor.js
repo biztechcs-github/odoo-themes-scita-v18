@@ -36,7 +36,6 @@ options.registry.deal_seller_multi_product_custom_snippet = options.Class.extend
     multi_category_slider: function(type, value) {
         var self = this;
         if (type != undefined && type == false || type == undefined) {
-            console.log("----------------------------------------------new snippet editor---------------")
             self.$modal = $(renderToElement("theme_scita.multi_product_deal_custom_slider_configuration"));
             // self.$modal.find("input#date").min=today;
 

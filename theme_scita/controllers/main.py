@@ -635,7 +635,7 @@ class ScitaSliderSettings(http.Controller):
 
     @http.route(['/deals-of-the-day'], type="http", auth="public", website=True)
     def products(self, **post):
-        product = request.env['product.template'].search([('deal_product', '=', True)])
+        product = request.env['product.template'].search([('deal_product', '=', True), ("website_id", "in", (False, request.website.id))])
         values = {'deal_products': product}
         return request.render("theme_scita.biz_deal_page", values)
 
@@ -806,6 +806,7 @@ class ScitaShop(WebsiteSale):
                 'displayExtraDetail': True,
                 'displayExtraLink': True,
                 'displayImage': True,
+                'tags': tags,
                 'allowFuzzy': not post.get('noFuzzy'),
                 'category': str(category.id) if category else None,
                 'min_price': min_price / conversion_rate,
@@ -943,6 +944,8 @@ class ScitaShop(WebsiteSale):
                 values['max_price'] = max_price or available_max_price
                 values['available_min_price'] = tools.float_round(available_min_price, 2)
                 values['available_max_price'] = tools.float_round(available_max_price, 2)
+            if filter_by_tags_enabled:
+                values.update({'all_tags': all_tags, 'tags': tags})
             if category:
                 values['main_object'] = category
             values.update(self._get_additional_shop_values(values))
@@ -963,7 +966,7 @@ class ScitaShop(WebsiteSale):
                 cat.update({'pro': child})
         else:
             shop_category = child_cat_ids = request.env['product.public.category'].sudo().search(
-                [('parent_id', '=', None)], order='name asc')
+                [('parent_id', '=', None), ("website_id", "in", (False, request.website.id))], order='name asc')
             cat.update({'pro': shop_category})
         return request.render("theme_scita.shop_by_category", cat)
 

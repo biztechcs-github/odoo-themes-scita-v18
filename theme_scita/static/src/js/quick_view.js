@@ -25,7 +25,6 @@ odoo.define('theme_scita.quick_view',[], function(require) {
             var product_id = $(element).attr('data-id');
             this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
             jsonrpc('/theme_scita/shop/quick_view',{'product_id':product_id}).then(function(data) {
-                console.log("-------------in json rpc in quickview---------")
                 var sale = new publicWidget.registry.WebsiteSale();
 
                     $("#shop_quick_view_modal").html(data);
