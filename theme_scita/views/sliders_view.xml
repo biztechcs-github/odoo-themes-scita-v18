@@ -26,9 +26,9 @@
         <field name="name">dynamic.blog.slider.list.view</field>
         <field name="model">blog.slider.config</field>
         <field name="arch" type="xml">
-            <tree string="Blog Post Slider">
+            <list string="Blog Post Slider">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
     <!-- Blog Slider Action -->
@@ -36,7 +36,7 @@
         <field name="name">Blog Snippet Configuration</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">blog.slider.config</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field eval="False" name="view_id"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">Click to define a new slider.
@@ -69,9 +69,9 @@
         <field name="name">category.slider.list.view</field>
         <field name="model">category.slider.config</field>
         <field name="arch" type="xml">
-            <tree string="Category Slider">
+            <list string="Category Slider">
                 <field name="name"/>   
-            </tree>
+            </list>
         </field>
     </record>
     <!-- Category Slider Action -->
@@ -79,7 +79,7 @@
         <field name="name">Category Snippet Configuration</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">category.slider.config</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field eval="False" name="view_id"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">Click to define a new slider.
@@ -152,11 +152,11 @@
         <field name="name">multi.slider.list.view</field>
         <field name="model">multi.slider.config</field>
         <field name="arch" type="xml">
-            <tree string="Dynamic Slider">
+            <list string="Dynamic Slider">
                 <field name="name"/>
                 <field name="active"/>
                 <field name="no_of_collection"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -165,7 +165,7 @@
         <field name="name">Multi Product Snippet Configuration</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">multi.slider.config</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" eval="False"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
@@ -206,14 +206,14 @@
     <record id="action_open_brand_products" model="ir.actions.act_window">
         <field name="name">Brand Products</field>
         <field name="res_model">product.template</field>
-        <field name="view_mode">kanban,form,tree</field>
+        <field name="view_mode">kanban,form,list</field>
         <field name="domain">[('product_brand_id', '=', active_id)]</field>
         <field name="context">{}</field>
     </record>
     <record id="action_open_single_product_brand" model="ir.actions.act_window">
         <field name="name">Product Brand</field>
         <field name="res_model">product.brands</field>
-        <field name="view_mode">kanban,form,tree</field>
+        <field name="view_mode">kanban,form,list</field>
         <field name="target">current</field>
         <field name="domain">[('product_ids', 'in', active_id)]</field>
         <field name="context">{}</field>
@@ -223,7 +223,7 @@
         <field name="model">product.template</field>
         <field name="inherit_id" ref="product.product_template_kanban_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//div[hasclass('oe_kanban_details')]//strong" position="after">
+            <xpath expr="//field[@name='name']" position="after">
                 <div>
                     <a name="%(action_open_single_product_brand)d" t-if="record.product_brand_id" type="action">
                         <field name="product_brand_id"/>
@@ -260,14 +260,14 @@
             </form>
         </field>
     </record>
-    <record id="view_product_brands_tree_view" model="ir.ui.view">
-        <field name="name">product.brands.tree</field>
+    <record id="view_product_brands_list_view" model="ir.ui.view">
+        <field name="name">product.brands.list</field>
         <field name="model">product.brands</field>
         <field name="arch" type="xml">
-            <tree string="product.brands">
+            <list string="product.brands">
                 <field name="sequence" widget="handle"/>
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="view_product_brands_kanban_view" model="ir.ui.view">
@@ -303,7 +303,7 @@
     <record id="action_product_brand" model="ir.actions.act_window">
         <field name="name">Brands</field>
         <field name="res_model">product.brands</field>
-        <field name="view_mode">kanban,form,tree</field>
+        <field name="view_mode">kanban,form,list</field>
         <field name="type">ir.actions.act_window</field>
     </record>
     <menuitem action="action_product_brand" id="menu_product_brands" name="Product Brands" parent="theme_scita.scita_menu_slider_config" sequence="1"/>
@@ -357,13 +357,13 @@
             <field name="name">Biztech Product Style Tag List View</field>
             <field name="model">biztech.product.style.tag</field>
             <field name="arch" type="xml">
-                <tree>
+                <list>
                     <field name="name"/>
                     <field name="style"/>
                     <field name="position"/>
                     <field name="color_code"/>
                     <field name="font_color_code"/>
-                </tree>
+                </list>
             </field>
         </record>
 
@@ -426,10 +426,10 @@
         <field name="name">brand.snippet.config.list.view</field>
         <field name="model">brand.snippet.config</field>
         <field name="arch" type="xml">
-            <tree string="Brand Snippet">
+            <list string="Brand Snippet">
                 <field name="name"/>
                 <field name="active"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -437,7 +437,7 @@
         <field name="name">Brand Configuration</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">brand.snippet.config</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field name="view_id" eval="False"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">
@@ -478,20 +478,20 @@
             </form>
         </field>
     </record>
-    <record id="pro_cat_img_slider_tree_view" model="ir.ui.view">
-        <field name="name">product.category.slider.tree.view</field>
+    <record id="pro_cat_img_slider_list_view" model="ir.ui.view">
+        <field name="name">product.category.slider.list.view</field>
         <field name="model">product.category.img.slider.config</field>
         <field name="arch" type="xml">
-            <tree string="Product Category Image Snippet">
+            <list string="Product Category Image Snippet">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
     <record id="pro_cat_img_slider_action" model="ir.actions.act_window">
         <field name="name">Product Category Image Snippet</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.category.img.slider.config</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field eval="False" name="view_id"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">Click to define a new slider.
@@ -517,13 +517,13 @@
             </form>
         </field>
     </record>
-    <record id="view_product_snippet_configuration_tree_view" model="ir.ui.view">
-        <field name="name">product.snippet.configuration.tree</field>
+    <record id="view_product_snippet_configuration_list_view" model="ir.ui.view">
+        <field name="name">product.snippet.configuration.list</field>
         <field name="model">product.snippet.configuration</field>
         <field name="arch" type="xml">
-            <tree string="Product Snippet">
+            <list string="Product Snippet">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -531,7 +531,7 @@
         <field name="name">Product Snippet</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">product.snippet.configuration</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field eval="False" name="view_id"/>
         <field name="help" type="html">
             <p class="oe_view_nocontent_create">Click to select a Product.

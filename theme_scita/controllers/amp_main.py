@@ -5,7 +5,6 @@ from werkzeug.exceptions import Forbidden, NotFound
 from odoo import http
 from odoo.http import request
 from odoo.tools.translate import _
-from odoo.addons.http_routing.models.ir_http import slug
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import TableCompute
 from odoo.addons.website.controllers.main import QueryURL
@@ -111,6 +110,7 @@ class CustomAMP(WebsiteSale):
                 search_categories = Category
             categs = Category.search(categs_domain)
 
+            slug = request.env['ir.http']._slug
             if category:
                 url = "/shop/amp/category/%s" % slug(category)
 

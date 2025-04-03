@@ -12,13 +12,12 @@ from werkzeug.exceptions import Forbidden, NotFound
 from odoo import http, SUPERUSER_ID, fields, tools
 from odoo.http import request
 from odoo.osv import expression
-from odoo.addons.http_routing.models.ir_http import slug
 from odoo.addons.website.controllers.main import QueryURL
 from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import TableCompute
 from odoo.addons.base.models.assetsbundle import AssetsBundle
-from odoo.tools import lazy
+from odoo.tools import lazy, SQL
 from collections import defaultdict
 from itertools import product as cartesian_product
 
@@ -245,6 +244,7 @@ class ScitaSliderSettings(http.Controller):
         for record in option:
             slider_options.append({'id': record.id,
                                    'name': record.name})
+        print("\n\n\n\n\n\n\n\n\n\n\n\n   slider_options", slider_options)
         return slider_options
 
     @http.route(['/theme_scita/category_get_dynamic_slider'], type='json', auth='public', website=True)
@@ -827,14 +827,16 @@ class ScitaShop(WebsiteSale):
                 # domain = self._get_search_domain(search, category, attrib_values)
 
                 # This is ~4 times more efficient than a search for the cheapest and most expensive products
-                from_clause, where_clause, where_params = Product._where_calc(domain).get_sql()
-                query = f"""
-                    SELECT COALESCE(MIN(list_price), 0) * {conversion_rate}, COALESCE(MAX(list_price), 0) * {conversion_rate}
-                      FROM {from_clause}
-                     WHERE {where_clause}
-                """
-                request.env.cr.execute(query, where_params)
-                available_min_price, available_max_price = request.env.cr.fetchone()
+
+                query = Product._where_calc(domain)
+                Product._apply_ir_rules(query, 'read')
+                sql = query.select(
+                    SQL(
+                        "COALESCE(MIN(list_price), 0) * %(conversion_rate)s, COALESCE(MAX(list_price), 0) * %(conversion_rate)s",
+                        conversion_rate=conversion_rate,
+                    )
+                )
+                available_min_price, available_max_price = request.env.execute_query(sql)[0]
 
                 if min_price or max_price:
                     # The if/else condition in the min_price / max_price value assignment
@@ -869,6 +871,7 @@ class ScitaShop(WebsiteSale):
                 search_categories = Category
             categs = lazy(lambda: Category.search(categs_domain))
 
+            slug = request.env['ir.http']._slug
             if category:
                 url = "/shop/category/%s" % slug(category)
 

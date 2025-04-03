@@ -98,13 +98,13 @@
             </form>
         </field>
     </record>
-    <record id="view_deal_of_the_day_configuration_figma_tree_view" model="ir.ui.view">
-        <field name="name">deal.of.the.day.snippet.configuration.figma.tree</field>
+    <record id="view_deal_of_the_day_configuration_figma_list_view" model="ir.ui.view">
+        <field name="name">deal.of.the.day.snippet.configuration.figma.list</field>
         <field name="model">biztech.deal.of.the.day.configuration</field>
         <field name="arch" type="xml">
-            <tree string="Deal Of The Day Snippet">
+            <list string="Deal Of The Day Snippet">
                 <field name="name"/>
-            </tree>
+            </list>
         </field>
     </record>
 
@@ -112,7 +112,7 @@
         <field name="name">Deal Of The Day Snippet</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">biztech.deal.of.the.day.configuration</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">list,form</field>
         <field eval="False" name="view_id"/>
     </record>
 

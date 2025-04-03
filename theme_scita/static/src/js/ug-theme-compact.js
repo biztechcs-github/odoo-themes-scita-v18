@@ -1,8 +1,8 @@
 
-if(typeof g_ugFunctions != "undefined")
-	g_ugFunctions.registerTheme("compact");
-else 
-	jQuery(document).ready(function(){g_ugFunctions.registerTheme("compact")});
+// if(typeof g_ugFunctions != "undefined")
+// 	g_ugFunctions.registerTheme("compact");
+// else 
+// 	jQuery(document).ready(function(){g_ugFunctions.registerTheme("compact")});
 
 
 /**
