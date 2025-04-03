@@ -2,7 +2,6 @@
 
 import options from "@web_editor/js/editor/snippets.options";
 import { renderToElement } from "@web/core/utils/render";
-// import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
 import { _t } from "@web/core/l10n/translation";
 
     options.registry.s_google_map = options.Class.extend({

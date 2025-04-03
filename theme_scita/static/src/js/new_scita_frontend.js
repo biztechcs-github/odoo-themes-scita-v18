@@ -2,7 +2,7 @@
 
 import animation from "@website/js/content/snippets.animation";
 import { _t } from "@web/core/l10n/translation";
-import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
+import { rpc, RPCError } from '@web/core/network/rpc';
 
 
 animation.registry.deal_seller_multi_product_custom_snippet = animation.Class.extend({
@@ -32,7 +32,7 @@ animation.registry.deal_seller_multi_product_custom_snippet = animation.Class.ex
             }
             if (!this.editableMode) {
                 var slider_deals = self.$target.attr('data-multi-deal-of-day-type');
-                jsonrpc("/deal/product_multi_get_dynamic_seller", {
+                rpc("/deal/product_multi_get_dynamic_seller", {
                     'slider-deal': self.$target.attr('data-multi-deal-of-day-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -44,7 +44,7 @@ animation.registry.deal_seller_multi_product_custom_snippet = animation.Class.ex
                         self.$target.append(data);
                         $(".deal_multi_product_slider").removeClass('hidden');
 
-                        jsonrpc('/theme_scita/product_multi_deal_seller_config', {
+                        rpc('/theme_scita/product_multi_deal_seller_config', {
                             'slider_deals': slider_deals,
                         }).then(function(res) {
                             $('div.product-slider ').owlCarousel({
@@ -198,7 +198,7 @@ animation.registry.oe_category_slider = animation.Class.extend({
         if (!this.editableMode) {
             var slider_type = self.$target.attr('data-category-config-type');
             var color = self.$target.attr('data-category-color');
-            jsonrpc("/theme_scita/dynamic_color_category_slider", {
+            rpc("/theme_scita/dynamic_color_category_slider", {
                 'slider-id': slider_type || '',
                 'color': color || '',
             }).then(function(data) {
@@ -273,7 +273,7 @@ animation.registry.oe_deal_of_the_day = animation.Class.extend({
         }
         if (!this.editableMode) {
             var slider_deals = self.$target.attr('data-deal-snippet-id');
-            jsonrpc("/deal/deal_of_the_day_new", {
+            rpc("/deal/deal_of_the_day_new", {
                 'slider-deal': self.$target.attr('data-deal-snippet-id') || '',
             }).then(function(data) {
                 if (data) {

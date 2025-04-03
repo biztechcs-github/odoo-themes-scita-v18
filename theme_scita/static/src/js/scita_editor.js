@@ -2,7 +2,6 @@
 
 import options from "@web_editor/js/editor/snippets.options";
 import { renderToElement } from "@web/core/utils/render";
-// import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
 import { rpc, RPCError } from '@web/core/network/rpc';
 import { _t } from "@web/core/l10n/translation";
 import snippetsEditor from "@web_editor/js/editor/snippets.editor";
@@ -1945,7 +1944,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                     $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
                 console.log("AAAAAAAAAAAAAAAAAAAA CATSLIDER3")
                 rpc('/theme_scita/category_get_options', {}).then(function(res) {
-                    debugger;
                     $('#slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
                         $("select[id='slider_type']").append($('<option>', {

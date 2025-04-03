@@ -2,7 +2,7 @@
 
 import options from "@web_editor/js/editor/snippets.options";
 import { renderToElement } from "@web/core/utils/render";
-import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
+import { rpc, RPCError } from '@web/core/network/rpc';
 import { _t } from "@web/core/l10n/translation";
 import snippetsEditor from "@web_editor/js/editor/snippets.editor";
 
@@ -44,7 +44,7 @@ options.registry.deal_seller_multi_product_custom_snippet = options.Class.extend
             var $slider_deals = self.$modal.find("#slider_deals"),
                 $cancel = self.$modal.find("#cancel"),
                 $snippnet_submit = self.$modal.find("#snippnet_submit");
-            jsonrpc('/theme_scita/deal_get_options', {}).then(function(res) {
+            rpc('/theme_scita/deal_get_options', {}).then(function(res) {
                 $("select[id='slider_deals'] option").remove();
                 $.each(res, function(y) {
                     $("select[id='slider_deals']").append($('<option>', {
@@ -152,7 +152,7 @@ options.registry.oe_category_slider = options.Class.extend({
                 $color = self.$modal.find("#color"),
                 $category_sub_data = self.$modal.find("#pro_category_sub_data");
 
-            jsonrpc('/theme_scita/category_get_options', {}).then(function(res) {
+            rpc('/theme_scita/category_get_options', {}).then(function(res) {
                 $('#slider_type option[value!="0"]').remove();
                 $.each(res, function(y) {
                     $("select[id='slider_type']").append($('<option>', {
@@ -223,7 +223,7 @@ options.registry.oe_deal_of_the_day = options.Class.extend({
             var $slider_deals = self.$modal.find("#slider_deals_select"),
                 $cancel = self.$modal.find("#cancel"),
                 $snippnet_submit = self.$modal.find("#snippnet_submit");
-            jsonrpc('/theme_scita/deal_get_options', {}).then(function(res) {
+            rpc('/theme_scita/deal_get_options', {}).then(function(res) {
                 $("select[id='slider_deals_select'] option").remove();
                 $.each(res, function(y) {
                     $("select[id='slider_deals_select']").append($('<option>', {
