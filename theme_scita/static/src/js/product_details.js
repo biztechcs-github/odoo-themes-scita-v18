@@ -2,7 +2,7 @@
 
 import animation from "@website/js/content/snippets.animation";
 import { _t } from "@web/core/l10n/translation";
-import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
+import { rpc, RPCError } from '@web/core/network/rpc';
 import VariantMixin from "@website_sale/js/sale_variant_mixin";
 import publicWidget from "@web/legacy/js/public/public_widget";
 import wSaleUtils from "@website_sale/js/website_sale_utils";
@@ -15,7 +15,7 @@ odoo.define('theme_scita.scita_product_js', [], function () {
         if (chkObject('gallery')==true)
        {    
         
-        jsonrpc('/theme_scita/scita_multi_image_thumbnail_config', {})
+        rpc('/theme_scita/scita_multi_image_thumbnail_config', {})
                     .then(function(res) {
             var dynamic_data = {}
 
@@ -111,7 +111,7 @@ odoo.define('theme_scita.scita_product_js', [], function () {
         }
         update_gallery_product_variant_image($parent, product_id);
         // default code as per varaint wise start 
-        jsonrpc("/shop/variant_change", {
+        rpc("/shop/variant_change", {
             'pro_id':product_id
         }).then(function (data){
 
@@ -229,7 +229,7 @@ odoo.define('theme_scita.scita_product_js', [], function () {
         // Product delivery location available checking start
         $('.checker').on('click', function(){
             var zip =  $('input.value-zip').val();
-            jsonrpc("/shop/zipcode", {
+            rpc("/shop/zipcode", {
                 'zip_code':zip
             }).then(function (data){
                 if (data.status == true){

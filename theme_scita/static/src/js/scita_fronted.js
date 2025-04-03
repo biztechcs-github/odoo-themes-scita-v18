@@ -3,7 +3,7 @@
 import animation from "@website/js/content/snippets.animation";
 import { _t } from "@web/core/l10n/translation";
 import publicWidget from "@web/legacy/js/public/public_widget";
-import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
+import { rpc, RPCError } from '@web/core/network/rpc';
 $(document).ready(function(){
     if($(".oe_website_sale").length === 0){
         $("div#wrap").addClass("oe_website_sale");
@@ -17,6 +17,7 @@ $(document).ready(function(){
         disabledInEditableMode: false,
         start: function() {
             var self = this;
+            debugger;
             if (this.editableMode) {
                 var $cate_slider = $('#wrapwrap').find('#theme_scita_custom_category_slider');
                 var cat_name = _t("Category Slider")
@@ -30,8 +31,9 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
+                debugger;
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                jsonrpc("/theme_scita/category_get_dynamic_slider", {
+                rpc("/theme_scita/category_get_dynamic_slider", {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -61,7 +63,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                jsonrpc("/theme_scita/second_get_dynamic_cat_slider", {
+                rpc("/theme_scita/second_get_dynamic_cat_slider", {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -91,7 +93,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-prod-slider-id');
-                jsonrpc("/theme_scita/product_get_dynamic_slider",{
+                rpc("/theme_scita/product_get_dynamic_slider",{
                     'slider-id': self.$target.attr('data-prod-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -102,7 +104,7 @@ $(document).ready(function(){
                         if ($('#wrapwrap').hasClass('o_rtl')) {
                             sct_rtl = true;
                         }
-                        jsonrpc('/theme_scita/product_image_effect_config', {
+                        rpc('/theme_scita/product_image_effect_config', {
                             'slider_id': slider_id
                         }).then(function(res) {
                             $('div#' + res.s_id).owlCarousel({
@@ -164,7 +166,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                jsonrpc("/retial/product_multi_get_dynamic_slider", {
+                rpc("/retial/product_multi_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -175,7 +177,7 @@ $(document).ready(function(){
                         if ($('#wrapwrap').hasClass('o_rtl')) {
                             sct_rtl = true;
                         }
-                        jsonrpc('/theme_scita/product_multi_image_effect_config', {
+                        rpc('/theme_scita/product_multi_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('div.retail_featured_product_1 .owl-carousel').owlCarousel({
@@ -243,7 +245,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                jsonrpc("/fashion/fashion_product_multi_get_dynamic_slider", {
+                rpc("/fashion/fashion_product_multi_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -256,7 +258,7 @@ $(document).ready(function(){
                         }
                         var WebsiteSale = new publicWidget.registry.WebsiteSale();
                         WebsiteSale.init();
-                        jsonrpc('/theme_scita/product_multi_image_effect_config', {
+                        rpc('/theme_scita/product_multi_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('div.fashion_featured_product_1 .fashion_cro ').owlCarousel({
@@ -327,7 +329,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                jsonrpc("/shop/get_brand_slider", {
+                rpc("/shop/get_brand_slider", {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -392,7 +394,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                jsonrpc("/shop/get_box_brand_slider", {
+                rpc("/shop/get_box_brand_slider", {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -451,7 +453,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                jsonrpc("/shop/get_it_brand", {
+                rpc("/shop/get_it_brand", {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -484,7 +486,7 @@ $(document).ready(function(){
             if (!this.editableMode) {
 
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/blog_get_dynamic_slider", {
+                rpc("/theme_scita/blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -514,7 +516,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/health_blog_get_dynamic_slider",{
+                rpc("/theme_scita/health_blog_get_dynamic_slider",{
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -544,7 +546,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/second_blog_get_dynamic_slider", {
+                rpc("/theme_scita/second_blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -555,7 +557,7 @@ $(document).ready(function(){
                             sct_rtl = true;
                         }
                         $(".blog_2_custom").removeClass('o_hidden');
-                        jsonrpc('/theme_scita/blog_image_effect_config', {
+                        rpc('/theme_scita/blog_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('#blog_2_owl_carosel').owlCarousel({
@@ -611,7 +613,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/third_blog_get_dynamic_slider", {
+                rpc("/theme_scita/third_blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -622,7 +624,7 @@ $(document).ready(function(){
                             sct_rtl = true;
                         }
                         $(".blog_3_custom").removeClass('o_hidden');
-                        jsonrpc('/theme_scita/blog_image_effect_config', {
+                        rpc('/theme_scita/blog_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('#blog_3_owl_carosel').owlCarousel({
@@ -672,7 +674,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/forth_blog_get_dynamic_slider", {
+                rpc("/theme_scita/forth_blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -702,7 +704,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/six_blog_get_dynamic_slider", {
+                rpc("/theme_scita/six_blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -732,7 +734,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/fifth_blog_get_dynamic_slider", {
+                rpc("/theme_scita/fifth_blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -743,7 +745,7 @@ $(document).ready(function(){
                             sct_rtl = true;
                         }
                         $(".blog_5_custom").removeClass('o_hidden');
-                        jsonrpc('/theme_scita/blog_image_effect_config', {
+                        rpc('/theme_scita/blog_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('#blog_5_owl_carosel').owlCarousel({
@@ -793,7 +795,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
-                jsonrpc("/theme_scita/eight_blog_get_dynamic_slider",{
+                rpc("/theme_scita/eight_blog_get_dynamic_slider",{
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -804,7 +806,7 @@ $(document).ready(function(){
                             sct_rtl = true;
                         }
                         $(".blog_8_custom").removeClass('o_hidden');
-                        jsonrpc('/theme_scita/blog_image_effect_config', {
+                        rpc('/theme_scita/blog_image_effect_config', {
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('#blog_8_owl_carosel').owlCarousel({
@@ -854,7 +856,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/theme_scita/get_clients_dynamically_slider",{}).then(function(data) {
+                rpc("/theme_scita/get_clients_dynamically_slider",{}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -909,7 +911,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/theme_scita/second_get_clients_dynamically_slider", {}).then(function(data) {
+                rpc("/theme_scita/second_get_clients_dynamically_slider", {}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -932,7 +934,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/theme_scita/third_get_clients_dynamically_slider", {}).then(function(data) {
+                rpc("/theme_scita/third_get_clients_dynamically_slider", {}).then(function(data) {
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
@@ -953,7 +955,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_one/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_one/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1008,7 +1010,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_two/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_two/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1063,7 +1065,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_three/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_three/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1118,7 +1120,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_four/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_four/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1173,7 +1175,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_five/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_five/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1222,7 +1224,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_six/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_six/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1274,7 +1276,7 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                jsonrpc("/biztech_emp_data_seven/employee_data", {}).then(function(data) {
+                rpc("/biztech_emp_data_seven/employee_data", {}).then(function(data) {
                     self.$target.empty();
                     self.$target.append(data);
                     var sct_rtl = false;
@@ -1335,7 +1337,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                jsonrpc("/theme_scita/category_slider_3",{
+                rpc("/theme_scita/category_slider_3",{
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1395,7 +1397,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                jsonrpc("/theme_scita/category_slider_4", {
+                rpc("/theme_scita/category_slider_4", {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1464,7 +1466,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-prod-cat-slider-type');
-                jsonrpc("/theme_scita/custom_pro_get_dynamic_slider", {
+                rpc("/theme_scita/custom_pro_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-prod-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1503,7 +1505,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-brand-config-type');
-                jsonrpc("/theme_scita/custom_get_brand_slider", {
+                rpc("/theme_scita/custom_get_brand_slider", {
                     'slider-type': slider_type || '',
                 }).then(function(data) {
                     if (data) {
@@ -1541,7 +1543,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                jsonrpc("/product_category_img_slider", {
+                rpc("/product_category_img_slider", {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1585,7 +1587,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                jsonrpc("/product_column_five", {
+                rpc("/product_column_five", {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -1628,7 +1630,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                jsonrpc("/product/product_snippet_data_two", {
+                rpc("/product/product_snippet_data_two", {
                     'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
                 }).then(function(data) {
                     if (data) {

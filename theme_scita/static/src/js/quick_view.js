@@ -1,7 +1,7 @@
 /** @odoo-module **/
 
 import animation from "@website/js/content/snippets.animation";
-import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
+import { rpc, RPCError } from '@web/core/network/rpc';
 import { WebsiteSale } from "@website_sale/js/website_sale";
 import wSaleUtils from "@website_sale/js/website_sale_utils";
 import publicWidget from "@web/legacy/js/public/public_widget";
@@ -24,7 +24,7 @@ odoo.define('theme_scita.quick_view',[], function(require) {
             var element = ev.currentTarget;
             var product_id = $(element).attr('data-id');
             this.wishlistProductIDs = JSON.parse(sessionStorage.getItem('website_sale_wishlist_product_ids') || '[]');
-            jsonrpc('/theme_scita/shop/quick_view',{'product_id':product_id}).then(function(data) {
+            rpc('/theme_scita/shop/quick_view',{'product_id':product_id}).then(function(data) {
                 var sale = new publicWidget.registry.WebsiteSale();
 
                     $("#shop_quick_view_modal").html(data);
@@ -67,7 +67,7 @@ odoo.define('theme_scita.quick_view',[], function(require) {
         cartViewData: function(ev) {
             var element = ev.currentTarget;
             var product_id = $(element).attr('data-id');
-            jsonrpc('/theme_scita/shop/cart_view',{'product_id':product_id}).then(function(data) {
+            rpc('/theme_scita/shop/cart_view',{'product_id':product_id}).then(function(data) {
                 $("#shop_cart_view_modal").html(data);
                 $("#shop_cart_view_modal").modal('show');
             });

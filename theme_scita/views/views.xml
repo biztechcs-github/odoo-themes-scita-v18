@@ -65,7 +65,7 @@
         </field>
     </record>
     <!-- client slider  -->
-    <record id="scita_view_res_partner_form_inherit" model="ir.ui.view">
+    <!-- <record id="scita_view_res_partner_form_inherit" model="ir.ui.view">
         <field name="name">scita.view.res.partner.form.inherit</field>
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
@@ -74,7 +74,7 @@
                 <field name="add_to_slider"/>
             </field>
         </field>
-    </record>
+    </record> -->
      <!-- publish and unpublish -->
     <record model="ir.ui.view" id="inherit_product_template_form_view">
         <field name="name">inherit.product.template.product.website.form</field>

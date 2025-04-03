@@ -2,7 +2,6 @@
 
 import animation from "@website/js/content/snippets.animation";
 import { _t } from "@web/core/l10n/translation";
-import { jsonrpc, RPCError } from "@web/core/network/rpc_service";
   
   animation.registry.js_counter_timer = animation.Class.extend({
     selector : ".js_counter_timer",
