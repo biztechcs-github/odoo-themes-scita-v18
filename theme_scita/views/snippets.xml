@@ -1294,7 +1294,7 @@
             <div class="container">
                 <div class='row s_nb_column_fixed sct_top_row'>
                     <div class="col-md-12">
-                        <h2 class="section-title"><span class='left_right_seprator'>Location we serve</span></h2>
+                        <h2 class="section-title">Location we serve</h2>
                     </div>
                 </div>
                 <div class="row s_nb_column_fixed sct_btm_row">
@@ -1376,16 +1376,10 @@
 				<!-- banner snippets -->
 				<t t-snippet="theme_scita.sct_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-ful-banner-1.1.png"/>
 				<t t-snippet="theme_scita.sct_banner_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-banner.png"/>
-				<t t-snippet="theme_scita.sct_banner_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_3.png"/>
-				<t t-snippet="theme_scita.sct_banner_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_4.png"/>
-				<t t-snippet="theme_scita.sct_banner_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_5.png"/>
 				<t t-snippet="theme_scita.retail_sct_banner_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-banner.png"/>
-				<t t-snippet="theme_scita.fashion_main_banner_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fasion_banner.png"/>
-				<t t-snippet="theme_scita.helth_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_2.png"/>
 				<t t-snippet="theme_scita.it_main_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_6.png"/>
-				<t t-snippet="theme_scita.banner_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/hero-image-snippet.png"/>
 				<t t-snippet="theme_scita.dynamic_video_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/video-banner.png"/>
-
+				
 				<!-- Deal of the Day snippets -->
 				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-deal-of-day.png"/>
 				<t t-snippet="theme_scita.fashion_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fashion_deal_of_day.png"/>
@@ -1524,9 +1518,7 @@
 				<!-- content snippets -->
 
 				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_5.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_9" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_9.png"/>
+			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
 				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_10.png"/>
 				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
 

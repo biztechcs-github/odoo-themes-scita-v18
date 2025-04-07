@@ -77,29 +77,7 @@
             </div>
         </section>
     </template>
-    <!-- content_snippets_v_5 -->
-    <template id="content_snippets_v_5" name="Content Snippet 2">
-        <section class="content_snippets_v_5" data-disp="content_block">
-            <div class='container'>
-                <div class="row">
-                    <div class='col-md-12 sct_content_info'>
-                    	<div class='sct_title_div'>
-	                        <h2 class='sct_title'>About</h2>
-	                    </div>
-                        <div class='sct_image_box'>
-                        	<img src="/web/image/theme_scita.sct_about_us_snippet_2" class="img img-fluid" alt="About Hospital"/>
-                        </div>
-                    	<div class='sct_desc_div'>
-	                    	<p class='sct_simple_text'>On the basis of the medical center “Brivona” can be given a thorough examination of the body and get the advice of highly qualified specialists in various fields of medicine. According to studies, our doctors will make an individual program of prevention and treatment of identified diseases, directed to a surgical treatment if necessary.On the basis of the medical center “Brivona” can be given a thorough examination of the body and get the advice of highly qualified specialists in various </p>
-	                    </div>
-                        <div class="sct_cst_btn">
-                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+  
     <!-- content_snippets_v_6 -->
     <template id="content_snippets_v_6" name="Content Snippet 3">
         <section class="content_snippets_v_6" data-disp="content_block">
@@ -126,82 +104,27 @@
             </div>
         </section>
     </template>
-    <!-- content_snippets_v_9 -->
-    <template id="content_snippets_v_9" name="Content Snippet 4">
-        <section class="content_snippets_v_9" data-disp="content_block">
-            <div class='container'>
-            	<div class='row s_nb_column_fixed sct_top_row'>
-            		<div class="col-md-12">
-                        <h2 class="section-title">Clear value for your target customer</h2>
-                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                    </div>
-            	</div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-6 sct_content_img'>
-                    	<div class="sct_image_box">
-                    		<img src="/web/image/theme_scita.sct_content_snippet_4" class="img img-fluid" alt="About Hospital"/>
-                    	</div>
-                    </div>
-                    <div class='col-md-6 sct_content_info'>
-                    	<div class='sct_content_box'>	
-                    		<div class="sct-left-side">
-	                            <span class="fa fa-print"/>
-	                        </div>
-	                        <div class="sct-right-side">
-	                        	<div class='sct_contect_into'>
-		                            <h4 class='sct_title'>Find An Insurance Agent</h4>
-		                            <p class='sct_simple_text'>Lorem Ipsum is simply dummy text</p>
-		                        </div>
-	                        </div>
-                    	</div>
-                    	<div class='sct_content_box'>	
-                    		<div class="sct-left-side">
-	                            <span class="fa fa-print"/>
-	                        </div>
-	                        <div class="sct-right-side">
-	                        	<div class='sct_contect_into'>
-		                            <h4 class='sct_title'>Find An Insurance Agent</h4>
-		                            <p class='sct_simple_text'>Lorem Ipsum is simply dummy text</p>
-		                        </div>
-	                        </div>
-                    	</div>
-                    	<div class='sct_content_box'>	
-                    		<div class="sct-left-side">
-	                            <span class="fa fa-print"/>
-	                        </div>
-	                        <div class="sct-right-side">
-	                        	<div class='sct_contect_into'>
-		                            <h4 class='sct_title'>Find An Insurance Agent</h4>
-		                            <p class='sct_simple_text'>Lorem Ipsum is simply dummy text</p>
-		                        </div>
-	                        </div>
-                    	</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+ 
     <!-- content_snippets_v_10 -->
     <template id="content_snippets_v_10" name="Content Snippet 5">
-        <section class="content_snippets_v_10 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');" data-disp="content_block">
+        <section class="content_snippets_v_10 oe_img_bg" style="background-image: url(/theme_scita/static/src/img/it/content-banner.jpg);" data-disp="content_block">
             <div class='container'>
-                <div class="row sct_btm_row">
-                    <div class='col-md-6 sct_content_img'>
-                    	<div class="sct_image_box">
-                    		<img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt="About Hospital"/>
-                    	</div>
-                    </div>
-                    <div class='col-md-6 sct_content_info'>
-                    	<div class='sct_content_box'>	
+                <div class="row sct_btm_row">                   
+                    <div class='col-md-4 sct_content_info'>
+                    	<div class='sct_content_box p-5 h-100 d-flex justify-content-center flex-column'>	
                         	<div class='sct_contect_into'>
-	                            <h4 class='sct_title'>Creator of quality design and thinker of fresh ideas.</h4>
-	                            <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                <div class="sct_icon mb-3"><i class="fa fa-gears p-3"></i></div>
+	                            <h4 class='sct_title'>Uncompromised sound with newly designed drivers</h4>
+	                            <p class='sct_simple_text'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
+                                <p class='sct_simple_text'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip.</p>
 	                        </div>
-	                        <div class="sct_cst_btn">
+	                        <div class="sct_cst_btn mt-3">
 	                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Read More</a>
 	                        </div>
                     	</div>
                     </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4"></div>
                 </div>
             </div>
         </section>
@@ -211,15 +134,16 @@
         <section class="content_snippets_v_11 s_faq_collapse" data-disp="content_block">
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-6 sct_content_info'>
+                    <div class='col-md-4 sct_content_info'>
                         <div class='sct_content_box'>   
                             <div class='sct_contect_into'>
                                 <h2 class='sct_title'>Creator of quality design and thinker of fresh ideas.</h2>
                                 <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                             </div>
+                          
                         </div>
                     </div>
-                    <div class='col-md-6  sct_according_div'>
+                    <div class='col-md-8  sct_according_div'>
                         <div class="sct_base_class">
                             <div id="myContentCollapse" class="accordion" role="tablist">
                                 <div class="card bg-white" data-name="Item">
