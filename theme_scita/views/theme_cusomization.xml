@@ -19,22 +19,6 @@
                        data-name="btn_style_4"
                        data-customize-website-variable="'btn_style_4'"
                        data-img="/theme_scita/static/src/img/snippet_icon/button-style-4.gif"/>
-                <we-button title="Buttons Style 5"
-                       data-name="btn_style_5"
-                       data-customize-website-variable="'btn_style_5'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-5.gif"/>
-                <we-button title="Buttons Style 6"
-                       data-name="btn_style_6"
-                       data-customize-website-variable="'btn_style_6'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-6.gif"/>
-                <we-button title="Buttons Style 7"
-                       data-name="btn_style_7"
-                       data-customize-website-variable="'btn_style_7'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-7.gif"/>
-                <we-button title="Buttons Style 8"
-                       data-name="btn_style_8"
-                       data-customize-website-variable="'btn_style_8'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-8.gif"/>
             </we-select>
             <we-select string="Product Hover Style" data-variable="prod-hover-style" data-reload="/"  data-attribute-default-value="prod_hover_style_1">
                 <we-button title="Effect Style 1"
