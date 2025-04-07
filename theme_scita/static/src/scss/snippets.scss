@@ -4055,74 +4055,6 @@ body #wrapwrap{
 	}
 }
 /*it home banner snippet end*/
-/*it about us snippet*/
-.it_about_cmp {
-	padding: 60px 0 !important;
-	@include bg-nore-cover;
-	@media (max-width: 1439px){
-		padding: 50px 0 !important;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0 !important;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0 !important;
-	}
-	.sct_top_row {
-		text-align: center;
-		.sct_simple_text {
-			max-width: 55%;
-			margin: 25px auto 50px;
-			font-size: $font-body + 1;
-			@media (max-width: 1439px){
-				max-width: 60%;
-				font-size: $font-body;
-			}
-			@media (max-width: 1199px){
-				max-width: 70%;
-			}
-			@media (max-width: 1023px){
-				max-width:90%;
-				margin: 25px auto 40px;
-			}
-			@media (max-width: 1023px){
-				margin: 25px auto 30px;
-			}
-		}
-	}
-	.sct_btm_row {
-		@media (max-width: 767px){
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: reverse;
-			-ms-flex-direction: column-reverse;
-			flex-direction: column-reverse;
-		}
-		.sct_cmp_info {
-			.sct_simple_text {
-				margin: 30px 0;
-				font-size: $font-body + 1;
-				@media (max-width: 1600px){
-					padding-right: 30px;
-				}
-				@media (max-width: 1439px){
-					font-size: $font-body;
-					padding-right: 10px;
-				}
-				@media (max-width: 1023px){
-					padding-right: 0;
-					margin: 20px 0 25px;
-				}
-			}
-		}
-		.sct_cmp_img {
-			text-align: right;
-			@media (max-width: 767px){
-				margin-bottom: 25px;
-			}
-		}
-	}
-}
-/*it about us snippet end*/
 /*it service snippet*/
 .it_grids_service {
 	@include bg-nore-cover;
@@ -5420,9 +5352,6 @@ body #wrapwrap{
 /*health about us snippet*/
 .health_about_hospital {
 	padding: 60px 0;
-	// @media (max-width: 1600px){
-	// 	padding: 70px 0 60px;
-	// }
 	@media (max-width: 1439px){
 		padding: 50px 0 ;
 	}
@@ -5443,7 +5372,7 @@ body #wrapwrap{
 			.section-title {
 				.left_right_seprator{
 					padding-left: 0;
-					&:before{
+					&:before, &::after{
 						display:none;
 					}
 				}
@@ -6025,55 +5954,34 @@ body #wrapwrap{
 	}
 	.sct_mid_row {
 		.sct_base_class {
-			background: #eff9fa;
-			padding: 30px 20px;
-			@media (max-width: 1023px){
-				padding: 20px;
-			}
 			.sct_left_side {
-				width: 74px;
-				overflow: hidden;
-				display: inline-block;
-				vertical-align: top;
-				@media (max-width: 1199px){
-					width: 54px;
-				}
-				@media (max-width: 1023px){
-					width: 44px;
+				text-align: center;
+				min-height: 200px;
+
+				img{
+					border-radius: 10px;
 				}
 			}
 			.sct_right_side {
-				display: inline-block;
-				vertical-align: top;
-				width: 77%;
-				padding-left: 7%;
-				@media (max-width: 1439px){
-					width: 75%;
-					padding-left: 4%;
-				}
-				@media (max-width:1400px){
-					width:72%;
-				}
-				@media (max-width: 1199px){
-					padding-left: 4%;
-				}
-				@media (max-width: 1023px){
-					width: 70%;
-				}
-				@media (max-width: 767px){
-					width: 85%;
-				}
-				@media (max-width: 410px){
-					width: 82%;
-				}
-				@media (max-width: 459px){
-					width: 80%;
-				}
 				.sct_title {
+					background-color: $primary;
+					text-align: center;
+					padding: 10px;
 					font-size: $title + 5;
 					font-weight: bold;
-					color: $dark-color;
-					margin-bottom: 15px;
+					color: $light-color;
+					margin: -26px 30px 15px;
+					z-index: 1;
+					position: relative;
+					border-radius: 14px;
+
+					@media (min-width: 992px){
+						margin-top: -50px;
+					}
+					@media (min-width: 1200px){
+						margin-top: -16px;
+					}
+					
 					@media (max-width: 1600px){
 						font-size: $title + 2;
 					}
@@ -6083,41 +5991,12 @@ body #wrapwrap{
 				}
 				.sct_simple_text{
 					color: fade-out($dark-color, 0.2);
-					height: 100px;
-    				overflow: hidden;
     				position: relative;
     				width: 100%;
-    				&:after {
-					    content: "";
-					    position: absolute;
-					    bottom: 0;
-					    left: 0;
-					    right: 0;
-					    height: 49px;
-					    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #eff9fa 100%);
-					    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, #eff9fa 100%);
-					    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #eff9fa 100%);
-					    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
-					}
-				}
-				.sct_health_btn {
-					.btn {
-						background: transparent;
-						border: none;
-						color: $primary;
-						font-weight: bold;
-						font-size: $font-body + 1;
-						padding: 0;
-						line-height: normal;
-						@media (max-width: 767px){
-							font-size: $font-body;
-						}
-						&:hover{
-							border:none;
-							background: transparent;
-							color: $dark-color;
-						}
-					}
+					display: -webkit-box;
+					-webkit-line-clamp: 3;
+					-webkit-box-orient: vertical;  
+					overflow: hidden;
 				}
 			}
 		}
@@ -6128,8 +6007,8 @@ body #wrapwrap{
 	}
 	.col-md-4 {
 		+ .col-md-4 {
-			@media (max-width: 767px){
-				margin-top: 20px;
+			@media (max-width: 991px){
+				margin-top: 30px;
 			}
 		}
 	}
@@ -6572,50 +6451,9 @@ body #wrapwrap{
 	}
 }
 /*health testimonial snippet end*/
-/*use case snippet 1*/
-.case_study_varient_1 {
-	padding: 40px 0;
-	text-align: center;
-	.simple_green_text {
-		margin-bottom: 10px;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
-	.section-title {
-		margin-bottom: 30px;
-		@media (max-width: 1023px){
-			margin-bottom: 20px;
-		}
-	}
-	.case_study_box {
-		// padding: 0;
-		+ .case_study_box {
-			border-width: 0 0 0 1px;
-			border-color: fade-out($dark-color, 0.8);
-			border-style: solid;
-			@media (max-width: 575px){
-				border-left: 0;
-			}
-		}
-		.sct_simple_text {
-			font-size: $title + 2;
-			font-weight: bold;
-			text-align: left;
-			padding:25px;
-			margin-bottom: 0;
-			@media (max-width: 1599px){
-				font-size: $title;
-			}
-			@media (max-width: 991px){
-				padding: 16px 0;
-			}
-		}
-	}
-}
-/*use case snippet 1 end*/
 /*use case snippet 2*/
 .case_study_varient_2 {
-	background: $light-grey-color;
+	// background: $light-grey-color;
 	padding: 50px 0;
 	@media (max-width: 1199pxpx){
 		padding: 40px 0 20px;
@@ -6624,44 +6462,23 @@ body #wrapwrap{
 		padding: 30px 0 20px;
 	}
 	.case_study_box {
-		background: $light-color;
-		border: 1px solid #e8e8e8;
+		background: rgba($primary, 0.1);
 		padding: 30px;
-		border-radius: 8px;
+		border-radius: 10px;
 		margin: 10px 0;
-		@media (max-width: 1599px){
-			padding: 20px;
-		}
-		@media (max-width: 1023px){
-			padding:10px;
-		}
-		@media (max-width: 767px){
-			margin: 10px 0;
-		}
+
 		.sct_above {
-			@include flex;
-			-webkit-box-align: start;
-			-ms-flex-align: start;
-			align-items: flex-start;
-			-webkit-box-pack: justify;
-			-ms-flex-pack: justify;
-			justify-content: space-between;
+			// @include flex;
+			// @include justify-align-content;
+			// margin-top: -50px;
+			// background-color: $dark-color;
+			// border-radius: 50px;
+			// height: 60px;
+			width: 60px;
+			
 			.sct_case_icon {
-				// max-width: 60px;
-				padding-right: 10px;
-				// @media (max-width: 1199px){
-				// 	max-width: 30px;
-				// }
-				// @media (max-width: 1023px){
-				// 	display:none;
-				// }
-			}
-			.btn {
-				border:1px solid $primary; 
-				background: transparent;
-				border-radius: 50px;
-				line-height: 30px;
-				color: $primary;
+				// padding-right: 10px;
+				// padding: 11px;
 			}
 		}
 		.sct_below {
@@ -6670,7 +6487,7 @@ body #wrapwrap{
 				margin-top: 10px;
 			}
 			.sct_title {
-				font-size: $title;
+				font-size: $title + 2;
 				font-weight: bold;
 				margin-bottom: 10px;
 				@media (max-width: 1199px){
@@ -6679,6 +6496,18 @@ body #wrapwrap{
 			}
 			p {
 				margin-bottom: 0;
+			}
+			.btn {
+				border:1px solid $primary; 
+				background: transparent;
+				border-radius: 50px;
+				color: $primary;
+				margin-top: 20px;
+
+				&:hover{
+					background: $primary;
+					color: $light-color;
+				}
 			}
 		}
 	}
@@ -10170,37 +9999,45 @@ body #wrapwrap{
 /*about snippet 1 end*/
 /*about snippet 2*/
 .about_us_v_3 {
-	background: #8F9BDA;
-	@media (max-width: 767px){
-		padding-top: 30px;
+	padding: 60px 0;
+	@media (max-width: 1199px){
+		padding: 50px 0;
 	}
 	.sct_btm_row {
-		.sct_cmp_info {
-			padding-top: 60px;
-			padding-bottom: 60px;
-			@media (max-width: 1439px){
+		.sct_info_inner {
+			-webkit-box-ordinal-group:2;
+			-ms-flex-order:1;
+			order:1;
+			@media (min-width: 992px){
+				-ms-flex-order: 0;
+				order: 0;
 				padding-top: 40px;
 				padding-bottom: 40px;
 			}
-			@media (max-width: 1199px){
-				padding-top: 30px;
-				padding-bottom: 30px;
-			}
-			@media (max-width: 767px){
-				-webkit-box-ordinal-group:2;
-				-ms-flex-order:1;
-				order:1;
+			.sct_cmp_info{
+				background-color: $dark-color;
+				padding: 40px 20px;
+				position: relative;
+				z-index: 1;
+				
+				@media (min-width: 992px){
+					font-size: $title;
+					margin-right: -140px;
+				}
 			}
 			.sct_title {
 				color:$light-color;
 				font-weight: bold;
-				font-size: $subtitle;
+				font-size: $subtitle - 10;
 				margin-bottom: 15px;
-				@media (max-width: 1439px){
+				@media (min-width: 768px) {
 					font-size: $subtitle - 6;
 				}
-				@media (max-width: 767px){
-					font-size: $subtitle - 10;
+				@media (min-width: 992px) {
+					font-size: $subtitle;
+				}
+				@media (min-width: 1440px) {
+					font-size: $subtitle + 8;
 				}
 			}
 			.sct_simple_text {
@@ -10213,7 +10050,8 @@ body #wrapwrap{
 /*about snippet 2 end*/
 /*about snippet 3*/
 .about_us_v_4 {
-	background-color: $light-grey-color;
+	// background-color: $light-grey-color;
+	background-color: #f7f7f7;
 	padding: 60px 0;
 	@media (max-width: 1199px){
 		padding: 50px 0;
@@ -10234,22 +10072,24 @@ body #wrapwrap{
 			.navigation-tab {
 				.nav-tabs {
 					border: none;
-					background-color: $light-color;
-					-webkit-box-pack: justify;
-					-ms-flex-pack: justify;
-					justify-content: space-between;
+					justify-content: center;
+
 					.nav-item {
+						position: relative;
+						// margin: 0 13px;
 						.nav-link {
 							border:none;
-							border-radius: 0;
+							border-radius: 20px;
 							color: $dark-color;
 							font-size: $font-body;
 							padding: 10px 20px;
+							isolation: auto;
+							transition: all 0.3s ease-in;
 							@media (max-width: 1023px){
 								padding: 10px;
 							}
 							&.active{
-								background-color: $primary;
+								background-color: $dark-color;
 								color: $light-color;
 							}
 						}
@@ -10257,6 +10097,23 @@ body #wrapwrap{
 				}
 				.tab-content {
 					margin-top: 15px;
+					background-color: $dark-color;
+					border-radius: 30px;
+					padding: 50px;
+
+					.sct_base_class{
+						.sct_text_info{
+							color: $light-color;
+							font-size: $title;
+						}
+					}
+					.sct_cmp_img{
+						padding: 15px 0;
+
+						img{
+							border-radius: 14px;
+						}
+					}
 				}
 			}
 		}

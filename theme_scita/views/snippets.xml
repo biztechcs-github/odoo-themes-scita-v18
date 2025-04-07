@@ -1446,7 +1446,6 @@
 				
 				<!-- Case Study veriants -->
 				<t t-snippet="theme_scita.health_cash_study_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/helth_case.png"/>
-				<t t-snippet="theme_scita.case_study_varient_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Case_Study_Varient_1.png"/>
 				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Case_Study_Varient_2.png"/>
 				<!-- service veriants -->
 				<t t-snippet="theme_scita.it_grids_service" t-thumbnail="/theme_scita/static/src/img/snippet_icon/ser_grid.png"/>
@@ -1534,9 +1533,7 @@
 
 
 				<!-- About us -->
-				<t t-snippet="theme_scita.it_about_cmp" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us1.png"/>
 				<t t-snippet="theme_scita.health_about_hospital" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us2.png"/>
-				<t t-snippet="theme_scita.about_us_v_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_2.png"/>
 				<t t-snippet="theme_scita.about_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_3.png"/>
 				<t t-snippet="theme_scita.about_us_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_4.png"/>
 				<t t-snippet="theme_scita.about_us_v_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_5.png"/>
