@@ -1406,12 +1406,10 @@
 				<!-- <t t-snippet="theme_scita.html_builder_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/multi_product.png"/> -->
 
 				<!-- brand snippets -->
-				<t t-snippet="theme_scita.prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/it_brand.png"/>
 				<t t-snippet="theme_scita.brands_box_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Brands_4.png"/>
 				<t t-snippet="theme_scita.it_prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-brand.png"/>
 
 				<t t-snippet="theme_scita.fashion_static_brand_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_brand.png"/>
-				<t t-snippet="theme_scita.custom_scita_brand_custom_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
 				
 
 				<t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>

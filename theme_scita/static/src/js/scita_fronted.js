@@ -313,65 +313,6 @@ $(document).ready(function(){
             }
         }
     });
-    // // for brand slider 
-    animation.registry.prod_brands = animation.Class.extend({
-        selector: ".oe_brand_slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                $('.oe_brand_slider .owl-carousel').empty();
-                var $brand_snip = $('#wrapwrap').find('.oe_brand_slider .owl-carousel');
-                // $.each($brand_snip, function(single) {
-                $brand_snip.each(function(){
-                    $(this).empty();
-                });
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-brand-config-type');
-                rpc("/shop/get_brand_slider", {
-                    'slider-type': slider_type || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        var sct_rtl = false;
-                        if ($('#wrapwrap').hasClass('o_rtl')) {
-                            sct_rtl = true;
-                        }
-                        $(".oe_brand_slider").removeClass('o_hidden');
-                        $('.sct-brand-snip').owlCarousel({
-                            margin: 10,
-                            items:6,
-                            loop:false,
-                            rewind:true,
-                            autoplay:true,
-                            autoplayTimeout:4000,
-                            autoplayHoverPause:true,
-                            rtl: sct_rtl,
-                            responsive: {
-                                0: {
-                                    items: 2
-                                },
-                                480: {
-                                    items: 3
-                                },
-                                768: {
-                                    items: 4
-                                },
-                                1024: {
-                                    items: 6
-                                },
-                                1500: {
-                                    items: 6
-                                },
-                            },
-                        });
-                    }
-                });
-            }
-        }
-    });
     // // for box brand slider 
     animation.registry.brands_box_slider_4 = animation.Class.extend({
         selector: ".box_brand_slider",
@@ -1473,45 +1414,6 @@ $(document).ready(function(){
                         self.$target.empty();
                         self.$target.append(data);
                         $(".custom_oe_pro_cat_slider").removeClass('o_hidden');
-                    }
-                });
-            }
-        }
-    });
-    animation.registry.custom_scita_brand_custom_slider = animation.Class.extend({
-
-        selector: ".custom_scita_pro_brand_slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $brand_slider = $('#wrapwrap').find('.custom_scita_pro_brand_slider');
-                var brand_name = _t("Our Brands")
-                // $.each($brand_slider, function (single){
-                $brand_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                <div class="row our-brands">\
-                                                    <div class="col-md-12">\
-                                                        <div class="title-block">\
-                                                            <h4 class="section-title style1" id="snippet-title">\
-                                                                <span>'+ brand_name +'</span>\
-                                                            </h4>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>')
-                });
-
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-brand-config-type');
-                rpc("/theme_scita/custom_get_brand_slider", {
-                    'slider-type': slider_type || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".custom_scita_pro_brand_slider").removeClass('o_hidden');
                     }
                 });
             }
