@@ -1,66 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-     <template id="it_work_snippet" name="How it Works Snippet 7">
-        <section class="it_work_snippet s_tabs" style="background-image: url(/theme_scita/static/src/img/it/howwork-bg.png);" data-disp='how_it_works'>
-            <div class="container">
-                <div class='row s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title btm_seprator">How we work?</h2>
-                    </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class="col-md-6 sct_left_side">
-                        <div class="navigation-tab">
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane fade in active show" id="item1" role="tabpanel">
-                                    <h3 class='sct_blue_text'>Grids of various services</h3>
-                                    <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
-                                </div>
-                                <div class="tab-pane fade" id="item2" role="tabpanel">
-                                    <h3 class='sct_blue_text'>Lorem ipsum dolor sit amet</h3>
-                                    <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</p>
-                                </div>
-                                <div class="tab-pane fade" id="item3" role="tabpanel">
-                                    <h3 class='sct_blue_text'>Consectetur adipiscing elit</h3>
-                                    <p class='sct_simple_text'>Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
-                                </div>
-                                <div class="tab-pane fade" id="item4" role="tabpanel">
-                                    <h3 class='sct_blue_text'>Tempor incididunt ut labore</h3>
-                                    <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing eli</p>
-                                </div>
-                                <div class="tab-pane fade" id="item5" role="tabpanel">
-                                    <h3 class='sct_blue_text'>Labore et dolore magna aliqua</h3>
-                                    <p class='sct_simple_text'>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-                                </div>
-                            </div>
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#item1">1</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#item2">2</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#item3">3</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#item4">4</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#item5">5</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 sct_work_img">
-                        <img src="/web/image/theme_scita.sct_how_it_work_snippet_4" class="img img-fluid" alt="Home Work"/>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+    
     <!-- content_snippets_v_4 -->
     <template id="content_snippets_v_4" name="Content Snippet 1">
         <section class="content_snippets_v_4" data-disp="content_block">
@@ -110,8 +50,8 @@
         <section class="content_snippets_v_10 oe_img_bg" style="background-image: url(/theme_scita/static/src/img/it/content-banner.jpg);" data-disp="content_block">
             <div class='container'>
                 <div class="row sct_btm_row">                   
-                    <div class='col-md-4 sct_content_info'>
-                    	<div class='sct_content_box p-5 h-100 d-flex justify-content-center flex-column'>	
+                    <div class='col-md-8 col-lg-6 col-xl-4  sct_content_info'>
+                    	<div class='sct_content_box py-4 p-md-4 p-xxl-5 h-100 d-flex justify-content-center flex-column'>	
                         	<div class='sct_contect_into'>
                                 <div class="sct_icon mb-3"><i class="fa fa-gears p-3"></i></div>
 	                            <h4 class='sct_title'>Uncompromised sound with newly designed drivers</h4>
@@ -123,8 +63,8 @@
 	                        </div>
                     	</div>
                     </div>
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4"></div>
+                    <div class="col-md-2 col-lg-3 col-xl-4"></div>
+                    <div class="col-md-2 col-lg-3 col-xl-4"></div>
                 </div>
             </div>
         </section>
@@ -134,7 +74,7 @@
         <section class="content_snippets_v_11 s_faq_collapse" data-disp="content_block">
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-4 sct_content_info'>
+                    <div class='col-md-5 col-lg-4 sct_content_info'>
                         <div class='sct_content_box'>   
                             <div class='sct_contect_into'>
                                 <h2 class='sct_title'>Creator of quality design and thinker of fresh ideas.</h2>
@@ -143,8 +83,8 @@
                           
                         </div>
                     </div>
-                    <div class='col-md-8  sct_according_div'>
-                        <div class="sct_base_class">
+                    <div class='col-md-7  col-lg-8  sct_according_div'>
+                        <div class="sct_base_class ps-ps-md-3 ps-lg-5">
                             <div id="myContentCollapse" class="accordion" role="tablist">
                                 <div class="card bg-white" data-name="Item">
                                     <a href="#" role="tab" data-bs-toggle="collapse" aria-expanded="true" class="card-header">Does hudly work with car?</a>

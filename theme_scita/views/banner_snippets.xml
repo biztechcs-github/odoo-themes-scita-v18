@@ -136,7 +136,7 @@
                                             <p class="o_default_snippet_text title-20"><span class="o_default_snippet_text">Upgrade Your Ride</span></p>
                                         </div>
                                         <div class="sct_title ">
-                                            <h1 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h1>
+                                            <h2 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h2>
                                         </div>
                                         <a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn">Shop Now<span class="arrow"></span></a>
                                     </div>
@@ -159,7 +159,7 @@
                                             <p class="o_default_snippet_text title-20"><span class="o_default_snippet_text">Upgrade Your Ride</span></p>
                                         </div>
                                         <div class="sct_title ">
-                                            <h1 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h1>
+                                            <h2 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h2>
                                         </div>
                                         <a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn">Shop Now<span class="arrow"></span></a>
                                     </div>
@@ -211,8 +211,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6 col-lg-7 right-image p-0">
-                                    <div class="image">
-                                        <img src="/theme_scita/static/src/img/slider-banner-1.jpg" alt="Automobile parts" title="Automobile parts"/>
+                                    <div class="image" style="background-image:url('/theme_scita/static/src/img/slider-banner-1.jpg')">                                      
                                     </div>
                                 </div>
                             </div>
