@@ -711,7 +711,7 @@ class ScitaShop(WebsiteSale):
         '''/shop/category/<model("product.public.category"):category>''',
         '''/shop/category/<model("product.public.category"):category>/page/<int:page>''',
         '''/shop/brands'''
-    ], type='http', auth="public", website=True, sitemap=WebsiteSale.sitemap_shop)
+    ], type='http', auth="public", website=True, sitemap=WebsiteSale.sitemap_shop, csrf=False, save_session=False)
     def shop(self, page=0, category=None, search='', min_price=0.0, max_price=0.0, ppg=False, brands=None, **post):
         if request.env['website'].sudo().get_current_website().theme_id.name == 'theme_scita':
             add_qty = int(post.get('add_qty', 1))
@@ -748,6 +748,9 @@ class ScitaShop(WebsiteSale):
                 ppg = website.shop_ppg or 20
 
             ppr = website.shop_ppr or 4
+
+            gap = website.shop_gap or "16px"
+
             request_args = request.httprequest.args
             attrib_list = request_args.getlist('attrib')
             attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
@@ -898,7 +901,7 @@ class ScitaShop(WebsiteSale):
                 request.session['website_sale_shop_layout_mode'] = layout_mode
 
             fiscal_position_sudo = website.fiscal_position_id.sudo()
-            products_prices = lazy(lambda: products._get_sales_prices(pricelist,fiscal_position_sudo))
+            products_prices = lazy(lambda: products._get_sales_prices(website))
 
             prod_available = {}
             for prod in products:
@@ -922,17 +925,20 @@ class ScitaShop(WebsiteSale):
                 'attrib_values': attrib_values,
                 'attrib_set': attrib_set,
                 'pager': pager,
+                'products': products,
                 'pricelist': pricelist,
                 'fiscal_position': fiscal_position_sudo,
                 'add_qty': add_qty,
-                'products': products,
+                # 'search_product': search_product, ??
                 'search_count': product_count,  # common for all searchbox
                 'bins': lazy(lambda: TableCompute().process(products, ppg, ppr)),
                 'ppg': ppg,
                 'ppr': ppr,
+                # 'gap': gap, # new
                 'categories': categs,
                 'attributes': attributes,
                 'keep': keep,
+                'selected_attributes_hash': '', # new
                 'search_categories_ids': search_categories.ids,
                 'layout_mode': layout_mode,
                 'products_prices': products_prices,
