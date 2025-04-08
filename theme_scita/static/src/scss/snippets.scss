@@ -4559,9 +4559,16 @@ body #wrapwrap{
 		padding: 40px 0 20px;
 	}
 	.sct_btm_row {
-		margin-top: 30px;
+		margin-top: 20px;
 		@media (max-width: 1439px){
-			margin-top: 20px;
+			margin-top: 10px;
+		}
+		.btm_seprator{
+			padding-bottom: 0;
+
+			&::after{
+				display: none;
+			}
 		}
 		.card {
 			background: transparent;
@@ -4571,38 +4578,44 @@ body #wrapwrap{
 			background: transparent;
 			border: none;
 			border-radius: 0;
-			border-bottom: 1px dashed $dark-color;
 			padding: 0;
-			margin-bottom: 50px;
+			margin-bottom: 30px;
 			@media (max-width: 1439px){
-				margin-bottom: 40px;
+				margin-bottom: 20px;
 			}
 			.nav {
 				-webkit-box-pack: center;
 				-ms-flex-pack: center;
 				justify-content: center;
 				margin: 0;
+				border-bottom: 1px solid rgba($dark-grey-color, 0.2);
+				padding: 0 30px;
+
 				.nav-item {
+					padding-top: 11px;
+					
 					.nav-link {
 						background: transparent;
 						border: none;
 						font-size: $title + 2;
 						font-weight: bold;
-						color: $dark-color;
+						color: rgba($dark-color, 0.4);
 						padding: 0 20px 20px;
 						position: relative;
+
 						&:after {
 							width:0;
 							position:absolute;
 							content: '';
 							height: 4px;
 							bottom: 0;
-							background: $dark-color;
+							background: $primary;
 							left: 0;
 							right: 0;
 							@include transition(all, 0.5s, ease);
 						}
 						&:hover, &.active{
+							color: $primary;
 							&:after{
 								@include transition(all, 0.5s, ease);
 								width: 100%;
@@ -10187,6 +10200,10 @@ body #wrapwrap{
 	}
 	.sct_timeline_img {
 		margin-bottom: 30px;
+		
+		.row{
+			height: 100%;
+		}
 	}
 	.sct_img_box{
 		height: 100%;

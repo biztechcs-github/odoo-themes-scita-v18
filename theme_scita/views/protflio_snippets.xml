@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="it_portfolio_tabs_snippets" name="Portfolio Snippet 3">
-        <section class="it_portfolio_tabs s_tabs" style="background-image: url('/web/image/theme_scita.sct_protflio_snippet_1_image_1');" data-disp="portfolio">
+        <section class="it_portfolio_tabs s_tabs" data-disp="portfolio">
             <div class="container">
                 <div class='row s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title btm_seprator">Our Latest Projects</h2>
+                    <div class="col-md-12 text-center">
+                        <h2 class="section-title">Our Latest Projects</h2>
                     </div>
                 </div>
                 <div class="row s_nb_column_fixed sct_btm_row">
@@ -169,32 +169,32 @@
                                     <div class='row sct_serv_row_1'>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_1.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_2.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_3.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_4.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_5.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_6.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     </div>
@@ -203,32 +203,32 @@
                                     <div class='row sct_serv_row_1'>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_1.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_2.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_3.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_4.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_5.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_6.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     </div>
@@ -237,32 +237,32 @@
                                     <div class='row sct_serv_row_1'>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_1.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_2.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_3.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_4.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_5.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_6.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     </div>
@@ -271,32 +271,32 @@
                                     <div class='row sct_serv_row_1'>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_1.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_2.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_3.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     	<div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_4.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_5.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                         <div class='col-md-4 col-sm-6 sct_timeline_img'>
                                             <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                                                <img src="/theme_scita/static/src/img/electronics/electronics_6.jpg" class="img img-fluid" alt='web icon'/>
                                             </div>
                                         </div>
                                     </div>
@@ -327,44 +327,44 @@
                     </div>
                 </div>
                 <div class='row s_nb_column_fixed sct_img_row_1'>
-                	<div class='col-md-3 col-sm-6 sct_timeline_img'>
+                	<div class='col-md-6 sct_timeline_img'>
                         <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                            <img src="/theme_scita/static/src/img/furnature/furniture_portfolio_1.jpg" class="img img-fluid rounded-4" alt='web icon'/>
                         </div>
                     </div>
-                    <div class='col-md-3 col-sm-6 sct_timeline_img'>
-                        <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                    <div class='col-md-6 sct_timeline_img mb-0'>
+                        <div class="row">
+                            <div class='col-md-6 sct_timeline_img'>
+                                <div class='sct_img_box'>
+                                    <img src="/theme_scita/static/src/img/furnature/furniture_portfolio_2.jpg" class="img img-fluid rounded-4" alt='web icon'/>
+                                </div>
+                            </div>
+                            <div class='col-md-6 sct_timeline_img'>
+                                <div class='sct_img_box'>
+                                    <img src="/theme_scita/static/src/img/furnature/furniture_portfolio_3.jpg" class="img img-fluid rounded-4" alt='web icon'/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class='col-md-3 col-sm-6 sct_timeline_img'>
-                        <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                </div>
+                <div class='row s_nb_column_fixed sct_img_row_1'>
+                    <div class='col-md-6 sct_timeline_img mb-0'>
+                        <div class="row">
+                            <div class='col-md-6 sct_timeline_img'>
+                                <div class='sct_img_box'>
+                                    <img src="/theme_scita/static/src/img/furnature/furniture_portfolio_4.jpg" class="img img-fluid rounded-4" alt='web icon'/>
+                                </div>
+                            </div>
+                            <div class='col-md-6 sct_timeline_img'>
+                                <div class='sct_img_box'>
+                                    <img src="/theme_scita/static/src/img/furnature/furniture_portfolio_5.jpg" class="img img-fluid rounded-4" alt='web icon'/>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class='col-md-3 col-sm-6 sct_timeline_img'>
+                    <div class='col-md-6 col-sm-6 sct_timeline_img'>
                         <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                        </div>
-                    </div>
-                	<div class='col-md-3 col-sm-6 sct_timeline_img'>
-                        <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                        </div>
-                    </div>
-                    <div class='col-md-3 col-sm-6 sct_timeline_img'>
-                        <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                        </div>
-                    </div>
-                    <div class='col-md-3 col-sm-6 sct_timeline_img'>
-                        <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                        </div>
-                    </div>
-                    <div class='col-md-3 col-sm-6 sct_timeline_img'>
-                        <div class='sct_img_box'>
-                            <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
+                            <img src="/theme_scita/static/src/img/furnature/furniture_portfolio_6.jpg" class="img img-fluid rounded-4" alt='web icon'/>
                         </div>
                     </div>
                 </div>
