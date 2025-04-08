@@ -159,7 +159,6 @@ body #wrapwrap{
 						margin-top:20px;
 						margin-bottom:40px;
 						font-size: 40px;
-						padding: 0 20px;
 					}
 				}
 				.banner-sub-title{
@@ -492,22 +491,19 @@ body #wrapwrap{
             @include min768{
                 text-align: left;
                 order:unset;
-				// padding-left: 50px;
             }
-			// @include min1600 {
-			// 	padding-left: 15px;
-			// }
+			
 			.banner-content{
-				padding: 20px;
+				padding: 30px 0;
 				text-align: left;
 				@include min768{
-					padding: 30px 20px;
+					padding: 80px 20px;
 				}
 				@include min1200{
-					padding: 50px 30px;
+					padding: 100px 30px;
 				}
 				@include min1440{
-					padding: 50px 75px;
+					padding: 150px 75px;
 				}
 			}
             .section-title-big{
@@ -580,16 +576,12 @@ body #wrapwrap{
                 order: unset;
             }
             .image{
-                text-align: center;
 				height: 100%;
-                @include min1600{
-                    text-align: left;
-                }
-				img{
-					height: 100%;
-					width: 100%;
-					object-fit: cover;
-				
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				@media(max-width: 767px){
+					min-height: 350px;
 				}
             }
         }
@@ -3775,12 +3767,6 @@ body #wrapwrap{
     		max-width: unset;
 		}
 	}
-	.btm_seprator {
-		text-align: left;
-		&:after{
-			right:auto;
-		}
-	}
 	.sct_simple_text {
 		font-size: $font-body + 1;
 		margin: 15px 0 0;
@@ -3800,107 +3786,6 @@ body #wrapwrap{
 }
 /*it lets talk snippet end*/
 
-/*it lets talk snippet*/
-.it_work_snippet {
-	@include bg-nore-cover;
-	padding: 55px 0 65px;
-	@media (max-width: 1599px){
-		padding: 50px 0 60px;
-	}
-	@media (max-width: 1023px){
-		padding: 40px 0 50px;
-	}
-	.sct_top_row {
-		margin-bottom: 40px;
-		@media (max-width: 1600px){
-			margin-bottom: 30px;
-		}
-	}
-	.sct_btm_row {
-		padding: 0 6%;
-		@media (max-width: 1023px) {
-			padding: 0 5%;
-		}
-		@media (max-width: 767px) {
-			padding: 0 50px;
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: reverse;
-			-ms-flex-direction: column-reverse;
-			flex-direction: column-reverse;
-		}
-		.sct_left_side {
-			@include flex;
-			@include align-content;
-			.navigation-tab {
-				ul.nav-tabs {
-					border: none;
-					margin-top: 70px;
-					list-style-type: none;
-					@media (max-width: 1023px) {
-						margin-top: 50px;
-					}
-					@media (max-width: 767px) {
-						margin-top: 30px;
-					}
-					.nav-item {
-						.nav-link {
-							font-size: $title + 4;
-							font-weight: bold;
-							color: $dark-color;
-							background: $light-color;
-							border-radius: 50%;
-							width: 41px;
-							height: 41px;
-							border: none;
-							padding: 0;
-							-webkit-box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
-							-moz-box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
-							box-shadow: 0px 4px 15px 0px rgba(0,0,0,0.2);
-							@include flex;
-							@include justify-align-content;
-							@media (max-width: 410px){
-								width: 35px;
-								max-height: 35px;
-								font-size: $title;
-							}
-							&:hover, &.active {
-								color:$light-color;
-								background: -webkit-gradient(linear, left top, left bottom, from(#49c8d7), to(#6877c8));
-								background: -webkit-linear-gradient(#49c8d7, #6877c8);
-								background: -o-linear-gradient(#49c8d7, #6877c8);
-								background: linear-gradient(#49c8d7, #6877c8);
-							}
-						}
-						+ .nav-item {
-							.nav-link {
-								margin-left: 22px;
-								@media (max-width: 1023px) {
-									margin-left: 15px;
-								}
-								@media (max-width: 410px){
-									margin-left:10px;
-								}
-							}
-						}
-					}
-				}
-			}	
-		}
-		.sct_simple_text {
-			font-size: $font-body + 1;
-			@media (max-width: 1439px) {
-				font-size: $font-body;
-			}
-		}
-		.sct_work_img {
-			text-align: right;
-			@media (max-width: 767px) {
-				margin-bottom: 30px;
-			}
-		}
-	}
-}
-/*it lets talk snippet end*/
 /*it techno expert snippet*/
 .it_skills_snippet {
 	padding: 70px 0 40px;
@@ -5495,12 +5380,32 @@ body #wrapwrap{
 		}
 	}
 	.sct_btm_row {
+		.sct_contact_info{
+			height: 100%;
+			box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+			border-radius: 5px;
+			padding: 30px;
+			background-color: $light-color;
+			@media(max-width: 991px){
+				padding: 25px;
+			}
+			.sct_contact_heading{
+				margin-bottom: 15px;
+				padding-bottom: 15px;
+				border-bottom: 1px solid $light-grey-color;
+				img{
+					height: 25px;
+					width: auto;
+					margin-right: 15px;
+				}
+			}
+		}
 		.sct_title {
 			font-size: $font-body + 1;
 			font-weight: bold;
 			color: $dark-color;
-			margin-bottom: 15px;
 			line-height: normal;
+			margin-bottom: 0;
 		}
 		.sct_simple_text {
 			color: fade-out($dark-color, 0.5);
@@ -5514,13 +5419,24 @@ body #wrapwrap{
 					}
 				}
 			}
+			.phone{
+				color: $black;
+				font-weight: 600;
+				margin-top: auto;
+				padding-top: 20px;
+				a{
+					color: $black;
+				}
+			}
+			.email{
+				a{
+					color: $primary;
+				}
+			}
 		}
 		.sct_loc_info {
 			@media (max-width: 991px){
 				margin-bottom: 30px;
-			}
-			@media (max-width: 575px){
-				text-align:center;
 			}
 		}
 	}
@@ -7396,119 +7312,7 @@ body #wrapwrap{
 	}
 }
 /*service snippet 12 end*/
-/*pricing snippet 1*/
-.pricing_table_v1 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1023px){
-		padding: 50px 0 20px;
-	}
-	.sct_top_row {
-		text-align: center;
-		margin-bottom: 40px;
-		.sct_simple_text {
-			margin-bottom: 0;
-		}
-	}
-	.sct_btm_row {
-		.sct_pri_thumb {
-			.package {
-				border: 1px solid $light-grey-color;
-				-webkit-box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.2);
-				box-shadow: 1px 1px 10px -2px rgba(0,0,0,0.2);
-				padding: 30px 0;
-				&:hover{
-					border-color:$primary;
-				}
-				@media (max-width: 1023px){
-					margin-bottom:30px;
-				}
-				.sct_price_type_div {
-					text-align: center;
-					padding: 0 20px;
-					.sct_price_type {
-						font-size: $title - 2;
-						font-weight: bold;
-						margin-bottom: 10px;
-						display: block;
-					}
-					.sct_simple_text {
-						padding-bottom: 15px;
-						margin-bottom: 10px;
-						position: relative;
-						&:after{
-							position:absolute;
-							content: '';
-							width: 45px;
-							height: 1px;
-							background-color: $primary;
-							left: 0;
-							right: 0;
-							margin: auto;
-							bottom: 0;
-						}
-					}
-				}
-				.sct_price_mon_div {
-					text-align: center;
-					padding: 0 20px;
-					.sct_per_month {
-						margin-bottom: 20px;
-						.sct_dollar {
-							display: inline-block;
-							vertical-align: text-top;
-						}
-						.sct_rs {
-							display: inline-block;
-							vertical-align: middle;
-							font-size: $subtitle + 10;
-							line-height: normal;
-						}
-						.sct_dev_mon {
-							display: block;
-						}
-					}
-				}
-				.sct_unorder_list {
-					border-top: 1px solid $light-grey-color;
-					padding: 20px;
-					list-style-type: none;
-					li {
-						position: relative;
-						font-size: $font-body;
-						padding-left: 15px;
-						&:before {
-							position:absolute;
-							content: '\f111';
-							font-family: 'FontAwesome';
-							font-size: 5px;
-							left: 0;
-							top: 8px;
-							color: $primary;
-						}
-						+ li {
-							margin-top: 10px;
-						}
-					}
-				}
-				.sct_cst_btn {
-					text-align: center;
-					.btn {
-						&:hover, &:focus, &:active {
-							color: $light-color;
-						}
-						.fa {
-							margin-left: 10px;
-						}
-					}
-				}
-			}
-		}
-	}
-}
-/*pricing snippet 1 end*/
+
 /*pricing snippet 2*/
 .pricing_table_v2 {
 	padding: 60px 0;
@@ -7694,160 +7498,7 @@ body #wrapwrap{
 	}
 }
 /*pricing snippet 2 end*/
-/*pricing snippet 3*/
-.pricing_table_v3 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1023px){
-		padding: 50px 0 20px;
-	}
-	.sct_top_row {
-		text-align: center;
-		margin-bottom: 40px;
-		.section-title {
-			margin-bottom: 0;
-		}
-	}
-	.sct_btm_row {
-		-webkit-box-pack: center;
-		-ms-flex-pack: center;
-		justify-content: center;
-		.sct_pri_thumb {
-			@media (max-width: 1023px){
-				margin-bottom: 30px;
-			}
-		}
-		.package {
-			border: 1px solid $light-grey-color;
-			border-radius: 5px;
-			padding: 50px;
-			text-align: center;
-			position: relative;
-			overflow: hidden;
-			@media (max-width: 1439px){
-				padding: 50px 20px;
-			}
-			.sct_label_blue {
-				position: absolute;
-				color: $primary;
-				font-size: $font-body;
-				font-weight: bold;
-				top: 25px;
-				left: 0;
-				right: 0;
-				margin: auto;
-			}
-			.sct_price_type_div {
-				.sct_price_type {
-					font-size: $title;
-					color: fade-out($dark-color, 0.8);
-				}
-			}
-			.sct_price_mon_div {
-				padding-bottom: 30px;
-				margin-bottom: 30px;
-				position: relative;
-				&:after{
-					position:absolute;
-					content: '';
-					width: 160px;
-					height: 1px;
-					border-bottom: 1px dashed $light-grey-color;
-					bottom: 0;
-					left: 0;
-					right: 0;
-					margin: auto;
-				}
-				.sct_per_month {
-					margin-bottom: 0;
-					.sct_dollar {
-						color: $light-grey-color;
-						font-size: $subtitle + 10;
-						line-height: normal;
-					}
-					.sct_rs {
-						font-size: 58px;
-						color: $dark-color;
-						line-height: normal;
-					}
-					.sct_dev_mon {
-						display: block;
-						font-size: $title - 2;
-						padding-top: 5px;
-						color: fade-out($dark-color, 0.5);
-					}
-				}
-			}
-			.sct_unorder_list {
-				list-style-type: none;
-				li {
-					font-size: $font-body;
-					color: fade-out($dark-color, 0.4);
-					+ li {
-						margin-top: 10px;
-					}
-				}
-			}
-			.sct_cst_btn {
-				margin-top: 30px;
-			}
-		}
-		.price_active {
-			.package {
-				&:before{
-					width:100%;
-					height: 4px;
-					background:$primary;
-					position: absolute;
-					content: '';
-					top: 0;
-					left: 0;
-					right: 0;
-					margin: auto;
-				}
-				.sct_cst_btn {
-					.btn {
-						background:$primary;
-						color: $light-color;
-						box-shadow: none;
-						border: 1px solid transparent;
-					}
-				}
-			}
-		}
-		.sct_price_info {
-			margin-top: 35px;
-			.sct_simple_text {
-				font-style: italic;
-				color: fade-out($dark-color, 0.5);
-			}
-			.sct_unorder_list {
-				list-style-type: none;
-				li {
-					font-size: $font-body;
-					position: relative;
-					padding-left: 25px;
-					color: fade-out($dark-color, 0.5);
-					&:before{
-						position:absolute;
-						content: '\f00c';
-						font-family: 'FontAwesome';
-						font-size: 15px;
-						left: 0;
-						top: 0;
-						color: $primary;
-					}
-					+ li {
-						margin-top: 10px;
-					}
-				}
-			}
-		}
-	}
-}
-/*pricing snippet 3 end*/
+
 /*pricing snippet 4*/
 .pricing_table_v4 {
 	padding: 60px 0;
@@ -8193,34 +7844,7 @@ body #wrapwrap{
 	}
 }
 // s_banner end
-/*lets talk snippet 1*/
-.letstalk_v2 {
-	padding: 140px 0;
-	text-align: center;
-	color: $light-color;
-	background-attachment: fixed;
-	@media (max-width: 1199px){
-		padding: 100px 0;
-	}
-	@media (max-width: 1023px){
-		padding: 70px 0;
-	}
-	@media (max-width: 767px){
-		padding: 50px 0;
-	}
-	.sct_title_div {
-		margin-bottom: 40px;
-		.section-title {
-			color: $light-color;
-			margin-bottom: 30px;
-		}
-		.sct_simple_text {
-			max-width: 550px;
-			margin: auto;
-		}
-	}
-}
-/*lets talk snippet 1 end*/
+
 /*newsletter snippet 2*/
 .newsletter_varient_5 {
 	.sct_btm_row {
@@ -8716,140 +8340,65 @@ body #wrapwrap{
 /*our team snippet 6 end*/
 /*contact snippet 1*/
 .contact_us_v_1 {
-	background-color: $dark-color;
 	padding: 60px 0;
 	@media (max-width: 1199px){
 		padding: 50px 0;
 	}
 	.sct_base_class {
 		margin: 10px 0;
+		text-align: center;
+		@media (max-width: 767px){
+			margin: 0;
+		}
 		+ .sct_base_class {
-			@media (max-width: 575px){
-				margin-top: 20px;
+			@media (max-width: 767px){
+				margin-top: 30px;
+				padding-top: 30px;
+				border-top: 1px solid rgba($primary, 0.3);
+			
+			}
+			@include min768{
+				border-left: 1px solid rgba($primary, 0.3);
 			}
 		}
 		.sct-left-side {
-			display: inline-block;
-			vertical-align: middle;
-			max-width: 80px;
-			@media (max-width: 575px){
-				width: 30px;
-			}
+			@include flex;
+			@include justify-align-content;
 			.fa {
-				font-size: 28px;
+				font-size: 40px;
 				color: $primary;
-			}
-		}
-		.sct-right-side {
-			display: inline-block;
-			vertical-align: middle;
-			max-width: 85%;
-			padding-left: 20px;
-			@media (max-width: 1023px){
-				max-width: 80%;
-			}
-			.sct_title {
-				margin-bottom: 10px;
-				font-weight: bold;
-				font-size: $title;
-				color: $light-color;
-				word-break: break-all;
-				word-wrap: break-word;
-				a {
-					color: $light-color; 
+				margin-right: 15px;
+				@media (max-width: 991px){
+					font-size: 30px;
 				}
 			}
-			.sct_simple_text {
+			
+			.sct_title {
 				margin-bottom: 0;
-				color: fade-out($light-color, 0.5);
+				font-weight: bold;
+				font-size: $title + 6;
+				word-break: break-all;
+				word-wrap: break-word;
+				@media (max-width: 991px){
+					font-size: $title + 4;
+				}
+				
+			}
+		}
+		.sct-right-side {			
+			.sct_simple_text {
+				margin-bottom: 0;		
+				margin-top: 10px;	
+				color: $dark-grey-color; 
+				a {
+					color: $dark-grey-color; 
+				}
 			}
 		}
 	}
 }
 /*contact snippet 1 end*/
-/*contact snippet 2*/
-.contact_us_v_2 {
-	text-align: center;
-	padding: 80px 0;
-	@media (max-width: 1439px){
-		padding: 60px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
-	.sct_title {
-		margin-bottom: 20px;
-		color: $light-color;
-		font-weight: bold;
-		@media (max-width: 1200px){
-			font-size: calc(1.278125rem + 0.3375vw);
-		}
-	}
-	.sct_simple_text {
-		color: $light-color;
-		margin-bottom: 25px;
-	}
-	.sct_cst_btn{
-		.btn-primary{
-			background-color: $light-color;
-		}
-	}
-}
-/*contact snippet 2 end*/
-/*contact snippet 3*/
-.contact_us_v_4 {
-	background-color: $light-grey-color;
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
-	.sct_base_class {
-		@include flex;
-		@include flexwrap;
-		@include justify-align-content;
-		@media (max-width: 767px){
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			-ms-flex-direction: column;
-			flex-direction: column;
-		}
-		.sct_contect_img {
-			.fa {
-				font-size: 48px;
-				color: $primary;
-				font-weight: normal;
-				@media (max-width: 767px){
-					font-size: 38px;
-				}
-			}
-		}
-		.sct_contect_into {
-			width: 680px;
-			padding-left: 50px;
-			padding-right: 30px;
-			@media (max-width: 1023px){
-				width: 500px;
-			}
-			@media (max-width: 767px){
-				width:100%;
-				text-align:center;
-				margin: 20px 0;
-				padding:0;
-			}
-			.sct_title {
-				margin-bottom: 0;
-				font-size: $title + 10;
-				@media (max-width: 1023px){
-					font-size: $title + 6;
-				}
-				@media (max-width: 767px){
-					font-size: $title + 2;
-				}
-			}
-		}
-	}
-}
-/*contact snippet 3 end*/
+
 /*contact snippet 4*/
 .contact_us_v_3 {
 	padding: 60px 0;
@@ -9001,89 +8550,7 @@ body #wrapwrap{
 	}
 }
 /*how it work snippet 1 end*/
-/*how it work snippet 2*/
-.how_it_work_v_2 {
-	padding: 60px 0 25px;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
-	.sct_top_row {
-		margin-bottom: 40px;
-		@media (max-width: 1023px){
-			margin-bottom: 30px;
-		}
-		.section-title {
-			color: $light-color;
-		}
-		.sct_simple_text {
-			margin-bottom: 0;
-			color: $light-color;
-		}
-	}
-	.sct_btm_row {
-		.sct_content_div {
-			margin-bottom: 35px;
 
-			@media (max-width: 767px){
-				margin-bottom: 0;
-			}
-
-			+ .sct_content_div {
-				@media (max-width: 767px){
-					margin-top: 30px;
-				}
-			}
-			.sct_work_box {
-				.sct_base_class {
-					margin-bottom: 25px;
-					@include flex;
-					@include flexwrap;
-					@include align-content;
-					.sct_left_side {
-						width: 60px;
-						height: 60px;
-						@include flex;
-						@include justify-align-content;
-						background-color: $primary;
-						border-radius: 5px;
-						@media (max-width: 1199px){
-							width: 50px;
-							height: 50px;
-						}
-						.sct_red_back {
-							color: $light-color;
-							font-weight: bold;
-							margin-bottom: 0;
-						}
-					}
-					.sct_right_side {
-						width: 85%;
-						padding-left: 25px;
-						@media (max-width: 1439px){
-							width: 80%;
-						}
-						@media (max-width: 1199px){
-							width: 75%;
-						}
-						.sct_work_title {
-							margin-bottom: 0;
-							font-weight: bold;
-							font-size: $title;
-							color: $light-color;
-						}
-					}
-				}
-				.sct_work_info {
-					.sct_simple_text {
-						margin-bottom: 0;
-						color: $light-color;
-					}
-				}
-			}
-		}
-	}
-}
-/*how it work snippet 2 end*/
 /*how it work snippet 3*/
 .how_it_work_v_3 {	
 	text-align: center;
@@ -9336,85 +8803,7 @@ body #wrapwrap{
 	}
 }
 /*how it work snippet 5 end*/
-/*how it work snippet 6*/
-.how_it_work_v_6 {
-	background: $primary;
-	padding: 60px 0 30px;
-	@media (max-width: 1439px){
-		padding: 50px 0 20px;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0 10px;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0 0;
-	}
-	.sct_top_row {
-		text-align: center;
-		margin-bottom: 40px;
-		@media (max-width: 767px){
-			margin-bottom: 30px;
-		}
-		.section-title {
-			margin-bottom: 0;
-			color: $light-color;
-		}
-	}
-	.sct_btm_row {
-		text-align: center;
-		.sct_content_div {
-			position: relative;
-			margin-bottom: 35px;
 
-			@media (max-width: 767px){
-				margin-bottom: 0;
-			}
-			
-			.sct_work_box {
-				.fa {
-					font-size: 38px;
-					color: $light-color;
-					font-weight: normal;
-					@media (max-width: 767px){
-						font-size: 28px;
-					}
-				}
-				.sct_work_title {
-					font-weight: bold;
-					color: $light-color;
-					font-size: $title;
-					margin: 10px 0;
-				}
-				.sct_simple_text {
-					color: $light-color;
-					margin-bottom: 0;
-				}
-			}
-			+ .sct_content_div {
-				@media (max-width: 767px){
-					margin-top: 20px;
-					padding-top: 45px;		
-				}
-				&:before{
-					position:absolute;
-					content: '\f054';
-					font-family: "FontAwesome";
-					font-size: 18px;
-					color: fade-out($light-color, 0.7);
-					top: 10px;
-					left: 0;
-					@media (max-width: 767px){
-						top: 0;
-						right: 0;
-						left: 0;
-						content: '\f078';
-					}
-				}
-			}
-		}
-	}
-}
-/*how it work snippet 6 end*/
 /*about snippet 1*/
 .about_us_v_2 {
 	padding: 60px 0;
@@ -10379,14 +9768,15 @@ body #wrapwrap{
 /*content snippet 5*/
 .content_snippets_v_10 {
 	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	@media (max-width: 767px){
+		padding:  0;
 	}
 	.sct_content_info {
 		background-color: $light-color;
 		box-shadow: 0px 0px 10px 0px rgba($black,0.5);
-		@media (max-width: 767px){
-			margin-top: 30px;
+		@media (max-width: 767px){			
+			box-shadow: none;
+			background-color: rgba($light-color, 0.7);
 		}
 		.sct_title {
 			font-weight: 500;
@@ -10433,17 +9823,17 @@ body #wrapwrap{
 				margin: 0;
 				border-bottom: 0;
 				margin-bottom: 15px;
-				background-color: $light-grey-color !important;
+				background-color: rgba($primary, 0.1) !important;
 				border-radius: 30px;
 				border: 0;
-				box-shadow: 0px 0px 4px 0px rgba($black, 0.3);
+				box-shadow: 0px 0px 4px 0px rgba($primary, 0.3);
 				a {
-					padding: 15px 30px;
+					padding: 12px 20px;
 					padding-right: 45px;
 					position: relative;
 					font-weight: 600;
 					color: $dark-color;
-					font-size: $font-body + 1;
+					font-size: $font-body;
 					background-color: transparent;
 					&:before{
 						position:absolute;
@@ -10455,6 +9845,11 @@ body #wrapwrap{
 						bottom: 0;
 						@include flex;
 						@include align-content;
+					}
+					@include min1200{
+						padding: 15px 30px;
+						padding-right: 45px;
+						font-size: $font-body + 1;
 					}
 				}
 				.card-header {
@@ -10473,24 +9868,15 @@ body #wrapwrap{
 					border-radius: 0;
 					padding: 0 30px 15px;
 					.sct_unorder_list {
-						list-style-type: none;
 						li {
 							font-size: $font-body;
-							position: relative;
-							padding-left: 20px;
-							&:before{
-								position:absolute;
-								content: '\f10c';
-								font-family: "FontAwesome";
-								left: 0;
-								top: 4px;
-								font-size: 10px;
-								color: $primary;
-							}
 							+ li {
 								margin-top: 10px;
 							}
 						}
+					}
+					ul, ol{
+						padding-left: 20px;
 					}
 				}
 			}
