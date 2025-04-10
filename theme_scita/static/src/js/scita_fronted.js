@@ -143,85 +143,6 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.scita_multi_cat_custom_snippet = animation.Class.extend({
-        selector: ".oe_multi_category_slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $multi_cat_slider = $('#wrapwrap').find('.oe_multi_category_slider');
-                var multi_cat_name = _t("Multi Product Slider")
-                $multi_cat_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                <div class="row our-categories">\
-                                                    <div class="col-md-12">\
-                                                        <div class="title-block">\
-                                                            <h4 id="snippet-title" class="section-title style1"><span>'+ multi_cat_name+'</span></h4>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>')
-                });
-
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                rpc("/retial/product_multi_get_dynamic_slider", {
-                    'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".oe_multi_category_slider").removeClass('hidden');
-                        var sct_rtl = false;
-                        if ($('#wrapwrap').hasClass('o_rtl')) {
-                            sct_rtl = true;
-                        }
-                        rpc('/theme_scita/product_multi_image_effect_config', {
-                            'slider_type': slider_type
-                        }).then(function(res) {
-                            $('div.retail_featured_product_1 .owl-carousel').owlCarousel({
-                                loop:false,
-                                autoplay: res.auto_rotate,
-                                autoplayTimeout:res.auto_play_time,
-                                autoplayHoverPause:true,
-                                margin:30,
-                                nav:false,
-                                rewind:true,
-                                items: 4,
-                                rtl: sct_rtl,
-                                responsive: {
-                                    0: {
-                                        items: 1,
-                                    },
-                                    420: {
-                                        items: 2,
-                                    },
-                                    767: {
-                                        items: 3,
-                                    },
-                                    1000: {
-                                        items: 4,
-                                    },
-                                
-                                },
-                            });
-                            $(document).ajaxComplete(function() {
-                                setTimeout(function(){
-                                    var divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a').width();
-                                    if (divWidth == 0) {
-                                        divWidth = $('.retail_featured_product_1 .cs-product .pwp-img a:visible').width();
-                                    }
-                                    $('.retail_featured_product_1 .cs-product .pwp-img a').height(divWidth);
-                                },100);
-                            });
-                        });
-
-                    }
-                });
-            }
-        }
-    });
     animation.registry.fashion_multi_cat_custom_snippet = animation.Class.extend({
         selector: ".fashion_multi_category_slider",
         disabledInEditableMode: false,
@@ -465,6 +386,7 @@ $(document).ready(function(){
             }
         }
     });
+    // for blog snippets/sliders
     animation.registry.theme_scita_blog_custom_snippet = animation.Class.extend({
         selector: ".scita_blog_slider",
         disabledInEditableMode: false,
@@ -493,36 +415,6 @@ $(document).ready(function(){
                         self.$target.empty();
                         self.$target.append(data);
                         $(".scita_blog_slider").removeClass('o_hidden');
-                    }
-                });
-            }
-        }
-    });
-    animation.registry.health_blog_custom_snippet = animation.Class.extend({
-        selector: ".health_blog_slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $blog_snip = $('#wrapwrap').find('#health_custom_blog_snippet');
-                var blog_name = _t("Blog Slider")
-                $blog_snip.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + blog_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-blog-slider-type');
-                rpc("/theme_scita/health_blog_get_dynamic_slider",{
-                    'slider-type': self.$target.attr('data-blog-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".health_blog_slider").removeClass('o_hidden');
                     }
                 });
             }
@@ -595,67 +487,6 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.blog_3_custom_snippet = animation.Class.extend({
-        selector: ".blog_3_custom",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $blog_snip = $('#wrapwrap').find('#blog_custom_3_snippet');
-                var blog_name = _t("Blog Slider")
-                $blog_snip.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + blog_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-blog-slider-type');
-                rpc("/theme_scita/third_blog_get_dynamic_slider", {
-                    'slider-type': self.$target.attr('data-blog-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        var sct_rtl = false;
-                        if ($('#wrapwrap').hasClass('o_rtl')) {
-                            sct_rtl = true;
-                        }
-                        $(".blog_3_custom").removeClass('o_hidden');
-                        rpc('/theme_scita/blog_image_effect_config', {
-                            'slider_type': slider_type
-                        }).then(function(res) {
-                            $('#blog_3_owl_carosel').owlCarousel({
-                                margin: 40,
-                                items: 3,
-                                loop: false,
-                                autoplay: res.auto_rotate,
-                                autoplayTimeout:res.auto_play_time,
-                                autoplayHoverPause:true,
-                                nav: false,
-                                dots:false,
-                                rewind:true,
-                                rtl: sct_rtl,
-                                responsive: {
-                                    0: {
-                                        items: 1,
-                                    },
-                                    576: {
-                                        items: 2,
-                                    },
-                                    1000: {
-                                        items: 3,
-                                    }
-                                },
-                            });
-                        });
-                    }
-                });
-            }
-        }
-    });
     animation.registry.blog_4_custom_snippet = animation.Class.extend({
         selector: ".blog_4_custom",
         disabledInEditableMode: false,
@@ -675,36 +506,6 @@ $(document).ready(function(){
             if (!this.editableMode) {
                 var slider_type = self.$target.attr('data-blog-slider-type');
                 rpc("/theme_scita/forth_blog_get_dynamic_slider", {
-                    'slider-type': self.$target.attr('data-blog-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".blog_4_custom").removeClass('o_hidden');
-                    }
-                });
-            }
-        }
-    });
-    animation.registry.blog_6_custom_snippet = animation.Class.extend({
-        selector: ".blog_6_custom",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $blog_snip = $('#wrapwrap').find('#blog_custom_6_snippet');
-                var blog_name = _t("Blog Slider")
-                $blog_snip.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + blog_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-blog-slider-type');
-                rpc("/theme_scita/six_blog_get_dynamic_slider", {
                     'slider-type': self.$target.attr('data-blog-slider-type') || '',
                 }).then(function(data) {
                     if (data) {
@@ -777,150 +578,8 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.blog_8_custom_snippet = animation.Class.extend({
-        selector: ".blog_8_custom",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $blog_snip = $('#wrapwrap').find('#blog_custom_8_snippet');
-                var blog_name = _t("Blog Slider")
-                $blog_snip.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + blog_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-blog-slider-type');
-                rpc("/theme_scita/eight_blog_get_dynamic_slider",{
-                    'slider-type': self.$target.attr('data-blog-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        var sct_rtl = false;
-                        if ($('#wrapwrap').hasClass('o_rtl')) {
-                            sct_rtl = true;
-                        }
-                        $(".blog_8_custom").removeClass('o_hidden');
-                        rpc('/theme_scita/blog_image_effect_config', {
-                            'slider_type': slider_type
-                        }).then(function(res) {
-                            $('#blog_8_owl_carosel').owlCarousel({
-                                margin: 30,
-                                items: 3,
-                                loop: false,
-                                autoplay: res.auto_rotate,
-                                autoplayTimeout:res.auto_play_time,
-                                autoplayHoverPause:true,
-                                rewind:true,
-                                nav: false,
-                                dots:true,
-                                rtl: sct_rtl,
-                                responsive: {
-                                    0: {
-                                        items: 1,
-                                    },
-                                    768: {
-                                        items: 2,
-                                    },
-                                    1000: {
-                                        items: 3,
-                                    }
-                                },
-                            });
-                        });
-                    }
-                });
-            }
-        }
-    });
-    // // Client sliders 
-    animation.registry.s_theme_scita_client_slider_snippet = animation.Class.extend({
-        selector: ".our-client-slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $client_slider = $('#wrapwrap').find('#theme_scita_custom_client_slider');
-                var client_name = _t("Client Slider")
-                $client_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + client_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                rpc("/theme_scita/get_clients_dynamically_slider",{}).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        var sct_rtl = false;
-                        if ($('#wrapwrap').hasClass('o_rtl')) {
-                            sct_rtl = true;
-                        }
-                        $('div#scita-client-slider').owlCarousel({
-                            loop: false,
-                            margin: 40,
-                            nav: false,
-                            rewind:true,
-                            autoplay:true,
-                            dots:false,
-                            autoplayTimeout:4000,
-                            autoplayHoverPause:true,
-                            rtl: sct_rtl,
-                            responsive: {
-                                0: {
-                                    items: 1,
-                                },
-                                420: {
-                                    items: 2,
-                                },
-                                768: {
-                                    items: 4,
-                                },
-                                1000: {
-                                    items: 6,
-                                },
-                                1500: {
-                                    items: 6,
-                                }
-                            }
-                        });
-                    }
-                });
-            }
-        }
-    });
-    // // Client sliders 2
-    animation.registry.second_client_slider_snippet = animation.Class.extend({
-        selector: ".our-partner-client-slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $client_slider = $('#wrapwrap').find('#second_custom_client_slider');
-                var client_name = _t("Our Partners")
-                $client_slider.each(function(){
-                    $(this).empty().append('')
-                });
-            }
-            if (!this.editableMode) {
-                rpc("/theme_scita/second_get_clients_dynamically_slider", {}).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                    }
-                });
-            }
-        }
-    });
-    // // Client sliders 2
+    
+    // Client sliders 2
     animation.registry.third_client_slider_snippet = animation.Class.extend({
         selector: ".testimonial-client-slider",
         disabledInEditableMode: false,
@@ -943,6 +602,8 @@ $(document).ready(function(){
             }
         }
     });
+    
+    // Our Team
     animation.registry.it_our_team = animation.Class.extend({
         selector: ".our_team_1",
         disabledInEditableMode: false,
@@ -989,61 +650,6 @@ $(document).ready(function(){
                             },
                             1600:{
                                 items:6
-                            }
-                        }
-                    });
-                })
-            }
-        }
-    });
-    animation.registry.our_team_varient_2 = animation.Class.extend({
-        selector: ".our_team_2",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#our_team_varient_2');
-
-                // $.each($team_one, function (single){
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
-            }
-            if (!this.editableMode) {
-                rpc("/biztech_emp_data_two/employee_data", {}).then(function(data) {
-                    self.$target.empty();
-                    self.$target.append(data);
-                    var sct_rtl = false;
-                    if ($('#wrapwrap').hasClass('o_rtl')) {
-                        sct_rtl = true;
-                    }
-                    $('#v_2_myourteam').owlCarousel({
-                        loop:false,
-                        margin:30,
-                        nav:false,
-                        items:4,
-                        rewind:true,
-                        autoplay:true,
-                        autoplayTimeout:4000,
-                        autoplayHoverPause:true,
-                        dots:false,
-                        autoHeight: false,
-                        rtl: sct_rtl,
-                        responsive:{
-                            0:{
-                                items:1
-                            },
-                            600:{
-                                items:3
-                            },
-                            1000:{
-                                items:4
-                            },
-                            1200:{
-                                items:4
-                            },
-                            1600:{
-                                items:4
                             }
                         }
                     });
@@ -1106,61 +712,6 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.our_team_varient_4 = animation.Class.extend({
-        selector: ".our_team_4",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#our_team_varient_4');
-
-                // $.each($team_one, function (single){
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
-            }
-            if (!this.editableMode) {
-                rpc("/biztech_emp_data_four/employee_data", {}).then(function(data) {
-                    self.$target.empty();
-                    self.$target.append(data);
-                    var sct_rtl = false;
-                    if ($('#wrapwrap').hasClass('o_rtl')) {
-                        sct_rtl = true;
-                    }
-                    $('#v_4_myourteam').owlCarousel({
-                        loop:false,
-                        margin:30,
-                        nav:false,
-                        items:4,
-                        autoplay:true,
-                        rewind:true,
-                        autoplayTimeout:4000,
-                        autoplayHoverPause:true,
-                        dots:false,
-                        autoHeight: false,
-                        rtl: sct_rtl,
-                        responsive:{
-                            0:{
-                                items:1
-                            },
-                            576:{
-                                items:2
-                            },
-                            992:{
-                                items: 3
-                            },
-                            1200:{
-                                items:4
-                            },
-                            1600:{
-                                items:4
-                            }
-                        }
-                    });
-                })
-            }
-        }
-    });
     animation.registry.our_team_varient_5 = animation.Class.extend({
         selector: ".our_team_5",
         disabledInEditableMode: false,
@@ -1210,113 +761,7 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.our_team_varient_6 = animation.Class.extend({
-        selector: ".our_team_6",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#our_team_varient_6');
 
-                // $.each($team_one, function (single){
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
-            }
-            if (!this.editableMode) {
-                rpc("/biztech_emp_data_six/employee_data", {}).then(function(data) {
-                    self.$target.empty();
-                    self.$target.append(data);
-                    var sct_rtl = false;
-                    if ($('#wrapwrap').hasClass('o_rtl')) {
-                        sct_rtl = true;
-                    }
-                    $('#v_6_myourteam').owlCarousel({
-                        loop:false,
-                        margin:30,
-                        nav:false,
-                        rewind:true,
-                        autoplay:true,
-                        autoplayTimeout:4000,
-                        autoplayHoverPause:true,
-                        items:3,
-                        dots:false,
-                        autoHeight: false,
-                        rtl: sct_rtl,
-                        responsive:{
-                            0:{
-                                items:1
-                            },
-                            600:{
-                                items:2
-                            },
-                            1000:{
-                                items:3
-                            },
-                            1200:{
-                                items:3
-                            }
-                        }
-                    });
-                })
-            }
-        }
-    });
-    animation.registry.our_team_varient_7 = animation.Class.extend({
-        selector: ".our_team_7",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $team_one = $('#wrapwrap').find('#our_team_varient_7');
-
-                // $.each($team_one, function (single){
-                $team_one.each(function(){
-                    $(this).empty().append('');
-                });
-            }
-            if (!this.editableMode) {
-                rpc("/biztech_emp_data_seven/employee_data", {}).then(function(data) {
-                    self.$target.empty();
-                    self.$target.append(data);
-                    var sct_rtl = false;
-                    if ($('#wrapwrap').hasClass('o_rtl')) {
-                        sct_rtl = true;
-                    }
-                    $('#v_7_myourteam').owlCarousel({
-                        loop:false,
-                        margin:30,
-                        nav:false,
-                        items:2,
-                        rewind:true,
-                        dots:false,
-                        autoplay:true,
-                        autoplayTimeout:4000,
-                        autoplayHoverPause:true,
-                        autoHeight: false,
-                        rtl: sct_rtl,
-                        responsive:{
-                            0:{
-                                items:1
-                            },
-                            600:{
-                                items:2
-                            },
-                            1000:{
-                                items:2
-                            },
-                            1200:{
-                                items:2
-                            },
-                            1600:{
-                                items:2
-                            }
-                        }
-                    });
-                })
-            }
-        }
-    });
     animation.registry.cat_slider_3 = animation.Class.extend({
         selector: ".cat_slider_3",
         disabledInEditableMode: false,
@@ -1597,49 +1042,6 @@ $(document).ready(function(){
                         setTimeout(function(){
                             var divWidth = $('.sct_product_snippet_1 .cs-product .pwp-img a').width(); 
                             $('.sct_product_snippet_1 .cs-product .pwp-img a').height(divWidth);
-                        },400);
-                    }
-                });
-            }
-        }
-    });
-
-
-    animation.registry.sct_product_snippet_2 = animation.Class.extend({
-        selector: ".sct_product_snippet_2",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $multi_cat_slider = $('#wrapwrap').find('.sct_product_snippet_2');
-                var multi_cat_name = _t("Multi Product")
-
-                // $.each($multi_cat_slider, function (single){
-                $multi_cat_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                <div class="row our-categories">\
-                                                    <div class="col-md-12">\
-                                                        <div class="title-block">\
-                                                            <h4 id="snippet-title" class="section-title style1"><span>'+ multi_cat_name+'</span></h4>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>')
-                });
-
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-multi-cat-slider-type');
-                rpc("/product/product_snippet_data_two", {
-                    'slider-type': self.$target.attr('data-multi-cat-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".sct_product_snippet_2").removeClass('hidden');
-                        setTimeout(function(){
-                            var divWidth = $('.sct_product_snippet_2 .cs-product .pwp-img a').width(); 
-                            $('.sct_product_snippet_2 .cs-product .pwp-img a').height(divWidth);
                         },400);
                     }
                 });
