@@ -354,7 +354,7 @@
         </xpath>
     </template>
     <template id="scita_variants" inherit_id="website_sale.variants" name="Sctiat Variants">
-        <xpath expr="//li[@t-att-data-attribute_id='ptal.attribute_id.id']" position="attributes">
+        <xpath expr="//li//t[@t-set='single_and_custom']/.." position="attributes">
             <attribute name='t-attf-class'>variant_attribute #{'d-none' if len(ptal.product_template_value_ids._only_active()) == 1 and not ptal.product_template_value_ids._only_active()[0].is_custom else ''} #{'sct-'+ ptal.attribute_id.display_type}</attribute>
         </xpath>
     </template>
