@@ -644,7 +644,10 @@ class ScitaShop(WebsiteSale):
 
     def _prepare_product_values(self, product, category, search, **kwargs):
         res = super(ScitaShop, self)._prepare_product_values(product, category, search, **kwargs)
-        domain = self._get_shop_domain(search, category, res['attrib_values'])
+        request_args = request.httprequest.args
+        attrib_list = request_args.getlist('attribute_value')
+        attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
+        domain = self._get_shop_domain(search, category, attrib_values)
         products = request.env['product.template'].search(domain, order=self._get_search_order(kwargs)).ids
         prod_index = products.index(product.id)
         if prod_index != len(products)-1:
