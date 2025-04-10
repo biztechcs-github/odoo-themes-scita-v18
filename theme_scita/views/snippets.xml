@@ -1220,7 +1220,7 @@
             <div class='container'>
                 <div class='row s_nb_column_fixed sct_top_row'>
                     <div class="col-md-12">
-                        <h2 class="section-title btm_seprator">Technology Expertise</h2>
+                        <h2 class="section-title">Technology Expertise</h2>
                     </div>
                 </div>
                 <div class="row s_nb_column_fixed sct_btm_row">
@@ -1518,17 +1518,9 @@
 				<t t-snippet="theme_scita.how_it_work_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/How_it_works_variant_4.png"/>
 				<t t-snippet="theme_scita.how_it_work_v_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/How_it_works_variant_5.png"/>		
 				<!-- Expertise Statistics Snippets -->
-				<t t-snippet="theme_scita.it_fact_sheet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/static.png"/>
-				<t t-snippet="theme_scita.health_fact_sheet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/helth_static.png"/>
 				<t t-snippet="theme_scita.expertise_statistics_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_4.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_5.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_6.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_7" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_7.png"/>
 				<t t-snippet="theme_scita.expertise_statistics_8" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_8.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_9" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_9.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_10.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_11.png"/>
-				<t t-snippet="theme_scita.expertise_statistics_12" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_12.png"/>
+                <t t-snippet="theme_scita.expertise_statistics_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Expertise_Statistics_11.png"/>
 				<!-- contact us snippets -->
 
 				<t t-snippet="theme_scita.it_letstalk" t-thumbnail="/theme_scita/static/src/img/snippet_icon/talk.png"/>
