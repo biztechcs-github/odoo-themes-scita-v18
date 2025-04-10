@@ -172,7 +172,7 @@
                         <div class="col-md-3 col-6">
                             <div class="cs-product" data-publish="on">
                                 <div class="pwp-img">
-                                    <a href="keep(deal_product.website_url)">
+                                    <a t-att-href="deal_product.website_url">
                                         <img class="img img-fluid" t-att-alt="deal_product.name" t-att-title="deal_product.name" t-att-src="image_data_uri(deal_product.image_1920)"/>
                                     </a>
                                 </div>
