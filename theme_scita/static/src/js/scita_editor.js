@@ -873,75 +873,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
         },
     });
 
-    
-    options.registry.second_cat_slider = options.Class.extend({
-        start: function(editMode) {
-            var self = this;
-
-            this._super();
-            this.$target.removeClass("o_hidden");
-            this.$target.find(".second_cat_slider").empty();
-            if (!editMode) {
-                self.$el.find(".second_cat_slider").on("click", $.bind(self.cat_slider, self));
-            }
-        },
-
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.cat_slider()) {
-                this.cat_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-
-        cleanForSave: function() {
-            $('.second_cat_slider').empty();
-        },
-
-        cat_slider: function(type, value) {
-            var self = this;
-            
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_dynamic_category_slider"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#slider_type"),
-                    $category_slider_delete = self.$modal.find("#cancel"),
-                    $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
-                rpc('/theme_scita/category_get_options', {}).then(function(res) {
-                    $('#slider_type option[value!="0"]').remove();
-                    $.each(res, function(y) {
-                        $("select[id='slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-
-                $pro_cat_sub_data.on('click', function() {
-                    var type = '';
-                    self.$target.attr('data-cat-slider-id', $slider_type.val());
-                    if ($('select#slider_type').find(":selected").text()) {
-                        type = _t($('select#slider_type').find(":selected").text());
-                    } else {
-                        type = _t("Category Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + type + '</h3>\
-                                                    </div>\
-                                                </div>');
-                });
-                $category_slider_delete.on('click', function() {
-                    self.getParent()._onRemoveClick($.Event("click"))
-                })
-            } else {
-                return;
-            }
-        },
-    });
     options.registry.theme_scita_product_slider = options.Class.extend({
         start: function(editMode) {
             var self = this;
@@ -1404,7 +1335,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 var $slider_type = self.$modal.find("#blog_slider_type"),
                     $blog_slider_cancel = self.$modal.find("#cancel"),
                     $sub_data = self.$modal.find("#blog_sub_data");
-                debugger;
                 rpc('/theme_scita/blog_get_options', {}).then(function(res) {
                     $('#blog_slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
@@ -1415,7 +1345,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                     });
                 });
                 $sub_data.on('click', function() {
-                    debugger;
                     var type = '';
                     self.$target.attr('data-blog-slider-type', $slider_type.val());
                     self.$target.attr('data-blog-slider-id', 'blog-myowl' + $slider_type.val());
@@ -1835,74 +1764,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
             }
         },
     });
-    options.registry.cat_slider_3 = options.Class.extend({
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("o_hidden");
-            this.$target.find(".cat_slider_3").empty();
-            if (!editMode) {
-                self.$el.find(".cat_slider_3").on("click", $.bind(self.cat_slider, self));
-            }
-        },
-
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.cat_slider()) {
-                this.cat_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-
-        cleanForSave: function() {
-            $('.cat_slider_3').empty();
-        },
-
-        cat_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_dynamic_category_slider"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#slider_type"),
-                    $category_slider_delete = self.$modal.find("#cancel"),
-                    $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
-                console.log("AAAAAAAAAAAAAAAAAAAA CATSLIDER3")
-                rpc('/theme_scita/category_get_options', {}).then(function(res) {
-                    $('#slider_type option[value!="0"]').remove();
-                    $.each(res, function(y) {
-                        $("select[id='slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-
-                $pro_cat_sub_data.on('click', function() {
-                    var type = '';
-                    self.$target.attr('data-cat-slider-id', $slider_type.val());
-                    debugger;
-                    if ($('select#slider_type').find(":selected").text()) {
-                        type = _t($('select#slider_type').find(":selected").text());
-                    } else {
-                        type = _t("Category Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + type + '</h3>\
-                                                    </div>\
-                                                </div>');
-                });
-                $category_slider_delete.on('click', function() {
-                    self.getParent()._onRemoveClick($.Event("click"))
-                })
-            } else {
-                return;
-            }
-        },
-    });
 
     options.registry.cat_slider_4 = options.Class.extend({
         start: function(editMode) {
@@ -1939,8 +1800,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 var $slider_type = self.$modal.find("#slider_type"),
                     $category_slider_delete = self.$modal.find("#cancel"),
                     $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
-                console.log("AAAAAAAAAAAAAAAAAAAA CATSLIDER4")
-                debugger;
                 rpc('/theme_scita/category_get_options', {}).then(function(res) {
                     $('#slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
@@ -1968,77 +1827,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 $category_slider_delete.on('click', function() {
                     self.getParent()._onRemoveClick($.Event("click"))
                 })
-            } else {
-                return;
-            }
-        },
-    });
-    // new brand and product/category snippet
-    options.registry.custom_scita_product_category_slider = options.Class.extend({
-
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("o_hidden");
-            this.$target.find(".custom_oe_pro_cat_slider").empty();
-            if (!editMode) {
-                self.$el.find(".custom_oe_pro_cat_slider").on("click", $.bind(self.custom_pro_cat_slider, self));
-            }
-        },
-
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.custom_pro_cat_slider()) {
-                this.custom_pro_cat_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-
-        cleanForSave: function() {
-            $('.oe_pro_cat_slider').empty();
-        },
-
-        custom_pro_cat_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_dynamic_product_slider"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#slider_type"),
-                    $cancel = self.$modal.find("#cancel"),
-                    $pro_cat_sub_data = self.$modal.find("#prod_sub_data");
-                rpc('/theme_scita/pro_get_options', {}).then(function(res) {
-                    $('#slider_type option[value!="0"]').remove();
-                    $.each(res, function(y) {
-                        $("select[id='slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-                $pro_cat_sub_data.on('click', function() {
-                    var type = '';
-                    self.$target.attr('data-prod-cat-slider-type', $slider_type.val());
-                    self.$target.attr('data-prod-cat-slider-id', 'prod-cat-myowl' + $slider_type.val());
-                    if ($('select#slider_type').find(":selected").text()) {
-                        type = _t($('select#slider_type').find(":selected").text());
-                    } else {
-                        type = _t("Product/Category Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="row oe_our_slider">\
-                                                        <div class="col-md-12">\
-                                                            <div class="title-block">\
-                                                                <h4 class="section-title style1">\
-                                                                    <span>' + type + '</span>\
-                                                                </h4>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>');
-                });
             } else {
                 return;
             }

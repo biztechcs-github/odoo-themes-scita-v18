@@ -17,7 +17,6 @@ $(document).ready(function(){
         disabledInEditableMode: false,
         start: function() {
             var self = this;
-            debugger;
             if (this.editableMode) {
                 var $cate_slider = $('#wrapwrap').find('#theme_scita_custom_category_slider');
                 var cat_name = _t("Category Slider")
@@ -31,7 +30,6 @@ $(document).ready(function(){
                 });
             }
             if (!this.editableMode) {
-                debugger;
                 var slider_id = self.$target.attr('data-cat-slider-id');
                 rpc("/theme_scita/category_get_dynamic_slider", {
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
@@ -40,36 +38,6 @@ $(document).ready(function(){
                         self.$target.empty();
                         self.$target.append(data);
                         $(".oe_cat_slider").removeClass('o_hidden');
-                    }
-                });
-            }
-        }
-    });
-    animation.registry.second_cat_slider = animation.Class.extend({
-        selector: ".second_cat_slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $cate_slider = $('#wrapwrap').find('#second_custom_category_slider');
-                var cat_name = _t("Category Slider")
-                $cate_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + cat_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                var slider_id = self.$target.attr('data-cat-slider-id');
-                rpc("/theme_scita/second_get_dynamic_cat_slider", {
-                    'slider-id': self.$target.attr('data-cat-slider-id') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".second_cat_slider").removeClass('o_hidden');
                     }
                 });
             }
@@ -1258,67 +1226,6 @@ $(document).ready(function(){
             }
         }
     });
-    animation.registry.cat_slider_3 = animation.Class.extend({
-        selector: ".cat_slider_3",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $cate_slider = $('#wrapwrap').find('#theme_scita_custom_category_slider_3');
-                var cat_name = _t("Category Slider")
-                // $.each($cate_slider, function (single){
-
-                $cate_slider.each(function(){  
-                    $(this).empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + cat_name + '</h3>\
-                                                    </div>\
-                                                </div>')
-                });
-            }
-            if (!this.editableMode) {
-                var slider_id = self.$target.attr('data-cat-slider-id');
-                rpc("/theme_scita/category_slider_3",{
-                    'slider-id': self.$target.attr('data-cat-slider-id') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        var sct_rtl = false;
-                        if ($('#wrapwrap').hasClass('o_rtl')) {
-                            sct_rtl = true;
-                        }
-                        $(".cat_slider_3").removeClass('o_hidden');
-                        $('div#carousel_category').owlCarousel({
-                            loop:false,
-                            margin:20,
-                            nav:true,
-                            autoplay:true,
-                            rewind:true,
-                            dots:false,
-                            autoplayTimeout:2500,
-                            autoplayHoverPause:true,
-                            rtl: sct_rtl,
-                            responsive:{
-                                400:{
-                                    items:2
-                                },
-                                767:{
-                                    items:3
-                                },
-                                992:{
-                                    items:4
-                                },
-                                1400:{
-                                    items:6
-                                }
-                            }
-                        })
-                    }
-                });
-            }
-        }
-    });
     animation.registry.cat_slider_4 = animation.Class.extend({
         selector: ".cat_slider_4",
         disabledInEditableMode: false,
@@ -1374,46 +1281,6 @@ $(document).ready(function(){
                                 }
                             }
                         })
-                    }
-                });
-            }
-        }
-    });
-    // // new brand and product/category snippet
-    animation.registry.custom_scita_product_category_slider = animation.Class.extend({
-
-        selector: ".custom_oe_pro_cat_slider",
-        disabledInEditableMode: false,
-        start: function() {
-            var self = this;
-            if (this.editableMode) {
-                var $cat_slider = $('#wrapwrap').find('.custom_oe_pro_cat_slider');
-                var cat_name = _t("Product/Category Slider")
-                // $.each($cat_slider, function (single){
-                $cat_slider.each(function(){
-                    $(this).empty().append('<div class="container">\
-                                                <div class="row oe_our_slider">\
-                                                    <div class="col-md-12">\
-                                                        <div class="title-block">\
-                                                            <h4 id="snippet-title" class="section-title style1">\
-                                                                <span>'+ cat_name+'</span>\
-                                                            </h4>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>\
-                                            </div>')
-                });
-
-            }
-            if (!this.editableMode) {
-                var slider_type = self.$target.attr('data-prod-cat-slider-type');
-                rpc("/theme_scita/custom_pro_get_dynamic_slider", {
-                    'slider-type': self.$target.attr('data-prod-cat-slider-type') || '',
-                }).then(function(data) {
-                    if (data) {
-                        self.$target.empty();
-                        self.$target.append(data);
-                        $(".custom_oe_pro_cat_slider").removeClass('o_hidden');
                     }
                 });
             }
