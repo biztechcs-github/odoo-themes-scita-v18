@@ -1418,7 +1418,6 @@
 				<t t-snippet="theme_scita.deal_of_day_banner_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/deal-of-the-day-5.png"/>
 				<!-- Promo banners snippets -->
 				<t t-snippet="theme_scita.retial_promo_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/pro_banner_1.png"/>
-				<t t-snippet="theme_scita.fashion_promo_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_pro_banner.png"/>
 				<t t-snippet="theme_scita.promo_banner_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/promo-banner-3.png"/>
 				
 				<!-- Multi product tab slidres -->
@@ -1471,20 +1470,9 @@
 				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Case_Study_Varient_2.png"/>
 				<!-- service veriants -->
 				<t t-snippet="theme_scita.it_grids_service" t-thumbnail="/theme_scita/static/src/img/snippet_icon/ser_grid.png"/>
-				<t t-snippet="theme_scita.service_varient_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/service_v_1.png"/>
-				<t t-snippet="theme_scita.service_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/service_v_2.png"/>
-				<t t-snippet="theme_scita.service_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/service_v_3.png"/>
-				<t t-snippet="theme_scita.service_varient_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/service_v_4.png"/>
-				<t t-snippet="theme_scita.service_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/service_v_5.png"/>
-				<t t-snippet="theme_scita.service_varient_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_6.png"/>
 				<t t-snippet="theme_scita.service_varient_7" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_7.png"/>
-				<t t-snippet="theme_scita.service_varient_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_10.png"/>
 				<t t-snippet="theme_scita.service_varient_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_11.png"/>
-				<t t-snippet="theme_scita.service_varient_12" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_12.png"/>
-				<t t-snippet="theme_scita.service_varient_13" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_13.png"/>
 				<t t-snippet="theme_scita.service_varient_14" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_14.png"/>
-				<t t-snippet="theme_scita.helth_portfolio_tabs_snippets" t-thumbnail="/theme_scita/static/src/img/snippet_icon/helth_pro.png"/>
-				<t t-snippet="theme_scita.health_department_snippets" t-thumbnail="/theme_scita/static/src/img/snippet_icon/helth_dep.png"/>
 				<!-- pricing_table veriants-->
 
 				<t t-snippet="theme_scita.s_theme_scita_pricing_table_1_4column_v4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Pricing_Varient_4.png"/>
