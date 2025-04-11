@@ -224,14 +224,14 @@
                                             </div>
                                             <div class='sct_img_content'>
                                                 <p class="date">
-                                                    <span class='day'  t-esc ="datetime.date.strftime(first_blog_slide.create_date, '%d')"/>
-                                                    <span class='month'  t-esc ="datetime.date.strftime(first_blog_slide.create_date, '%b')"/>
+                                                    <span class='day' t-out="datetime.date.strftime(first_blog_slide.create_date, '%d')"/>
+                                                    <span class='month' t-out="datetime.date.strftime(first_blog_slide.create_date, '%b')"/>
                                                 </p>
                                             </div>
                                         </a>
                                     </div>
                                     <div class='sct_img_content'>
-                                        <h3 class='sct_blog_name'  t-esc ="first_blog_slide.name"/>
+                                        <h3 class='sct_blog_name' t-out="first_blog_slide.name"/>
                                         <p class="blog-content">
                                             <t t-if="first_blog_slide.subtitle">
                                                 <t t-out="first_blog_slide.subtitle[:150] + '...'"/>
@@ -245,13 +245,13 @@
                                     <div class='sct_blog_desc'>
                                         <div class='sct_left_side'>
                                             <p class="date">
-                                                <span class='day'  t-esc ="datetime.date.strftime(other_blog_slide.create_date, '%d')"/>
-                                                <span class='month'  t-esc ="datetime.date.strftime(other_blog_slide.create_date, '%b')"/>
+                                                <span class='day' t-out="datetime.date.strftime(other_blog_slide.create_date, '%d')"/>
+                                                <span class='month' t-out="datetime.date.strftime(other_blog_slide.create_date, '%b')"/>
                                             </p>
                                         </div>
                                         <div class='sct_right_side'>
                                             <a t-attf-href="/blog/#{slug(other_blog_slide.blog_id)}/post/#{slug(other_blog_slide)}" class="read_link">
-                                                <h3 class='sct_blog_name'  t-esc ="other_blog_slide.name"/>
+                                                <h3 class='sct_blog_name' t-out="other_blog_slide.name"/>
                                                 <p class="blog-content">
                                                     <t t-out="other_blog_slide.subtitle[:65]+'...'"/>
                                                 </p>
