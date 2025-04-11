@@ -1010,19 +1010,14 @@
 				<!-- <t t-snippet="theme_scita.html_builder_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/multi_product.png"/> -->
 
 				<!-- brand snippets -->
-				<t t-snippet="theme_scita.prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/it_brand.png"/>
 				<t t-snippet="theme_scita.brands_box_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Brands_4.png"/>
 				<t t-snippet="theme_scita.it_prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-brand.png"/>
 
 				<t t-snippet="theme_scita.fashion_static_brand_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_brand.png"/>
-				<t t-snippet="theme_scita.custom_scita_brand_custom_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
 				
 
-				<t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-2.png"/>
 				
-				<t t-snippet="theme_scita.retial_category_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-categories.png"/>
-				<t t-snippet="theme_scita.fashion_category_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fs_cate_pro.png"/>    
 				
 
 				<t t-snippet="theme_scita.retial_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trending-offer.png"/>
@@ -1158,12 +1153,10 @@
 				<t t-snippet="theme_scita.third_client_slider_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Client_Variant_3.png"/>
 				<!-- category sliders -->
 				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_1.png"/>
-				<t t-snippet="theme_scita.second_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_2.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-categories.png"/>
 
 				
 				<!-- product and category snippet -->
-				<t t-snippet="theme_scita.custom_scita_product_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
 				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_1.png"/>
