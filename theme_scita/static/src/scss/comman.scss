@@ -2146,14 +2146,14 @@ header{
 }
 
 *::-webkit-scrollbar, .o_wsale_products_main_row #products_grid .o_wsale_filmstip_wrapper::-webkit-scrollbar{
-	width: 3px;
+	width: 8px;
 	height: 3px;
 }
 body #wrapwrap::-webkit-scrollbar{
 	width: 6px;
 }
 *::-webkit-scrollbar-thumb, .o_wsale_products_main_row #products_grid .o_wsale_filmstip_wrapper::-webkit-scrollbar-thumb {
-	background: rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.5);
 	border-radius: 8px;
 }
 *::-webkit-scrollbar-track, .o_wsale_products_main_row #products_grid .o_wsale_filmstip_wrapper::-webkit-scrollbar-track {

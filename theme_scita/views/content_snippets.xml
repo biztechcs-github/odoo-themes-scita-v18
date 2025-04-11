@@ -51,7 +51,7 @@
             <div class='container'>
                 <div class="row sct_btm_row">                   
                     <div class='col-md-8 col-lg-6 col-xl-4  sct_content_info'>
-                    	<div class='sct_content_box py-4 p-md-4 p-xxl-5 h-100 d-flex justify-content-center flex-column'>	
+                    	<section class='sct_content_box py-4 p-md-4 p-xxl-5 h-100 d-flex justify-content-center flex-column'>	
                         	<div class='sct_contect_into'>
                                 <div class="sct_icon mb-3"><i class="fa fa-gears p-3"></i></div>
 	                            <h2 class='sct_title'>Uncompromised sound with newly designed drivers</h2>
@@ -61,7 +61,7 @@
 	                        <div class="sct_cst_btn mt-3">
 	                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Read More</a>
 	                        </div>
-                    	</div>
+                    	</section>
                     </div>
                     <div class="col-md-2 col-lg-3 col-xl-4"></div>
                     <div class="col-md-2 col-lg-3 col-xl-4"></div>

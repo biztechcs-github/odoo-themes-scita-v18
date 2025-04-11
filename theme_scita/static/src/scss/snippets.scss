@@ -118,10 +118,10 @@ body #wrapwrap{
 	}
 	.content {
 		@include justify-align-content;
-		margin: 0 20px;
 		border-radius: 25px;
 		overflow: hidden;
 		min-height: 80dvh;
+		margin: 0;
 		&::before{
 			content: '';
 			position: absolute;
@@ -7750,48 +7750,86 @@ body #wrapwrap{
 		}
 	}
 	.sct_btm_row {
+		&:has(.sct_content_div:hover) {
+			&:not(:hover):not(.open) {
+				.sct_work_content{
+					display: none;
+				}
+			}
+		}
+		&:has(.sct_content_div:hover) {
+			&:hover{
+				.sct_work_content{
+					@include flex;
+					width: 33.33%;
+				}
+			}
+		}
 		.sct_content_div {
 			margin-bottom: 35px;
 
 			@media (max-width: 767px){
 				margin-bottom: 0;
 			}
-
+			&.open{
+				.sct_work_box {
+					.sct_work_content{
+						@include flex;
+						width: 33.33%;
+					}
+				}
+			}
 			.sct_work_box {
-				.sct_no_line_div {
+				border: 1px solid $primary;
+				border-radius: 10px;
+				background-color: rgba($primary, 0.2);
+				padding: 20px;
+				display: flex;
+				min-height: 300px;
+				.sct_work_steps_heading {
 					position: relative;
-					&:after{
-						position:absolute;
-						content: '';
-						width: calc(100% - 60px);
-						height: 1px;
-						background: $primary;
-						right: 0;
-						bottom: 0;
-						top: 0;
-						margin: auto;
+					@include flex;
+					@include flex-column;
+					@include align-fs;
+					@include content-sb;
+					img{
+						height: 60px;
+						width: auto;
+						object-fit: contain;
 					}
 					.sct_work_blue_text {
 						color: $primary;
 						font-weight: bold;
-						font-size: $title + 2;
-						display: inline-block;
-						width: 60px;
+						font-size: $subtitle + 20;
+						display: inline-block;						
 						margin-bottom: 0;
+						text-fill-color: transparent;
+						text-stroke: 2px $primary;
+						-webkit-text-fill-color: transparent;
+						-webkit-text-stroke: 2px $primary;
+						-moz-text-fill-color: transparent;
 					}
 				}
+				.sct_work_content{
+					
+					padding-left: 20px;
+					display: none;
+					@include flexwrap;
+					
+				}
 				.sct_work_info {
-					margin: 15px 0;
 					.sct_work_title {
 						font-weight: bold;
-						font-size: $title;
-						margin-bottom: 15px;
+						font-size: $title + 4;
+						margin-bottom: 10px;
 					}
 					.sct_simple_text {
 						margin-bottom: 0;
 					}
 				}
 				.sct_cst_btn {
+					margin-top: auto;
+					padding-top: 20px;
 					.btn {
 						background: transparent;
 						color: $primary;
@@ -8435,7 +8473,7 @@ body #wrapwrap{
 	@media (max-width: 767px){
 		padding:  0;
 	}
-	.sct_content_info {
+	.sct_content_box {
 		background-color: $light-color;
 		box-shadow: 0px 0px 10px 0px rgba($black,0.5);
 		@media (max-width: 767px){			
@@ -8478,21 +8516,21 @@ body #wrapwrap{
 			margin-top: 20px;
 		}
 		.accordion {
-			.card {
+			.accordion-item {
 				margin: 0;
 				border-bottom: 0;
 				margin-bottom: 20px;
 				background-color: rgba($primary, 0.1) !important;
-				border-radius: 30px;
+				border-radius: 30px !important;
 				border: 0;
 				box-shadow: 0px 0px 4px 0px rgba($primary, 0.3);
 				
-				a {
+				.accordion-header {
 					padding: 12px 20px;
 					padding-right: 45px;
 					position: relative;
 					font-weight: 600;
-					color: $dark-color;
+					color: $primary !important;
 					font-size: $font-body;
 					background-color: transparent;
 					&:before{
@@ -8505,26 +8543,26 @@ body #wrapwrap{
 						bottom: 0;
 						@include flex;
 						@include align-content;
+						content: '\f106';
+						font-family: 'FontAwesome';
+					}
+					&:after{
+						display: none;
 					}
 					@include min1200{
 						padding: 15px 30px;
 						padding-right: 45px;
 						font-size: $font-body + 1;
 					}
-				}
-				.card-header {
-					border-bottom: none;
 					&.collapsed{
 						&:before{
 							content: '\f107';
 						}
 					}
-					&:before{
-						content: '\f106';
-						font-family: 'FontAwesome';
-					}
+					
 				}
-				.card-body {
+				
+				.accordion-body {
 					border-radius: 0;
 					padding: 0 30px 15px;
 					.sct_unorder_list {
