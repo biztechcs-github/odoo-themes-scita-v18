@@ -30,7 +30,7 @@
         <div class='container'>
             <div class="custom-title-block">
                 <h4 t-if="slider_header">
-                    <t t-out="slider_header.name"/>
+                    <t  t-out ="slider_header.name"/>
                 </h4>
                 <h4 t-else="">
                     Trending
@@ -43,7 +43,7 @@
                             <a t-att-href="'/shop/product/%s' % slug(slide)">
                                 <img class="front" t-att-alt="slide.name" t-att-title="slide.name" t-att-src="website.image_url(slide, 'image_1920','90x65')"/>
                                 <p class="pwpi-title">
-                                    <t t-out="slide.name"/>
+                                    <t  t-out ="slide.name"/>
                                 </p>
                             </a>
                         </div>
@@ -53,7 +53,7 @@
                             <a t-att-href=" '/shop/category/%s' % slug(slide)">
                                 <img t-att-src="website.image_url(slide, 'image_1920','90x65')" t-att-title="slide.name" t-att-alt="slide.name"/>
                                 <p class="pwpi-title">
-                                    <t t-out="slide.name"/>
+                                    <t  t-out ="slide.name"/>
                                 </p>
                             </a>
                         </div>
@@ -205,7 +205,7 @@
                     <div class="content col-md-12">
                         <h2 class="section-title" t-if="not slider_header">Featured Products</h2>
                         <h2 class="section-title " t-if="slider_header">
-                            <t t-out="slider_header.name"/>
+                            <t  t-out ="slider_header.name"/>
                         </h2>
                     </div>
                 </div>
@@ -338,7 +338,7 @@
                                         Category Image 
                         </h2>
                         <h2 class="section-title style1" t-if="slider_header">
-                            <t t-out="slider_header.name"/>
+                            <t  t-out ="slider_header.name"/>
                         </h2>
                         <div class="cstm-seprator"></div>
                     </div>
@@ -368,7 +368,7 @@
                                                 </div>
                                                 <div class='sct_cat_content'>
                                                     <p class="pwpi-title">
-                                                        <t t-out="slide.name"/>
+                                                        <t  t-out ="slide.name"/>
                                                     </p>
                                                 </div>
                                             </a>
@@ -403,7 +403,7 @@
                                                     <a t-att-href=" '/shop/product/%s' % slug(slide)">
                                                         <p class="pwpi-title">
 
-                                                            <t t-out="slide.name"/>
+                                                            <t  t-out ="slide.name"/>
                                                         </p>
                                                     </a>
                                                 </div>
@@ -631,7 +631,7 @@
                                         Featured Products
                                     </h2>
                                     <h2 class="section-title style1" t-if="slider_header">
-                                        <t t-out="slider_header.name"/>
+                                        <t  t-out ="slider_header.name"/>
                                     </h2>
                                 </div>
                                 <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs">
@@ -639,12 +639,12 @@
                                     <t t-if="slider_details.no_of_collection == '2'">
                                         <li class="my-test">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t t-out='slider_details.label_collection_1'/>
+                                                <t  t-out ='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="my-test">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_2'/>
+                                                <t  t-out ='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                     </t>
@@ -652,17 +652,17 @@
                                     <t t-if="slider_details.no_of_collection == '3'">
                                         <li class="">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t t-out='slider_details.label_collection_1'/>
+                                                <t  t-out ='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_2'/>
+                                                <t  t-out ='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_3'/>
+                                                <t  t-out ='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                     </t>
@@ -670,22 +670,22 @@
                                     <t t-if="slider_details.no_of_collection == '4'">
                                         <li class="">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t t-out='slider_details.label_collection_1'/>
+                                                <t  t-out ='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_2'/>
+                                                <t  t-out ='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_3'/>
+                                                <t  t-out ='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_4'/>
+                                                <t  t-out ='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
                                     </t>
@@ -693,27 +693,27 @@
                                     <t t-if="slider_details.no_of_collection == '5'">
                                         <li class="">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t t-out='slider_details.label_collection_1'/>
+                                                <t  t-out ='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_2'/>
+                                                <t  t-out ='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_3'/>
+                                                <t  t-out ='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_4'/>
+                                                <t  t-out ='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection5-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t t-out='slider_details.label_collection_5'/>
+                                                <t  t-out ='slider_details.label_collection_5'/>
                                             </a>
                                         </li>
                                     </t>

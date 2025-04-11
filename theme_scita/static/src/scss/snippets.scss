@@ -6188,6 +6188,132 @@ body #wrapwrap{
 		}
 	}
 }
+/*health location we serve snippet end*/
+/*health recent article snippet*/
+.health_blog_slider {
+	padding: 70px 0 80px;
+	@media (max-width: 1600px){
+		padding: 60px 0 70px;
+	}
+	@media (max-width: 1439px){
+		padding: 50px 0 60px;
+	}
+	.sct_top_row {
+		text-align: center;
+		margin-bottom: 50px;
+		@media (max-width: 1600px){
+			margin-bottom: 40px;
+		}
+		@media (max-width: 1023px){
+			margin-bottom: 30px;
+		}
+	}
+	.sct_mid_row {
+		.row{
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+			.health_slide {
+				flex: 0 0 47%;
+				max-width: 47%;
+				@media (max-width: 1023px){
+					flex: 0 0 100%;
+					max-width: 100%;
+				}
+				+ .health_slide {
+					@media (max-width: 1023px){
+						margin-top: 30px;
+					}
+				}
+				.blog-thumb {
+					@include flex;
+					@include flexwrap;
+					@include align-content;
+					background: $light-color;
+					-webkit-box-shadow: 3px 10px 29px -2px rgba(195,195,195,1);
+				    -moz-box-shadow: 3px 10px 29px -2px rgba(195,195,195,1);
+				    box-shadow: 3px 10px 29px -2px rgba(195, 195, 195, 1);
+				    @media (max-width: 575px){
+				    	-webkit-box-align: start;
+				    	-ms-flex-align: start;
+				    	align-items: flex-start;
+				    	padding: 15px;
+					}
+					.health_blog_img {
+						position: relative;
+						flex: 0 0 37%;
+						max-width: 37%;
+						@media (max-width: 1023px){
+							flex: 0 0 35%;
+							max-width: 35%;
+						}
+						.section-post-media {
+							width: 100%;
+    						background-size: cover;
+    						height: 270px;
+    						@media (max-width: 1439px){
+    							height: 250px;
+    						}
+    						@media (max-width: 575px){
+    							height: 150px;
+    						}
+						}
+						.date {
+							position: absolute;
+							left: 10px;
+							top: 10px;
+							z-index: 2;
+							background: $primary;
+							text-align: center;
+							color: $light-color;
+							padding: 5px;
+							font-size: $font-body - 3;
+							span {
+								display: block;
+								font-size: 24px;
+								line-height: normal;
+								@media (max-width: 575px){
+									font-size: 18px;
+								}
+							}
+						}
+					}
+					.sct_blog_desc {
+						flex: 0 0 58%;
+						max-width: 58%;
+						padding-left: 5%;
+						@media (max-width: 575px){
+							flex: 0 0 65%;
+							max-width: 65%;
+						}
+						.sct_blog_name {
+							font-weight: bold;
+							font-size: $title + 5;
+							padding-bottom: 15px;
+							margin-bottom: 15px;
+							border-bottom: 1px solid fade-out($dark-color, 0.8);
+							@media (max-width: 1599px){
+								font-size: $title + 2;
+							}
+							@media (max-width: 767px){
+								font-size: $title;
+							}
+						}
+						.read_link {
+							font-weight: bold;
+							font-size: $font-body + 1;
+							color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+	.sct_btm_row {
+		text-align: center;
+		margin-top: 50px;
+	}
+}
 /*health recent article snippet end*/
 /*health health adv snippet*/
 .scita_adv_banner_3{

@@ -191,7 +191,7 @@
                     <textarea rows="20"  id="get_content_css"></textarea>
                 </div>
             </div>
-            <t  t-out ="data"/>
+            <t t-esc="data"/>
         </div>
     </t>
     <t t-name="theme_scita.scita_product_category_img_slider_config">

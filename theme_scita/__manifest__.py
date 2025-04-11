@@ -112,6 +112,7 @@ AMP Support
         'views/protflio_snippets.xml',
         'views/snippet_google_map.xml',
         'views/trending_products_snippet.xml',
+        'views/top_dealer_snippets.xml',
         'views/deal_of_the_day_config_view.xml',
         'views/snippets.xml',
         'views/product_details_template.xml',

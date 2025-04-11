@@ -32,14 +32,14 @@
                             BestSeller
                         </h2>
                         <h2 class="section-title style1" t-if="slider_header">
-                            <t  t-out ="slider_header.name"/>
+                            <t t-esc="slider_header.name"/>
                         </h2>
                     </div>
                     <div class="best-seller-row">
                         <div class="left-side oe_img_bg" t-att-style="'background-image: url('+ website.image_url(slider_header, 'img_banner') +')'">
                             <div class="left-disc">
-                                <h3 class="title-30"  t-out ='slider_header.banner_text'></h3>
-                                <a t-att-href="slider_header.banner_btn_url" alt-="Shop now" title="Shop now" class='btn btn-primary solid-btn'><t  t-out ="slider_header.banner_btn_text"/> <span class="arrow"></span></a>
+                                <h3 class="title-30" t-esc='slider_header.banner_text'></h3>
+                                <a t-att-href="slider_header.banner_btn_url" alt-="Shop now" title="Shop now" class='btn btn-primary solid-btn'><t t-esc="slider_header.banner_btn_text"/> <span class="arrow"></span></a>
                             </div>
                         </div>
                         <div class="right-side">
@@ -55,7 +55,7 @@
                                                         <img class="img img-fluid" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','85x85')"/>
                                                     </div>
                                                     <div class="disc">
-                                                        <p><span  t-out ='product.name'/></p>
+                                                        <p><span t-esc='product.name'/></p>
                                                         <div class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
                                                             <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
                                                             <t t-set="prod_curr_rate" t-value="0"/>
@@ -79,11 +79,11 @@
                                                         <p class="price">
                                                             <b>
                                                                 <t t-if="True">
-                                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                                 </t>
-                                                                <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                                <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
-                                                                <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
+                                                                <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                                                                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
                                                             </b>
                                                         </p>
                                                     </div>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="col-lg-6 col-xl-5 deal-inner right-side">
                     <div class="section-title-wrapper d-flex flex-wrap">
-                        <h2 class="section-title"  t-out ="slider_header.deal_title"></h2>
+                        <h2 class="section-title" t-esc="slider_header.deal_title"></h2>
                     </div>
                 <!-- <div class="right-deal-wrapper"> -->
                     <div class="deal-top-slider">
@@ -148,7 +148,7 @@
             <div class="deal_day_wrap">
                 <div class="deal_day_top_inner">
                     <div class="title-block">
-                        <h2 class="section-title style1" t-if="deal"  t-out ="deal.name"></h2>
+                        <h2 class="section-title style1" t-if="deal" t-esc="deal.name"></h2>
                         <h2 class="section-title style1" t-else="">Deal of the day</h2>
                     </div>
                     <div class="deal-content-wrapper timer_counter_div">
@@ -201,16 +201,16 @@
                                             </div>
                                         </div>
                                         <p class="pwpi-title">
-                                            <span  t-out ='deal_product.name'/>
+                                            <span t-esc='deal_product.name'/>
                                         </p>
                                         <p class="price">
                                             <b>
                                                 <t t-if="True">
-                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                 </t>
-                                                <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
-                                                <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
+                                                <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
+                                                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
                                             </b>
                                         </p>
                                     </div>
