@@ -1,67 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Dynamic Product/Category snippets -->
-    <template id="custom_scita_product_category_slider" name="Dynamic Product/Category Snippet 1">
-        <section class="custom_oe_pro_cat_slider" data-prod-cat-slider-type="" contentEditable="false"  data-disp='category_snippet' data-disp1="multi_product">
-            <div class="container">
-                <div class="row custom_oe_our_slider">
-                    <div class="col-md-12">
-                        <div class="title-block">
-                            <h4 id="snippet-title" class="section-title style1">
-                                <span>Product/Category Slider</span>
-                            </h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-    <template id="custom_scita_product_category_slider_option" inherit_id="website.snippet_options" name="Modify Options">
-        <xpath expr="//div" position="after">
-            <div data-js="custom_scita_product_category_slider"
-                 data-selector=".custom_oe_pro_cat_slider"
-                 data-snippet-option-id="custom_scita_product_category_slider">
-                <we-button data-no-preview="true" class="dropdown-item custom_oe_pro_cat_slider" tabindex="-1" href="#" data-custom_pro_cat_slider="">Modify</we-button>
-            </div>
-        </xpath>
-    </template>
-
-    <template id="custom_scita_cat_slider_view" name="Custom Product/Category Slider">
-        <div class='container'>
-            <div class="custom-title-block">
-                <h4 t-if="slider_header">
-                    <t t-esc="slider_header.name"/>
-                </h4>
-                <h4 t-else="">
-                    Trending
-                </h4>
-            </div>
-            <div class="custom_cat_prod" t-if="slider_details">
-                <t t-foreach="slider_details" t-as="slide">
-                    <t t-if="slider_type == 'product'">
-                        <div class="custom-cs-product">
-                            <a t-att-href="'/shop/product/%s' % slug(slide)">
-                                <img class="front" t-att-alt="slide.name" t-att-title="slide.name" t-att-src="website.image_url(slide, 'image_1920','90x65')"/>
-                                <p class="pwpi-title">
-                                    <t t-esc="slide.name"/>
-                                </p>
-                            </a>
-                        </div>
-                    </t>
-                    <t t-if="slider_type == 'category'">
-                        <div class="custom-cs-product">
-                            <a t-att-href=" '/shop/category/%s' % slug(slide)">
-                                <img t-att-src="website.image_url(slide, 'image_1920','90x65')" t-att-title="slide.name" t-att-alt="slide.name"/>
-                                <p class="pwpi-title">
-                                    <t t-esc="slide.name"/>
-                                </p>
-                            </a>
-                        </div>
-                    </t>
-                </t>
-            </div>
-        </div>
-    </template>
 <!-- Retial snippets Start -->
     <!-- Multi Product slider snippet -->
     <template id="scita_multi_cat_custom_snippet" name="Multi Product Slider 1">
@@ -1430,19 +1368,14 @@
 				<!-- <t t-snippet="theme_scita.html_builder_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/multi_product.png"/> -->
 
 				<!-- brand snippets -->
-				<t t-snippet="theme_scita.prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/it_brand.png"/>
 				<t t-snippet="theme_scita.brands_box_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Brands_4.png"/>
 				<t t-snippet="theme_scita.it_prod_brands" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-brand.png"/>
 
 				<t t-snippet="theme_scita.fashion_static_brand_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_brand.png"/>
-				<t t-snippet="theme_scita.custom_scita_brand_custom_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
 				
 
-				<t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-2.png"/>
 				
-				<t t-snippet="theme_scita.retial_category_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-categories.png"/>
-				<t t-snippet="theme_scita.fashion_category_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fs_cate_pro.png"/>    
 				
 
 				<t t-snippet="theme_scita.retial_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trending-offer.png"/>
@@ -1569,12 +1502,10 @@
 				<t t-snippet="theme_scita.theme_scita_top_dealers_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-top-dealer.png"/>
 				<!-- category sliders -->
 				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_1.png"/>
-				<t t-snippet="theme_scita.second_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_2.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-categories.png"/>
 
 				
 				<!-- product and category snippet -->
-				<t t-snippet="theme_scita.custom_scita_product_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category-brand-snippet.png"/>
 				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_1.png"/>
