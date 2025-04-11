@@ -17,10 +17,10 @@
     </template>
     <template id="pwa_service_worker" name="Service Worker PWA">
         'use strict';
-        const PWA_CACHE_NAME = '<t t-esc="pwa_cache_version" />';
+        const PWA_CACHE_NAME = '<t  t-out ="pwa_cache_version" />';
         const URL_TO_CACHE = [
           <t t-foreach="urls_to_cache" t-as="url_to_cache">
-              '<t t-esc="url_to_cache" />',
+              '<t  t-out ="url_to_cache" />',
           </t>
         ];
         self.addEventListener('install', function (ev) {
@@ -76,43 +76,43 @@
     </template>
     <template id="manifest_temp" name="PWA Manifest Template">
         {
-          "name": "<t t-esc="pwa_name" />",
-          "short_name": "<t t-esc="pwa_short_name" />",
-          "start_url": "<t t-esc="start_url" />",
+          "name": "<t  t-out ="pwa_name" />",
+          "short_name": "<t  t-out ="pwa_short_name" />",
+          "start_url": "<t  t-out ="start_url" />",
           "scope": "/",
           "display": "standalone",
-          "background_color": "<t t-esc="background_color" />",
-          "theme_color": "<t t-esc="theme_color" />",
+          "background_color": "<t  t-out ="background_color" />",
+          "theme_color": "<t  t-out ="theme_color" />",
           "icons": [{
-                "src": "<t t-esc="image_72" />",
+                "src": "<t  t-out ="image_72" />",
                 "sizes": "72x72",
                 "type": "image/png"
             }, {
-                "src": "<t t-esc="image_96" />",
+                "src": "<t  t-out ="image_96" />",
                 "sizes": "96x96",
                 "type": "image/png"
             },{
-                "src": "<t t-esc="image_128" />",
+                "src": "<t  t-out ="image_128" />",
                 "sizes": "128x128",
                 "type": "image/png"
             }, {
-                "src": "<t t-esc="image_144" />",
+                "src": "<t  t-out ="image_144" />",
                 "sizes": "144x144",
                 "type": "image/png"
             }, {
-                "src": "<t t-esc="image_152" />",
+                "src": "<t  t-out ="image_152" />",
                 "sizes": "152x152",
                 "type": "image/png"
             }, {
-                "src": "<t t-esc="image_192" />",
+                "src": "<t  t-out ="image_192" />",
                 "sizes": "192x192",
                 "type": "image/png"
             }, {
-                "src": "<t t-esc="image_256" />",
+                "src": "<t  t-out ="image_256" />",
                 "sizes": "256x256",
                 "type": "image/png"
             }, {
-                "src": "<t t-esc="image_512" />",
+                "src": "<t  t-out ="image_512" />",
                 "sizes": "512x512",
                 "type": "image/png"
             }]

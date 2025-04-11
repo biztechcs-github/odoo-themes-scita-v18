@@ -32,7 +32,7 @@
                                                 </div>
                                                 <div class='sct_cat_content'>
                                                     <p class="pwpi-title">
-                                                        <t t-esc="slide.name"/>
+                                                        <t  t-out ="slide.name"/>
                                                     </p>
                                                 </div>
                                             </a>
@@ -68,7 +68,7 @@
                     Category Slider
                 </h2>
                 <h2 class="col-md-12 section-title" t-if="slider_header">
-                    <t t-esc="slider_header.name"/>
+                    <t  t-out ="slider_header.name"/>
                 </h2>
             </div>
             <div class="row bottom-row categories">
@@ -81,7 +81,7 @@
                                 </div>
                                 <div class='sct_cat_content'>
                                     <p class="pwpi-title">
-                                        <t t-esc="slide.name"/>
+                                        <t  t-out ="slide.name"/>
                                     </p>
                                 </div>
                             </a>
@@ -118,7 +118,7 @@
                     Category
                 </h2>
                 <h2 class="section-title style1" t-if="slider_header">
-                    <t t-esc="slider_header.name"/>
+                    <t  t-out ="slider_header.name"/>
                 </h2>
             </div>
             <div t-att-class="'row %s-effect' % (color)">
@@ -131,7 +131,7 @@
                                          <img t-att-src="website.image_url(category, 'image_1920','210x88')" t-att-title="category.name" t-att-alt="category.name"/>
                                     </div>
                                     <div class="category-title">
-                                        <p class="text-center" t-esc="category.name"></p>
+                                        <p class="text-center"  t-out ="category.name"></p>
                                     </div>
                                 </a>
                             </div>

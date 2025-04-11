@@ -19,7 +19,7 @@
                         <t t-set="additional_title" t-value="main_object.name"/>
                     </t>
                     <t t-if="not title">
-                        <t t-set="title"><t t-if="additional_title"><t t-out="additional_title"/> | </t><t t-esc="(website or res_company).name"/></t>
+                        <t t-set="title"><t t-if="additional_title"><t t-out="additional_title"/> | </t><t  t-out ="(website or res_company).name"/></t>
                     </t>
                     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"/>
                     <meta name="description" t-att-content="main_object and 'website_meta_description' in main_object                     and main_object.website_meta_description or website_meta_description"/>
@@ -34,7 +34,7 @@
                         <meta property="og:image" t-att-content="request.httprequest.url_root+'logo.png'"/>
                         <meta property="og:url" t-att-content="request.httprequest.url_root+request.httprequest.path[1:end]"/>
                     </t>
-                    <title><t t-esc="title"/></title>
+                    <title><t  t-out ="title"/></title>
                     <t t-out="head or ''" name="layout_head"/>
                     <style amp-boilerplate="amp-boilerplate">body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
                     <noscript><style amp-boilerplate="amp-boilerplate">body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style>
@@ -428,7 +428,7 @@
                                             <a class="top-link-checkout" href="/shop/cart" id="my_cart" title="Cart">
                                                 <i class="fa fa-shopping-cart"/>
                                                 <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
-                                                <span class="theme_scita_cart_quantity" t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
+                                                <span class="theme_scita_cart_quantity"  t-out ="website_sale_order and website_sale_order.cart_quantity or 0"/>
                                             </a>
                                         </li>
                                         <li class="configuration">
@@ -636,7 +636,7 @@
                                             <select class="form-control" name="attrib">
                                                 <option value="" />
                                                 <t t-foreach="a.value_ids" t-as="v">
-                                                    <option t-att-value="'%s-%s' % (a.id,v.id)" t-esc="v.name" t-att-selected="v.id in attrib_set" />
+                                                    <option t-att-value="'%s-%s' % (a.id,v.id)"  t-out ="v.name" t-att-selected="v.id in attrib_set" />
                                                 </t>
                                             </select>
                                         </t>
@@ -692,16 +692,16 @@
                                         <t t-if="products">
                                             <t t-set="website_ppp" t-value="ppg"/>
                                             <span t-attf-class="#{website_ppp and len(website_ppp['page_no'])&gt;1 and 'simple_name' or 'o_hidden'}">
-                                                <span class="label"><t t-esc="website_ppp['name']"/>:</span>
+                                                <span class="label"><t  t-out ="website_ppp['name']"/>:</span>
                                                 <div t-attf-class="#{website_ppp and len(website_ppp['page_no'])&gt;1 and 'dropdown' or 'o_hidden'} btn-group">
                                                     <t t-set="curr_ppp" t-value="website.get_current_pager_selection()"/>
                                                     <div class="sct-dw-title">
-                                                        <t t-esc="curr_ppp or ' - '"/>
+                                                        <t  t-out ="curr_ppp or ' - '"/>
                                                         <i class="fa fa-caret-down"></i>
                                                         <ul class="dropdown-menu" role="menu">
                                                             <li t-as="pl" t-foreach="website_ppp['page_no']">
                                                                 <a t-att-href="'/shop/pager_selection/%s' % pl.id">
-                                                                    <span class="switcher_pricelist" t-att-data-pl_id="pl.id" t-esc="pl.name"/>
+                                                                    <span class="switcher_pricelist" t-att-data-pl_id="pl.id"  t-out ="pl.name"/>
                                                                 </a>
                                                             </li>
                                                         </ul>
@@ -718,7 +718,7 @@
                         <div t-if="enable_left_column" id="products_grid_before" class="col-lg-3"/>
                         <div id="products_grid" t-attf-class="col #{'o_wsale_layout_list' if layout_mode == 'list' else ''}">
                             <t t-if="category">
-                                <t t-set='editor_msg'>Drag building blocks here to customize the header for "<t t-esc='category.name'/>" category.</t>
+                                <t t-set='editor_msg'>Drag building blocks here to customize the header for "<t  t-out ='category.name'/>" category.</t>
                                 <div class="mb16" id="category_header" t-att-data-editor-message="editor_msg" t-field="category.website_description"/>
                             </t>
                             <div t-if="bins" class="o_wsale_products_grid_table_wrapper">
@@ -746,11 +746,11 @@
                                 <div class="text-center text-muted mt128 mb256">
                                     <t t-if="not search">
                                         <h3 class="mt8">No product defined</h3>
-                                        <p t-if="category">No product defined in category "<strong t-esc="category.display_name"/>".</p>
+                                        <p t-if="category">No product defined in category "<strong  t-out ="category.display_name"/>".</p>
                                     </t>
                                     <t t-else="">
                                         <h3 class="mt8">No results</h3>
-                                        <p>No results for "<strong t-esc='search'/>"<t t-if="category"> in category "<strong t-esc="category.display_name"/>"</t>.</p>
+                                        <p>No results for "<strong  t-out ='search'/>"<t t-if="category"> in category "<strong  t-out ="category.display_name"/>"</t>.</p>
                                     </t>
                                     <p t-ignore="true" groups="sales_team.group_sale_manager">Click <i>'New'</i> in the top-right corner to create your first product.</p>
                                 </div>
@@ -832,10 +832,10 @@
                         <a itemprop="name" t-att-href="product_href" t-att-content="product.name" t-field="product.name" />
                     </h6>
                     <div class="product_price" itemprop="offers" itemscope="itemscope" itemtype="http://schema.org/Offer">
-                        <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-                        <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                        <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
-                        <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                        <del t-attf-class="text-danger mr-2 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                        <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
+                        <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
                     </div>
                 </div>
                 <div class="o_wsale_product_btn"/>
@@ -1117,7 +1117,7 @@
                         <section class="page-title">
                             <div class="container">
                                 <h2 class="brandcum_title">
-                                    <span t-esc="product.name"/>
+                                    <span  t-out ="product.name"/>
                                 </h2>
                                 <ul class="breadcrumb">
                                     <li>

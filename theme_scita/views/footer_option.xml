@@ -46,13 +46,13 @@
                                     <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li t-if="res_company.email">
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                 </ul>
                             </div>
@@ -141,7 +141,7 @@
                                 </li>
                                 <li t-if="res_company.phone">
                                     <h4>Phone :</h4>
-                                    <span t-esc="res_company.phone"/>
+                                    <span  t-out ="res_company.phone"/>
                                 </li>
                             </ul>
                         </div>
@@ -271,13 +271,13 @@
                                     <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li t-if="res_company.email">
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                 </ul>
                                 <div class="sct-scocial-icon-footer">
@@ -441,13 +441,13 @@
                                 <li t-if="res_company.phone">
                                     <i>
                                         <span class="fa fa-phone"/>
-                                    </i><t t-esc="res_company.phone"/>
+                                    </i><t  t-out ="res_company.phone"/>
                                 </li>
                                 <li t-if="res_company.email">
                                     <i>
                                         <span class="fa fa-envelope"/>
                                     </i>
-                                    <t t-esc="res_company.email"/>
+                                    <t  t-out ="res_company.email"/>
                                 </li>
                             </ul>
                             <div class="timer_counter_div"></div>
@@ -674,12 +674,12 @@
                                     <i>
                                         <span class="fa fa-envelope"/>
                                     </i>
-                                    <t t-esc="res_company.email"/>
+                                    <t  t-out ="res_company.email"/>
                                 </li>
                                  <li t-if="res_company.phone">
                                     <i>
                                         <span class="fa fa-phone"/>
-                                    </i><t t-esc="res_company.phone"/>
+                                    </i><t  t-out ="res_company.phone"/>
                                 </li>
                             </ul>
                         </div>
@@ -757,12 +757,12 @@
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                      <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                 </ul>
                             </div>
@@ -811,7 +811,7 @@
                                     <span t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </span>
                                 </h4>
                             </div>
@@ -845,12 +845,12 @@
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                     <li t-if="res_company.phone" class="">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li class="ml-zero">
                                         <div class="sct-payment-icons">
@@ -1167,13 +1167,13 @@
                                 <li t-if="res_company.phone">
                                     <i>
                                         <span class="fa fa-phone"/>
-                                    </i><t t-esc="res_company.phone"/>
+                                    </i><t  t-out ="res_company.phone"/>
                                 </li>
                                 <li t-if="res_company.email">
                                     <i>
                                         <span class="fa fa-envelope"/>
                                     </i>
-                                    <t t-esc="res_company.email"/>
+                                    <t  t-out ="res_company.email"/>
                                 </li>
                             </ul>
                         </div>
@@ -1359,13 +1359,13 @@
                                     <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li t-if="res_company.email">
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                 </ul>
                             </div>
@@ -1482,13 +1482,13 @@
                                         <li t-if="res_company.phone">
                                             <i>
                                                 <span class="fa fa-phone"/>
-                                            </i><t t-esc="res_company.phone"/>
+                                            </i><t  t-out ="res_company.phone"/>
                                         </li>
                                         <li t-if="res_company.email" class="email-text">
                                             <i>
                                                 <span class="fa fa-envelope"/>
                                             </i>
-                                            <t t-esc="res_company.email"/>
+                                            <t  t-out ="res_company.email"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -1572,13 +1572,13 @@
                                     <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li t-if="res_company.email" class="email-text">
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                 </ul>
                             </div>
@@ -1678,10 +1678,10 @@
                             <ul>
                                 <h4>CONTACT</h4>
                                 <li t-if="res_company.email">
-                                    <t t-esc="res_company.email"/>
+                                    <t  t-out ="res_company.email"/>
                                 </li>
                                 <li t-if="res_company.phone">
-                                    <t t-esc="res_company.phone"/>
+                                    <t  t-out ="res_company.phone"/>
                                 </li>
                                 <li>
                                     <div class="col-12 sct-scocial-icon-footer">
@@ -1932,11 +1932,11 @@
                             <ul class="nav">
                                 <li class="text-icons" t-if="res_company.phone">
                                     <span class="fa fa-2x fa-phone"/>
-                                    <span class="text"><t t-esc="res_company.phone"/></span>
+                                    <span class="text"><t  t-out ="res_company.phone"/></span>
                                 </li>
                                 <li class="text-icons" t-if="res_company.email">
                                     <span class="fa fa-2x fa-envelope"/>
-                                    <span class="text"><t t-esc="res_company.email"/></span>
+                                    <span class="text"><t  t-out ="res_company.email"/></span>
                                 </li>
                                 <li class="text-icons">
                                     <span class="fa fa-2x fa-map-marker"/>
@@ -2091,13 +2091,13 @@
                                 <li t-if="res_company.phone">
                                     <i>
                                         <span class="fa fa-phone"/>
-                                    </i><t t-esc="res_company.phone"/>
+                                    </i><t  t-out ="res_company.phone"/>
                                 </li>
                                 <li t-if="res_company.email">
                                     <i>
                                         <span class="fa fa-envelope"/>
                                     </i>
-                                    <t t-esc="res_company.email"/>
+                                    <t  t-out ="res_company.email"/>
                                 </li>
                             </ul>
                         </div>
@@ -2216,10 +2216,10 @@
                                 <div class="sct-fot-contact">
                                     <ul>
                                         <li t-if="res_company.phone">
-                                            <t t-esc="res_company.phone"/>
+                                            <t  t-out ="res_company.phone"/>
                                         </li>
                                         <li t-if="res_company.email">
-                                            <t t-esc="res_company.email"/>
+                                            <t  t-out ="res_company.email"/>
                                         </li>
                                     </ul>
                                 </div>
@@ -2276,13 +2276,13 @@
                                 <li t-if="res_company.phone">
                                     <i>
                                         <span class="fa fa-phone"/>
-                                    </i><t t-esc="res_company.phone"/>
+                                    </i><t  t-out ="res_company.phone"/>
                                 </li>
                                 <li t-if="res_company.email">
                                     <i>
                                         <span class="fa fa-envelope"/>
                                     </i>
-                                    <t t-esc="res_company.email"/>
+                                    <t  t-out ="res_company.email"/>
                                 </li>
                             </ul>
                         </div>
@@ -2347,12 +2347,12 @@
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                      <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                 </ul>
                             </div>
@@ -2417,13 +2417,13 @@
                                     <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li t-if="res_company.email" class="email-text">
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                 </ul>
                             </div>
@@ -2612,11 +2612,11 @@
                                 </li>
                                 <li class="text-icons" t-if="res_company.phone">
                                     <span class="fa fa-2x fa-phone"/>
-                                    <span class="text"><t t-esc="res_company.phone"/></span>
+                                    <span class="text"><t  t-out ="res_company.phone"/></span>
                                 </li>
                                 <li class="text-icons sct-mail" t-if="res_company.email">
                                     <span class="fa fa-2x fa-envelope"/>
-                                    <span class="text"><t t-esc="res_company.email"/></span>
+                                    <span class="text"><t  t-out ="res_company.email"/></span>
                                 </li>
                             </ul>
                         </div>
@@ -2716,13 +2716,13 @@
                                     <li t-if="res_company.phone">
                                         <i>
                                             <span class="fa fa-phone"/>
-                                        </i><t t-esc="res_company.phone"/>
+                                        </i><t  t-out ="res_company.phone"/>
                                     </li>
                                     <li t-if="res_company.email">
                                         <i>
                                             <span class="fa fa-envelope"/>
                                         </i>
-                                        <t t-esc="res_company.email"/>
+                                        <t  t-out ="res_company.email"/>
                                     </li>
                                 </ul>
                                 <div class="sct-scocial-icon-footer">
@@ -2917,13 +2917,13 @@
                                             <li t-if="res_company.phone">
                                                 <i>
                                                     <span class="fa fa-phone"/>
-                                                </i><t t-esc="res_company.phone"/>
+                                                </i><t  t-out ="res_company.phone"/>
                                             </li>
                                             <li t-if="res_company.email">
                                                 <i>
                                                     <span class="fa fa-envelope"/>
                                                 </i>
-                                                <t t-esc="res_company.email"/>
+                                                <t  t-out ="res_company.email"/>
                                             </li>
                                             <li>
                                                 <i>

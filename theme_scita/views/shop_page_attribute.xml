@@ -3,7 +3,7 @@
     <template id="varient_color_on_shop" inherit_id="website_sale.products_item">
         <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="before">
             <div id="threshold_message_scita" t-if="product.show_availability and prod_available[product.id]['free_qty'] &lt;= product.available_threshold and prod_available[product.id]['free_qty'] != 0" t-attf-class="availability_message_#{product.id} text-warning fw-bold">
-                <t t-esc="prod_available[product.id]['free_qty']"/> <t t-esc="product.uom_name" /> left
+                <t  t-out ="prod_available[product.id]['free_qty']"/> <t  t-out ="product.uom_name" /> left
             </div>
             <div id="threshold_message_scita_out_of_stock" t-if="product.show_availability and prod_available[product.id]['free_qty'] &lt;= 0" t-attf-class="out_of_stock_message_#{product.id} text-warning fw-bold">
                 <t>OUT OF STOCK</t>

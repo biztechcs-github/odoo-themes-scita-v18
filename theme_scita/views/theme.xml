@@ -161,7 +161,7 @@
                                     <t t-if="submenu.category_slider">
                                         <div class="mm-slider">
                                             <h2 class="dropdown-header slider_header">
-                                                <t t-esc="submenu.carousel_header_name"/>
+                                                <t  t-out ="submenu.carousel_header_name"/>
                                             </h2>
                                             <div class="carousel slide" data-bs-ride="carousel" t-att-id="'myCarousel-%s' % submenu.id">
                                                 <div class="carousel-inner">
@@ -174,7 +174,7 @@
                                                             </a>
                                                             <h4>
                                                                 <small>
-                                                                    <t t-esc="categ.name"/>
+                                                                    <t  t-out ="categ.name"/>
                                                                 </small>
                                                             </h4>
                                                         </div>
@@ -198,14 +198,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="'/shop/category/%s' % slug(category)">
-                                                        <t t-esc="category.name"/>
+                                                        <t  t-out ="category.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-if="category.child_id">
                                                     <t t-as="categ" t-foreach="website.get_public_product_child_category(category.child_id)">
                                                         <li class="categories">
                                                             <a t-att-href="'/shop/category/%s' % slug(categ)">
-                                                                <t t-esc="categ.name"/>
+                                                                <t  t-out ="categ.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -236,7 +236,7 @@
                                     <t t-if="submenu.category_slider">
                                         <div class="mm-slider">
                                             <h2 class="dropdown-header slider_header">
-                                                <t t-esc="submenu.carousel_header_name"/>
+                                                <t  t-out ="submenu.carousel_header_name"/>
                                             </h2>
                                             <div class="carousel slide" data-bs-ride="carousel" t-att-id="'myCarousel-%s' % submenu.id">
                                                 <div class="carousel-inner">
@@ -249,7 +249,7 @@
                                                             </a>
                                                             <h4>
                                                                 <small>
-                                                                    <t t-esc="categ.name"/>
+                                                                    <t  t-out ="categ.name"/>
                                                                 </small>
                                                             </h4>
                                                         </div>
@@ -284,14 +284,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="'/shop/category/%s' % slug(category)">
-                                                        <t t-esc="category.name"/>
+                                                        <t  t-out ="category.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-if="category.child_id">
                                                     <t t-as="categ" t-foreach="website.get_public_product_child_category(category.child_id)">
                                                         <li class="categories">
                                                             <a t-att-href="'/shop/category/%s' % slug(categ)">
-                                                                <t t-esc="categ.name"/>
+                                                                <t  t-out ="categ.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -322,7 +322,7 @@
                                     <t t-if="submenu.category_slider">
                                         <div class="margin mm-slider">
                                             <h2 class="dropdown-header slider_header">
-                                                <t t-esc="submenu.carousel_header_name"/>
+                                                <t  t-out ="submenu.carousel_header_name"/>
                                             </h2>
                                             <div class="carousel slide" data-bs-ride="carousel" t-att-id="'myCarousel-%s' % submenu.id">
                                                 <div class="carousel-inner">
@@ -335,7 +335,7 @@
                                                             </a>
                                                             <h4>
                                                                 <small>
-                                                                    <t t-esc="categ.name"/>
+                                                                    <t  t-out ="categ.name"/>
                                                                 </small>
                                                             </h4>
                                                         </div>
@@ -370,14 +370,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="'/shop/category/%s' % slug(category)">
-                                                        <t t-esc="category.name"/>
+                                                        <t  t-out ="category.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-if="category.child_id">
                                                     <t t-as="categ" t-foreach="website.get_public_product_child_category(category.child_id)">
                                                         <li class="categories">
                                                             <a t-att-href="'/shop/category/%s' % slug(categ)">
-                                                                <t t-esc="categ.name"/>
+                                                                <t  t-out ="categ.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -408,7 +408,7 @@
                                     <t t-if="submenu.category_slider">
                                         <div class="margin mm-slider">
                                             <h2 class="dropdown-header slider_header">
-                                                <t t-esc="submenu.carousel_header_name"/>
+                                                <t  t-out ="submenu.carousel_header_name"/>
                                             </h2>
                                             <div class="carousel slide" data-bs-ride="carousel" t-att-id="'myCarousel-%s' % submenu.id">
                                                 <div class="carousel-inner">
@@ -421,7 +421,7 @@
                                                             </a>
                                                             <h4>
                                                                 <small>
-                                                                    <t t-esc="categ.name"/>
+                                                                    <t  t-out ="categ.name"/>
                                                                 </small>
                                                             </h4>
                                                         </div>
@@ -456,14 +456,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="'/shop/category/%s' % slug(category)">
-                                                        <t t-esc="category.name"/>
+                                                        <t  t-out ="category.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-if="category.child_id">
                                                     <t t-as="categ" t-foreach="website.get_public_product_child_category(category.child_id)">
                                                         <li class="categories">
                                                             <a t-att-href="'/shop/category/%s' % slug(categ)">
-                                                                <t t-esc="categ.name"/>
+                                                                <t  t-out ="categ.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -501,7 +501,7 @@
                                         <ul>
                                             <li class="dropdown-header">
                                                 <a t-att-href="'/shop/category/%s' % slug(category)">
-                                                    <t t-esc="category.name"/>
+                                                    <t  t-out ="category.name"/>
                                                 </a>
                                             </li>
                                             <li class="cat_img">
@@ -510,7 +510,7 @@
                                                 </a>
                                             </li>
                                             <li class="cat_description" t-if="category.description">
-                                                <t t-esc="category.description"/>
+                                                <t  t-out ="category.description"/>
                                             </li>
                                              
                                         </ul>
@@ -548,14 +548,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -589,14 +589,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -630,14 +630,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -671,14 +671,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -718,9 +718,9 @@
                                         </div>
                                         <div class='page_info'>
                                             <a t-att-href="page.url">
-                                                <t class='menu_head_text' t-esc="page.name"/>
+                                                <t class='menu_head_text'  t-out ="page.name"/>
                                             </a>
-                                            <p t-esc="page.menu_desc"/>
+                                            <p  t-out ="page.menu_desc"/>
                                         </div>
                                     </div>
                                 </t> 
@@ -750,9 +750,9 @@
                                         </div>
                                         <div class='page_info'>
                                             <a t-att-href="page.url">
-                                                <t class='menu_head_text' t-esc="page.name"/>
+                                                <t class='menu_head_text'  t-out ="page.name"/>
                                             </a>
-                                            <p t-esc="page.menu_desc"/>
+                                            <p  t-out ="page.menu_desc"/>
                                         </div>
                                     </div>
                                 </t> 
@@ -782,9 +782,9 @@
                                         </div>
                                         <div class='page_info'>
                                             <a t-att-href="page.url">
-                                                <t class='menu_head_text' t-esc="page.name"/>
+                                                <t class='menu_head_text'  t-out ="page.name"/>
                                             </a>
-                                            <p t-esc="page.menu_desc"/>
+                                            <p  t-out ="page.menu_desc"/>
                                         </div>
                                     </div>
                                 </t> 
@@ -814,9 +814,9 @@
                                         </div>
                                         <div class='page_info'>
                                             <a t-att-href="page.url">
-                                                <t class='menu_head_text' t-esc="page.name"/>
+                                                <t class='menu_head_text'  t-out ="page.name"/>
                                             </a>
-                                            <p t-esc="page.menu_desc"/>
+                                            <p  t-out ="page.menu_desc"/>
                                         </div>
                                     </div>
                                 </t> 
@@ -849,7 +849,7 @@
                                     <div class='col-sm-3 link-thumb'>
                                         <div class='page_menu'>
                                             <a t-att-href="page.url">
-                                                <t t-esc="page.name"/>
+                                                <t  t-out ="page.name"/>
                                             </a>
                                         </div>
                                         <div class='page_info'>
@@ -880,7 +880,7 @@
                             </div>
                         </div>
                         <div t-att-class="'col-md-3 col-xs-12 banner_simple_desc' if submenu.is_img_banner else 'col-md-6 banner_simple_desc'">
-                            <h2 class='sct_head'><t t-esc='submenu.menu_desc'/></h2>
+                            <h2 class='sct_head'><t  t-out ='submenu.menu_desc'/></h2>
                             <t t-out="submenu.banner_content" t-options="{'widget': 'html'}" t-if="submenu.banner_content"/>
                         </div>
                         <div t-att-class="'col-md-5 col-xs-12 letter-spacing' if submenu.is_img_banner else 'col-md-6 banner_info_tag letter-spacing'">
@@ -957,14 +957,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -998,14 +998,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -1039,14 +1039,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -1080,14 +1080,14 @@
                                             <ul>
                                                 <li class="dropdown-header">
                                                     <a t-att-href="page.url">
-                                                        <t t-esc="page.name"/>
+                                                        <t  t-out ="page.name"/>
                                                     </a>
                                                 </li>
                                                 <t t-as="child_page" t-foreach="website.get_megamenu_pages(page)">
                                                     <t t-if="child_page">
                                                         <li class="categories">
                                                             <a t-att-href="child_page.url">
-                                                                <t t-esc="child_page.name"/>
+                                                                <t  t-out ="child_page.name"/>
                                                             </a>
                                                         </li>
                                                     </t>
@@ -1108,22 +1108,22 @@
         <xpath expr="//form/div[hasclass('oe_product_image')]" position="inside">
             <div class="pwp-img">
                 <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
-                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
-                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code" t-esc="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
                     <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
                 </div>
             </div>
@@ -1169,7 +1169,7 @@
                             All Products
                         </span>
                         <span t-if="category and category.name">
-                            <t t-esc="category.name"/>
+                            <t  t-out ="category.name"/>
                         </span>
                     </h1>
                     <ul class="breadcrumb">
@@ -1245,7 +1245,7 @@
         <xpath expr="//*[hasclass('o_wsale_products_item_title')]" position="before">
             <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
                 <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
-                <i class="fa fa-star"/><span class="Rating"><t t-esc="round(rating_val,1)"/></span>
+                <i class="fa fa-star"/><span class="Rating"><t  t-out ="round(rating_val,1)"/></span>
             </ul>
         </xpath>
         <xpath expr="//div[hasclass('o_wsale_product_information', 'position-relative','d-flex','flex-column','flex-grow-1', 'flex-shrink-1')]" position="attributes">
@@ -1334,8 +1334,8 @@
                                     <div class="col-md-7 mt-md-4 mt-lg-0" id="product_details">
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
                                         <h1 itemprop="name" t-field="product.name">Product Name</h1>
-                                        <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>
-                                        <span itemprop="image" style="display:none;" t-esc="base_url + website.image_url(product, 'image_1920')" />
+                                        <span itemprop="url" style="display:none;"  t-out ="base_url + product.website_url"/>
+                                        <span itemprop="image" style="display:none;"  t-out ="base_url + website.image_url(product, 'image_1920')" />
                                         <t t-if="is_view_active('theme_scita.theme_scita_rating')">
                                             <a href="#o_product_page_reviews" class="o_product_page_reviews_link text-decoration-none">
                                                 <t t-call="portal_rating.rating_widget_stars_static">
@@ -1462,7 +1462,7 @@
                         </div>
                         <div class='sct-right-m-side'>
                             <h3 class='sct-pro-title'>
-                                <t t-esc="product.name"/>
+                                <t  t-out ="product.name"/>
                             </h3>
                             <div class="sct-prod-line">
                                 <span>Product successfully added to your</span>
@@ -1578,7 +1578,7 @@
     </template>
     <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
         <xpath expr="//label" position="after">
-            <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
+            <span class='sct_category_count'>(<t  t-out ="result.get(c.id,0)"/>)</span>
         </xpath>
     </template>
 </odoo>

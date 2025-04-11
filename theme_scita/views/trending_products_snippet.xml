@@ -46,14 +46,14 @@
                                         <t t-if="count == 1">
                                             <li class="trend_prod_tab" t-att-data-category-id="trend_product.id">
                                                 <a data-bs-toggle="tab" class="cat_tab show active" href="#multi-collection1-2-1">
-                                                    <span t-esc="trend_product.name"/>
+                                                    <span  t-out ="trend_product.name"/>
                                                 </a>
                                             </li>
                                         </t>
                                         <t t-else="">
                                             <li class="trend_prod_tab" t-att-data-category-id="trend_product.id">
                                                 <a data-bs-toggle="tab" href="#multi-collection2-2-1" class="cat_tab">
-                                                    <t t-esc="trend_product.name"/>
+                                                    <t  t-out ="trend_product.name"/>
                                                 </a>
                                             </li>
                                         </t>
@@ -77,7 +77,7 @@
                                                                 <div class="pwd-desc">
                                                                     <div class="pwp-info">
                                                                         <p class="pwpi-title">
-                                                                            <span t-esc="product.name"/>
+                                                                            <span  t-out ="product.name"/>
                                                                         </p>
                                                                         <div class="ratings">
                                                                             <div class="pink-box" contenteditable="false" t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
@@ -106,11 +106,11 @@
                                                                         <p class="price">
                                                                             <b>
                                                                                 <t t-if="True">
-                                                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;" t-esc="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                                                 </t>
-                                                                                <span t-if="combination_info['price']" t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                                                <span itemprop="price" style="display:none;" t-esc="combination_info['price']" />
-                                                                                <span itemprop="priceCurrency" style="display:none;" t-esc="website.currency_id.name" />
+                                                                                <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                                <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
+                                                                                <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
                                                                             </b>
                                                                         </p>
                                                                     </div>

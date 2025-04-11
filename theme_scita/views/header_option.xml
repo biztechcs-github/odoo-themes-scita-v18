@@ -13,7 +13,7 @@
                         <t t-as="category" t-foreach="website.get_all_categories()" t-cache="website.get_all_categories()">
                             <li t-att-class="'ca-sub' if website.get_child_all_categories(category) else ''">
                                 <a t-att-href="'/shop/category/' + slug(category)">
-                                    <span t-esc="category.name"/>
+                                    <span  t-out ="category.name"/>
                                 </a>
                                 <!-- Level 2 -->
                                 <t t-set="child_cats" t-value="website.get_child_all_categories(category)"/>
@@ -25,14 +25,14 @@
                                                     <t t-as="child_cat" t-foreach="child_cats">
                                                         <li t-att-class='"col-md-4"'>
                                                                 <a class='category_title' t-att-href="'/shop/category/' + slug(child_cat)">
-                                                                    <t t-esc="child_cat.name"/>
+                                                                    <t  t-out ="child_cat.name"/>
                                                                 </a>
                                                                 
                                                             <t t-set="child_of_child_cats" t-value="website.get_child_all_categories(child_cat)"/>
                                                             <t t-if="child_of_child_cats">
                                                                 <t t-as="child_of_child_cat" t-foreach="child_of_child_cats">
                                                                         <a t-att-href="'/shop/category/' + slug(child_of_child_cat)">
-                                                                            <t t-esc="child_of_child_cat.name"/>
+                                                                            <t  t-out ="child_of_child_cat.name"/>
                                                                         </a>
                                                                 </t>
                                                             </t>
@@ -110,7 +110,7 @@
                     <ul class="options">
                         <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
                         <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
-                        <t t-esc='sct_price_list'/>
+                        <t  t-out ='sct_price_list'/>
                         <t t-call="website_sale.pricelist_list" t-cache="pricelist" t-if="_sct_price_list">
                             <t t-set="_classes" t-valuef="d-lg-inline mb-3"/>
                         </t>
@@ -122,7 +122,7 @@
                             <t t-set="_dropdown_menu_class" t-valuef="w-100"/>
                         </t>
                         <li t-if="is_connected" class="personal-info">
-                            Welcome, <b><t t-esc="user_id.name"/></b>
+                            Welcome, <b><t  t-out ="user_id.name"/></b>
                         </li>
                         <li t-if="is_connected" t-attf-class="#{_item_class} o_no_autohide_item">
                             <a groups="base.group_user" href="/web" role="menuitem" class="dropdown-item ps-3" id="o_backend_user_dropdown_link">
@@ -380,17 +380,17 @@
                                         </div>
                                         <t t-set="address_details" t-value="website.get_user_address(request.env.user)"/>
                                         <div class="delivery_name" t-if="not request.env.user._is_public() and address_details['city']">
-                                            <span class='user_name'>Delivery to <t t-esc="request.env.user.name"/>,</span>
+                                            <span class='user_name'>Delivery to <t  t-out ="request.env.user.name"/>,</span>
                                             <div class="contact_address">
-                                                <!-- <span t-if="address_details['street']"  t-esc="address_details['street']"/><span t-if="address_details['street']" class='comma'>,</span>
-                                                <span t-if="address_details['street2']"  t-esc="address_details['street2']"/><span t-if="address_details['street2']" class='comma'>,</span> -->
-                                                <span t-if="address_details['city']"  t-esc="address_details['city']"/><span t-if="address_details['city']" class='comma'></span>
-                                               <!--  <span t-if="address_details['state_id']"  t-esc="address_details['state_id']"/><span t-if="address_details['state_id']" class='comma'>,</span>
-                                                <span t-if="address_details['country_id']" t-esc="address_details['country_id']"/> --><span t-if="address_details['zip']">-<t t-esc="address_details['zip']"/></span>
+                                                <!-- <span t-if="address_details['street']"   t-out ="address_details['street']"/><span t-if="address_details['street']" class='comma'>,</span>
+                                                <span t-if="address_details['street2']"   t-out ="address_details['street2']"/><span t-if="address_details['street2']" class='comma'>,</span> -->
+                                                <span t-if="address_details['city']"   t-out ="address_details['city']"/><span t-if="address_details['city']" class='comma'></span>
+                                               <!--  <span t-if="address_details['state_id']"   t-out ="address_details['state_id']"/><span t-if="address_details['state_id']" class='comma'>,</span>
+                                                <span t-if="address_details['country_id']"  t-out ="address_details['country_id']"/> --><span t-if="address_details['zip']">-<t  t-out ="address_details['zip']"/></span>
                                             </div>
                                         </div>
                                         <a class="delivery_name" t-elif="not request.env.user._is_public() and not request.env.user.street" href="/my/account">
-                                            <span class='user_name'>Hello <t t-esc="request.env.user.name"/>,</span>
+                                            <span class='user_name'>Hello <t  t-out ="request.env.user.name"/>,</span>
                                             <div class="contact_address">Select your address</div>
                                         </a>
                                         <a class="delivery_name" t-else="" href="/web/login">
@@ -655,12 +655,12 @@
                                     </a>
                                 </td>
                                 <td class='text-left'>
-                                    <strong><a t-att-href="wish.product_id.website_url"><t t-esc="wish.product_id.display_name" /></a></strong>
+                                    <strong><a t-att-href="wish.product_id.website_url"><t  t-out ="wish.product_id.display_name" /></a></strong>
                                     <button type="button" class="btn btn-link o_wish_rm no-decoration"><small><i class='fa fa-trash-o'></i> Remove</small></button>
                                 </td>
                                 <td>
                                     <t t-set="combination_info" t-value="wish.product_id._get_combination_info_variant()"/>
-                                    <t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
+                                    <t  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
                                 </td>
                             </tr>
                         </t>
@@ -688,7 +688,7 @@
                             <div class="pd-row">
                                 <span class="product-img" t-if="line.product_id and line.product_id.product_tmpl_id and line.product_id.product_tmpl_id.image_512">
                                     <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                        <span t-esc="line.product_id.image_512" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;, &quot;alt-field&quot;: &quot;name&quot;}"/>
+                                        <span  t-out ="line.product_id.image_512" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;, &quot;alt-field&quot;: &quot;name&quot;}"/>
                                     </a>
                                 </span>
                                 <span class="product-img" t-if="line.product_id and line.product_id.product_tmpl_id and not line.product_id.product_tmpl_id.image_512">
@@ -699,12 +699,12 @@
                                 <div class="product-detail">
                                     <p class="product-name">
                                         <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                            <t t-esc="line.product_id.name"/>
+                                            <t  t-out ="line.product_id.name"/>
                                         </a>
                                     </p>
                                     <p>
-                                        <span class="theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x 
-                                        <span t-esc="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                        <span class="theme_scita_cart_quantity1"  t-out ="int(line.product_uom_qty)"/>x 
+                                        <span  t-out ="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                         <span class="price">
                                             <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">Details</a>
                                         </span>
@@ -716,7 +716,7 @@
                             <div class="row" id="order_total">
                                 <label>Subtotal:</label>
                                 <span>
-                                    <span style="white-space: nowrap;" t-esc="website.sale_get_order().amount_total" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                    <span style="white-space: nowrap;"  t-out ="website.sale_get_order().amount_total" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                 </span>
                             </div>
                         </div>
