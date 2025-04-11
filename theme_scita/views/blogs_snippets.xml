@@ -50,8 +50,8 @@
                                             </p>
                                         </a>
                                         <div class='sct_blog_desc'>
-                                            <h3 class='sct_blog_name'  t-out="slide.name"/>
-                                            <p class="author">By <span  t-out="slide.author_id.name"/>
+                                            <h3 class='sct_blog_name' t-out="slide.name"/>
+                                            <p class="author">By <span t-out="slide.author_id.name"/>
                                             </p>
                                             <p class="blog-content">
                                                 <t t-out="slide.subtitle"/>
@@ -170,7 +170,7 @@
                                 <t t-out="datetime.date.strftime(slide.create_date, '%B %d,%Y')"/>
                             </p>
                             <h3 class='sct_title' t-field="slide.name"/>
-                            <p class="author">By <span  t-out="slide.author_id.name"/>
+                            <p class="author">By <span t-out="slide.author_id.name"/>
                             </p>
 
                         </a>
