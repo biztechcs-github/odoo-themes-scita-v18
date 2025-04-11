@@ -30,7 +30,7 @@
         <div class='container'>
             <div class="custom-title-block">
                 <h4 t-if="slider_header">
-                    <t  t-out ="slider_header.name"/>
+                    <t t-out="slider_header.name"/>
                 </h4>
                 <h4 t-else="">
                     Trending
@@ -43,7 +43,7 @@
                             <a t-att-href="'/shop/product/%s' % slug(slide)">
                                 <img class="front" t-att-alt="slide.name" t-att-title="slide.name" t-att-src="website.image_url(slide, 'image_1920','90x65')"/>
                                 <p class="pwpi-title">
-                                    <t  t-out ="slide.name"/>
+                                    <t t-out="slide.name"/>
                                 </p>
                             </a>
                         </div>
@@ -53,7 +53,7 @@
                             <a t-att-href=" '/shop/category/%s' % slug(slide)">
                                 <img t-att-src="website.image_url(slide, 'image_1920','90x65')" t-att-title="slide.name" t-att-alt="slide.name"/>
                                 <p class="pwpi-title">
-                                    <t  t-out ="slide.name"/>
+                                    <t t-out="slide.name"/>
                                 </p>
                             </a>
                         </div>
@@ -68,22 +68,22 @@
             <div class="pwp-img">
                 <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
                 <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
-                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
-                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                     <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
                 </div>
                 <a t-att-href="'/shop/product/%s' % slug(product)">
@@ -124,11 +124,11 @@
                     <p class="price">
                         <b>
                             <t t-if="True">
-                                <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                             </t>
-                            <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                            <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
-                            <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
+                            <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
+                            <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
                         </b>
                     </p>
                     <div class='add_cart_div ajax_cart_template'>
@@ -205,7 +205,7 @@
                     <div class="content col-md-12">
                         <h2 class="section-title" t-if="not slider_header">Featured Products</h2>
                         <h2 class="section-title " t-if="slider_header">
-                            <t  t-out ="slider_header.name"/>
+                            <t t-out="slider_header.name"/>
                         </h2>
                     </div>
                 </div>
@@ -217,22 +217,22 @@
                                 <div class="pwp-img">
                                     <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
                                     <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
-                                        <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                                        <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                     </div>
                                     <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
-                                        <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                                        <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                     </div>
                                     <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                                         <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % product.product_style_tag_id.color_code"/>
-                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                     </div>
                                     <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                                         <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                     </div>
                                     <div t-if="product and product.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                                         <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                         <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
                                     </div>
                                     <a t-att-href="'/shop/product/%s' % slug(product)">
@@ -271,11 +271,11 @@
                                         <p class="price">
                                             <b>
                                                 <t t-if="True">
-                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                 </t>
-                                                <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
-                                                <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
+                                                <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
+                                                <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
                                             </b>
                                         </p>
                                     </div>
@@ -338,7 +338,7 @@
                                         Category Image 
                         </h2>
                         <h2 class="section-title style1" t-if="slider_header">
-                            <t  t-out ="slider_header.name"/>
+                            <t t-out="slider_header.name"/>
                         </h2>
                         <div class="cstm-seprator"></div>
                     </div>
@@ -368,7 +368,7 @@
                                                 </div>
                                                 <div class='sct_cat_content'>
                                                     <p class="pwpi-title">
-                                                        <t  t-out ="slide.name"/>
+                                                        <t t-out="slide.name"/>
                                                     </p>
                                                 </div>
                                             </a>
@@ -377,22 +377,22 @@
                                             <t t-set="combination_info" t-value="slide._get_combination_info(only_template=True, add_qty=add_qty or 1)"/>
                                                 <div class="cs-img">
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % slide.product_style_tag_id.color_code">
-                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"  t-out ="slide.product_style_tag_id.name"/>
+                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                     </div>
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'background-color: %s' % slide.product_style_tag_id.color_code">
-                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"  t-out ="slide.product_style_tag_id.name"/>
+                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                     </div>
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style3' and slide.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position">
                                                         <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % slide.product_style_tag_id.color_code"/>
-                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out ="slide.product_style_tag_id.name"/>
+                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                     </div>
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style3' and slide.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position">
                                                         <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % slide.product_style_tag_id.color_code"/>
-                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out ="slide.product_style_tag_id.name"/>
+                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                     </div>
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position">
                                                         <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % slide.product_style_tag_id.color_code"/>
-                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out ="slide.product_style_tag_id.name"/>
+                                                        <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                         <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % slide.product_style_tag_id.color_code"/>
                                                     </div>
                                                     <a t-att-href=" '/shop/product/%s' % slug(slide)">
@@ -403,7 +403,7 @@
                                                     <a t-att-href=" '/shop/product/%s' % slug(slide)">
                                                         <p class="pwpi-title">
 
-                                                            <t  t-out ="slide.name"/>
+                                                            <t t-out="slide.name"/>
                                                         </p>
                                                     </a>
                                                 </div>
@@ -432,11 +432,11 @@
                                                 <p class="price">
                                                     <b>
                                                         <t t-if="True">
-                                                            <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                            <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                         </t>
-                                                        <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                        <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
-                                                        <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
+                                                        <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                        <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
+                                                        <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
                                                     </b>
                                                 </p>
                                                 <div class="cart_wrapper add_cart_div ajax_cart_template">
@@ -513,22 +513,22 @@
             <div class="pwp-img">
                 <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
                 <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
-                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
-                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
                     <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
-                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out ="product.product_style_tag_id.name"/>
+                    <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                     <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
                 </div>
                 <a t-att-href="'/shop/product/%s' % slug(product)">
@@ -562,16 +562,16 @@
                 </t>
                 <div class="pwp-info">
                     <p class="pwpi-title">
-                        <span  t-out ='product.name'/>
+                        <span  t-out='product.name'/>
                     </p>
                     <p class="price">
                         <b>
                             <t t-if="True">
-                                <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out ="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                             </t>
-                            <span t-if="combination_info['price']"  t-out ="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                            <span itemprop="price" style="display:none;"  t-out ="combination_info['price']" />
-                            <span itemprop="priceCurrency" style="display:none;"  t-out ="website.currency_id.name" />
+                            <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                            <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
+                            <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
                         </b>
                     </p>
                 </div>
@@ -631,7 +631,7 @@
                                         Featured Products
                                     </h2>
                                     <h2 class="section-title style1" t-if="slider_header">
-                                        <t  t-out ="slider_header.name"/>
+                                        <t t-out="slider_header.name"/>
                                     </h2>
                                 </div>
                                 <ul id="multi_dynamic_slider_tabs" class="nav nav-tabs">
@@ -639,12 +639,12 @@
                                     <t t-if="slider_details.no_of_collection == '2'">
                                         <li class="my-test">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t  t-out ='slider_details.label_collection_1'/>
+                                                <t t-out='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="my-test">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_2'/>
+                                                <t t-out='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                     </t>
@@ -652,17 +652,17 @@
                                     <t t-if="slider_details.no_of_collection == '3'">
                                         <li class="">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t  t-out ='slider_details.label_collection_1'/>
+                                                <t t-out='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_2'/>
+                                                <t t-out='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_3'/>
+                                                <t t-out='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                     </t>
@@ -670,22 +670,22 @@
                                     <t t-if="slider_details.no_of_collection == '4'">
                                         <li class="">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t  t-out ='slider_details.label_collection_1'/>
+                                                <t t-out='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_2'/>
+                                                <t t-out='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_3'/>
+                                                <t t-out='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_4'/>
+                                                <t t-out='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
                                     </t>
@@ -693,27 +693,27 @@
                                     <t t-if="slider_details.no_of_collection == '5'">
                                         <li class="">
                                             <a t-att-href="'#fashion-collection1-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab" class="active show">
-                                                <t  t-out ='slider_details.label_collection_1'/>
+                                                <t t-out='slider_details.label_collection_1'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection2-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_2'/>
+                                                <t t-out='slider_details.label_collection_2'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection3-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_3'/>
+                                                <t t-out='slider_details.label_collection_3'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection4-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_4'/>
+                                                <t t-out='slider_details.label_collection_4'/>
                                             </a>
                                         </li>
                                         <li class="">
                                             <a t-att-href="'#fashion-collection5-%s-%s' %(slider_header.no_of_collection, slider_details.id)" data-bs-toggle="tab">
-                                                <t  t-out ='slider_details.label_collection_5'/>
+                                                <t t-out='slider_details.label_collection_5'/>
                                             </a>
                                         </li>
                                     </t>
