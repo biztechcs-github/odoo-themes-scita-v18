@@ -122,7 +122,7 @@
         </section>
     </template> 
 
-       <template id="retail_sct_banner_slider_1" name="Banner Slider 6">
+    <template id="retail_sct_banner_slider_1" name="Banner Slider 6">
         <section data-disp='banner' class="retail_sct_banner_1 s_carousel_wrapper">
             <div id="myCarousel" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
                 <div class="carousel-inner">
@@ -189,7 +189,6 @@
             </div>
         </section>   
     </template>
-   
     
     <!-- IT Promotional Services Banner -->
     <template id="it_main_banner" name="Banner Snippet 1">
@@ -238,6 +237,19 @@
                 <we-button class="dropdown-item dynamic_video_banner" tabindex="-1" href="#" data-dynamic_video_banner="">Modify</we-button>
             </div>
         </xpath>
+    </template>
+    <template id="banner_snippet_2" name="Hero Image Snippet">
+        <section class="sct_banner_snippet" data-disp='banner'>
+            <div class='container-fluid'>
+                <div class="row">
+                    <div class='col-md-12 sct_hero_banner text-center p-0'>
+                        <a href="/shop">
+                            <img src="/web/image/theme_scita.sct_banner_snippet_2"/>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </template>
     <template id="sct_dynamic_banner_video_1" name="Video Banner 11">
         <section class="dynamic_video_banner">

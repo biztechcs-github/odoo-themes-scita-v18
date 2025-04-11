@@ -9055,6 +9055,7 @@ body #wrapwrap{
 
 				.accordion-header{
 					font-size: $title - 1;
+					align-items: flex-start;
 					color: $light-color !important;
 					
 					@media (min-width: 768px) {
@@ -9085,32 +9086,39 @@ body #wrapwrap{
 	@media (max-width: 1199px){
 		padding: 50px 0;
 	}
+	.container{
+		max-width: 850px;
+	}
 	.sct_top_row {
 		margin-bottom: 20px;
 		text-align: center;
 	}
 	.sct_btm_row {
 		.accordion {
-			display: flex;
-			flex-wrap: wrap;
 			.accordion-item{
-				flex: 0 0 calc(50% - 20px);
-				max-width: calc(50% - 20px);
-				border: 0;
 				margin: 0 10px;
 
 				.accordion-header{
-					border-bottom: 1px solid $primary;
 					font-size: $title - 1;
+					align-items: flex-start;
 					
 					@media (min-width: 768px) {
 						font-size: $title + 1;
 					}
 
 					&::after{
-						background-image: none;
-						font-weight: normal;
-						font-size: 16px;
+						content: '';
+						background-image: url(../img/plus_icon.svg);
+						width: 26px;
+						height: 26px;
+						background-repeat: no-repeat;
+						transform: rotate(135deg);
+					}
+
+					&.collapsed{
+						&::after{
+							transform: rotate(0);
+						}
 					}
 				}
 			}
