@@ -941,80 +941,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
             }
         },
     });
-    options.registry.scita_multi_cat_custom_snippet = options.Class.extend({
-
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("hidden");
-            this.$target.find('.oe_multi_category_slider').empty();
-            if (!editMode) {
-                self.$el.find(".oe_multi_category_slider").on("click", $.bind(self.multi_category_slider, self));
-            }
-        },
-
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.multi_category_slider()) {
-                this.multi_category_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-
-        cleanForSave: function() {
-            $('.oe_multi_category_slider').empty();
-        },
-
-        multi_category_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.multi_product_custom_slider_block"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#slider_type"),
-                    $cancel = self.$modal.find("#cancel"),
-                    $snippnet_submit = self.$modal.find("#snippnet_submit");
-
-                rpc('/theme_scita/product_multi_get_options', {}).then(function(res) {
-                    $("select[id='slider_type'] option").remove();
-                    $.each(res, function(y) {
-                        $("select[id='slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-
-                $snippnet_submit.on('click', function() {
-                    // var type = '';
-                    self.$target.attr('data-multi-cat-slider-type', $slider_type.val());
-                    self.$target.attr('data-multi-cat-slider-id', 'multi-cat-myowl' + $slider_type.val());
-                    if ($('select#slider_type').find(":selected").text()) {
-                        var type = '';
-                        type = _t($('select#slider_type').find(":selected").text());
-                    } else {
-                        var type = '';
-                        type = _t("Multi Product Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="row our-categories">\
-                                                        <div class="col-md-12">\
-                                                            <div class="title-block">\
-                                                                <h4 class="section-title style1">\
-                                                                    <span>' + type + '</span>\
-                                                                </h4>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>');
-                });
-            } else {
-                return;
-            }
-        },
-    });
     options.registry.fashion_multi_cat_custom_snippet = options.Class.extend({
 
         start: function(editMode) {
@@ -1237,72 +1163,7 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
         },
 
     });
-    options.registry.health_blog_custom_snippet = options.Class.extend({
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("o_hidden");
-            this.$target.find('.health_blog_slider').empty();
-            
-            if (!editMode) {
-                self.$el.find(".health_blog_slider").on("click", $.bind(self.theme_scita_blog_slider, self));
-            }
-        },
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.theme_scita_blog_slider()) {
-                this.theme_scita_blog_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-        cleanForSave: function() {
-            $('.health_blog_slider').empty();
-        },
-        theme_scita_blog_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_blog_slider_block"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#blog_slider_type"),
-                    $blog_slider_cancel = self.$modal.find("#cancel"),
-                    $sub_data = self.$modal.find("#blog_sub_data");
 
-                rpc('/theme_scita/blog_get_options', {}).then(function(res) {
-                    $('#blog_slider_type option[value!="0"]').remove();
-                    $.each(res, function(y) {
-                        $("select[id='blog_slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-                $sub_data.on('click', function() {
-                    var type = '';
-                    self.$target.attr('data-blog-slider-type', $slider_type.val());
-                    self.$target.attr('data-blog-slider-id', 'blog-myowl' + $slider_type.val());
-                    if ($('select#blog_slider_type').find(":selected").text()) {
-                        type = _t($('select#blog_slider_type').find(":selected").text());
-                    } else {
-                        type = _t("Blog Post Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + type + '</h3>\
-                                                    </div>\
-                                                </div>');
-                });
-                $blog_slider_cancel.on('click', function() {
-                    // self.$modal.modal('hide')
-                    self.getParent()._onRemoveClick($.Event("click"))
-                })
-            } else {
-                return;
-            }
-        },
-    });
     options.registry.theme_scita_blog_custom_snippet = options.Class.extend({
         start: function(editMode) {
             var self = this;
@@ -1435,73 +1296,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
             }
         },
     });
-    options.registry.blog_3_custom_snippet = options.Class.extend({
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("o_hidden");
-            this.$target.find('.blog_3_custom').empty();
-            
-            if (!editMode) {
-                self.$el.find(".blog_3_custom").on("click", $.bind(self.theme_scita_blog_slider, self));
-            }
-        },
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.theme_scita_blog_slider()) {
-                this.theme_scita_blog_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-        cleanForSave: function() {
-            $('.blog_3_custom').empty();
-        },
-        theme_scita_blog_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_blog_slider_block"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#blog_slider_type"),
-                    $blog_slider_cancel = self.$modal.find("#cancel"),
-                    $sub_data = self.$modal.find("#blog_sub_data");
-
-                rpc('/theme_scita/blog_get_options', {}).then(function(res) {
-                    $('#blog_slider_type option[value!="0"]').remove();
-                    $.each(res, function(y) {
-                        $("select[id='blog_slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-                $sub_data.on('click', function() {
-                    var type = '';
-                    self.$target.attr('data-blog-slider-type', $slider_type.val());
-                    self.$target.attr('data-blog-slider-id', 'blog-myowl' + $slider_type.val());
-                    if ($('select#blog_slider_type').find(":selected").text()) {
-                        type = _t($('select#blog_slider_type').find(":selected").text());
-                    } else {
-                        type = _t("Blog Post Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + type + '</h3>\
-                                                    </div>\
-                                                </div>');
-                });
-                $blog_slider_cancel.on('click', function() {
-                    // self.$modal.modal('hide')
-                    self.getParent()._onRemoveClick($.Event("click"))
-                })
-            } else {
-                return;
-            }
-        },
-    });
-    
     options.registry.blog_4_custom_snippet = options.Class.extend({
         start: function(editMode) {
             var self = this;
@@ -1524,72 +1318,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
         },
         cleanForSave: function() {
             $('.blog_4_custom').empty();
-        },
-        theme_scita_blog_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_blog_slider_block"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#blog_slider_type"),
-                    $blog_slider_cancel = self.$modal.find("#cancel"),
-                    $sub_data = self.$modal.find("#blog_sub_data");
-
-                rpc('/theme_scita/blog_get_options', {}).then(function(res) {
-                    $('#blog_slider_type option[value!="0"]').remove();
-                    $.each(res, function(y) {
-                        $("select[id='blog_slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-                $sub_data.on('click', function() {
-                    var type = '';
-                    self.$target.attr('data-blog-slider-type', $slider_type.val());
-                    self.$target.attr('data-blog-slider-id', 'blog-myowl' + $slider_type.val());
-                    if ($('select#blog_slider_type').find(":selected").text()) {
-                        type = _t($('select#blog_slider_type').find(":selected").text());
-                    } else {
-                        type = _t("Blog Post Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="block-title">\
-                                                        <h3 class="fancy">' + type + '</h3>\
-                                                    </div>\
-                                                </div>');
-                });
-                $blog_slider_cancel.on('click', function() {
-                    // self.$modal.modal('hide')
-                    self.getParent()._onRemoveClick($.Event("click"))
-                })
-            } else {
-                return;
-            }
-        },
-    });
-    options.registry.blog_6_custom_snippet = options.Class.extend({
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("o_hidden");
-            this.$target.find('.blog_6_custom').empty();
-           
-            if (!editMode) {
-                self.$el.find(".blog_6_custom").on("click", $.bind(self.theme_scita_blog_slider, self));
-            }
-        },
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.theme_scita_blog_slider()) {
-                this.theme_scita_blog_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-        cleanForSave: function() {
-            $('.blog_6_custom').empty();
         },
         theme_scita_blog_slider: function(type, value) {
             var self = this;
@@ -1699,55 +1427,59 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
             }
         },
     });
-    options.registry.blog_8_custom_snippet = options.Class.extend({
+    options.registry.cat_slider_3 = options.Class.extend({
         start: function(editMode) {
             var self = this;
             this._super();
             this.$target.removeClass("o_hidden");
-            this.$target.find('.blog_8_custom').empty();
+            this.$target.find(".cat_slider_3").empty();
             if (!editMode) {
-                self.$el.find(".blog_8_custom").on("click", $.bind(self.theme_scita_blog_slider, self));
+                self.$el.find(".cat_slider_3").on("click", $.bind(self.cat_slider, self));
             }
         },
+
         onBuilt: function() {
             var self = this;
             this._super();
-            if (this.theme_scita_blog_slider()) {
-                this.theme_scita_blog_slider().fail(function() {
+            if (this.cat_slider()) {
+                this.cat_slider().fail(function() {
                     self.getParent()._removeSnippet();
                 });
             }
         },
+
         cleanForSave: function() {
-            $('.blog_8_custom').empty();
+            $('.cat_slider_3').empty();
         },
-        theme_scita_blog_slider: function(type, value) {
+
+        cat_slider: function(type, value) {
             var self = this;
             if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_blog_slider_block"));
+                self.$modal = $(renderToElement("theme_scita.scita_dynamic_category_slider"));
                 self.$modal.appendTo('body');
                 self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#blog_slider_type"),
-                    $blog_slider_cancel = self.$modal.find("#cancel"),
-                    $sub_data = self.$modal.find("#blog_sub_data");
-
-                rpc('/theme_scita/blog_get_options', {}).then(function(res) {
-                    $('#blog_slider_type option[value!="0"]').remove();
+                var $slider_type = self.$modal.find("#slider_type"),
+                    $category_slider_delete = self.$modal.find("#cancel"),
+                    $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
+                console.log("AAAAAAAAAAAAAAAAAAAA CATSLIDER3")
+                rpc('/theme_scita/category_get_options', {}).then(function(res) {
+                    $('#slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
-                        $("select[id='blog_slider_type']").append($('<option>', {
+                        $("select[id='slider_type']").append($('<option>', {
                             value: res[y]["id"],
                             text: res[y]["name"]
                         }));
                     });
                 });
-                $sub_data.on('click', function() {
+
+                $pro_cat_sub_data.on('click', function() {
                     var type = '';
-                    self.$target.attr('data-blog-slider-type', $slider_type.val());
-                    self.$target.attr('data-blog-slider-id', 'blog-myowl' + $slider_type.val());
-                    if ($('select#blog_slider_type').find(":selected").text()) {
-                        type = _t($('select#blog_slider_type').find(":selected").text());
+                    self.$target.attr('data-cat-slider-id', $slider_type.val());
+                    debugger;
+                    if ($('select#slider_type').find(":selected").text()) {
+                        type = _t($('select#slider_type').find(":selected").text());
                     } else {
-                        type = _t("Blog Post Slider");
+                        type = _t("Category Slider");
                     }
                     self.$target.empty().append('<div class="container">\
                                                     <div class="block-title">\
@@ -1755,8 +1487,7 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                                                     </div>\
                                                 </div>');
                 });
-                $blog_slider_cancel.on('click', function() {
-                    // self.$modal.modal('hide')
+                $category_slider_delete.on('click', function() {
                     self.getParent()._onRemoveClick($.Event("click"))
                 })
             } else {
@@ -1934,78 +1665,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
 
         cleanForSave: function() {
             $('.sct_product_snippet_1 .owl-carousel').empty();
-        },
-
-        multi_category_slider: function(type, value) {
-            var self = this;
-            if (type != undefined && type == false || type == undefined) {
-                self.$modal = $(renderToElement("theme_scita.scita_dynamic_product_snippet_configuration"));
-                self.$modal.appendTo('body');
-                self.$modal.modal('show');
-                var $slider_type = self.$modal.find("#slider_type"),
-                    $cancel = self.$modal.find("#cancel"),
-                    $snippnet_submit = self.$modal.find("#snippnet_submit");
-                rpc('/theme_scita/product_configuration', {}).then(function(res) {
-                    $("select[id='slider_type'] option").remove();
-                    $.each(res, function(y) {
-                        $("select[id='slider_type']").append($('<option>', {
-                            value: res[y]["id"],
-                            text: res[y]["name"]
-                        }));
-                    });
-                });
-
-                $snippnet_submit.on('click', function() {
-                    self.$target.attr('data-multi-cat-slider-type', $slider_type.val());
-                    self.$target.attr('data-multi-cat-slider-id', 'multi-cat-myowl' + $slider_type.val());
-                    if ($('select#slider_type').find(":selected").text()) {
-                        var type = '';
-                        type = _t($('select#slider_type').find(":selected").text());
-                    } else {
-                        var type = '';
-                        type = _t("Multi Product Slider");
-                    }
-                    self.$target.empty().append('<div class="container">\
-                                                    <div class="row our-categories">\
-                                                        <div class="col-md-12">\
-                                                            <div class="title-block">\
-                                                                <h4 class="section-title style1">\
-                                                                    <span>' + type + '</span>\
-                                                                </h4>\
-                                                            </div>\
-                                                        </div>\
-                                                    </div>\
-                                                </div>');
-                });
-            } else {
-                return;
-            }
-        },
-    });
-    options.registry.sct_product_snippet_2 = options.Class.extend({
-
-        start: function(editMode) {
-            var self = this;
-            this._super();
-            this.$target.removeClass("hidden");
-            this.$target.find('.sct_product_snippet_2 .owl-carousel').empty();
-            if (!editMode) {
-                self.$el.find(".sct_product_snippet_2").on("click", $.bind(self.multi_category_slider, self));
-            }
-        },
-
-        onBuilt: function() {
-            var self = this;
-            this._super();
-            if (this.multi_category_slider()) {
-                this.multi_category_slider().fail(function() {
-                    self.getParent()._removeSnippet();
-                });
-            }
-        },
-
-        cleanForSave: function() {
-            $('.sct_product_snippet_2 .owl-carousel').empty();
         },
 
         multi_category_slider: function(type, value) {
