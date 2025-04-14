@@ -11,6 +11,11 @@ $(document).ready(function(){
     if($(".js_sale").length === 0){
         $("div#wrap").addClass("js_sale");
     }
+    $('.sct_content_div:first-child').addClass('open');
+    $('.sct_content_div').hover(function() {
+        $('.sct_content_div').not(this).removeClass('open'); // Close others
+        $(this).addClass('open'); // Open current
+      });
 });
     animation.registry.oe_cat_slider = animation.Class.extend({
         selector: ".oe_cat_slider",

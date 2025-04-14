@@ -51,17 +51,17 @@
             <div class='container'>
                 <div class="row sct_btm_row">                   
                     <div class='col-md-8 col-lg-6 col-xl-4  sct_content_info'>
-                    	<div class='sct_content_box py-4 p-md-4 p-xxl-5 h-100 d-flex justify-content-center flex-column'>	
+                    	<section class='sct_content_box py-4 p-md-4 p-xxl-5 h-100 d-flex justify-content-center flex-column'>	
                         	<div class='sct_contect_into'>
                                 <div class="sct_icon mb-3"><i class="fa fa-gears p-3"></i></div>
-	                            <h4 class='sct_title'>Uncompromised sound with newly designed drivers</h4>
+	                            <h2 class='sct_title'>Uncompromised sound with newly designed drivers</h2>
 	                            <p class='sct_simple_text'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</p>
                                 <p class='sct_simple_text'>Nulla Lorem mollit cupidatat irure. Laborum magna nulla duis ullamco cillum dolor. Voluptate exercitation incididunt aliquip.</p>
 	                        </div>
 	                        <div class="sct_cst_btn mt-3">
 	                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Read More</a>
 	                        </div>
-                    	</div>
+                    	</section>
                     </div>
                     <div class="col-md-2 col-lg-3 col-xl-4"></div>
                     <div class="col-md-2 col-lg-3 col-xl-4"></div>
@@ -69,29 +69,5 @@
             </div>
         </section>
     </template>
-    <!-- content_snippets_v_11 -->
-    <template id="content_snippets_v_11" name="Content Snippet 6">
-        <section class="content_snippets_v_11 s_faq_collapse" data-disp="content_block">
-            <div class='container'>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-5 col-lg-4 sct_content_info'>
-                        <div class='sct_content_box'>   
-                            <div class='sct_contect_into'>
-                                <h2 class='sct_title'>Creator of quality design and thinker of fresh ideas.</h2>
-                                <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                            </div>
-                          
-                        </div>
-                    </div>
-                    <div class='col-md-7  col-lg-8  sct_according_div'>
-                        <div class="sct_base_class ps-ps-md-3 ps-lg-5">
-                            <t t-call="website.s_accordion">
-                                <t t-set="extra_classes" t-valuef="accordion-flush"/>
-                            </t>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+  
 </odoo>
