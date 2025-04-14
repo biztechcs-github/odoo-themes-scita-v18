@@ -79,7 +79,7 @@
                                 <h3 class='sct_title'>Sentiment Analysis</h3>
                                 <p class='sct_simple_text'>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 <div class='sct_cst_btn'>
-                                    <a href="/shop" class="btn sct_round_border">Try it for free</a>
+                                    <a href="/shop" class="btn btn-primary sct_round_border">Try it for free</a>
                                 </div>
                             </div>
                         </div>
@@ -95,7 +95,7 @@
                                 <h3 class='sct_title'>Product Sentiment</h3>
                                 <p class='sct_simple_text'>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 <div class='sct_cst_btn'>
-                                    <a href="/shop" class="btn sct_round_border">Try it for free</a>
+                                    <a href="/shop" class="btn btn-primary sct_round_border">Try it for free</a>
                                 </div>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                                 <h3 class='sct_title'>Emotional Classifier</h3>
                                 <p class='sct_simple_text'>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 <div class='sct_cst_btn'>
-                                    <a href="/shop" class="btn sct_round_border">Try it for free</a>
+                                    <a href="/shop" class="btn btn-primary sct_round_border">Try it for free</a>
                                 </div>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                                 <h3 class='sct_title'>Urgency Detection</h3>
                                 <p class='sct_simple_text'>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                 <div class='sct_cst_btn'>
-                                    <a href="/shop" class="btn sct_round_border">Try it for free</a>
+                                    <a href="/shop" class="btn btn-primary sct_round_border">Try it for free</a>
                                 </div>
                             </div>
                         </div>

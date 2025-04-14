@@ -1209,6 +1209,11 @@ body #wrapwrap{
 /*retailer trending offer*/
 .retial_advertisement_banner_1 {
 	background: #f7f6f2;
+	padding: 50px 0;
+
+	@include min992{
+		padding: 60px 0;
+	}
 
 	.sct_adv_block{
 		display: flex;
@@ -1266,7 +1271,10 @@ body #wrapwrap{
 
 /*retailer offer banner end*/
 .retial_promo_banner_snippet_1 {
-	margin-bottom: 70px;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}
 	.col-md-4 {
 		@include flex;
 		@media (max-width: 767px){
@@ -3059,18 +3067,9 @@ body #wrapwrap{
 /*fashion advertise banner snippet*/
 
 .advertisement_banner_1{
-    padding: 35px 0;
-    @media (min-width: 768px){
-        padding: 45px 0;
-    }
-    @media (min-width: 1024px){
-        padding: 50px 0;
-    }
-	@media (min-width: 1200px){
+    padding: 50px 0;
+	@include min992{
 		padding: 60px 0;
-	}
-	@media (min-width: 1440px){
-		padding: 70px 0;
 	}
    .s_nb_column_fixed{
     min-height: 460px;
@@ -3327,17 +3326,11 @@ body #wrapwrap{
 /*it about us snippet end*/
 /*it service snippet*/
 .it_grids_service {
-	// @include bg-nore-cover;
 	background-color: #f6f6f6;
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
+	padding: 50px 0;
+
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_btm_row {
 		align-items: flex-start;
@@ -3363,15 +3356,24 @@ body #wrapwrap{
 				ul {
 					list-style-type: none;
 					
-					@media (min-width: 768px) {
+					@include min768{
 						column-count: 2;
 					}
 					
 					li{
-						margin-bottom: 20px;
+						margin-bottom: 30px;
+
+						@include min992{
+							margin-bottom: 15px;
+						}
 						
+						&:last-child{
+							@include mobiletab{
+								margin-bottom: 0;
+							}
+						}
 						&:first-child{
-							@media (min-width: 992px) {
+							@include min992{
 								margin-top: 60px;
 							}
 						}
@@ -3388,6 +3390,11 @@ body #wrapwrap{
 								font-size: $title + 2;
 								margin: 0 0 15px;
 							}
+							.sct_simple_text{
+								.btn{
+									margin-top: 20px;
+								}
+							}
 						}
 					}
 				}
@@ -3397,9 +3404,9 @@ body #wrapwrap{
 			}
 		}
 		.sct_cmp_img {
-			@media (min-width: 992px) {
+			@include min992{
 				position: sticky;
-				top: 120px;
+				top: 90px;
 
 			}
 
@@ -3407,19 +3414,25 @@ body #wrapwrap{
 				margin-bottom: 40px;
 			}
 			.sct_img{
-				@media (min-width: 992px) {
-					max-width: 80%;
+				position: relative;
+				@include min768{
+					max-width: fit-content;
 				}
-			}
-			img {
-				@media (max-width: 1439px) {
-					max-width: 500px;
+
+				img{
+					@media (max-height: 700px) {
+						height: calc(100dvh - 260px);
+					}
 				}
-				@media (max-width: 1199px) {
-					max-width: 420px;
-				}
-				@media (max-width: 1023px) {
-					max-width: 100%;
+				.sct_cst_btn{
+					@include flex;
+					@include justify-align-content;
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					background: rgba($black,0.4);
 				}
 			}
 		}
@@ -4226,20 +4239,13 @@ body #wrapwrap{
 /*it blog snippet end*/
 /*it portfolio snippet*/
 .it_portfolio_tabs {
-	padding: 80px 0;
+	padding: 50px 0;
 	@include bg-nore-cover;
-	@media (max-width: 1600px){
+
+	@include min992{
 		padding: 60px 0;
 	}
-	@media (max-width: 1599px){
-		padding: 50px 0 60px;
-	}
-	@media (max-width: 1023px){
-		padding: 40px 0 50px;
-	}
-	@media (max-width: 767px) {
-		padding: 40px 0 20px;
-	}
+	
 	.sct_btm_row {
 		margin-top: 20px;
 		@media (max-width: 1439px){
@@ -4389,15 +4395,10 @@ body #wrapwrap{
 
 /*health about us snippet*/
 .health_about_hospital {
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0 ;
-	}
-	@media (max-width: 1023px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
+	padding: 50px 0;
+
+	@include min992{
+		padding: 60px 0;
 	}
 	.row {
 		@include align-content;
@@ -4976,23 +4977,20 @@ body #wrapwrap{
 /*health statics snippet end*/
 /*health case study snippet*/
 .health_cash_study_snippet {
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
 	}
 	.sct_top_row {
 		text-align: center;
-		margin-bottom: 30px;
+
+		@include min992{
+			margin-bottom: 15px;
+		}
 	}
 	.sct_mid_row {
 		.sct_base_class {
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 
 			.sct_left_side {
 				text-align: center;
@@ -5521,33 +5519,18 @@ body #wrapwrap{
 /*health testimonial snippet end*/
 /*use case snippet 2*/
 .case_study_varient_2 {
-	// background: $light-grey-color;
-	padding: 50px 0;
-	@media (max-width: 1199pxpx){
-		padding: 40px 0 20px;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0 20px;
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
 	}
 	.case_study_box {
 		background: rgba($primary, 0.1);
 		padding: 30px;
 		border-radius: 10px;
-		margin: 10px 0;
+		margin: 0 0 30px;
 
 		.sct_above {
-			// @include flex;
-			// @include justify-align-content;
-			// margin-top: -50px;
-			// background-color: $dark-color;
-			// border-radius: 50px;
-			// height: 60px;
 			width: 60px;
-			
-			.sct_case_icon {
-				// padding-right: 10px;
-				// padding: 11px;
-			}
 		}
 		.sct_below {
 			margin-top: 20px;
@@ -5565,18 +5548,21 @@ body #wrapwrap{
 			p {
 				margin-bottom: 0;
 			}
-			.btn {
-				border:1px solid $primary; 
-				background: transparent;
-				border-radius: 50px;
-				color: $primary;
+			.sct_cst_btn{
 				margin-top: 20px;
-
-				&:hover{
-					background: $primary;
-					color: $light-color;
-				}
 			}
+			// .btn {
+			// 	border:1px solid $primary; 
+			// 	background: transparent;
+			// 	border-radius: 50px;
+			// 	color: $primary;
+			// 	margin-top: 20px;
+
+			// 	&:hover{
+			// 		background: $primary;
+			// 		color: $light-color;
+			// 	}
+			// }
 		}
 	}
 }
@@ -6057,16 +6043,10 @@ body #wrapwrap{
 /*testimonial snippet 5 end*/
 /*testimonial snippet 6*/
 .testinomial_varient_6 {
-	padding: 80px 0;
+	padding: 50px 0;
 	background: $dark-color;
-	@media (max-width: 1439px){
-		padding: 70px 0;
-	}
-	@media (max-width: 1199px){
+	@include min992{
 		padding: 60px 0;
-	}
-	@media (max-width: 767px){
-		padding: 50px 0 20px;
 	}
 	.sct_top_row {
 		text-align: center;
@@ -6146,10 +6126,11 @@ body #wrapwrap{
 /*testimonial snippet 6 end*/
 /*service snippet 7*/
 .service_varient_11 {
-	padding: 60px 0;
+	padding: 50px 0 25px;
 	background: $dark-color;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+
+	@include min992{
+		padding: 60px 0 35px;
 	}
 	.sct_service_block{
 		margin-bottom: 25px;
@@ -6168,16 +6149,16 @@ body #wrapwrap{
 			}
 
 			.service_icon{
-				background: $primary;
-				padding: 12px;
-				border-radius: 10px;
-				width: 50px;
-				height: 50px;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-
+				max-height: 300px;
+				
+				img{
+					max-height: 300px;
+					border-radius: 10px;
+				}
 				.fa{
+					border-radius: 10px;
+					background: $primary;
+					padding: 12px;
 					font-size: 25px;
 					color: $light-color;
 				}
@@ -6193,8 +6174,14 @@ body #wrapwrap{
 						font-size: $subtitle - 8;
 					}
 				}
+				.sct_simple_text{
+					.btn{
+						margin-top: 20px;
+					}
+				}
 				ul, ol{
 					list-style: none;
+					margin-bottom: 16px;
 
 					li{
 						.fa{
@@ -6227,6 +6214,7 @@ body #wrapwrap{
 						@include transition(all, 0.3s, ease);
 						position: absolute;
 						right: 11px;
+						top: 9px;
 					}
 
 					&:hover{
@@ -6300,10 +6288,12 @@ body #wrapwrap{
 /*service snippet 7 end*/
 /*service snippet 8*/
 .service_varient_14 {
-	padding: 60px 0 30px;
-	@media (max-width: 1199px){
-		padding: 50px 0 20px;
+	padding: 50px 0 20px;
+
+	@include min992{
+		padding: 60px 0 30px;
 	}
+
 	.sct_top_row {
 		margin-bottom: 40px;
 		@media (max-width: 1023px){
@@ -6316,8 +6306,12 @@ body #wrapwrap{
 	.sct_thumb {
 		margin-bottom: 30px;
 		.sct_sers_box {
+			@include flex-wrap-common;
+			box-shadow: 0 0 10px rgba($primary, 0.2);
+			padding: 20px;
+			border-radius: 10px;
+
 			.service_icon {
-				display: inline-block;
 				vertical-align: top;
 				width: 50px;
 				.fa {
@@ -6326,22 +6320,9 @@ body #wrapwrap{
 				}
 			}
 			.sct_text_info {
-				display: inline-block;
 				vertical-align: top;
-				width: 85%;
-				padding-left: 15px;
-				@media (max-width: 1439px){
-					width: 80%;
-				}
-				@media (max-width: 1023px){
-					width: 73%;
-				}
-				@media (max-width: 767px){
-					width: 83%;
-				}
-				@media (max-width: 359px){
-					width: 81%;
-				}
+				width: calc(100% - 50px);
+				padding-left: 10px;
 				.sct_title {
 					font-size: $title;
 					font-weight: bold;
@@ -6357,14 +6338,15 @@ body #wrapwrap{
 /*service snippet 8 end*/
 /*service snippet 9*/
 .service_varient_7 {
-	padding: 60px 0 40px;
-	@media (max-width: 1199px){
-		padding: 50px 0 20px;
+	padding: 50px 0 20px;
+
+	@include min992{
+		padding: 60px 0 30px;
 	}
 	.sct_top_row {
-		margin-bottom: 50px;
+		margin-bottom: 20px;
 		@media (max-width: 1023px){
-			margin-bottom: 40px;
+			margin-bottom: 10px;
 		}
 		// .sct_section_title {
 		// 	padding-left: 20px;
@@ -6379,10 +6361,8 @@ body #wrapwrap{
 		}
 	}
 	.sct_thumb {
-		margin-bottom: 50px;
-		@media (min-width: 992px) {
-			margin-bottom: 70px;
-		}
+		margin: 30px 0;
+
 		.sct_sers_box {
 			text-align: center;
 			padding: 25px;
@@ -6443,6 +6423,10 @@ body #wrapwrap{
 				.sct_simple_text {
 					margin-bottom: 0;
 					// color: $light-color;
+
+					.btn{
+						margin-top: 20px;
+					}
 				}
 			}
 		}
@@ -7983,9 +7967,9 @@ body #wrapwrap{
 /*about snippet 1 end*/
 /*about snippet 2*/
 .about_us_v_3 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_btm_row {
 		.sct_info_inner {
@@ -8035,11 +8019,10 @@ body #wrapwrap{
 /*about snippet 2 end*/
 /*about snippet 3*/
 .about_us_v_4 {
-	// background-color: $light-grey-color;
 	background-color: #f7f7f7;
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_btm_row {
 		.sct_cmp_info {
@@ -8062,20 +8045,23 @@ body #wrapwrap{
 					.nav-item {
 						position: relative;
 						// margin: 0 13px;
+						margin-bottom: 3px;
 						.nav-link {
 							border:none;
 							border-radius: 20px;
 							color: $dark-color;
 							font-size: $font-body;
-							padding: 10px 20px;
+							padding: 5px 10px;
 							isolation: auto;
 							transition: all 0.3s ease-in;
-							@media (max-width: 1023px){
-								padding: 10px;
+							font-weight: bold;
+							
+							@include min992{
+								padding: 10px 20px;
 							}
 							&.active{
-								background-color: $dark-color;
-								color: $light-color;
+								background-color: lighten($primary, 50%);
+								color: $primary;
 							}
 						}
 					}
@@ -8085,16 +8071,34 @@ body #wrapwrap{
 					background: $dark-color;
 					background: linear-gradient(45deg, $primary 0%, $dark-color 100%);
 					border-radius: 30px;
-					padding: 50px;
+					padding: 25px;
+					
+					@include min992{
+						padding: 50px;
+					}
 
 					.sct_base_class{
+						@include min992{
+							padding-right: 20px;
+						}
 						.sct_text_info{
 							color: $light-color;
-							font-size: $title;
+							font-size: $title - 2;
+							
+							@include min992{
+								font-size: $title;
+							}
 						}
 					}
 					.sct_cmp_img{
-						padding: 15px 0;
+						order: -1;
+						padding-bottom: 30px;
+						@include min768{
+							order: 0;
+						}
+						@include min992{
+							padding: 0 0 0 30px;
+						}
 
 						img{
 							border-radius: 14px;
@@ -8108,9 +8112,9 @@ body #wrapwrap{
 /*about snippet 3 end*/
 /*about snippet 4*/
 .about_us_v_5 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_top_row {
 		text-align: center;
@@ -8185,15 +8189,9 @@ body #wrapwrap{
 /*statics snippet 1*/
 .expertise_statistics_4 {
 	background-color: $dark-color;
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.prog_statics {
 		position: relative;
@@ -8896,6 +8894,18 @@ body #wrapwrap{
 					.btn {
 						background-color: $light-color;
 						color: $primary;
+
+						&::after{
+							border-color: $primary;
+						}
+						&:hover{
+							background-color: $primary;
+							color: $light-color;
+
+							&::after{
+								border-color: $light-color;
+							}
+						}
 					}
 				}
 			}
@@ -9025,11 +9035,11 @@ body #wrapwrap{
 /*content snippet 6 end*/
 /*accordian snippet 1*/
 .accordion_v_1 {
-	padding: 60px 0;
+	padding: 50px 0;
 	background: $primary;
 	background: radial-gradient(circle, $primary 0%, $dark-color 100%);
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_top_row {
 		margin-bottom: 20px;
@@ -9039,9 +9049,15 @@ body #wrapwrap{
 			margin-bottom: 20px;
 		}
 		p{
-			max-width: 60%;
 			margin: 0 auto;
 			color: $light-color;
+			
+			@include min768{
+				max-width: 80%;
+			}
+			@include min992{
+				max-width: 60%;
+			}
 		}
 	}
 	.sct_btm_row {
@@ -9292,9 +9308,10 @@ body #wrapwrap{
 /*timeline snippet 2 end*/
 /*portfolio snippet 1*/
 .portfolio_snippet_2 {
-	padding: 60px 0 30px;
-	@media (max-width: 1199px){
-		padding: 50px 0 20px;
+	padding: 50px 0 20px;
+
+	@include min992{
+		padding: 60px 0 30px;
 	}
 	.sct_top_row {
 		text-align: center;
@@ -9309,6 +9326,7 @@ body #wrapwrap{
 	}
 	.sct_img_box{
 		height: 100%;
+		max-height: 500px;
 		img{
 			width: 100%;
 			object-fit: cover;
@@ -9319,16 +9337,10 @@ body #wrapwrap{
 /*portfolio snippet 1 end*/
 /*portfolio snippet 2*/
 .portfolio_snippet_1 {
-	padding: 60px 0;
+	padding: 50px 0;
 	text-align: center;
-	@media (max-width: 1439){
-		padding: 50px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_top_row {
 		text-align: center;
@@ -11685,16 +11697,10 @@ body #wrapwrap{
 
 /*promo_banner_snippet_3 start*/
 .promo_banner_snippet_3 {
-    padding: 60px 0;
-    @media (max-width: 1600px) {
-        padding: 50px 0;
-    }
-    @media (max-width: 1023px) {
-        padding: 40px 0;
-    }
-    @media (max-width: 767px) {
-        padding: 30px 0;
-    }
+    padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}
     .sct_promo_img_div {
         padding-top: 10px;
         padding-bottom: 10px;
