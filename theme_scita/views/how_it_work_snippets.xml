@@ -43,7 +43,7 @@
                <div class="row sct_work_div">
                   <div class="col-md-6 sct_work_box">
                         <div class='sct_work_icon'>
-                           <img src="/theme_scita/static/src/img/computer-notebook.jpg" class="img img-fluid" alt="About Company"/>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
                         </div>
                     
                   </div>
@@ -64,7 +64,7 @@
                <div class="row sct_work_div">
                   <div class="col-md-6 sct_work_box">
                         <div class='sct_work_icon'>
-                           <img src="/theme_scita/static/src/img/collage-customer-experience.jpg" class="img img-fluid" alt="About Company"/>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
                         </div>
                     
                   </div>
@@ -85,7 +85,7 @@
                <div class="row sct_work_div">
                   <div class="col-md-6 sct_work_box">
                         <div class='sct_work_icon'>
-                           <img src="/theme_scita/static/src/img/home-sweet-home.jpg" class="img img-fluid" alt="About Company"/>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
                         </div>
                     
                   </div>
@@ -106,7 +106,7 @@
                <div class="row sct_work_div">
                   <div class="col-md-6 sct_work_box">
                         <div class='sct_work_icon'>
-                           <img src="/theme_scita/static/src/img/secure-pay.jpg" class="img img-fluid" alt="About Company"/>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
                         </div>
                     
                   </div>

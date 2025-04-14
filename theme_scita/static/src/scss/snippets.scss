@@ -110,6 +110,10 @@ body #wrapwrap{
 // New banner snippet
 .sct_banner_1 {
 	overflow: hidden;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}
 	@media (max-width: 991px){
 		height: auto !important;
 	}
@@ -194,12 +198,17 @@ body #wrapwrap{
 		}
 	}
 	.sct_line_btn{
-		padding: 20px 0 0;
+		padding:35px 0 0;
+		@media (max-width:1199px) {
+			padding: 0;	
+		}
 	}
 }
 .sct_banner_2{
-	padding: 20px 0;
-
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}
     .sct_banner_row{
         .banner_slider{
             .carousel{
@@ -388,6 +397,10 @@ body #wrapwrap{
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}
     .content{
         padding: 30px 0;
 		@include min1600 {
@@ -477,6 +490,10 @@ body #wrapwrap{
 
 .it_main_banner {
 	@include bg-nore-cover;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}
 	@media (max-width: 1023px){
 		background-position: center;
 	}
@@ -3427,15 +3444,9 @@ body #wrapwrap{
 /*it lets talk snippet*/
 .it_letstalk{
 	background: #e5f2ff;
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_base_class {
 		-webkit-box-pack: justify;
@@ -4882,25 +4893,17 @@ body #wrapwrap{
 /*health case study snippet end*/
 /*health location we serve snippet*/
 .health_location_snippet {
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
+	padding: 50px 0 20px; 
+	@include min992{
+		padding: 60px 0 30px;
 	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
-	}
+
 	.sct_top_row {
 		text-align: center;
-		margin-bottom: 50px;
-		@media (max-width: 1600px){
-			margin-bottom: 40px;
+		@include min992{
+			margin-bottom: 15px;
 		}
-		@media (max-width: 1023px){
-			margin-bottom: 30px;
-		}
+	
 	}
 	.sct_btm_row {
 		.sct_contact_info{
@@ -4958,9 +4961,7 @@ body #wrapwrap{
 			}
 		}
 		.sct_loc_info {
-			@media (max-width: 991px){
-				margin-bottom: 30px;
-			}
+			margin-bottom: 30px;		
 		}
 	}
 }
@@ -6281,21 +6282,13 @@ body #wrapwrap{
 
 /*pricing snippet 2*/
 .pricing_table_v2 {
-	padding: 60px 0;
 	background-color: $light-grey-color;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1023px){
-		padding: 50px 0 50px;
-	}
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
+	}	
 	.sct_pri_thumb{
-		@media (max-width: 1023px){
-			margin-bottom: 30px;
-			// &:last-child{
-			// 	margin-bottom: 0;	
-			// }
-		}
+		margin-bottom: 30px;		
 	}
 	.sct_top_row {
 		text-align: center;
@@ -6450,10 +6443,10 @@ body #wrapwrap{
 
 /*pricing snippet 4*/
 .pricing_table_v4 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
+	}	
 	.sct_btm_row {
 		margin: 0;
 		border: 2px solid $light-grey-color;
@@ -6484,12 +6477,7 @@ body #wrapwrap{
 		
 	}
 	.sct_pri_thumb {
-		@media (max-width: 1023px){
-			margin-bottom: 30px;
-			// &:last-child{
-			// 	margin-bottom: 0;	
-			// }
-		}
+		margin-bottom: 30px;	
 		.sct_per_month {
 			display: inline-block;
 			margin-bottom: 0;
@@ -6522,9 +6510,9 @@ body #wrapwrap{
 /*pricing snippet 4 end*/
 /*pricing snippet 5*/
 .pricing_table_v5 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
 	}	
 	.sct_top_row {
 		text-align: center;
@@ -6547,12 +6535,8 @@ body #wrapwrap{
 		justify-content: center;
 		
 		.sct_pri_thumb {
-			@media (max-width: 1023px){
-				margin-bottom: 30px;
-				// &:last-child{
-				// 	margin-bottom: 0;	
-				// }
-			}
+			margin-bottom: 30px;
+			
 			.package {
 				border-radius: 12px;		
 				background-color: rgba($primary, 0.15);
@@ -7269,12 +7253,12 @@ body #wrapwrap{
 /*our team snippet 6 end*/
 /*contact snippet 1*/
 .contact_us_v_1 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0 30px;
 	}
 	.sct_base_class {
-		margin: 10px 0;
+		margin: 0 0 30px;
 		text-align: center;
 		@media (max-width: 767px){
 			margin: 0;
@@ -7322,9 +7306,9 @@ body #wrapwrap{
 
 /*contact snippet 4*/
 .contact_us_v_3 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_base_class {
 		margin: 10px 0;
@@ -7423,16 +7407,11 @@ body #wrapwrap{
 /*contact snippet 4 end*/
 /*how it work snippet 1*/
 .how_it_work_v_1 {
-	padding: 60px 0;
-	@media (max-width: 1439){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
-	}
+	
 	.sct_btm_row {
 		.sct_content_div {
 			.sct_title {
@@ -7472,11 +7451,11 @@ body #wrapwrap{
 
 /*how it work snippet 3*/
 .how_it_work_v_3 {	
-	padding: 60px 0;
 	background-color: $light-grey-color;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
+	}	
 	.sct_top_row {
 		text-align: center;
 		margin-bottom: 40px;
@@ -7496,6 +7475,7 @@ body #wrapwrap{
 		margin: 0;
 		.sct_content_div {
 			padding: 0;
+			margin: 0 0 30px;
 			@media (min-width: 768px) and (max-width: 991px) {
 				&:nth-child(even){
 					.sct_work_div{
@@ -7529,11 +7509,7 @@ body #wrapwrap{
 					
 				}
 			}
-			+ .sct_content_div {
-				@media (max-width: 767px){
-					margin-top: 25px;
-				}
-			}
+			
 			.sct_work_div{
 				margin: 0;
 				.sct_work_box{
@@ -7619,10 +7595,10 @@ body #wrapwrap{
 /*how it work snippet 4*/
 .how_it_work_v_4 {
 	background-color: $light-grey-color;
-	padding: 60px 0 0;
-	@media (max-width: 1199px){
-		padding: 50px 0 0;
-	}
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}	
 	.sct_top_row {
 		margin-bottom: 40px;
 		@media (max-width: 1199px){
@@ -7733,10 +7709,10 @@ body #wrapwrap{
 /*how it work snippet 4 end*/
 /*how it work snippet 5*/
 .how_it_work_v_5 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
-		padding: 50px 0;
-	}
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}	
 	.sct_top_row {
 		margin-bottom: 30px;
 		.sct_three_dots {
@@ -7750,34 +7726,44 @@ body #wrapwrap{
 		}
 	}
 	.sct_btm_row {
-		&:has(.sct_content_div:hover) {
-			&:not(:hover):not(.open) {
-				.sct_work_content{
-					display: none;
-				}
-			}
-		}
-		&:has(.sct_content_div:hover) {
-			&:hover{
-				.sct_work_content{
-					@include flex;
-					width: 33.33%;
-				}
-			}
-		}
+		
+	
 		.sct_content_div {
 			margin-bottom: 35px;
-
+			transition: width 0.7s ease;
 			@media (max-width: 767px){
 				margin-bottom: 0;
 			}
-			&.open{
-				.sct_work_box {
-					.sct_work_content{
-						@include flex;
-						width: 33.33%;
+			&.open,
+			&:hover:not(.open) {
+			  width: 33.33%;
+			  .sct_work_box {
+				.sct_work_content {
+				//   @include flex;
+				//   opacity: 1;
+				  animation: FadeIn 0.4slinear forwards;
+				  animation-delay: 0.8s;
+				  @keyframes FadeIn{
+					0% {
+						display: none;
+						opacity: 0;
 					}
+					100% {
+						opacity: 1;
+						display: block;
+					}
+				  }
 				}
+			  }
+			}
+		
+			&:not(.open):hover {
+			  .sct_work_box {
+				.sct_work_content {
+				  display: none;
+				  opacity: 0;
+				}
+			  }
 			}
 			.sct_work_box {
 				border: 1px solid $primary;
@@ -7786,6 +7772,7 @@ body #wrapwrap{
 				padding: 20px;
 				display: flex;
 				min-height: 300px;
+				height: 100%;
 				.sct_work_steps_heading {
 					position: relative;
 					@include flex;
@@ -7814,6 +7801,7 @@ body #wrapwrap{
 					
 					padding-left: 20px;
 					display: none;
+					opacity: 0;
 					@include flexwrap;
 					
 				}
@@ -7855,6 +7843,8 @@ body #wrapwrap{
 				}
 			}
 		}
+		
+	
 	}
 }
 /*how it work snippet 5 end*/
@@ -8103,22 +8093,13 @@ body #wrapwrap{
 /*statics snippet 1*/
 .expertise_statistics_4 {
 	background-color: $dark-color;
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0;
-	}
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
+	}	
 	.prog_statics {
 		position: relative;
-		margin: 10px 0;
-		@media (max-width: 991px){
-			margin: 15px 0;
-		}
+		margin: 0 0 30px;
 		.prg_static_box {
 			@include flex;
 			.progress-img {
@@ -8156,16 +8137,18 @@ body #wrapwrap{
 
 /*statics snippet 5*/
 .expertise_statistics_8 {
-	padding: 60px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0;
-	}
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}	
 	.sct_btm_row {
 		.oe_img_bg {
-			padding: 100px 50px;
+			padding: 50px;
 			position: relative;
 			border-radius: 10px;
 			overflow: hidden;
+			@include flex;
+			@include flexwrap;
 			@media (max-width: 767px) {
 				border-radius: 0;				
 			}
@@ -8191,6 +8174,9 @@ body #wrapwrap{
 					color: $light-color;
 				}
 			}
+			.sct_cst_btn{
+				margin-top: auto;
+			}
 		}
 		.sct_cmp_info {
 			@include flex;
@@ -8210,11 +8196,32 @@ body #wrapwrap{
 					text-align: center;
 					padding: 30px 0;
 					position: relative;
-					border-left: 1px solid rgba(149, 214 ,0 , 0.3);
-					border-bottom: 1px solid rgba(149 ,214, 0 ,0.3);
-
+					// border-left: 1px solid rgba($primary, 0.3);
+					// border-bottom: 1px solid rgba($primary ,0.3);
+					&:before, &:after{
+						content: '';
+						position: absolute;						
+						background-color: rgba($primary ,0.3);
+						margin: auto;
+					}
+					&:after{
+						top: 0;
+						bottom: 0;
+						height: calc(100% - 60px);
+						width: 1px;
+						left: 0;
+					}
+					&:before{
+						left: 0;
+						right: 0;
+						bottom: 0;
+						height: 1px;
+						width: calc(100% - 60px);
+					}
 					&:nth-child(odd){
-						border-left: 0;
+						&::after{
+							display: none;
+						}
 					}
 					
 					@media (max-width: 767px){
@@ -8222,13 +8229,20 @@ body #wrapwrap{
 						max-width: 100%;
 						width: 100%;
 						border-left: 0;
+						&::after{
+							display: none;
+						}
 						&:last-child{
-							border-bottom: 0;
+							&::before{
+								display: none;
+							}
 						}
 					}
 					@include min768{
 						&:nth-last-child(-n+2) {
-							border-bottom: 0;
+							&::before{
+								display: none;
+							}
 						}
 					}
 					p {
@@ -8265,161 +8279,92 @@ body #wrapwrap{
 				}
 			}
 		}
-		.sct_cst_btn{
-			.btn-primary{
-				background-color: $light-color;
-			}
-		}
+		
 	}
 }
 /*statics snippet 5 end*/
 /*statics snippet 8*/
 .expertise_statistics_11 {
-	padding: 60px 0 50px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0 40px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0 30px 0;
-	}
-	@media (max-width: 1439px){
-		padding: 30px 0 20px 0;
-	}
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
+	}	
 	.sct_btm_row {
-		.sct_prog_box {
-			align-self: center;
-			@media (max-width: 767px){
-				margin-top: 30px;
+		.progress-img{
+			@include min768{
+				overflow: hidden;
+				height: 100%;
 			}
-			.sct_pra_info {
-				.sct_title {
-					font-size: $title + 6;
-					font-weight: bold;
-					margin-bottom: 30px;
-					@media (max-width: 1023px){
-						margin-bottom: 20px;
-					}
-				}
-				.sct_simple_text {
-					margin-bottom: 25px;
-					@media (max-width: 1023px){
-						margin-bottom: 15px;
-					}
-				}
-				
-			}
-			
-			.prog_statics {
-				margin-top: 20px;
-				background-color: $primary;
-				border-radius: 10px;	
-				@include flex;
-				@include align-content;
-				padding: 10px;
-				.prg_static_box {
-					display: inline-block;
-    				vertical-align: top;
-					width: 33.33%;				
-					text-align: center;
-					padding: 15px;
-					color: $light-color;
-					@media (max-width: 575px){
-						padding: 10px;
-					}
-					.progress-value {
-						font-weight: bold;
-						font-size: $title + 10;				
-						line-height: normal;
-						@media (max-width: 575px){
-							font-size: $title + 4;
-						}
-					
-					}
-					.progress-value-text {
-						margin-bottom: 0;
-						font-size: $title - 4;
-    					font-weight: normal;						
-					}
-					
-					
-				}
-			}
-			.sct_pra_info_box{
-				background-color: rgba($primary, 0.1);
+			@include min992{
 				border-radius: 10px;
-				padding: 20px;
-				.sct_stat_heading{
-					@include flex;
-					@include content-sb;
-					align-items: flex-end;
-					margin-bottom: 20px;
-					.sct_title{
-						font-weight: bold;
-						margin-bottom: 0;
-					}
-					.sct_stat_icon{
-						font-size: $title + 12;
-					}
-					
-				}
-				.sct_simple_text{
-					color: $dark-grey-color;
-					&:last-child{
-						margin-bottom: 0;
-					}
-				}
 			}
-		}
-		.sct_pra_info {
 			img{
 				width: 100%;
 				object-fit: cover;
 				height: 100%;
 			}
-			.sct_info_box{
-				@include flex;
-				padding: 20px;
-				border-radius: 10px;
-				background-color: darken($primary, 30%);
-				height: 100%;
-				@include flexwrap;
-				.progress-img{
-					border-radius: 15px;
-					overflow: hidden;
-					@include min1200{
-						width: 350px;
+		}
+		.prog_statics {
+			margin: 30px 0 0;
+			background-color: $primary;			
+			border-radius: 10px;			
+			
+			.prg_static_box {
+				text-align: center;
+				color: $light-color;	
+				padding: 20px 10px;			
+				.progress-value {
+					font-weight: bold;
+					font-size: $title + 10;				
+					line-height: normal;
+					@media (max-width: 575px){
+						font-size: $title + 4;
 					}
+				
 				}
-				.sct_stat_content{
-					color: $light-color;
-					@include flex;
-					@include flex-column;
-					padding-top: 20px;
-					@include min1200{
-						padding-top: 0;
-						padding-left: 20px;
-						width: calc(100% - 350px);
-					}
-					.sct_stat_title{
-						margin-bottom: 20px;
-						font-weight: bold;
-					}
-					.scita_cstm_btn{
-						margin-top: auto;
-					}
+				.progress-value-text {
+					margin-bottom: 0;
+					font-size: $title - 4;
+					font-weight: normal;						
+				}
+				
+				
+			}
+		}		
+		.sct_info_box{			
+			padding: 20px;
+			background-color: darken($primary, 30%);	
+			@include min992{	
+				border-radius: 10px;
+			}
+			.sct_stat_content{
+				color: $light-color;
+				@include flex;
+				@include flex-column;
+				padding-top: 20px;
+				@include min1200{
+					padding-top: 0;
+				}
+				.sct_stat_title{
+					margin-bottom: 20px;
+					font-weight: bold;
 				}
 			}
+			.scita_cstm_btn{
+				margin-top: auto;
+			}
 		}
+	
 	}
 }
 /*statics snippet 8 end*/
 
 /*content snippet 1*/
 .content_snippets_v_4 {
-	padding: 60px 0;
 	text-align: center;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.section-title {
 		margin-bottom: 20px;
@@ -8434,10 +8379,10 @@ body #wrapwrap{
 
 /*content snippet 3*/
 .content_snippets_v_6 {
-	padding: 60px 0;
 	text-align: center;
-	@media (max-width: 1199px){
-		padding: 50px 0;
+	padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.section-title {
 		margin-bottom: 30px;
@@ -8469,16 +8414,17 @@ body #wrapwrap{
 
 /*content snippet 5*/
 .content_snippets_v_10 {
-	padding: 60px 0;
-	@media (max-width: 767px){
-		padding:  0;
+		padding: 50px 20px;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_content_box {
 		background-color: $light-color;
 		box-shadow: 0px 0px 10px 0px rgba($black,0.5);
 		@media (max-width: 767px){			
 			box-shadow: none;
-			background-color: rgba($light-color, 0.7);
+			background-color: rgba($light-color, 0.8);
+			padding: 24px;
 		}
 		.sct_title {
 			margin-bottom: 15px;
@@ -8504,9 +8450,9 @@ body #wrapwrap{
 /*content snippet 5 end*/
 /*content snippet 6*/
 .content_snippets_v_11 {
-	padding: 60px 0;
-	@media (max-width: 1199px){
 		padding: 50px 0;
+	@include min992{
+		padding: 60px 0;
 	}
 	.sct_title {
 		margin-bottom: 20px;
@@ -8524,7 +8470,9 @@ body #wrapwrap{
 				border-radius: 30px !important;
 				border: 0;
 				box-shadow: 0px 0px 4px 0px rgba($primary, 0.3);
-				
+				&:last-child{
+					margin-bottom: 0;
+				}
 				.accordion-header {
 					padding: 12px 20px;
 					padding-right: 45px;
@@ -8564,7 +8512,10 @@ body #wrapwrap{
 				
 				.accordion-body {
 					border-radius: 0;
-					padding: 0 30px 15px;
+					padding: 0 20px 15px;
+					@include min1200{
+						padding: 0 30px 15px;				
+					}
 					.sct_unorder_list {
 						li {
 							font-size: $font-body;

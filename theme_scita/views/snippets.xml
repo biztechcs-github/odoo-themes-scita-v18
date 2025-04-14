@@ -1522,7 +1522,6 @@
 				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
 			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
 				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_10.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
 
 
 
@@ -1534,6 +1533,7 @@
 				<!-- accordion_v_1 -->
 				<t t-snippet="theme_scita.accordion_v_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/accordion_1.png"/>
 				<t t-snippet="theme_scita.accordion_v_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/accordion_2.png"/>
+				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
 
 				<!-- Google Map Snippet -->
 				<t t-snippet="theme_scita.s_appjetty_google_map" t-thumbnail="/theme_scita/static/src/img/snippet_icon/google-map-1.png"/>
