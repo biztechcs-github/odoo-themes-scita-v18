@@ -11,11 +11,11 @@ $(document).ready(function(){
     if($(".js_sale").length === 0){
         $("div#wrap").addClass("js_sale");
     }
-    $('.sct_content_div:first-child').addClass('open');
-    $('.sct_content_div').hover(function() {
-        $('.sct_content_div').not(this).removeClass('open'); // Close others
-        $(this).addClass('open'); // Open current
-      });
+    $('.how_it_work_v_5 .sct_content_div:first-child').addClass('open');
+    $('.how_it_work_v_5 .sct_content_div').on("click",function() {
+        $(this).removeClass('open'); // Close others
+        $(this).addClass('open').siblings().removeClass("open"); // Open current
+    });
 });
     animation.registry.oe_cat_slider = animation.Class.extend({
         selector: ".oe_cat_slider",

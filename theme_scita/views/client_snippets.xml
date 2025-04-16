@@ -1,68 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<!-- Client Slider Snippet -->
-        <template id="s_theme_scita_client_slider_snippet" name="Client Slider 1">
-            <section id="theme_scita_custom_client_slider" class="our-clients our-client-slider" data-disp='client_snippet'>
-                <div class="container">
-                    <div class="block-title">
-                        <h3 class="fancy">Client slider</h3>
-                    </div>
-                </div>
-            </section>
-        </template>
-        <template id="theme_scita_client_slider_view" name="Client Slider View">
-            <t t-set="client_details" t-value="client_slider_details"/>
-            <div class='sct_box_client_snippets'>
-                <div class='container'>
-                    <div class='row'>
-                        <div class='col-md-12'>
-                            <div class="owl-carousel" id="scita-client-slider" t-if="client_details">
-                                <t t-as="slide" t-foreach="client_details">
-                                    <div class="sct_client_box">
-                                        <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
-                                    </div>
-                                </t>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="container" t-if="not client_details">
-                    <div class="block-title">
-                        <h3 class="fancy">Client slider</h3>
-                    </div>No clients added into slider. For configuring, please goto admin section Sales menu than goto Customers and select the customer/client open that specific record and you will see a checkbox 'Add to client slider' enable that option and that record will be visible in slider.</div>
-            </div>
-        </template>
-        <!-- second Client Slider Snippet -->
-        <template id="second_client_slider_snippet" name="Client Snippet 1">
-            <section class="our-clients second-client-slider" data-disp='client_snippet'>
-                <div class='container'>
-                    <div class='row sct_top_row'>
-                        <div class='col-md-12'>
-                            <h2 class='sct_title'>Our Partners</h2>
-                        </div>
-                    </div>
-                    <div class='our-partner-client-slider' id="second_custom_client_slider">
-                    </div>
-                </div>
-            </section>
-        </template>
-        <template id="second_client_slider_view" name="Client Slider View">
-            <t t-set="client_details" t-value="client_slider_details"/>
-        	<t t-as="slide" t-foreach="client_details">
-        		<div class='row'>
-        			<div class='col-md-12'>
-	                    <div class="sct_client_box">
-	                        <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
-	                    </div>
-	                </div>
-        		</div>
-            </t>
-            <div class="container" t-if="not client_details">
-                <div class="block-title">
-                    <h3 class="fancy">Our partners</h3>
-                </div>No clients added into slider. For configuring, please goto admin section Sales menu than goto Customers and select the customer/client open that specific record and you will see a checkbox 'Add to client slider' enable that option and that record will be visible in slider.</div>
-        </template>
-
         <template id="third_client_slider_snippet" name="Client Snippet 2">
             <section id="third_custom_client_slider" class="our-clients third-client-slider" data-disp='client_snippet'>
                 <div class='container'>
