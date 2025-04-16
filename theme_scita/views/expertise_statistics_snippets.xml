@@ -120,48 +120,47 @@
                     </div>
                     <div class="col-lg-8">
 						<section class="sct_info_box">
-								<div class="sct_stat_content">
-									<h3 class="sct_stat_title">Maximize Your Growth with Our Expert Digital Marketing</h3>
-									<p class="sct_stat_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-									<p class="sct_stat_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper</p>
-									<p class="sct_stat_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
-									<a href="#" alt-="Learn More" title="Learn More" class="btn btn-primary scita_cstm_btn align-self-start">Learn More<span class="arrow"></span></a>								
-								</div>
-								<div class='row prog_statics'>
-									<div class='col-6 col-md-3 prg_static_box'>
-										<div class='prg-img'>
-											<div class="progress-value">36+</div>
-										</div>
-										<div class='sct_prog_content'>
-											<h5 class="progress-value-text">Projects</h5>
-										</div>
+							<div class="sct_stat_content">
+								<h3 class="sct_stat_title">Maximize Your Growth with Our Expert Digital Marketing</h3>
+								<p class="sct_stat_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+								<p class="sct_stat_para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper</p>
+								<p class="sct_stat_para">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. </p>
+								<a href="#" alt-="Learn More" title="Learn More" class="btn btn-primary scita_cstm_btn align-self-start">Learn More<span class="arrow"></span></a>								
+							</div>
+							<div class='row prog_statics'>
+								<div class='col-6 col-md-3 prg_static_box'>
+									<div class='prg-img'>
+										<div class="progress-value">36+</div>
 									</div>
-									<div class='col-6 col-md-3 prg_static_box'>
-										<div class='prg-img'>
-											<div class="progress-value">21+</div>
-										</div>
-										<div class='sct_prog_content'>
-											<h5 class="progress-value-text">Clients</h5>
-										</div>
-									</div>
-									<div class='col-6 col-md-3 prg_static_box'>
-										<div class='prg-img'>
-											<div class="progress-value">44+</div>
-										</div>
-										<div class='sct_prog_content'>
-											<h5 class="progress-value-text">Awards</h5>
-										</div>
-									</div>
-									<div class='col-6 col-md-3 prg_static_box'>
-										<div class='prg-img'>
-											<div class="progress-value">24+</div>
-										</div>
-										<div class='sct_prog_content'>
-											<h5 class="progress-value-text">Reviews</h5>
-										</div>
+									<div class='sct_prog_content'>
+										<h5 class="progress-value-text">Projects</h5>
 									</div>
 								</div>
-						
+								<div class='col-6 col-md-3 prg_static_box'>
+									<div class='prg-img'>
+										<div class="progress-value">21+</div>
+									</div>
+									<div class='sct_prog_content'>
+										<h5 class="progress-value-text">Clients</h5>
+									</div>
+								</div>
+								<div class='col-6 col-md-3 prg_static_box'>
+									<div class='prg-img'>
+										<div class="progress-value">44+</div>
+									</div>
+									<div class='sct_prog_content'>
+										<h5 class="progress-value-text">Awards</h5>
+									</div>
+								</div>
+								<div class='col-6 col-md-3 prg_static_box'>
+									<div class='prg-img'>
+										<div class="progress-value">24+</div>
+									</div>
+									<div class='sct_prog_content'>
+										<h5 class="progress-value-text">Reviews</h5>
+									</div>
+								</div>
+							</div>
 						</section>
 					</div>
                 </div>
