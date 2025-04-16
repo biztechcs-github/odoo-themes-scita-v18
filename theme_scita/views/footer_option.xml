@@ -349,28 +349,6 @@
                         </div>
                     </div>
                 </section>
-                <div class="sct-fot-belt">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="sct-copyrig">
-                                    Copyright © 2024 Scita All Rights Reserved.
-                                </div>
-                                <div class="sct-payment-icons">
-                                    <t t-foreach="request.website.theme_scita_payment_icons()" t-as="pm_to_display_sudo">
-                                         <span t-out="pm_to_display_sudo.image_payment_form"
-                                              t-options="{'widget': 'image', 'alt-field': 'name'}"
-                                              t-att-title="title"
-                                              data-bs-toggle="tooltip"
-                                              data-bs-placement="top"
-                                              data-bs-delay="0"
-                                        />
-                                    </t>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </xpath>
     </template>
