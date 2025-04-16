@@ -28,113 +28,106 @@
             </div>
         </section>
     </template>
-    <template id="how_it_work_v_2" name="How it Works Snippet 2">
-        <section class="how_it_work_v_2 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_how_it_work_snippet_2');" data-disp='how_it_works'>
-            <div class='container'>
-                <div class='row s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title sct_above_red">How It Works</h2>
-                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text</p>
-                    </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-4 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<div class='sct_base_class'>
-	                    		<div class='sct_left_side'>
-	                    			<h3 class='sct_red_back'>1</h3>
-	                    		</div>
-	                    		<div class='sct_right_side'>
-                    				<h3 class='sct_work_title'>Search Location</h3>
-	                    		</div>
-	                    	</div>
-	                    	<div class='sct_work_info'>
-	                    		<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	                    	</div>
-                    	</div>
-                    </div>
-                    <div class='col-md-4 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<div class='sct_base_class'>
-	                    		<div class='sct_left_side'>
-	                    			<h3 class='sct_red_back'>2</h3>
-	                    		</div>
-	                    		<div class='sct_right_side'>
-                    				<h3 class='sct_work_title'>View Location Info</h3>
-	                    		</div>
-	                    	</div>
-	                    	<div class='sct_work_info'>
-	                    		<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	                    	</div>
-                    	</div>
-                    </div>
-                    <div class='col-md-4 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<div class='sct_base_class'>
-	                    		<div class='sct_left_side'>
-	                    			<h3 class='sct_red_back'>3</h3>
-	                    		</div>
-	                    		<div class='sct_right_side'>
-                    				<h3 class='sct_work_title'>Book or Call</h3>
-	                    		</div>
-	                    	</div>
-	                    	<div class='sct_work_info'>
-	                    		<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-	                    	</div>
-                    	</div>
-                    </div>     
-                </div>
-            </div>
-        </section>
-    </template>
+  
     <template id="how_it_work_v_3" name="How it Works Snippet 3">
-        <section class="how_it_work_v_3" data-disp='how_it_works'>
-            <div class='container'>
-                <div class='row s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title"><span class='text'>How Does</span> <span class='red_text'>It Works</span></h2>
-                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text</p>
-                    </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-4 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<div class='sct_work_icon'>
-                    			<img src="/web/image/theme_scita.sct_how_it_work_snippet_3" class="img img-fluid" alt="About Company"/>
-                    		</div>
-                    		<div class='sct_work_info'>
-                    			<h3 class='sct_work_title'>1.Lorem Ipsum is</h3>
-                    			<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    		</div>
-                    	</div>
-                    </div>
-                    <div class='col-md-4 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<div class='sct_work_icon'>
-                    			<img src="/web/image/theme_scita.sct_how_it_work_snippet_3" class="img img-fluid" alt="About Company"/>
-                    		</div>
-                    		<div class='sct_work_info'>
-                    			<h3 class='sct_work_title'>2.Lorem Ipsum is</h3>
-                    			<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    		</div>
-                    	</div>
-                    </div>
-                    <div class='col-md-4 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<div class='sct_work_icon'>
-                    			<img src="/web/image/theme_scita.sct_how_it_work_snippet_3" class="img img-fluid" alt="About Company"/>
-                    		</div>
-                    		<div class='sct_work_info'>
-                    			<h3 class='sct_work_title'>3.Lorem Ipsum is</h3>
-                    			<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    		</div>
-                    	</div>
-                    </div>
-                          
-                </div>
+   <section class="how_it_work_v_3" data-disp='how_it_works'>
+      <div class='container'>
+         <div class='row s_nb_column_fixed sct_top_row'>
+            <div class="col-md-12">
+               <h2 class="section-title"><span class='text'>How Does</span> <span class='red_text'>It Works</span></h2>
+               <p class='sct_simple_text'>Lorem Ipsum is simply dummy text</p>
             </div>
-        </section>
-    </template>
+         </div>
+         <div class="row s_nb_column_fixed sct_btm_row">
+            <div class='col-lg-6 sct_content_div'>
+               <div class="row sct_work_div">
+                  <div class="col-md-6 sct_work_box">
+                        <div class='sct_work_icon'>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
+                        </div>
+                    
+                  </div>
+                  <div class="col-md-6 sct_work_box">
+                     <div class='sct_work_info'>
+                        <h2 class='sct_work_title'>
+                        01.</h2>
+                        <h3 class='sct_work_sub_title'>Chat Support</h3>
+                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+						<div class="sct_work_btn">
+                        	<a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn align-self-start">Shop Now<span class="arrow"></span></a>
+						</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+			<div class='col-lg-6 sct_content_div'>
+               <div class="row sct_work_div">
+                  <div class="col-md-6 sct_work_box">
+                        <div class='sct_work_icon'>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
+                        </div>
+                    
+                  </div>
+                  <div class="col-md-6 sct_work_box">
+                     <div class='sct_work_info'>
+                        <h2 class='sct_work_title'>
+                        02.</h2>
+                        <h3 class='sct_work_sub_title'>Survey Forms</h3>
+                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="sct_work_btn">
+                        	<a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn align-self-start">Shop Now<span class="arrow"></span></a>
+						</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+			<div class='col-lg-6 sct_content_div'>
+               <div class="row sct_work_div">
+                  <div class="col-md-6 sct_work_box">
+                        <div class='sct_work_icon'>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
+                        </div>
+                    
+                  </div>
+                  <div class="col-md-6 sct_work_box">
+                     <div class='sct_work_info'>
+                        <h2 class='sct_work_title'>
+                        03.</h2>
+                        <h3 class='sct_work_sub_title'>Landing Page</h3>
+                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="sct_work_btn">
+                        	<a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn align-self-start">Shop Now<span class="arrow"></span></a>
+						</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+			<div class='col-lg-6 sct_content_div'>
+               <div class="row sct_work_div">
+                  <div class="col-md-6 sct_work_box">
+                        <div class='sct_work_icon'>
+                           <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="About Company"/>
+                        </div>
+                    
+                  </div>
+                  <div class="col-md-6 sct_work_box">
+                     <div class='sct_work_info'>
+                        <h2 class='sct_work_title'>
+                        04.</h2>
+                        <h3 class='sct_work_sub_title'>Secure Pays</h3>
+                        <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                        <div class="sct_work_btn">
+                        	<a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn align-self-start">Shop Now<span class="arrow"></span></a>
+						</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+           
+         </div>
+      </div>
+   </section>
+</template>
     <template id="how_it_work_v_4" name="How it Works Snippet 4">
         <section class="how_it_work_v_4" data-disp='how_it_works'>
             <div class='container'>
@@ -204,91 +197,94 @@
                     </div>
                 </div>
                 <div class="row s_nb_column_fixed sct_btm_row">
-                	<div class='col-md-4 sct_content_div'>
+                	<div class='col-md-2 sct_content_div open'>
                     	<div class='sct_work_box'>
-                    		<div class='sct_no_line_div'>
+                    		<div class='sct_work_steps_heading'>
+                           <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
                     			<h4 class='sct_work_blue_text'>01</h4>
                     		</div>
-                    		<div class='sct_work_info'>
-                    			<h3 class='sct_work_title'>Choose Block</h3>
-                    			<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    		</div>
-                    		<div class='sct_cst_btn'>
-		                        <a href="#" class="btn">Read More</a>
-		                    </div>
+                        <div class="sct_work_content">
+                           <div class='sct_work_info'>
+                              <h3 class='sct_work_title'>Choose Block</h3>
+                              <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                           </div>
+                           <div class='sct_cst_btn'>
+                                 <a href="#" class="btn">Read More</a>
+                           </div>
+                        </div>
                     	</div>
-                    </div>
-                    <div class='col-md-4 sct_content_div'>
+                  </div>
+                  <div class='col-md-2 sct_content_div'>
                     	<div class='sct_work_box'>
-                    		<div class='sct_no_line_div'>
-                    			<h4 class='sct_work_blue_text'>02</h4>
+                    		<div class='sct_work_steps_heading'>
+                           <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
+                    			<h4 class='sct_work_blue_text'>01</h4>
                     		</div>
-                    		<div class='sct_work_info'>
-                    			<h3 class='sct_work_title'>Start Customization</h3>
-                    			<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    		</div>
-                    		<div class='sct_cst_btn'>
-		                        <a href="#" class="btn">Read More</a>
-		                    </div>
+                        <div class="sct_work_content">
+                           <div class='sct_work_info'>
+                              <h3 class='sct_work_title'>Choose Block</h3>
+                              <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                           </div>
+                           <div class='sct_cst_btn'>
+                                 <a href="#" class="btn">Read More</a>
+                           </div>
+                        </div>
                     	</div>
-                    </div>
-                    <div class='col-md-4 sct_content_div'>
+                  </div>
+                  <div class='col-md-2 sct_content_div'>
                     	<div class='sct_work_box'>
-                    		<div class='sct_no_line_div'>
-                    			<h4 class='sct_work_blue_text'>03</h4>
+                    		<div class='sct_work_steps_heading'>
+                           <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
+                    			<h4 class='sct_work_blue_text'>01</h4>
                     		</div>
-                    		<div class='sct_work_info'>
-                    			<h3 class='sct_work_title'>Add Personal Content</h3>
-                    			<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    		</div>
-                    		<div class='sct_cst_btn'>
-		                        <a href="#" class="btn">Read More</a>
-		                    </div>
+                        <div class="sct_work_content">
+                           <div class='sct_work_info'>
+                              <h3 class='sct_work_title'>Choose Block</h3>
+                              <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                           </div>
+                           <div class='sct_cst_btn'>
+                                 <a href="#" class="btn">Read More</a>
+                           </div>
+                        </div>
                     	</div>
-                    </div>                   
+                  </div>
+                  <div class='col-md-2 sct_content_div'>
+                    	<div class='sct_work_box'>
+                    		<div class='sct_work_steps_heading'>
+                           <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
+                    			<h4 class='sct_work_blue_text'>01</h4>
+                    		</div>
+                        <div class="sct_work_content">
+                           <div class='sct_work_info'>
+                              <h3 class='sct_work_title'>Choose Block</h3>
+                              <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                           </div>
+                           <div class='sct_cst_btn'>
+                                 <a href="#" class="btn">Read More</a>
+                           </div>
+                        </div>
+                    	</div>
+                  </div>
+                  <div class='col-md-2 sct_content_div'>
+                    	<div class='sct_work_box'>
+                    		<div class='sct_work_steps_heading'>
+                            <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
+                    			<h4 class='sct_work_blue_text'>01</h4>
+                    		</div>
+                        <div class="sct_work_content">
+                           <div class='sct_work_info'>
+                              <h3 class='sct_work_title'>Choose Block</h3>
+                              <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                           </div>
+                           <div class='sct_cst_btn'>
+                                 <a href="#" class="btn">Read More</a>
+                           </div>
+                        </div>
+                    	</div>
+                  </div>          
                 </div>
             </div>
         </section>
     </template>
-    <template id="how_it_work_v_6" name="How it Works Snippet 6">
-        <section class="how_it_work_v_6" data-disp='how_it_works'>
-            <div class='container'>
-                <div class='row s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title sct_above_red">It Works Really Esay</h2>
-                    </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-3 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<span class="fa fa-search"/>
-                    		<h3 class='sct_work_title'>Choose your template</h3>
-	                    	<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    	</div>
-                    </div>
-                    <div class='col-md-3 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<span class="fa fa-shopping-cart"/>
-                    		<h3 class='sct_work_title'>Add it to shopping cart</h3>
-	                    	<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    	</div>
-                    </div>
-                    <div class='col-md-3 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<span class="fa fa-credit-card-alt"/>
-                    		<h3 class='sct_work_title'>Choose your template</h3>
-	                    	<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    	</div>
-                    </div>
-                    <div class='col-md-3 sct_content_div'>
-                    	<div class='sct_work_box'>
-                    		<span class="fa fa-envelope-o"/>
-                    		<h3 class='sct_work_title'>Choose your template</h3>
-	                    	<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    	</div>
-                    </div>   
-                </div>
-            </div>
-        </section>
-    </template>
+    
 </odoo>
