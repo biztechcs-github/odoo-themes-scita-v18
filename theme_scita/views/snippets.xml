@@ -1151,6 +1151,7 @@
 						
 				<!-- Client sliders -->
 				<t t-snippet="theme_scita.third_client_slider_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Client_Variant_3.png"/>
+                <t t-snippet="theme_scita.theme_scita_top_dealers_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-top-dealer.png"/>
 				<!-- category sliders -->
 				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_1.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-categories.png"/>
