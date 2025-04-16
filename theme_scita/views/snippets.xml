@@ -842,13 +842,13 @@
 <!-- IT Start -->
     
     <template id="it_skills_snippet" name="Skills Block">
-        <section class="it_skills_snippet" data-disp='statistics'>
+        <section class="it_skills_snippet s_text_image" data-disp='statistics'>
             <div class='container'>
-                <div class='row s_nb_column_fixed sct_top_row'>
+                <section class='d-flex s_nb_column_fixed sct_top_row'>
                     <div class="col-md-12">
                         <h2 class="section-title">Technology Expertise</h2>
                     </div>
-                </div>
+                </section>
                 <div class="row s_nb_column_fixed sct_btm_row">
                     <div class='col-md-6 sct_cmp_info'>
                         <ul>

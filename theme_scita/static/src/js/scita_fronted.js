@@ -368,7 +368,7 @@ $(document).ready(function(){
                         }).then(function(res) {
                             $('#blog_2_owl_carosel').owlCarousel({
                                 margin: 30,
-                                items: 3,
+                                items: 4,
                                 loop: false,
                                 dots:false,
                                 autoplay: res.auto_rotate,
@@ -381,17 +381,14 @@ $(document).ready(function(){
                                     0: {
                                         items: 1,
                                     },
-                                    420: {
+                                    768: {
                                         items: 2,
                                     },
-                                    768: {
+                                    992: {
                                         items: 3,
                                     },
-                                    1000: {
-                                        items: 3,
-                                    },
-                                    1500: {
-                                        items: 3,
+                                    1400: {
+                                        items: 4,
                                     }
                                 },
                             });
@@ -464,7 +461,7 @@ $(document).ready(function(){
                             'slider_type': slider_type
                         }).then(function(res) {
                             $('#blog_5_owl_carosel').owlCarousel({
-                                margin: 30,
+                                margin: 45,
                                 items: 3,
                                 loop: false,
                                 dots:false,
@@ -481,7 +478,7 @@ $(document).ready(function(){
                                     576: {
                                         items: 2,
                                     },
-                                    1000: {
+                                    992: {
                                         items: 3,
                                     }
                                 },

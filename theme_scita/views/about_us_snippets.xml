@@ -2,7 +2,7 @@
 <odoo>
     <!-- About Healthcare Domain / Hospital -->
     <template id="health_about_hospital" name="About Us Snippet 2">
-        <section class="health_about_hospital" data-disp='about_us'>
+        <section class="health_about_hospital s_text_image" data-disp='about_us'>
             <div class='container'>
                 <div class="row">
                     <div class='col-md-6 sct_hospital_img'>
@@ -206,7 +206,7 @@
     </template>
       <!-- content_snippets_v_11 -->
     <template id="content_snippets_v_11" name="Content Snippet 6">
-        <section class="content_snippets_v_11 s_faq_collapse" data-disp="content_block">
+        <section class="content_snippets_v_11 s_faq_collapse s_text_image" data-disp="content_block">
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_btm_row">
                     <div class='col-md-5 col-lg-4 sct_content_info'>
