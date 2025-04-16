@@ -815,7 +815,7 @@
                                     </div>
                                 </div>
                             </section>
-                            <section class="it_grids_service" style="background-image: url('/web/image/theme_scita.sct_service_snippet_1_img_1');">
+                            <section class="it_grids_service">
                                 <div class="container">
                                     <div class="row s_nb_column_fixed sct_top_row">
                                         <div class="col-md-12">

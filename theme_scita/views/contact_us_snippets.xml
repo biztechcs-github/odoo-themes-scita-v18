@@ -4,60 +4,41 @@
         <section class="contact_us_v_1" data-disp='contact_us'>
             <div class='container'>
                 <div class="row">
-                    <div class='col-md-4 col-sm-6 sct_base_class'>
+                    <div class='col-md-4 sct_base_class'>
                         <div class="sct-left-side">
-                            <span class="fa fa-mobile" />
+                            <span class="fa fa-phone" />
+                            <h4 class='sct_title'>Phone</h4>                            
                         </div>
                         <div class="sct-right-side">
-                            <h4 class='sct_title'>
-                            <a href="tel:+1323579832822">1323579832822</a>
-                        	</h4>
-                            <p class='sct_simple_text'>Free Shipping On All US Orders</p>
+                            <p class='sct_simple_text'>
+                            <a href="tel:+1323579832822">+1 (323) 579832822</a>
+                        	</p>
                         </div>
                     </div>
-                    <div class='col-md-4 col-sm-6 sct_base_class'>
+                    <div class='col-md-4 sct_base_class'>
                         <div class="sct-left-side">
-                            <span class="fa fa-envelope-o"/>
+                            <span class="fa fa-envelope"/>
+                            <h4 class='sct_title'>Email</h4>
                         </div>
                         <div class="sct-right-side">
-                            <h4 class='sct_title'><a href="mailto:info@mediclinic.com">info@mediclinic.com</a>
-                        	</h4>
-                            <p class='sct_simple_text'>All Payment Are Secured.</p>
+                            <p class='sct_simple_text'><a href="mailto:info@mediclinic.com">info@mediclinic.com</a>
+                        	</p>
                         </div>
                     </div>
-                    <div class='col-md-4 col-sm-6 sct_base_class'>
+                    <div class='col-md-4 sct_base_class'>
                         <div class="sct-left-side">
-                            <span class="fa fa-envelope-o"/>
+                            <span class="fa fa-map-marker"/>
+                            <h4 class='sct_title'>Location</h4>
                         </div>
                         <div class="sct-right-side">
-                            <h4 class='sct_title'>Live Chat</h4>
-                            <p class='sct_simple_text'>Get all the information</p>
+                            <p class='sct_simple_text'>123 Tech Street, Innovation City</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </template>
-    <template id="contact_us_v_2" name="Contact Us Snippet 2">
-        <section class="contact_us_v_2 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');" data-disp='contact_us'>
-            <div class='container'>
-                <div class="row">
-                    <div class='col-md-12'>
-                        <div class='sct_base_class'>
-                        	<div class='sct_contect_into'>
-	                        	<h3 class='sct_title'>Need help? Call our award winning support team 24/7 at 020 7040505053</h3>
-	                        	<p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-	                        </div>
-	                        <div class='sct_cst_btn'>
-		                        <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Live Chat</a>
-		                    </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+   
     <template id="contact_us_v_3" name="Contact Us Snippet 3">
         <section class="contact_us_v_3 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');" data-disp='contact_us'>
             <div class='container'>
@@ -94,25 +75,5 @@
             </div>
         </section>
     </template>
-    <template id="contact_us_v_4" name="Contact Us Snippet 4">
-        <section class="contact_us_v_4" data-disp='contact_us'>
-            <div class='container'>
-                <div class="row">
-                    <div class='col-md-12'>
-                        <div class='sct_base_class'>
-                            <div class='sct_contect_img'>
-                                <span class="fa fa-share"/>
-                            </div>
-                        	<div class='sct_contect_into'>
-	                        	<h3 class='sct_title'>Ready to disscuss your Project?</h3>
-	                        </div>
-	                        <div class='sct_cst_btn'>
-		                        <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Contact Us</a>
-		                    </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+  
 </odoo>
