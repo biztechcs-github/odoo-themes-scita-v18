@@ -293,7 +293,7 @@ odoo.define('theme_scita.ajax_cart',[], function(require) {
                     if(!quantity) {
                        quantity = 1;
                     }
-                    const data = await this.rpc("/shop/cart/update_json", {
+                    const data = await rpc("/shop/cart/update_json", {
                         product_id: parseInt(product_product),
                         add_qty: quantity || 1,
                         display: false,
