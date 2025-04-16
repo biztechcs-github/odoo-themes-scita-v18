@@ -385,10 +385,20 @@
         <xpath expr="//div[hasclass('sct-add-to-cart-mob')]" position="after">
             <t t-set="product_variant" t-value="product_variant or product._create_first_product_variant()"/>
             <t t-set="in_wish" t-value="product_variant and product_variant._is_in_wishlist()"/>
-            <a class="btn btn-xs o_add_wishlist o_add_wishlist_dyn" data-action="o_wishlist" role="button" t-att-data-product-product-id="product_variant.id" t-att-data-product-template-id="product.id" t-att-disabled="in_wish or None" t-if="product_variant" title="Add to Wishlist" type="button">
-                <span aria-label="Add to wishlist" class="fa fa-heart-o" role="img"/>
-                <span class='sct_icon_text'>Add to wishlist</span>
-            </a>
+           <button
+                t-if="product_variant and product.type != 'combo'"
+                type="button"
+                role="button"
+                class="btn btn-link px-0 pe-3 o_add_wishlist_dyn"
+                t-att-disabled="in_wish"
+                t-att-data-product-template-id="product.id"
+                t-att-data-product-product-id="product_variant.id"
+                data-action="o_wishlist"
+                title="Add to wishlist"
+            >
+            <i class="fa fa-heart-o me-2" role="img" aria-label="Add to wishlist"/>
+            Add to wishlist
+            </button>
         </xpath>
     </template>
     <template id="scita_cart" inherit_id="website_sale.cart" name="Shopping Cart">
