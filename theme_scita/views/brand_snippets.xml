@@ -26,26 +26,27 @@
             <div class="container">
                 <div class='row'>
                     <div class="col-md-12 title-block">
-                        <h2 class="section-title section-title btm_seprator" t-if="not slider_header">
+                        <h2 class="section-title" t-if="not slider_header">
                             Brands
                         </h2>
-                        <h2 class="section-title section-title btm_seprator" t-if="slider_header">
+                        <h2 class="section-title" t-if="slider_header">
                             <t t-esc="slider_header.name"/>
                         </h2>
                     </div>
                 </div>
                 <div class="row our-brands">
-                    <div class="col-sm-12">
                         <t t-if="website_brands">
                             <t t-as="brand" t-foreach="website_brands">
-                                <a t-attf-href="/shop/brands?brand=#{ brand.id }" class='it_brand_border'>
-                                    <div class="brand-logo text-center">
-                                        <img t-att-alt="brand.name" t-att-src="website.image_url(brand, 'image','210x88')" class="img img-fluid" t-att-title="brand.name"/>
-                                    </div>
-                                </a>
+                                <div class="col-md-4 col-lg-3">
+                                    <a t-attf-href="/shop/brands?brand=#{ brand.id }" class='it_brand_border'>
+                                        <div class="brand-logo text-center">
+                                            <img t-att-alt="brand.name" t-att-src="website.image_url(brand, 'image','210x88')" class="img img-fluid" t-att-title="brand.name"/>
+                                        </div>
+                                    </a>
+                                </div>
                             </t>
                         </t>
-                    </div>
+                   
                 </div>
             </div>
         </div>
@@ -91,7 +92,7 @@
     <!-- for brands_box_slider_4 snippets -->
     <template id="brands_box_slider_4" name="Brand Slider 2">
         <section class="box_brand_slider" contentEditable="false" data-product-count="0" data-disp='brand'>
-            <div class="container">
+            <div class="container">                
                 <div class="row our-brands">
                     <div class="col-md-12">
                         <h3 class="section-title style1" id="snippet-title">
