@@ -1461,8 +1461,7 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 var $slider_type = self.$modal.find("#slider_type"),
                     $category_slider_delete = self.$modal.find("#cancel"),
                     $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
-                console.log("AAAAAAAAAAAAAAAAAAAA CATSLIDER3")
-                rpc('/theme_scita/category_get_options', {}).then(function(res) {
+                jsonrpc('/theme_scita/category_get_options', {}).then(function(res) {
                     $('#slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
                         $("select[id='slider_type']").append($('<option>', {
@@ -1475,7 +1474,6 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 $pro_cat_sub_data.on('click', function() {
                     var type = '';
                     self.$target.attr('data-cat-slider-id', $slider_type.val());
-                    debugger;
                     if ($('select#slider_type').find(":selected").text()) {
                         type = _t($('select#slider_type').find(":selected").text());
                     } else {

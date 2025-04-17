@@ -673,6 +673,67 @@ $(document).ready(function(){
         }
     });
 
+    animation.registry.cat_slider_3 = animation.Class.extend({
+        selector: ".cat_slider_3",
+        disabledInEditableMode: false,
+        start: function() {
+            var self = this;
+            if (this.editableMode) {
+                var $cate_slider = $('#wrapwrap').find('#theme_scita_custom_category_slider_3');
+                var cat_name = _t("Category Slider")
+                // $.each($cate_slider, function (single){
+
+                $cate_slider.each(function(){  
+                    $(this).empty().append('<div class="container">\
+                                                    <div class="block-title">\
+                                                        <h3 class="fancy">' + cat_name + '</h3>\
+                                                    </div>\
+                                                </div>')
+                });
+            }
+            if (!this.editableMode) {
+                var slider_id = self.$target.attr('data-cat-slider-id');
+                jsonrpc("/theme_scita/category_slider_3",{
+                    'slider-id': self.$target.attr('data-cat-slider-id') || '',
+                }).then(function(data) {
+                    if (data) {
+                        self.$target.empty();
+                        self.$target.append(data);
+                        var sct_rtl = false;
+                        if ($('#wrapwrap').hasClass('o_rtl')) {
+                            sct_rtl = true;
+                        }
+                        $(".cat_slider_3").removeClass('o_hidden');
+                        $('div#carousel_category').owlCarousel({
+                            loop:false,
+                            margin:20,
+                            nav:true,
+                            autoplay:true,
+                            rewind:true,
+                            dots:false,
+                            autoplayTimeout:2500,
+                            autoplayHoverPause:true,
+                            rtl: sct_rtl,
+                            responsive:{
+                                400:{
+                                    items:2
+                                },
+                                767:{
+                                    items:3
+                                },
+                                992:{
+                                    items:4
+                                },
+                                1400:{
+                                    items:6
+                                }
+                            }
+                        })
+                    }
+                });
+            }
+        }
+    });
     animation.registry.cat_slider_4 = animation.Class.extend({
         selector: ".cat_slider_4",
         disabledInEditableMode: false,
@@ -705,7 +766,6 @@ $(document).ready(function(){
                         $(".cat_slider_4").removeClass('o_hidden');
                         $('div#cat_slider_4_owl').owlCarousel({
                             loop:false,
-                            margin:20,
                             nav:false,
                             autoplay:true,
                             rewind:true,
@@ -715,16 +775,20 @@ $(document).ready(function(){
                             rtl: sct_rtl,
                             responsive:{
                                 0:{
-                                    items:1
-                                },
-                                400:{
-                                    items:2
+                                    items:2,
+                                    margin:25,
                                 },
                                 767:{
-                                    items:3
+                                    items:3,
+                                    margin:35,
                                 },
                                 992:{
-                                    items:4
+                                    items:4,
+                                    margin:35,
+                                },
+                                1400:{
+                                    items:6,
+                                    margin:40,
                                 }
                             }
                         })

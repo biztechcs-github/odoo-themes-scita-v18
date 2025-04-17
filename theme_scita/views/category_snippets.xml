@@ -1,50 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <!-- Category Slider Snippet -->
-        <template id="s_theme_scita_category_slider" name="Category Snippet 3">
-            <section id="theme_scita_custom_category_slider" class="oe_cat_slider categ_slider s_theme_scita_category_slider" contentEditable="false" data-cat-slider-id=""  data-disp='category_snippet'>
-                <div class="container">
-                    <div class="block-title">
-                        <h3 class="fancy">Category Snippet</h3>
-                    </div>
-                </div>
-            </section>
-        </template>
-        <template id="theme_scita_category_slider_option" inherit_id="website.snippet_options" name="Modify Options">
-            <xpath expr="//div" position="after">
-                <div data-js="oe_cat_slider" data-selector=".oe_cat_slider">
-                    <we-button class="dropdown-item oe_cat_slider" tabindex="-1" href="#" data-cat_slider="">Modify</we-button>
-                </div>
-            </xpath>
-        </template>
-        <template id="theme_scita_cat_slider_view" name="Category 1">
+    <template id="s_theme_scita_category_slider" name="Category Snippet 3">
+        <section id="theme_scita_custom_category_slider" class="oe_cat_slider categ_slider s_theme_scita_category_slider" contentEditable="false" data-cat-slider-id=""  data-disp='category_snippet'>
             <div class="container">
-                <div class='row'>
-                    <div class='col-md-12'>
-                        <div class="category-slider-section">
-                            <div class='row'>
-                                <t t-as="slide" t-foreach="slider_details">
-                                    <div class='col-md-4 col-6 col-lg-3 sct-cs-box'>
-                                        <div class="cs-cat">
-                                            <a t-att-href=" '/shop/category/%s' % slug(slide)">
-                                                <div class="cs-img">
-                                                    <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
-                                                </div>
-                                                <div class='sct_cat_content'>
-                                                    <p class="pwpi-title">
-                                                        <t t-esc="slide.name"/>
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </div>
+                <div class="block-title">
+                    <h3 class="fancy">Category Snippet</h3>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="theme_scita_category_slider_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="oe_cat_slider" data-selector=".oe_cat_slider">
+                <we-button class="dropdown-item oe_cat_slider" tabindex="-1" href="#" data-cat_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template>
+    <template id="theme_scita_cat_slider_view" name="Category 1">
+        <div class="container">
+            <div class='row'>
+                <div class='col-md-12'>
+                    <div class="category-slider-section">
+                        <div class='row'>
+                            <t t-as="slide" t-foreach="slider_details">
+                                <div class='col-md-4 col-6 col-lg-3 sct-cs-box'>
+                                    <div class="cs-cat">
+                                        <a t-att-href=" '/shop/category/%s' % slug(slide)">
+                                            <div class="cs-img">
+                                                <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
+                                            </div>
+                                            <div class='sct_cat_content'>
+                                                <p class="pwpi-title">
+                                                    <t t-esc="slide.name"/>
+                                                </p>
+                                            </div>
+                                        </a>
                                     </div>
-                                </t>
-                            </div>
+                                </div>
+                            </t>
                         </div>
                     </div>
                 </div>
             </div>
-        </template>
+        </div>
+    </template>
+
+<!--  Retail category slider snippet-->
+    <template id="theme_scita_category_slider_3" name="Category Slider 1">
+        <section id="theme_scita_custom_category_slider_3" class="cat_slider_3 categ_slider scita_category_slider_3" contentEditable="false" data-cat-slider-id=""  data-disp='category_snippet'>
+            <div class="container">
+                <div class="block-title">
+                    <h3 class="fancy">Category Slider</h3>
+                </div>
+            </div>
+        </section>
+    </template>
+    <template id="theme_scita_category_slider_3_option" inherit_id="website.snippet_options" name="Modify Options">
+        <xpath expr="//div" position="after">
+            <div data-js="cat_slider_3" data-selector=".cat_slider_3">
+                <we-button class="dropdown-item cat_slider_3" tabindex="-1" href="#" data-cat_slider="">Modify</we-button>
+            </div>
+        </xpath>
+    </template>
+    <template id="theme_scita_category_slider_3_view" name="Category">
+        <div class="container">
+            <div class="row top-row title-block">
+                <h2 class="col-md-12 section-title" t-if="not slider_header">
+                    Category Slider
+                </h2>
+                <h2 class="col-md-12 section-title" t-if="slider_header">
+                    <t t-esc="slider_header.name"/>
+                </h2>
+            </div>
+            <div class="row bottom-row categories">
+                <div id="carousel_category" class="col-md-12 category-slider owl-carousel">
+                    <t t-as="slide" t-foreach="slider_details">
+                        <div class="item cs-cat">
+                            <a t-att-href=" '/shop/category/%s' % slug(slide)">
+                                <div class="cs-img">
+                                    <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
+                                </div>
+                                <div class='sct_cat_content'>
+                                    <p class="pwpi-title">
+                                        <t t-esc="slide.name"/>
+                                    </p>
+                                    <em><t t-esc="count_dict[slide.id]"/> Items</em>
+                                </div>
+                            </a>
+                        </div>
+                    </t>
+                </div>
+            </div>
+        </div>
+    </template>
     <template id="theme_scita_category_slider_4" name="Category Slider 2">
         <section id="theme_scita_custom_category_slider_4" class="cat_slider_4 categ_slider scita_category_slider_4" contentEditable="false" data-cat-slider-id=""  data-disp='category_snippet'>
             <div class="container">
@@ -62,7 +111,7 @@
         </xpath>
     </template>
     <template id="theme_scita_category_slider_4_view" name="Category">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row top-row title-block">
                 <h2 class="col-md-12 section-title" t-if="not slider_header">
                     Category Slider
@@ -76,13 +125,14 @@
                     <t t-as="slide" t-foreach="slider_details">
                         <div class="item cs-cat">
                             <a t-att-href=" '/shop/category/%s' % slug(slide)">
-                                <div class="cs-img">
+                                <div class="cs-img sct_img_effect4">
                                     <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
                                 </div>
                                 <div class='sct_cat_content'>
                                     <p class="pwpi-title">
                                         <t t-esc="slide.name"/>
                                     </p>
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
                                 </div>
                             </a>
                         </div>
