@@ -2004,15 +2004,9 @@ body #wrapwrap{
 
 /*fashion Shop brand snippet*/
 .fashion_static_brand_snippet {
-	padding: 60px 0 45px 0;
-	@media (max-width: 1439px){
-		padding: 50px 0 35px 0;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0 25px 0;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0 15px 0;
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
 	}
 	.sct_section_title {
 		width: 100%;
@@ -2022,7 +2016,7 @@ body #wrapwrap{
 	}
 	.sct_brand_row {
 		.sct_brand_box {	
-			margin-bottom: 15px;
+			margin-bottom: 30px;
 			.sct_back_img{
 				position: relative;
 				overflow: hidden;
@@ -2043,12 +2037,7 @@ body #wrapwrap{
 						margin: auto;
 					}
 				}
-			}
-			+ .sct_brand_box {
-				@media (max-width: 575px){
-					margin-top: 20px;
-				}
-			}
+			}			
 		}
 	}
 }
@@ -3887,19 +3876,12 @@ body #wrapwrap{
 /*it testimonial snippet end*/
 /*it brand snippet*/
 .it_brand_slider {
-	padding: 60px 0 80px;
-	@media (max-width: 1600px){
-		padding: 60px 0 70px;
+	padding: 50px 0 20px;
+	@include min992{
+		padding: 60px 0 30px;
 	}
-	@media (max-width: 1439px){
-		padding: 50px 0 60px;
-	}
-	@media (max-width: 767px){
-		padding: 30px 0 35px;
-	}
-	.title-block {
-		margin-bottom: 30px;
-	}
+	
+	
 	.our-brands {
 		.col-sm-12 {
 			flex: unset;
@@ -3909,14 +3891,14 @@ body #wrapwrap{
 		}
 		.it_brand_border {
 			display: inline-block;
-			width: 25%;
+			width: 100%;
 			height: 150px;
 			padding: 40px 20px;
 			position: relative;
 			text-align: center;
 			padding: 5px;
-			border: 1px solid #dab6b7;
-			box-shadow: 0 0 4px 0 #ffe1e1;
+			border: 1px solid rgba($dark-grey-color, 0.2);
+			border-radius: 10px;
 			margin: 0 0 30px;
 			@media (max-width: 1023px){
 				padding: 20px 15px;
@@ -3927,8 +3909,7 @@ body #wrapwrap{
 				@include flex;
 				@include flexwrap;
 				@include justify-align-content;
-				background: #ffefef;
-				padding: 20px;
+				
 				img {
 					max-height: 100%;
 
@@ -3971,8 +3952,7 @@ body #wrapwrap{
 					display:none;
 				}
 			}
-			@media (max-width: 575px) {
-				width: 33.33%;
+			@media (max-width: 575px) {		
 				
 				&:nth-child(4n + 1) {
 					&:before{
@@ -9230,21 +9210,26 @@ body #wrapwrap{
 /*brand slider snippet 1*/
 .box_brand_slider {
 	padding: 50px 0;
+	background: rgba($primary ,0.2);
 	@include min992{
 		padding: 60px 0;
 	}
-	.box_brand_snippet_4 {
+	.box_brand_snippet_4 {	
+		.title-block{		
+			text-align: center;			
+		}
+		.sct-brand-slider-2{
+			background-color: $light-color;
+			border-radius: 5px;
+			box-shadow:0 0 4px 2px rgba($dark-grey-color, 0.2);
+		}
 		.sct_brand_box {
 			padding: 10px;
-			background: $light-color;
 			.brand-logo-box {
 				height: 120px;
 				@include flex;
 				@include flexwrap;
 				@include justify-align-content;
-				border: 1px solid rgba($dark-grey-color, 0.2);
-				padding: 10px;
-				border-radius: 10px;
 				img {
 					width: auto;
 					max-width: 100%;
@@ -10448,12 +10433,10 @@ body #wrapwrap{
 /*Google map snippet 1*/
 .google_map_v1 {
 	padding: 60px 0;
-	@media (max-width: 1199px){
+	@include min992{
 		padding: 50px 0;
 	}
-	@media (max-width: 767px){
-		padding: 40px 0;
-	}
+	
 	iframe {
 		width: 100%;
 		@media (max-width: 767px){
@@ -10465,9 +10448,9 @@ body #wrapwrap{
 
 /*Google map snippet 2*/
 .google_map_v2 {
-	padding: 50px 0;
-	@media (max-width: 1199px){
-		padding: 40px 0;
+	padding: 60px 0;
+	@include min992{
+		padding: 50px 0;
 	}
 	iframe {
 		width: 100%;
@@ -10475,13 +10458,7 @@ body #wrapwrap{
 			height: 250px;
 		}
 	}
-	.sct_map {
-		padding-top: 10px;
-		padding-bottom: 10px;
-	}
 	.sct_map_info {
-		padding-top: 10px;
-		padding-bottom: 10px;
 		@include flex;
 		@include flexwrap;
 		-ms-flex-line-pack: center;
