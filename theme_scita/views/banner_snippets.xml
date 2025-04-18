@@ -195,28 +195,100 @@
     <!-- IT Promotional Services Banner -->
     <template id="it_main_banner" name="Banner Snippet 1">
         <section class="it_main_banner" data-disp='banner'>
-           <div class="container-fluid">
-                            <div class="row content flex-row-reverse">
-                                <div class="col-md-6 col-lg-5 left-content o_colored_level">
-                                    <div class="banner-content d-flex h-100 flex-column justify-content-center">
-                                        <div class="sct_sub_title">
-                                            <p class="o_default_snippet_text title-20"><span class="o_default_snippet_text">Elevate Your Essentials</span></p>
+           <div class="container">
+                <div class="row sct_banner_row">
+                    <section class="col-md-6 col-lg-9 banner_slider s_carousel_wrapper">
+                        <div id="carouselExampleIndicators" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
+                            <ol class="carousel-indicators">
+                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
+                                <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active" data-name="Slide">
+                                    <div class="row align-items-center">
+                                        <div class="slider-content carousel-content col-lg-7">
+                                            <p class="text-uppercase title-18 text-tag">Highest Quality</p>
+                                            <h2 class="section-title-big">High Performance and Elegant Design</h2>
+                                            <p class="title-18 sub-text">Innovative tech, timeless design, ultimate experience.</p>
+                                            <a href="#" alt-="Shop now" title="Shop now" class="btn btn-primary solid-btn">Shop now<span class="arrow"></span></a>
                                         </div>
-                                        <div class="sct_title">
-                                            <h2 class="banner-title o_default_snippet_text section-title-big"><span class="block">Stylish Handbags for Every Occasion</span></h2>
+                                        <div class="slider-image sct_banner_img col-lg-5">
+                                            <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
                                         </div>
-                                        <div class="banner-sub-title">
-                                            <p>Chic &amp; Stylish Handbags: Discover Trendy Purses for Every Occasion at Unbeatable Prices, Fashion, and Function Combined!</p>
-                                        </div>
-                                        <a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn align-self-start">Shop Now<span class="arrow"></span></a>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-lg-7 right-image p-0">
-                                    <div class="image" style="background-image:url('/theme_scita/static/src/img/slider-banner-1.jpg')">                                      
+                                <div class="carousel-item active" data-name="Slide">
+                                    <div class="row align-items-center">
+                                        <div class="slider-content carousel-content col-lg-7">
+                                            <p class="text-uppercase title-18 text-tag">Highest Quality</p>
+                                            <h2 class="section-title-big">High Performance and Elegant Design</h2>
+                                            <p class="title-18 sub-text">Innovative tech, timeless design, ultimate experience.</p>
+                                            <a href="#" alt-="Shop now" title="Shop now" class="btn btn-primary solid-btn">Shop now<span class="arrow"></span></a>
+                                        </div>
+                                        <div class="slider-image sct_banner_img col-lg-5">
+                                            <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                            <!-- Controls -->
+                            <a class="carousel-control-prev o_not_editable" contenteditable="false" href="#carouselExampleIndicators" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                <span class="carousel-control-prev-icon"/>
+                                <span class="visually-hidden">Previous</span>
+                            </a>
+                            <a class="carousel-control-next o_not_editable" contenteditable="false" href="#carouselExampleIndicators" data-bs-slide="next" role="img" aria-label="Next" title="Next">
+                                <span class="carousel-control-next-icon"/>
+                                <span class="visually-hidden">Next</span>
+                            </a>
                         </div>
+                    </section>
+                    <div class="col-md-6 col-lg-3 sct_deal_vertical">
+                        <section class="sct_top_deal">
+                            <a href="/shop" class="vertical-banner-content">
+                                <div class="sct_banner_content">
+                                    <p class="title-20 text-uppercase text-tag">Up to 50%</p>
+                                    <h3 class="section-title-big">SALE</h3>
+                                    <h5 class="title-20 text-uppercase">Get new smartphone</h5>
+                                    <p class="title-18 sub-text">Lorem ipsum is a dummy or placeholder text</p>
+                                </div>
+                                <div class="sct_banner_img">
+                                    <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+                <div class="row sct_banner_row">
+                    <div class="col-md-6 sct_deal_main">
+                        <section class="sct_top_deal">
+                            <a href="/shop" class="top-deal-content">
+                                <div class="sct_banner_content col-md-7">
+                                    <p class="title-18 text-uppercase">Top Deal</p>
+                                    <h3 class="title-36 mb-3">Homepod Pro</h3>
+                                    <p class="title-20">Get upto <span class="theme-color">15% OFF</span> </p>
+                                </div>
+                                <div class="sct_banner_img col-md-5">
+                                    <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                    <div class="col-md-6 sct_deal_main">
+                        <section class="sct_top_deal">
+                            <a href="/shop" class="top-deal-content">
+                                <div class="sct_banner_content col-md-7">
+                                    <p class="title-18 text-uppercase">Top Deal</p>
+                                    <h3 class="title-36 mb-3">Bamboobuds</h3>
+                                    <p class="title-20">Get upto <span class="theme-color">15% OFF</span> </p>
+                                </div>
+                                <div class="sct_banner_img col-md-5">
+                                    <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
+                                </div>
+                            </a>
+                        </section>
+                    </div>
+                </div>
+            </div>
         </section>
     </template>
     <!-- for Dynamic Video Banner snippets -->

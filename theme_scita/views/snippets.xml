@@ -842,13 +842,13 @@
 <!-- IT Start -->
     
     <template id="it_skills_snippet" name="Skills Block">
-        <section class="it_skills_snippet" data-disp='statistics'>
+        <section class="it_skills_snippet s_text_image" data-disp='statistics'>
             <div class='container'>
-                <div class='row s_nb_column_fixed sct_top_row'>
+                <section class='d-flex s_nb_column_fixed sct_top_row'>
                     <div class="col-md-12">
                         <h2 class="section-title">Technology Expertise</h2>
                     </div>
-                </div>
+                </section>
                 <div class="row s_nb_column_fixed sct_btm_row">
                     <div class='col-md-6 sct_cmp_info'>
                         <ul>
@@ -995,18 +995,6 @@
     <template id="theme_scita_snippets_list" inherit_id="website.snippets" name="Theme Scita Snippets List">
         <xpath expr="//snippets[@id='snippet_groups']" position="before">
 			  <snippets id="theme_scita_group" string="Theme Scita">
-                <!-- <div class="o_panel" id="scita_snippets">
-                    <div class="o_panel_header">
-                        <span class="fa-stack d-inline-flex mb-1 me-1">
-                            <img src="/theme_scita/static/src/img/scita_small_logo.png" class="img img-fluid" alt="Money back"/>
-                        </span>Theme Scita
-                        <select id="selSnippetCat" class="scita_snippet_sort">
-                            <option value="about_us">About Us Snippets</option>
-                        </select>
-                    </div>
-                    <div class="o_panel_body">
-                    </div>
-                </div> -->
 				<t t-snippet="theme_scita.timer_snippet_body" t-thumbnail="/theme_scita/static/src/img/snippet_icon/timer.png" name="Style 2" priority="2" />
 				<!-- banner snippets -->
 				<t t-snippet="theme_scita.sct_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-ful-banner-1.1.png"/>
@@ -1039,7 +1027,7 @@
 
 				<t t-snippet="theme_scita.fashion_static_brand_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_brand.png"/>
 				
-
+                <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-2.png"/>
 				
 				
@@ -1080,9 +1068,9 @@
 				<t t-snippet="theme_scita.s_theme_scita_pricing_table_1_3column_v5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Pricing_Varient_5.png"/>
 
 				<!-- Our team veriants -->
-				<t t-snippet="theme_scita.it_our_team" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our_team.png"/>
-                <t t-snippet="theme_scita.our_team_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_3.png"/>
-				<t t-snippet="theme_scita.our_team_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_5.png"/>
+				    <t t-snippet="theme_scita.it_our_team" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our_team.png"/>
+                    <t t-snippet="theme_scita.our_team_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_3.png"/>
+                    <t t-snippet="theme_scita.our_team_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_5.png"/>
                 
 				<!-- Policy Trust snippets veriants -->
 				<t t-snippet="theme_scita.retial_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust_1.png"/>
