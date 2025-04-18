@@ -1461,7 +1461,7 @@ import { CodeEditor } from "@web/core/code_editor/code_editor";
                 var $slider_type = self.$modal.find("#slider_type"),
                     $category_slider_delete = self.$modal.find("#cancel"),
                     $pro_cat_sub_data = self.$modal.find("#cat_sub_data");
-                jsonrpc('/theme_scita/category_get_options', {}).then(function(res) {
+                rpc('/theme_scita/category_get_options', {}).then(function(res) {
                     $('#slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
                         $("select[id='slider_type']").append($('<option>', {

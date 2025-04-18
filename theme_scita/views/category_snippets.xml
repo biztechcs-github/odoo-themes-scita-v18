@@ -85,7 +85,7 @@
                                     <p class="pwpi-title">
                                         <t t-esc="slide.name"/>
                                     </p>
-                                    <em><t t-esc="count_dict[slide.id]"/> Items</em>
+                                    <p class="category_count"><t t-esc="count_dict[slide.id]"/> Items</p>
                                 </div>
                             </a>
                         </div>

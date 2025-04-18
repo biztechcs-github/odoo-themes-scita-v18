@@ -693,7 +693,7 @@ $(document).ready(function(){
             }
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
-                jsonrpc("/theme_scita/category_slider_3",{
+                rpc("/theme_scita/category_slider_3",{
                     'slider-id': self.$target.attr('data-cat-slider-id') || '',
                 }).then(function(data) {
                     if (data) {
@@ -706,7 +706,7 @@ $(document).ready(function(){
                         $(".cat_slider_3").removeClass('o_hidden');
                         $('div#carousel_category').owlCarousel({
                             loop:false,
-                            margin:20,
+                            margin:30,
                             nav:true,
                             autoplay:true,
                             rewind:true,
@@ -715,17 +715,20 @@ $(document).ready(function(){
                             autoplayHoverPause:true,
                             rtl: sct_rtl,
                             responsive:{
-                                400:{
+                                0:{
                                     items:2
                                 },
                                 767:{
-                                    items:3
-                                },
-                                992:{
                                     items:4
                                 },
-                                1400:{
+                                992:{
+                                    items:5
+                                },
+                                1200:{
                                     items:6
+                                },
+                                1400:{
+                                    items:7
                                 }
                             }
                         })
