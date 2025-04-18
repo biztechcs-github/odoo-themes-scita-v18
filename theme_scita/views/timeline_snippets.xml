@@ -5,187 +5,68 @@
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_top_row">
                     <div class='col-md-12'>
-                        <div class='section_title_div'>
-                            <h2 class='section_title'>Timeline</h2>
+                        <div class='section_title_div text-center'>
+                            <h2 class='section-title'>Timeline</h2>
                         </div>
                     </div>
                 </div>
-                <div class="row s_nb_column_fixed sct_bottom_row">
-                    <div class='col-lg-3 col-md-6 sct_time_box'>
+                <div class="row s_nb_column_fixed sct_bottom_row justify-content-center">
+                    <div class='col-lg-4 col-xl-3 col-md-6 sct_time_box'>
                         <div class='sct_base_class'>
                             <div class='sct_timeline_count'>
-                                <h3 class='sct_count_title'>1</h3> 
-                            </div>
-                            <div class='sct_timeline_img'>
-                                <span class="fa fa-connectdevelop"/>
+                                <h3 class='sct_count_title'>01. Analysis</h3> 
                             </div>
                             <div class='sct_timeline_info'>
-                                <h3 class='sct_title'>Analysis</h3>
-                                <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-lg-3 col-md-6 sct_time_box'>
-                        <div class='sct_base_class'>
-                            <div class='sct_timeline_count'>
-                                <h3 class='sct_count_title'>2</h3> 
-                            </div>
-                            <div class='sct_timeline_img'>
-                                <span class="fa fa-connectdevelop"/>
-                            </div>
-                            <div class='sct_timeline_info'>
-                                <h3 class='sct_title'>Design</h3>
-                                <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-lg-3 col-md-6 sct_time_box'>
-                        <div class='sct_base_class'>
-                            <div class='sct_timeline_count'>
-                                <h3 class='sct_count_title'>3</h3> 
-                            </div>
-                            <div class='sct_timeline_img'>
-                                <span class="fa fa-connectdevelop"/>
-                            </div>
-                            <div class='sct_timeline_info'>
-                                <h3 class='sct_title'>Development</h3>
-                                <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class='col-lg-3 col-md-6 sct_time_box'>
-                        <div class='sct_base_class'>
-                            <div class='sct_timeline_count'>
-                                <h3 class='sct_count_title'>4</h3> 
-                            </div>
-                            <div class='sct_timeline_img'>
-                                <span class="fa fa-connectdevelop"/>
-                            </div>
-                            <div class='sct_timeline_info'>
-                                <h3 class='sct_title'>Testing</h3>
-                                <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-    <template id="timeline_snippet_2" name="Timeline Snippet 2">
-        <section class="timeline_snippet_2 s_tabs" data-disp="timeline">
-            <div class="container">
-                <div class="row s_nb_column_fixed sct_top_row">
-                    <div class='col-md-12'>
-                        <div class="sct_section_title">
-                            <h2 class="section-title">What We Do </h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class="col-md-12 sct_service_nav">
-                        <div class="navigation-tab">
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-bs-toggle="tab" href="#timeline_2_item1"><span class='nav_title'>Planning</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#timeline_2_item2"><span class='nav_title'>Marketing</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-bs-toggle="tab" href="#timeline_2_item3"><span class='nav_title'>Growth</span></a>
-                                </li>
-                            </ul>
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div class="tab-pane fade in active show" id="timeline_2_item1" role="tabpanel">
-                                    <div class='row sct_serv_row'>
-                                    	<div class='col-md-6 sct_timeline_img'>
-                                            <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                                            </div>
-                                        </div>
-                                        <div class='col-md-6 sct_thumb'>
-                                            <div class='sct_text_info'>
-                                                <h3 class='sct_title'>Vision to planning</h3>
-                                                <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
-                                                <ul class='sct_serv_list'>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class='sct_timeline_img'>
+                                    <span class="fa fa-connectdevelop"/>
                                 </div>
-                                <div class="tab-pane fade" id="timeline_2_item2" role="tabpanel">
-                                    <div class='row sct_serv_row'>
-                                    	<div class='col-md-6 sct_timeline_img'>
-                                            <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                                            </div>
-                                        </div>
-                                        <div class='col-md-6 sct_thumb'>
-                                            <div class='sct_text_info'>
-                                                <h3 class='sct_title'>Vision to planning</h3>
-                                                <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                                </p>
-                                                <ul class='sct_serv_list'>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="sct_timeline_content">
+                                    <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                 </div>
-                                <div class="tab-pane fade" id="timeline_2_item3" role="tabpanel">
-                                    <div class='row sct_serv_row'>
-                                    	<div class='col-md-6 sct_timeline_img'>
-                                            <div class='sct_img_box'>
-                                                <img src="/web/image/theme_scita.sct_about_us_snippet_1" class="img img-fluid" alt='web icon'/>
-                                            </div>
-                                        </div>
-                                        <div class='col-md-6 sct_thumb'>
-                                            <div class='sct_text_info'>
-                                                <h3 class='sct_title'>Vision to planning</h3>
-                                                <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</p>
-                                                
-                                                <ul class='sct_serv_list'>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                    <li class='true_icon_text'>
-                                                        <span class="fa fa-check"/>Lorem ipsum dolor sit amet 
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4 col-xl-3 col-md-6 sct_time_box'>
+                        <div class='sct_base_class'>
+                            <div class='sct_timeline_count'>
+                                <h3 class='sct_count_title'>02. Design</h3> 
+                            </div>
+                            <div class='sct_timeline_info'>
+                                <div class='sct_timeline_img'>
+                                    <span class="fa fa-connectdevelop"/>
+                                </div>
+                                <div class="sct_timeline_content">
+                                    <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4 col-xl-3 col-md-6 sct_time_box'>
+                        <div class='sct_base_class'>
+                            <div class='sct_timeline_count'>
+                                <h3 class='sct_count_title'>03. Development</h3> 
+                            </div>
+                            <div class='sct_timeline_info'>
+                                <div class='sct_timeline_img'>
+                                    <span class="fa fa-connectdevelop"/>
+                                </div>
+                                <div class="sct_timeline_content">
+                                    <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='col-lg-4 col-xl-3 col-md-6 sct_time_box'>
+                        <div class='sct_base_class'>
+                            <div class='sct_timeline_count'>
+                                <h3 class='sct_count_title'>04. Testing</h3> 
+                            </div>
+                            <div class='sct_timeline_info'>
+                                <div class='sct_timeline_img'>
+                                    <span class="fa fa-connectdevelop"/>
+                                </div>
+                                <div class="sct_timeline_content">
+                                    <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
                                 </div>
                             </div>
                         </div>

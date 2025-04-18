@@ -1088,7 +1088,6 @@
 				<t t-snippet="theme_scita.retial_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust_1.png"/>
 				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trust-icon.png"/>
 				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Policy_Trust_Varient_3.png"/>
-				<t t-snippet="theme_scita.policy_trust_snippet_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Trust_Icons_Type_4.png"/>
 				
 
 				<!-- Product Snippet -->
@@ -1152,7 +1151,6 @@
 				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_1.png"/>
-				<t t-snippet="theme_scita.timeline_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_2.png"/>
 				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_3.png"/>
 				
 				<!-- portfolio_snippet_1 -->
