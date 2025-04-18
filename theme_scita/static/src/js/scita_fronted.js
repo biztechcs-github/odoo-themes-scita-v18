@@ -158,6 +158,7 @@ $(document).ready(function(){
                             $('div.fashion_featured_product_1 .fashion_cro ').owlCarousel({
                                 loop:false,
                                 rewind:true,
+                                dots:false,
                                 autoplay: false,
                                 autoplayTimeout:res.auto_play_time,
                                 autoplayHoverPause:true,
@@ -990,7 +991,7 @@ $(document).ready(function(){
                         $(".theme_scita_trending_products").removeClass('o_hidden');
                         $('div#product_slider').owlCarousel({
                             margin: 30,
-                            items:6,
+                            items:4,
                             loop:false,
                             autoplay:true,
                             rewind:true,
@@ -1012,7 +1013,7 @@ $(document).ready(function(){
                                     items: 3
                                 },
                                 1500: {
-                                    items: 3
+                                    items: 4
                                 },
                             },
                         });
@@ -1039,7 +1040,7 @@ $(document).ready(function(){
                         }
                         $('div#product_slider').owlCarousel({
                             margin: 30,
-                            items:6,
+                            items:4,
                             loop:false,
                             autoplay:true,
                             rewind:true,
@@ -1061,7 +1062,7 @@ $(document).ready(function(){
                                     items: 3
                                 },
                                 1500: {
-                                    items: 3
+                                    items: 4
                                 },
                             },
                         });
