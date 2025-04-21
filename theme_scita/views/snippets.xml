@@ -1006,8 +1006,6 @@
 				
 				<!-- Deal of the Day snippets -->
 				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-deal-of-day.png"/>
-				<t t-snippet="theme_scita.fashion_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fashion_deal_of_day.png"/>
-				<t t-snippet="theme_scita.deal_of_day_banner_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_2.png"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_3.png"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/deal-of-the-day-5.png"/>
 				<!-- Promo banners snippets -->
