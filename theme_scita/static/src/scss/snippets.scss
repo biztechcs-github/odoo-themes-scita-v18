@@ -577,12 +577,13 @@ body #wrapwrap{
 				z-index: 1;
 				height: 100%;
 				@include flex;
-				@include align-content-column-flex;
+				flex-direction: column-reverse;
 				@include content-sb;
 				background-color: #f8f3ef;
 				
 				@media (min-width: 768px){
 					padding: 40px 25px;
+					@include align-content-column-flex;
 				}
 				.text-tag{
 					margin-bottom: 13px;
@@ -594,7 +595,10 @@ body #wrapwrap{
 				.sub-text{
 					font-weight: lighter;
 					line-height: 1.3;
-					margin: 10px 0 20px;
+					margin: 10px 0 0;
+					@include min768{
+						margin: 10px 0 20px;
+					}
 				}
 			}
 		}
@@ -3861,18 +3865,6 @@ body #wrapwrap{
 			    }
 			    @media (max-width: 1023px){
 			    	margin: 10px 0 25px;
-			    }
-			    &:after {
-			    	content: "";
-				    position: absolute;
-				    bottom: 0;
-				    left: 0;
-				    right: 0;
-				    height: 49px;
-				    background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
-				    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, white 100%);
-				    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, white 100%);
-				    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
 			    }
 			}
 		}
@@ -7717,7 +7709,7 @@ body #wrapwrap{
 			}
 		}
 		.prog_statics {
-			margin: 30px 0 0;
+			margin: auto 0 0;
 			background-color: $primary;			
 			border-radius: 10px;			
 			
@@ -7745,7 +7737,10 @@ body #wrapwrap{
 		}		
 		.sct_info_box{			
 			padding: 20px;
-			background-color: darken($primary, 30%);	
+			background-color: darken($primary, 30%);
+			height: 100%;
+			@include flex;
+			@include flex-column;
 			@include min992{	
 				border-radius: 10px;
 			}
@@ -9534,6 +9529,10 @@ body #wrapwrap{
 		@include flexwrap;
 		-ms-flex-line-pack: center;
 		align-content: center;
+		margin-top: 20px;
+		@include min768{
+			margin-top: 0;
+		}
 		.section-title {
 			margin-bottom: 20px;
 		}
