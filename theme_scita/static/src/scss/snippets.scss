@@ -2218,6 +2218,11 @@ body #wrapwrap{
 /*fashion offer advertise snippet end*/
 
 .fashion_multi_category_slider, .multi_product_and_category_slider {
+	.cst_top_row{
+		.section-title{
+			text-transform: capitalize;
+		}
+	}
 	.add_cart_div {
 		position: relative;
 		.cart_view_sct_btn{
@@ -3681,6 +3686,15 @@ body #wrapwrap{
 									filter: brightness(0) invert(1);
 								}
 							}
+						}
+					}
+				}
+			}
+			&:hover{
+				.sct_blog_desc{
+					.it_blog_img{
+						.sct_blog_name{
+							color: $primary;
 						}
 					}
 				}
@@ -8554,6 +8568,7 @@ body #wrapwrap{
 				right: auto;
 				left: -10px;
 				opacity: 1;
+				cursor: pointer;
 
 				span{
 					width: 1.3rem;
@@ -9972,6 +9987,8 @@ body #wrapwrap{
     			@include flex;
     			@include justify-align-content;
     			margin: 0 10px;
+				padding: 0;
+
     			@media (max-width: 1600px){
     				width: 40px;
     				height: 40px;
@@ -10645,7 +10662,7 @@ body #wrapwrap{
 .section-title-wrapper {
     margin-bottom: 22px;
     @include min1024{
-        margin-bottom: 30px;
+        margin-bottom: 40px;
     }
     .section-title {
         margin-bottom: 0;
