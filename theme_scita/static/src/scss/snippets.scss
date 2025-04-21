@@ -3073,141 +3073,12 @@ body #wrapwrap{
 }
 /*it lets talk snippet end*/
 
-/*it techno expert snippet*/
-.it_skills_snippet {
-	padding: 70px 0 40px;
-	@media (max-width: 1600px){
-		padding: 70px 0 50px;
-	}
-	@media (max-width: 1199px){
-		padding: 50px 0 50px;
-	}
-	.sct_btm_row {
-		margin-top: 40px;
-		padding: 0 6%;
-		@media (max-width: 767px){
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: reverse;
-			-ms-flex-direction: column-reverse;
-			flex-direction: column-reverse;
-			margin-top: 30px;
-		}
-		.sct_cmp_info {
-			padding-right: 6%;
-			.sct_simple_text {
-				font-size: $font-body + 1;
-				font-weight: bold;
-				margin-bottom: 10px;
-				@media (max-width: 1439px) {
-					font-size: $font-body;
-				}
-			}
-			.progress {
-				height: 3px;
-			}
-			ul {
-				list-style-type: none;
-				li {
-					font-size: $font-body + 1 !important;
-					font-weight: bold;
-					position: relative;
-					padding-left: 15px;
-					@media (max-width: 1439px) {
-						font-size: $font-body !important;
-					}
-					&:before {
-						position:absolute;
-						content: '\f111';
-						font-family: 'FontAwesome';
-						font-size: 5px;
-						color: $dark-color;
-						left: 0;
-						top: 10px;
-					}
-					+ li {
-						margin-top: 30px;
-						@media (max-width: 767px){
-							margin-top: 20px;
-						}
-					}
-				}
-			}
-			@media (max-width: 767px){
-				margin-top: 30px;
-			}
-		}
-		.sct_cmp_img {
-			@include flex;
-			@include flexwrap;
-			@include align-content;
-			
-			.sct_big_text {
-				margin-bottom: 0;
-				background: -webkit-gradient(linear, left top, left bottom, from(#49c8d7), to(#6877c8));
-				background: -webkit-linear-gradient(#49c8d7, #6877c8);
-				background: -ms-linear-gradient(#49c8d7, #6877c8);
-				background: -o-linear-gradient(#49c8d7, #6877c8);
-				background: linear-gradient(#49c8d7, #6877c8);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-size: 235px;
-				line-height: normal;
-				margin-top: -50px;
-				font-weight: bold;
-				max-width: 50%;
-				@media (max-width: 1600px){
-					font-size: 200px;
-				}
-				@media (max-width: 1439px){
-					font-size: 180px;
-					margin-top:-20px;
-				}
-				@media (max-width: 1199px){
-					font-size:160px;
-					margin-top:0;
-				}
-				@media (max-width: 1023px){
-					font-size:110px;
-				}
-			}
-			.sct_sub_title {
-				max-width: 50%;
-				margin-bottom: 50px;
-				font-size: $subtitle;
-				font-weight: bold;
-				color: $dark-color;
-				@media (max-width: 1439px){
-					font-size: $subtitle - 6;
-					margin-bottom: 20px;
-				}
-				@media (max-width: 1199px){
-					font-size: $subtitle - 10;
-					margin-bottom:0;
-				}
-				span {
-					display: block;
-					@media (max-width: 1199px){
-						display: inline-block;
-						margin-right: 5px;
-					}
-				}
-			}
-		}
-	}
-}
-/*it techno expert snippet end*/
 
 /*it Newsletter snippet*/
 .it_sign_up_newsletter {
-	padding: 60px 0 !important;
-	@media (max-width: 1439px){
-		padding: 50px 0 !important;
-	}
-	@media (max-width: 1199px){
-		padding: 40px 0 !important;
-	}
-	@media (max-width: 768px){
-		padding: 30px 0 !important;
+	padding: 50px 0;
+	@include min992{
+		padding-top: 60px 0;
 	}
 	.sct_btm_row {
 		margin-top: 30px;
@@ -6955,6 +6826,7 @@ body #wrapwrap{
 				font-weight: bold;
 				font-size: $subtitle - 10;
 				margin-bottom: 20px;
+				color: rgba($dark-color, 0.5);
 				@include min768{
 					font-size: $subtitle;
 				}
@@ -7216,7 +7088,7 @@ body #wrapwrap{
 						text-fill-color: transparent;
 						text-stroke: 2px $light-color;
 						-webkit-text-fill-color: transparent;
-						-webkit-text-stroke: 2px $light-color;
+						-webkit-text-stroke: 2px rgba($light-color,0.6);
 						-moz-text-fill-color: transparent;
 						@include min1200{
 							font-size: $subtitle + 20;
@@ -11222,7 +11094,12 @@ body #wrapwrap{
         @media (min-width:992px){
             margin-bottom: 0;
         }
-
+		&:not(.right-side){
+			.section-title-wrapper{
+				min-height: 34px;
+				@include align-content;
+			}
+		}
         .section-title{
 			flex: 0 0 calc(100% - 78px);
 			max-width: calc(100% - 78px);
@@ -11394,13 +11271,10 @@ body #wrapwrap{
             left: 15px;
             right: 15px;
             z-index: 1;
-            // @include flex;
-            // flex-direction: column;
-            @include min768{
-				background-image: url(../img/grocery/deal-conter-bg-new.png);
-				background-repeat: no-repeat;
-				background-size: cover;
-            }
+			background-image: url(../img/grocery/deal-conter-bg-new.png);
+			background-repeat: no-repeat;
+			background-size: cover;
+            
             .deal-content {
                 max-width: 278px;
                 margin: 0 auto;
@@ -12824,11 +12698,10 @@ body #wrapwrap{
 }
 
 .oe_deal_of_the_day{
-
-    margin: 22px 0 0;
-	padding: 60px 0;
+	padding: 50px 0;
 	@include min992{
-		padding: 50px 0;
+		padding: 60px 0;
+		padding-top: 84px;
 	}
     .deal_day_wrap{
         border: 10px solid $secondary;
@@ -12838,7 +12711,7 @@ body #wrapwrap{
             @include flex-wrap-common;
 			@include align-content;
             max-width: fit-content;
-            margin: -32px 10px 26px;
+            margin: -17px 10px 26px;
             padding: 0 10px;
 
             @include min768{
@@ -12847,7 +12720,7 @@ body #wrapwrap{
             
             @include min992{
                 margin: -32px 30px 26px 20px;
-                padding: 0 30px 0 20px ;
+                padding: 0 30px 0 20px;
             }
 
             .title-block{
@@ -12935,10 +12808,12 @@ body #wrapwrap{
 					@include justify-align-content;
                     span{
                         color: $light-color;
-                        font-size: 16px;
+                        font-size: 14px;
                         font-weight: bold;
                         text-transform: uppercase;
-                        
+                        @include min768{
+							font-size: 16px;
+						}
                         @include min992{
                             font-size: 18px;
                         }
@@ -12973,10 +12848,13 @@ body #wrapwrap{
 						padding-top: 10px;
 						text-align: center;
 						.pwpi-title {
-							font-size: 16px;
+							font-size: 14px;
 							font-weight: 600;
 							margin-top: 7px;
 							margin-bottom: 0;
+							@include min768{
+								font-size: 16px;
+							}
 							@include min768{
 								font-size: 18px;
 							}

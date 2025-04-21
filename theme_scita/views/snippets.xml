@@ -840,52 +840,7 @@
     
 <!-- Fashion banner End -->
 <!-- IT Start -->
-    
-    <template id="it_skills_snippet" name="Skills Block">
-        <section class="it_skills_snippet s_text_image" data-disp='statistics'>
-            <div class='container'>
-                <section class='d-flex s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title">Technology Expertise</h2>
-                    </div>
-                </section>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-6 sct_cmp_info'>
-                        <ul>
-                            <li>
-                                <p class='sct_simple_text'>Information Architecture</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:80%; Background:#f2662f;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p class='sct_simple_text'>User Experiences</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:75%; Background:#3a147d;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p class='sct_simple_text'>App Development</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:85%; Background:#299595;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p class='sct_simple_text'>User Interface</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:90%; Background:#0d56d9;"></div>
-                                </div>
-                            </li>
-                        </ul> 
-                    </div>
-                    <div class='col-md-6 sct_cmp_img'>
-                        <h2 class='sct_big_text'>10</h2>
-                        <h3 class='sct_sub_title'><span>Years </span>Of Experience</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+ 
 
     <!-- html builder -->
     <template id="html_builder_snippet" name="HTML Builder Snippet">
@@ -1033,7 +988,6 @@
 				<t t-snippet="theme_scita.retial_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trending-offer.png"/>
 				<t t-snippet="theme_scita.fashion_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-adv.png"/>
 				<t t-snippet="theme_scita.health_advertisement_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-hero-adv.png"/>
-				<t t-snippet="theme_scita.it_skills_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/it_skill2.png"/>
 
 				<!-- IT snippets End -->
 				
