@@ -1265,7 +1265,9 @@
         <xpath expr='//div[hasclass("flex-grow-1")]' position='attributes'>
             <attribute name='class' add="sct-content-wrap" separator=" "></attribute>
         </xpath>
-        <xpath expr='//div[hasclass("flex-grow-1")]/div' position='replace'/>
+        <xpath expr="//div[hasclass(&quot;flex-grow-1&quot;)]/div" position="attributes">
+            <attribute name="class">o_hidden</attribute>
+        </xpath>
         <xpath expr='//div[hasclass("d-flex", "flex-column", "align-items-end")]' position='attributes'>
             <attribute name='class' add="sct-price-wrap" separator=" "></attribute>
         </xpath>

@@ -2,7 +2,7 @@
 <odoo>
 	<!-- Client Slider Snippet -->
         <template id="third_client_slider_snippet" name="Client Snippet 2">
-            <section id="third_custom_client_slider" class="our-clients third-client-slider" data-disp='client_snippet'>
+            <section id="third_custom_client_slider" class="our-clients third-client-slider s_text_image" data-disp='client_snippet'>
                 <div class='container'>
                     <div class='row sct_top_row'>
                         <div class='col-lg-6 mb-5 mb-lg-0'>
@@ -69,7 +69,7 @@
                                                 </div>
                                             </div>
                                             <div class='carousel-control'>
-                                                <div class="carousel-control-prev" data-bs-target="#mymixCarousel" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                              <div class="carousel-control-prev" data-bs-target="#mymixCarousel" data-bs-slide="prev" role="img" aria-label="Previous" title="Previous">
                                                     <span class="carousel-control-prev-icon"/>
                                                     <span class="sr-only">Previous</span>
                                                 </div>
@@ -77,7 +77,7 @@
                                                     <span class="carousel-control-next-icon"/>
                                                     <span class="sr-only">Next</span>
                                                 </div>
-                                            </div>
+                                            </div>  
                                         </div>
                                     </section>
                                 </div>
@@ -108,7 +108,7 @@
             <div class='col-md-12' t-if="not client_details">
                 <div class="sct_client_not">
                     <div class="block-title">
-                        <h3 class="fancy">Our partners</h3>
+                        <!-- <h3 class="fancy">Our partners</h3> -->
                         <p class='sct_simple_class'>No clients added . For configuring, please goto admin section Sales menu than goto Customers and select the customer/client open that specific record and you will see a checkbox 'Add to client slider' enable that option and that record will be visible.</p>
                     </div>
                 </div>

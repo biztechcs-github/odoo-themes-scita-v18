@@ -110,9 +110,11 @@
                             <div class="section-post-media" t-attf-style="background-image: #{cover_property.get('background-image', 'none')}" t-if="slide.cover_properties">
                             </div>
                             <div class='sct_base_class'>
-                                <h3 t-field="slide.name"/>
-                                <div class="sct_blog_content">
-                                    <t t-out="slide.subtitle"/>
+                                <div class="sct_blog_content_wrap">
+                                    <h3 t-field="slide.name"/>
+                                    <div class="sct_blog_content">
+                                        <t t-out="slide.subtitle"/>
+                                    </div>
                                 </div>
                                 <div class="sct_blog_detail">
                                     <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">

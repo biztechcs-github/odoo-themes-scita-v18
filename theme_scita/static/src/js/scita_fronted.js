@@ -649,7 +649,7 @@ $(document).ready(function(){
                         loop:false,
                         margin:30,
                         nav:false,
-                        items:3,
+                        items:4,
                         autoplay:true,
                         rewind:true,
                         autoplayTimeout:4000,
@@ -665,7 +665,7 @@ $(document).ready(function(){
                                 items:2
                             },
                             768:{
-                                items:3
+                                items:4
                             }
                         }
                     });
