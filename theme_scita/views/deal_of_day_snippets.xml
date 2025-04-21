@@ -41,56 +41,6 @@
             </div>
         </section>
     </template>
-    <!-- Fashion deal of the day -->
-    <template id="fashion_deal_of_day_banner_snippet_1" name="Deal of the Day Snippet 2">
-        <section class="fashion_deal_of_day_banner_snippet_1" style="background-image: url('/web/image/theme_scita.sct_deal_snippet_2');" data-disp="deal_days">
-            <div class="container">
-                <div class='row'>
-                    <div class="col-md-12">
-                        <div class='sct_text_content'>
-                            <h2 class="sct_title">Exclusive Deals End in</h2>
-                            <p class='sct_simple_text'>
-                                Discover the best selling products of T90 stores. All the products are listed weekly in store, helping customers capture products are best sellers.
-                            </p>
-                        </div>
-                        <div class="timer_counter_div"></div>
-                        <div class='sct_deal_btn'>
-                            <a href="/shop" class="btn">SHOP NOW <span class="ti-arrow-right"></span></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
-    <template id="deal_of_day_banner_2" name="Deal of the Day Snippet 3">
-        <section class="deal_of_day_banner_2" data-disp="deal_days">
-            <div class="container">
-                <div class='row'>
-                	<div class="col-md-6 sct_img_box">
-                		<img src="/web/image/theme_scita.sct_deal_snippet_3" class="img img-fluid" alt="For Men Offer"/>
-                	</div>
-                    <div class="col-md-6 sct_content_box">
-                    	<div class='sct_base_class'>
-	                        <div class='sct_inner_text_content'>
-	                        	<img src="/web/image/theme_scita.sct_deal_snippet_3" class="img img-fluid" alt="offer img"/>
-	                            <h3 class="sct_text_title">Limited Offer Remaining</h3>
-	                        	<div class="timer_counter_div"></div>
-	                        </div>
-	                        <div class='sct_text_content'>
-	                            <h2 class="sct_title">Deal of the week</h2>
-	                            <p class='sct_simple_text'>Adidas performance trainers</p>
-	                        	<p class='sct_price_black'>$200</p> <p class='sct_price_red'> $100</p>
-	                        </div>
-
-	                        <div class='sct_deal_btn'>
-	                            <a href="/shop" class="btn btn-primary scita_cstm_btn ">Shop This Now</a>
-	                        </div>
-	                    </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
      <!-- Fashion deal of the day -->
     <template id="deal_of_day_banner_3" name="Deal of the Day Snippet 4">
         <section class="deal_of_day_banner_3 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_deal_snippet_4');" data-disp="deal_days">
