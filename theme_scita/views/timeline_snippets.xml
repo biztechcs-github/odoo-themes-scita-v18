@@ -175,6 +175,10 @@
                                                     <div class='sct_text_info'>
                                                         <h3 class='sct_title'>Analysis</h3>
                                                         <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                        <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                        <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                        <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                        <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                                         <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
                                                     </div>
                                                 </div>
@@ -187,6 +191,20 @@
                                                         <h3 class='sct_title'>Planning</h3>
                                                         <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                                         <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                        <ul>
+                                                            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing 
+                                                            elit. Aenean commodo ligula eget dolor. Aenean 
+                                                            massa.</li>
+                                                            <li>Cum sociis natoque penatibus et magnis dis 
+                                                            parturient montes, nascetur ridiculus mus. Donec quam 
+                                                            felis, ultricies nec, pellentesque eu, pretium quis, 
+                                                            sem.</li>
+                                                            <li>Nulla consequat massa quis enim. Donec pede justo, 
+                                                            fringilla vel, aliquet nec, vulputate eget, arcu.</li>
+                                                            <li>In enim justo, rhoncus ut, imperdiet a, venenatis 
+                                                            vitae, justo. Nullam dictum felis eu pede mollis 
+                                                            pretium. Integer tincidunt.</li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
@@ -196,8 +214,15 @@
                                                 <div class='col-md-12 sct_thumb'>
                                                     <div class='sct_text_info'>
                                                         <h3 class='sct_title'>Design</h3>
-                                                        <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                                        <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <img src="/theme_scita/static/src/img/it/about-obj.jpg" title="about" alt="about" />                                                        
+                                                            </div>
+                                                            <div class="col-md-6 mt-3 mt-md-0">
+                                                                <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                                <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -220,6 +245,11 @@
                                                         <h3 class='sct_title'>Testing</h3>
                                                         <p class='sct_simple_text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                                                         <p class='sct_simple_text'>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                                                        <ul>
+                                                            <li>Lorem ipsum dolor sit amet consectetuer.</li>
+                                                            <li>Aenean commodo ligula eget dolor.</li>
+                                                            <li>Aenean massa cum sociis natoque penatibus.</li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>

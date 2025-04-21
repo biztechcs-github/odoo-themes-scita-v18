@@ -2,7 +2,7 @@
 <odoo>
 	<!--  Retail Trust Snippet -->
     <template id="retial_trust_snippet_1" name="Trust Icons Snippet 1">
-        <section class="retial_trust_snippet_1" data-disp="trust_icon">
+        <section class="retial_trust_snippet_1 s_text_image" data-disp="trust_icon">
             <div class='container'>
                 <div class="row">
                     <div class='col-md-4 col-sm-6 sct_thumb'>
@@ -47,7 +47,7 @@
         <section class="fashion_trust_snippet_1" data-disp="trust_icon">
             <div class='container'>
                 <div class="row">
-                    <div class='col-md-4 col-sm-6'>
+                    <div class='col-md-4 col-sm-6 sct_thumb'>
                         <div class="sct_trust_box">
                             <div class="sct-left-side">
                                 <img src="/web/image/theme_scita.sct_trust_icon_snippet_1_img_1" class="img img-fluid" alt="Free Shipping"/>
@@ -58,7 +58,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-md-4 col-sm-6'>
+                    <div class='col-md-4 col-sm-6 sct_thumb'>
                         <div class="sct_trust_box">
                             <div class="sct-left-side">
                                 <img src="/web/image/theme_scita.sct_trust_icon_snippet_1_img_2" class="img img-fluid" alt="Secure Payment"/>
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class='col-md-4 col-sm-6'>
+                    <div class='col-md-4 col-sm-6 sct_thumb'>
                         <div class="sct_trust_box">
                             <div class="sct-left-side">
                                 <img src="/web/image/theme_scita.sct_how_it_work_snippet_3" class="img img-fluid" alt="Money back"/>

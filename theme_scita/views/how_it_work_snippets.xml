@@ -305,7 +305,7 @@
             </div>
             <div class="row s_nb_column_fixed sct_btm_row">
                <div class='col-md-6 col-lg-4 col-xl-2 sct_content_div'>
-                  <div class='sct_work_box'>
+                  <div class='sct_work_box' style="background-image: url(/theme_scita/static/src/img/it/about_us_img.jpg)">
                      <div class='sct_work_steps_heading'>
                         <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
                         <h4 class='sct_work_blue_text'>01</h4>
@@ -322,7 +322,7 @@
                   </div>
                </div>
                <div class='col-md-6 col-lg-4 col-xl-2 sct_content_div'>
-                  <div class='sct_work_box'>
+                  <div class='sct_work_box' style="background-image: url(/theme_scita/static/src/img/it/about_us_img.jpg)">
                      <div class='sct_work_steps_heading'>
                         <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
                         <h4 class='sct_work_blue_text'>02</h4>
@@ -339,7 +339,7 @@
                   </div>
                </div>
                <div class='col-md-6 col-lg-4 col-xl-2 sct_content_div'>
-                  <div class='sct_work_box'>
+                  <div class='sct_work_box' style="background-image: url(/theme_scita/static/src/img/it/about_us_img.jpg)">
                      <div class='sct_work_steps_heading'>
                         <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
                         <h4 class='sct_work_blue_text'>03</h4>
@@ -356,7 +356,7 @@
                   </div>
                </div>
                <div class='col-md-6 col-lg-4 col-xl-2 sct_content_div'>
-                  <div class='sct_work_box'>
+                  <div class='sct_work_box' style="background-image: url(/theme_scita/static/src/img/it/about_us_img.jpg)">
                      <div class='sct_work_steps_heading'>
                         <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
                         <h4 class='sct_work_blue_text'>04</h4>
@@ -373,7 +373,7 @@
                   </div>
                </div>
                <div class='col-md-6 col-lg-4 col-xl-2 sct_content_div'>
-                  <div class='sct_work_box'>
+                  <div class='sct_work_box' style="background-image: url(/theme_scita/static/src/img/it/about_us_img.jpg)">
                      <div class='sct_work_steps_heading'>
                         <img src="/theme_scita/static/src/img/ebook.png" class="img img-fluid" alt="Choosen Block"/>
                         <h4 class='sct_work_blue_text'>05</h4>
