@@ -982,14 +982,17 @@ body #wrapwrap{
 	@include min992{
 		padding: 60px 0 30px;
 	}
+	.sct_thumb{
+		margin-bottom: 30px;
+	}
 	.sct_trust_box{
 		@include flex;
 		@include align-content;
-		margin-bottom: 30px;
+		height: 100%;
 	}
 	.sct-left-side {
 		background: $light-color;
-		border: 1px solid #c7c7c7;
+		border: 1px solid $dark-grey-color;
 		width: 80px;
 		min-width: 80px; 
 		height: 80px;
@@ -1446,7 +1449,7 @@ body #wrapwrap{
 /*retailer offer banner end*/
 
 /*retailer Newsletter end*/
-.retial_newsletter1, .retial_newsletter_2 {
+.retial_newsletter_2 {
 	background-repeat: no-repeat;
 	background-position: center; 
 	padding: 50px 0;
@@ -2091,87 +2094,6 @@ body #wrapwrap{
 }
 /*fashion deal of the day snippet end*/
 
-/*fashion Newsletter snippet end*/
-.fashion_sign_up_newsletter {
-	padding: 70px 0;
-	@media (max-width: 767px){
-		padding: 50px 20px;
-	}
-	@include bg-nore-cover;
-	.sct_news_border {
-		border: 3px solid fade-out($light-color, 0.5);
-		text-align: center;
-		padding: 50px 20px;
-		.news_text_content {
-			.sct_title_text {
-				color: $light-color;
-				margin: 0;
-			}
-			p {
-				color: $light-color;
-				font-size: $font-body;
-				margin: 15px 0 30px;
-			}
-		}
-		.newsletter_box {
-			margin: auto;
-			position: relative;
-			width: 50%;
-			@media (max-width: 1023px){
-				width: 80%;
-			}
-			@media (max-width: 767px){
-				width: 100%;
-			}
-			input.js_subscribe_email{
-				border-radius: 0;
-				border: 0;
-				box-shadow: none;
-				font-style: italic;
-				padding-right: 100px;
-				&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-				  color: $dark-color;
-				  opacity: 1; /* Firefox */
-				}
-				&:-ms-input-placeholder { /* Internet Explorer 10-11 */
-				  color: $dark-color;
-				}
-				&::-ms-input-placeholder { /* Microsoft Edge */
-				  color: $dark-color;
-				}
-			}
-			span.input-group-btn {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				@media (max-width: 767px){
-					position: relative;
-					margin-top: 10px;
-				}
-				a {
-					background: $white;
-					border: none;
-					color: $dark-color;
-					font-weight: bold;
-					&:hover{
-						background: $white;
-						border: none;
-						color: $dark-color;
-					}
-				}
-				.ti-arrow-right {
-					top: 2px;
-					position: relative;
-				}
-			}
-		}
-	}
-}
-/*fashion Newsletter snippet end*/
 /*fashion trust snippet*/
 .fashion_trust_snippet_1{
 	padding: 50px 0 20px;
@@ -3567,6 +3489,13 @@ body #wrapwrap{
 				padding: 20px 15px;
 				height: 100px;
 			}
+			&:hover{
+				.brand-logo{
+					img{
+						transform: scale(1.1);
+					}
+				}
+			}
 			.brand-logo {
 				height: 100%;
 				@include flex;
@@ -3575,10 +3504,11 @@ body #wrapwrap{
 				
 				img {
 					max-height: 100%;
-
+					transition: 0.3s ease-in;
 					@media (max-width: 575px) {
 						height: 100%;
 					}
+
 				}
 			}
 			&:before {
@@ -6913,7 +6843,7 @@ body #wrapwrap{
 
 /*how it work snippet 3*/
 .how_it_work_v_3 {	
-	background-color: $light-grey-color;
+	background-color: rgba($primary ,0.2);
 	padding: 50px 0 20px;
 	@include min992{
 		padding: 60px 0;
@@ -7193,16 +7123,15 @@ body #wrapwrap{
 		}
 	}
 	.sct_btm_row {
-		
 	
 		.sct_content_div {
 			margin-bottom: 30px;
 			transition: width 0.4s ease-in;			
-			&.open
-			/*&:hover:not(.open)*/ {
+			&.open{
 				@include min1200{
-			 	width: 33.33%;
+					width: 33.33%;
 					.sct_work_box {
+						cursor: initial;
 						.sct_work_content {
 				
 						animation-name: Fadetext;
@@ -7223,20 +7152,25 @@ body #wrapwrap{
 					}
 				}
 			}
-		
-			// &:not(.open):hover {
-			//   .sct_work_box {
-			// 	.sct_work_content {
-			// 	  display: none;
-			// 	  opacity: 0;
-			// 	}
-			//   }
-			// }
 			.sct_work_box {
-				border: 1px solid $primary;
+				border: 1px solid $black;
 				border-radius: 10px;
-				background-color: rgba($primary, 0.2);
 				padding: 20px;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center;
+				overflow: hidden;
+				position: relative;
+				cursor: pointer;
+				&::before{
+					content: '';
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					background-color: rgba($black, 0.4);
+				}
 				@include min768{
 					display: flex;
 					@include flex-column;
@@ -7246,12 +7180,13 @@ body #wrapwrap{
 					min-height: 300px;
 					flex-direction: initial;
 				}
-				cursor: pointer;
+				
 				.sct_work_steps_heading {
 					@include flex;
 					@include content-sb;
 					@include align-content;
 					width: 100%;
+					position: relative;
 					@include min1200{
 						@include flex-column;
 						@include align-fs;
@@ -7261,20 +7196,21 @@ body #wrapwrap{
 						height: 40px;
 						width: auto;
 						object-fit: contain;
+						filter: invert(1);
 						@include min1200{
 							height: 60px;
 						}
 					}
 					.sct_work_blue_text {
-						color: $primary;
+						color: $light-color;
 						font-weight: bold;
 						font-size: $subtitle;
 						display: inline-block;						
 						margin-bottom: 0;
 						text-fill-color: transparent;
-						text-stroke: 2px $primary;
+						text-stroke: 2px $light-color;
 						-webkit-text-fill-color: transparent;
-						-webkit-text-stroke: 2px $primary;
+						-webkit-text-stroke: 2px $light-color;
 						-moz-text-fill-color: transparent;
 						@include min1200{
 							font-size: $subtitle + 20;
@@ -7295,6 +7231,7 @@ body #wrapwrap{
 					}					
 				}
 				.sct_work_info {
+					color: $light-color;
 					.sct_work_title {
 						font-weight: bold;
 						font-size: $title + 4;
@@ -7307,21 +7244,25 @@ body #wrapwrap{
 				.sct_cst_btn {
 					margin-top: auto;
 					padding: 20px 0 10px;
+					margin-left: auto;
 					.btn {
 						background: transparent;
-						color: $primary;
+						color: $light-color;
 						font-weight: bold;
 						font-size: $title - 2;
 						padding: 0;
 						line-height: normal;
 						border: none;
+						border-bottom: 1px solid transparent;
+						transition: 0.3s ease-in;
+						border-radius: 0;
 						&:hover, &:focus, &:active{
 							border: none;
 							background:transparent;
 							outline: none;
 							box-shadow: none;
-							color: $primary;
-							text-decoration: underline;
+							color: $light-color;
+							border-bottom: 1px solid $light-color;
 						}
 					}
 				}
@@ -7698,9 +7639,11 @@ body #wrapwrap{
 					max-width: 50%;
 					width: 50%;
 					padding: 30px 0;
+					padding-bottom: 11%;
 					position: relative;
 					@include flex;
-					@include justify-align-content;
+					@include justify-content-column-flex;
+					text-align: center;
 					&:before, &:after{
 						content: '';
 						position: absolute;						
@@ -7770,14 +7713,8 @@ body #wrapwrap{
 						}
 					}
 					.sct_prog_content {
-						position: absolute;
-						top: 0;
-						bottom: 0;
-						left: 0;
-						right: 0;
-						margin: auto;
-						@include flex;
-						@include justify-align-content;
+						@include justify-center-flex;
+						margin-top: -18%;			
 					}
 				}
 			}
@@ -8179,9 +8116,7 @@ body #wrapwrap{
 			background-color: $primary;
 			position: relative;
 			border-radius: 20px 20px 0 0;
-			@include min768{
-				margin: 0 30px;
-			}
+			margin: 0 30px;		
 			@include min1440{
 				margin: 0 40px;
 			}
@@ -8195,10 +8130,7 @@ body #wrapwrap{
 				border-right: 10px solid transparent;
 				border-bottom: 0 solid transparent;
 				border-left: 10px solid transparent;
-				@media (max-width: 767px) {
-					left: 50%;
-					transform: translateX(-50%);
-				}
+				
 			}
 			.sct_count_title {
 				font-weight: bold;
@@ -8591,6 +8523,7 @@ body #wrapwrap{
 				&:hover{
 					img{
 						transform: scale(1);
+						filter: initial;
 					}
 				}
 			}
@@ -9373,7 +9306,7 @@ body #wrapwrap{
 								border-radius: 30px;
 								padding: 10px 20px;
 								border: 0;
-								transition: 0.3s ease-in;
+								transition: 0.4s ease-in;
 								@media (max-width: 767px) {
 									padding: 5px 10px;
 								}
@@ -9395,7 +9328,7 @@ body #wrapwrap{
 											font-size: $title + 6;
 											font-weight: bold;
 											margin-bottom: 0;
-											transition: 0.3s ease-in;
+											transition: 0.3s ease-in-out;
 											@media (max-width: 767px) {
 												font-size: $title;
 											}
@@ -9439,8 +9372,10 @@ body #wrapwrap{
 								}
 							}
 							+ .nav-item{
+								margin-left: 5px;
 								@include min768{
 									margin-top: 7px;
+									margin-left: 0;
 								}
 							}
 						}
@@ -9466,6 +9401,9 @@ body #wrapwrap{
 							}
 							.sct_simple_text {
 								color: $dark-color;
+							}
+							ul,ol{
+								padding-left: 20px;
 							}
 						}
 					}

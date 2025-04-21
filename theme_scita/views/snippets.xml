@@ -1153,13 +1153,7 @@
 				<t t-else=''>
 					<t t-install="mass_mailing" string="Newsletter Snippet 1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/nesletter_1.png"/>
 				</t>
-				<t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.scita_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
-				</t>
-				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
-				</t>
+				
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
 					<t t-snippet="theme_scita.retail_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
@@ -1167,13 +1161,7 @@
 				<t t-else=''>
 					<t t-install="mass_mailing" string="Newsletter Snippet 3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
 				</t>
-				<t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.fashion_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_4.png"/>
-				</t>
-				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_4.png"/>
-				</t>
+				
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
 					<t t-snippet="theme_scita.newsletter_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Newsletter_veriant_5.png"/>
