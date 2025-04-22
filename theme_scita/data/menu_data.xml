@@ -878,50 +878,7 @@
                                     </div>
                                 </div>
                             </section>
-                            <section class="it_skills_snippet">
-                                <div class="container">
-                                    <div class="row s_nb_column_fixed sct_top_row">
-                                        <div class="col-md-12">
-                                            <h2 class="section-title btm_seprator o_default_snippet_text">Technology Expertise</h2>
-                                        </div>
-                                    </div>
-                                    <div class="row s_nb_column_fixed sct_btm_row">
-                                        <div class="col-md-6 sct_cmp_info">
-                                            <ul>
-                                                <li>
-                                                    <p class="sct_simple_text o_default_snippet_text">Information Architecture</p>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" style="width:80%; Background:#f2662f;"/>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <p class="sct_simple_text o_default_snippet_text">User Experiences</p>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" style="width:75%; Background:#3a147d;"/>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <p class="sct_simple_text o_default_snippet_text">App Development</p>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" style="width:85%; Background:#299595;"/>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <p class="sct_simple_text o_default_snippet_text">User Interface</p>
-                                                    <div class="progress">
-                                                        <div class="progress-bar" style="width:90%; Background:#0d56d9;"/>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="col-md-6 sct_cmp_img">
-                                            <h2 class="sct_big_text o_default_snippet_text">10</h2>
-                                            <h3 class="sct_sub_title o_default_snippet_text">
-                                                <span class="o_default_snippet_text">Years </span>Of Experience</h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                        
                             <section class="it_work_snippet s_tabs" style="background-image: url('/web/image/theme_scita.sct_industry_it_1');">
                                 <div class="container">
                                     <div class="row s_nb_column_fixed sct_top_row">
