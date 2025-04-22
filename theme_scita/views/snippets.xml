@@ -840,52 +840,7 @@
     
 <!-- Fashion banner End -->
 <!-- IT Start -->
-    
-    <template id="it_skills_snippet" name="Skills Block">
-        <section class="it_skills_snippet" data-disp='statistics'>
-            <div class='container'>
-                <div class='row s_nb_column_fixed sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title">Technology Expertise</h2>
-                    </div>
-                </div>
-                <div class="row s_nb_column_fixed sct_btm_row">
-                    <div class='col-md-6 sct_cmp_info'>
-                        <ul>
-                            <li>
-                                <p class='sct_simple_text'>Information Architecture</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:80%; Background:#f2662f;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p class='sct_simple_text'>User Experiences</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:75%; Background:#3a147d;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p class='sct_simple_text'>App Development</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:85%; Background:#299595;"></div>
-                                </div>
-                            </li>
-                            <li>
-                                <p class='sct_simple_text'>User Interface</p>
-                                <div class="progress">
-                                    <div class="progress-bar" style="width:90%; Background:#0d56d9;"></div>
-                                </div>
-                            </li>
-                        </ul> 
-                    </div>
-                    <div class='col-md-6 sct_cmp_img'>
-                        <h2 class='sct_big_text'>10</h2>
-                        <h3 class='sct_sub_title'><span>Years </span>Of Experience</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </template>
+ 
 
     <!-- html builder -->
     <template id="html_builder_snippet" name="HTML Builder Snippet">
@@ -1025,7 +980,7 @@
 
 				<t t-snippet="theme_scita.fashion_static_brand_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/fas_brand.png"/>
 				
-
+                <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-2.png"/>
 				
 				
@@ -1033,7 +988,6 @@
 				<t t-snippet="theme_scita.retial_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trending-offer.png"/>
 				<t t-snippet="theme_scita.fashion_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-adv.png"/>
 				<t t-snippet="theme_scita.health_advertisement_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-hero-adv.png"/>
-				<t t-snippet="theme_scita.it_skills_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/it_skill2.png"/>
 
 				<!-- IT snippets End -->
 				
@@ -1074,7 +1028,6 @@
 				<t t-snippet="theme_scita.retial_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust_1.png"/>
 				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trust-icon.png"/>
 				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Policy_Trust_Varient_3.png"/>
-				<t t-snippet="theme_scita.policy_trust_snippet_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Trust_Icons_Type_4.png"/>
 				
 
 				<!-- Product Snippet -->
@@ -1138,7 +1091,6 @@
 				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_1.png"/>
-				<t t-snippet="theme_scita.timeline_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_2.png"/>
 				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_3.png"/>
 				
 				<!-- portfolio_snippet_1 -->
@@ -1153,13 +1105,7 @@
 				<t t-else=''>
 					<t t-install="mass_mailing" string="Newsletter Snippet 1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/nesletter_1.png"/>
 				</t>
-				<t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.scita_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
-				</t>
-				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
-				</t>
+				
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
 					<t t-snippet="theme_scita.retail_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
@@ -1167,13 +1113,7 @@
 				<t t-else=''>
 					<t t-install="mass_mailing" string="Newsletter Snippet 3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
 				</t>
-				<t t-if="request.env['ir.module.module'].sudo().search([
-				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.fashion_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_4.png"/>
-				</t>
-				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_4.png"/>
-				</t>
+				
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
 					<t t-snippet="theme_scita.newsletter_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Newsletter_veriant_5.png"/>

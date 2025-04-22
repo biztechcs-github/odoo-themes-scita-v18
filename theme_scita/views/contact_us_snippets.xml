@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<template id="contact_us_v_1" name="Contact Us Snippet 1">
-        <section class="contact_us_v_1" data-disp='contact_us'>
+        <section class="contact_us_v_1 s_text_image" data-disp='contact_us'>
             <div class='container'>
                 <div class="row">
                     <div class='col-md-4 sct_base_class'>
@@ -40,7 +40,7 @@
     </template>
    
     <template id="contact_us_v_3" name="Contact Us Snippet 3">
-        <section class="contact_us_v_3 oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');" data-disp='contact_us'>
+        <section class="contact_us_v_3 oe_img_bg s_text_image" style="background-image: url('/web/image/theme_scita.sct_blog_slider_1');" data-disp='contact_us'>
             <div class='container'>
                 <div class="row">
                 	<div class='col-md-6 sct_base_class'>
