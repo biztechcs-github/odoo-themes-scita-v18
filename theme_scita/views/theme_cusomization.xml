@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <odoo>
     <template id='snippet_options_add' inherit_id='website.snippet_options' name='Theme add options'>
-        <xpath expr='//div[@data-js="OptionsTab"]//we-select[@data-button="secondary"]' position='after'>
+        <xpath expr='//div[@data-js="OptionsTab"]//we-input[@data-variable="btn-secondary-outline-border-width"]' position='after'>
             <we-select string="Buttons" data-variable="btn-style-template" data-reload="/" data-attribute-default-value="btn_style_1">
                 <we-button title="Buttons Style 1"
                        data-name="btn_style_1"
