@@ -993,18 +993,10 @@
 				
 				<!-- Helth snippets End -->
 				<!-- Testimonial veriants -->
-				<t t-snippet="theme_scita.health_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial1.png"/>
 				<t t-snippet="theme_scita.testinomial_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/furniture-testimonials.png"/>
 				<t t-snippet="theme_scita.fashion_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-testimonial.png"/>
-				<t t-snippet="theme_scita.it_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/it_testimonial.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_1.png"/>
 				<t t-snippet="theme_scita.testinomial_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_3.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_4.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_5.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_6.png"/>
-
-
-				
+				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_5.png"/>				
 				<!-- Case Study veriants -->
 				<t t-snippet="theme_scita.health_cash_study_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/helth_case.png"/>
 				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Case_Study_Varient_2.png"/>
