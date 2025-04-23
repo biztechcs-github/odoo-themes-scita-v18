@@ -2627,6 +2627,16 @@
                     padding: 0;
                     #o_main_nav {
                         padding: 15px;
+                        .header_search_modal{
+                            a{
+                                background: transparent;
+                                font-size: $title;
+                                border: 0;
+                                i{
+                                    width: auto;
+                                }
+                            }
+                        }
                         .sct-top-right-side {
                             margin-right: auto;
                             padding-left: 30px;
@@ -2667,26 +2677,38 @@
                                 }
                             }
                         }
-                    }
+                    }                  
                     .bottom-header {
-                        background-color: $primary;
+                        .bottom-header-menu{
+                            background-color: $primary;
+                            border-radius: 50px;
+                            padding: 0 20px;
+                        }
                         #top_menu {
                             max-width: 70%;
                             > .nav-item {
+                                padding: 0;
                                 > .nav-link {
-                                    color: $white !important;
+                                    color: $white;
+                                    padding: 10px 20px;
+                                    margin: 10px 0;
+                                    border-radius: 30px;
                                     &.active {
                                         font-weight: bold;
+                                        background-color: darken($primary, 20%);
                                     }
                                 }
                             }
                         }
                         .social-media-div {
-                            max-width: 28%;
+                            max-width: 30%;
                             text-align: right;
-                            padding-right: 15px;
+                            padding: 0 10px;
                             .o_header_social_links {
                                 .nav-link {
+                                    background: $light-color;
+                                    border-radius: 5px;
+                                    margin-left: 5px !important;
                                     .rounded-circle {
                                         width: 2rem;
                                         height: 2rem;
@@ -2700,6 +2722,11 @@
                         list-style-type: none;
                         padding: 0;
                         margin: 0;
+                    }
+                }
+                .navbar-brand.logo {
+                    @media (max-width: 991px) {
+                        padding: 10px 0;
                     }
                 }
             }
@@ -2970,9 +2997,10 @@ header{
                         }
                         .badge{
                             font-size: 9px;
-                            background: $light-color !important;
+                            // background: $light-color !important;
                             top: 8px !important;
                             right: 5px !important;
+                            padding: 2px 3px;
                         }
                     }
                     .nav-link.btn{
@@ -3866,6 +3894,64 @@ header{
                     }
                 }
             }
+        }
+    }
+}
+
+#o_search_modal_block{
+    .modal-content{        
+        background: transparent;
+        border: 0;
+        .o_searchbar_form{
+            .input-group{
+                border-radius: 30px !important;
+                box-shadow: 0 0 10px 0 $black;
+                .form-control{
+                    background-color: $light-color !important;
+                    border-radius: 30px 0 0 30px !important;
+                    padding: 16px 20px !important;
+                }
+                .oe_search_button{
+                    position: relative;
+                    border-radius: 0 30px 30px 0 !important;
+                    background: $light-color !important;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 1px;
+                        top: 10px;
+                        bottom: 10px;
+                        width: 1px;
+                        background: rgba($dark-grey-color, 50%);
+                    }
+                }
+            }
+            .o_dropdown_menu{
+                margin-top: 10px;
+                border-radius: 30px;
+                box-shadow: 0 0 4px 0px $black;
+                padding: 20px 0;
+                a.dropdown-item{
+                    &:hover, &:focus{
+                        background: rgba($primary, 0.2);
+                    }
+                    .o_search_result_item {
+                        .o_search_result_item_detail{
+                            *{
+                                color: $black !important;
+                            }
+                        }
+                    }
+                }
+                button.dropdown-item{
+                    background: rgba($primary, 0.2);
+                    padding: 10px 0;
+                    margin-top: 10px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+            }
+         
         }
     }
 }
