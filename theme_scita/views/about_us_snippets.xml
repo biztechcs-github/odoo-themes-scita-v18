@@ -2,7 +2,7 @@
 <odoo>
     <!-- About Healthcare Domain / Hospital -->
     <template id="health_about_hospital" name="About Us Snippet 2">
-        <section class="health_about_hospital" data-disp='about_us'>
+        <section class="health_about_hospital s_text_image" data-disp='about_us'>
             <div class='container'>
                 <div class="row">
                     <div class='col-md-6 sct_hospital_img'>
@@ -81,7 +81,7 @@
 		                                               <p class='sct_simple_text'>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.</p>
 		                                            </div>
 		                                            <div class='sct_cst_btn'>
-							                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Get in touch</a>
+							                            <a href="/contactus" class="btn btn-secondary scita_cstm_btn ">Get in touch</a>
 							                        </div>
 	                                        	</div>
 	                                        </div>
@@ -101,7 +101,7 @@
 		                                               <p class='sct_simple_text'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 		                                            </div>
 		                                            <div class='sct_cst_btn'>
-							                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Get in touch</a>
+							                            <a href="/contactus" class="btn btn-secondary scita_cstm_btn ">Get in touch</a>
 							                        </div>
 	                                        	</div>
 	                                        </div>
@@ -120,7 +120,7 @@
 		                                               <p class='sct_simple_text'>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
 		                                            </div>
 		                                            <div class='sct_cst_btn'>
-							                            <a href="/contactus" class="btn btn-primary scita_cstm_btn ">Get in touch</a>
+							                            <a href="/contactus" class="btn btn-secondary scita_cstm_btn ">Get in touch</a>
 							                        </div>
 	                                        	</div>
 	                                        </div>
@@ -206,7 +206,7 @@
     </template>
       <!-- content_snippets_v_11 -->
     <template id="content_snippets_v_11" name="Content Snippet 6">
-        <section class="content_snippets_v_11 s_faq_collapse" data-disp="content_block">
+        <section class="content_snippets_v_11 s_faq_collapse s_text_image" data-disp="content_block">
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_btm_row">
                     <div class='col-md-5 col-lg-4 sct_content_info'>
