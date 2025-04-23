@@ -1694,6 +1694,10 @@ footer {
 			position: relative;
 	    	z-index: 999;
 		}
+
+		&::after{
+			display: none;
+		}
 	}
 }
 /*z-index scroll-to-top*/

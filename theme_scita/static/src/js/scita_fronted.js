@@ -539,7 +539,7 @@ $(document).ready(function(){
                         loop:false,
                         margin:30,
                         nav:false,
-                        items:6,
+                        items:4,
                         dots:false,
                         rewind:true,
                         autoplay:true,
@@ -552,16 +552,13 @@ $(document).ready(function(){
                                 items:1
                             },
                             600:{
+                                items:2
+                            },
+                            992:{
                                 items:3
                             },
-                            1000:{
-                                items:4
-                            },
                             1200:{
-                                items:5
-                            },
-                            1600:{
-                                items:6
+                                items:4
                             }
                         }
                     });
@@ -606,17 +603,14 @@ $(document).ready(function(){
                             0:{
                                 items:1
                             },
-                            600:{
+                            576:{
+                                items:2
+                            },
+                            992:{
                                 items:3
                             },
-                            1000:{
-                                items:3
-                            },
-                            1200:{
-                                items:3
-                            },
-                            1600:{
-                                items:3
+                            1400:{
+                                items:4
                             }
                         }
                     });
@@ -650,7 +644,7 @@ $(document).ready(function(){
                         margin:30,
                         nav:false,
                         items:4,
-                        autoplay:true,
+                        autoplay:false,
                         rewind:true,
                         autoplayTimeout:4000,
                         autoplayHoverPause:true,
@@ -665,6 +659,9 @@ $(document).ready(function(){
                                 items:2
                             },
                             768:{
+                                items:3
+                            },
+                            992:{
                                 items:4
                             }
                         }

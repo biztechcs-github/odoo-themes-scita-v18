@@ -4,37 +4,52 @@
     <template id="retial_deal_of_day_banner_snippet_1" name="Deal of the Day Snippet 1">
         <section class="retial_deal_of_day_banner_snippet_1" data-disp="deal_days">
             <div class='container'>
-                <div class="row s_nb_column_fixed">
-                    <div class='col-md-12 sct_promo_banner'>
-                        <section>
-                            <div class="sct-left-side">
-                                <img src="/web/image/theme_scita.sct_deal_snippet_1_image_1" class="img img-fluid mx-auto" alt="For Men Offer" loading=""/>
-                                <div class='deal_content'>
-                                    <div class='sct_title'>
-                                        <h2 class='title_banner'>Deals of the day</h2>
+                <div class="row s_nb_column_fixed sct_row">
+                    <div class="col-md-6 col-lg-4 col-xl-5 sct_deal_img_wrapper">
+                        <div class="sct_deal_img">
+                            <a href="/shop">
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image"/>
+                                <div class="sct_img_name">
+                                    <h3 class="img_title">Man Collection</h3>
+                                    <p class="sub_title">Designed to stand the test of time</p>
+                                </div>
+                                <div class="sct_img_link">
+                                    <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Link'/>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4 col-xl-3 sct_deal_mid_wrapper d-flex flex-column flex-md-row flex-lg-column">
+                        <div class="sct_deal_timer_wrapper col-12 col-md-6 col-lg-12">
+                            <div class="sct_timer_inner">
+                                <div class="sct_deal_text"><span class="sct_per o_default_snippet_text">40%</span> Off</div>
+                                <p class="sct_sub_title">Discover the best selling products of T90 stores.</p>
+                                <div class="timer_counter_div"></div>
+                            </div>
+                        </div>
+                        <div class="sct_deal_img_wrapper col-12 col-md-6 col-lg-12">
+                            <div class="sct_deal_img">
+                                <a href="/shop">
+                                    <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image"/>
+                                    <div class="sct_img_name">
+                                        <h3 class="img_title">Man Collection</h3>
                                     </div>
-                                    <div class='sct_sub_title'>
-                                        <p class='sub_title_banner'>Hurry Up! Offer end in</p>
-                                    </div>
-                                    <div class="timer_counter_div"></div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 sct_deal_img_wrapper">
+                        <div class="sct_deal_img">
+                            <a href="/shop">
+                                <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="Image"/>
+                                <div class="sct_img_name">
+                                    <h3 class="img_title">Man Collection</h3>
+                                    <p class="sub_title">Designed to stand the test of time</p>
                                     <div class='sct_deal_btn'>
-                                        <a href="/contactus" class="btn">All Products <span class="ti-arrow-right"></span></a>
+                                        <a href="/shop" class="btn">Shop Now</a>
                                     </div>
                                 </div>
-                            </div>
-                        </section>
-                        <div class="sct_right_img">
-                            <div class="offer-img">
-                                <a href="/shop">
-                                    <img src="/web/image/theme_scita.sct_deal_snippet_1_image_2" class="img img-fluid mx-auto" alt="For Men Offer"/>
-                                </a>
-                                <a href="/shop">
-                                    <img src="/web/image/theme_scita.sct_deal_snippet_1_image_3" class="img img-fluid mx-auto" alt="For Offer"/>
-                                </a>
-                                <a href="/shop">
-                                    <img src="/web/image/theme_scita.sct_deal_snippet_1_image_4" class="img img-fluid mx-auto" alt="For Women Offer"/>
-                                </a>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>
