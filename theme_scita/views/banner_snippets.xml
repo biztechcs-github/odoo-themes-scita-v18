@@ -2,12 +2,11 @@
 <odoo>
 	<template id="sct_banner_1" name="Banner Slider 1">
         <section data-disp='banner' class="sct_banner_1 s_carousel_wrapper">
-        <div class="container-fluid">
-            <div id="myCarousel" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
+            <div id="myCarousel" class="container-fluid s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
                 <div class="carousel-inner">
                     <!-- #01 -->
-                    <div class="carousel-item active" data-name="Slide">
-                        <div class="row content p-4 oe_custom_bg oe_img_bg" style="background-image:url('/theme_scita/static/src/img/banner-home5.jpg')">
+                    <div class="carousel-item active oe_custom_bg oe_img_bg" style="background-image:url('/theme_scita/static/src/img/banner-home5.jpg')" data-name="Slide">
+                        <div class="row content p-4">
                                 <div class='col-lg-12 col-md-12 col-sm-12' >
                                     <div class="container">
                                         <div class="carousel-content">
@@ -21,12 +20,12 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>       
+                            </div>
                                      
                     </div>
                      <!-- #02 -->
-                    <div class="carousel-item active" data-name="Slide">
-                            <div class="row content p-4 oe_custom_bg oe_img_bg" style="background-image:url('/theme_scita/static/src/img/banner-home5.jpg')">
+                    <div class="carousel-item oe_custom_bg oe_img_bg" style="background-image:url('/theme_scita/static/src/img/banner-home5.jpg')" data-name="Slide">
+                            <div class="row content p-4">
                                 <div class='col-lg-12 col-md-12 col-sm-12' >
                                     <div class="container">
                                         <div class="carousel-content">
@@ -59,7 +58,7 @@
                     <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
                 </ol>
             </div>
-        </div>
+      
         </section>
     </template>
     <template id="sct_banner_2" name="Banner Slider 2">
