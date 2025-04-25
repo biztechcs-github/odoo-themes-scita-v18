@@ -42,6 +42,11 @@
                        data-customize-website-variable="'prod_hover_style_4'">
                     Effect Style 4
                 </we-button>
+                <we-button title="Effect Style 5"
+                       data-name="prod_hover_style_5"
+                       data-customize-website-variable="'prod_hover_style_5'">
+                    Effect Style 5
+                </we-button>
             </we-select>
         </xpath>
         <xpath expr='//div[@data-selector="#wrapwrap > header"]//we-select[@data-variable="header-template"]' position='inside'>

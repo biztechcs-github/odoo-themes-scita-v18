@@ -1116,6 +1116,13 @@ body #wrapwrap{
 				}
 				.timer_counter_div{
 					.js_counter_timer{
+						.time_over_msg{
+							p{
+								font-size: $font-size-base-scita;
+								padding: 4px 10px;
+								margin-bottom: 10px;
+							}
+						}
 						.counter_timer_div{
 							@include flex;
 							@include align-content;
