@@ -50,7 +50,7 @@
         <section class="content_snippets_v_10 oe_img_bg" style="background-image: url(/theme_scita/static/src/img/it/content-banner.jpg);" data-disp="content_block">
             <div class='container'>
                 <div class="row sct_btm_row">                   
-                    <div class='col-md-8 col-lg-6 col-xl-4  sct_content_info'>
+                    <div class='col-lg-4  sct_content_info'>
                     	<section class='sct_content_box py-4 p-md-4 p-xxl-5 h-100 d-flex justify-content-center flex-column'>	
                         	<div class='sct_contect_into'>
                                 <div class="sct_icon mb-3"><i class="fa fa-gears p-3"></i></div>
@@ -63,8 +63,8 @@
 	                        </div>
                     	</section>
                     </div>
-                    <div class="col-md-2 col-lg-3 col-xl-4"></div>
-                    <div class="col-md-2 col-lg-3 col-xl-4"></div>
+                    <div class="col-lg-4 sct_hidden_box"></div>
+                    <div class="col-lg-4 sct_hidden_box"></div>
                 </div>
             </div>
         </section>

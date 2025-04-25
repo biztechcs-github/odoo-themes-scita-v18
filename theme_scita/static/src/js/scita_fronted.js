@@ -16,6 +16,7 @@ $(document).ready(function(){
         $(this).removeClass('open'); // Close others
         $(this).addClass('open').siblings().removeClass("open"); // Open current
     });
+   
 });
     animation.registry.oe_cat_slider = animation.Class.extend({
         selector: ".oe_cat_slider",

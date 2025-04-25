@@ -562,21 +562,21 @@
     <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
-                <t t-set="_navbar_classes" t-valuef="d-none d-lg-block shadow-sm"/>
+                <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
                 <t t-set="_navbar_expand_class" t-valuef="None"/>
 
                 <div id="o_main_nav" class="container d-flex justify-content-between align-items-center">
-                    <t t-call="website.placeholder_header_brand">
+                 <ul class="header_search_modal">
+                    <t t-call="website.placeholder_header_search_box">
+                                    <t t-set="_layout" t-valuef="modal"/>
+                                    <t t-set="_input_classes" t-valuef="border border-end-0 p-3"/>
+                                    <t t-set="_submit_classes" t-valuef="border border-start-0 px-4 bg-o-color-4"/>
+                                    <t t-set="_button_classes" t-valuef="o_navlink_background text-reset p-0"/>
+                                </t>
+                                </ul>
+                     <t t-call="website.placeholder_header_brand" t-valuef="m-auto">
                         <t t-set="_link_class" t-valuef="me-4"/>
                     </t>
-                    <ul class="col-md-4 sct-top-right-side">
-                        <t t-call="website.placeholder_header_search_box">
-                            <!-- <t t-set="_classes" t-valuef="mb-3"/> -->
-                            <t t-set="_input_classes" t-valuef=""/>
-                            <t t-set="_submit_classes" t-valuef=""/>
-                            <t t-set="limit" t-valuef="5"/>
-                        </t>
-                    </ul>
                     <div class="menu_right">
                         <ul class="currency-lang-ul d-flex align-items-center">
                             <t t-call="website.placeholder_header_language_selector">
@@ -615,9 +615,9 @@
                 </div>
                 <div class="oe_structure bottom-header">
                     <div class="container">
-                        <div class="row align-items-center justify-content-between">
+                        <div class="row align-items-center justify-content-between bottom-header-menu">
                             <t t-call="website.navbar_nav">
-                                <t t-set="_nav_class" t-valuef="me-auto scita_top_menu flex-row flex-grow-1 justify-content-center"/>
+                                <t t-set="_nav_class" t-valuef="me-auto scita_top_menu flex-row flex-grow-1"/>
                                 <t t-foreach="website.menu_id.child_id" t-as="submenu">
                                     <t t-call="website.submenu">
                                         <t t-set="item_class" t-valuef="nav-item"/>
