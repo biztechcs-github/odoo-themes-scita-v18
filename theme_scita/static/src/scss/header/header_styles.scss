@@ -1095,6 +1095,7 @@
                         @include flex;
                         @include align-content;
                         @include content-cn;
+                        border: 0 !important;
                     }
                 }
                 .account_icon{

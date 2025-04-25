@@ -1058,7 +1058,6 @@ body #wrapwrap{
 		color: $dark-color;
 		font-size: $head-label;
 		font-weight: 900;
-		margin-bottom: 5px;
 		@media (max-width: 991px){
 			font-size: $head-label - 2;
 		}
@@ -3048,13 +3047,7 @@ body #wrapwrap{
     		max-width: unset;
 		}
 	}
-	.sct_simple_text {
-		font-size: $font-body + 1;
-		margin: 15px 0 0;
-		@media (max-width: 1439px) {
-			font-size: $font-body;
-		}
-	}
+
 	.sct_cst_btn {
 		text-align: right;
 		padding-left: 15px;
@@ -4256,8 +4249,6 @@ body #wrapwrap{
 		.sct_title {
 			font-size: $font-body + 1;
 			font-weight: bold;
-			color: $dark-color;
-			line-height: normal;
 			margin-bottom: 0;
 		}
 		.sct_simple_text {
@@ -4534,12 +4525,7 @@ body #wrapwrap{
 	}
 	.sct_top_row {
 		text-align: center;
-		.section-title {
-			margin-bottom: 40px;
-			@media (max-width: 1199px){
-				margin-bottom: 30px;
-			}
-		}
+		
 	}
 	.sct_btm_row {
 		@include min768{
@@ -4581,17 +4567,7 @@ body #wrapwrap{
 				}
 			}
 		}
-		.sct_above{
-			p{
-				font-size: $title - 2;
-				color: rgba($dark-color, 0.6);
-				font-weight: 300;
-				@include min1200{
-					font-size: $title;
-				}
-			}
-		}
-	
+		
 		.sct_below {
 			@include flex;
 			@include flexwrap;
@@ -4613,19 +4589,9 @@ body #wrapwrap{
 				padding-left: 5%;
 				@media (max-width: 1199px){
 					width: 70%;
-				}
-				.sct_pers_name {
-					font-weight: bold;
-					font-size: $title;
-					margin-bottom: 2px;
-					@media (max-width: 1199px){
-						font-size: $title - 2;
-					}
-				}
+				}			
 				.test_desig {
-					color: $dark-grey-color;
 					margin-bottom: 0;
-					font-size: $font-body - 1;
 				}
 			}
 		}
@@ -5986,11 +5952,9 @@ body #wrapwrap{
 			}
 			.sct_title {
 				color: $light-color;
-				margin-bottom: 15px;
 			}
 			.sct_simple_text {
 				color: $light-color;
-				margin-bottom: 15px;
 			}
 			.sct_no_detail {
 				width: 80%;
@@ -6243,25 +6207,10 @@ body #wrapwrap{
 			}
 			.sct_work_title {
 				font-weight: bold;
-				font-size: $subtitle - 10;
 				margin-bottom: 20px;
 				color: rgba($dark-color, 0.5);
-				@include min768{
-					font-size: $subtitle;
-				}
-			}
-			.sct_work_sub_title {
-				font-size: $title;
-				font-weight: bold;
-				@include min768{
-					font-size: $title + 2;
-				}
-			}
-			.sct_simple_text {
-				margin-bottom: 0;
-				color: $dark-grey-color;
-				
-			}
+			
+			}					
 			.sct_work_btn{
 				margin-top: auto;
 				padding-top: 20px;
@@ -6294,19 +6243,13 @@ body #wrapwrap{
 		padding: 60px 0;
 	}	
 	.sct_top_row {
-		margin-bottom: 40px;
-		@media (max-width: 1199px){
-			margin-bottom: 30px;
-		}
+		
 		.sct_simple_text {
 			margin-bottom: 10px;
 			background-color: $primary;
 			padding: 2px 5px;
 			display: inline-block;
 			color: $light-color;
-		}
-		.section-title {
-			margin-bottom: 0;
 		}
 	}
 	.sct_btm_row {
@@ -6557,15 +6500,7 @@ body #wrapwrap{
 					}					
 				}
 				.sct_work_info {
-					color: $light-color;
-					.sct_work_title {
-						font-weight: bold;
-						font-size: $title + 4;
-						margin-bottom: 10px;
-					}
-					.sct_simple_text {
-						margin-bottom: 0;
-					}
+					color: $light-color;					
 				}
 				.sct_cst_btn {
 					margin-top: auto;
@@ -7026,14 +6961,10 @@ body #wrapwrap{
 						}
 					}
 					.progress-value-text {
-						font-size: $font-body + 5;
 						text-transform: uppercase;
 						font-weight: bold;
-						color: $dark-grey-color;
 						margin-bottom: 0;
-						@media (max-width:767px) {
-							font-size: $font-body + 3;							
-						}
+						
 					}
 					.sct_prog_content {
 						@include justify-center-flex;
@@ -7111,10 +7042,6 @@ body #wrapwrap{
 				@include min1200{
 					padding-top: 0;
 				}
-				.sct_stat_title{
-					margin-bottom: 20px;
-					font-weight: bold;
-				}
 			}
 			.scita_cstm_btn{
 				margin-top: auto;
@@ -7132,9 +7059,6 @@ body #wrapwrap{
 	@include min992{
 		padding: 60px 0;
 	}
-	.section-title {
-		margin-bottom: 20px;
-	}
 	.sct_simple_text {
 		max-width: 900px;
 		margin: auto;
@@ -7149,9 +7073,6 @@ body #wrapwrap{
 	padding: 50px 0;
 	@include min992{
 		padding: 60px 0;
-	}
-	.section-title {
-		margin-bottom: 30px;
 	}
 	.sct_btm_row {
 		.sct_content_info {
@@ -7203,16 +7124,7 @@ body #wrapwrap{
 			box-shadow: none;
 			background-color: rgba($light-color, 0.8);
 			padding: 24px;
-		}
-		.sct_title {
-			margin-bottom: 15px;
-			color: $black;
-			position: relative;			
-		}
-		.sct_simple_text {
-			margin-bottom: 10px;
-			color: $dark-grey-color;
-		}
+		}		
 		.sct_icon{		
 			i{
 				font-size: $title;
@@ -7236,9 +7148,6 @@ body #wrapwrap{
 		padding: 50px 0;
 	@include min992{
 		padding: 60px 0;
-	}
-	.sct_title {
-		margin-bottom: 20px;
 	}
 	.sct_according_div {
 		@media (max-width: 767px){
@@ -8740,15 +8649,7 @@ body #wrapwrap{
 							margin-top: 10px;
 						}
 						.sct_text_info {
-							.sct_title {
-								font-weight: bold;
-								color: $dark-color;
-								font-size: $title;
-								margin-bottom: 15px;
-							}
-							.sct_simple_text {
-								color: $dark-color;
-							}
+							
 							ul,ol{
 								padding-left: 20px;
 							}
@@ -10479,9 +10380,7 @@ body #wrapwrap{
                         flex: 0 0 calc(100% - 75px);
                         max-width:calc(100% - 75px);
                         text-align: left;
-                        .title-20{
-							margin-bottom: 5px;
-							font-weight: bolder;
+                        .title-20{							
 							max-width: calc(100% - 80px);
 							padding-right: 10px;
 							@include min1024{
@@ -11442,9 +11341,6 @@ body #wrapwrap{
 					   }
 				   }
 				   p{
-					color: rgba($dark-grey-color, 0.7);
-					font-size: $title;
-					   margin-bottom: 15px;
 					   &:last-child{
 						   margin-bottom: 0;
 					   }
@@ -11455,21 +11351,7 @@ body #wrapwrap{
 				   @include flex;
 				   @include  align-content;
 				   @include flex-column;		  
-				   .sct_pers_name{
-					   font-size: 16px;
-					   font-weight: bold;
-					   text-transform: capitalize;
-					   margin-bottom: 3px;
-
-					   @include min1440{
-						   font-size: 18px;
-					   }
-				   }
-				   .test_desig{
-					   font-size: 14px;
-					   text-transform: uppercase;
-					   margin: 0;
-				   }
+				 
 				   .sct_left_side{
 					   flex: 0 0 60px;
 					   max-width: 60px;
