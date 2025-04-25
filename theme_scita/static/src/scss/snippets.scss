@@ -4472,15 +4472,21 @@ body #wrapwrap{
 		border-radius: 10px;
 		overflow: hidden;
 		.sct_write_by{		
-			padding: 20px;	
+			padding: 25px 20px;	
 			.sct_simple_text {
 				margin-bottom: 0;					
-			}		
+			}
+			i{
+				color: rgba($black, 0.5);
+				font-size: $title + 4;
+				margin-bottom: 5px;
+				display: block;
+			}
 		}		
 		.sct_msg_box {
 			@include flex;
 			@include align-content;
-			background: rgba($black, 80%);
+			background: darken($secondary, 10%);
 			color: $light-color;
 		    padding: 10px 20px;
 			margin-top: auto;
