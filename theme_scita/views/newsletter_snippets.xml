@@ -31,15 +31,19 @@
     <template id="it_sign_up_newsletter" name="Newsletter Snippet 1">
         <section class="it_sign_up_newsletter" data-disp="newsletter" data-list-id="0">
             <div class="container">
-                <div class='row sct_top_row'>
-                    <div class="col-md-12">
-                        <h2 class="section-title">Newsletter</h2>
-                    </div>
-                </div>
-                <div class='row sct_btm_row'>
-                    <div class="col-md-12">
-                        <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
+                <div class='row'>
+                    <div class="col-md-6 sct_top_row">
+                        <div class="left_img">
+                        <i class="fa fa-newspaper-o"></i>
+                        </div>
+                        <div class="right_content">
+                            <h2 class="section-title">Our Newsletter!</h2>
                             <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 sct_btm_row">
+                        <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
                             <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Enter Your Email..."  type="email" name="email"/>
                                 <span class="input-group-btn">
