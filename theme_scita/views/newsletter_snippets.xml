@@ -12,8 +12,8 @@
                             <p>If you are unable to load any pages, check your comput.</p>
                         </div>
                     
-                       <div class="input-group s_newsletter_list js_subscribe_wrap js_subscribe" data-list-id="0">
-                            <div class='newsletter_box js_subscribe_wrap'>
+                        <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
+                            <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary js_subscribe_btn o_submit" href="#">Submit</a>
@@ -38,7 +38,7 @@
                 </div>
                 <div class='row sct_btm_row'>
                     <div class="col-md-12">
-                        <div class="input-group s_newsletter_list js_subscribe_wrap js_subscribe" data-list-id="0">
+                        <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
                             <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
                              <div class='newsletter_box js_subscribe_wrap'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
@@ -65,8 +65,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 sct_control_box">
-                        <div class="input-group s_newsletter_list js_subscribe_wrap js_subscribe" data-list-id="0">
-                            <div class='newsletter_box js_subscribe_wrap'>
+                        <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
+                            <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" name="email" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn o_submit" href="#">Submit</a>
