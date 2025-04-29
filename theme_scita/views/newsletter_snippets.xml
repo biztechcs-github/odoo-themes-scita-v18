@@ -19,7 +19,7 @@
                                     <a class="btn js_subscribe_btn" href="#">Submit</a>
                                     <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
-                                <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
+                                <div class="mt-2 alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
                     </div>
@@ -31,8 +31,8 @@
     <template id="it_sign_up_newsletter" name="Newsletter Snippet 1">
         <section class="it_sign_up_newsletter" data-disp="newsletter" data-list-id="0">
             <div class="container">
-                <div class='row'>
-                    <div class="col-md-6 sct_top_row">
+                <div class='row align-items-center'>
+                    <div class="col-lg-6 sct_top_row">
                         <div class="left_img">
                         <i class="fa fa-newspaper-o"></i>
                         </div>
@@ -42,7 +42,7 @@
                             
                         </div>
                     </div>
-                    <div class="col-md-6 sct_btm_row">
+                    <div class="col-lg-6 sct_btm_row">
                         <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
                             <div class='newsletter_box'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Enter Your Email..."  type="email" name="email"/>
@@ -50,8 +50,8 @@
                                     <a class="btn btn-primary scita_cstm_btn js_subscribe_btn it_btn" href="#">Submit</a>
                                     <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
-                                <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
+                            <div class="mt-2 alert alert-success o_hidden">Thanks for your subscription!</div>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
                                     <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn" href="#">Submit</a>
                                     <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                 </span>
-                                <div class="alert alert-success o_hidden">Thanks for your subscription!</div>
+                                <div class="mt-2 alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
                     </div>
