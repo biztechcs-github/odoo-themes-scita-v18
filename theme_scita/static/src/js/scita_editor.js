@@ -7,804 +7,1014 @@ import { _t } from "@web/core/l10n/translation";
 import snippetsEditor from "@web_editor/js/editor/snippets.editor";
 import { Dialog } from "@web/core/dialog/dialog";
 import { CodeEditor } from "@web/core/code_editor/code_editor";
+import { patch } from "@web/core/utils/patch";
 
-    // snippetsEditor.SnippetsMenu.include({
-    //     async start() {
-    //         await this._super(...arguments);
-    //         this.waitForElementToDisplay("div#scita_snippets",1000);
-    //     },
-    //     waitForElementToDisplay(selector, time) {
-    //         var self = this;
-    //         if(document.querySelector(selector)!=null) {
-    //             $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //             $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+patch(snippetsEditor.SnippetsMenu.prototype, {
+         async start() {
+            await super.start();
+            this.waitForElementToDisplay("div#scita_snippets", 1000);
+         },
+         waitForElementToDisplay(selector,time) {
+             var self = this;
+             if(document.querySelector(selector)!=null && document.querySelector("#theme_scita_groups")!=null) {
+                $(
+                    "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                    "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                    "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                    "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                    "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                    "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                    "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                    "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                    "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                    "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                    "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                    "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                    "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                    "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                    "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                    "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                    "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                    "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                    "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                    "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                    "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                    "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                    "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                    "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                    "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                    "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                    "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                    "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                    "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                    "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                ).parent().addClass("o_hidden");
+                $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5]").parent().removeClass("o_hidden")
 
-    //             $("select#selSnippetCat").on('change',function(){
-    //                 if($("select#selSnippetCat").val()=='banner')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                 $("select#selSnippetCat").on('change',function(){
+                     if($("select#selSnippetCat").val()=='banner')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=sct_banner_1], [data-snippet=sct_banner_2], [data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2], [data-snippet=dynamic_video_banner]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='newsletter')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='newsletter')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=it_sign_up_newsletter], [data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='deal_days')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='blog')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='deal_days')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3], [data-snippet=deal_of_day_banner_5]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='our_team')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='testimonial')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='blog')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet], [data-snippet=blog_5_custom_snippet]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='service')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='portfolio')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='our_team')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=it_our_team], [data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='advbanner')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='pricing_table')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='testimonial')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=health_testimonials_slider_1], [data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1], [data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4], [data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='trust_icon')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='contact_us')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='service')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=it_grids_service], [data-snippet=service_varient_7], [data-snippet=service_varient_11], [data-snippet=service_varient_14]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='how_it_works')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='statistics')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='portfolio')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=portfolio_snippet_1], [data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='content_block')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='advbanner')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=health_advertisement_banner], [data-snippet=fashion_advertisement_banner_1], [data-snippet=retial_advertisement_banner_1], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='client_snippet')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='category_snippet')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='case_study')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='pricing_table')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_4column_v4], [data-snippet=s_theme_scita_pricing_table_1_3column_v5]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='brand')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='about_us')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='accordion')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='trust_icon')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=retial_trust_snippet_1], [data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='timeline')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='timeline')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                     }
+                     else if($("select#selSnippetCat").val()=='contact_us')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=it_letstalk], [data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet]").parent().removeClass("o_hidden")
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='multi_product')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp1=multi_product]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='google_map_snippet')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().removeClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
-    //                 }
-    //                 else if($("select#selSnippetCat").val()=='html_builder')
-    //                 {
-    //                     $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
-    //                     $("#scita_snippets [data-disp=html_builder]").parent().removeClass("o_hidden");
-    //                 }
-    //             });
-    //             return;
-    //         }
-    //         else {
-    //             setTimeout(function() {
-    //                 self.waitForElementToDisplay(selector, time);
-    //             }, time);
-    //         }
-    //     },
-    // });
+
+                     }
+                     else if($("select#selSnippetCat").val()=='how_it_works')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3], [data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='statistics')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=expertise_statistics_4], [data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='content_block')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                         $("#theme_scita_groups [data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='client_snippet')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='category_snippet')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=custom_scita_product_category_slider], [data-snippet=product_category_img_slider_config], [data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=theme_scita_category_slider_gray]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='case_study')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=health_cash_study_snippet], [data-snippet=case_study_varient_2]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='brand')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet], [data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='about_us')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5]").parent().removeClass("o_hidden")
+
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='accordion')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=accordion_v_1], [data-snippet=accordion_v_2], [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='timeline')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3]").parent().removeClass("o_hidden")
+
+
+                     }
+
+                     else if($("select#selSnippetCat").val()=='multi_product')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6], [data-snippet=theme_scita_trending_products_snippet]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='google_map_snippet')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content]").parent().removeClass("o_hidden")
+
+
+                     }
+                     else if($("select#selSnippetCat").val()=='html_builder')
+                     {
+                        $(
+                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                        ).parent().addClass("o_hidden");
+                        $("#theme_scita_groups [data-snippet=html_builder_snippet]").parent().removeClass("o_hidden")
+
+                     }
+                 });
+                 return;
+             }
+             else {
+                 setTimeout(function() {
+                     self.waitForElementToDisplay(selector, time);
+                 }, time);
+             }
+         },
+     });
+
     options.registry.oe_cat_slider = options.Class.extend({
         start: function(editMode) {
             var self = this;
