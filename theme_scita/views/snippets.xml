@@ -947,9 +947,10 @@
     
 <!-- Service industry End -->
     <!-- snippets list  -->
+
     <template id="theme_scita_snippets_list" inherit_id="website.snippets" name="Theme Scita Snippets List">
         <xpath expr="//snippets[@id='snippet_groups']" position="before">
-			  <snippets id="theme_scita_group" string="Theme Scita">
+			  <snippets id="theme_scita_groups" string="Theme Scita">
 				<t t-snippet="theme_scita.timer_snippet_body" t-thumbnail="/theme_scita/static/src/img/snippet_icon/timer.png" name="Style 2" priority="2" />
 				<!-- banner snippets -->
 				<t t-snippet="theme_scita.sct_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-ful-banner-1.1.png"/>
