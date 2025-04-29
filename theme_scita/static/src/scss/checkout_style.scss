@@ -360,18 +360,23 @@ body #wrapwrap.o_portal {
 				&:last-child{
 					margin-bottom: 0;
 				}
-				.sct-img-wrap{
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					border-radius: 0.4rem;
-					max-width: 100px;
-					flex: 0 0 100px;
-					padding: 5px;
-					border: 1px solid #efefef;
-					margin: 0 15px 12px 0;
-					img{
-						object-fit: scale-down;
+				
+				> div{
+					&:first-child{
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						border-radius: 0.4rem;
+						max-width: 100px;
+						flex: 0 0 100px;
+						padding: 5px;
+						border: 1px solid #efefef;
+						margin: 0 15px 12px 0;
+					}
+					.sct-img-wrap{
+						img{
+							object-fit: scale-down;
+						}
 					}
 				}
 				.sct-content-wrap{

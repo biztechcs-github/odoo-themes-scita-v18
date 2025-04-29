@@ -2626,6 +2626,7 @@
             &.navbar {
                 @include min992 {
                     padding: 0;
+                    background-color: transparent;
                     #o_main_nav {
                         padding: 15px;
                         .header_search_modal{
@@ -2676,6 +2677,14 @@
                                     padding: 0;
                                     background: none;
                                     color: $black;
+                                    border: 0;
+                                }
+                                .dropdown-menu {
+                                    .dropdown-item{
+                                        &:hover{
+                                            background-color: $light-grey-color;
+                                        }
+                                    }
                                 }
                                 .o_pricelist_dropdown {
                                     margin-right: 0 !important;
@@ -2729,19 +2738,48 @@
                         padding: 0;
                         margin: 0;
                     }
+                    > p, .sct_shipping_box{
+                        background-color: $secondary;
+                        list-style: none;
+                        color: $white;
+                        padding: 5px 0;
+                        div{
+                            @include content-cn;
+                        }
+                    }
+                    .o_wsale_my_wish {
+                        .my_wish_quantity{
+                        
+                            border-color: $secondary !important;
+                        }
+                    }
+                    .o_wsale_my_cart{
+                        .my_cart_quantity{
+                            border-color: $secondary !important;
+                        }
+                    }
                 }
                 .navbar-brand.logo {
                     @media (max-width: 991px) {
                         padding: 10px 0;
                     }
-                }
+                    img{
+                        @include min992{
+                            margin: auto;
+                        }
+                    }
+                }               
+                
             }
         }
         &.o_header_affixed {
             @include min992 {
                 .navbar {
-                    #o_main_nav {
+                    #o_main_nav, > p, .sct_shipping_box {
                         display: none !important;
+                    }
+                    .bottom-header{
+                        margin-top: 10px;
                     }
                 }
             }
@@ -2990,7 +3028,7 @@ header{
 
                         .my_cart_quantity{
                             font-size: 9px;
-                            background: $light-color !important;
+                            // background: $light-color !important;
                             top: 3px !important;
                             right: -1px !important;
                             color: $black;
