@@ -755,6 +755,7 @@ class ScitaShop(WebsiteSale):
             gap = website.shop_gap or "16px"
 
             request_args = request.httprequest.args
+            tags = {}
             attrib_list = request_args.getlist('attribute_value')
             attrib_values = [[int(x) for x in v.split("-")] for v in attrib_list if v]
             attributes_ids = {v[0] for v in attrib_values}
