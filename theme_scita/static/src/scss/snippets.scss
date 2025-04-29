@@ -3096,8 +3096,8 @@ body #wrapwrap{
 			@include min992{
 				border-top: 0;
 				border-left: 1px solid $black;
-				margin-left: 30px;
-				padding-left: 30px;
+				margin:0 0 0 30px;
+				padding:0 0 0 30px;
 			}
 			.section-title{
 				margin-bottom: 10px;
