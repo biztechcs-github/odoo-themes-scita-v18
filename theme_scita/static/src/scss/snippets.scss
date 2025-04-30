@@ -1456,15 +1456,10 @@ body #wrapwrap{
 	padding: 50px 0;
 	text-align: center;
 	background-size: cover;
-	margin: 70px auto;
-	@media (max-width: 1199px){
-		padding: 40px 0;
-		margin: 60px auto;
+	@include min992{
+		padding: 60px 0;
 	}
-	@media (max-width: 767px){
-		padding: 30px 0;
-		margin: 40px auto;
-	}
+	
 	.section-title {
 		margin-bottom: 0;
 	}
@@ -3069,41 +3064,81 @@ body #wrapwrap{
 .it_sign_up_newsletter {
 	padding: 50px 0;
 	@include min992{
-		padding-top: 60px 0;
+		padding: 60px 0;
 	}
-	.sct_btm_row {
-		margin-top: 30px;
-		@media (max-width: 767px){
-			margin-top: 10px;
-		}
-		.sct_simple_text {
-			font-size: $font-body + 1;
-			@media (max-width: 1439px) {
-				font-size: $font-body;
+	.sct_top_row {
+		@include flex;
+		@include align-content;
+		@include flexwrap;
+		.left_img{
+			width: 50px;
+			@include min992{
+				width: 70px;
+			}
+			img{
+				height: 40px;
+				width: auto;
+				@include min992{
+					height: 60px;
+				}
+			}
+			i{
+				font-size: $subtitle + 2;
+				@include min992{
+					font-size: $subtitle + 22;
+				}
 			}
 		}
-		.input-group.js_subscribe{
-			max-width: 700px;
-			margin: auto;
-			text-align: center;
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			-ms-flex-direction: column;
-			flex-direction: column;
+		.right_content{
+			border-top: 1px solid $black;
+			margin-top: 20px;
+			padding-top: 20px;
+			width: 100%;
+			@include min992{
+				width: calc(100% - 100px);
+			}
+			@include min992{
+				border-top: 0;
+				border-left: 1px solid $black;
+				margin:0 0 0 30px;
+				padding:0 0 0 30px;
+			}
+			.section-title{
+				margin-bottom: 10px;
+			}
+			p{
+				margin-bottom: 0;
+			}
+		}
+		
+	}
+	.sct_btm_row {
+		padding-top: 15px;
+		@include min992{
+			padding-top: 0;
+			padding-left: 50px;	
+		}
+		@include min1200{
+			padding-left: 100px;
+		}
+		.input-group.js_subscribe_wrap{		
+			text-align: center;			
 			.newsletter_box {
-				margin-top: 10px;
-				input.js_subscribe_email {
-					border: none;
-					border-bottom: 1px solid $dark-color;
-					border-radius: 0;
-					padding: 0;
+				@include flex;
+				width: 100%;
+				input.js_subscribe_value {
+					padding-right: 100px;
 				}
 				.input-group-btn {
 					display: inline-block;
-					margin-top: 30px;
-					@media (max-width: 767px){
-						margin-top: 20px;
-					}
+					position: absolute;
+					right: 0;
+					top: 0;
+					bottom: 0;
+					margin: auto;
+					.scita_cstm_btn{
+						border-radius: 0 6px 6px 0;
+					}	
 				}
 			}
 		}
@@ -5343,7 +5378,7 @@ body #wrapwrap{
 			@media (max-width: 1599px){
 				padding: 60px 80px;
 			}
-			@media (max-width: 1023px){
+			@media (max-width: 991px){
 				padding: 50px 30px;
 			}
 			.sct_news_content {
@@ -5370,7 +5405,7 @@ body #wrapwrap{
 			@media (max-width: 1599px){
 				padding: 60px 80px;
 			}
-			@media (max-width: 1023px){
+			@media (max-width: 991px){
 				padding: 50px 30px;
 			}
 			.newsletter_box {
