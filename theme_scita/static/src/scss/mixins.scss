@@ -170,6 +170,9 @@
 @mixin min1600 {
     @media (min-width: 1600px) { @content; }
 }
+@mixin min1700 {
+    @media (min-width: 1700px) { @content; }
+}
 @mixin min1920 {
     @media (min-width: 1920px) { @content; }
 }

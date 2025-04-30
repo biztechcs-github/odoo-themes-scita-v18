@@ -1142,12 +1142,16 @@ body #wrapwrap{
 									}
 									.t_days_hr_min_sec_digit{
 										margin-top: 0;
-										font-size: $subtitle - 6;
+										font-size: $subtitle - 10;
 										background: rgba($light-color, 0.6);
 										padding: 5px;
 										width: 100%;
 										display: block;
 										border-radius: 15px;
+										
+										@include min1700{
+											font-size: $subtitle - 6;
+										}
 									}
 								}
 							}
@@ -5500,6 +5504,10 @@ body #wrapwrap{
 		@media (max-width: 1199px){
 			margin-bottom: 30px;
 		}
+
+		.section-title{
+			margin-bottom: 12px;
+		}
 		p {
 			margin-bottom: 0;
 		}
@@ -5513,15 +5521,15 @@ body #wrapwrap{
 		    overflow: hidden;
 		    border-radius: 50%;
 			filter: grayscale(1);
-			margin: 0 0 0 auto;
+			margin: 0 auto;
 		}
 		.name {
 			padding: 10px;
 			max-width: 200px;
-			text-align: left;
-			position: absolute;
-			top: 0;
-			border-radius: 20px;
+			text-align: center;
+			// position: absolute;
+			// top: 0;
+			margin: 0 auto;
 
 			.sct_title {
 				font-size: $title + 2;
@@ -9404,6 +9412,161 @@ body #wrapwrap{
 			}
 		}
 	}
+
+	&#shop_quick_view_modal{
+		.modal-dialog{
+			max-width: 400px;
+			padding: 6rem 0;
+			height: 100dvh;
+
+			.modal-content{
+				height: 100%;
+				overflow: auto;
+			}
+
+			.modal-header{
+				border: 0;
+				position: absolute;
+				z-index: 1;
+				right: 0;
+				top: 0;
+			}
+			.quick_view_main_wrap{
+				padding: 0;
+
+				.sct_modal_image{
+					img{
+						padding: 0;
+						border: 0;
+						border-radius: 10px 10px 0 0;
+						max-height: 250px;
+						object-fit: cover;
+						width: 100%;
+					}
+				}
+				.sct_product_detail{
+					&#product_details{
+						padding: 0 20px;
+
+						@include min768{
+							padding: 20px;
+						}
+						.js_main_product{
+							padding-bottom: 0;
+	
+							.product_price{
+								border-bottom: 1px solid rgba($dark-color, 0.1);
+								width: 100%;
+								padding-bottom: 5px;
+	
+								h3{
+									font-size: $title + 2;
+									
+									.oe_default_price, .sct_vat{
+										font-size: $title - 3;
+									}
+									.sct_vat{
+										display: -webkit-box;
+										-webkit-line-clamp: 3;
+										-webkit-box-orient: vertical;  
+										overflow: hidden;
+									}
+								}
+							}
+							.js_add_cart_variants{
+								.variant_attribute{
+									.attribute_name{
+										padding-bottom: 5px;
+									}
+									.variant_custom_value{
+										margin-bottom: 2px;
+									}
+									.o_wsale_product_attribute{
+										.o_variant_pills{
+											padding: 6px 13px;
+											border: 1px solid transparent;
+
+											&:hover{
+												border-color: rgba($body-color, 0.2);
+											}
+	
+											.radio_input_value{
+												font-size: $title - 3;
+											}
+											.badge{
+												.sign_badge_price_extra{
+													font-size: $font-size-base-scita;
+													width: 14px;
+													height: 14px;
+													line-height: 0.9;
+												}
+												.variant_price_extra{
+													font-size: $font-size-base-scita - 4;
+												}
+											}
+	
+											&::after{
+												display: none;
+											}
+										}
+									}
+								}
+							}
+							#o_wsale_cta_wrapper{
+								#add_to_cart_wrap{
+									.btn.js_check_product{
+										padding: 7px 14px !important;
+										font-size: 16px;
+		
+										&::after{
+											display: none;
+										}
+									}
+								}
+								.o_add_wishlist_dyn{
+									padding: 0;
+									font-size: $font-size-base-scita;
+								}
+							}
+						}
+					}
+
+					.sct_prod_name{
+						font-size: $title + 6;
+					}
+					.sct_desc{
+						font-size: $font-size-base-scita;
+						line-height: 1.4;
+					}
+					.o_product_page_reviews_link{
+						.o_website_rating_static{
+							line-height: 1;
+
+							.fa{
+								font-size: $font-size-base-scita;
+							}
+						}
+					}
+					
+					#product_attributes_simple{
+						.table{
+							tr{
+								td{
+									span{
+										font-weight: bold;
+										&:last-child{
+											font-size: $font-size-base-scita;
+											font-weight: 400;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }
 /*Product quickview end*/
 /*Deal of day snippet 5*/
@@ -9456,6 +9619,12 @@ body #wrapwrap{
    			@include flexwrap;
    			@include content-cn;
    			padding: 2rem 0;
+			   
+			@include min1200{
+				margin: 0 auto;
+				max-width: 80%;
+			}
+
    			.text-center {
    				&:first-child{
    					.box_degit {
@@ -9466,35 +9635,45 @@ body #wrapwrap{
    				}
    			}
 			> span{
-				padding: 0 15px;
+				padding: 0 7px;
 			}
    			.box_degit {
    				position: relative;
 				@include flex;
 				@include flex-column;
+				align-items: center;
+				
+				@include min992{
+					align-items: flex-end;
+					flex-direction: row;
+				}
 
-   				&:before{
-   					position:absolute;
-   					top:50%;
-				    -webkit-transform: translateY(0%);
-				    -ms-transform: translateY(0%);
-				    transform: translateY(0%);
-   					left: -17px;
-   					content: ':';
-   					font-size: $title;
-   					color: $dark-color;
-   					font-weight: bold;
-   				}
+   				// &:before{
+   				// 	position:absolute;
+   				// 	top:50%;
+				//     -webkit-transform: translateY(0%);
+				//     -ms-transform: translateY(0%);
+				//     transform: translateY(0%);
+   				// 	left: -17px;
+   				// 	content: ':';
+   				// 	font-size: $title;
+   				// 	color: $dark-color;
+   				// 	font-weight: bold;
+   				// }
    				.d-count {
    					color: $primary;
    					font-size: $subtitle + 10;
    					font-weight: bold;
    					display: block;
    					line-height: normal;
-					border: 1px solid $primary;
-					border-radius: 10px;
-					padding: 10px;
+					// border: 1px solid $primary;
+					// border-radius: 10px;
+					// padding: 10px;
 					order: 1;
+
+					@include min992{
+						order: 0;
+					}
 
    					@media (max-width: 991px){
    						font-size: $title + 10;
@@ -9503,8 +9682,12 @@ body #wrapwrap{
    				.d-block {
    					color: $dark-color;
    					padding-bottom: 5px;
-   					font-size: $title - 2;
+   					font-size: $title - 4;
    					display: block;
+					   
+					@include min992{
+						padding-left: 5px;
+					}
    				}
    			}
    		}

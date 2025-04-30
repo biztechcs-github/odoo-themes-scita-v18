@@ -27,13 +27,13 @@
                                         </div>
                                         <div class="row sct-btm-row justify-content-center">
                                             <t t-foreach="pro" t-as="category">
-                                                <div class="col-md-4 col-xl-3 col-sm-6 cstm-category-main">
+                                                <div class="col-md-4 col-xl-2 col-6 cstm-category-main">
                                                     <t t-if="category.child_id">
                                                         <a t-att-href="'/allcategories/category/%s' % slug(category)">
                                                             <div class="sct-cat-img">
                                                                 <img class="img img-responsive" itemprop="image" t-att-src="website.image_url(category, 'image_1920')" t-att-alt="category.name"/>
                                                             </div>
-                                                             <div class="sct-cat-info text-center">
+                                                             <div class="sct-cat-info">
                                                                 <h3 class="title"><span t-field="category.name"/></h3>
                                                             </div>
                                                         </a>
@@ -43,7 +43,7 @@
                                                             <div class="sct-cat-img">
                                                                 <img class="img img-responsive" itemprop="image" t-att-src="website.image_url(category, 'image_1920')" t-att-alt="category.name"/>
                                                             </div>
-                                                             <div class="sct-cat-info text-center">
+                                                             <div class="sct-cat-info">
                                                                 <h3 class="title"><span t-field="category.name"/></h3>
                                                             </div>
                                                         </a>
