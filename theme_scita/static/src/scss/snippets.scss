@@ -511,7 +511,7 @@ body #wrapwrap{
 			.sct_banner_content, .slider-content{
 				.solid-btn{
 					color: $dark-color;
-					padding: 0 4px 8px;
+					padding: 0 4px 4px;
 					border: 0;
 					border-bottom: 1px solid $dark-color;
 					background: transparent;
@@ -521,7 +521,7 @@ body #wrapwrap{
 
 					&::after{
 						content: '';
-						display: block;
+						display: inline-block;
 						height: 8px;
 						width: 8px;
 						border-top: 2px solid $dark-color;

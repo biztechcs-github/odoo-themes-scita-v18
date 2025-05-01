@@ -174,6 +174,10 @@
 				}
 			}
 			.accordion-item{
+				.btn{
+					padding: 6px 16px;
+					font-size: $title;
+				}
 				.accordion-collapse{
 					.css_attribute_color{
 						height: 28px;
@@ -289,21 +293,24 @@
 			}
 		}
 		.accordion-item, .products_categories, #o_wsale_price_range_option{
-			.accordion-button{
+			.sct_filter_title{
 				position: relative;
-				display: inline-block;
+				// display: inline-block;
 				padding-bottom: 6px;
 				padding-top: 0;
 
 				&::before{
 					content: '';
 					position: absolute;
-					width: 80%;
+					width: 28px;
 					height: 2px;
 					background-color: $primary;
-					bottom: -2px;
+					bottom: -1px;
 					left: 0;
 				}
+			}
+			.accordion-button{
+				padding: 0;
 			}
 			.form-check{
 				.form-check-label{
@@ -314,6 +321,8 @@
 				font-size: 12px;
 				vertical-align: middle;
 				color: $dark-grey-color;
+				padding-left: 4px;
+				margin-right: auto;
 			}
 		}
 
@@ -325,13 +334,12 @@
 				margin-bottom: 1.5rem;
 			}
 			.accordion-header{
-				display: inline-block;
+				// display: inline-block;
 				margin-bottom: 1rem;
 
 				.accordion-button{
 					&::after{
-						// opacity: 0;
-						display: none;
+						background-image: none;
 					}
 				}
 			}
@@ -1394,19 +1402,23 @@
 					}
 				}
 				.sct-cat-info {
-				    background-color: $dark-color;
-					padding: 5px 20px;
-					position: absolute;
-					bottom: 18px;
-					left: 50%;
-					transform: translateX(-50%);
-					transform-origin: center;
-					width: max-content;
-					max-width: 80%;
-
+				    // background-color: $dark-color;
+					padding: 15px 20px;
+					border-top: 1px solid rgba($dark-color, 0.1);
+					// position: absolute;
+					// bottom: 18px;
+					// left: 50%;
+					// transform: translateX(-50%);
+					// transform-origin: center;
+					// width: max-content;
+					// max-width: 80%;
+					@include transition(all, 0.3s, ease-in);
+					
 				    .title {
+						@include transition(all, 0.3s, ease-in);
 				    	font-size: $title - 4;
-				    	color: $light-color;
+				    	// color: $light-color;
+						color: $dark-color;
 				    	font-weight: bold;
 				    	margin-bottom: 0;
 				    }
@@ -1414,6 +1426,10 @@
 				&:hover{
 					.sct-cat-info {
 						background-color: $primary;
+
+						.title{
+							color: $light-color;
+						}
 					}
 				}
 			}
@@ -1831,7 +1847,7 @@
 // shop page enhancement css satrt here
 .o_wsale_products_page {
 	.accordion-header {
-		button {
+		button.accordion-button {
 			&::after{
 				font-family: 'FontAwesome';
 				background: lighten($light-grey-color, 2%);
@@ -1844,6 +1860,7 @@
 				font-size: 14px;
 				border-radius: 4px;
 				content: '\f068';
+				background-image: none;
 			}
 			&.collapsed{
 				&::after {
@@ -1861,8 +1878,25 @@
 			}
 		}
 	}
+	.o_website_offcanvas{
+		#o_wsale_offcanvas_content{
+			height: calc(100dvh - 108px);
+		}
+		.offcanvas-body{
+			.btn{
+				padding: 6px 16px;
+				width: 100%;
+				font-size: 16px;
+				justify-content: center;
+				margin: 0 !important;
+			}
+		}
+	}
 }
 .products_header.btn-toolbar {
+	@media (max-width: 767px) {
+		flex-wrap: wrap !important;
+	}
 	.o_wsale_apply_layout {
 		.o_wsale_apply_list {
 			margin-left: 0;
@@ -2052,40 +2086,79 @@
 		}
 	}
 	.o_searchbar_form {
+		@include min768{
+			max-width: 50%;
+		}
 		.input-group{
-			@media (max-width: 768px) {
-				width: 160px;
+			align-items: center;
+			margin-bottom: 10px;
+			@include min768{
+				margin-bottom: 0;
 			}
-			.search-query{
-				max-width: 40%;
-				background-color: $light-color !important;
-				padding: 7px 15px;
-				border-radius: 8px;
 
-				@media (max-width: 1200px){
-					max-width: 100%;
-				}
+			.search-query{
+				max-width: 100%;
+				border: 1px solid darken($light-grey-color, 9%) !important;
+				border-radius: 30px !important;
+				padding: 6px 35px 6px 15px;
+				background-color: transparent !important;
 			}
 			.oe_search_button{
-				background: $light-color;
-				border-radius: 8px;
-				border-left: 2px solid #f6f6f6 !important;
+				background-color: $secondary;
+				border-radius: 50% !important;
+				padding: 5px;
+				width: 31px;
+				height: 31px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 16px;
+				position: absolute;
+				right: 4px;
 			}
 		}
 
 		.o_dropdown_menu {
-			.dropdown-item:hover {
-				.o_search_result_item {
-					.o_search_result_item_detail {
-						.h6 {
-							color: #1e2125 !important;
+			.dropdown-item {
+				.o_search_result_item{
+					.o_image_64_contain{
+						font-size: 21px !important;
+						padding: 0 !important;
+						width: 30px;
+						height: 30px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+					}
+					.o_search_result_item_detail{
+						padding: 0 5px !important;
+
+						.h6{
+							font-weight: 400 !important;
 						}
-						.btn-link {
-							color: #1e2125 !important;
+					}
+				}
+				&:hover{
+					.o_search_result_item {
+						.o_search_result_item_detail {
+							.h6 {
+								color: #1e2125 !important;
+							}
+							.btn-link {
+								color: #1e2125 !important;
+							}
 						}
 					}
 				}
 			}
+		}
+	}
+
+	.sct-filter-grid-wrap{
+		button.btn{
+			padding: 6px 16px;
+			border-radius: 6px;
+			font-size: 16px;
 		}
 	}
 }
@@ -2269,26 +2342,18 @@
 		.wsale_products_categories_list{
 			ul{
 				li{
-					.accordion-header{
-						.accordion-button{
-							&:focus{
-								box-shadow: none;
-								border: 0;
-							}
-						}
-					}
-					.form-check{
-						position: relative;
-						padding-left: 16px;
-						@include transition(all, 0.3s, ease-in);
-
-						.form-check-input{
-							display: none;
-						}
-						.form-check-label{
-							font-size: 15px;
+					&.nav-item{
+						a{
+							position: relative;
+							padding-left: 16px !important;
 							@include transition(all, 0.3s, ease-in);
+							font-size: 15px;
 
+							&.text-decoration-underline{
+								text-decoration: none !important;
+								color: $primary;
+							}
+	
 							&::before{
 								content: "";
 								display: inline-block;
@@ -2301,17 +2366,26 @@
 								background: rgba($primary, 0.3);
 								@include transition(all, 0.3s, ease-in);
 							}
-						}
-
-						&:hover{
-							padding-left: 20px;
-
-							.form-check-label{
+							&:hover{
+								padding-left: 20px !important;
 								color: $primary;
-
+		
 								&::before{
 									background: $primary;
 								}
+							}
+						}
+					}
+					.accordion-header{
+						align-items: center;
+	
+						.accordion-button{
+							&::before{
+								display: none;
+							}
+							&:focus{
+								box-shadow: none;
+								border: 0;
 							}
 						}
 					}
