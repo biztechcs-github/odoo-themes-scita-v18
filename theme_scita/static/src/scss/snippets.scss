@@ -5447,11 +5447,7 @@ body #wrapwrap{
 						&:hover, &:focus, &:active{
 							background:transparent;
 							box-shadow: none !important;
-							@media (max-width: 767px){
-								background-color: $primary;
-								border-color: $primary;
-								color: $white
-							}
+							color: $primary;
 						}
 					}
 				}
