@@ -991,11 +991,16 @@ body {
 				}
 				&.menu_style_2 {
 					.mega-dropdown-menu {
-						.inline-block {
+						.inline-block {		
+
 							.cat_img {
-								margin-bottom: 0;
+								margin-bottom: 0;								
 							}
 						}
+						.letter-spacing{
+							padding: 0 !important;
+						}
+						
 					}
 				}
 				&.menu_service_page {
@@ -1016,21 +1021,30 @@ body {
 						}
 					}
 				}
-				&.menu_style_1 {
+				&.menu_style_1 {				
 					.dropdown-menu {
 						.scita_cat_slider {
 							flex: 0 0 100%;
 							max-width: 100%;
 							margin-top: 10px;
 						}
-						.letter-spacing {
+						.letter-spacing, .scita_img_grid {
 							flex: 0 0 100%;
 							max-width: 100%;
 							margin-top: 5px;
+							
 							.inline-block {
+								margin-bottom: 15px;
 								a {
 									padding: 0;
 								}
+							}
+						}
+						.scita_img_grid{
+							.scita-grid-img{
+								padding: 0;
+								flex: 0 0 100%;
+								max-width: 100%;
 							}
 						}
 						.mm-slider .carousel .carousel-item h4 {
@@ -1040,6 +1054,9 @@ body {
 							margin-top: 0;
 							padding-top: 8px;
 							padding-bottom: 5px;
+						}
+						&.mega-dropdown-menu{
+							position: initial !important;							
 						}
 					}
 				}

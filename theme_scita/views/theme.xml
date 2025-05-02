@@ -903,12 +903,12 @@
                 <ul class="dropdown-menu mega-dropdown-menu row o_mega_menu_container_size">
                     <div class="row">
                         <t t-if="submenu.megamenu_product_ids">
-                            <div t-att-class="'col-md-3 col-xs-12' if submenu.is_img_banner else ''" t-att-style="'order: 2' if submenu.is_img_banner and submenu.img_banner_position=='right' else ''">
+                            <div t-att-class="'col-lg-3 col-xs-12' if submenu.is_img_banner else ''" t-att-style="'order: 2' if submenu.is_img_banner and submenu.img_banner_position=='right' else ''">
                                 <div class='img_banner_div' t-if='submenu.is_img_banner'>
                                     <img class="img-fluid img-responsive icon" t-att-alt="submenu.name" t-att-src="website.image_url(submenu, 'img_banner')" loading=""/>
                                 </div>
                             </div>
-                            <div t-att-class="'col-md-9 col-xs-12 letter-spacing' if submenu.is_img_banner else 'col-md-12 letter-spacing'">
+                            <div t-att-class="'col-lg-9 col-xs-12 letter-spacing' if submenu.is_img_banner else 'col-md-12 letter-spacing'">
                                 <t t-foreach="submenu.megamenu_product_ids" t-as="product">
                                     <li class="col-md-3 col-sm-6 inline-block">
                                         <ul class='pro_thumb_bg'>
