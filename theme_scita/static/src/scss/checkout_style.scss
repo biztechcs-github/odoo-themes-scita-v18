@@ -110,6 +110,11 @@
 	.bg-info-light {
 		background: fade-out($primary, 0.9);
 	}
+	.card-header{
+		p{
+			margin: 0;
+		}		
+	}
 }
 .oe_website_sale{
 	#cart_products {
@@ -540,9 +545,7 @@ body #wrapwrap.o_portal {
 				margin: 0 !important;
 				.accordion-button{
 					padding: 0;
-					@media (max-width: 991px){
-						box-shadow: none;
-					}
+					box-shadow: none;					
 				}
 			}
 		}

@@ -963,6 +963,9 @@ body {
 								}
 							}
 						}
+						&.mega-dropdown-menu{
+							position: initial !important;							
+						}
 					}
 				}
 				&.menu_service_1 {
@@ -987,10 +990,14 @@ body {
 						.footer {
 							padding-bottom: 0 !important;
 						}
+						&.mega-dropdown-menu{
+							position: initial !important;							
+						}
 					}
 				}
 				&.menu_style_2 {
 					.mega-dropdown-menu {
+						position: initial !important;
 						.inline-block {		
 
 							.cat_img {
@@ -1018,6 +1025,9 @@ body {
 							margin-top: 0;
 							padding-top: 8px;
 							padding-bottom: 5px;
+						}
+						&.mega-dropdown-menu{
+							position: initial !important;							
 						}
 					}
 				}
@@ -1080,6 +1090,9 @@ body {
 								}
 							}
 						}
+						&.mega-dropdown-menu{
+							position: initial !important;							
+						}
 					}
 				}
 				&.menu_service_3 {
@@ -1102,6 +1115,9 @@ body {
 								padding-top: 0;
 								padding-bottom: 0;
 							}
+						}
+						&.mega-dropdown-menu{
+							position: initial !important;							
 						}
 					}
 				}
