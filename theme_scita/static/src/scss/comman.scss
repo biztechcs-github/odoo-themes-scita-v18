@@ -152,19 +152,13 @@ a{
 /*notice cookie end*/
 /*btn-secondary styling*/
 .btn-secondary {
-	background: #929292;
-	border-color: transparent;
-	// border-radius: 0 !important;
-	line-height: 45px !important;
-	text-align: center;
-	padding: 0 20px !important;
-	color: $light-color;
-	@media (max-width: 1023px){
-		line-height: 40px;
-	}
+	background: transparent;
+	border: 1px solid $dark-color;
+	color: $dark-color;
+
 	&:hover{
 		background: $dark-color;
-		border-color: transparent;
+		color: $light-color;
 	}
 }
 /*btn-secondary styling end*/
@@ -2433,6 +2427,11 @@ body #wrapwrap::-webkit-scrollbar{
 //  cart - configure your product popup
 .modal{
 	.modal-dialog{
+		&:has(.o_sale_product_configurator_dialog){
+			@media (max-width: 680px) {
+				margin: 0 20px !important;
+			}
+		}
 		.o_sale_product_configurator_dialog{
 			border-radius: 17px;
 			margin: 30px 0;
@@ -2451,41 +2450,23 @@ body #wrapwrap::-webkit-scrollbar{
 				}
 			}
 			.modal-body{
-				padding: 0 10px 10px;
+				padding: 0 16px 10px;
 				overflow-x: auto;
 
 				span{
 					&[name="sale_product_configurator_list_title"]{
 						font-size: $title;
-						margin-bottom: 4px !important;
+						margin-bottom: 14px !important;
+						display: block !important;
+						text-align: center;
 					}
 				}
 				.o_sale_product_configurator_table{
 					border-spacing: 0 10px;
     				border-collapse: separate;
+					border-bottom: 1px solid rgba($dark-color, 0.1);
 
 					tr{
-						th, td{
-							background-color: rgba($light-grey-color, 0.4);
-							border-bottom: 1px solid rgba($dark-color, 0.1) !important;
-							border-top: 1px solid rgba($dark-color, 0.1);
-							padding: 10px !important;
-							min-width: 150px;
-							
-							&:first-child{
-								border-left: 1px solid rgba($dark-color, 0.1);
-								border-radius: 10px 0 0 10px;
-							}
-							&:last-child{
-								border-right: 1px solid rgba($dark-color, 0.1);
-								border-radius: 0 10px 10px 0;
-							}
-						}
-						&:last-child{
-							td{
-								border-radius: 10px;
-							}
-						}
 						td{
 							&:nth-child(2){
 								min-width: 350px;
@@ -2538,6 +2519,12 @@ body #wrapwrap::-webkit-scrollbar{
 											}
 										}
 									}
+									.o_input{
+										border-radius: 6px;
+										padding: 6px 10px;
+										font-size: 15px;
+										border: 1px solid rgba($black, 0.17);
+									}
 								}
 							}
 
@@ -2560,13 +2547,16 @@ body #wrapwrap::-webkit-scrollbar{
 							&.o_sale_product_configurator_price{
 								.btn{
 									font-size: $title - 3;
-									padding: 3px 10px;
+									padding: 7px 12px;
 									color: $primary;
 									background: transparent;
 									border-radius: 10px;
 
 									span{
 										display: inline-block !important;
+									}
+									&::after{
+										display: none;
 									}
 
 									&:hover{
@@ -2579,16 +2569,65 @@ body #wrapwrap::-webkit-scrollbar{
 					}
 
 					&.o_sale_product_configurator_table_optional{
-						tr{
-							&:last-child{
-								td{
-									border-radius: 0;
+						display: block;
+						border-spacing: 0;
+						border-bottom: 0;
+						border-collapse: separate;
 
-									&:first-child{
-										border-radius: 10px 0 0 10px;
+						tbody{
+							display: flex;
+							flex-wrap: wrap;
+							justify-content: center;
+
+							tr{
+								flex: 0 0 calc(100% - 20px);
+								max-width: calc(100% - 20px);
+								margin: 0 10px 20px;
+								border: 1px solid rgba($dark-color, 0.1);
+								border-radius: 10px;
+								
+								@include min992{
+									flex: 0 0 35%;
+									max-width: 35%;
+								}
+
+								td{
+									display: block;
+									width: 100%;
+									border: 0;
+									text-align: left !important;
+									padding: 10px 10px 0 !important;
+									min-width: auto;
+
+									&.o_sale_product_configurator_img{
+										img{
+											width: 128px !important;
+											border-radius: 10px;
+										}
 									}
-									&:last-child{
-										border-radius: 0 10px 10px 0;
+									&.p-3{
+										.mb-4{
+											margin-bottom: 7px !important;
+										}
+									}
+									&.o_sale_product_configurator_qty, &.o_sale_product_configurator_price{
+										width: 50%;
+										display: inline-block;
+										padding-bottom: 10px !important;
+									}
+									&.o_sale_product_configurator_price{
+										text-align: right !important;
+									}
+									> div{
+										&[name="ptal"]{
+											> div{
+												flex-direction: column !important;
+
+												> *{
+													width: 100% !important;
+												}
+											}
+										}
 									}
 								}
 							}
@@ -2598,16 +2637,12 @@ body #wrapwrap::-webkit-scrollbar{
 			}
 			.modal-footer{
 				padding: 10px 16px;
+				margin: 0 -6px;
+				box-shadow: none;
 
 				.btn{
-					padding: 8px 6px !important;
-					line-height: 1.2 !important;
-					color: $light-color;
-					
-					@include min768{
-						padding: 11px 10px !important;
-						margin-right: 10px !important;
-					}
+					margin: 0 6px;
+					width: auto;
 				}
 			}
 		}

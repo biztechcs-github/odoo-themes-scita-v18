@@ -6710,7 +6710,7 @@ body #wrapwrap{
 								padding: 10px 20px;
 							}
 							&.active{
-								background-color: lighten($primary, 50%);
+								background-color: lighten($primary, 70%);
 								color: $primary;
 							}
 						}
@@ -9448,7 +9448,11 @@ body #wrapwrap{
 		.modal-dialog{
 			max-width: 400px;
 			padding: 6rem 0;
-			height: 100dvh;
+
+			@include min992{
+				max-height: 100dvh;
+				height: auto;
+			}
 
 			.modal-content{
 				height: 100%;
