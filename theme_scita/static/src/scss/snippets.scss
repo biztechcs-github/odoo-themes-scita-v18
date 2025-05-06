@@ -244,8 +244,8 @@ body #wrapwrap{
                 background-size: cover;
                 padding: 40px 30px 60px 30px;
                 height: 100%;
-                position: relative;
-				
+                position: relative;				
+				border-radius: 30px;
 				@include min992{
 					background-size: 100% 100%;
 					@include transition(all, 0.8s, ease-in-out);
@@ -255,10 +255,10 @@ body #wrapwrap{
 					}
 				}
                 @media (min-width: 768px){
-                    padding: 60px 30px;
+                    padding: 43px 30px 57px;
                 }
                 @media (min-width: 1024px){
-                    padding: 99px 50px;
+                    padding: 43px 60px 57px;
                 }
                 &::after{
                     content: "";
@@ -280,7 +280,7 @@ body #wrapwrap{
 					max-width: 70%;
 					
 					@include min992{
-						max-width: 54%;
+						max-width: 55%;
 					}
 
                     .title-20{
@@ -319,7 +319,7 @@ body #wrapwrap{
                     background-size: cover;
                     position: relative;
 					height: 100%;
-
+					border-radius: 30px;
 					@include min992{
 						background-size: 100% 100%;
 						@include transition(all, 0.8s, ease-in-out);
@@ -355,7 +355,7 @@ body #wrapwrap{
                         z-index: 1;
 						height: 100%;
 						@include flex;
-						@include justify-content-column-flex;
+						@include flex-column;
 						
                         @media (min-width: 768px){
                             padding: 43px 25px;
@@ -369,7 +369,7 @@ body #wrapwrap{
 							line-height: 1;
                         }
 						.title-26{
-							margin-bottom: 0;
+							margin-bottom: 30px;
 							color: $dark-color;
 							line-height: 1;
 
@@ -393,6 +393,30 @@ body #wrapwrap{
                 }
             }
         }
+		.solid-btn{
+			width: 60px;
+			height: 60px;
+			border-radius: 50%;
+			background: transparent;
+			border: 1px solid $white;
+			@include flex;
+			@include justify-align-content;
+			transition: 0.3s ease-in;
+			&:hover{
+				border: 1px solid $black;
+				background-color: $white;
+				img{
+					filter: initial;
+				}
+			}
+			img{
+			    filter: invert(1);
+				height: 22px;
+				width: auto;
+				transition: 0.3s ease-in;
+			}
+
+		}
     }
     
 }
@@ -8715,6 +8739,13 @@ body #wrapwrap{
         }
     }
     .bottom-row {
+		.owl-stage{
+			@include flex;
+			.owl-item{
+				@include flex;
+				flex: 1 0 auto;
+			}
+		}
 		.owl-nav {
 			position: absolute;
 			right: 15px;
@@ -8733,7 +8764,11 @@ body #wrapwrap{
 			padding: 10px 15px 18px;
 			border-radius: 10px;
 			@include transition(all, 0.3s, ease-in);
-
+			a{
+				height: 100%;
+				@include flex;
+				@include flex-column;
+			}
             .sct_cat_content {
                 text-align: center;
                 .pwpi-title {
@@ -8750,6 +8785,7 @@ body #wrapwrap{
 				}
             }
             .cs-img {
+				flex: 1;
                	img {
 					height: 100%;
 					object-fit: scale-down;

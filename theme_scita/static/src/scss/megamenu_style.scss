@@ -815,3 +815,79 @@ header .menu_style_2 .mega-dropdown-menu .inline-block .cat_img {
 	}
 }
 /*Mega menu hover img effect end*/
+
+// v 18.0 mega menu mobile css start here
+header{ 
+	@media (max-width: 991px) {		
+		ul.navbar-nav{ 
+			.nav-item{
+				&.dropdown{ 
+					.dropdown-menu{
+						&.mega-dropdown-menu{   
+							position: initial !important;
+							transform: initial !important;                        
+						}
+					}
+				}
+			}
+		}
+		.navbar{
+			.navbar-nav{
+				.li-mega-menu{
+					&.menu_style_2{
+						.mega-dropdown-menu{
+							.letter-spacing{
+								@include flex;
+								@include flexwrap;
+								.inline-block{                               
+									flex: 0 0 50%;
+									width: 50%;
+									max-width: 50% !important;                                
+									.cat_img{
+										a{                                     
+											display: block;                                       
+										}
+									}
+								}
+							}
+						}
+					}
+					&.menu_style_1{
+						.dropdown-menu {
+							.scita_cat_slider, .letter-spacing {
+								width:100%;
+							}
+							.letter-spacing{
+								padding: 0;
+							}
+						}
+					}
+					&.menu_style_3{
+						.dropdown-menu{
+						
+							.letter-spacing{
+								@include flex;
+								@include flexwrap;
+								text-align: center;
+								.inline-block{
+									width: 50%;
+								}
+							}
+							.img_banner_div{
+								text-align: center;
+							}
+						}
+					}
+				}
+				.letter-spacing{ 
+					.categories{
+						a{
+							font-size: $font-body - 3;
+						
+						}
+					}
+				}
+			}
+		}        
+	}
+}

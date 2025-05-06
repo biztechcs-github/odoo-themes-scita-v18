@@ -2729,9 +2729,6 @@
                             padding: 0 10px;
                             .o_header_social_links {
                                 .nav-link {
-                                    background: $light-color;
-                                    border-radius: 5px;
-                                    margin-left: 5px !important;
                                     .rounded-circle {
                                         width: 2rem;
                                         height: 2rem;
@@ -2739,6 +2736,13 @@
                                     }
                                     i{
                                         font-size: $font-body - 1;
+                                        color: $white;
+                                        transition: 0.3s ease-in;
+                                    }
+                                    &:hover{
+                                        i{
+                                            color: rgba($white, 0.7);
+                                        }
                                     }
                                 }
                             }
