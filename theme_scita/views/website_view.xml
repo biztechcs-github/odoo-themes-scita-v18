@@ -52,10 +52,12 @@
                                 
                                 <field name="category_slider" invisible="megamenu_view_type not in ('cat_megamenu') or img_grid == True"/>
                                 <field name="carousel_header_name"
-                                       invisible="category_slider == False"/>
+                                       invisible="category_slider == False or megamenu_view_type != 'cat_megamenu'"/>
                                 <field name="img_grid" invisible="megamenu_view_type not in ('cat_megamenu') or category_slider == True"/>
                                 <field name="category_slider_position"
-                                       invisible="category_slider == False and img_grid == False"/>
+                                       invisible="category_slider == False and img_grid == False or  megamenu_view_type != 'cat_megamenu'
+                                       
+                                       "/>
                                 <field name="display_menu_footer"/>
                                 <field name="menu_footer" widget="html"
                                     invisible="display_menu_footer == False"
@@ -63,7 +65,7 @@
                               </group>
                             </page>
                             <page string="Grid Image Configuration"
-                                invisible="img_grid == False">
+                                 invisible="megamenu_view_type != 'cat_megamenu' or img_grid == False">
                                 <group name="banner_image" string="Image Grid">
                                     <field name="banner_images_ids" class="o_website_sale_image_list" context="{'default_name': name}" mode="kanban" add-label="Add a Media" nolabel="1"/>
                                 </group>
