@@ -1583,7 +1583,7 @@
     </template>
     <template id="categorie_link_scita" inherit_id="website_sale.categorie_link">
         <xpath expr="//a" position="after">
-            <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
+        <span class='sct_category_count'>(<t t-esc="result.get(c.id,0)"/>)</span>
         </xpath>
     </template>
 </odoo>
