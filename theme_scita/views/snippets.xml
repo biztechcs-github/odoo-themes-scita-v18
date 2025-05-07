@@ -86,6 +86,9 @@
                     <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                     <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
                 </div>
+                <div t-if="product and product.product_style_tag_id.style=='style5'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                </div>
                 <a t-att-href="'/shop/product/%s' % slug(product)">
                     <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
                 </a>
@@ -234,6 +237,9 @@
                                         <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
                                         <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                         <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
+                                    </div>
+                                    <div t-if="product and product.product_style_tag_id.style=='style5'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
+                                        <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                     </div>
                                     <a t-att-href="'/shop/product/%s' % slug(product)">
                                         <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
@@ -395,6 +401,9 @@
                                                         <span class='sct-tag-name' t-att-style="'background-color: %s;' % slide.product_style_tag_id.color_code +'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                         <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % slide.product_style_tag_id.color_code"/>
                                                     </div>
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style5'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'background-color:%s' % slide.product_style_tag_id.color_code">
+                                                        <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
+                                                    </div>
                                                     <a t-att-href=" '/shop/product/%s' % slug(slide)">
                                                         <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
                                                     </a>
@@ -530,6 +539,9 @@
                     <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
                     <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                     <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
+                </div>
+                <div t-if="product and product.product_style_tag_id.style=='style5'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
+                    <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <a t-att-href="'/shop/product/%s' % slug(product)">
                     <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920','314x385')"/>
@@ -953,15 +965,15 @@
 			  <snippets id="theme_scita_groups" string="Theme Scita">
 				<t t-snippet="theme_scita.timer_snippet_body" t-thumbnail="/theme_scita/static/src/img/snippet_icon/timer.png" name="Style 2" priority="2" />
 				<!-- banner snippets -->
-				<t t-snippet="theme_scita.sct_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-ful-banner-1.1.png"/>
+				<t t-snippet="theme_scita.sct_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_slider_1.svg"/>
 				<t t-snippet="theme_scita.sct_banner_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-banner.png"/>
 				<t t-snippet="theme_scita.retail_sct_banner_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-banner.png"/>
-				<t t-snippet="theme_scita.it_main_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/banner_6.png"/>
+				<t t-snippet="theme_scita.it_main_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Banner_snippet_1.svg"/>
                 <t t-snippet="theme_scita.banner_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/hero-image-snippet.png"/>
 				<t t-snippet="theme_scita.dynamic_video_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/video-banner.png"/>
 				
 				<!-- Deal of the Day snippets -->
-				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-deal-of-day.png"/>
+				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_1.svg"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_3.png"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/deal-of-the-day-5.png"/>
 				<!-- Promo banners snippets -->
@@ -999,8 +1011,8 @@
 				<t t-snippet="theme_scita.testinomial_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_3.png"/>
 				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_5.png"/>				
 				<!-- Case Study veriants -->
-				<t t-snippet="theme_scita.health_cash_study_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/helth_case.png"/>
-				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Case_Study_Varient_2.png"/>
+				<t t-snippet="theme_scita.health_cash_study_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_1.svg"/>
+				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_2.svg"/>
 				<!-- service veriants -->
 				<t t-snippet="theme_scita.it_grids_service" t-thumbnail="/theme_scita/static/src/img/snippet_icon/ser_grid.png"/>
 				<t t-snippet="theme_scita.service_varient_7" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Service_Varient_7.png"/>
@@ -1047,14 +1059,14 @@
 
 				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
 			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_10.png"/>
+				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_3.svg"/>
 
 
 
 				<!-- About us -->
 				<t t-snippet="theme_scita.health_about_hospital" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us2.png"/>
-				<t t-snippet="theme_scita.about_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_3.png"/>
-				<t t-snippet="theme_scita.about_us_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_4.png"/>
+				<t t-snippet="theme_scita.about_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us_2.svg"/>
+				<t t-snippet="theme_scita.about_us_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us_3.svg"/>
 				<t t-snippet="theme_scita.about_us_v_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_5.png"/>
 				<!-- accordion_v_1 -->
 				<t t-snippet="theme_scita.accordion_v_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/accordion_1.png"/>
@@ -1083,12 +1095,12 @@
 				<!-- product and category snippet -->
 				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
 				<!-- Timeline snippets  -->
-				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_1.png"/>
-				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_3.png"/>
+				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_1.svg"/>
+				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_2.svg"/>
 				
 				<!-- portfolio_snippet_1 -->
 				<t t-snippet="theme_scita.portfolio_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Portfolio_2.png"/>
-				<t t-snippet="theme_scita.portfolio_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Portfolio_1.png"/>
+				<t t-snippet="theme_scita.portfolio_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/portfolio_snippet_2.svg"/>
 				<t t-snippet="theme_scita.it_portfolio_tabs_snippets" t-thumbnail="/theme_scita/static/src/img/snippet_icon/prot1.png"/>
 				<!-- newsletter snippets veriants -->
 				<t t-if="request.env['ir.module.module'].sudo().search([

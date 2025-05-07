@@ -57,7 +57,7 @@ class ProductStyleTags(models.Model):
     color_code = fields.Char(string='Color', required=True)
     font_color_code = fields.Char(string='Font Color', required=True)
     style = fields.Selection(
-        [('style1', 'Style 1'), ('style2', 'Style 2'), ('style3', 'Style 3'), ('style4', 'Style 4')], string="Style", required=True)
+        [('style1', 'Style 1'), ('style2', 'Style 2'), ('style3', 'Style 3'), ('style4', 'Style 4'), ('style5', 'Style 5')], string="Style", required=True)
     position = fields.Selection(
         [('left', 'Left'), ('right', 'Right')], string="Position", default='right', required=True)
     product_ids = fields.One2many(
