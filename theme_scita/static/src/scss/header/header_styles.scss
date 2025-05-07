@@ -83,6 +83,7 @@
                     .menu_right{
                         ul{
                             li{
+                                @include flexwrap;
                                 img{
                                     filter: contrast(0) brightness(1.5);
                                 }
@@ -106,11 +107,6 @@
                                         background: $light-color !important;
                                         color: $black !important;
                                         border-color: $light-color !important;
-                                    }
-                                    &.account_icon{
-                                        @include min992{
-                                            padding: 4px 0 !important;
-                                        }
                                     }
                                 }
                             }
@@ -161,11 +157,15 @@
         &.o_header_affixed {
             > .navbar{
                 padding-top: 10px;
+                
                 > .oe_structure, > .sct_text_block {
                     display: none;
                 }
                 > p{
                     display: none;                  
+                }
+                &.o_header_mobile{
+                    background-color: $white !important;
                 }
             }
         }
@@ -1230,6 +1230,12 @@
                                     }
                                 }
                             }
+                            &.configuration{
+                                @include min992{
+                                    position: relative;
+                                    padding: 4px 0;
+                                }
+                            }
                         }
                     }
                 }
@@ -2125,6 +2131,12 @@
                                     }
                                 }
                             }
+                            &.configuration{
+                                @include min992{
+                                    position: relative;
+                                    padding: 4px 0;
+                                }
+                            }
                         }
                     }
                 }
@@ -2939,6 +2951,7 @@ header{
                 .toggle-config{
                     position: absolute;
                     left: auto;
+                    top: 100%;
                     right: -10px;
                     width: 210px;
                     padding: 10px;
@@ -3742,6 +3755,13 @@ header{
                             border-radius: 50px;
                         }
                     }
+                    .account_icon{
+                        @include min992{
+                            padding: 4px 0 !important;
+                            display: block;
+                        }
+                    }
+
                 }
                 .category_dropdown{
                     position: relative;
