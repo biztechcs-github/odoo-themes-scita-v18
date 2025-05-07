@@ -126,7 +126,7 @@
                 <div class="row our-brands">
                     <div class="col-sm-12">
                         <t t-if="website_brands">
-                            <div class="owl-carousel sct-brand-slider-2" id="box_brands_slider_owl">
+                            <section class="owl-carousel sct-brand-slider-2" id="box_brands_slider_owl">
                                 <t t-as="brand" t-foreach="website_brands">
                                     <a t-attf-href="/shop/brands?brand=#{ brand.id }">
                                         <div class="sct_brand_box text-center">
@@ -136,7 +136,7 @@
                                         </div>
                                     </a>
                                 </t>
-                            </div>
+                            </section>
                         </t>
                     </div>
                 </div>

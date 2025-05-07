@@ -39,14 +39,14 @@
                         <div class='row'>
                             <t t-as="slide" t-foreach="blog_slider_details[:4]">
                                 <div class='col-lg-3 col-md-6 col-12'>
-                                    <div class='blog-thumb'>
+                                    <div class='blog-thumb' t-att-title="slide.name">
                                         <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_img' t-if="slide.cover_properties">
                                             <t t-set="cover_property" t-value="json.loads(slide.cover_properties)"/>
                                             <div class="section-post-media" t-attf-style="background-image: #{cover_property.get('background-image', 'none')}" t-if="slide.cover_properties">
                                             </div>
                                         </a>
                                         <div class='sct_blog_desc'>
-                                            <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_img' t-if="slide.cover_properties">
+                                            <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_title' t-if="slide.cover_properties">
                                                 <h3 class='sct_blog_name' t-out="slide.name"/>
                                             </a>
                                             <div class="sct_blog_detail row align-items-center">
@@ -111,7 +111,7 @@
                             <t t-set="cover_property" t-value="json.loads(slide.cover_properties)"/>
                             <div class="section-post-media" t-attf-style="background-image: #{cover_property.get('background-image', 'none')}" t-if="slide.cover_properties">
                             </div>
-                            <div class='sct_base_class'>
+                            <div class='sct_base_class' t-att-title="slide.name">
                                 <div class="sct_blog_content_wrap">
                                     <h3 t-field="slide.name"/>
                                     <div class="sct_blog_content">
@@ -170,7 +170,7 @@
                 <div class="blog_slider_wrap col-lg-9">
                     <div id='blog_5_owl_carosel' class="owl-carousel" t-if="blog_slider_details">
                         <t t-as="slide" t-foreach="blog_slider_details">
-                            <div class="sct_blog_box">
+                            <div class="sct_blog_box" t-att-title="slide.name">
                                 <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}">
                                     <div class="blog_top_detail">
                                         <div class="sct_label_wrap">
@@ -257,14 +257,16 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div class='sct_img_content'>
-                                        <h3 class='sct_blog_name' t-out="first_blog_slide.name"/>
-                                        <p class="blog-content">
-                                            <t t-if="first_blog_slide.subtitle">
-                                                <t t-out="first_blog_slide.subtitle[:150] + '...'"/>
-                                            </t>
-                                        </p>
-                                    </div>
+                                    <a t-attf-href="/blog/#{slug(first_blog_slide.blog_id)}/post/#{slug(first_blog_slide)}" class='it_blog_content' t-if="first_blog_slide.cover_properties">
+                                        <div class='sct_img_content'>
+                                            <h3 class='sct_blog_name' t-out="first_blog_slide.name"/>
+                                            <p class="blog-content">
+                                                <t t-if="first_blog_slide.subtitle">
+                                                    <t t-out="first_blog_slide.subtitle[:150] + '...'"/>
+                                                </t>
+                                            </p>
+                                        </div>
+                                    </a>
                                 </div>
                             </t>
                             <div class='sct_info_class col-md-6'>

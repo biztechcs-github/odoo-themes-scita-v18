@@ -1095,6 +1095,7 @@
                         @include flex;
                         @include align-content;
                         @include content-cn;
+                        border: 0 !important;
                     }
                 }
                 .account_icon{
@@ -2625,8 +2626,24 @@
             &.navbar {
                 @include min992 {
                     padding: 0;
+                    background-color: transparent;
                     #o_main_nav {
                         padding: 15px;
+                        .header_search_modal{
+                            a{
+                                background: transparent;
+                                font-size: $title;
+                                border: 0;
+                                padding: 0 !important;
+                                i{
+                                    width: auto;
+                                }
+                                img{
+                                    height: 20px;
+                                    width: auto;
+                                }
+                            }
+                        }
                         .sct-top-right-side {
                             margin-right: auto;
                             padding-left: 30px;
@@ -2650,6 +2667,13 @@
                                     + li {
                                         margin-left: 20px;
                                     }
+                                    a{
+                                        &:hover{
+                                            img{
+                                                opacity: 0.8;
+                                            }
+                                        }
+                                    }
                                 }
                             }
                             .currency-lang-ul {
@@ -2660,6 +2684,14 @@
                                     padding: 0;
                                     background: none;
                                     color: $black;
+                                    border: 0;
+                                }
+                                .dropdown-menu {
+                                    .dropdown-item{
+                                        &:hover{
+                                            background-color: $light-grey-color;
+                                        }
+                                    }
                                 }
                                 .o_pricelist_dropdown {
                                     margin-right: 0 !important;
@@ -2667,30 +2699,50 @@
                                 }
                             }
                         }
-                    }
+                    }                  
                     .bottom-header {
-                        background-color: $primary;
+                        padding: 0 0 15px;
+                        .bottom-header-menu{
+                            background-color: $primary;
+                            border-radius: 50px;
+                            padding: 0 20px;
+                        }
                         #top_menu {
                             max-width: 70%;
                             > .nav-item {
+                                padding: 0;
                                 > .nav-link {
-                                    color: $white !important;
+                                    color: $white;
+                                    padding: 10px 20px;
+                                    margin: 10px 0;
+                                    border-radius: 30px;
                                     &.active {
                                         font-weight: bold;
+                                        background-color: darken($primary, 20%);
                                     }
                                 }
                             }
                         }
                         .social-media-div {
-                            max-width: 28%;
+                            max-width: 30%;
                             text-align: right;
-                            padding-right: 15px;
+                            padding: 0 10px;
                             .o_header_social_links {
                                 .nav-link {
                                     .rounded-circle {
                                         width: 2rem;
                                         height: 2rem;
                                         line-height: 2rem;
+                                    }
+                                    i{
+                                        font-size: $font-body - 1;
+                                        color: $white;
+                                        transition: 0.3s ease-in;
+                                    }
+                                    &:hover{
+                                        i{
+                                            color: rgba($white, 0.7);
+                                        }
                                     }
                                 }
                             }
@@ -2701,14 +2753,51 @@
                         padding: 0;
                         margin: 0;
                     }
+                    > p, .sct_shipping_box{
+                        background-color: darken($primary, 20%);
+                        list-style: none;
+                        color: $white;
+                        padding: 5px 0;
+                        div{
+                            @include content-cn;
+                        }
+                    }
+                    .o_wsale_my_wish {
+                        a{
+                            border: 0;
+                        }
+                        .my_wish_quantity{
+                        
+                            border-color: $secondary !important;
+                        }
+                    }
+                    .o_wsale_my_cart{
+                        .my_cart_quantity{
+                            border-color: $secondary !important;
+                        }
+                    }
                 }
+                .navbar-brand.logo {
+                    @media (max-width: 991px) {
+                        padding: 10px 0;
+                    }
+                    img{
+                        @include min992{
+                            margin: auto;
+                        }
+                    }
+                }               
+                
             }
         }
         &.o_header_affixed {
             @include min992 {
                 .navbar {
-                    #o_main_nav {
+                    #o_main_nav, > p, .sct_shipping_box {
                         display: none !important;
+                    }
+                    .bottom-header{
+                        margin-top: 10px;
                     }
                 }
             }
@@ -2957,7 +3046,7 @@ header{
 
                         .my_cart_quantity{
                             font-size: 9px;
-                            background: $light-color !important;
+                            // background: $light-color !important;
                             top: 3px !important;
                             right: -1px !important;
                             color: $black;
@@ -2970,9 +3059,10 @@ header{
                         }
                         .badge{
                             font-size: 9px;
-                            background: $light-color !important;
+                            // background: $light-color !important;
                             top: 8px !important;
                             right: 5px !important;
+                            padding: 2px 3px;
                         }
                     }
                     .nav-link.btn{
@@ -3866,6 +3956,64 @@ header{
                     }
                 }
             }
+        }
+    }
+}
+
+#o_search_modal_block{
+    .modal-content{        
+        background: transparent;
+        border: 0;
+        .o_searchbar_form{
+            .input-group{
+                border-radius: 30px !important;
+                box-shadow: 0 0 10px 0 $black;
+                .form-control{
+                    background-color: $light-color !important;
+                    border-radius: 30px 0 0 30px !important;
+                    padding: 16px 20px !important;
+                }
+                .oe_search_button{
+                    position: relative;
+                    border-radius: 0 30px 30px 0 !important;
+                    background: $light-color !important;
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        left: 1px;
+                        top: 10px;
+                        bottom: 10px;
+                        width: 1px;
+                        background: rgba($dark-grey-color, 50%);
+                    }
+                }
+            }
+            .o_dropdown_menu{
+                margin-top: 10px;
+                border-radius: 30px;
+                box-shadow: 0 0 4px 0px $black;
+                padding: 20px 0;
+                a.dropdown-item{
+                    &:hover, &:focus{
+                        background: rgba($primary, 0.2);
+                    }
+                    .o_search_result_item {
+                        .o_search_result_item_detail{
+                            *{
+                                color: $black !important;
+                            }
+                        }
+                    }
+                }
+                button.dropdown-item{
+                    background: rgba($primary, 0.2);
+                    padding: 10px 0;
+                    margin-top: 10px;
+                    font-weight: 500;
+                    text-transform: capitalize;
+                }
+            }
+         
         }
     }
 }

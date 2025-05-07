@@ -6,12 +6,12 @@
             <div class="container">
                 <div class='row sct_top_row'>
                     <div class="col-md-12">
-                        <h2 class="section-title btm_seprator">Our Awesome Team</h2>
+                        <h2 class="section-title text-center">Our Awesome Team</h2>
                         <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
                     </div>
                 </div>
             </div>
-            <div class='container-fluid our_team_1' id="it_our_team">
+            <div class='container our_team_1' id="it_our_team">
             </div>
         </section>
     </template>
@@ -83,9 +83,6 @@
                                 <span t-esc="cust_employees.job_id.name"/>
                             </h4>
                         </div>
-                        <div class='sct_emp_desc'>
-                        	<p class='sct_simple_text' t-esc="cust_employees.emp_description"/>
-                        </div>
                     </div>     
                 </div>
             </t>
@@ -116,16 +113,21 @@
                     <div class="v-5-image-container">
                         <div class="only-image">
                             <img class="img-responsive" t-att-src="website.image_url(cust_employees, 'image_1920')"/>
-                            <div class="sct_hover_follow">
-                                <a t-att-href="'%s'%(cust_employees.emp_social_twitter)" t-if="cust_employees.emp_social_twitter">
-                                    <i class="fa fa-twitter"/>
-                                </a>
-                                <a t-att-href="'%s'%(cust_employees.emp_social_facebook)" t-if="cust_employees.emp_social_facebook">
-                                    <i class="fa fa-facebook"/>
-                                </a>
-                                <a t-att-href="'%s'%(cust_employees.emp_social_linkdin)" t-if="cust_employees.emp_social_linkdin">
-                                    <i  class="fa fa-linkedin"/>
-                                </a>
+                            <div class="user_content_hover_wrap">
+                                <div class='sct_emp_desc'>
+                                    <p class='sct_simple_text' t-esc="cust_employees.emp_description"/>
+                                </div>
+                                <div class="sct_hover_follow">
+                                    <a t-att-href="'%s'%(cust_employees.emp_social_twitter)" t-if="cust_employees.emp_social_twitter">
+                                        <i class="fa fa-twitter"/>
+                                    </a>
+                                    <a t-att-href="'%s'%(cust_employees.emp_social_facebook)" t-if="cust_employees.emp_social_facebook">
+                                        <i class="fa fa-facebook"/>
+                                    </a>
+                                    <a t-att-href="'%s'%(cust_employees.emp_social_linkdin)" t-if="cust_employees.emp_social_linkdin">
+                                        <i  class="fa fa-linkedin"/>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                         <div class="name">
@@ -133,9 +135,6 @@
                             <h4 class='sct_job_desig sct_blue_line'>
                                 <span t-esc="cust_employees.job_id.name"/>
                             </h4>
-                        </div>
-                        <div class='sct_emp_desc'>
-                        	<p class='sct_simple_text' t-esc="cust_employees.emp_description"/>
                         </div>
                     </div>     
                 </div>
