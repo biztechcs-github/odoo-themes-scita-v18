@@ -9,6 +9,7 @@
             }
         }
         .o_header_mobile{
+            padding: 10px 0 !important; 
             #o_main_nav{
                 .o_header_mobile_buttons_wrap{
                     li{
@@ -17,6 +18,10 @@
                         }
                     }
                 }
+            }
+            .o_main_nav{
+                display: flex !important;
+                @include flexwrap;
             }
         }
         .navbar {
@@ -79,7 +84,7 @@
                         ul{
                             li{
                                 img{
-                                    filter: contrast(0) brightness(1);
+                                    filter: contrast(0) brightness(1.5);
                                 }
                                 > a {
                                     color: fade-out($light-color, 0.5) !important;
@@ -95,10 +100,17 @@
                                     .my_cart_quantity{
                                         background: $light-color !important;
                                         color: $black;
+                                        border-color: $light-color !important;
                                     }
                                     .badge{
                                         background: $light-color !important;
                                         color: $black !important;
+                                        border-color: $light-color !important;
+                                    }
+                                    &.account_icon{
+                                        @include min992{
+                                            padding: 4px 0 !important;
+                                        }
                                     }
                                 }
                             }
@@ -151,6 +163,9 @@
                 padding-top: 10px;
                 > .oe_structure, > .sct_text_block {
                     display: none;
+                }
+                > p{
+                    display: none;                  
                 }
             }
         }
@@ -268,8 +283,8 @@
                 }
             }
             .scita_top_menu {
-                flex: 0 0 75%;
-                max-width: 75%;
+                flex: 0 0 71%;
+                max-width: 71%;
                 margin-left: 20px;
                 margin-right: 10px !important;
                 
@@ -381,6 +396,8 @@
                     @include flex;
                     li {
                         position: relative;
+                        @include flex;
+                        @include align-content;
                         img{
                             width: 23px;
                         }
@@ -407,6 +424,7 @@
                             .badge{
                                 font-size: 9px;
                                 background: $black !important;
+                                border-color: $black !important;
                                 color: $light-color !important;
                                 top: -1px !important;
                                 right: -5px !important;
@@ -414,6 +432,7 @@
                             .my_cart_quantity{
                                 font-size: 9px;
                                 background: $black !important;
+                                border-color: $black !important;
                                 top: -5px !important;
                                 right: -9px !important;
                                 color: $light-color;
@@ -631,6 +650,9 @@
             }
           
         }
+        .o_header_mobile{
+            padding: 10px 0 !important;
+        }
         .o_dropdown_menu {
             height: 450px;
             overflow-y: auto;
@@ -777,6 +799,12 @@
                                 height: auto;
                                 border: 0;
                                 display: block;
+                                background-color: transparent !important;
+                                &:hover{
+                                    img{
+                                        opacity: 0.8;
+                                    }
+                                }
                             }
                             + li {
                                 margin-left: 15px;
@@ -1233,6 +1261,7 @@
             
             @include min992{
                 flex-direction: row;
+                @include align-content;
                 padding: 0;
             }
             
@@ -1499,7 +1528,7 @@
 
                 .deal_right{
                     padding-left: 10px;
-                    font-size: 13px;
+                    font-size: 11px;
                     color: $light-color;
                     max-width: calc(100% - 40px);
 
@@ -1552,7 +1581,7 @@
             }
         }
         .o_header_mobile{
-            padding: 0;
+            padding: 10px 0 !important;
             #o_main_nav{
                 background: transparent;
                 flex-direction: row;
@@ -1753,9 +1782,17 @@
 
                 p{
                     margin: 0;
+                    small{
+                        font-size: $font-body - 3;
+                    }
                 }
                 li{
                     list-style: none;
+                    &.sct_text_block{
+                        small{
+                            font-size: $font-body - 3;
+                        }
+                    }
                 }
     
                 ul{
@@ -1972,6 +2009,7 @@
                         width: 17px !important;
                         height: 17px !important;
                         background: $secondary !important;
+                        border-color: $secondary !important;
                         color: $light-color !important;
                         @include flex;
                         @include align-content;
@@ -2360,6 +2398,7 @@
                 justify-content: flex-end;
                 padding: 3px 10px;
                 width: 100%;
+                padding-right: 0;
                 
                 @include min992{
                     flex: 0 0 210px;
@@ -2447,7 +2486,7 @@
             }
         }
         .o_header_mobile{
-            padding: 0;
+            padding: 10px 0 !important;
             #o_main_nav{
                 background: transparent;
                 flex-direction: row;
@@ -2522,6 +2561,7 @@
                         width: 17px;
                         height: 17px;
                         background: $secondary !important;
+                        border-color: $secondary !important;
                         color: $light-color !important;
                         border-radius: 50px;
                         position: absolute;
@@ -2789,6 +2829,9 @@
                 }               
                 
             }
+        }
+        .o_header_mobile{
+            padding: 10px 0 !important;
         }
         &.o_header_affixed {
             @include min992 {
@@ -3678,6 +3721,7 @@ header{
         
                     .my_wish_quantity, .my_cart_quantity{
                         background-color: $secondary !important;
+                        border-color: $secondary !important;
                         color: $light-color !important;
                         font-size: 9px;
                         padding: 0;

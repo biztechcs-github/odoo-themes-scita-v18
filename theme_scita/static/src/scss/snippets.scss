@@ -10354,19 +10354,10 @@ body #wrapwrap{
 
 // client_testimonial_slider section css start here
 .client_testimonial_slider{
-    padding: 35px 0;
-    @include min768{
-        padding: 45px 0;
-    }
-    @include min1024{
-        padding: 50px 0;
-    }
-	@include min1200{
+    padding: 50px 0;
+   	@include min992{
 		padding: 60px 0;
-	}	
-	@include min1440{
-		padding: 70px 0;
-	}
+   	}
     .section-title-wrapper{
 		text-align: center;
 
@@ -10400,9 +10391,13 @@ body #wrapwrap{
                 margin-bottom: 0;
             }
             .testimonial_block_inner{
-                background: #F3F4F8;
+				background: linear-gradient(180deg, rgba($white, 1) 0%, rgba($primary, 0.1) 100%);
                 padding: 25px;
 				position: relative;
+				border-radius: 30px;
+				border: 1px solid lighten($dark-grey-color , 54%);
+				box-shadow: 0px 0px 33.9px 0px rgba($black, 0.05);				;
+				overflow: hidden;
                 @include min1024{
                     @include flex;
                     @include flex-wrap-common;
@@ -10504,11 +10499,15 @@ body #wrapwrap{
                     }
                     .quote-icon {
                         position: absolute;
-                        top: 10px;
-                        right: 10px;
+                        top: 20px;
+                        right: 20px;
                         width: 30px;
                         height: 30px;
-						opacity: 0.2;
+						background-color: $primary;
+						@include flex;
+						@include justify-align-content;
+						color: $white;
+						border-radius: 50%;
                     }
                 }
             }
@@ -10538,7 +10537,9 @@ body #wrapwrap{
         }
 		&:not(.right-side){
 			.section-title-wrapper{
-				min-height: 34px;
+				@media (max-width: 767px){
+					min-height: 34px;
+				}
 				@include align-content;
 			}
 		}
