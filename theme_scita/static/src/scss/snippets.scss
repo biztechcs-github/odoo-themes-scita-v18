@@ -110,10 +110,10 @@ body #wrapwrap{
 // New banner snippet
 .sct_banner_1 {
 	overflow: hidden;
-	padding: 50px 0;
-	@include min992{
-		padding: 60px 0;
-	}
+	// padding: 50px 0;
+	// @include min992{
+	// 	padding: 60px 0;
+	// }
 	@media (max-width: 991px){
 		height: auto !important;
 	}
@@ -2462,10 +2462,7 @@ body #wrapwrap{
 						font-size: 15px;
 						font-weight: 400;
 						border-radius: 0px;
-						margin-top: 50px;
-						@media (max-width: 1199px){
-							margin-top: 30px;
-						}
+						margin-top: 30px;
 						.owl-nav {
 							display: flex;
 							button{
@@ -3160,8 +3157,11 @@ body #wrapwrap{
 					top: 0;
 					bottom: 0;
 					margin: auto;
-					.scita_cstm_btn{
+					.js_subscribe_btn{
 						border-radius: 0 6px 6px 0;
+						height: 100%;
+						@include flex;
+						@include align-content;
 					}	
 				}
 			}
@@ -10754,6 +10754,9 @@ body #wrapwrap{
                     background-repeat: no-repeat;
                     background-size: cover;
                 }
+				@include min992{
+					border-radius: 30px 0 0 30px;
+				}
                 @include min1200{
                     flex: 0 0 45%;
                     max-width: 45%;
@@ -10792,6 +10795,9 @@ body #wrapwrap{
                     flex: 0 0 50%;
                     max-width: 50%;
                 }
+				@include min992{
+					border-radius: 0 30px 30px 0;
+				}
                 @include min1200{
                     flex: 0 0 55%;
                     max-width: 55%;
@@ -10888,9 +10894,14 @@ body #wrapwrap{
                 .item{
                     position: relative;
                     height: 100%;
+					a{
+						border-radius: 30px;
+						overflow: hidden;
+					}
                     img{
                         height: 100%;
                         object-fit: cover;
+						border-radius: 30px;
                     }
                 }
             }
