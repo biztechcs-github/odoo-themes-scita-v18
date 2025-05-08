@@ -242,7 +242,7 @@ body #wrapwrap{
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: cover;
-                padding: 40px 30px 60px 30px;
+                padding: 30px 25px;
                 height: 100%;
                 position: relative;				
 				border-radius: 30px;
@@ -270,6 +270,8 @@ body #wrapwrap{
                     top: 10px;
                     background: rgba(1, 1, 1, 0.1);
                     z-index: 0;
+                    border-radius: 30px;
+
                     @media (min-width: 1024px){
                         display: none;
                     }
@@ -278,17 +280,16 @@ body #wrapwrap{
                     position: relative;
                     z-index: 1;
 					max-width: 70%;
-					
-					@include min992{
-						max-width: 55%;
-					}
+					@include flex;
+					@include flex-column;
+					height: 100%;					
 
                     .title-20{
                         margin-bottom: 5px;
 						line-height: 1.1;
                     }
                     .title-26{
-                        margin: 15px 0;
+                        margin: 30px 0;
 						line-height: 1.3;
 						@media (min-width: 1024px){
 							margin: 25px 0 30px;
@@ -361,7 +362,7 @@ body #wrapwrap{
                             padding: 43px 25px;
                         }
                         @media (min-width: 1024px){
-                            padding: 53px 25px;
+                            padding: 43px 40px 57px;
                         }
                         .title-20{
 							margin-bottom: 5px;
@@ -394,20 +395,25 @@ body #wrapwrap{
             }
         }
 		.solid-btn{
-			width: 60px;
-			height: 60px;
+			width: 40px;
+			height: 40px;
 			border-radius: 50%;
 			background: transparent;
 			border: 1px solid $white;
 			@include flex;
 			@include justify-align-content;
 			transition: 0.3s ease-in;
+			margin-top: auto;
 			&:hover{
 				border: 1px solid $black;
 				background-color: $white;
 				img{
 					filter: initial;
 				}
+			}
+			@include min992{
+				width: 60px;
+				height: 60px;
 			}
 			img{
 			    filter: invert(1);
@@ -7794,7 +7800,7 @@ body #wrapwrap{
 			text-align: center;			
 		}
 		.sct-brand-slider-2{
-			background-color: $light-color;
+			background-color: lighten($light-grey-color, 2.5%);
 			border-radius: 5px;
 			box-shadow:0 0 4px 2px rgba($dark-grey-color, 0.2);
 		}
@@ -10879,6 +10885,8 @@ body #wrapwrap{
         }
         .deal-top-slider{
             height: 100%;
+			border-radius: 30px;
+			overflow: hidden;
             .deal-slider{
                 position: unset;
                 height: 100%;
@@ -10915,6 +10923,8 @@ body #wrapwrap{
 			background-image: url(../img/grocery/deal-conter-bg-new.png);
 			background-repeat: no-repeat;
 			background-size: cover;
+			background-size: cover;
+			border-radius: 0 0 30px 30px;
             
             .deal-content {
                 max-width: 278px;
