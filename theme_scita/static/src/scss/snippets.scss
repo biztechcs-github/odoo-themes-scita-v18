@@ -110,10 +110,10 @@ body #wrapwrap{
 // New banner snippet
 .sct_banner_1 {
 	overflow: hidden;
-	padding: 50px 0;
-	@include min992{
-		padding: 60px 0;
-	}
+	// padding: 50px 0;
+	// @include min992{
+	// 	padding: 60px 0;
+	// }
 	@media (max-width: 991px){
 		height: auto !important;
 	}
@@ -535,13 +535,14 @@ body #wrapwrap{
 			.sct_banner_content, .slider-content{
 				.solid-btn{
 					color: $dark-color;
-					padding: 0 4px 4px;
+					padding: 0 3px 4px 0;
 					border: 0;
 					border-bottom: 1px solid $dark-color;
 					background: transparent;
 					border-radius: 0;
 					font-weight: 500;
 					margin: 10px 0;
+					line-height: 1;
 
 					&::after{
 						content: '';
@@ -600,7 +601,7 @@ body #wrapwrap{
                     padding: 60px 30px;
                 }
                 @media (min-width: 1024px){
-                    padding: 99px 50px;
+                    padding: 70px 50px;
                 }
                 .slider-content{
 					order: 1;
@@ -644,6 +645,7 @@ body #wrapwrap{
 					@include align-content-column-flex;
 				}
 				.sct_banner_content{
+					width: 100%;
 					@include min768{
 						padding-bottom: 20px;
 					}
@@ -671,20 +673,23 @@ body #wrapwrap{
 
 			.sct_top_deal{
 				height: 100%;
-			}
-			.top-deal-content{
 				padding: 30px 25px;
 				position: relative;
 				z-index: 1;
 				height: 100%;
-				@include flex-wrap-common;
-				@include align-content;
-				@include content-sb;
 				background-color: #f8f3ef;
+				display: flex;
+				align-items: centers;
 				
 				@media (min-width: 768px){
 					padding: 40px 25px;
 				}
+			}
+			.top-deal-content{
+				@include flex-wrap-common;
+				@include align-content;
+				@include content-sb;
+				
 				.sct_banner_content{
 					order: 1;
 					margin-top: 25px;
@@ -1051,7 +1056,8 @@ body #wrapwrap{
 		padding: 60px 0 30px;
 	}
 	.sct_thumb{
-		margin-bottom: 30px;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 	.sct_trust_box{
 		@include flex;
@@ -8125,6 +8131,7 @@ body #wrapwrap{
                 background-color: lighten($light-grey-color, 3%);
 				border: 1px solid transparent;
 				@include transition(all, 0.3s, ease-in);
+				overflow: hidden;
 
                 @media (min-width: 768px){
                     height: 135px;
@@ -8140,12 +8147,12 @@ body #wrapwrap{
                     height: auto;
                     width: auto;
                     @media (min-width: 768px){
-                        max-width: 90px;
-                        max-height: 90px;
-                    }
-                    @media (min-width: 1200px){
                         max-width: 100px;
                         max-height: 100px;
+                    }
+                    @media (min-width: 1200px){
+                        max-width: 120px;
+                        max-height: 120px;
                     }
                 }
             }
@@ -8827,7 +8834,14 @@ body #wrapwrap{
 			margin-bottom: 10px;
 
 			.cs-img{
-				padding: 10px;
+				padding: 13px;
+				height: 177px;
+				@include flex;
+				@include justify-align-content;
+
+				img{
+					border-radius: 20px;
+				}
 			}
             .sct_cat_content {
                 background: $light-color;
