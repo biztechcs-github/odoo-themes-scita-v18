@@ -2758,6 +2758,7 @@
                             background-color: $primary;
                             border-radius: 50px;
                             padding: 0 20px;
+                            margin: 0;
                         }
                         #top_menu {
                             max-width: 70%;
@@ -2765,12 +2766,16 @@
                                 padding: 0;
                                 > .nav-link {
                                     color: $white;
-                                    padding: 10px 20px;
-                                    margin: 10px 0;
-                                    border-radius: 30px;
+                                    // padding: 20px 0;
+                                    padding: 15px 0;
+                                    // margin: 10px 0;
+                                    margin: 0 20px;                                
+                                    // border-radius: 30px;
+                                    border-bottom: 4px solid transparent;
                                     &.active {
-                                        font-weight: bold;
-                                        background-color: darken($primary, 20%);
+                                        // font-weight: bold;
+                                        // background-color: darken($primary, 20%);
+                                        border-bottom: 4px solid $secondary;
                                     }
                                 }
                             }
@@ -2806,7 +2811,8 @@
                         margin: 0;
                     }
                     > p, .sct_shipping_box{
-                        background-color: darken($primary, 20%);
+                        // background-color: darken($primary, 20%);
+                        background-color: $secondary;
                         list-style: none;
                         color: $white;
                         padding: 5px 0;
