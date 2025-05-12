@@ -248,15 +248,15 @@
                     <div class="col-md-6 col-lg-3 sct_deal_vertical">
                         <section class="sct_top_deal">
                             <div class="vertical-banner-content">
+                                <div class="sct_banner_img pb-4">
+                                    <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
+                                </div>
                                 <div class="sct_banner_content">
-                                    <p class="title-20 text-uppercase text-tag">Up to 50%</p>
+                                    <p class="title-20 text-uppercase text-tag">Up to <span class="h3-fs">50%</span></p>
                                     <h3 class="section-title-big">SALE</h3>
                                     <h5 class="title-20 text-uppercase">Get new smartphone</h5>
                                     <p class="title-18 sub-text">Lorem ipsum is a dummy or placeholder text</p>
                                     <a href="#" alt-="Shop now" title="Shop now" class="btn btn-primary solid-btn">Shop now</a>
-                                </div>
-                                <div class="sct_banner_img">
-                                    <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt='Banner image'/>
                                 </div>
                             </div>
                         </section>

@@ -40,7 +40,7 @@
                                 </h2>
                             </div>
                             <div class="trending_prod_inner d-flex flex-wrap justify-content-between">
-                                <ul id="trending_products_categories" class="nav nav-tabs" style="background-image : url(/web/image/theme_scita.sct_trending_product_bg);">
+                                <ul id="trending_products_categories" class="nav nav-tabs">
                                     <t t-set="count" t-value="1"/>
                                     <t t-foreach="trending_products_categories_details" t-as="trend_product">
                                         <t t-if="count == 1">
