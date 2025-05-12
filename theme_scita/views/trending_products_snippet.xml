@@ -36,7 +36,9 @@
                         <div class="psb-inner">
                             <div class="title-block ">
                                 <h2 class="section-title style1">
-                                    Trending Products
+                                     <t t-if="config and config.name">
+                                        <t t-esc="config.name"/>
+                                    </t>
                                 </h2>
                             </div>
                             <div class="trending_prod_inner d-flex flex-wrap justify-content-between">
