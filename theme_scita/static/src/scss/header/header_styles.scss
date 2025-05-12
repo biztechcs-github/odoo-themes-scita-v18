@@ -9,6 +9,7 @@
             }
         }
         .o_header_mobile{
+            padding: 10px 0 !important; 
             #o_main_nav{
                 .o_header_mobile_buttons_wrap{
                     li{
@@ -17,6 +18,10 @@
                         }
                     }
                 }
+            }
+            .o_main_nav{
+                display: flex !important;
+                @include flexwrap;
             }
         }
         .navbar {
@@ -78,8 +83,9 @@
                     .menu_right{
                         ul{
                             li{
+                                @include flexwrap;
                                 img{
-                                    filter: contrast(0) brightness(1);
+                                    filter: contrast(0) brightness(1.5);
                                 }
                                 > a {
                                     color: fade-out($light-color, 0.5) !important;
@@ -95,10 +101,12 @@
                                     .my_cart_quantity{
                                         background: $light-color !important;
                                         color: $black;
+                                        border-color: $light-color !important;
                                     }
                                     .badge{
                                         background: $light-color !important;
                                         color: $black !important;
+                                        border-color: $light-color !important;
                                     }
                                 }
                             }
@@ -149,8 +157,15 @@
         &.o_header_affixed {
             > .navbar{
                 padding-top: 10px;
+                
                 > .oe_structure, > .sct_text_block {
                     display: none;
+                }
+                > p{
+                    display: none;                  
+                }
+                &.o_header_mobile{
+                    background-color: $white !important;
                 }
             }
         }
@@ -268,8 +283,8 @@
                 }
             }
             .scita_top_menu {
-                flex: 0 0 75%;
-                max-width: 75%;
+                flex: 0 0 71%;
+                max-width: 71%;
                 margin-left: 20px;
                 margin-right: 10px !important;
                 
@@ -381,6 +396,8 @@
                     @include flex;
                     li {
                         position: relative;
+                        @include flex;
+                        @include align-content;
                         img{
                             width: 23px;
                         }
@@ -407,6 +424,7 @@
                             .badge{
                                 font-size: 9px;
                                 background: $black !important;
+                                border-color: $black !important;
                                 color: $light-color !important;
                                 top: -1px !important;
                                 right: -5px !important;
@@ -414,6 +432,7 @@
                             .my_cart_quantity{
                                 font-size: 9px;
                                 background: $black !important;
+                                border-color: $black !important;
                                 top: -5px !important;
                                 right: -9px !important;
                                 color: $light-color;
@@ -631,6 +650,9 @@
             }
           
         }
+        .o_header_mobile{
+            padding: 10px 0 !important;
+        }
         .o_dropdown_menu {
             height: 450px;
             overflow-y: auto;
@@ -717,6 +739,15 @@
                 .o_header_social_links {
                     margin-left: 20px;
                     .nav-link {
+                        i{
+                            color: $light-color !important;
+                            transition: 0.3s ease-in;
+                        }
+                        &:hover{
+                            i{
+                                color: rgba($light-color, 0.7) !important;
+                            }
+                        }
                         .rounded-circle {
                             width: 2rem;
                             height: 2rem;
@@ -777,6 +808,12 @@
                                 height: auto;
                                 border: 0;
                                 display: block;
+                                background-color: transparent !important;
+                                &:hover{
+                                    img{
+                                        opacity: 0.8;
+                                    }
+                                }
                             }
                             + li {
                                 margin-left: 15px;
@@ -881,7 +918,16 @@
                         font-size: 13px;
                         list-style: none;
                         a, .btn {
-                            color: $white !important;
+                            color: $white !important;                           
+                            i{
+                                color: $light-color !important;
+                                transition: 0.3s ease-in;
+                            }
+                            &:hover{
+                                i{
+                                    color: rgba($light-color, 0.7) !important;
+                                }
+                            }
                         }
                         @include min1024{
                             font-size: 15px;
@@ -1202,6 +1248,12 @@
                                     }
                                 }
                             }
+                            &.configuration{
+                                @include min992{
+                                    position: relative;
+                                    padding: 4px 0;
+                                }
+                            }
                         }
                     }
                 }
@@ -1218,6 +1270,7 @@
             .category_dropdown {
                 .dropdown-toggle {
                     color: $white !important;
+                    margin: 0 !important;
                 }
             }
             #top_menu {
@@ -1233,6 +1286,7 @@
             
             @include min992{
                 flex-direction: row;
+                @include align-content;
                 padding: 0;
             }
             
@@ -1318,10 +1372,11 @@
                 > .nav-item{
                     padding: 0 9px;
                     position: initial;
-
+                    @include min992{
+                        line-height: 70px;
+                    }
                     @include min1440{
                         padding: 0 12px;
-                        line-height: 73px;
                     }
                     .megamenu_dropdown{
                         margin: 0;
@@ -1499,7 +1554,7 @@
 
                 .deal_right{
                     padding-left: 10px;
-                    font-size: 13px;
+                    font-size: 11px;
                     color: $light-color;
                     max-width: calc(100% - 40px);
 
@@ -1552,7 +1607,7 @@
             }
         }
         .o_header_mobile{
-            padding: 0;
+            padding: 10px 0 !important;
             #o_main_nav{
                 background: transparent;
                 flex-direction: row;
@@ -1753,9 +1808,17 @@
 
                 p{
                     margin: 0;
+                    small{
+                        font-size: $font-body - 3;
+                    }
                 }
                 li{
                     list-style: none;
+                    &.sct_text_block{
+                        small{
+                            font-size: $font-body - 3;
+                        }
+                    }
                 }
     
                 ul{
@@ -1861,7 +1924,15 @@
     
                         a{
                             color: $light-color;
-    
+                            i{
+                                color: $light-color !important;
+                                transition: 0.3s ease-in;
+                            }
+                            &:hover{
+                                i{
+                                    color: rgba($light-color, 0.7) !important;
+                                }
+                            }
                             img{
                                 margin-right: 5px;
                             }
@@ -1972,6 +2043,7 @@
                         width: 17px !important;
                         height: 17px !important;
                         background: $secondary !important;
+                        border-color: $secondary !important;
                         color: $light-color !important;
                         @include flex;
                         @include align-content;
@@ -2085,6 +2157,12 @@
                                         top: 0;
                                         right: 0;
                                     }
+                                }
+                            }
+                            &.configuration{
+                                @include min992{
+                                    position: relative;
+                                    padding: 4px 0;
                                 }
                             }
                         }
@@ -2360,6 +2438,7 @@
                 justify-content: flex-end;
                 padding: 3px 10px;
                 width: 100%;
+                padding-right: 0;
                 
                 @include min992{
                     flex: 0 0 210px;
@@ -2447,7 +2526,7 @@
             }
         }
         .o_header_mobile{
-            padding: 0;
+            padding: 10px 0 !important;
             #o_main_nav{
                 background: transparent;
                 flex-direction: row;
@@ -2522,6 +2601,7 @@
                         width: 17px;
                         height: 17px;
                         background: $secondary !important;
+                        border-color: $secondary !important;
                         color: $light-color !important;
                         border-radius: 50px;
                         position: absolute;
@@ -2706,6 +2786,8 @@
                             background-color: $primary;
                             border-radius: 50px;
                             padding: 0 20px;
+                            margin: 0;
+                            position: relative;
                         }
                         #top_menu {
                             max-width: 70%;
@@ -2713,12 +2795,16 @@
                                 padding: 0;
                                 > .nav-link {
                                     color: $white;
-                                    padding: 10px 20px;
-                                    margin: 10px 0;
-                                    border-radius: 30px;
+                                    // padding: 20px 0;
+                                    padding: 15px 0;
+                                    // margin: 10px 0;
+                                    margin: 0 20px;                                
+                                    // border-radius: 30px;
+                                    border-bottom: 4px solid transparent;
                                     &.active {
-                                        font-weight: bold;
-                                        background-color: darken($primary, 20%);
+                                        // font-weight: bold;
+                                        // background-color: darken($primary, 20%);
+                                        border-bottom: 4px solid $secondary;
                                     }
                                 }
                             }
@@ -2754,7 +2840,8 @@
                         margin: 0;
                     }
                     > p, .sct_shipping_box{
-                        background-color: darken($primary, 20%);
+                        // background-color: darken($primary, 20%);
+                        background-color: $secondary;
                         list-style: none;
                         color: $white;
                         padding: 5px 0;
@@ -2789,6 +2876,9 @@
                 }               
                 
             }
+        }
+        .o_header_mobile{
+            padding: 10px 0 !important;
         }
         &.o_header_affixed {
             @include min992 {
@@ -2896,6 +2986,7 @@ header{
                 .toggle-config{
                     position: absolute;
                     left: auto;
+                    top: 100%;
                     right: -10px;
                     width: 210px;
                     padding: 10px;
@@ -3678,6 +3769,7 @@ header{
         
                     .my_wish_quantity, .my_cart_quantity{
                         background-color: $secondary !important;
+                        border-color: $secondary !important;
                         color: $light-color !important;
                         font-size: 9px;
                         padding: 0;
@@ -3698,6 +3790,13 @@ header{
                             border-radius: 50px;
                         }
                     }
+                    .account_icon{
+                        @include min992{
+                            padding: 4px 0 !important;
+                            display: block;
+                        }
+                    }
+
                 }
                 .category_dropdown{
                     position: relative;
