@@ -12,13 +12,17 @@
                             <p>If you are unable to load any pages, check your comput.</p>
                         </div>
                         <div class="input-group s_newsletter_list js_subscribe_wrap js_subscribe" data-list-id="0">
+                            <div class="js_subscribed_wrap d-none">
+                                <p class="h4-fs text-center text-success">
+                                    <i class="fa fa-check-circle-o" role="img"/>
+                            Thanks for registering!</p>
+                            </div>
                             <div class="newsletter_box js_subscribe_wrap">
                                 <input class="popup_subscribe_email js_subscribe_value form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary js_subscribe_btn o_submit" href="#">Submit</a>
-                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit js_subscribed_wrap" disabled="disabled">Thanks</a>
                                 </span>
-                                <div class="mt-2 alert alert-success o_hidden js_subscribed_wrap">Thanks for your subscription!</div>
                             </div>
                         </div>
                     </div>
@@ -27,7 +31,7 @@
         </section>
     </template>
     <!-- It Newslatter -->
-     <template id="it_sign_up_newsletter" name="Newsletter Snippet 1">
+    <template id="it_sign_up_newsletter" name="Newsletter Snippet 1">
         <section class="it_sign_up_newsletter" data-disp="newsletter" data-list-id="0">
             <div class="container">
                 <div class="row align-items-center">
@@ -41,14 +45,18 @@
                         </div>
                     </div>
                     <div class="col-lg-6 sct_btm_row">
-                        <div class="input-group s_newsletter_list js_subscribe_wrap" data-list-id="0">
+                        <div class="input-group s_newsletter_list js_subscribe_wrap js_subscribe" data-list-id="0">
+                            <div class="js_subscribed_wrap d-none">
+                                <p class="h4-fs text-center text-success">
+                                    <i class="fa fa-check-circle-o" role="img"/>
+                            Thanks for registering!</p>
+                            </div>
                             <div class="newsletter_box js_subscribe_wrap">
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Enter Your Email..." type="email" name="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary js_subscribe_btn o_submit" href="#">Submit</a>
-                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit js_subscribed_wrap" disabled="disabled">Thanks</a>
                                 </span>
-                            <div class="mt-2 alert alert-success o_hidden">Thanks for your subscription!</div>
                             </div>
                         </div>
                     </div>
@@ -68,18 +76,17 @@
                     </div>
                     <div class="col-md-6 sct_control_box">
                         <div class="input-group s_newsletter_list js_subscribe_wrap js_subscribe" data-list-id="0">
+                            <div class="js_subscribed_wrap d-none">
+                                <p class="h4-fs text-center text-success">
+                                    <i class="fa fa-check-circle-o" role="img"/>
+                            Thanks for registering!</p>
+                            </div>
                             <div class='newsletter_box js_subscribe_wrap'>
                                 <input class="popup_subscribe_email js_subscribe_value form-control" placeholder="Please Enter Your Email*" name="email" type="email"/>
                                 <span class="input-group-btn">
                                     <a class="btn btn-primary scita_cstm_btn js_subscribe_btn sct_blue_btn o_submit" href="#">Submit</a>
-                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
+                                    <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit js_subscribed_wrap" disabled="disabled">Thanks</a>
                                 </span>
-                                <div class="js_subscribed_wrap d-none">
-                                    <p class="h4-fs text-center text-success">
-                                        <i class="fa fa-check-circle-o" role="img"/>
- Thanks for registering!</p>
-                                </div>
-                                <!-- <div class="alert alert-success o_hidden">Thanks for your subscription!</div> -->
                             </div>
                         </div>
                     </div>

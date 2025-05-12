@@ -16,7 +16,48 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
          },
          waitForElementToDisplay(selector,time) {
              var self = this;
-             if(document.querySelector(selector)!=null && document.querySelector("#theme_scita_groups")!=null) {
+             const target = document.querySelector("#theme_scita_groups");
+             const parent = target?.parentElement;
+             if(parent) {
+                 const html = `<div id="scita_snippets">\
+                     <span class="fa-stack d-inline-flex mb-1 me-1">\
+                         <img src="/theme_scita/static/src/img/scita_small_logo.png" class="img img-fluid" alt="Money back"/>\
+                     </span>\
+                     Theme Scita\
+                     <select id="selSnippetCat" class="scita_snippet_sort">\
+                         <option value="about_us">About Us Snippets</option>\
+                         <option value="accordion">Accordion Snippets</option>\
+                         <option value="banner">Banner Snippets</option>\
+                         <option value="blog">Blog Snippets</option>\
+                         <option value="brand">Brand Snippets</option>\
+                         <option value="content_block">Content Snippets</option>\
+                         <option value="client_snippet">Client Snippets</option>\
+                         <option value="category_snippet">Category Snippets</option>\
+                         <option value="case_study">Case Study Snippets</option>\
+                         <option value="contact_us">Contact Us Snippets</option>\
+                         <option value="deal_days">Deal of the Day Snippets</option>\
+                         <option value="google_map_snippet">Google Map Snippets</option>\
+                         <option value="how_it_works">How It Works Snippets</option>\
+                         <!-- <option value="html_builder">HTML Snippet Builder</option> -->\
+                         <option value="multi_product">Multi Product Snippets</option>\
+                         <!--                        <t t-if="request.env['ir.module.module'].sudo().search([-->\
+                         <!--                ('name', '=', 'mass_mailing'),('state','=','installed')])">-->\
+                         <!--                        <option value="newsletter">Newsletter Snippets</option>-->\
+                         <!--                    </t>-->\
+                         <option value="our_team">Our Team Snippets</option>\
+                         <option value="portfolio">Portfolio Snippets</option>\
+                         <option value="advbanner">Promotion Snippets</option>\
+                         <option value="pricing_table">Pricing Snippets</option>\
+                         <option value="statistics">Statistics Snippets</option>\
+                         <option value="service">Service Snippets</option>\
+                         <option value="trust_icon">Trust Icons Snippets</option>\
+                         <option value="testimonial">Testimonial Snippets</option>\
+                         <option value="timeline">Timeline Snippets</option>\
+                     </select>\
+                 </div>`
+                 parent.innerHTML = html + parent.innerHTML;
+             }
+             if(document.querySelector(selector)!=null && target!=null) {
                 $(
                     "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
                     "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +

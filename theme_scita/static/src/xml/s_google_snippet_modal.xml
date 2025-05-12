@@ -1,45 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
-    <t t-name="theme_scita_selection" t-inherit="web_editor.SnippetsMenu">
-        <xpath expr="//div[@id='o_scroll']" position="before">
-            <div id="scita_snippets">
-                <span class="fa-stack d-inline-flex mb-1 me-1">
-                    <img src="/theme_scita/static/src/img/scita_small_logo.png" class="img img-fluid" alt="Money back"/>
-                </span>
-                Theme Scita
-                <select id="selSnippetCat" class="scita_snippet_sort">
-                    <option value="about_us">About Us Snippets</option>
-                    <option value="accordion">Accordion Snippets</option>
-                    <option value="banner">Banner Snippets</option>
-                    <option value="blog">Blog Snippets</option>
-                    <option value="brand">Brand Snippets</option>
-                    <option value="content_block">Content Snippets</option>
-                    <option value="client_snippet">Client Snippets</option>
-                    <option value="category_snippet">Category Snippets</option>
-                    <option value="case_study">Case Study Snippets</option>
-                    <option value="contact_us">Contact Us Snippets</option>
-                    <option value="deal_days">Deal of the Day Snippets</option>
-                    <option value="google_map_snippet">Google Map Snippets</option>
-                    <option value="how_it_works">How It Works Snippets</option>
-                    <!-- <option value="html_builder">HTML Snippet Builder</option> -->
-                    <option value="multi_product">Multi Product Snippets</option>
-                    <!--                        <t t-if="request.env['ir.module.module'].sudo().search([-->
-                    <!--                ('name', '=', 'mass_mailing'),('state','=','installed')])">-->
-                    <!--                        <option value="newsletter">Newsletter Snippets</option>-->
-                    <!--                    </t>-->
-                    <option value="our_team">Our Team Snippets</option>
-                    <option value="portfolio">Portfolio Snippets</option>
-                    <option value="advbanner">Promotion Snippets</option>
-                    <option value="pricing_table">Pricing Snippets</option>
-                    <option value="statistics">Statistics Snippets</option>
-                    <option value="service">Service Snippets</option>
-                    <option value="trust_icon">Trust Icons Snippets</option>
-                    <option value="testimonial">Testimonial Snippets</option>
-                    <option value="timeline">Timeline Snippets</option>
-                </select>
-            </div>
-        </xpath>
-    </t>
     <t t-name="theme_scita.s_google_map_modal">
         <div aria-hidden="true" contenteditable="False" role="dialog" class="modal" style="z-index:1050">
             <div class="modal-dialog">
