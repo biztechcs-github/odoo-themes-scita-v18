@@ -3475,7 +3475,7 @@
             <field name="public" eval="True"/>
             <field name="name">trending_product_bg_img</field>
             <field name="type">url</field>
-            <field name="url">/theme_scita/static/src/img/automobile/trending_product.jpg</field>
+            <field name="url">/theme_scita/static/src/img/scita-placeholder.png</field>
         </record>
     </data>
 </odoo>
