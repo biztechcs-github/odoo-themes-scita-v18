@@ -77,7 +77,7 @@
                                         <p class="text-uppercase title-20">Special Offer</p>
                                         <h2 class="section-title-big"><span class="d-block">Real Time</span> Simple<span class="green-font"> Grocery</span></h2>
                                         <p class="title-26">Exclusive offer get upto <span class="theme-color">20% OFF</span> this week</p>
-                                        <a href="#" alt-="Shop now" title="Shop now" class="btn btn-primary solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
+                                        <a href="#" alt-="Shop now" title="Shop now" class="btn solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
                                     </div>
                                 </div>
                                 <div class="carousel-item oe_custom_bg oe_img_bg" style="background-image:url('/web/image/theme_scita.sct_banner_slider_image_2')" data-name="Slide">
@@ -85,7 +85,7 @@
                                         <p class="text-uppercase title-20">Special Offer</p>
                                         <h2 class="section-title-big"><span class="d-block">Real Time</span> Simple<span class="green-font"> Grocery</span></h2>
                                         <p class="title-26">Exclusive offer get upto <span class="theme-color">20% OFF</span> this week</p>
-                                        <a href="#" alt-="Shop now" title="Shop now" class="btn btn-primary  solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
+                                        <a href="#" alt-="Shop now" title="Shop now" class="btn solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                                     <p class="title-20 text-uppercase">Top Deal</p>
                                     <h3 class="title-30">Juicy <span class="green-font">Cold Drinks</span> </h3>
                                     <p class="title-26">Get upto <span class="theme-color">15% OFF</span> </p>
-                                    <a href="/shop" alt-="Shop now" title="Shop now" class="btn btn-primary  solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
+                                    <a href="/shop" alt-="Shop now" title="Shop now" class="btn solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
                                 </div>
                             </section>
                             <section class="sct_top_deal oe_custom_bg oe_img_bg o_colored_level o_cc o_cc1" style="background-image: url('/web/image/theme_scita.sct_top_deal_bakery'); background-position: 100% 0;">
@@ -115,7 +115,7 @@
                                     <p class="title-20 text-uppercase">Top Deal</p>
                                     <h3 class="title-30"><span class="green-font"> Bakery </span> Items</h3>
                                     <p class="title-26">Get upto <span class="theme-color">15% OFF</span> </p>
-                                    <a href="/shop" alt-="Shop now" title="Shop now" class="btn btn-primary  solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
+                                    <a href="/shop" alt-="Shop now" title="Shop now" class="btn solid-btn"><img src="/theme_scita/static/src/img/arrow.svg" alt="Shop Now" /></a>
                                 </div>
                             </section>
                         </div>
