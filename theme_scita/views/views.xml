@@ -236,6 +236,7 @@
                         <field name="name"/>
                         <field name="active"/>
                         <field name="category_ids" widget="many2many_tags"/>
+                        <field name="image" widget="image" options="{'preview_image':'image','size': [64, 64]}"/>
                     </group>
                 </sheet>
             </form>
@@ -249,6 +250,7 @@
                 <field name="name"/>
                 <field name="active"/>
                 <field name="category_ids" widget="many2many_tags"/>
+                <field name="image" widget="image" options="{'preview_image':'image','size': [64, 64]}"/>
             </list>
         </field>
     </record>

@@ -40,7 +40,15 @@
                                 </h2>
                             </div>
                             <div class="trending_prod_inner d-flex flex-wrap justify-content-between">
-                                <ul id="trending_products_categories" class="nav nav-tabs" style="background-image : url(/web/image/theme_scita.sct_trending_product_bg);">
+                                <t t-set="bg_url">
+                                    <t t-if="config and config.image">
+                                        <t t-esc="'/web/image/%s/%s/image' % (config._name, config.id)"/>
+                                    </t>
+                                    <t t-else="">
+                                        <t t-esc="'/web/image/theme_scita.sct_trending_product_bg'"/>
+                                    </t>
+                                </t>
+                                <ul id="trending_products_categories" class="nav nav-tabs" t-att-style="'background-image: url(%s);' % bg_url">
                                     <t t-set="count" t-value="1"/>
                                     <t t-foreach="trending_products_categories_details" t-as="trend_product">
                                         <t t-if="count == 1">
@@ -57,7 +65,7 @@
                                                 </a>
                                             </li>
                                         </t>
-                                        <t t-set="count" t-value="count+1"/>
+                                        <t t-set="count" t-value="count + 1"/>
                                     </t>
                                 </ul>
                                 <div class="tab-content">
@@ -86,19 +94,19 @@
                                                                                     <t t-set="prod_curr_rate" t-value="0"/>
                                                                                     <t t-set="is_half_star" t-value="0"/>
                                                                                     <t t-foreach="range(0, 5)" t-as="every_prod_rate">
-                                                                                      <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
-                                                                                      <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
-                                                                                        <i class="fa fa-star" role="img"/>
-                                                                                      </t>
-                                                                                      <t t-else="">
-                                                                                        <t t-if="rating_val % 1 > 0.01 and rating_val % 1 &lt; 0.99 and is_half_star == 0">
-                                                                                          <i class="fa fa-star-half-o" role="img"/>
-                                                                                          <t t-set="is_half_star" t-value="1"/>
+                                                                                        <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
+                                                                                        <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
+                                                                                            <i class="fa fa-star" role="img"/>
                                                                                         </t>
                                                                                         <t t-else="">
-                                                                                          <i class="fa fa-star-o" role="img"/>
+                                                                                            <t t-if="rating_val % 1 > 0.01 and rating_val % 1 &lt; 0.99 and is_half_star == 0">
+                                                                                                <i class="fa fa-star-half-o" role="img"/>
+                                                                                                <t t-set="is_half_star" t-value="1"/>
+                                                                                            </t>
+                                                                                            <t t-else="">
+                                                                                                <i class="fa fa-star-o" role="img"/>
+                                                                                            </t>
                                                                                         </t>
-                                                                                      </t>
                                                                                     </t>
                                                                                 </div>
                                                                             </div>
@@ -122,11 +130,15 @@
                                                                                 <span class="fa fa-eye"/>
                                                                             </button>
                                                                             <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
-                                                                               <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-exchange"></span></a>
+                                                                                <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist">
+                                                                                    <span class="fa fa-exchange"></span>
+                                                                                </a>
                                                                             </t>
                                                                             <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                                                                                 <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
-                                                                                <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist">
+                                                                                    <span class="fa fa-heart-o"></span>
+                                                                                </a>
                                                                             </t>
                                                                             <t t-if="request.website.viewref('website_sale.products_add_to_cart').active and product.product_variant_ids">
                                                                                 <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">

@@ -1172,6 +1172,7 @@ class ScitaShop(WebsiteSale):
         values = {
             'trending_products_categories_details': all_categories,
             "product_details": category_products,
+            'config': configuration_ids, 
         }
         return request.render("theme_scita.theme_scita_trending_products_view", values)
 
