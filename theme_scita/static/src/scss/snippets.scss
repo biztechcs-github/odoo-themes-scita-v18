@@ -1490,7 +1490,9 @@ body #wrapwrap{
 	@include min992{
 		padding: 60px 0;
 	}
-	
+	.js_subscribe_wrap{
+		@include content-cn;
+	}
 	.section-title {
 		margin-bottom: 0;
 	}
@@ -1510,7 +1512,7 @@ body #wrapwrap{
 	.newsletter_box {
 		position: relative;
 		width: 70%;
-		margin: auto;
+		margin: 0 auto !important;
 		@media (max-width: 767px){
 			width: 95%;
 		}
@@ -1520,6 +1522,11 @@ body #wrapwrap{
 			border-bottom: 1px solid $dark-color;
 			border-radius: 0;
 			font-style: italic;
+			padding-right: 100px;
+			text-overflow: ellipsis;
+			&:active{
+				background-color:  transparent !important;
+			}
 		}
 		.input-group-btn {
 			display: block;
@@ -1540,6 +1547,9 @@ body #wrapwrap{
 				}
 				&.js_subscribe_btn {
 					padding-right: 30px;
+					height: 100%;
+					@include flex;
+					@include align-content;				
 					&:after{
 						position:absolute;
 						content: '';
@@ -1547,7 +1557,7 @@ body #wrapwrap{
 						background-size: cover;
 						width: 20px;
 						height: 20px;
-						right: 0;
+						right: 5px;
 						top: 0;
 						bottom: 0;
 						margin: auto;
@@ -1566,6 +1576,15 @@ body #wrapwrap{
 		.popup_subscribe_email {
 			color: fade-out($light-color, 0.5);
 			border-bottom: 1px solid fade-out($light-color, 0.5);
+			&:-webkit-autofill{
+				background-color:  $light-color !important;
+				+ .input-group-btn{
+					background-color: $primary;
+					.js_subscribe_btn{
+						color: $light-color;
+					}
+				}
+			}
 		}
 		a.js_subscribe_btn {
 			color: fade-out($light-color, 0.5);
@@ -3112,6 +3131,7 @@ body #wrapwrap{
 			}
 			i{
 				font-size: $subtitle + 2;
+				color: $primary;
 				@include min992{
 					font-size: $subtitle + 22;
 				}
@@ -3151,11 +3171,15 @@ body #wrapwrap{
 		}
 		.input-group.js_subscribe_wrap{		
 			text-align: center;			
+			.text-success{
+				margin: 0;
+			}
 			.newsletter_box {
 				@include flex;
-				width: 100%;
+				width: 100%;				
 				input.js_subscribe_value {
 					padding-right: 100px;
+					min-height: 46px;
 				}
 				.input-group-btn {
 					display: inline-block;
@@ -5439,6 +5463,11 @@ body #wrapwrap{
 			@media (max-width: 991px){
 				padding: 50px 30px;
 			}
+			.js_subscribed_wrap{
+				.text-success{
+					margin: 0;
+				}
+			}
 			.newsletter_box {
 				width: 100%;
 				text-align: right;
@@ -5471,14 +5500,15 @@ body #wrapwrap{
 						align-self: stretch;
 						display: flex;
 						align-items: center;
-						@media (max-width: 767px){
-							background-color: $white;
-							border: 1px solid $white;
-						}
+						
 						&:hover, &:focus, &:active{
 							background:transparent;
 							box-shadow: none !important;
 							color: $primary;
+							@media (max-width: 767px){
+								background-color: $white;
+								border: 1px solid $white;
+							}
 						}
 					}
 				}
