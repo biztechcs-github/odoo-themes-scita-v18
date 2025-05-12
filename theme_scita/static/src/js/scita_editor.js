@@ -40,10 +40,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                          <option value="how_it_works">How It Works Snippets</option>\
                          <!-- <option value="html_builder">HTML Snippet Builder</option> -->\
                          <option value="multi_product">Multi Product Snippets</option>\
-                         <!--                        <t t-if="request.env['ir.module.module'].sudo().search([-->\
-                         <!--                ('name', '=', 'mass_mailing'),('state','=','installed')])">-->\
-                         <!--                        <option value="newsletter">Newsletter Snippets</option>-->\
-                         <!--                    </t>-->\
+                                                 <t t-if="request.env['ir.module.module'].sudo().search([\
+                                         ('name', '=', 'mass_mailing'),('state','=','installed')])">\
+                                                 <option value="newsletter">Newsletter Snippets</option>\
+                                             </t>\
                          <option value="our_team">Our Team Snippets</option>\
                          <option value="portfolio">Portfolio Snippets</option>\
                          <option value="advbanner">Promotion Snippets</option>\
