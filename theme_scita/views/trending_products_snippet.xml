@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <template id="theme_scita_trending_products_snippet" name="Trending Products">
-        <section class="theme_scita_trending_products oe_trending_products_section o_colored_level product_hover" data-disp="multi_product" data-snippet="" data-name="Trending Products" data-cat-slider-id="" contentEditable="false" style="background-image: none;">
+        <section class="theme_scita_trending_products oe_trending_products_section o_colored_level product_hover" data-disp="multi_product" data-name="Trending Products" data-cat-slider-id="" contentEditable="false" style="background-image: none;">
             <div class="retail_trending_products">
                 <div class="container">
                     <div class="lns-inner latest-trendy-section">

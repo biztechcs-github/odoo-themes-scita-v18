@@ -40,10 +40,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                          <option value="how_it_works">How It Works Snippets</option>\
                          <!-- <option value="html_builder">HTML Snippet Builder</option> -->\
                          <option value="multi_product">Multi Product Snippets</option>\
-                         <!--                        <t t-if="request.env['ir.module.module'].sudo().search([-->\
-                         <!--                ('name', '=', 'mass_mailing'),('state','=','installed')])">-->\
-                         <!--                        <option value="newsletter">Newsletter Snippets</option>-->\
-                         <!--                    </t>-->\
+                                                 <t t-if="request.env['ir.module.module'].sudo().search([\
+                                         ('name', '=', 'mass_mailing'),('state','=','installed')])">\
+                                                 <option value="newsletter">Newsletter Snippets</option>\
+                                             </t>\
                          <option value="our_team">Our Team Snippets</option>\
                          <option value="portfolio">Portfolio Snippets</option>\
                          <option value="advbanner">Promotion Snippets</option>\
@@ -660,7 +660,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                             "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                         ).parent().addClass("o_hidden");
-                         $("#theme_scita_groups [data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10]").parent().removeClass("o_hidden")
+                         $("#theme_scita_groups [data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10] , [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
 
 
                      }
@@ -812,7 +812,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                             "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                         ).parent().addClass("o_hidden");
-                        $("#theme_scita_groups [data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet], [data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4]").parent().removeClass("o_hidden")
+                        $("#theme_scita_groups [data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet]").parent().removeClass("o_hidden")
 
 
                      }
@@ -889,7 +889,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                             "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                         ).parent().addClass("o_hidden");
-                        $("#theme_scita_groups [data-snippet=accordion_v_1], [data-snippet=accordion_v_2], [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
+                        $("#theme_scita_groups [data-snippet=accordion_v_1], [data-snippet=accordion_v_2]").parent().removeClass("o_hidden")
 
 
                      }
@@ -966,7 +966,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                             "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                         ).parent().addClass("o_hidden");
-                        $("#theme_scita_groups [data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6], [data-snippet=theme_scita_trending_products_snippet]").parent().removeClass("o_hidden")
+                        $("#theme_scita_groups [data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6], [data-snippet=theme_scita_trending_products_snippet] , [data-snippet=sct_product_snippet_1]").parent().removeClass("o_hidden")
 
 
                      }
