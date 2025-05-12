@@ -739,6 +739,15 @@
                 .o_header_social_links {
                     margin-left: 20px;
                     .nav-link {
+                        i{
+                            color: $light-color !important;
+                            transition: 0.3s ease-in;
+                        }
+                        &:hover{
+                            i{
+                                color: rgba($light-color, 0.7) !important;
+                            }
+                        }
                         .rounded-circle {
                             width: 2rem;
                             height: 2rem;
@@ -909,7 +918,16 @@
                         font-size: 13px;
                         list-style: none;
                         a, .btn {
-                            color: $white !important;
+                            color: $white !important;                           
+                            i{
+                                color: $light-color !important;
+                                transition: 0.3s ease-in;
+                            }
+                            &:hover{
+                                i{
+                                    color: rgba($light-color, 0.7) !important;
+                                }
+                            }
                         }
                         @include min1024{
                             font-size: 15px;
@@ -1252,6 +1270,7 @@
             .category_dropdown {
                 .dropdown-toggle {
                     color: $white !important;
+                    margin: 0 !important;
                 }
             }
             #top_menu {
@@ -1353,10 +1372,11 @@
                 > .nav-item{
                     padding: 0 9px;
                     position: initial;
-
+                    @include min992{
+                        line-height: 70px;
+                    }
                     @include min1440{
                         padding: 0 12px;
-                        line-height: 73px;
                     }
                     .megamenu_dropdown{
                         margin: 0;
@@ -1904,7 +1924,15 @@
     
                         a{
                             color: $light-color;
-    
+                            i{
+                                color: $light-color !important;
+                                transition: 0.3s ease-in;
+                            }
+                            &:hover{
+                                i{
+                                    color: rgba($light-color, 0.7) !important;
+                                }
+                            }
                             img{
                                 margin-right: 5px;
                             }
@@ -2758,6 +2786,8 @@
                             background-color: $primary;
                             border-radius: 50px;
                             padding: 0 20px;
+                            margin: 0;
+                            position: relative;
                         }
                         #top_menu {
                             max-width: 70%;
@@ -2765,12 +2795,16 @@
                                 padding: 0;
                                 > .nav-link {
                                     color: $white;
-                                    padding: 10px 20px;
-                                    margin: 10px 0;
-                                    border-radius: 30px;
+                                    // padding: 20px 0;
+                                    padding: 15px 0;
+                                    // margin: 10px 0;
+                                    margin: 0 20px;                                
+                                    // border-radius: 30px;
+                                    border-bottom: 4px solid transparent;
                                     &.active {
-                                        font-weight: bold;
-                                        background-color: darken($primary, 20%);
+                                        // font-weight: bold;
+                                        // background-color: darken($primary, 20%);
+                                        border-bottom: 4px solid $secondary;
                                     }
                                 }
                             }
@@ -2806,7 +2840,8 @@
                         margin: 0;
                     }
                     > p, .sct_shipping_box{
-                        background-color: darken($primary, 20%);
+                        // background-color: darken($primary, 20%);
+                        background-color: $secondary;
                         list-style: none;
                         color: $white;
                         padding: 5px 0;
