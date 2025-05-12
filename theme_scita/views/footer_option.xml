@@ -612,14 +612,18 @@
                                             <h4 class="links_title title-20">Newsletter</h4>
                                             <p>If you are unable to load any pages, check your comput.</p>
                                         </div>
-                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe js_subscribe_wrap" data-vxml="001" data-list-id="1" data-name="Newsletter Form">
+                                        <div class="s_newsletter_subscribe_form s_newsletter_list js_subscribe" data-vxml="001" data-list-id="1" data-name="Newsletter Form">
+                                        <div class="js_subscribed_wrap d-none">
+                                            <p class="h4-fs text-center text-success"><i class="fa fa-check-circle-o" role="img"/> Thanks for registering!</p>
+                                        </div>
+                                        <div class="js_subscribe_wrap">
                                             <div class="input-group">
-                                                <input type="email" name="email" class="js_subscribe_value form-control" placeholder="your email..."/>
+                                                <input type="email" name="email" class="js_subscribe_value form-control" placeholder="johnsmith@example.com"/>
                                                 <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_submit">Subscribe</a>
                                             </div>
-                                            <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit" disabled="disabled">Thanks</a>
                                         </div>
-                                    </t>
+                                    </div>
+                                 </t>
                                     <div class="social-media-wrapper" t-if="website.social_facebook or website.social_twitter or website.social_linkedin or website.social_youtube or website.social_instagram">
                                         <h4 class="title-20">Follow Us On</h4>
                                         <ul class="social-media">
