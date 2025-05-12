@@ -664,7 +664,7 @@
             padding: 25px 0 10px 0;
 
             .title-20{
-                color: $primary;
+                color: lighten($primary, 15%);
                 font-weight: normal;
                 margin-bottom: 5px;
             }
@@ -853,7 +853,7 @@
                             height: 35px;
                             top: 6px;
                             right: 5px;
-                            z-index: 2;
+                            z-index: 5;
                             display: block !important;
                             background-image: url(../../img/grocery/newsletter-image.svg);
                             background-repeat: no-repeat;
