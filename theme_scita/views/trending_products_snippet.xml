@@ -80,6 +80,29 @@
                                                         <div class="owl-item" t-att-data-product-id="product.id">
                                                             <div class="cs-product" data-publish="on">
                                                                 <div class="pwp-img">
+                                                                 <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
+                                                                        <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
+                                                                            <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                                                                        </div>
+                                                                        <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
+                                                                            <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                                                                        </div>
+                                                                        <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='right'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
+                                                                            <span class="sct-top-right-part" t-att-style="'border-right-color: %s;' % product.product_style_tag_id.color_code"/>
+                                                                            <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                                                                        </div>
+                                                                        <div t-if="product and product.product_style_tag_id.style=='style3' and product.product_style_tag_id.position=='left'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
+                                                                            <span class="sct-top-right-part" t-att-style="'border-left-color: %s;' % product.product_style_tag_id.color_code"/>
+                                                                            <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                                                                        </div>
+                                                                        <div t-if="product and product.product_style_tag_id.style=='style4'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position">
+                                                                            <span class="sct-top-right-part" t-att-style="' border-left-color: %s;' % product.product_style_tag_id.color_code"/>
+                                                                            <span class='sct-tag-name' t-att-style="'background-color: %s;' % product.product_style_tag_id.color_code +'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                                                                            <span class="sct-top-left-part" t-att-style="'border-top-color: %s;' % product.product_style_tag_id.color_code"/>
+                                                                        </div>
+                                                                        <div t-if="product and product.product_style_tag_id.style=='style5'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
+                                                                            <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
+                                                                        </div>
                                                                     <a t-att-href="'/shop/product/%s' % slug(product)">
                                                                         <img class="front" t-att-alt="product.name" t-att-title="product.name" t-att-src="website.image_url(product, 'image_1920')"/>
                                                                     </a>
