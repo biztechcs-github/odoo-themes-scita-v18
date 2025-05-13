@@ -1206,6 +1206,11 @@
                 .h-cart{
                     ul{
                         li{
+                            &:last-child{
+                                a{
+                                    margin-right: 0;
+                                }
+                            }
     
                             &.o_wsale_my_cart{
                                 @include flex-wrap-common;

@@ -1075,24 +1075,20 @@
 				<t t-snippet="theme_scita.it_letstalk" t-thumbnail="/theme_scita/static/src/img/snippet_icon/talk.png"/>
 				<t t-snippet="theme_scita.contact_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Contact_us_3.png"/>
 				<t t-snippet="theme_scita.health_location_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/location.png"/>
-							
-				<!-- content snippets -->
-
-				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
-			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_3.svg"/>
-
-
 
 				<!-- About us -->
 				<t t-snippet="theme_scita.health_about_hospital" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us2.png"/>
 				<t t-snippet="theme_scita.about_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us_2.svg"/>
 				<t t-snippet="theme_scita.about_us_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us_3.svg"/>
 				<t t-snippet="theme_scita.about_us_v_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_5.png"/>
-				<!-- accordion_v_1 -->
+				<!-- content snippets -->
+				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
+			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
+				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_3.svg"/>
+				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
+                <!-- accordion_v_1 -->
 				<t t-snippet="theme_scita.accordion_v_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/FAQ.svg"/>
 				<t t-snippet="theme_scita.accordion_v_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/FAQ-1.svg"/>
-				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
 
 				<!-- Google Map Snippet -->
 				<t t-snippet="theme_scita.s_appjetty_google_map" t-thumbnail="/theme_scita/static/src/img/snippet_icon/google-map-1.png"/>
