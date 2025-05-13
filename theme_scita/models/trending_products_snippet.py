@@ -10,3 +10,5 @@ class TrendingProductsConfiguration(models.Model):
     name = fields.Char(string="Name", help="Name",required=True, translate=True)
     active = fields.Boolean(string="Active", default=True)
     category_ids = fields.Many2many("product.public.category", string="Category")
+    image =  fields.Binary(string="Image banner",
+                               help="""Image banner""")
