@@ -30,7 +30,6 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                          <option value="banner">Banner Snippets</option>\
                          <option value="blog">Blog Snippets</option>\
                          <option value="brand">Brand Snippets</option>\
-                         <option value="content_block">Content Snippets</option>\
                          <option value="client_snippet">Client Snippets</option>\
                          <option value="category_snippet">Category Snippets</option>\
                          <option value="case_study">Case Study Snippets</option>\
@@ -79,10 +78,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                     "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                     "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                     "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                    "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                    "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                     "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                     "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                    "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                    "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                     "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                     "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                     "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -90,7 +89,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                     "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                     "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                 ).parent().addClass("o_hidden");
-                $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5]").parent().removeClass("o_hidden")
+                $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5],[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10] , [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
 
                  $("select#selSnippetCat").on('change',function(){
                      if($("select#selSnippetCat").val()=='banner')
@@ -116,10 +115,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -153,10 +152,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -191,10 +190,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -229,10 +228,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -267,10 +266,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -305,10 +304,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -343,10 +342,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -381,10 +380,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -418,10 +417,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -457,10 +456,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -496,10 +495,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -534,10 +533,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -573,10 +572,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -611,10 +610,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -626,44 +625,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
 
 
                      }
-                     else if($("select#selSnippetCat").val()=='content_block')
-                     {
-                        $(
-                            "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
-                            "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
-                            "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
-                            "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
-                            "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
-                            "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
-                            "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
-                            "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
-                            "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
-                            "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
-                            "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
-                            "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
-                            "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
-                            "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
-                            "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
-                            "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
-                            "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
-                            "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
-                            "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
-                            "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
-                            "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
-                            "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
-                            "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
-                            "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
-                            "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
-                            "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
-                            "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
-                        ).parent().addClass("o_hidden");
-                         $("#theme_scita_groups [data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10] , [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
-
-
-                     }
+                   
                      else if($("select#selSnippetCat").val()=='client_snippet')
                      {
                         $(
@@ -687,10 +649,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -725,10 +687,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -763,10 +725,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -801,10 +763,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -839,10 +801,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -850,7 +812,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                             "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                         ).parent().addClass("o_hidden");
-                        $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5]").parent().removeClass("o_hidden")
+                        $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5], [data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10] , [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
 
 
 
@@ -878,10 +840,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -916,10 +878,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -955,10 +917,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -993,10 +955,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
@@ -1031,10 +993,10 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
                             "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
                             "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
-                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],\n" +
+                            "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
                             "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
                             "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
-                            "[data-snippet=content_snippets_v_11], [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                            "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
                             "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
                             "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
