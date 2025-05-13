@@ -125,24 +125,21 @@
         </section>
     </template> 
 
-    <template id="retail_sct_banner_slider_1" name="Banner Slider 6">
-        <section data-disp='banner' class="retail_sct_banner_1">
-            <div class="s_carousel_wrapper">
-                <div id="myCarousel" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
-                    <div class="carousel-inner">
-                        <!-- #01 -->
-                        <div class="carousel-item active oe_custom_bg oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_banner_snippet_6_bg_image');" data-name="Slide">
-                            <div class="container">
-                                <div class="row content align-items-center">
-                                    <div class="col-md-6 left-content o_colored_level">
-                                        <div class="banner-content">
-                                            <div class="sct_sub_title">
-                                                <p class="o_default_snippet_text title-20"><span class="o_default_snippet_text">Upgrade Your Ride</span></p>
-                                            </div>
-                                            <div class="sct_title ">
-                                                <h2 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h2>
-                                            </div>
-                                            <a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn">Shop Now<span class="arrow"></span></a>
+    <template id="retail_sct_banner_slider_1" name="Banner Slider 3">
+        <section data-disp='banner' class="retail_sct_banner_1 s_carousel_wrapper">
+            <div id="myCarousel" class="s_carousel s_carousel_default carousel slide" data-bs-interval="10000">
+                <div class="carousel-inner">
+                    <!-- #01 -->
+                    <div class="carousel-item active oe_custom_bg oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_banner_snippet_6_bg_image');" data-name="Slide">
+                        <div class="container">
+                            <div class="row content align-items-center">
+                                <div class="col-md-6 left-content o_colored_level">
+                                    <div class="banner-content">
+                                        <div class="sct_sub_title">
+                                            <p class="o_default_snippet_text title-20"><span class="o_default_snippet_text">Upgrade Your Ride</span></p>
+                                        </div>
+                                        <div class="sct_title ">
+                                            <h2 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h2>
                                         </div>
                                     </div>
                                     <div class="col-md-6 right-image">
@@ -196,7 +193,7 @@
     </template>
     
     <!-- IT Promotional Services Banner -->
-    <template id="it_main_banner" name="Banner Snippet 1">
+    <template id="it_main_banner" name="Banner Snippet">
         <section class="it_main_banner" data-disp='banner'>
            <div class="container">
                 <div class="row sct_banner_row">
@@ -298,7 +295,7 @@
         </section>
     </template>
     <!-- for Dynamic Video Banner snippets -->
-    <template id="dynamic_video_banner" name="Dynamic Video Banner 1">
+    <template id="dynamic_video_banner" name="Dynamic Video Banner">
         <section class="dynamic_video_banner" data-video-url=''  data-disp='banner'>
             <div class="container" >
                 <div class="row sct-video-row">

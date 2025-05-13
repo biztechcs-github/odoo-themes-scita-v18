@@ -81,7 +81,7 @@
         </section>
     </template>
     
-    <template id="service_varient_7" name="Service Snippet 8">
+    <template id="service_varient_7" name="Service Snippet 2">
         <section class="service_varient_7 oe_img_bg" data-disp="service">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_top_row">
@@ -184,7 +184,7 @@
             </div>
         </section>
     </template>
-    <template id="service_varient_11" name="Service Snippet 10">
+    <template id="service_varient_11" name="Service Snippet 3">
         <section class="service_varient_11" data-disp="service">
             <div class="container">
                 <div class="row">
@@ -280,7 +280,7 @@
             </div>
         </section>
     </template>
-    <template id="service_varient_14" name="Service Snippet 13">
+    <template id="service_varient_14" name="Service Snippet 4">
         <section class="service_varient_14" data-disp="service">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_top_row">

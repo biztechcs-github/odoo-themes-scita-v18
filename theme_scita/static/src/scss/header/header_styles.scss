@@ -2790,7 +2790,7 @@
                             position: relative;
                         }
                         #top_menu {
-                            max-width: 70%;
+                            // max-width: 70%;
                             > .nav-item {
                                 padding: 0;
                                 > .nav-link {
@@ -2808,31 +2808,7 @@
                                     }
                                 }
                             }
-                        }
-                        .social-media-div {
-                            max-width: 30%;
-                            text-align: right;
-                            padding: 0 10px;
-                            .o_header_social_links {
-                                .nav-link {
-                                    .rounded-circle {
-                                        width: 2rem;
-                                        height: 2rem;
-                                        line-height: 2rem;
-                                    }
-                                    i{
-                                        font-size: $font-body - 1;
-                                        color: $white;
-                                        transition: 0.3s ease-in;
-                                    }
-                                    &:hover{
-                                        i{
-                                            color: rgba($white, 0.7);
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        }                        
                     }
                     ul {
                         list-style-type: none;
@@ -2845,8 +2821,29 @@
                         list-style: none;
                         color: $white;
                         padding: 5px 0;
-                        div{
-                            @include content-cn;
+                        // div{
+                        //     @include content-cn;
+                        // }
+                        .belt_inner{
+                            p{
+                                margin: 0;
+                            }
+                        }
+                        .social-media-div {
+                            .o_header_social_links {
+                                .nav-link {                                    
+                                    i{
+                                        font-size: $font-body - 1;
+                                        color: $white;
+                                        transition: 0.3s ease-in;
+                                    }
+                                    &:hover{
+                                        i{
+                                            color: rgba($white, 0.7);
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     .o_wsale_my_wish {
