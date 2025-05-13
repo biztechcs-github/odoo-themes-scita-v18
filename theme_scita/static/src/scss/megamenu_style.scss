@@ -676,6 +676,7 @@ header {
 							color: $primary !important;
 							margin-bottom: 5px;
 							font-weight: bold !important;
+							font-size: $font-body;
 							@media (max-width: 767px){
 								padding-left: 0;
 								padding-top: 0;
