@@ -1003,10 +1003,10 @@
 				
 				<!-- Helth snippets End -->
 				<!-- Testimonial veriants -->
-				<t t-snippet="theme_scita.testinomial_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/furniture-testimonials.png"/>
-				<t t-snippet="theme_scita.fashion_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-testimonial.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_3.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_5.png"/>				
+				<t t-snippet="theme_scita.testinomial_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-3.svg"/>
+				<t t-snippet="theme_scita.fashion_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-4.svg"/>
+				<t t-snippet="theme_scita.testinomial_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-2.svg"/>
+				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-1.svg"/>				
 				<!-- Case Study veriants -->
 				<t t-snippet="theme_scita.health_cash_study_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_1.svg"/>
 				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_2.svg"/>
@@ -1022,14 +1022,14 @@
 				<t t-snippet="theme_scita.s_theme_scita_pricing_table_1_3column_v5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/pricing-3.svg"/>
 
 				<!-- Our team veriants -->
-				    <t t-snippet="theme_scita.it_our_team" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our_team.png"/>
-                    <t t-snippet="theme_scita.our_team_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_3.png"/>
-                    <t t-snippet="theme_scita.our_team_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_5.png"/>
+				    <t t-snippet="theme_scita.it_our_team" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-1.svg"/>
+                    <t t-snippet="theme_scita.our_team_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-2.svg"/>
+                    <t t-snippet="theme_scita.our_team_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-3.svg"/>
                 
 				<!-- Policy Trust snippets veriants -->
 				<t t-snippet="theme_scita.retial_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust_1.png"/>
-				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trust-icon.png"/>
-				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Policy_Trust_Varient_3.png"/>
+				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust-icon-1.svg"/>
+				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust-icon-2.svg"/>
 				
 
 				<!-- Product Snippet -->
@@ -1082,16 +1082,16 @@
 				<t t-snippet="theme_scita.blog_5_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/blog-3.svg"/>
 						
 				<!-- Client sliders -->
-				<t t-snippet="theme_scita.third_client_slider_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Client_Variant_3.png"/>
+				<t t-snippet="theme_scita.third_client_slider_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/client-1.svg"/>
                 <t t-snippet="theme_scita.theme_scita_top_dealers_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-top-dealer.png"/>
 				<!-- category sliders -->
                 				
-                <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
-				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-2.png"/>				
-				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-categories.png"/>
-				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_1.png"/>				
+                <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-4.svg"/>
+				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-5.svg"/>				
+				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-2.svg"/>
+				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-3.svg"/>				
 				<!-- product and category snippet -->
-				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
+				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-1.svg"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_1.svg"/>
 				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_2.svg"/>

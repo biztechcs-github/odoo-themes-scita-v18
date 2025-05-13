@@ -8902,7 +8902,7 @@ body #wrapwrap{
 				padding: 10px;
 				flex: 1;
 				@include flex;
-				@include align-content;					
+				@include align-content;			
 			}
             .sct_cat_content {
                 background: $light-color;
