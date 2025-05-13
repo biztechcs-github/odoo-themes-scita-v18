@@ -67,7 +67,7 @@
         <div class="cs-product" t-att-data-publish="product.website_published and 'on' or 'off'">
             <div class="pwp-img">
                 <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
-                <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
+                <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
                     <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
@@ -227,7 +227,7 @@
                             <div class="cs-product" t-att-data-publish="product.website_published and 'on' or 'off'">
                                 <div class="pwp-img">
                                     <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
-                                    <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
+                                    <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
                                         <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                                     </div>
                                     <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">
@@ -398,7 +398,7 @@
                                         <t t-else="">
                                             <t t-set="combination_info" t-value="slide._get_combination_info(only_template=True, add_qty=add_qty or 1)"/>
                                                 <div class="cs-img">
-                                                    <div t-if="slide and slide.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % slide.product_style_tag_id.color_code">
+                                                    <div t-if="slide and slide.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'background-color:%s' % slide.product_style_tag_id.color_code">
                                                         <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"  t-out="slide.product_style_tag_id.name"/>
                                                     </div>
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position" t-att-style="'background-color: %s' % slide.product_style_tag_id.color_code">
@@ -545,7 +545,7 @@
         <div class="cs-product" t-att-data-publish="product.website_published and 'on' or 'off'">
             <div class="pwp-img">
                 <a role="button" t-if="not show_publish and not product.website_published" t-att-href="product_href" class="btn btn-secondary btn-sm btn-danger btn_unpub" title="This product is unpublished.">Unpublished</a>
-                <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'border-bottom-color:%s' % product.product_style_tag_id.color_code">
+                <div t-if="product and product.product_style_tag_id.style=='style1'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color:%s' % product.product_style_tag_id.color_code">
                     <span t-att-style="'color:%s' % product.product_style_tag_id.font_color_code"  t-out="product.product_style_tag_id.name"/>
                 </div>
                 <div t-if="product and product.product_style_tag_id.style=='style2'" t-att-class="'img_lbl %s' % product.product_style_tag_id.style +' %s'% product.product_style_tag_id.position" t-att-style="'background-color: %s' % product.product_style_tag_id.color_code">

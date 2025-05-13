@@ -1,6 +1,7 @@
 .js_sale {
 	.page-title {
 		padding: 25px 0;
+		margin-top: 20px;
 
 		@media (max-width: 767px){
 			padding: 15px 0 5px;
@@ -1098,7 +1099,7 @@
 		.ratings{
 			line-height: 1;
 			order: -1;
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 
 			@media (min-width: 768px) {
 				order: 0;
@@ -1137,19 +1138,37 @@
 				ul.list-unstyled {
 					margin-left: 0;
 					color: $dark-color;
+
+					&.o_wsale_product_attribute{
+						display: flex;
+						flex-wrap: wrap;
+					}
 					li {
 						.col-form-label {
 							padding-top: 0;
 							padding-bottom: 5px;
+							height: 100%;
+							
+							.form-check{
+								height: 100%;
+								
+								.form-check-label{
+									height: 100%;
+									display: flex;
+									justify-content: center;
+									align-items: center;
+								}
+							}
+
 							.radio_input {
 								margin-right: 2px;
 							}
 						}
-						&:last-child{
-							.col-form-label {
-								padding-bottom: 0;
-							}
-						}
+						// &:last-child{
+						// 	.col-form-label {
+						// 		padding-bottom: 0;
+						// 	}
+						// }
 					}
 				}
 				ul.list-inline {
@@ -1907,15 +1926,15 @@
 .o_wsale_product_grid_wrapper {
 	.oe_product_cart {
 		.oe_product_image{
-			min-height: 150px !important;
+			height: 150px !important;
 			padding: 7px 7px 0 7px;
 			
 			@media (min-width: 992px) {
-				min-height: 180px !important;
+				height: 180px !important;
 				padding: 10px 10px 0 10px;
 			}
 			@media (min-width: 1200px) {
-				min-height: 210px !important;
+				height: 210px !important;
 			}
 
 			.oe_product_image_link{
@@ -1924,6 +1943,7 @@
 				padding: 0;
 				// aspect-ratio: unset;
 				height: 100%;
+				width: 100%;
 			}
 		}
 		.o_wsale_product_information {
@@ -2741,8 +2761,8 @@
 												border-bottom: 2px solid $primary;
 												display: block;
 												position: absolute;
-												left: 7px;
-												top: 8px;
+												left: 6px;
+												top: 7px;
 												transform: rotate(-45deg);
 												z-index: 1;
 											}
@@ -2877,10 +2897,17 @@
 											}
 											.btn{
 												border-radius: 50px;
-												padding: 6px 12px !important;
+												padding: 6px 0px !important;
 												background-color: $light-color;
 												color: $secondary;
 												border: 0;
+												
+												@include min768{
+													padding: 6px 8px !important;
+												}
+												@include min992{
+													padding: 6px 12px !important;
+												}
 
 												&:hover {
 													background-color: $secondary;
@@ -2908,6 +2935,8 @@
 										margin-right: 10px;
 										border: 0;
 										@include transition(all, 0.3s, ease-in);
+										display: flex;
+										align-items: center;
 
 										.fa{
 											font-size: 20px;
@@ -2922,6 +2951,9 @@
 									.o_add_compare{
 										@media (max-width: 767px) {
 											display: none;
+										}
+										@media (min-width: 768px) and (max-width: 1599px) {
+											margin-bottom: 5px;
 										}
 									}
 								}
@@ -2966,6 +2998,10 @@
 								font-weight: normal !important;
 								font-size: 13px;
 								margin: 10px 0 0 !important;
+
+								&:has(#out_of_stock_message:empty){
+									display: none;
+								}
 								
 								#out_of_stock_message{
 									color: $secondary !important;
@@ -3019,9 +3055,19 @@
 								@include align-content;
 								filter: grayscale(1);
 								font-size: 23px;
-								width: 25px;
-								height: 30px;
+								width: 33px;
+								height: 33px;
 								@include transition(all, 0.3s, ease-in);
+								background-color: $secondary;
+								border-radius: 8px;
+								padding: 4px;
+
+								i.fa{
+									width: unset;
+									height: unset;
+									background: transparent;
+									box-shadow: none !important;
+								}
 
 								&:hover{
 									filter: none;
@@ -3043,6 +3089,7 @@
 						flex-wrap: nowrap;
 						overflow: auto;
 						padding-bottom: 1px;
+						line-height: 1.1;
 					}
 					.tab-content{
 						padding: 20px;
@@ -3095,6 +3142,15 @@
 							margin-left: 4px;
 							color: $black;
 						}
+					}
+				}
+				.o_wsale_product_sub{
+					#threshold_message_scita{
+						width: 100%;
+						background: rgba(255, 193, 7, 0.1);
+						border-radius: 6px;
+						order: 1;
+						font-size: 15px;
 					}
 				}
 			}
