@@ -12,7 +12,7 @@
             <attribute name="t-attf-class">container oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}</attribute>
         </xpath>
         <xpath expr="//section[@id='product_detail']//div[@id='product_detail_main']//div[1]" position="replace">
-            <div class="col-md-6 sct_product_side">
+            <div class="col-md-6 sct_product_side o_wsale_product_images">
                 <t t-if="not product.multi_image">
                     <t t-if="website.product_page_image_width != 'none'">
                         <t t-call="website_sale.shop_product_images"/>
