@@ -3453,21 +3453,24 @@ body #wrapwrap{
 	}
 	
 	.sct_top_row {
+		.section-title{
+			margin-bottom: 22px;
+		}
 		.sct_simple_text {
 			max-width: 760px;
 			margin-left: auto;
 			margin-right: auto;
 			font-size: $font-body + 1;
-			margin-top: 30px;
+			// margin-top: 30px;
 			text-align: center;
 			margin-bottom: 0;
 			@media (max-width: 1439px){
 				font-size: $font-body;
-				margin-top: 25px;
+				// margin-top: 25px;
 			}
-			@media (max-width: 767px){
-				margin-top: 20px;
-			}
+			// @media (max-width: 767px){
+			// 	margin-top: 20px;
+			// }
 		}
 	}
 	.sct_mid_row {

@@ -1,6 +1,7 @@
 .js_sale {
 	.page-title {
 		padding: 25px 0;
+		margin-top: 20px;
 
 		@media (max-width: 767px){
 			padding: 15px 0 5px;
@@ -1925,15 +1926,15 @@
 .o_wsale_product_grid_wrapper {
 	.oe_product_cart {
 		.oe_product_image{
-			min-height: 150px !important;
+			height: 150px !important;
 			padding: 7px 7px 0 7px;
 			
 			@media (min-width: 992px) {
-				min-height: 180px !important;
+				height: 180px !important;
 				padding: 10px 10px 0 10px;
 			}
 			@media (min-width: 1200px) {
-				min-height: 210px !important;
+				height: 210px !important;
 			}
 
 			.oe_product_image_link{
@@ -1942,6 +1943,7 @@
 				padding: 0;
 				// aspect-ratio: unset;
 				height: 100%;
+				width: 100%;
 			}
 		}
 		.o_wsale_product_information {
@@ -3140,6 +3142,15 @@
 							margin-left: 4px;
 							color: $black;
 						}
+					}
+				}
+				.o_wsale_product_sub{
+					#threshold_message_scita{
+						width: 100%;
+						background: rgba(255, 193, 7, 0.1);
+						border-radius: 6px;
+						order: 1;
+						font-size: 15px;
 					}
 				}
 			}
