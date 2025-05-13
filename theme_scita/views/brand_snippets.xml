@@ -89,7 +89,7 @@
         </section>
     </template>
     <!-- for brands_box_slider_4 snippets -->
-    <template id="brands_box_slider_4" name="Brand Slider 2">
+    <template id="brands_box_slider_4" name="Brand Slider 1">
         <section class="box_brand_slider" contentEditable="false" data-product-count="0" data-disp='brand'>
             <div class="container">                
                 <div class="row our-brands">

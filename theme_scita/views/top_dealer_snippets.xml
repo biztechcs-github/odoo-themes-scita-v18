@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="theme_scita_top_dealers_snippet" name="Client Snippet 4">
+    <template id="theme_scita_top_dealers_snippet" name="Client Snippet 2">
         <section id="top_dealers_snippet" class="our-clients four-client-snippet oe_top_dealers_section" data-disp='client_snippet' style="background-image: url('/web/image/theme_scita.top_dealer_background_image');">
             <div class="container">
                <div class="section-title-wrapper d-flex flex-wrap  justify-content-between align-items-center">
@@ -10,7 +10,7 @@
         </section>
     </template>
 
-    <template id="theme_scita_top_dealers_snippet_data" name="Client Snippet 4">
+    <template id="theme_scita_top_dealers_snippet_data" name="Client Snippet 2">
         <div class="container">
            <div class="section-title-wrapper d-flex flex-wrap  justify-content-between align-items-center">
                 <h2 class="section-title style1">Top Dealers</h2>

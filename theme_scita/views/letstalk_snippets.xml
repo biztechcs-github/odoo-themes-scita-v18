@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-	<template id="it_letstalk" name="Contact Us Snippet 6">
+	<template id="it_letstalk" name="Contact Us Snippet 2">
         <section class="it_letstalk s_text_image" data-disp='contact_us'>
             <div class='container'>
                 <div class='row sct_base_class'>

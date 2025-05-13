@@ -2459,6 +2459,7 @@ body #wrapwrap{
 			.lns-post {
 				width: 100%;
 				float: left;
+				padding: 0;
 				.psb-inner {
 					.title-block {
 						flex: 0 0 100%;
@@ -2656,6 +2657,11 @@ body #wrapwrap{
 					&:first-child{
 						a{
 							margin-left: 0;
+						}
+					}
+					&:last-child{
+						a{
+							margin-right: 0;
 						}
 					}
 				}
@@ -6946,13 +6952,14 @@ body #wrapwrap{
 		padding: 60px 0;
 	}	
 	.sct_btm_row {
-		.oe_img_bg {
+		.sct_bg {
 			padding: 50px;
 			position: relative;
 			border-radius: 10px;
 			overflow: hidden;
 			@include flex;
 			@include flexwrap;
+			height: 100%;
 			@media (max-width: 767px) {
 				border-radius: 0;				
 			}
@@ -8772,10 +8779,21 @@ body #wrapwrap{
 		padding: 60px 0;
 	}
     .top-row {
+		&.title-block{
+    		margin-bottom: 22px;
+			@media (max-width: 767px) {
+				min-height: 34px;
+			}
+			@include min1024{
+				margin-bottom: 40px;
+			}
+		}
         .section-title {
-            margin-bottom: 40px;
             width: 100%;
 			text-align: left;
+			flex: 0 0 calc(100% - 78px);
+			max-width: calc(100% - 78px);
+			margin-bottom: 0
         }
     }
     .bottom-row {
@@ -8792,10 +8810,13 @@ body #wrapwrap{
 			top: -55px;
 			z-index: 2;
 			@include min768 {
-				top: -60px;
+				top: -48px;
 			}
-			@include min1440 {
-				top: -65px;
+			@include min1024 {
+				top: -72px;
+			}
+			@include min1200 {
+				top: -76px;
 			}
 		}
         .cs-cat {
@@ -8858,6 +8879,13 @@ body #wrapwrap{
         }
     }
     .bottom-row {
+		.owl-stage{
+			@include flex;
+			.owl-item{
+				@include flex;
+				flex: 1 0 auto;
+			}
+		}
         .cs-cat {
 			background-color: $light-color;
 			@include transition(all, 0.3s, ease-in);
@@ -8865,9 +8893,16 @@ body #wrapwrap{
 			border: 1px solid transparent;
 			overflow: hidden;
 			margin-bottom: 10px;
-
+			a{
+				height: 100%;
+				@include flex;
+				@include flex-column;
+			}
 			.cs-img{
 				padding: 10px;
+				flex: 1;
+				@include flex;
+				@include align-content;					
 			}
             .sct_cat_content {
                 background: $light-color;
@@ -8876,7 +8911,7 @@ body #wrapwrap{
 				@include content-sb;
 				@include align-content;
 				border-top: 1px solid rgba($dark-color, 0.1);
-
+				margin-top: auto;
 				@include min992{
 					padding: 15px 10px 20px;
 				}
@@ -10589,6 +10624,8 @@ body #wrapwrap{
 		text-align: center;
 
         .section-title{
+			flex:  initial;
+			max-width: 100%;
             @include min1200{
                 margin-bottom: 45px;
             }

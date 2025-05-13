@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 <!-- Category Slider Snippet -->
-    <template id="s_theme_scita_category_slider" name="Category Snippet 3">
+    <template id="s_theme_scita_category_slider" name="Category Snippet 1">
         <section id="theme_scita_custom_category_slider" class="oe_cat_slider categ_slider s_theme_scita_category_slider" contentEditable="false" data-cat-slider-id=""  data-disp='category_snippet'>
             <div class="container">
                 <div class="block-title">
@@ -65,7 +65,7 @@
     </template>
     <template id="theme_scita_category_slider_3_view" name="Category">
         <div class="container">
-            <div class="row top-row title-block">
+            <div class="row top-row title-block section-title-wrapper">
                 <h2 class="col-md-12 section-title" t-if="not slider_header">
                     Category Slider
                 </h2>
