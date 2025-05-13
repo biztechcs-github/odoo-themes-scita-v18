@@ -126,6 +126,14 @@
                     </div>
                     <p class="price">
                         <b>
+                            <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                class="text-danger mr8 oe_compare_list_price">
+                                <bdi dir="inherit">
+                                <span t-esc="combination_info['compare_list_price']"
+                                        groups="website_sale.group_product_price_comparison"
+                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                </bdi>
+                            </del>
                             <t t-if="True">
                                 <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                             </t>
@@ -251,7 +259,7 @@
                                             <a t-attf-href="/shop/product/#{ slug(product) }">
                                                 <span t-field='product.name'/>
                                             </a>
-                                        </h3>
+                                        </h3>                          
                                     </div>
                                     <div class="pink-box price-rating-wrapper" contenteditable="false">
                                         <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
@@ -276,6 +284,14 @@
                                         </ul>
                                         <p class="price">
                                             <b>
+                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                    class="text-danger mr8 oe_compare_list_price">
+                                                    <bdi dir="inherit">
+                                                    <span t-esc="combination_info['compare_list_price']"
+                                                            groups="website_sale.group_product_price_comparison"
+                                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    </bdi>
+                                                </del>
                                                 <t t-if="True">
                                                     <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                 </t>
@@ -440,6 +456,14 @@
                                                 </div>
                                                 <p class="price">
                                                     <b>
+                                                        <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                            class="text-danger mr8 oe_compare_list_price">
+                                                            <bdi dir="inherit">
+                                                            <span t-esc="combination_info['compare_list_price']"
+                                                                    groups="website_sale.group_product_price_comparison"
+                                                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                            </bdi>
+                                                        </del>
                                                         <t t-if="True">
                                                             <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                         </t>
