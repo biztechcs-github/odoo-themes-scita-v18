@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- Testimonial varient snippet  -->
-    <template id="fashion_testimonials_slider_1" name="Testimonial Slider 3">
+    <template id="fashion_testimonials_slider_1" name="Testimonial Slider 1">
         <section class="client_testimonial_slider" data-disp="testimonial" data-vxml="001">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_top_row" >
@@ -416,7 +416,7 @@
         </section>
     </template>
 
-    <template id="testinomial_varient_5" name="Testimonial Snippet 4">
+    <template id="testinomial_varient_5" name="Testimonial Snippet 1">
         <section class="testinomial_varient_5" data-disp="testimonial">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_top_row">

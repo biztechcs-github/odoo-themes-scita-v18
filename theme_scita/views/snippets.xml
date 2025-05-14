@@ -126,6 +126,14 @@
                     </div>
                     <p class="price">
                         <b>
+                            <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                class="text-danger mr8 oe_compare_list_price">
+                                <bdi dir="inherit">
+                                <span t-esc="combination_info['compare_list_price']"
+                                        groups="website_sale.group_product_price_comparison"
+                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                </bdi>
+                            </del>
                             <t t-if="True">
                                 <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                             </t>
@@ -251,7 +259,7 @@
                                             <a t-attf-href="/shop/product/#{ slug(product) }">
                                                 <span t-field='product.name'/>
                                             </a>
-                                        </h3>
+                                        </h3>                          
                                     </div>
                                     <div class="pink-box price-rating-wrapper" contenteditable="false">
                                         <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
@@ -276,6 +284,14 @@
                                         </ul>
                                         <p class="price">
                                             <b>
+                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                    class="text-danger mr8 oe_compare_list_price">
+                                                    <bdi dir="inherit">
+                                                    <span t-esc="combination_info['compare_list_price']"
+                                                            groups="website_sale.group_product_price_comparison"
+                                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    </bdi>
+                                                </del>
                                                 <t t-if="True">
                                                     <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                 </t>
@@ -440,6 +456,14 @@
                                                 </div>
                                                 <p class="price">
                                                     <b>
+                                                        <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                            class="text-danger mr8 oe_compare_list_price">
+                                                            <bdi dir="inherit">
+                                                            <span t-esc="combination_info['compare_list_price']"
+                                                                    groups="website_sale.group_product_price_comparison"
+                                                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                            </bdi>
+                                                        </del>
                                                         <t t-if="True">
                                                             <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                         </t>
@@ -1003,10 +1027,10 @@
 				
 				<!-- Helth snippets End -->
 				<!-- Testimonial veriants -->
-				<t t-snippet="theme_scita.testinomial_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/furniture-testimonials.png"/>
-				<t t-snippet="theme_scita.fashion_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-testimonial.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_3.png"/>
-				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial_v_5.png"/>				
+				<t t-snippet="theme_scita.testinomial_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-3.svg"/>
+				<t t-snippet="theme_scita.fashion_testimonials_slider_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-4.svg"/>
+				<t t-snippet="theme_scita.testinomial_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-2.svg"/>
+				<t t-snippet="theme_scita.testinomial_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/testimonial-1.svg"/>				
 				<!-- Case Study veriants -->
 				<t t-snippet="theme_scita.health_cash_study_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_1.svg"/>
 				<t t-snippet="theme_scita.case_study_varient_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/case_study_2.svg"/>
@@ -1022,14 +1046,14 @@
 				<t t-snippet="theme_scita.s_theme_scita_pricing_table_1_3column_v5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/pricing-3.svg"/>
 
 				<!-- Our team veriants -->
-				    <t t-snippet="theme_scita.it_our_team" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our_team.png"/>
-                    <t t-snippet="theme_scita.our_team_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_3.png"/>
-                    <t t-snippet="theme_scita.our_team_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our_Team_Varient_5.png"/>
+				    <t t-snippet="theme_scita.it_our_team" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-1.svg"/>
+                    <t t-snippet="theme_scita.our_team_varient_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-2.svg"/>
+                    <t t-snippet="theme_scita.our_team_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/our-team-3.svg"/>
                 
 				<!-- Policy Trust snippets veriants -->
 				<t t-snippet="theme_scita.retial_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust_1.png"/>
-				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trust-icon.png"/>
-				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Policy_Trust_Varient_3.png"/>
+				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust-icon-1.svg"/>
+				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust-icon-2.svg"/>
 				
 
 				<!-- Product Snippet -->
@@ -1051,24 +1075,20 @@
 				<t t-snippet="theme_scita.it_letstalk" t-thumbnail="/theme_scita/static/src/img/snippet_icon/talk.png"/>
 				<t t-snippet="theme_scita.contact_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Contact_us_3.png"/>
 				<t t-snippet="theme_scita.health_location_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/location.png"/>
-							
-				<!-- content snippets -->
-
-				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
-			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
-				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_3.svg"/>
-
-
 
 				<!-- About us -->
 				<t t-snippet="theme_scita.health_about_hospital" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us2.png"/>
 				<t t-snippet="theme_scita.about_us_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us_2.svg"/>
 				<t t-snippet="theme_scita.about_us_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/about_us_3.svg"/>
 				<t t-snippet="theme_scita.about_us_v_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/About_Us_5.png"/>
-				<!-- accordion_v_1 -->
+				<!-- content snippets -->
+				<t t-snippet="theme_scita.content_snippets_v_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_4.png"/>
+			    <t t-snippet="theme_scita.content_snippets_v_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_6.png"/>
+				<t t-snippet="theme_scita.content_snippets_v_10" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_3.svg"/>
+				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
+                <!-- accordion_v_1 -->
 				<t t-snippet="theme_scita.accordion_v_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/FAQ.svg"/>
 				<t t-snippet="theme_scita.accordion_v_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/FAQ-1.svg"/>
-				<t t-snippet="theme_scita.content_snippets_v_11" t-thumbnail="/theme_scita/static/src/img/snippet_icon/content_according_11.png"/>
 
 				<!-- Google Map Snippet -->
 				<t t-snippet="theme_scita.s_appjetty_google_map" t-thumbnail="/theme_scita/static/src/img/snippet_icon/google-map-1.png"/>
@@ -1082,16 +1102,16 @@
 				<t t-snippet="theme_scita.blog_5_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/blog-3.svg"/>
 						
 				<!-- Client sliders -->
-				<t t-snippet="theme_scita.third_client_slider_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Client_Variant_3.png"/>
+				<t t-snippet="theme_scita.third_client_slider_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/client-1.svg"/>
                 <t t-snippet="theme_scita.theme_scita_top_dealers_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-top-dealer.png"/>
 				<!-- category sliders -->
                 				
-                <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-1.png"/>
-				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-slider-2.png"/>				
-				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-categories.png"/>
-				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Category_Slider_1.png"/>				
+                <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-4.svg"/>
+				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-5.svg"/>				
+				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-2.svg"/>
+				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-3.svg"/>				
 				<!-- product and category snippet -->
-				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/image_banner_catgory.png"/>
+				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-1.svg"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_1.svg"/>
 				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_2.svg"/>
