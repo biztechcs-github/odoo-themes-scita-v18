@@ -130,19 +130,11 @@
             </div>
 
         </xpath>
-        <xpath expr="//div[@id='product_details']//form//div[hasclass('js_product','js_main_product')]" position="after">
-            <div class='sct-main-brand-social'>
-                <div class='sct_prod_brand_img' t-if='product.product_brand_id and website.is_brand_display'>
-                    <a t-attf-href="/shop/brands?brand=#{product.product_brand_id.id }">
-                        <t t-if="website.brand_display_option=='logo'">
-                            <img class="img-responsive" t-att-alt="product.product_brand_id.name" t-att-src="website.image_url(product.product_brand_id, 'image')"/>
-                        </t>
-                        <t t-else=''>
-                            <p class='sct_brand_name' t-esc='product.product_brand_id.name'/>
-                        </t>
-                    </a>
-                </div>
-            </div>
+        <xpath expr="//div[@id='o_product_terms_and_share']" position="before">
+            <t t-if="product.product_brand_id">
+                <img class="img-responsive"
+                t-att-src="website.image_url(product.product_brand_id, 'image')"/>
+            </t>
         </xpath>
         <xpath expr="//div[@itemprop='description']" position="replace">
             <section class='sct-description-tab o_shop_discussion_rating'>
