@@ -424,7 +424,7 @@ body #wrapwrap.o_portal {
 							display: flex !important;
 							align-items: center;
 							justify-content: center;
-							color: darkred;
+							color: $secondary;
 							padding: 0;
 							i{
 								font-size: 13px;
@@ -620,7 +620,7 @@ body #wrapwrap.o_portal {
 				.btn-link{
 					color: $light-color;
 					&:hover{
-						color: $body-color;
+						color: rgba($light-color, 0.7);
 					}
 				}
 				.o_wsale_add_address {
@@ -640,6 +640,11 @@ body #wrapwrap.o_portal {
 	}
 }	
 
+#save_address{
+	&::after {
+    	display: none;
+	}
+}
 // overwrite css start
 .o_portal_address div[itemprop="address"] > div span[itemprop="streetAddress"]{
 	margin-bottom: 0;

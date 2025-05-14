@@ -2,7 +2,7 @@
 <odoo>
     
     <!-- content_snippets_v_4 -->
-    <template id="content_snippets_v_4" name="Content Snippet 1">
+    <template id="content_snippets_v_4" name="About Us Snippet 5">
         <section class="content_snippets_v_4" data-disp="about_us">
             <div class='container'>
                 <div class="row">
@@ -19,7 +19,7 @@
     </template>
   
     <!-- content_snippets_v_6 -->
-    <template id="content_snippets_v_6" name="Content Snippet 3">
+    <template id="content_snippets_v_6" name="About Us Snippet 6">
         <section class="content_snippets_v_6" data-disp="about_us">
             <div class='container'>
             	<div class='row s_nb_column_fixed sct_top_row'>
@@ -46,7 +46,7 @@
     </template>
  
     <!-- content_snippets_v_10 -->
-    <template id="content_snippets_v_10" name="Content Snippet 5">
+    <template id="content_snippets_v_10" name="About Us Snippet 7">
         <section class="content_snippets_v_10 oe_img_bg" style="background-image: url(/theme_scita/static/src/img/it/content-banner.jpg);" data-disp="about_us">
             <div class='container'>
                 <div class="row sct_btm_row">                   
@@ -70,7 +70,7 @@
         </section>
     </template>
    <!-- content_snippets_v_11 -->
-    <template id="content_snippets_v_11" name="Content Snippet 6">
+    <template id="content_snippets_v_11" name="About Us Snippet 8">
         <section class="content_snippets_v_11 s_faq_collapse s_text_image" data-disp="about_us">
             <div class='container'>
                 <div class="row s_nb_column_fixed sct_btm_row">

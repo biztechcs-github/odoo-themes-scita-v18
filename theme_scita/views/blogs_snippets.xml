@@ -136,7 +136,7 @@
     </template>
 
     <!-- Blog 3 sliders -->
-    <template id="blog_5_custom_snippet" name="Blog Slider 3">
+    <template id="blog_5_custom_snippet" name="Blog Slider 2">
         <section id="blog_custom_5_snippet" class="blog blog_5_custom" data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
             <div class="container">
                 <div class="block-title">
@@ -208,7 +208,7 @@
     </template>
 
     <!-- Blog 4 snippet -->
-    <template id="blog_4_custom_snippet" name="Blog Snippet 4">
+    <template id="blog_4_custom_snippet" name="Blog Snippet 2">
         <section id="blog_custom_4_snippet" class="blog blog_4_custom" data-blog-slider-id="" data-blog-slider-type="" data-disp="blog">
             <div class="container">
                 <div class="block-title">

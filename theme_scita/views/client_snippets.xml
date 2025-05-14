@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 	<!-- Client Slider Snippet -->
-        <template id="third_client_slider_snippet" name="Client Snippet 2">
+        <template id="third_client_slider_snippet" name="Client Snippet 1">
             <section id="third_custom_client_slider" class="our-clients third-client-slider s_text_image" data-disp='client_snippet'>
                 <div class='container'>
                     <div class='row sct_top_row'>

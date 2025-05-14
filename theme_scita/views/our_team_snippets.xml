@@ -51,7 +51,7 @@
             </div>
         </div>
     </template>
-    <template id="our_team_varient_3" name="Our Team Slider 3">
+    <template id="our_team_varient_3" name="Our Team Slider 2">
         <section class="our_team_varient_3" data-disp="our_team">
             <div class="container">
                 <div class='row sct_top_row'>
@@ -88,7 +88,7 @@
             </t>
         </div>
     </template>
-    <template id="our_team_varient_5" name="Our Team Slider 5">
+    <template id="our_team_varient_5" name="Our Team Slider 3">
         <section class="our_team_varient_5" data-disp="our_team">
             <div class="container">
                 <div class='row sct_top_row'>
