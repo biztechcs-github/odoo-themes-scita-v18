@@ -1995,6 +1995,10 @@
 						border-right: 1px solid #cacaca;
 					}
 
+					[disabled="True"]{
+						opacity: 0.3;
+					}
+
 					&:hover{
 						background-color: rgba($primary, 0.7);
 					}
@@ -2276,12 +2280,14 @@
 					}
 				}
 				&.out_of_order_product{
+					opacity: 0.5;
+
 					.oe_product_cart{
 						.o_wsale_product_information{		
 							.o_wsale_product_sub{
 								#threshold_message_scita_out_of_stock{
 									color: $light-color !important;
-									background: #ffc107;
+									background: #646464;
 									padding: 5px 20px;
 									font-size: $font-base-label - 1px;
 									line-height: normal;
@@ -3058,7 +3064,7 @@
 								width: 33px;
 								height: 33px;
 								@include transition(all, 0.3s, ease-in);
-								background-color: $secondary;
+								background-color: rgba($primary, 0.3);
 								border-radius: 8px;
 								padding: 4px;
 
@@ -3147,10 +3153,14 @@
 				.o_wsale_product_sub{
 					#threshold_message_scita{
 						width: 100%;
-						background: rgba(255, 193, 7, 0.1);
-						border-radius: 6px;
 						order: 1;
-						font-size: 15px;
+						
+						color: $light-color !important;
+						background: #8ec641;
+						padding: 5px 20px;
+						font-size: $font-base-label - 1px;
+						line-height: normal;
+						margin: 5px 0 0;
 					}
 				}
 			}

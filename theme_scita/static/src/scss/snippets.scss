@@ -1155,9 +1155,12 @@ body #wrapwrap{
 
 				.sct_deal_text{
 					.sct_per{
-						font-size: $subtitle - 4;
+						font-size: $subtitle - 8;
 						// color: $primary;
 						font-weight: 600;
+						line-height: 1.2;
+						margin-bottom: 6px;
+						display: block;
 					}
 				}
 				.sct_sub_title{
@@ -2288,7 +2291,7 @@ body #wrapwrap{
 	.add_cart_div {
 		position: relative;
 		.cart_view_sct_btn{
-			background-color: #F6F6F6;
+			background-color: #F0F0F0;
 			border-radius: 40px;
 			position: relative;
 			@include transition(all, 0.5s, ease);
@@ -2338,7 +2341,7 @@ body #wrapwrap{
 			}
 		}
 		.dropdown-plus-out{
-			background-color: #F6F6F6;
+			background-color: #F0F0F0;
 			border-radius: 40px;
 			position: absolute;
 			top: 0;
@@ -2599,7 +2602,7 @@ body #wrapwrap{
 										border-color: $secondary;
 									}
 									.input-group-append{
-										background-color: #F6F6F6;
+										background-color: #F0F0F0;
 									}
 								}
 							}
@@ -3451,7 +3454,7 @@ body #wrapwrap{
 /*it brand snippet end*/
 /*it blog snippet*/
 .scita_blog_slider {
-	background: #f7fafd;
+	background: rgba($primary ,0.03);
 	@include bg-nore-cover;
 	padding: 50px 0;
 	@include min992{
@@ -8249,7 +8252,7 @@ body #wrapwrap{
 		text-align: center;
 		.fancy {
 			margin-bottom: 0;
-			color: $light-color;
+			color: $dark-color;
 		}
 	}
 	.sct_blog_box {
@@ -9261,7 +9264,7 @@ body #wrapwrap{
 									border-color: $secondary;
 								}
 								.input-group-append{
-									background-color: #F6F6F6;
+									background-color: #F0F0F0;
 								}
 							}
 						}
@@ -12226,7 +12229,7 @@ body #wrapwrap{
 			}
 			&::before{
 				content: '';
-				background-color: rgba($black, 0.55);
+				background-color: rgba($black, 0.7);
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -12262,7 +12265,7 @@ body #wrapwrap{
 					display: block;
 					font-size: 18px;
 					font-weight: bold;
-					color: rgba($light-color, 0.85);
+					color: rgba($light-color, 0.75);
 					position: relative;
 					@include transition(all, 0.3s, ease-in-out);
 					&::after{
@@ -12284,7 +12287,7 @@ body #wrapwrap{
 					}
 	
 					&:hover, &.active{
-						background-color: rgba($black, 0.6);
+						background-color: rgba($black, 0.9);
 						color: $light-color;
 						
 					}

@@ -19,12 +19,12 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
              const target = document.querySelector("#theme_scita_groups");
              const parent = target?.parentElement;
              if(parent) {
-                 const html = `<div id="scita_snippets">\
+                 const html = `<div id="scita_snippets" class="mt-3">\
                      <span class="fa-stack d-inline-flex mb-1 me-1">\
                          <img src="/theme_scita/static/src/img/scita_small_logo.png" class="img img-fluid" alt="Money back"/>\
                      </span>\
                      Theme Scita\
-                     <select id="selSnippetCat" class="scita_snippet_sort">\
+                     <select id="selSnippetCat" class="scita_snippet_sort px-2 py-1">\
                          <option value="about_us">About Us Snippets</option>\
                          <option value="accordion">Accordion Snippets</option>\
                          <option value="banner">Banner Snippets</option>\
