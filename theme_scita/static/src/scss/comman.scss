@@ -583,17 +583,94 @@ header{
 	}
 }
 .wishlist-section {
-	margin-top: 50px;
+	margin-top: 20px;
 
 	table{
+		@media (max-width: 767px) {
+			display: block;
+		}
+		tbody{
+			@media (max-width: 767px) {
+				display: block;
+			}
+		}
 		tr{
+			@media (max-width: 767px) {
+				display: flex;
+				flex-wrap: wrap;
+				border: 0;
+			}
 			.td-wish-btn{
 				.o_wish_add{
-					padding: 0 10px !important;
+					// padding: 0 10px !important;
 					width: 100%;
+					background: $primary;
+					color: $light-color;
+					border: 1px solid $primary;
+
+					&:hover{
+						background: transparent;
+						color: $primary;
+					}
 				}
 			}
 			td{
+				min-width: 150px;
+
+				&:nth-child(2){
+					> strong{
+						margin-bottom: 5px;
+						display: inline-block;
+					}
+				}
+
+				@media (max-width: 767px) {
+					display: block !important;
+					border: 1px solid rgba($primary, 0.1);
+
+					&:nth-child(2){
+						text-align: center !important;
+					}
+				}
+
+				&.td-img, &.o_wish_price, &.td-wish-btn{
+					min-width: 150px;
+					max-width: 150px;
+					width: 150px;
+
+					@media (max-width: 767px) {
+						min-width: 50%;
+						max-width: 50%;
+						width: 50%;
+					}
+				}
+				&.td-img{
+					@media (max-width: 767px) {
+						min-width: 100%;
+						max-width: 100%;
+						width: 100%;
+					}
+				}
+				strong{
+					a{
+						font-size: 18px;
+					}
+				}
+				button{
+					&.btn.btn-link{
+						border: 1px solid $primary;
+						margin: 5px 10px 0 0;
+
+						.fa{
+							margin-right: 5px;
+						}
+
+						&:hover{
+							background: $primary;
+							color: $light-color;
+						}
+					}
+				}
 				.o_add_to_compare{
 					@media (max-width: 767px) {
 						border: 1px solid $primary;
@@ -2051,6 +2128,10 @@ body header .navbar-expand-lg .navbar-collapse {
 			white-space: normal !important;
 			border-bottom: 1px solid #ddd;
 			padding: 16px 10px !important;
+
+			&:nth-child(odd){
+				background-color: rgba($light-grey-color, 0.3);
+			}
 			&:last-child{
 				border-bottom: 0;
 			}
@@ -2076,13 +2157,24 @@ body header .navbar-expand-lg .navbar-collapse {
 					.btn {
 						padding-left: 0;
 					}
+					p{
+						font-size: $font-size-base-scita;
+					}
 				}
 			}
 			&:hover{
+				background-color: rgba($primary, 0.09);
+				color: $dark-color !important;
+				
 				.o_search_result_item{
-					img{
-						transform: scale(1.08);
-						@include transition(all, .5s, ease-in);
+					.o_search_result_item_detail{
+						img{
+							transform: scale(1.08);
+							@include transition(all, .5s, ease-in);
+						}
+						h6, .btn-link{
+							color: $dark-color!important;
+						}
 					}
 				}
 			}
@@ -2113,6 +2205,65 @@ header{
 						b{
 							font-size: 16px;
 						}
+					}
+				}
+			}
+		}
+	}
+	.oe_structure{
+		.o_searchbar_form{
+			.o_dropdown_menu{
+				border-radius: 10px;
+
+				.dropdown-item{
+					&:nth-child(odd){
+						background-color: rgba($light-grey-color, 0.3);
+					}
+					&:hover{
+						background-color: rgba($primary, 0.09);
+						color: $dark-color !important;
+						
+						.o_search_result_item{
+							.o_search_result_item_detail{
+								h6, .btn-link{
+									color: $dark-color!important;
+								}
+							}
+						}
+					}
+					.o_search_result_item{
+						.o_search_result_item_detail{
+							p{
+								font-size: 15px;
+							}
+							img{
+								border: 1px solid #ddd;
+								border-radius: 4px;
+								padding: 3px;
+								will-change: transform;
+								@include transition(all, .5s, ease-in);
+							}
+							.btn-link{
+								padding-left: 0;
+							}
+						}
+					}
+				}
+		
+				button[type="submit"].dropdown-item{
+					position: sticky;
+					bottom: 0;
+					z-index: 1;
+					background: $primary;
+					color: $light-color !important;
+					padding: 10px !important;
+					font-size: 18px;
+					border: 0;
+					border-top: 1px solid $primary;
+		
+					&:hover{
+						background: $light-color;
+						color: $primary !important;
 					}
 				}
 			}

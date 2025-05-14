@@ -275,7 +275,7 @@
     </template>
 
     
-    <template id="s_theme_scita_pricing_table_1_4column_v4" name="Pricing Snippet 4">
+    <template id="s_theme_scita_pricing_table_1_4column_v4" name="Pricing Snippet 1">
         <section class="pricing_table_v4" data-disp="pricing_table">
             <div class="container">
                 <div class="row s_nb_column_fixed">
@@ -436,7 +436,7 @@
             </div>
         </section>
     </template>
-    <template id="s_theme_scita_pricing_table_1_3column_v5" name="Pricing Snippet 5">
+    <template id="s_theme_scita_pricing_table_1_3column_v5" name="Pricing Snippet 3">
         <section class="pricing_table_v5" data-disp="pricing_table">
             <div class="container">
                 <div class="row s_nb_column_fixed sct_top_row">
