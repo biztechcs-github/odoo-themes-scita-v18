@@ -7,48 +7,57 @@
         </xpath>
     </template>
 
-    <template id="theme_scita_multiple_image_product_slider" inherit_id="website_sale.product" name="Product Multi Image">
+    <template id="theme_scita_multiple_image_product_slider" inherit_id="website_sale.product" name="Product Multi Image OwlCarousel Safe">
         <xpath expr="//section[@id='product_detail']" position="attributes">
             <attribute name="t-attf-class">container oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}</attribute>
         </xpath>
+    
         <xpath expr="//section[@id='product_detail']//div[@id='product_detail_main']//div[1]" position="replace">
             <div class="col-md-6 sct_product_side o_wsale_product_images">
-                <t t-if="not product.multi_image">
+    
+                <!-- Fallback if no multiple images -->
+                <t t-if="not website.get_multiple_images(product_variant.id)">
                     <t t-if="website.product_page_image_width != 'none'">
                         <t t-call="website_sale.shop_product_images"/>
                     </t>
                 </t>
-                <t t-if="product.multi_image and website.get_multiple_images(product.id)">
+    
+                <!-- OwlCarousel Gallery -->
+                <t t-if="website.get_multiple_images(product_variant.id)">
                     <span itemprop="image">
-                        <div id="gallery">
-                            <img class="product_detail_img js_variant_img_small" t-att-alt="product_variant.name" t-att-data-image="website.image_url(product_variant, 'image_1920')" t-att-src="website.image_url(product_variant, 'image_1920')" t-att-title="product_variant.name"/>
-                            <t t-as="im" t-foreach="website.get_multiple_images(product.id)">
+                        <div id="gallery" class="owl-carousel owl-theme" data-slider-id="product-gallery">
+                            <t t-foreach="website.get_multiple_images(product_variant.id)" t-as="im">
                                 <t t-if="im.attach_type == 'image'">
-                                    <img t-att-alt="im.alt if im.alt else im.name" t-att-data-image="website.image_url(im, 'image')" t-att-src="website.image_url(im, 'image')" t-att-title="im.name if im.name else product.name"/>
-                                </t>
-                                <t t-if="im.attach_type == 'video'">
-                                    <t t-if="im.video_type == 'youtube'">
-                                        <img data-type="youtube" t-att-alt="im.alt if im.alt else im.name" t-att-data-description="im.name if im.name else product.name" t-att-data-videoid="im.video_id"/>
-                                    </t>
-                                    <t t-if="im.video_type == 'vimeo'">
-                                        <img data-type="vimeo" t-att-alt="im.alt if im.alt else im.name" t-att-data-description="im.name if im.name else product.name" t-att-data-image="website.image_url(im, 'cover_image') if im.cover_image else website.image_url(im, 'image')" t-att-data-videoid="im.video_id" t-att-src="website.image_url(im, 'cover_image') if im.cover_image else website.image_url(im, 'image')"/>
-                                    </t>
-                                    <t t-if="im.video_type == 'html5video'">
-                                        <img data-type="html5video" t-att-alt="im.alt if im.alt else im.name" t-att-data-description="im.name if im.name else product.name" t-att-data-image="website.image_url(im, 'cover_image') if im.cover_image else website.image_url(im, 'image')" t-att-data-videomp4="im.video_mp4 if im.video_mp4 else '' " t-att-data-videoogv="im.video_ogv if im.video_ogv else '' " t-att-data-videowebm="im.video_webm if im.video_webm else '' " t-att-src="website.image_url(im, 'cover_image') if im.cover_image else website.image_url(im, 'image')"/>
-                                    </t>
+                                    <div class="item">
+                                        <img
+                                            t-att-src="website.image_url(im, 'image')"
+                                            class="img-fluid"
+                                            t-att-alt="im.alt or im.name"
+                                            t-att-title="im.name or product_variant.name"
+                                        />
+                                    </div>
                                 </t>
                             </t>
                         </div>
                     </span>
+    
+                    <!-- Thumbnails -->
+                    <div class="owl-thumbs text-center mt-2" data-slider-id="product-gallery">
+                        <t t-foreach="website.get_multiple_images(product_variant.id)" t-as="im">
+                            <t t-if="im.attach_type == 'image'">
+                                <div class="owl-thumb-item" t-att-title="im.name">
+                                    <img t-att-src="website.image_url(im, 'image_128')" t-att-alt="im.name or 'Product thumbnail'" t-att-title="im.name or 'Thumbnail image'" />
+                                </div>
+                            </t>
+                        </t>
+                    </div>
                 </t>
-                <t t-if="product.multi_image and not website.get_multiple_images(product.id)">
-                    <t t-if="website.product_page_image_width != 'none'">
-                        <t t-call="website_sale.shop_product_images"/>
-                    </t>
-                </t>
+    
             </div>
         </xpath>
     </template>
+    
+    
     <template id="theme_scita_product_details" inherit_id="website_sale.product" name="Product Details">
         <xpath expr="//div[@itemscope='itemscope']/section/div" position="replace"/>
         <xpath expr="//div[@id='product_details']//t[@t-call='website_sale.product_price']" position="replace"/>

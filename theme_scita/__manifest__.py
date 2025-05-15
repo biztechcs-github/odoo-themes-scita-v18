@@ -145,7 +145,6 @@ AMP Support
     'assets': {
         'web.assets_frontend': [
             'theme_scita/static/src/css/owl.carousel.css',
-            'theme_scita/static/src/css/unite-gallery.css',
             'theme_scita/static/src/fonts/line-icons.css',
             'theme_scita/static/src/skins/alexis/alexis.css',
             'theme_scita/static/src/scss/variable.scss',
@@ -161,8 +160,6 @@ AMP Support
             'theme_scita/static/src/scss/footer/default_footer.scss',
             'theme_scita/static/src/scss/footer/footer_styles.scss',
             'theme_scita/static/src/js/owl.carousel.min.js',
-            'theme_scita/static/src/js/ug-theme-compact.js',
-            'theme_scita/static/src/js/unitegallery.min.js',
             'theme_scita/static/src/js/scita_fronted.js',
             'theme_scita/static/src/js/timer_fronted.js',
             'theme_scita/static/src/js/new_scita_frontend.js',
