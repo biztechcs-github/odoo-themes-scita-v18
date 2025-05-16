@@ -20,14 +20,17 @@ odoo.define('theme_scita.scita_product_js', [], function () {
         }
 
         update_gallery_product_variant_image($parent, product_id);
-
-        rpc("/shop/variant_change", { 'pro_id': product_id }).then(function (data) {
-            if (data.is_default_code_disp && data.default_code) {
-                const codeEl = $('.sct-default-code');
-                if (codeEl.length) {
-                    codeEl.html(data.default_code);
-                } else {
-                    $('.sct-sku-display-div').append('<p class="sct-sku-display">SKU: <span class="sct-default-code">' + data.default_code + '</span></p>');
+        // default code as per varaint wise start 
+        rpc("/shop/variant_change", {
+            'pro_id':product_id
+        }).then(function (data){
+            if (data.default_code) {
+                var code = $('.sct-default-code').html();
+                if (code){
+                    $('.sct-default-code').html(data.default_code)
+                }
+                else {
+                    $('.sct-sku-display-div').append('<p class="sct-sku-display">SKU: <span class="sct-default-code">'+data.default_code+'</span> </p>')
                 }
             } else {
                 $('.sct-sku-display-div').empty();
