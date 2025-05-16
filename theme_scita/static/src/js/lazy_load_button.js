@@ -51,7 +51,14 @@ publicWidget.registry.LazyLoadButton = WebsiteSale.extend({
         let max_price = url.searchParams.get('max_price') ? parseFloat(url.searchParams.get('max_price')) : 0.0;
         let min_price = url.searchParams.get('min_price') ? parseFloat(url.searchParams.get('min_price')) : 0.0;
 
-        let self = this
+        let self = this;
+
+        if (this.call) {
+            this.call('ui', 'block');
+        } else if (this._toggleLoading) {
+            this._toggleLoading(true);
+        }
+
         rpc('/lazy/load', {
                 'search': search,
                 'ppg': this.ppg,
@@ -72,6 +79,12 @@ publicWidget.registry.LazyLoadButton = WebsiteSale.extend({
                 if (data.count < self.ppg) {
                     document.querySelector('.s_ajax_load_btn').classList.add('d-none');
                 }
+            }
+        }).finally(function () {
+            if (self.call) {
+                self.call('ui', 'unblock');
+            } else if (self._toggleLoading) {
+                self._toggleLoading(false);
             }
         });
     },
