@@ -329,7 +329,7 @@
         </div>
     </template>
   
-    <template id="product_category_img_slider_config" name="Category Snippet 2">
+    <template id="product_category_img_slider_config" name="Dynamic Product/Category Snippet">
         <section class="multi_product_and_category_slider s_custom_img_category_slider" data-multi-cat-slider-type="" contentEditable="false" data-disp='category_snippet' data-disp1="multi_product">
             <div class="container">
                 <div class="row our-config-products cst_top_row">
@@ -1113,10 +1113,10 @@
                 				
                 <t t-snippet="theme_scita.theme_scita_category_slider_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-4.svg"/>
 				<t t-snippet="theme_scita.theme_scita_category_slider_4" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-5.svg"/>				
-				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-2.svg"/>
-				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-3.svg"/>				
+				<t t-snippet="theme_scita.theme_scita_category_slider_gray" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-3.svg"/>
+				<t t-snippet="theme_scita.s_theme_scita_category_slider" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-1.svg"/>				
 				<!-- product and category snippet -->
-				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-1.svg"/>
+				<t t-snippet="theme_scita.product_category_img_slider_config" t-thumbnail="/theme_scita/static/src/img/snippet_icon/category-2.svg"/>
 				<!-- Timeline snippets  -->
 				<t t-snippet="theme_scita.timeline_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_1.svg"/>
 				<t t-snippet="theme_scita.timeline_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Timeline_snippet_2.svg"/>
@@ -1128,26 +1128,26 @@
 				<!-- newsletter snippets veriants -->
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.it_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/nesletter_1.png"/>
+					<t t-snippet="theme_scita.it_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
 				</t>
 				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/nesletter_1.png"/>
+					<t t-install="mass_mailing" string="Newsletter Snippet 1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter.svg"/>
 				</t>
 				
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.retail_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
+					<t t-snippet="theme_scita.retail_sign_up_newsletter" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
 				</t>
 				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/newsletter_2.png"/>
+					<t t-install="mass_mailing" string="Newsletter Snippet 3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-1.svg"/>
 				</t>
 				
 				<t t-if="request.env['ir.module.module'].sudo().search([
 				('name', '=', 'mass_mailing'),('state','=','installed')])">
-					<t t-snippet="theme_scita.newsletter_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Newsletter_veriant_5.png"/>
+					<t t-snippet="theme_scita.newsletter_varient_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
 				</t>
 				<t t-else=''>
-					<t t-install="mass_mailing" string="Newsletter Snippet 5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Newsletter_veriant_5.png"/>
+					<t t-install="mass_mailing" string="Newsletter Snippet 5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Our-Newsletter-2.svg"/>
 				</t>
 			</snippets>
         </xpath>
