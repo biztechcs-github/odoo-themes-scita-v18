@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="lazy_product_item" name="Lazy Loading Product Item">
+        <div t-if="products" class="o_wsale_products_grid_table_wrapper pt-3 pt-lg-0">
+            <t t-set="grid_md_allow_custom_cols" t-value="hasLeftColumn"/>
+            <t t-set="grid_md_use_3col"
+                t-value="not hasLeftColumn and ppr == 4"/>
+
+            <section
+                id="o_wsale_products_grid"
+                t-attf-class="o_wsale_products_grid_table grid {{grid_md_allow_custom_cols and 'o_wsale_products_grid_table_md'}}"
+                t-attf-style="--o-wsale-products-grid-gap: {{gap}}; --o-wsale-ppr: {{ppr}}; --o-wsale-ppg: {{ppg}}"
+                t-att-data-ppg="ppg"
+                t-att-data-ppr="ppr"
+                t-att-data-default-sort="website.shop_default_sort"
+                t-att-data-name="grid_block_name"
+            >
+                <t t-foreach="bins" t-as="tr_product">
+                    <t t-foreach="tr_product" t-as="td_product">
+                        <t t-if="td_product">
+                            <t t-set="col_height" t-value="td_product['y']"/>
+                            <t t-set="col_width"
+                                t-value="12 // ppr * td_product['x']"/>
+                            <t t-set="col_class_lg"
+                                t-value="'g-col-lg-' + str(col_width)"/>
+                            <t t-set="col_class_md"
+                                t-value="grid_md_allow_custom_cols and ('g-col-md-' + str(col_width)) or grid_md_use_3col and 'g-col-md-4' or 'g-col-md-6'"/>
+                            <t t-set="col_is_stretched"
+                                t-value="(td_product['x'] &gt;= td_product['y'] * 2)"/>
+                            <t t-set="col_is_custom_portrait"
+                                t-value="not col_is_stretched and (col_height &gt; td_product['x'])"/>
+                            <div
+                                t-attf-class="oe_product"
+                                t-attf-style="--o-wsale-products-grid-product-col-height: {{col_height}};"
+                                t-att-data-ribbon-id="td_product['ribbon'].id"
+                                t-att-data-colspan="td_product['x'] != 1 and td_product['x']"
+                                t-att-data-rowspan="td_product['y'] != 1 and td_product['y']"
+                                t-att-data-name="product_block_name"
+                            >
+                                <div t-attf-class="o_wsale_product_grid_wrapper position-relative h-100 o_wsale_product_grid_wrapper_#{td_product['x']}_#{td_product['y']}">
+                                    <t t-call="website_sale.products_item">
+                                        <t t-set="product"
+                                            t-value="td_product['product']"/>
+                                    </t>
+                                </div>
+                            </div>
+                        </t>
+                    </t>
+                </t>
+            </section>
+        </div>
+    </template>
+
+    <template id="lazy_load_button" inherit_id="website_sale.products" active="False"
+        name="Lazy Load Button">
+        <xpath expr="//div[hasclass('products_pager')]" position="replace">
+            <div class="products_pager d-flex justify-content-center pt-5 pb-3">
+                <button type="button" class="s_ajax_load_btn btn btn-primary d-none">Load more</button>
+            </div>
+        </xpath>
+
+        <xpath expr="//aside[@id='products_grid_before']" position="inside">
+            <div class="selected_filters d-none">
+                <t t-if="category">
+                    <div class="selected_category" t-att-data-index="category.id"></div>
+                </t>
+                <t t-if="attrib_values">
+                    <div class="attributes">
+                        <div class="attrib_list" t-att-data-list="attrib_values"></div>
+                        <t t-foreach="attrib_values" t-as="attribute_list_ids">
+                            <div class="attribute" t-att-data-attribute="attribute_list_ids[0]"
+                                t-att-data-attribute-value="attribute_list_ids[1]"></div>
+                        </t>
+                    </div>
+                </t>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="default_pager" inherit_id="website_sale.products" active="False"
+        name="Default">
+        <xpath expr="//div[hasclass('products_pager')]" position="replace">
+            <div class="products_pager d-flex justify-content-center pt-5 pb-3">
+                <t t-call="website.pager"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

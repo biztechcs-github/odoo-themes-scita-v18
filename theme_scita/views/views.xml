@@ -2,68 +2,8 @@
 <odoo>   
     <!-- Website product paging -->
     <menuitem id="scita_menu_slider_config" name="Theme Scita Configuration" parent="website.menu_website_configuration" sequence="101"/>
-    <record id="biztech_form_view_for_biz_product_images" model="ir.ui.view">
-        <field name="name">scita.product.images.form</field>
-        <field name="model">scita.product.images</field>
-        <field name="arch" type="xml">
-            <form string="Multiple Image">
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="alt"/>
-                        <field name="attach_type" widget="radio"/>
-                        <field invisible="attach_type == 'video'" class="oe_avatar" name="image" options="{&quot;preview_image&quot;:&quot;image_medium&quot; ,'size': [64, 64]}" widget="image"/>
-                        <field invisible="attach_type == 'image'" name="video_type"/>
-                    </group>
-                    <group col="4">
-                        <field invisible="attach_type == 'image' or video_type == 'youtube'" class="oe_avatar" name="cover_image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;,'size': [64, 64]}" widget="image"/>
-                    </group>
-                    <group>
-                        <field invisible="attach_type == 'image' or video_type == 'html5video'" name="video_id"/>
-                        <field invisible="attach_type == 'image' or video_type in ('youtube', 'vimeo')" name="video_ogv"/>
-                        <field invisible="attach_type == 'image' or video_type in ('youtube', 'vimeo')" name="video_webm"/>
-                        <field invisible="attach_type == 'image' or video_type in ('youtube', 'vimeo')" name="video_mp4"/>
-                        <field name="sequence"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
 
-    <record id="biztech_list_view_for_biz_product_images" model="ir.ui.view">
-        <field name="name">scita.product.images.list</field>
-        <field name="model">scita.product.images</field>
-        <field name="arch" type="xml">
-            <list name="Multiple Image">
-                <field name="name"/>
-                <field name="alt"/>
-                <field name="attach_type"/>
-                <field invisible="attach_type == 'video'" name="image" options="{&quot;preview_image&quot;:&quot;image_medium&quot;, 'size': [64, 64]}" widget="image"/>
-                <field invisible="attach_type == 'image'" name="video_type"/>
-                <field invisible="attach_type == 'image'" name="video_id"/>
-                <field name="sequence"/>
-            </list>
-        </field>
-    </record>
-    <!-- Product Form View Inherited for multi images -->
-    <record id="scita_view_product_template_form_multiple_image" model="ir.ui.view">
-        <field name="name">scita.product.template.form.view.inherited</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_only_form_view"/>
-        <field name="arch" type="xml">
-            <xpath expr="//div[@name='options']" position="inside">
-                <div>
-                    <field name="multi_image"/>
-                    <label for="multi_image"/>
-                </div>
-            </xpath>
-            <xpath expr="//notebook" position="inside">
-                <page invisible="multi_image != True" name="product multi image" string="Product Multiple Images">
-                    <field context="{'default_product_id': id, 'list_view_ref':'theme_scita.biztech_list_view_for_biz_product_images', 'form_view_ref':'theme_scita.biztech_form_view_for_biz_product_images'}" name="biz_images" nolabel="1"/>
-                </page>
-            </xpath>
-        </field>
-    </record>
+
     <!-- client slider  -->
     <record id="scita_view_res_partner_form_inherit" model="ir.ui.view">
         <field name="name">scita.view.res.partner.form.inherit</field>

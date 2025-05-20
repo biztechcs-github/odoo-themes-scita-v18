@@ -102,6 +102,7 @@ AMP Support
         'views/how_it_work_snippets.xml',
         'views/expertise_statistics_snippets.xml',
         'views/contact_us_snippets.xml',
+        'views/template.xml',
         'views/content_snippets.xml',
         'views/promo_banner_snippets.xml',
         'views/about_us_snippets.xml',
@@ -145,7 +146,6 @@ AMP Support
     'assets': {
         'web.assets_frontend': [
             'theme_scita/static/src/css/owl.carousel.css',
-            'theme_scita/static/src/css/unite-gallery.css',
             'theme_scita/static/src/fonts/line-icons.css',
             'theme_scita/static/src/skins/alexis/alexis.css',
             'theme_scita/static/src/scss/variable.scss',
@@ -161,8 +161,6 @@ AMP Support
             'theme_scita/static/src/scss/footer/default_footer.scss',
             'theme_scita/static/src/scss/footer/footer_styles.scss',
             'theme_scita/static/src/js/owl.carousel.min.js',
-            'theme_scita/static/src/js/ug-theme-compact.js',
-            'theme_scita/static/src/js/unitegallery.min.js',
             'theme_scita/static/src/js/scita_fronted.js',
             'theme_scita/static/src/js/timer_fronted.js',
             'theme_scita/static/src/js/new_scita_frontend.js',
@@ -171,6 +169,7 @@ AMP Support
             'theme_scita/static/src/js/see_more_brand.js',
             'theme_scita/static/src/js/header.js',
             'theme_scita/static/src/scss/pwa_design.scss',
+            'theme_scita/static/src/js/lazy_load_button.js',
             'theme_scita/static/src/js/pwa_implementation.js',
             'theme_scita/static/src/js/quick_view.js',
             ('before', '/theme_scita/static/src/scss/comman.scss', 'theme_scita/static/src/scss/button/button_styles.scss'),
