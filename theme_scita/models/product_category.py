@@ -76,7 +76,6 @@ class ProductTemplate(models.Model):
         help='Select a brand for this product'
     )
     # tag_ids = fields.Many2many('biztech.product.tags', string="Product Tags")
-    multi_image = fields.Boolean(string="Add Multiple Images?")
     product_style_tag_id = fields.Many2one(
         'biztech.product.style.tag',
         string='Tags',
