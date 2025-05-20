@@ -141,15 +141,17 @@
                                         <div class="sct_title ">
                                             <h2 class="banner-title o_default_snippet_text section-title-big"><span class="block">Find the <span class="theme-color">Perfect</span></span><span class="block"><span class="theme-color">Parts</span> for Performance </span><span class="block">and Reliability</span></h2>
                                         </div>
+                                        <a href="#" alt-="Shop Now" title="Shop Now" class="btn btn-primary solid-btn">Shop Now<span class="arrow"></span></a>
                                     </div>
-                                    <div class="col-md-6 right-image">
-                                        <div class="image">
-                                            <img src="/web/image/theme_scita.sct_banner_snippet_6" alt="Automobile parts" title="Automobile parts"/>
-                                        </div>
+                                </div>
+                                <div class="col-md-6 right-image">
+                                    <div class="image">
+                                        <img src="/web/image/theme_scita.sct_banner_snippet_6" alt="Automobile parts" title="Automobile parts"/>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
                         <!-- #02 -->
                         <div class="carousel-item oe_custom_bg oe_img_bg" style="background-image: url('/web/image/theme_scita.sct_banner_image2_bg_image');" data-name="Slide">
                             <div class="container">
@@ -187,7 +189,7 @@
                         <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
                         <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
                     </ol>
-                </div>
+                
             </div>   
         </section>   
     </template>
