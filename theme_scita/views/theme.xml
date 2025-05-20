@@ -1381,7 +1381,7 @@
 
                                                     <div id="add_to_cart_wrap" t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto">
                                                         <a data-animation-selector=".o_wsale_product_images" role="button" id="add_to_cart" t-attf-class="btn btn-primary js_check_product a-submit" href="#">
-                                                            <i class="icon-basket me-2"/>
+                                                            <i class="lni lni-cart-1 me-2"/>
                                                             Add to cart
                                                         </a>
                                                     </div>
@@ -1389,7 +1389,7 @@
                                                     <t t-nocache="The wishlist depends on the user and must not be shared with other users. The product come from the controller.">
                                                         <t t-set="product_variant" t-value="product_variant or product._create_first_product_variant()"/>
                                                         <t t-set="in_wish" t-value="product_variant and product_variant._is_in_wishlist()"/>
-                                                        <button t-if="product_variant" type="button" role="button" class="btn btn-link px-0 pe-3 o_add_wishlist_dyn" t-att-disabled='in_wish or None' t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant.id" data-action="o_wishlist" title="Add to wishlist"><i class="fa fa-heart-o me-2" role="img" aria-label="Add to wishlist"/>Add to wishlist
+                                                        <button t-if="product_variant" type="button" role="button" class="btn btn-link px-0 pe-3 o_add_wishlist_dyn" t-att-disabled='in_wish or None' t-att-data-product-template-id="product.id" t-att-data-product-product-id="product_variant.id" data-action="o_wishlist" title="Add to wishlist"><i class="lni lni-heart me-2" role="img" aria-label="Add to wishlist"/>Add to wishlist
                                                         </button>
                                                     </t>
                                                 </div>
@@ -1491,7 +1491,7 @@
     </template>
     <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.add_to_wishlist">
         <xpath expr="//span[hasclass('fa','fa-heart')]" position="attributes">
-            <attribute name='class'> fa fa-heart-o</attribute>
+            <attribute name='class'> lni lni-heart</attribute>
         </xpath>
         <xpath expr="//button[hasclass('btn', 'btn-light', 'o_add_wishlist')]" position="attributes"> 
             <attribute name="class">btn btn-xs o_add_wishlist</attribute>
@@ -1509,7 +1509,7 @@
         <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
             <t t-if="product.product_variant_ids">
                 <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
-                    <span class="fa fa-eye"/>
+                    <span class="lni lni-eye"/>
                 </button>
             </t>
         </xpath>

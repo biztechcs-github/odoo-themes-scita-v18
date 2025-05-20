@@ -143,6 +143,9 @@
 }
 
 // new mixin added scita_17
+@mixin max767 {
+    @media (min-width: 0px) and (max-width: 767px) { @content; }
+}
 @mixin mobiletab {
     @media (min-width: 0px) and (max-width: 991px) { @content; }
 }

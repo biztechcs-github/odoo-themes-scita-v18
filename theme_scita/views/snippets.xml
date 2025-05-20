@@ -170,17 +170,17 @@
                     <form action="/shop/cart/update" method="post">
                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                         <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
-                        <div class="qvp-btn" id="quick_view_product">
-                            <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
-                                <span class="fa fa-eye"/>
+                        <!-- <div class="qvp-btn" id="quick_view_product"> -->
+                            <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
+                                <span class="lni lni-eye"/>
                             </button>
-                        </div>
+                        <!-- </div> -->
                         <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                             <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
-                            <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart-o"></span></a>
+                            <a class="btn btn-default btn-xs o_add_wishlist" role="button" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="lni lni-heart"></span></a>
                         </t>
                         <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
-                           <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-exchange"></span></a>
+                           <a class="btn btn-xs o_add_compare" role="button" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-exchange"></span></a>
                         </t>
                     </form>
                 </div>
@@ -260,61 +260,62 @@
                                                 <span t-field='product.name'/>
                                             </a>
                                         </h3>                          
-                                    </div>
-                                    <div class="pink-box price-rating-wrapper" contenteditable="false">
-                                        <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                                            <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
-                                            <t t-set="prod_curr_rate" t-value="0"/>
-                                            <t t-set="is_half_star" t-value="0"/>
-                                            <t t-foreach="range(0, 5)" t-as="every_prod_rate">
-                                              <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
-                                              <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
-                                                <i class="fa fa-star"/>
-                                              </t>
-                                              <t t-else="">
-                                                <t t-if="rating_val % 1 > 0.01 and rating_val % 1 &lt;0.99 and is_half_star == 0">
-                                                  <i class="fa fa-star-half-o"/>
-                                                  <t t-set="is_half_star" t-value="1"/>
+                                        <div class="pink-box price-rating-wrapper" contenteditable="false">
+                                            <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
+                                                <div t-set="rating_val" t-value="product.sudo().rating_get_stats().get('avg')"/>
+                                                <t t-set="prod_curr_rate" t-value="0"/>
+                                                <t t-set="is_half_star" t-value="0"/>
+                                                <t t-foreach="range(0, 5)" t-as="every_prod_rate">
+                                                <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
+                                                <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
+                                                    <i class="fa fa-star"/>
                                                 </t>
                                                 <t t-else="">
-                                                  <i class="fa fa-star-o"/>
+                                                    <t t-if="rating_val % 1 > 0.01 and rating_val % 1 &lt;0.99 and is_half_star == 0">
+                                                    <i class="fa fa-star-half-o"/>
+                                                    <t t-set="is_half_star" t-value="1"/>
+                                                    </t>
+                                                    <t t-else="">
+                                                    <i class="fa fa-star-o"/>
+                                                    </t>
                                                 </t>
-                                              </t>
-                                            </t>
-                                        </ul>
-                                        <p class="price">
-                                            <b>
-                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                    class="text-danger mr8 oe_compare_list_price">
-                                                    <bdi dir="inherit">
-                                                    <span t-esc="combination_info['compare_list_price']"
-                                                            groups="website_sale.group_product_price_comparison"
-                                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                    </bdi>
-                                                </del>
-                                                <t t-if="True">
-                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
                                                 </t>
-                                                <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
-                                                <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
-                                            </b>
-                                        </p>
+                                            </ul>
+                                            <p class="price">
+                                                <b>
+                                                    <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                        class="text-danger mr8 oe_compare_list_price">
+                                                        <bdi dir="inherit">
+                                                        <span t-esc="combination_info['compare_list_price']"
+                                                                groups="website_sale.group_product_price_comparison"
+                                                                t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                        </bdi>
+                                                    </del>
+                                                    <t t-if="True">
+                                                        <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                    </t>
+                                                    <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
+                                                    <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
+                                                </b>
+                                            </p>
+                                        </div>
                                     </div>
                                     <div class="sct-hover-info product_price ajax_cart_template">
                                         <form action="/shop/cart/update" method="post">
                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                            <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
+
                                             <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
-                                                <span class="icon-basket"></span>Add To Cart
+                                                <span class="lni lni-cart-1 cart_icon"></span>
+                                                <span class="add_to_cart_text">Add to cart</span>
                                             </button>
                                             <div class='sct-feature-wrap'>
                                                 <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and product.product_variant_ids">
-                                                   <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa fa-exchange"></span></a>
+                                                   <a class="btn btn-xs o_add_compare" role="button" title="Compare" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa fa-exchange"></span></a>
                                                 </t>
                                                 <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and product.product_variant_ids">
                                                     <t t-set="in_wish" t-value="product.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
-                                                    <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart-o"></span></a>
+                                                    <a class="btn btn-default btn-xs o_add_wishlist" role="button" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="lni lni-heart"></span></a>
                                                 </t>
                                             </div>
                                         </form>
@@ -424,94 +425,98 @@
                                                         <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
                                                     </a>
                                                 </div>
-                                                <div class='sct_cat_content'>
-                                                    <a t-att-href=" '/shop/product/%s' % slug(slide)">
-                                                        <p class="pwpi-title">
+                                                <div class="cs_desc">
+                                                    <div class="cs_info">
+                                                        <div class='sct_cat_content'>
+                                                            <a t-att-href=" '/shop/product/%s' % slug(slide)">
+                                                                <p class="pwpi-title">
 
-                                                            <t t-out="slide.name"/>
+                                                                    <t t-out="slide.name"/>
+                                                                </p>
+                                                            </a>
+                                                        </div>
+                                                        <div class="pink-box" contenteditable="false">
+                                                            <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
+                                                                <div t-set="rating_val" t-value="slide.sudo().rating_get_stats().get('avg')"/>
+                                                                <t t-set="prod_curr_rate" t-value="0"/>
+                                                                <t t-set="is_half_star" t-value="0"/>
+                                                                <t t-foreach="range(0, 5)" t-as="every_prod_rate">
+                                                                <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
+                                                                <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
+                                                                    <i class="fa fa-star"/>
+                                                                </t>
+                                                                <t t-else="">
+                                                                    <t t-if="rating_val % 1 > 0.01 and rating_val % 1 &lt;0.99 and is_half_star == 0">
+                                                                    <i class="fa fa-star-half-o"/>
+                                                                    <t t-set="is_half_star" t-value="1"/>
+                                                                    </t>
+                                                                    <t t-else="">
+                                                                    <i class="fa fa-star-o"/>
+                                                                    </t>
+                                                                </t>
+                                                                </t>
+                                                            </ul>
+                                                        </div>
+                                                        <p class="price">
+                                                            <b>
+                                                                <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
+                                                                    class="text-danger mr8 oe_compare_list_price">
+                                                                    <bdi dir="inherit">
+                                                                    <span t-esc="combination_info['compare_list_price']"
+                                                                            groups="website_sale.group_product_price_comparison"
+                                                                            t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                    </bdi>
+                                                                </del>
+                                                                <t t-if="True">
+                                                                    <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
+                                                                </t>
+                                                                <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                                <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
+                                                                <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
+                                                            </b>
                                                         </p>
-                                                    </a>
-                                                </div>
-                                                <div class="pink-box" contenteditable="false">
-                                                    <ul class='ratings' t-if="request.website.viewref('theme_scita.theme_scita_rating').active">
-                                                        <div t-set="rating_val" t-value="slide.sudo().rating_get_stats().get('avg')"/>
-                                                        <t t-set="prod_curr_rate" t-value="0"/>
-                                                        <t t-set="is_half_star" t-value="0"/>
-                                                        <t t-foreach="range(0, 5)" t-as="every_prod_rate">
-                                                          <t t-set="prod_curr_rate" t-value="prod_curr_rate + 1"/>
-                                                          <t t-if="prod_curr_rate &lt;= int(rating_val // 1)">
-                                                            <i class="fa fa-star"/>
-                                                          </t>
-                                                          <t t-else="">
-                                                            <t t-if="rating_val % 1 > 0.01 and rating_val % 1 &lt;0.99 and is_half_star == 0">
-                                                              <i class="fa fa-star-half-o"/>
-                                                              <t t-set="is_half_star" t-value="1"/>
-                                                            </t>
-                                                            <t t-else="">
-                                                              <i class="fa fa-star-o"/>
-                                                            </t>
-                                                          </t>
-                                                        </t>
-                                                    </ul>
-                                                </div>
-                                                <p class="price">
-                                                    <b>
-                                                        <del t-if="combination_info['compare_list_price'] and (combination_info['compare_list_price'] &gt; combination_info['price'])"
-                                                            class="text-danger mr8 oe_compare_list_price">
-                                                            <bdi dir="inherit">
-                                                            <span t-esc="combination_info['compare_list_price']"
-                                                                    groups="website_sale.group_product_price_comparison"
-                                                                    t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                            </bdi>
-                                                        </del>
-                                                        <t t-if="True">
-                                                            <del t-attf-class="text-danger mr8 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="white-space: nowrap;"  t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" />
-                                                        </t>
-                                                        <span t-if="combination_info['price']"  t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                        <span itemprop="price" style="display:none;"  t-out="combination_info['price']" />
-                                                        <span itemprop="priceCurrency" style="display:none;"  t-out="website.currency_id.name" />
-                                                    </b>
-                                                </p>
-                                                <div class="cart_wrapper add_cart_div ajax_cart_template">
-                                                    <form action="/shop/cart/update" method="post">
-                                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                                        <input name="product_id" t-att-value="slide.product_variant_id.id" type="hidden"/>
-                                                         <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="slide.id">
-                                                            Add
-                                                        </button>
-                                                        <div class="input-group-append dropdown-plus">
-                                                            <span class="btn btn-link float_left js_add_cart_json" title="Add">
-                                                                <i class="fa fa-plus"></i>
-                                                            </span>
-                                                        </div>
-                                                        <div t-attf-class="o_hidden css_quantity input-group dropdown-plus-out {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
-                                                            <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
-                                                                <i class="fa fa-minus"></i>
-                                                            </a>
-                                                            <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
-                                                            <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one">
-                                                                <i class="fa fa-plus"></i>
-                                                            </a>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                                <div class="sct-hover-info product_price">
-                                                    <form action="/shop/cart/update" method="post">
-                                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
-                                                        <input name="product_id" t-att-value="slide.product_variant_id.id" type="hidden"/>
-                                                        <div class="qvp-btn" id="quick_view_product">
-                                                            <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="slide.id">
-                                                                <span class="fa fa-eye"/>
+                                                    </div>
+                                                    <div class="cart_wrapper add_cart_div ajax_cart_template">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                            <input name="product_id" t-att-value="slide.product_variant_id.id" type="hidden"/>
+                                                            <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="slide.id">
+                                                                Add
                                                             </button>
-                                                        </div>
-                                                        <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and slide.product_variant_ids">
-                                                            <t t-set="in_wish" t-value="slide.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
-                                                            <a class="btn btn-default btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="slide.product_variant_ids[0].id" data-action="o_wishlist"><span class="fa fa-heart-o"></span></a>
-                                                        </t>
-                                                        <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and slide.product_variant_ids">
-                                                           <a class="btn btn-xs o_add_compare" title="Compare" t-att-data-product-product-id="slide.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-exchange"></span></a>
-                                                        </t>
-                                                    </form>
+                                                            <div class="input-group-append dropdown-plus">
+                                                                <span class="btn btn-link float_left js_add_cart_json" title="Add">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div t-attf-class="o_hidden css_quantity input-group dropdown-plus-out {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
+                                                                <a t-attf-href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                                    <i class="fa fa-minus"></i>
+                                                                </a>
+                                                                <input type="text" class="form-control quantity text-center" data-min="1" name="add_qty" t-att-value="add_qty or 1"/>
+                                                                <a t-attf-href="#" class="btn btn-link float_left js_add_cart_json" aria-label="Add one" title="Add one">
+                                                                    <i class="fa fa-plus"></i>
+                                                                </a>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="sct-hover-info product_price">
+                                                        <form action="/shop/cart/update" method="post">
+                                                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                                            <input name="product_id" t-att-value="slide.product_variant_id.id" type="hidden"/>
+                                                            <!-- <div class="qvp-btn" id="quick_view_product"> -->
+                                                                <button type="button" role="button" id="quick_view_product" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="slide.id">
+                                                                    <span class="lni lni-eye"/>
+                                                                </button>
+                                                            <!-- </div> -->
+                                                            <t t-if="request.website.viewref('website_sale_wishlist.add_to_wishlist').active and slide.product_variant_ids">
+                                                                <t t-set="in_wish" t-value="slide.product_variant_ids &amp; request.env['product.wishlist'].current().mapped('product_id')"/>
+                                                                <a class="btn btn-default btn-xs o_add_wishlist" role="button" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="slide.product_variant_ids[0].id" data-action="o_wishlist"><span class="lni lni-heart"></span></a>
+                                                            </t>
+                                                            <t t-if="request.website.viewref('website_sale_comparison.add_to_compare').active and slide.product_variant_ids">
+                                                            <a class="btn btn-xs o_add_compare" role="button" title="Compare" t-att-data-product-product-id="slide.product_variant_ids[0].id" data-action="o_comparelist"><span class="fa fa-exchange"></span></a>
+                                                            </t>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                         </t>
                                     </li>
@@ -623,7 +628,7 @@
                             <a class="btn btn-xs o_add_wishlist" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist"><span class="icon-heart"></span></a>
                         </t>
                         <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
-                            <span class="icon-basket"/>
+                            <span class="lni lni-cart-1"></span>
                         </button>
                     </form>
                 </div>
