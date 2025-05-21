@@ -2914,25 +2914,61 @@
                 }
                 .pwp-info{
                     position: relative;
+                    background-color: $light-color;
+                    @include transition(all, 0.3s, ease-in);
 
                     .sct-hover-info{
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        bottom: 100%;
+                        @include transition(all, 0.3s, ease-in);
+                        
+                        @include min992{
+                            opacity: 0;
+                            bottom: 0;
+                            transform: translate(0, 49px);
+                        }
+
                         form{
                             @include flex;
-                            @include justify-align-content;
                             @include flexwrap;
                             width: 100%;
+
+                            @include mobiletab{
+                                @include justify-align-content;
+                            }
                             
                             .btn{
                                 font-size: 16px;
                                 padding: 5px;
-                                width: 30px;
-                                height: 30px;
+                                width: 26px;
+                                height: 26px;
                                 margin: 0 2px 5px;
                                 border-radius: 6px;
                                 background-color: $light-color;
-                                border: 1px solid #000;
+                                // border: 1px solid rgba($secondary, 0.2);
                                 @include flex;
                                 @include justify-align-content;
+                                box-shadow: rgba($dark-color, 0.2) 0px 0px 6px 0px;
+                                
+                                @include min992{
+                                    font-size: 18px;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    .pwp-info{
+                        @include min992{
+                            transform: translateY(-30px);
+    
+                            .sct-hover-info{
+                                transform: translate(0,30px) !important;
+                                opacity: 1;
                             }
                         }
                     }
@@ -2940,17 +2976,113 @@
             }
         }
     }
-    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
-        .product_category_scita, .fashion_featured_product_1{
-            .cst_btm_row, .lns-inner{
-                .cst_sct_right_side, .psb-inner{
-                    .cst_category-slider-section, .tab-content{
-                        .cat_list, .owl-item{
-                            .cs-cat, .cs-product{
-                                .pwp-info{
-                                    .sct-hover-info{
-                                        transform: none !important;
+    .oe_deal_of_the_day.s_theme_scita_deal_of_the_day, .theme_scita_trending_products, .sct_product_snippet_1{
+        .deal_day_wrap, .tab_content_inner, .content{
+            .deal_day_bottom_inner, .owl-item, .grid_product{
+                .cs-product{
+                    height: 100%;
+                    @include flex;
+                    @include flex-column;
+                    
+                    .pwd-desc{
+                        @include flex;
+                        @include flex-column;
+                        position: relative;
+                        flex-grow: 1;
+                        overflow: visible;
+                        background-color: $light-color;
+                        @include transition(all, 0.3s, ease-in);
+
+                        .pwp-info{
+                            flex-grow: 1;
+                            text-align: left;
+                        }
+                        
+                        .sct-hover-info{
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 100%;
+                            @include transition(all, 0.3s, ease-in);
+                            
+                            @include min992{
+                                opacity: 0;
+                                bottom: 0;
+                                transform: translate(0, 49px);
+                            }
+    
+                            form{
+                                @include flex;
+                                @include flexwrap;
+                                @include justify-align-content;
+                                @include align-content;
+                                width: 100%;
+                                
+                                .sct-feature-wrap{
+                                    @include flex;
+                                    @include flexwrap;
+                                }
+                                
+                                .btn{
+                                    font-size: 16px;
+                                    padding: 5px;
+                                    width: 27px;
+                                    height: 27px;
+                                    margin: 0 2px 5px;
+                                    border-radius: 6px;
+                                    background-color: $light-color;
+                                    // border: 1px solid rgba($secondary, 0.2);
+                                    @include flex;
+                                    @include justify-align-content;
+                                    box-shadow: rgba($dark-color, 0.2) 0px 0px 6px 0px;
+                                    
+                                    @include min1200{
+                                        font-size: 18px;
+                                        // width: 30px;
+                                        // height: 30px;
+                                        box-shadow: none;
                                     }
+
+                                    &.cart_view_sct_btn{
+                                        @include min1200{
+                                            font-size: 15px;
+                                            color: $light-color;
+                                            padding: 4px 10px;
+                                            min-width: 90px;
+                                            border: 1px solid transparent;
+                                            background: $primary;
+                                            width: auto;
+                                            height: auto;
+                                            box-shadow: none;
+                                            margin-left: 0;
+                                            margin-right: auto;
+                                        }
+
+                                        .add_to_cart_text{
+                                            display: none;
+                                            @include min1200{
+                                                display: inline-block;
+                                                margin-left: 5px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &:hover{
+                        .pwd-desc{
+                            @include min992{
+                                transform: translateY(-30px);
+                            }
+                            .sct-hover-info{
+                                @include min992{
+                                    transform: translate(0,30px) !important;
+                                    opacity: 1;
+                                }
+                                @include min1200{
+                                    transform: translate(0,35px) !important;
                                 }
                             }
                         }
@@ -2959,6 +3091,7 @@
             }
         }
     }
+
 }
 
 @else {
