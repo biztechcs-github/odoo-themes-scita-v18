@@ -478,4 +478,22 @@
             <attribute name='class'>sct_vat</attribute>
         </xpath>
     </template>
+    <template id="custom_product_tags_inline_display" inherit_id="website_sale.product">
+        <xpath expr="//t[@t-call='website_sale.product_tags']" position="replace">
+            <t t-if="is_view_active('website_sale.product_tags')">
+                <t t-if="product_variant.all_product_tag_ids">
+                    <p class="mt-2">
+                        <strong>Tags:</strong>
+                        <t t-set="tag_len" t-value="len(product_variant.all_product_tag_ids)"/>
+                        <t t-foreach="enumerate(product_variant.all_product_tag_ids)" t-as="tag_item">
+                            <t t-set="i" t-value="tag_item[0]"/>
+                            <t t-set="tag" t-value="tag_item[1]"/>
+                            <t t-esc="tag.name"/>
+                            <t t-if="i + 1 &lt; tag_len">, </t>
+                        </t>
+                    </p>
+                </t>
+            </t>
+        </xpath>
+    </template>
 </odoo>

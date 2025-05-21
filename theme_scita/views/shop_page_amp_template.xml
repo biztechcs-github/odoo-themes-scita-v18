@@ -738,7 +738,7 @@
                                         </t>
                                     </div>
                                 </div>
-                                <div class="products_pager d-flex justify-content-center pt-5 pb-3">
+                                <div class="products_pager d-flex justify-content-center pt-4 pb-4">
                                     <t t-call="website.pager"/>
                                 </div>
                             </div>

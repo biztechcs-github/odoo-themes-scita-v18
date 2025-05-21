@@ -55,7 +55,7 @@
     <template id="lazy_load_button" inherit_id="website_sale.products" active="False"
         name="Lazy Load Button">
         <xpath expr="//div[hasclass('products_pager')]" position="replace">
-            <div class="products_pager d-flex justify-content-center pt-5 pb-3">
+            <div class="products_pager d-flex justify-content-center pt-4 pb-4">
                 <button type="button" class="s_ajax_load_btn btn btn-primary d-none">Load more</button>
             </div>
         </xpath>
@@ -81,7 +81,7 @@
     <template id="default_pager" inherit_id="website_sale.products" active="False"
         name="Default">
         <xpath expr="//div[hasclass('products_pager')]" position="replace">
-            <div class="products_pager d-flex justify-content-center pt-5 pb-3">
+            <div class="products_pager d-flex justify-content-center pt-4 pb-4">
                 <t t-call="website.pager"/>
             </div>
         </xpath>
