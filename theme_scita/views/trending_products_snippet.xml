@@ -159,6 +159,12 @@
                                                                         <form action="/shop/cart/update" method="post">
                                                                             <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                                                             <input name="product_id" t-att-value="product.product_variant_id.id" type="hidden"/>
+                                                                            <t t-if="request.website.viewref('website_sale.products_add_to_cart').active and product.product_variant_ids">
+                                                                                <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
+                                                                                    <span class="lni lni-cart-1 cart_icon"></span>
+                                                                                    <span class="add_to_cart_text">Add to cart</span>
+                                                                                </button>
+                                                                            </t>
                                                                             <button type="button" role="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
                                                                                 <span class="lni lni-eye"/>
                                                                             </button>
@@ -172,12 +178,6 @@
                                                                                 <a class="btn btn-default btn-xs o_add_wishlist" role="button" t-att-disabled='in_wish or None' title="Add to Wishlist" t-att-data-product-product-id="product.product_variant_ids[0].id" data-action="o_wishlist">
                                                                                     <span class="lni lni-heart"></span>
                                                                                 </a>
-                                                                            </t>
-                                                                            <t t-if="request.website.viewref('website_sale.products_add_to_cart').active and product.product_variant_ids">
-                                                                                <button class="button btn btn-cart a-submit cart_view_sct_btn" t-att-data-id="product.id">
-                                                                                    <span class="lni lni-cart-1 cart_icon"></span>
-                                                                                    <span class="add_to_cart_text">Add to cart</span>
-                                                                                </button>
                                                                             </t>
                                                                         </form>
                                                                     </div>
