@@ -2410,12 +2410,12 @@
 	&:has(#product_detail){
 		// background-color: rgba($primary, 0.07);
 		main{
-			background-color: lighten($primary, 49%);
+			background-color: lighten($primary, 44%);
 		}
 		
 		header{
 			> *{
-				background-color: lighten($primary, 49%);
+				background-color: lighten($primary, 44%);
 				// background-color: transparent;
 			}
 		}

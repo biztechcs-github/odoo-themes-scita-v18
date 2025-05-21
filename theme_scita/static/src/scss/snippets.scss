@@ -2288,6 +2288,36 @@ body #wrapwrap{
 			text-transform: capitalize;
 		}
 	}
+	.product_category_scita, .fashion_featured_product_1{
+		.cst_btm_row, .lns-inner.latest-news-section{
+			.cst_sct_right_side, .lns-post{
+				.cst_category-slider-section, .tab-content{
+					.cat_list, .owl-item{
+						.cs-cat, .cs-product{
+							.pwd-desc{
+								overflow: visible;
+								.pwp-info{
+									padding: 10px 0 5px;
+									margin-bottom: 10px;
+									
+									@include min1024{
+										padding: 15px 0 5px;
+									}
+		
+									.pwpi-title{
+										margin-top: 0;
+									}
+									.price{
+										margin-bottom: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.add_cart_div {
 		position: relative;
 		.cart_view_sct_btn{

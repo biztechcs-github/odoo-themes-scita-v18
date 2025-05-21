@@ -483,7 +483,7 @@
                                             display: none;
             
                                             @include min768{
-                                                display: inline-block;
+                                                display: flex;
                                             }
                                         }
                                     }
@@ -662,7 +662,7 @@
                                     display: none;
 
                                     @include min768{
-                                        display: inline-block;
+                                        display: flex;
                                     }
                                 }
                             }
@@ -1198,7 +1198,7 @@
                                             display: none;
             
                                             @include min768{
-                                                display: inline-block;
+                                                display: flex;
                                             }
                                         }
                                     }
@@ -1377,7 +1377,7 @@
                                     display: none;
 
                                     @include min768{
-                                        display: inline-block;
+                                        display: flex;
                                     }
                                 }
                             }
@@ -1787,156 +1787,297 @@
             }
         }
     }
-    .oe_deal_of_the_day.s_theme_scita_deal_of_the_day, .theme_scita_trending_products, .sct_product_snippet_1{
-        .deal_day_wrap, .tab_content_inner, .content{
-            .deal_day_bottom_inner, .owl-item, .grid_product{
-                .cs-product{
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cs-cat, .cs-product{
+                overflow: hidden;
+
+                .cs-img{
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @include min992{
+                            display: block;
+                        }
+                    }
+                }
+                .pwp-info{
                     position: relative;
 
-                    .pwd-desc{
-                        overflow: visible;
-                        position: static;
+                    .sct-hover-info{
+                        background-color: rgba($primary, 0.12);
+                        @include transition(all, 0.5s, ease);
+                        @include flex;
+                        @include justify-align-content;
+                        width: 100%;
                         
-                        .pwp-info{
-                            background: $light-color;
-                            @include transition(all, 0.3s, ease-in);
+                        @include min992{
+                            width: calc(100% + 32px);
+                            margin-left: -100%;
+                            opacity: 0;
+                            position: absolute;
+                            left: -16px;
+                            top: 0;
+                            right: 0;
+                            bottom: 0;
                         }
+                        
+                        form{
+                            @include flex;
+                            @include justify-align-content;
+                            @include flexwrap;
+                            width: 100%;
 
-                        .sct-hover-info{
-                            padding-bottom: 5px;
-
-                            @include min992{
-                                padding-bottom: 0;
-                            }
-
-                            form{
-                                @include flex;
-                                @include flexwrap;
-                                @include content-cn;
-
-                                @include min992{
-                                    display: block;
-                                    opacity: 0;
-                                    @include transition(all, 0.3s, ease-in);
-                                }
-                            }
                             .btn{
-                                background: $light-color;
-                                box-shadow: rgba($black, 0.2) 0px 0px 4px;
-                                padding: 6px;
-                                line-height: 1;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                font-size: 16px;
-                                border: 0;
-                                margin: 0 3px;
-                                width: auto;
+                                @include flex;
+                                @include justify-align-content;
                                 @include transition(all, 0.3s, ease-in);
+                                border-radius: 0;
+                                border-right: 1px solid $primary;
+                                flex: 0 0 50%;
+                                max-width: 50%;
+                                font-size: 20px;
+                                height: 34px;
+
+                                @include min768{
+                                    flex: 0 0 33.33%;
+                                    max-width: 33.33%;
+                                }
                                 
                                 @include min992{
-                                    position: absolute;
-                                    top: 11px;
-                                    left: 18px;
-                                    z-index: 1;
-                                    margin: 0;
-                                    transform: translate(-30px, 10px);
-                                }
-                                
-                                @include min1200{
-                                    font-size: 18px;
-                                }
-
-                                &:hover{
-                                    background: $primary;
+                                    border: 0;
+                                    background-color: darken($primary, 20%);
+                                    width: 37px;
+                                    height: 37px;
+                                    border-radius: 50%;
+                                    margin: 0 7.5px 5px;
                                     color: $light-color;
+                                    flex: 0 0 auto;
+                                    max-width: fit-content;
                                 }
 
-                                &.cart_view_sct_btn{
-                                    @include min992{
-                                        // position: static;
-                                        margin: 0 auto;
-                                        box-shadow: none;
-                                        background: $primary;
-                                        padding: 5px 10px;
-                                        font-size: 14px;
-                                        min-width: 90px;
-                                        color: $light-color;
-                                        border: 1px solid $primary;
-                                        bottom: 0;
-                                        top: auto;
-                                        left: 50%;
-                                        transform: translate(-50%, 10px);
-
-                                        &:hover{
-                                            background: $light-color;
-                                            color: $primary;
-                                        }
-                                    }
-
-                                    .add_to_cart_text{
-                                        display: none;
-
-                                        @include min768{
-                                            display: block;
-                                        }
-                                    }
-                                    .cart_icon{
-                                        @include min768{
-                                            display: none;
-                                        }
-                                    }
+                                &:last-child{
+                                    border-right: 0;
                                 }
 
                                 &.o_add_compare{
                                     display: none;
 
                                     @include min768{
-                                        display: inline-block;
+                                        display: flex;
+                                        font-size: 18px;
+                                    }
+                                }
+                                &.cart_view_sct_btn{
+                                    .add_to_cart_text{
+                                        display: none;
+                                    }
+                                }
+
+                                .lni, .fa{
+                                    @include transition(all, 0.3s, ease-in);
+                                }
+
+                                &:hover{
+                                    .lni, .fa{
+                                        transform: scale(1.1);
                                     }
                                 }
                             }
-                            .btn[role="button"]{
-                                + .btn[role="button"]{
+                        }
+                    }
+                }
+                &:hover{
+                    @include min992{
+                        .pwp-info{
+                            .sct_cat_content, .pink-box, .price, .pwpi-title{
+                                filter: blur(2px);
+                            }
+                            .sct-hover-info{
+                                margin-left: 0;
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cst_btm_row, .lns-inner{
+                .cst_sct_right_side, .psb-inner{
+                    .cst_category-slider-section, .tab-content{
+                        .cat_list, .owl-item{
+                            .cs-cat, .cs-product{
+                                .pwp-info{
+                                    .sct-hover-info{
+                                        transform: none !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .theme_scita_trending_products{
+        .latest-trendy-section{
+            .lns-post{
+                .tab-content{
+                    .owl-carousel{
+                        .owl-stage{
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .oe_deal_of_the_day.s_theme_scita_deal_of_the_day, .theme_scita_trending_products, .sct_product_snippet_1{
+        .deal_day_wrap, .tab_content_inner, .content{
+            .deal_day_bottom_inner, .owl-item, .grid_product{
+                .cs-product{
+                    height: 100%;
+                    @include flex;
+                    @include flex-column;
+                    
+                    .pwd-desc{
+                        @include flex;
+                        @include flex-column;
+                        position: relative;
+                        overflow: hidden;
+                        flex-grow: 1;
+
+                        .pwp-info{
+                            flex-grow: 1;
+                        }
+                        .sct-hover-info{
+                            background-color: rgba($primary, 0.12);
+                            @include transition(all, 0.5s, ease);
+                            @include flex;
+                            @include justify-align-content;
+                            width: 100%;
+                            
+                            @include min992{
+                                margin-left: -100%;
+                                opacity: 0;
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                right: 0;
+                                bottom: 0;
+                            }
+                            
+                            form{
+                                @include flex;
+                                @include justify-align-content;
+                                @include flexwrap;
+                                width: 100%;
+                                
+                                .sct-feature-wrap{
+                                    @include flex;
+                                    @include justify-align-content;
+                                    @include flexwrap;
+                                    flex: 0 0 66.66%;
+                                    max-width: 66.66%;
+
+                                    @include min768{
+                                        flex: 0 0 75%;
+                                        max-width: 75%;
+                                    }
                                     @include min992{
-                                        top: 45px;
+                                        flex: 0 0 auto;
+                                        max-width: fit-content;
                                     }
 
-                                    @media (min-width: 1200px) {
-                                        top: 48px;
-                                    }
+                                    .btn{
+                                        flex: 0 0 50%;
+                                        max-width: 50%;
 
-                                    + .btn[role="button"]{
-                                        @include min992{
-                                            top: 80px;
+                                        @include min768{
+                                            flex: 0 0 33.33%;
+                                            max-width: 33.33%;
                                         }
-                                        @include min1200{
-                                            top: 85px;
+                                        @include min992{
+                                            flex: 0 0 auto;
+                                            max-width: fit-content;
+                                        }
+                                    }
+                                }
+    
+                                .btn{
+                                    @include flex;
+                                    @include justify-align-content;
+                                    @include transition(all, 0.3s, ease-in);
+                                    border-radius: 0;
+                                    border-right: 1px solid $primary;
+                                    flex: 0 0 33.33%;
+                                    max-width: 33.33%;
+                                    font-size: 20px;
+                                    height: 34px;
+
+                                    @include min768{
+                                        flex: 0 0 25%;
+                                        max-width: 25%;
+                                    }
+                                    
+                                    @include min992{
+                                        border: 0;
+                                        background-color: darken($primary, 20%);
+                                        width: 37px;
+                                        height: 37px;
+                                        border-radius: 50%;
+                                        margin: 0 7.5px 5px;
+                                        color: $light-color;
+                                        flex: 0 0 auto;
+                                        max-width: fit-content;
+                                    }
+
+                                    &:last-child{
+                                        border-right: 0;
+                                    }
+
+                                    &.o_add_compare{
+                                        display: none;
+
+                                        @include min768{
+                                            display: flex;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                    &.cart_view_sct_btn{
+                                        .add_to_cart_text{
+                                            display: none;
+                                        }
+                                    }
+
+                                    .lni, .fa{
+                                        @include transition(all, 0.3s, ease-in);
+                                    }
+    
+                                    &:hover{
+                                        .lni, .fa{
+                                            transform: scale(1.1);
                                         }
                                     }
                                 }
                             }
                         }
                     }
-
                     &:hover{
-                        .pwd-desc{
+                        @include min992{
                             .pwp-info{
-                                transform: translateY(-20px);
+                                .sct_cat_content, .pink-box, .price, .pwpi-title{
+                                    filter: blur(2px);
+                                }
                             }
                             .sct-hover-info{
-                                form{
-                                    opacity: 1;
-                                }
-                                .btn{
-                                    @include min992{
-                                        transform: translate(0px, 0px);
-                                        
-                                        &.cart_view_sct_btn{
-                                            transform: translate(-50%, 0px);
-                                        }
-                                    }
-                                }
+                                margin-left: 0;
+                                opacity: 1;
                             }
                         }
                     }
@@ -2093,6 +2234,12 @@
                                         display: none;
                                     }
                                 }
+                                &.o_add_compare{
+                                    display: none;
+                                    @include min992{
+                                        display: flex;
+                                    }
+                                }
                                 &:hover{
                                     background-color: $primary;
                                     color: $light-color;
@@ -2189,6 +2336,222 @@
                                     &:first-child{
                                         margin-left: 0;
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cs-cat, .cs-product{
+                overflow: hidden;
+
+                .cs-img{
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @include min992{
+                            display: block;
+                        }
+                    }
+                }
+                .pwp-info{
+                    position: relative;
+
+                    .sct-hover-info{
+                        @include transition(all, 0.5s, ease);
+                        @include flex;
+                        @include justify-align-content;
+                        width: 100%;
+                        position: absolute;
+                        bottom: 100%;
+                        left: 0;
+                        right: 0;
+                        
+                        @include min992{
+                            opacity: 0;
+                        }
+                        
+                        form{
+                            @include flex;
+                            @include justify-align-content;
+                            @include flexwrap;
+                            width: 100%;
+
+                            .btn{
+                                margin-bottom: 5px;
+                                background: lighten($primary, 45%);
+                                @include flex;
+                                @include justify-align-content;
+                                border: 1px solid rgba($primary, 0.3);
+                                font-size: 16px;
+                                border-radius: 0;
+                                width: 31px;
+                                height: 29px;
+                                
+                                @media (min-width: 576px) {
+                                    background: $light-color;
+                                    margin: 0 2px 5px;
+                                    border-radius: 6px;
+                                }
+                                @media (min-width: 1200px) {
+                                    margin: 0 4px 5px;
+                                    width: 35px;
+                                    height: 32px;
+                                }
+
+                                &.o_add_compare{
+                                    display: none;
+
+                                    @include min768{
+                                        display: flex;
+                                    }
+                                }
+                                &.cart_view_sct_btn{
+                                    .add_to_cart_text{
+                                        display: none;
+                                    }
+                                }
+
+                                &:hover{
+                                    background-color: $primary;
+                                    color: $light-color;
+                                    border-color: rgba($primary, 0.7);
+                                }
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    .pwd-desc{
+                        .sct-hover-info{
+                            @include min992{
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cst_btm_row, .lns-inner{
+                .cst_sct_right_side, .psb-inner{
+                    .cst_category-slider-section, .tab-content{
+                        .cat_list, .owl-item{
+                            .cs-cat, .cs-product{
+                                .pwp-info{
+                                    .sct-hover-info{
+                                        transform: none !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .oe_deal_of_the_day.s_theme_scita_deal_of_the_day, .theme_scita_trending_products, .sct_product_snippet_1{
+        .deal_day_wrap, .tab_content_inner, .content{
+            .deal_day_bottom_inner, .owl-item, .grid_product{
+                .cs-product{
+                    height: 100%;
+                    @include flex;
+                    @include flex-column;
+                    
+                    .pwd-desc{
+                        @include flex;
+                        @include flex-column;
+                        position: relative;
+                        flex-grow: 1;
+                        overflow: visible;
+
+                        .pwp-info{
+                            flex-grow: 1;
+                        }
+                        
+                        .sct-hover-info{
+                            @include transition(all, 0.5s, ease);
+                            @include flex;
+                            @include justify-align-content;
+                            width: 100%;
+                            position: absolute;
+                            bottom: 100%;
+                            left: 0;
+                            right: 0;
+                            
+                            @include min992{
+                                opacity: 0;
+                            }
+                            
+                            form{
+                                @include flex;
+                                @include justify-align-content;
+                                @include flexwrap;
+                                width: 100%;
+                                
+                                .sct-feature-wrap{
+                                    @include flex;
+                                    @include justify-align-content;
+                                    @include flexwrap;
+                                }
+
+                                .btn{
+                                    margin-bottom: 5px;
+                                    background: lighten($primary, 45%);
+                                    @include flex;
+                                    @include justify-align-content;
+                                    border: 1px solid rgba($primary, 0.3);
+                                    font-size: 16px;
+                                    border-radius: 0;
+                                    width: 31px;
+                                    height: 29px;
+                                    
+                                    @media (min-width: 576px) {
+                                        background: $light-color;
+                                        margin: 0 2px 5px;
+                                        border-radius: 6px;
+                                    }
+                                    @media (min-width: 1200px) {
+                                        margin: 0 4px 5px;
+                                        width: 35px;
+                                        height: 32px;
+                                    }
+
+                                    &.o_add_compare{
+                                        display: none;
+
+                                        @include min768{
+                                            display: flex;
+                                        }
+                                    }
+                                    &.cart_view_sct_btn{
+                                        .add_to_cart_text{
+                                            display: none;
+                                        }
+                                    }
+
+                                    &:hover{
+                                        background-color: $primary;
+                                        color: $light-color;
+                                        border-color: rgba($primary, 0.7);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &:hover{
+                        .pwd-desc{
+                            .sct-hover-info{
+                                @include min992{
+                                    opacity: 1;
                                 }
                             }
                         }
@@ -2524,6 +2887,69 @@
                                 .o_wsale_product_sub{
                                     .o_wsale_product_btn{
                                         transform: translate(0);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cs-cat, .cs-product{
+                overflow: hidden;
+
+                .cs-img{
+                    a{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        @include min992{
+                            display: block;
+                        }
+                    }
+                }
+                .pwp-info{
+                    position: relative;
+
+                    .sct-hover-info{
+                        form{
+                            @include flex;
+                            @include justify-align-content;
+                            @include flexwrap;
+                            width: 100%;
+                            
+                            .btn{
+                                font-size: 16px;
+                                padding: 5px;
+                                width: 30px;
+                                height: 30px;
+                                margin: 0 2px 5px;
+                                border-radius: 6px;
+                                background-color: $light-color;
+                                border: 1px solid #000;
+                                @include flex;
+                                @include justify-align-content;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .s_custom_img_category_slider.multi_product_and_category_slider, .fashion_multi_category_slider{
+        .product_category_scita, .fashion_featured_product_1{
+            .cst_btm_row, .lns-inner{
+                .cst_sct_right_side, .psb-inner{
+                    .cst_category-slider-section, .tab-content{
+                        .cat_list, .owl-item{
+                            .cs-cat, .cs-product{
+                                .pwp-info{
+                                    .sct-hover-info{
+                                        transform: none !important;
                                     }
                                 }
                             }
