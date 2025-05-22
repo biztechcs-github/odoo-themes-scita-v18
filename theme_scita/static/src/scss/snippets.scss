@@ -2292,10 +2292,33 @@ body #wrapwrap{
 		.cst_btm_row, .lns-inner.latest-news-section{
 			.cst_sct_right_side, .lns-post{
 				.cst_category-slider-section, .tab-content{
+					.cat_list{
+						border: 1px solid #EBE9EE;
+
+						li.cs-cat{
+							padding: 0;
+							border: 0;
+						}
+					}
+					.owl-stage{
+						@include flex;
+					}
 					.cat_list, .owl-item{
-						.cs-cat, .cs-product{
+						.cs-product{
+							height: 100%;
+							@include flex;
+							@include flex-column;
+
 							.pwd-desc{
 								overflow: visible;
+								@include flex;
+								@include flex-column;
+								position: static;
+								flex-grow: 1;
+
+								.add_cart_div{
+									margin-top: auto;
+								}
 								.pwp-info{
 									padding: 10px 0 5px;
 									margin-bottom: 10px;
@@ -2492,14 +2515,14 @@ body #wrapwrap{
 							.pwp-img{
 								position: relative;
 								overflow: hidden;
-								height: 150px;
-								@include min576{
-									height: 180px;
-								}
+								height: 170px;
+								// @include min576{
+								// 	height: 180px;
+								// }
 								a {
 									@include flex;
 									@include justify-align-content;
-									height: 100%;
+									height: 100% !important;
 									img {
 										max-height: 100%;
 										width: auto;
@@ -2659,11 +2682,15 @@ body #wrapwrap{
 			line-height: 38px;
 			display: block !important;
 			position: absolute;
-			top: 0;
+			top: -40px;
 			bottom: 0;
 			margin: auto;
 			background: #393939;
 			@include transition(all, 0.3s, ease);
+
+			@include min576{
+				top: 0;
+			}
 		}
 		.owl-buttons .owl-prev {
 			left: -20px;
@@ -9166,14 +9193,14 @@ body #wrapwrap{
 						@include flex;
 						@include flex-column;
 						.cs-img {
-							height: 140px;
+							height: 170px;
 							text-align: center;
 						    @include flex;
 						    @include  justify-align-content;
 						    overflow: hidden;
-							@include min576{
-								height: 180px;
-							}
+							// @include min576{
+							// 	height: 180px;
+							// }
 							@include min992{
 								height: 155px;
 							}
@@ -9187,7 +9214,8 @@ body #wrapwrap{
 								height: 180px;
 							}
 							a{
-								display: block;
+								display: flex;
+								align-items: center;
 								height: 100%;
 							}
 							img {
@@ -11617,7 +11645,11 @@ body #wrapwrap{
                 background-color: #F5F5F5;
                 padding: 20px 18px;
                 @include transition(all, 0.3s , ease);
+				height: 170px;
 
+				@include min992{
+					height: inherit;
+				}
                 @include min1024{
                     padding: 24px 10px;
                 }
@@ -11627,6 +11659,9 @@ body #wrapwrap{
                 a{
                     display: block;
                     text-align: center;
+					@include mobiletab{
+						height: 100% !important;
+					}
                 }
             }
             .pwd-desc{
@@ -11635,7 +11670,7 @@ body #wrapwrap{
 				
                 .pwp-info{
 					padding: 0;
-					padding: 12px 0 0;
+					padding: 15px 0 0;
                     .pwpi-title{
                         margin-bottom: 5px;
                         font-size: 15px;
@@ -11993,7 +12028,7 @@ body #wrapwrap{
         position: relative;
 
         .pwp-info{
-            padding-top: 20px;
+            padding-top: 15px;
 
             .pwpi-title{
                 font-size: 14px;
@@ -12231,7 +12266,7 @@ body #wrapwrap{
 				border: 0;
 				.pwp-img{
 					background-color: $light-grey-color;
-					height: 150px;
+					height: 170px;
 					@include min1024 {
 						height: 200px;
 					}
@@ -12251,8 +12286,7 @@ body #wrapwrap{
 					text-align: center;
 					.price {
 						margin-bottom: 0;
-						// padding-bottom: 0;
-						padding-top: 5px;
+						padding: 5px 0;
 					}
 				}
 			}
@@ -12421,14 +12455,15 @@ body #wrapwrap{
             margin: 0 7px 10px;
 
             .cs-product{
-                padding: 0 7px 15px;
+                margin: 0 7px 15px;
+				padding: 0;
                 border: 0;
 				.pwd-desc{
 					@include min1200{
 						overflow: hidden;
 					}
 					.pwp-info{
-						padding-top: 10px;
+						// padding-top: 10px;
 						text-align: center;
 						.pwpi-title {
 							font-size: 14px;
@@ -12443,6 +12478,11 @@ body #wrapwrap{
 							}
 							@include min992{
 								font-size: 20px;
+							}
+						}
+						.pink-box{
+							.ratings{
+								line-height: 1;
 							}
 						}
 						.price{
@@ -12461,13 +12501,13 @@ body #wrapwrap{
                     background: $light-grey-color;
                     padding: 10px;
                     text-align: center;
-					height: 140px;
+					height: 170px;
 					@include flex;
 					@include justify-align-content;
 
-					@include min768{
-						height: 150px;
-					}
+					// @include min768{
+					// 	height: 150px;
+					// }
 					@include min992{
 						height: 210px;
 					}
