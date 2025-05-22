@@ -2832,3 +2832,30 @@ body #wrapwrap::-webkit-scrollbar{
 		}
 	}
 }
+/*
+common search for categories and products (22/05/2025)
+*/
+.dot {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.chip-link {
+    display: inline-block;
+}
+
+.chip {
+    display: inline-block;
+    border: 1px solid #d1d1d1;
+    border-radius: 5;
+    font-size: 14px;
+    color: #242323;
+    padding: 6px 12px;
+    white-space: nowrap;
+}
+.chip:hover {
+    border-color: #dc3545;
+}
+
