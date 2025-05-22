@@ -16,11 +16,28 @@ from odoo.addons.website.controllers.main import QueryURL
 from odoo.addons.website_sale.controllers import main
 from odoo.addons.website_sale.controllers.main import WebsiteSale
 from odoo.addons.website_sale.controllers.main import TableCompute
+from odoo.addons.website.controllers.main import Website
 from odoo.addons.base.models.assetsbundle import AssetsBundle
 from odoo.tools import lazy, SQL
 from odoo.tools import clean_context, float_round, groupby, lazy, single_email_re, str2bool, SQL
 from collections import defaultdict
 from itertools import product as cartesian_product
+
+
+
+class WebsiteAutocomplate(Website):
+
+    @http.route('/website/snippet/autocomplete', type='json', auth='public', website=True, readonly=True)
+    def autocomplete(self, search_type=None, term=None, order=None, limit=5, max_nb_chars=999, options=None):
+        res = super().autocomplete(search_type='products_only', term=term, order=order, limit=limit, max_nb_chars=max_nb_chars, options=options)
+        for rslt in res.get('results'):
+            rslt.update({'category': False})
+        categories_result = super().autocomplete(search_type='product_categories_only', term=term, order=order, limit=limit, max_nb_chars=max_nb_chars, options=options)
+        for rslt in categories_result.get('results'):
+            rslt.update({'category': True})
+            if term in str(rslt.get('name')) or term.title() in str(rslt.get('name')) or term.upper() in str(rslt.get('name')):
+                res.get('results').append(rslt)
+        return res
 
 class ScitaSliderSettings(http.Controller):
 

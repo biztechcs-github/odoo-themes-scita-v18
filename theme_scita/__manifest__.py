@@ -127,6 +127,7 @@ AMP Support
         'views/new_snippets.xml',
         'views/shop_page_attribute.xml',
         'views/theme_cusomization.xml',
+        'views/snippets/snippets.xml',
     ],
     'support': 'support@appjetty.com',
     'live_test_url': 'https://theme-scita-v17.appjetty.com/',
