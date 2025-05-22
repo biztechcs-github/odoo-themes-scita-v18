@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+<record id="theme_scita.s_searchbar_000_categories_xml" model="ir.asset">
+    <field name="name">Searchbar categories 000 XML</field>
+    <field name="bundle">web.assets_frontend</field>
+    <field name="path">theme_scita/static/src/snippets/000_categories.xml</field>
+</record>
+
+</odoo>
