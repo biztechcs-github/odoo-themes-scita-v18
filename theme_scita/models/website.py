@@ -279,3 +279,10 @@ class website(models.Model):
         child_categories = self.env['product.public.category'].search(
             [('include_in_allcategory',"=",True),('parent_id', '=', child_id.id),("website_id", "in", [False, request.website.id])], order="sequence asc")
         return child_categories
+    
+    def get_categories(self, category=None):
+        cat = {}
+        shop_category = request.env['product.public.category'].sudo().search(
+            [('parent_id', '=', None)], order='name asc')
+        cat.update({'categ': shop_category})
+        return cat

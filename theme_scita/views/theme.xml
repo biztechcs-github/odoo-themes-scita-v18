@@ -1374,6 +1374,12 @@
                                                     </t>
                                                 </t>
                                                 <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
+                                                <t t-if="product.show_availability and prod_available[product.id]['free_qty'] &lt;= 0">
+                                                    <div id="threshold_message_scita_out_of_stock"  t-attf-class="out_of_stock_message_#{product.id} text-warning fw-bold">
+                                                        <t>OUT OF STOCK</t>
+                                                    </div>
+                                                </t>
+                                                <t t-else="">
                                                 <div id="add_to_cart_wrap" t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} align-items-center mb-2 me-auto">
                                                           <!-- ******************************************************************** -->
                                                                     <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex'}} me-2 mb-2 align-middle" contenteditable="false">
@@ -1386,11 +1392,13 @@
                                                                         </a>
                                                                     </div>
                                                             <!-- ******************************************************************** -->
+                                                        
                                                         <a data-animation-selector=".o_wsale_product_images" role="button" id="add_to_cart" t-attf-class="btn btn-primary js_check_product a-submit" href="#">
                                                             <i class="icon-basket me-2"/> 
                                                             Add to cart
                                                         </a>                          
                                                     </div>
+                                                </t>
                                                 <div id="o_wsale_cta_wrapper" class="d-flex flex-wrap align-items-center">
                                                     <t t-set="hasQuantities" t-value="false"/>
                                                     <t t-set="hasBuyNow" t-value="false"/>

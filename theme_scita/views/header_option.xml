@@ -74,12 +74,7 @@
     
     <template id="scita_header_mobile" name="Scita Header Mobile" inherit_id="website.template_header_mobile">
         <xpath expr="//t[@t-call='website.placeholder_header_language_selector']" position="before">
-            <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
-            <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
-            <t t-call="website_sale.pricelist_list" t-cache="pricelist">
-                <t t-set="_classes" t-valuef="mb-3"/>
-                <t t-set="navClass" t-valuef="l"/>
-            </t>
+            <!-- Mobile header content -->
         </xpath>
     </template>
     <template id="scita_header_all_category_mobile" name="Scita Header All Category For Mobile" inherit_id="website.template_header_mobile" active='False'>
@@ -150,7 +145,7 @@
             </li>
         </t>
     </template>
-    <template active="False" id="option_header_1" inherit_id="website.layout" name='Header option 1'>
+    <template id="option_header_1" inherit_id="website.layout" name="Header option 1">
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
@@ -236,7 +231,6 @@
                     </div>
                 </div>
             </t>
-            <t t-call="website.template_header_mobile"/>
         </xpath>
     </template>
 
@@ -316,7 +310,6 @@
                     </div>
                 </div>
             </t>
-            <t t-call="website.template_header_mobile"/>
         </xpath>
     </template>
     <template active="False" id="option_header_3" inherit_id="website.layout" name='Header option 3'>
@@ -447,7 +440,6 @@
                     </div>
                 </div>
             </t>
-            <t t-call="website.template_header_mobile"/>
         </xpath>
     </template>
 
@@ -558,7 +550,6 @@
                     </div>
                 </div>
             </t>
-            <t t-call="website.template_header_mobile"/>
         </xpath>
     </template>
        <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
@@ -655,7 +646,6 @@
                 </div>
 
             </t>
-            <t t-call="website.template_header_mobile"/>
         </xpath>
     </template>
     <template  id="search_btn_primary_class_remove" inherit_id="website.website_search_box">
