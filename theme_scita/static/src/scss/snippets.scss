@@ -1155,9 +1155,12 @@ body #wrapwrap{
 
 				.sct_deal_text{
 					.sct_per{
-						font-size: $subtitle - 4;
+						font-size: $subtitle - 8;
 						// color: $primary;
 						font-weight: 600;
+						line-height: 1.2;
+						margin-bottom: 6px;
+						display: block;
 					}
 				}
 				.sct_sub_title{
@@ -2285,10 +2288,63 @@ body #wrapwrap{
 			text-transform: capitalize;
 		}
 	}
+	.product_category_scita, .fashion_featured_product_1{
+		.cst_btm_row, .lns-inner.latest-news-section{
+			.cst_sct_right_side, .lns-post{
+				.cst_category-slider-section, .tab-content{
+					.cat_list{
+						border: 1px solid #EBE9EE;
+
+						li.cs-cat{
+							padding: 0;
+							border: 0;
+						}
+					}
+					.owl-stage{
+						@include flex;
+					}
+					.cat_list, .owl-item{
+						.cs-product{
+							height: 100%;
+							@include flex;
+							@include flex-column;
+
+							.pwd-desc{
+								overflow: visible;
+								@include flex;
+								@include flex-column;
+								position: static;
+								flex-grow: 1;
+
+								.add_cart_div{
+									margin-top: auto;
+								}
+								.pwp-info{
+									padding: 10px 0 5px;
+									margin-bottom: 10px;
+									
+									@include min1024{
+										padding: 15px 0 5px;
+									}
+		
+									.pwpi-title{
+										margin-top: 0;
+									}
+									.price{
+										margin-bottom: 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.add_cart_div {
 		position: relative;
 		.cart_view_sct_btn{
-			background-color: #F6F6F6;
+			background-color: #F0F0F0;
 			border-radius: 40px;
 			position: relative;
 			@include transition(all, 0.5s, ease);
@@ -2338,7 +2394,7 @@ body #wrapwrap{
 			}
 		}
 		.dropdown-plus-out{
-			background-color: #F6F6F6;
+			background-color: #F0F0F0;
 			border-radius: 40px;
 			position: absolute;
 			top: 0;
@@ -2392,73 +2448,7 @@ body #wrapwrap{
 			}
 		}
 	}
-	.sct-hover-info {
-		position: absolute;
-		top: 42%;
-		text-align: center;
-		box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
-		background-color: $light-color;
-		border-radius: 4px;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		@include transition(all, 0.5s, ease);
-		@include min576{
-			top: 48%;
-		}
-		@include min992{
-			transform: translate(-50%, 10%);
-			top: 45%;
-			left: 50%;
-			right: auto;
-			opacity: 0;
-			visibility: hidden;
-		}
-		@include min1600{
-			top: 48%;
-		}
-		form {
-			@include flex;
-			@include justify-align-content;
-		}
-		.btn {
-			padding: 7px;
-			position: relative;
-			border: 0;
-			@include flex;
-			@include justify-align-content;
-			border-radius: 4px;
-			height: 100%s;
-			@include min992{
-				width: 40px;
-				padding: 10px;
-			}
-			&:hover{
-				color: $light-color;
-				background-color: $primary;
-				border-radius: 4px;
-			}
-			&.o_add_wishlist, &.o_add_compare{
-				&::after {
-					content: "";
-					position: absolute;
-					background-color: #EBE9EE;
-					width: 1px;
-					height: 50%;
-					left: -1px;
-					top: 0;
-					bottom: 0;
-					margin: auto;
-				}
-			}
-			img{
-				opacity: 0.7;
-				width: 19px;
-				@include min992{
-					width: 100%;
-				}
-			}
-		}
-	}
+	
 }
 .fashion_multi_category_slider{
 	background-color: #F3F4F8;
@@ -2525,14 +2515,14 @@ body #wrapwrap{
 							.pwp-img{
 								position: relative;
 								overflow: hidden;
-								height: 150px;
-								@include min576{
-									height: 180px;
-								}
+								height: 170px;
+								// @include min576{
+								// 	height: 180px;
+								// }
 								a {
 									@include flex;
 									@include justify-align-content;
-									height: 100%;
+									height: 100% !important;
 									img {
 										max-height: 100%;
 										width: auto;
@@ -2599,7 +2589,7 @@ body #wrapwrap{
 										border-color: $secondary;
 									}
 									.input-group-append{
-										background-color: #F6F6F6;
+										background-color: #F0F0F0;
 									}
 								}
 							}
@@ -2692,11 +2682,15 @@ body #wrapwrap{
 			line-height: 38px;
 			display: block !important;
 			position: absolute;
-			top: 0;
+			top: -40px;
 			bottom: 0;
 			margin: auto;
 			background: #393939;
 			@include transition(all, 0.3s, ease);
+
+			@include min576{
+				top: 0;
+			}
 		}
 		.owl-buttons .owl-prev {
 			left: -20px;
@@ -3451,7 +3445,7 @@ body #wrapwrap{
 /*it brand snippet end*/
 /*it blog snippet*/
 .scita_blog_slider {
-	background: #f7fafd;
+	background: rgba($primary ,0.03);
 	@include bg-nore-cover;
 	padding: 50px 0;
 	@include min992{
@@ -8249,7 +8243,7 @@ body #wrapwrap{
 		text-align: center;
 		.fancy {
 			margin-bottom: 0;
-			color: $light-color;
+			color: $dark-color;
 		}
 	}
 	.sct_blog_box {
@@ -8845,6 +8839,7 @@ body #wrapwrap{
 			padding: 10px 15px 18px;
 			border-radius: 10px;
 			@include transition(all, 0.3s, ease-in);
+			width: 100%;
 			a{
 				height: 100%;
 				@include flex;
@@ -8866,7 +8861,9 @@ body #wrapwrap{
 				}
             }
             .cs-img {
-				flex: 1;
+				flex-grow: 1;
+				height: 150px;
+
                	img {
 					height: 100%;
 					object-fit: scale-down;
@@ -9196,14 +9193,14 @@ body #wrapwrap{
 						@include flex;
 						@include flex-column;
 						.cs-img {
-							height: 140px;
+							height: 170px;
 							text-align: center;
 						    @include flex;
 						    @include  justify-align-content;
 						    overflow: hidden;
-							@include min576{
-								height: 180px;
-							}
+							// @include min576{
+							// 	height: 180px;
+							// }
 							@include min992{
 								height: 155px;
 							}
@@ -9217,7 +9214,8 @@ body #wrapwrap{
 								height: 180px;
 							}
 							a{
-								display: block;
+								display: flex;
+								align-items: center;
 								height: 100%;
 							}
 							img {
@@ -9257,11 +9255,11 @@ body #wrapwrap{
 							}
 							.add_cart_div{
 								.cart_view_sct_btn{
-									background-color: transparent;
+									background-color: $light-color;
 									border-color: $secondary;
 								}
 								.input-group-append{
-									background-color: #F6F6F6;
+									background-color: #F0F0F0;
 								}
 							}
 						}
@@ -9365,125 +9363,6 @@ body #wrapwrap{
 /*brand and product/category snippet 2 end */
 
 
-.oe_deal_of_the_day{
-	.cs-product{
-		.sct-hover-info {
-    		@include flex;
-    		@include justify-align-content;
-    		position: absolute;
-		    left: 0;
-		    top: 0;
-		    right: 0;
-		    bottom: 0;
-		    margin: auto;
-    		opacity: 0;
-    		margin-left: -100%;
-    		background: fade-out($secondary, 0.7);
-    		@include transition(all, 0.5s, ease);
-    		@media (max-width: 1199px) {
-    			bottom: unset;
-    			top: -40px;
-    			margin-left: 0;
-    			opacity: 1;
-    			padding: 0;
-    		}
-    		form {
-    			@include flex;
-    			@include justify-align-content;
-    			margin-left: -100%;
-    			@include transition(all, 0.5s, ease);
-    			@media (max-width: 1199px){
-					width: 100%;
-					margin-left: 0;
-				}
-    		}
-    		.btn {
-    			background: #4e4e4e;
-    			width: 50px;
-    			height: 50px;
-    			border-radius: 50px;
-    			@include flex;
-    			@include justify-align-content;
-    			margin: 0 10px;
-				padding: 0;
-
-    			@media (max-width: 1600px){
-    				width: 40px;
-    				height: 40px;
-    			}
-    			@media (max-width: 1199px){
-    				width:25%;
-    				// background: transparent;
-    				background: fade-out($black, 0.9);
-				    line-height: normal;
-				    height: 40px;
-				    margin: 0;
-				    border-radius: 0;
-				    color: #000;
-				    text-align: center;
-				    padding:0;
-				    border-right: 1px solid darken($light-grey-color, 8%);
-				    &:last-child {
-				    	border-right: none;
-				    }
-    			}
-    			@media (max-width: 767px){
-					width:33.333%;
-    				&.o_add_compare {
-						display: none;
-					}
-    			}
-    			span {
-    				font-size: 16px;
-    				color: $light-color;
-					will-change: transform;
-    				@include transition(all, 0.3s, ease);
-    				@include min1200{
-						font-size: 18px;
-					}
-    			}
-    			&:hover{
-    				background: #4e4e4e !important;
-    				// @media (max-width: 1199px){
-    				// 	background: transparent !important;
-    				// }
-    				span {
-    					// font-size: 28px;
-						transform: scale(1.1);
-    					@include transition(all, 0.3s, ease);
-    					// @media (max-width: 1439px){
-    					// 	font-size: 22px;
-    					// }
-    				}
-    			}
-    		}
-    	}
-    	&:hover{
-    		.pink-box, .pwp-info {
-    			-webkit-filter: blur(2px);
-    			filter: blur(2px);
-    			@media (max-width: 1199px){
-    				-webkit-filter: blur(0);
-    				filter: blur(0);
-    			}
-    		}
-    		.pwp-img a img {
-    			-webkit-transform: scale(1.05);
-			    -ms-transform: scale(1.05);
-			    transform: scale(1.05);
-    		}
-    		.sct-hover-info {
-    			margin-left: 0;
-			    opacity: 1;
-			    @include transition(all, 0.5s, ease);
-			    form {
-			    	margin-left: 0;
-			    	@include transition(all, 0.5s, ease);
-			    }
-    		}
-    	}
-	}
-}
 /*Product Snippet 2 end*/
 /*Product quickview*/
 .quickview-modal {
@@ -11749,8 +11628,11 @@ body #wrapwrap{
 
 	
     .grid_product{
-     
-		margin-bottom: 30px;
+		margin-bottom: 20px;
+		
+		@include min992{
+			margin-bottom: 30px;
+		}
         
         .cs-product{
             padding: 0;
@@ -11763,7 +11645,11 @@ body #wrapwrap{
                 background-color: #F5F5F5;
                 padding: 20px 18px;
                 @include transition(all, 0.3s , ease);
+				height: 170px;
 
+				@include min992{
+					height: inherit;
+				}
                 @include min1024{
                     padding: 24px 10px;
                 }
@@ -11773,15 +11659,18 @@ body #wrapwrap{
                 a{
                     display: block;
                     text-align: center;
+					@include mobiletab{
+						height: 100% !important;
+					}
                 }
             }
             .pwd-desc{
                 background: $light-color;
-                padding: 12px 0;
 				@include transition(all, 0.3s, ease-in);
-
+				
                 .pwp-info{
-                    padding: 0;
+					padding: 0;
+					padding: 15px 0 0;
                     .pwpi-title{
                         margin-bottom: 5px;
                         font-size: 15px;
@@ -11846,187 +11735,187 @@ body #wrapwrap{
 						font-weight: 400;
 					}
 				}
-				.sct-hover-info {
-					@include transition(all, 0.3s , ease);
-					@include flex;
-					@include flexwrap ;
-					@include align-content;
-					@include content-sb;
-					margin-top: 5px;
+				// .sct-hover-info {
+				// 	@include transition(all, 0.3s , ease);
+				// 	@include flex;
+				// 	@include flexwrap ;
+				// 	@include align-content;
+				// 	@include content-sb;
+				// 	margin-top: 5px;
 	
-					@include min1024{
-						position: absolute;
-						width: 100%;
-						left: 0;
-						bottom: 0;
-						transform: translateY(100%);
-						@include transition(all, 0.3s, ease);
-					}
+				// 	@include min1024{
+				// 		position: absolute;
+				// 		width: 100%;
+				// 		left: 0;
+				// 		bottom: 0;
+				// 		transform: translateY(100%);
+				// 		@include transition(all, 0.3s, ease);
+				// 	}
 	
-					.primary-btn{
-						a{
-							background: $secondary;
-							border-color: $secondary;
-							border-radius: unset;
-							color: $light-color;
-							text-transform:uppercase;
-							padding: 6px 10px 7px;
-							font-size: 14px;
-							font-weight: normal;
-							@include min1024{
-								font-weight: bold;
-							}
-							@include min1200{
-								padding: 10px 20px 11px;
-								font-size: 16px;
-							}
-							@include min1600{
-								padding: 10px 30px 11px;
-							}
-							img{
-								margin-right: 8px;
-							}
-							&:hover{
-								color: $primary;
-								background: transparent;
-								.light{
-									display: none;
-									@include transition(all, 0.3s , ease);
-								}
-								.dark{
-									display: block;
-									@include transition(all, 0.3s , ease);
-								}
-							}
-							.dark{
-								@include transition(all, 0.3s , ease);
-								display: none;
-							}
-							.light{
-								@include transition(all, 0.3s , ease);
-							}
-						}
-					}
-					form{
-						@include flex;
-						@include flexwrap;
-						@include content-sb;
-						width: 100%;
-						.btn{
-							width: 35px;
-							padding: 5px 7px;
-							font-size: 14px;
-							@include flex;
-							@include align-content;
-							@include content-cn;
-							@include transition(all, 0.3s, ease-in);
-							margin-right: 3px;
-							&:last-child{
-								margin-right: 0;
-							}
-							@include min768{
-								font-size: 16px;
-							}
-							@include min1200{
-								padding: 9px 7px;
-							}
-							.fa{
-								transform: scale(1);
-								will-change: transform;
-								@include transition(all, 0.3s, ease-in);
-							}
-							&:hover{
-								@include transition(all, 0.3s, ease-in);
-								.fa{
-									color: $secondary;
-									transform: scale(1.2);
-									@include transition(all, 0.3s, ease-in);
-								}
-							}
-							&.cart_view_sct_btn{
-								width: auto;
-								background-color: $secondary;
-								color: $light-color;
-								border-radius: 0;
-								margin-right: 0;
+				// 	.primary-btn{
+				// 		a{
+				// 			background: $secondary;
+				// 			border-color: $secondary;
+				// 			border-radius: unset;
+				// 			color: $light-color;
+				// 			text-transform:uppercase;
+				// 			padding: 6px 10px 7px;
+				// 			font-size: 14px;
+				// 			font-weight: normal;
+				// 			@include min1024{
+				// 				font-weight: bold;
+				// 			}
+				// 			@include min1200{
+				// 				padding: 10px 20px 11px;
+				// 				font-size: 16px;
+				// 			}
+				// 			@include min1600{
+				// 				padding: 10px 30px 11px;
+				// 			}
+				// 			img{
+				// 				margin-right: 8px;
+				// 			}
+				// 			&:hover{
+				// 				color: $primary;
+				// 				background: transparent;
+				// 				.light{
+				// 					display: none;
+				// 					@include transition(all, 0.3s , ease);
+				// 				}
+				// 				.dark{
+				// 					display: block;
+				// 					@include transition(all, 0.3s , ease);
+				// 				}
+				// 			}
+				// 			.dark{
+				// 				@include transition(all, 0.3s , ease);
+				// 				display: none;
+				// 			}
+				// 			.light{
+				// 				@include transition(all, 0.3s , ease);
+				// 			}
+				// 		}
+				// 	}
+				// 	form{
+				// 		@include flex;
+				// 		@include flexwrap;
+				// 		@include content-sb;
+				// 		width: 100%;
+				// 		.btn{
+				// 			width: 35px;
+				// 			padding: 5px 7px;
+				// 			font-size: 14px;
+				// 			@include flex;
+				// 			@include align-content;
+				// 			@include content-cn;
+				// 			@include transition(all, 0.3s, ease-in);
+				// 			margin-right: 3px;
+				// 			&:last-child{
+				// 				margin-right: 0;
+				// 			}
+				// 			@include min768{
+				// 				font-size: 16px;
+				// 			}
+				// 			@include min1200{
+				// 				padding: 9px 7px;
+				// 			}
+				// 			.fa{
+				// 				transform: scale(1);
+				// 				will-change: transform;
+				// 				@include transition(all, 0.3s, ease-in);
+				// 			}
+				// 			&:hover{
+				// 				@include transition(all, 0.3s, ease-in);
+				// 				.fa{
+				// 					color: $secondary;
+				// 					transform: scale(1.2);
+				// 					@include transition(all, 0.3s, ease-in);
+				// 				}
+				// 			}
+				// 			&.cart_view_sct_btn{
+				// 				width: auto;
+				// 				background-color: $secondary;
+				// 				color: $light-color;
+				// 				border-radius: 0;
+				// 				margin-right: 0;
 
-								@include min1200{
-									min-width: 135px;
-								}
-								@include min1440{
-									min-width: 150px;
-								}
-								&:hover{
-									background-color: transparent;
-									border-color: $secondary;
-									color: $secondary;
-								}
-								.icon-basket{
-									margin-right: 4px;
-								}
-							}
-						}
-						a.btn{
-							position: relative;
-							padding: 8px;
-							@include min1024{
-								padding: 5px 7px;
-							}
-							@include min1200{
-								padding: 9px 7px;
-							}
-						}
-						.sct-feature-wrap{
-							@include flex;
-							@include align-content;
-							@media (max-width: 1023px){
-								position: absolute;
-								background-color: $white;
-								border-radius: 4px;
-								top: -23px;
-								transform: translate(-50%, -50%);
-								left: 50%;
-								box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
-								@include transition(all, 0.3s, ease-in);
-							}
-							a{
-								+ a{
-									@media (max-width: 1023px){
-										&::after{
-											content: "";
-											position: absolute;
-											background-color: #EBE9EE;
-											width: 1px;
-											height: 50%;
-											left: -1px;
-											top: 0;
-											bottom: 0;
-											margin: auto;
-										}
-									}
-								}
-							}
-						}
-					}
-				}
+				// 				@include min1200{
+				// 					min-width: 135px;
+				// 				}
+				// 				@include min1440{
+				// 					min-width: 150px;
+				// 				}
+				// 				&:hover{
+				// 					background-color: transparent;
+				// 					border-color: $secondary;
+				// 					color: $secondary;
+				// 				}
+				// 				.icon-basket{
+				// 					margin-right: 4px;
+				// 				}
+				// 			}
+				// 		}
+				// 		a.btn{
+				// 			position: relative;
+				// 			padding: 8px;
+				// 			@include min1024{
+				// 				padding: 5px 7px;
+				// 			}
+				// 			@include min1200{
+				// 				padding: 9px 7px;
+				// 			}
+				// 		}
+				// 		.sct-feature-wrap{
+				// 			@include flex;
+				// 			@include align-content;
+				// 			@media (max-width: 1023px){
+				// 				position: absolute;
+				// 				background-color: $white;
+				// 				border-radius: 4px;
+				// 				top: -23px;
+				// 				transform: translate(-50%, -50%);
+				// 				left: 50%;
+				// 				box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.4);
+				// 				@include transition(all, 0.3s, ease-in);
+				// 			}
+				// 			a{
+				// 				+ a{
+				// 					@media (max-width: 1023px){
+				// 						&::after{
+				// 							content: "";
+				// 							position: absolute;
+				// 							background-color: #EBE9EE;
+				// 							width: 1px;
+				// 							height: 50%;
+				// 							left: -1px;
+				// 							top: 0;
+				// 							bottom: 0;
+				// 							margin: auto;
+				// 						}
+				// 					}
+				// 				}
+				// 			}
+				// 		}
+				// 	}
+				// }
             }
-            &:hover{
-                .pwd-desc{
-                    @include min1024{
-                        transform: translateY(-47px);
-                    }
-                }
-                .pwd-desc{
-                    .price_wrapper{
-                        .old-price{
-                            opacity: 1;
-                            visibility: visible;
-                            display: block;
-                            @include transition(all, 0.3s , ease);
-                        }
-                    }
-                }
-            }
+            // &:hover{
+            //     .pwd-desc{
+            //         @include min1024{
+            //             transform: translateY(-47px);
+            //         }
+            //     }
+            //     .pwd-desc{
+            //         .price_wrapper{
+            //             .old-price{
+            //                 opacity: 1;
+            //                 visibility: visible;
+            //                 display: block;
+            //                 @include transition(all, 0.3s , ease);
+            //             }
+            //         }
+            //     }
+            // }
         }
     }
 }
@@ -12139,7 +12028,7 @@ body #wrapwrap{
         position: relative;
 
         .pwp-info{
-            padding-top: 20px;
+            padding-top: 15px;
 
             .pwpi-title{
                 font-size: 14px;
@@ -12226,7 +12115,7 @@ body #wrapwrap{
 			}
 			&::before{
 				content: '';
-				background-color: rgba($black, 0.55);
+				background-color: rgba($black, 0.7);
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -12262,7 +12151,7 @@ body #wrapwrap{
 					display: block;
 					font-size: 18px;
 					font-weight: bold;
-					color: rgba($light-color, 0.85);
+					color: rgba($light-color, 0.75);
 					position: relative;
 					@include transition(all, 0.3s, ease-in-out);
 					&::after{
@@ -12284,7 +12173,7 @@ body #wrapwrap{
 					}
 	
 					&:hover, &.active{
-						background-color: rgba($black, 0.6);
+						background-color: rgba($black, 0.9);
 						color: $light-color;
 						
 					}
@@ -12377,12 +12266,12 @@ body #wrapwrap{
 				border: 0;
 				.pwp-img{
 					background-color: $light-grey-color;
-					height: 150px;
+					height: 170px;
 					@include min1024 {
 						height: 200px;
 					}
 					@include min1200 {
-						height: 300px;
+						height: 260px;
 					}
 					// @include min1600 {
 					// 	height: 330px;
@@ -12397,34 +12286,7 @@ body #wrapwrap{
 					text-align: center;
 					.price {
 						margin-bottom: 0;
-						padding-bottom: 0;
-						padding-top: 5px;
-					}
-					.sct-hover-info{
-						@include mobiletab{
-							position: static;
-							transform: none;
-							box-shadow: none;
-							form {
-								justify-content: center;
-							}
-						}
-						@include min992{
-							left: 49%;
-							top: 150px;
-						}
-						@include min1200 {
-							top: 200px;
-						}
-						@include min1600 {
-							top: 230px;
-						}
-	
-						.btn{
-							img{
-								max-height: 17px;
-							}
-						}
+						padding: 5px 0;
 					}
 				}
 			}
@@ -12455,7 +12317,11 @@ body #wrapwrap{
 		padding-top: 84px;
 	}
     .deal_day_wrap{
-        border: 10px solid $secondary;
+        border: 6px solid $secondary;
+
+		@include min992{
+			border-width: 10px;
+		}
 
         .deal_day_top_inner{
             background: #fff;
@@ -12589,14 +12455,15 @@ body #wrapwrap{
             margin: 0 7px 10px;
 
             .cs-product{
-                padding: 0 7px 15px;
+                margin: 0 7px 15px;
+				padding: 0;
                 border: 0;
 				.pwd-desc{
 					@include min1200{
 						overflow: hidden;
 					}
 					.pwp-info{
-						padding-top: 10px;
+						// padding-top: 10px;
 						text-align: center;
 						.pwpi-title {
 							font-size: 14px;
@@ -12613,11 +12480,17 @@ body #wrapwrap{
 								font-size: 20px;
 							}
 						}
+						.pink-box{
+							.ratings{
+								line-height: 1;
+							}
+						}
 						.price{
 							margin-bottom: 0;
 							font-size: 15px;
 							font-weight: 400;
 							color: #757575;
+							
 							@include min768{
 								font-size: 16px;
 							}
@@ -12628,9 +12501,13 @@ body #wrapwrap{
                     background: $light-grey-color;
                     padding: 10px;
                     text-align: center;
-					@include min768{
-						height: 150px;
-					}
+					height: 170px;
+					@include flex;
+					@include justify-align-content;
+
+					// @include min768{
+					// 	height: 150px;
+					// }
 					@include min992{
 						height: 210px;
 					}

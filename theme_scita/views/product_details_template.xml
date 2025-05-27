@@ -68,7 +68,7 @@
                     <t t-call="website_sale.product_price" />
                     <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
                     <div class="sct-add-to-cart-mob">
-                        <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="icon-basket"/> Add to Cart</a>
+                        <a role="button" id="add_to_cart" class="btn btn-primary btn-lg mt16 js_check_product a-submit d-block d-sm-inline-block" href="#"><i class="lni lni-cart-1"></i> Add to Cart</a>
                     </div>
                 </div>
             </div>
@@ -141,8 +141,8 @@
         </xpath>
         <xpath expr="//div[@id='o_product_terms_and_share']" position="before">
             <t t-if="product.product_brand_id">
-                <img class="img-responsive"
-                t-att-src="website.image_url(product.product_brand_id, 'image')"/>
+                <img class="img-responsive brand_img"
+                     t-att-src="website.image_url(product.product_brand_id, 'image')"/>
             </t>
         </xpath>
         <xpath expr="//div[@itemprop='description']" position="replace">
@@ -299,7 +299,7 @@
             <span class="add_to_cart_text">Add to cart</span>
         </xpath>
         <xpath expr="//span[hasclass('fa','fa-shopping-cart')]" position="attributes">
-            <attribute name='class'>icon-basket</attribute>
+            <attribute name='class'>lni lni-cart-1</attribute>
         </xpath>
     </template>
     <template id="product_add_to_compare" inherit_id="theme_scita.theme_scita_product_details" name="Add to comparison in product page">
@@ -327,7 +327,7 @@
                 data-action="o_wishlist"
                 title="Add to wishlist"
             >
-            <i class="fa fa-heart-o me-2" role="img" aria-label="Add to wishlist"/>
+            <i class="lni lni-heart me-2" role="img" aria-label="Add to wishlist"/>
             Add to wishlist
             </button>
         </xpath>

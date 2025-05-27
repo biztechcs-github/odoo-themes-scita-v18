@@ -1511,7 +1511,7 @@
     </template>
     <template id="inherit_add_to_wishlist" inherit_id="website_sale_wishlist.add_to_wishlist">
         <xpath expr="//span[hasclass('fa','fa-heart')]" position="attributes">
-            <attribute name='class'> fa fa-heart-o</attribute>
+            <attribute name='class'> lni lni-heart</attribute>
         </xpath>
         <xpath expr="//button[hasclass('btn', 'btn-light', 'o_add_wishlist')]" position="attributes"> 
             <attribute name="class">btn btn-xs o_add_wishlist</attribute>
@@ -1529,7 +1529,7 @@
         <xpath expr="//div[hasclass('o_wsale_product_btn')]" position="inside">
             <t t-if="product.product_variant_ids">
                 <button type="button" class="btn scita_cstm_btn quick_view_sct_btn qbtn" title="Quick View" t-att-data-id="product.id">
-                    <span class="fa fa-eye"/>
+                    <span class="lni lni-eye"/>
                 </button>
             </t>
         </xpath>

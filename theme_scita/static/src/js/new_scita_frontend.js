@@ -381,5 +381,4 @@ animation.registry.oe_deal_of_the_day = animation.Class.extend({
     build: function(debug){
         this.set_timer();
     },
-
 });

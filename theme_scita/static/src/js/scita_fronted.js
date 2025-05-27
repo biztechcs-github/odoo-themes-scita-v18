@@ -237,7 +237,7 @@ $(document).ready(function(){
             } else {
                 console.warn("Image element or source is missing.");
             }
-        }        
+        }
     });
     // // for box brand slider 
     animation.registry.brands_box_slider_4 = animation.Class.extend({
@@ -1096,16 +1096,10 @@ $(document).ready(function(){
                                 0: {
                                     items: 2
                                 },
-                                480: {
+                                992: {
                                     items: 3
                                 },
-                                768: {
-                                    items: 4
-                                },
-                                1024: {
-                                    items: 3
-                                },
-                                1500: {
+                                1400: {
                                     items: 4
                                 },
                             },
