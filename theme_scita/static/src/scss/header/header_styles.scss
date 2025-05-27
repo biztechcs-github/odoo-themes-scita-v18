@@ -4118,39 +4118,3 @@ header{
         }
     }
 }
-
-@media (max-width: 767px) {
-  header .o_header_mobile {
-    display: none !important;
-  }
-  header .o_header_standard,
-  header .o_header_affixed,
-  header .navbar.d-none.d-lg-block {
-    display: block !important;
-  }
-  header .navbar {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 10px !important;
-  }
-  header .navbar .scita_top_menu {
-    flex-direction: column !important;
-    width: 100% !important;
-    align-items: flex-start !important;
-  }
-  header .navbar .scita_top_menu .nav-item {
-    width: 100% !important;
-    padding: 8px 0 !important;
-    text-align: left !important;
-  }
-  header .navbar .menu_right {
-    position: static !important;
-    margin-top: 10px !important;
-    width: 100% !important;
-    justify-content: flex-end !important;
-  }
-  header .navbar .logo img {
-    max-width: 120px !important;
-    height: auto !important;
-  }
-}
