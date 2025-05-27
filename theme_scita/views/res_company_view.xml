@@ -6,9 +6,6 @@
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
         	<xpath expr="//group[@name='social_media']" position="after">
-                <group string="Header Sidebar Configuration" name="header_sidebar">
-            		<field name="company_desc"/>
-                </group>
                 <group string="Delivery Zip Code Configuration" name="zipcode_config">
                     <field name="delivery_icon" placeholder="Ex., fa fa-map-marker"/>
                     <field name="delivery_text"/>
