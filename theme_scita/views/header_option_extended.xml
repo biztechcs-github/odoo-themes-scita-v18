@@ -110,21 +110,21 @@
             <script src="/theme_scita/static/src/js/mobile_view.js" type="text/javascript"/>
         </xpath>
     </template> -->
-    <template active="False" id="product_details_categories" name="cat list">
-        <li class="view-category-item">
-            <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>
-            <a t-att-href="'/shop/category/%s' % slug(category)">
-                <span class="ab_categ_name" t-field="category.name"/>
-            </a>
-            <div class="collapse" t-att-id="'collapse_category'+str(category.id)" t-if="category.child_id">
-                <ul class="nav nav-pills flex-column nav-hierarchy" t-if="category.child_id">
-                    <t t-as="category" t-foreach="category.child_id">
-                        <t t-call="theme_scita.product_details_categories"/>
-                    </t>
-                </ul>
-            </div>
-        </li>
-    </template>
+<!--    <template active="False" id="product_details_categories" name="cat list">-->
+<!--        <li class="view-category-item">-->
+<!--            <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>-->
+<!--            <a t-att-href="'/shop/category/%s' % slug(category)">-->
+<!--                <span class="ab_categ_name" t-field="category.name"/>-->
+<!--            </a>-->
+<!--            <div class="collapse" t-att-id="'collapse_category'+str(category.id)" t-if="category.child_id">-->
+<!--                <ul class="nav nav-pills flex-column nav-hierarchy" t-if="category.child_id">-->
+<!--                    <t t-as="category" t-foreach="category.child_id">-->
+<!--                        <t t-call="theme_scita.product_details_categories"/>-->
+<!--                    </t>-->
+<!--                </ul>-->
+<!--            </div>-->
+<!--        </li>-->
+<!--    </template>-->
     <template active="False" id="theme_product_details_category" inherit_id="website.layout" name="category">
         <xpath expr="//footer" position="before">
             <div class="collapse" id="product_category_list">
