@@ -235,83 +235,91 @@
     </template>
 
 
+    <template id="product_details_categories_ani" name="cat list">
+        <li class="view-category-item">
+            <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>
+            <a t-att-href="'/shop/category/%s' % slug(category)">
+                <span class="ab_categ_name" t-field="category.name"/>
+            </a>
+            <div class="collapse" t-att-id="'collapse_category'+str(category.id)" t-if="category.child_id">
+                <ul class="nav nav-pills flex-column nav-hierarchy" t-if="category.child_id">
+                    <t t-as="category" t-foreach="category.child_id">
+                        <t t-call="theme_scita.product_details_categories_ani"/>
+                    </t>
+                </ul>
+            </div>
+        </li>
+    </template>
     <template active="False" id="option_header_2" inherit_id="website.layout" name='Header option 2'>
-        <xpath expr="//header//nav" position="replace">
-            <t t-call="website.navbar">
-                <t t-set="_navbar_classes" t-valuef="d-none d-lg-block shadow-sm"/>
-                <t t-set="_navbar_expand_class" t-valuef="None"/>
-
-                <div class="oe_structure top-header">
-                    <div class="container">
-                        <div class="row align-items-center justify-content-between">
-                            <div class="col-lg-6 col-md-6 sct_left_side">
-                                <div class="h-left">
-                                    <ul class="head-cinfo">
-                                        <li t-if="res_company.phone" t-ignore="true">
-                                            <a t-attf-href="tel:#{res_company.phone}">
-                                                <i class="fa fa-phone"/>
-                                                <span t-field="res_company.phone"/>
-                                            </a>
-                                        </li>
-                                        <li t-if="res_company.email" t-ignore="true">
-                                            <a t-attf-href="mailto:#{res_company.email}">
-                                                <i class="fa fa-envelope-o"/>
-                                                <span t-field="res_company.email"/>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6 sct-top-right-side">
-                                <t t-call="website.placeholder_header_search_box">
-                                    <t t-set="_input_classes" t-valuef=""/>
-                                    <t t-set="_submit_classes" t-valuef=""/>
-                                    <t t-set="_button_classes" t-valuef=""/>
-                                </t>
-                                <t t-call="website.placeholder_header_social_links"/>
-                            </div>
-                        </div>
-                    </div>
+        <xpath expr="//div[contains(@class, 'o_footer_copyright')]" position="after">
+            <div class="collapse" id="product_category_list">
+                <div class="ab_ctaeg_view">
+                    <h3 class="ab_category_title">Categories</h3>
+                    <span class="ab-category-close d-md-none" data-bs-target="#product_category_list" data-bs-toggle="collapse">X</span>
                 </div>
-
-                <div id="o_main_nav" class="container d-flex justify-content-between align-items-center flex-nowrap">
-                    <t t-call="website.placeholder_header_brand">
-                        <t t-set="_link_class" t-valuef="me-4"/>
-                    </t>
-                    <t t-call="website.navbar_nav">
-                        <t t-set="_nav_class" t-valuef="me-auto scita_top_menu flex-row flex-grow-1 justify-content-center"/>
-                        <t t-foreach="website.menu_id.child_id" t-as="submenu">
-                            <t t-call="website.submenu">
-                                <t t-set="item_class" t-valuef="nav-item"/>
-                                <t t-set="link_class" t-valuef="nav-link"/>
-                            </t>
+                <div class="accordion" id="ab_cat_drop_down">
+                    <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
+                        <t t-set="cat" t-value="website.get_categories(category)"/>
+                        <t t-as="category" t-foreach="cat.get('categ')">
+                            <t t-call="theme_scita.product_details_categories_ani"/>
                         </t>
-                    </t>
-                    <div class="menu_right">
-                        <ul class="list-inline d-flex justify-content-end align-items-center">
-                            <t t-call="theme_scita.scita_user_dropdown">
-                                <t t-set="_sct_price_list" t-value="true"/>
-                                <t t-set="_sct_lang_list" t-value="true"/>
-                                <t t-set="_icon" t-value="true"/>
-                                <t t-set="_icon_class" t-valuef="fa-stack"/>
-                                <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
-                            </t>
-                            <t t-call="website_sale_wishlist.header_wishlist_link">
-                                <t t-set="_icon" t-value="True"/>
-                                <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
-                                <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
-                            </t>
-                            <t t-call="website_sale.header_cart_link">
-                                <t t-set="_icon" t-value="True"/>
-                                <t t-set="_item_class" t-value="''"/>
-                                <t t-set="_link_class" t-value="'top-link-checkout'"/>
-                            </t>
-                        </ul>
-                    </div>
+                    </ul>
                 </div>
-            </t>
+            </div>
+            <div class="ab-mob-view d-flex flex-wrap d-md-none">
+
+                <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-home" href="/">
+                            <span class="fa fa-home"/>
+                            <span class="name-text">Home</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="ab-icons ab-category">
+                    <button class="btn btn-link" data-bs-target="#product_category_list" data-bs-toggle="collapse" type="button">
+                        <span class="fa fa-th-large"/>
+                        <span class="name-text">Categories</span>
+                    </button>
+                </div>
+                <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-cart-page" href="/shop/cart">
+                            <span class="fa fa-shopping-bag"/>
+                            <span class="name-text">Bag</span>
+                        </a>
+                    </button>
+                </div>
+                <div t-att-class="'ab-icons ab-help active' if request.httprequest.path == '/help' else 'ab-icons ab-help' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-help" href="/help">
+                            <span class="fa fa-question-circle"/>
+                            <span class="name-text">Help</span>
+                        </a>
+                    </button>
+                </div>
+                <div t-att-class="'ab-icons ab-myaccount active' if request.httprequest.path == '/my/home' or request.httprequest.path == '/web/login'  else 'ab-icons ab-myaccount' ">
+                    <t t-if="not user_id._is_public()">
+                        <button class="btn btn-link" type="button">
+                            <a class="redirect-my-account" href="/my/home">
+                                <span class="fa fa-user-circle"/>
+                                <span class="name-text">Account</span>
+                            </a>
+                        </button>
+                    </t>
+                    <t t-else="">
+                        <button class="btn btn-link d-md-none" type="button">
+                            <a class="redirect-my-account" href="/web/login">
+                                <span class="fa fa-user-circle"/>
+                                <span class="name-text">My Account</span>
+                            </a>
+                        </button>
+                    </t>
+                </div>
+            </div>
         </xpath>
     </template>
+
     <template active="False" id="option_header_3" inherit_id="website.layout" name='Header option 3'>
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
