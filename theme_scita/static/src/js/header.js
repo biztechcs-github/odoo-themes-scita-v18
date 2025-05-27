@@ -1,5 +1,60 @@
 /** @odoo-module **/
 import publicWidget from "@web/legacy/js/public/public_widget";
+import wSaleUtils from "@website_sale/js/website_sale_utils";
+import { registry } from "@web/core/registry";
+import { debounce } from "@web/core/utils/timing";
+import { KeepLast } from "@web/core/utils/concurrency";
+import { rpc } from "@web/core/network/rpc";
+
+const WebsiteSale = publicWidget.registry.WebsiteSale;
+
+publicWidget.registry.uploadPrintingFile = publicWidget.Widget.extend({
+    selector: '.oe_website_sale_cart',
+    events: {
+        "change .js_quantity": "_onChangeQty",
+        "click .sc-remove-line": "_onRemoveLine",
+        "click .sc-clear-cart": "_onClearCart",
+    },
+
+    init: function () {
+        this._super.apply(this, arguments);
+        this._onChangeQty = debounce(this._onChangeQty, 200);
+        this.dp = new KeepLast();
+    },
+
+    async _onChangeQty (ev) {
+        const $target = $(ev.currentTarget);
+        const qty = parseInt($target.val());
+        const params = { product_id: $target.data("productId"), line_id: $target.data("lineId"), set_qty: qty };
+        try {
+            const data = await rpc("/shop/cart/update_json", params);
+            this._refreshCart(data);
+        } catch (error) {
+            console.error("Failed to update cart quantity:", error);
+        }
+    },
+
+    _onRemoveLine: function (ev) {
+        ev.preventDefault();
+        const lineId = ev.currentTarget.dataset.lineId;
+        $(ev.currentTarget).closest('.input-group').find('.js_quantity').val(0).trigger("change");
+        const lineEl = document.querySelector(`#scita_sidebar_line_${lineId}`);
+        if (lineEl) {
+            lineEl.remove();
+        }
+    },
+
+     async _refreshCart (data) {
+        data["cart_quantity"] = data.cart_quantity || 0;
+        wSaleUtils.updateCartNavBar(data);
+        if (data) {
+            const totalEl = document.querySelector('.sc-cart-total');
+            if (totalEl) totalEl.textContent = data.amount || '0.00';
+        }
+    },
+
+});
+
 
 publicWidget.registry.HeaderExtraMenuItems = publicWidget.Widget.extend({
     selector: 'header',
@@ -28,6 +83,28 @@ publicWidget.registry.HeaderExtraMenuItems = publicWidget.Widget.extend({
         event.stopImmediatePropagation();
     }
 });
+
+publicWidget.registry.toggle_nav_menu = publicWidget.Widget.extend({
+    selector: ".nav-items-icon",
+
+    start() {
+        this._showToggleMenu();
+        return this._super.apply(this, arguments);
+    },
+
+    _showToggleMenu() {
+        $('.nav-toggle-btn').on('click', function (e) {
+            $('#cstm-nav-menu-toggle').removeClass("o_hidden");
+            $('body').addClass('show-scita-cstm-menu');
+        });
+
+        $('#close_cstm_nav_toggle').on('click', function (e) {
+            $('#cstm-nav-menu-toggle').addClass("o_hidden");
+            $('body').removeClass('show-scita-cstm-menu');
+        });
+    },
+});
+
 $(document).ready(function() {
     var offset = 300,
     offset_opacity = 1200,

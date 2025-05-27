@@ -161,6 +161,7 @@ AMP Support
             'theme_scita/static/src/scss/cms_pages.scss',
             'theme_scita/static/src/scss/header/default_header.scss',
             'theme_scita/static/src/scss/header/header_styles.scss',
+            'theme_scita/static/src/scss/header/header_4.scss',
             'theme_scita/static/src/scss/footer/default_footer.scss',
             'theme_scita/static/src/scss/footer/footer_styles.scss',
             'theme_scita/static/src/js/owl.carousel.min.js',

@@ -601,7 +601,7 @@
             <t t-call="website.template_header_mobile"/>
         </xpath>
     </template>
-       <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
+    <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
@@ -669,11 +669,15 @@
                                 <t t-set="_link_class" t-value="'btn position-relative rounded-pill p-1 text-reset'"/>
                                 <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                             </t>
-                            <t t-call="website_sale.header_cart_link">
-                                <t t-set="_icon" t-value="True"/>
-                                <t t-set="_item_class" t-value="''"/>
-                                <t t-set="_link_class" t-value="'top-link-checkout'"/>
-                            </t>
+                            <li class="nav-items-icon">
+                                <button type="button" class="nav-toggle-btn btn p-1 rounded-circle position-relative">
+                                    <i class="fa fa-shopping-cart fa-lg"></i>
+                                    <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+                                    <span class="theme_scita_cart_quantity my_cart_quantity"
+                                          t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
+                                </button>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -695,6 +699,171 @@
                 </div>
             </t>
             <t t-call="website.template_header_mobile"/>
+        </xpath>
+        <xpath expr="//header" position="after">
+            <div id="cstm-nav-menu-toggle" class="scita-side-menu css_editable_mode_hidden o_hidden">
+                <span id="close_cstm_nav_toggle">X</span>
+                <div class="my-cart">
+                    <!-- Cart Toggle with Quantity -->
+                    <span id="mycart_collapse" data-target="#show-cart">
+                        My Cart
+                        <t t-set="website_sale_order" t-value="website.sale_get_order()"/>
+                        <span class="theme_scita_cart_quantity my_cart_quantity"
+                              t-esc="website_sale_order and website_sale_order.cart_quantity or 0"/>
+                    </span>
+                    <!-- Cart Detail (Collapsible) -->
+                    <div id="show-cart" class="oe_website_sale">
+                        <ul class="h-cart-inner">
+                            <li class="sc_cart_lines d-flex flex-column mb32">
+                                <!-- Cart Lines -->
+                                <div t-if="website_sale_order and website_sale_order.website_order_line">
+                                    <t t-foreach="website_sale_order.website_order_line" t-as="line">
+                                        <div t-att-id="'scita_sidebar_line_'+ str(line.id)">
+                                            <div class="row scita_cart_lines oe_website_sale_cart">
+                                                <div class="col-sm-9 cart_item_details">
+                                                    <!-- Product Name -->
+                                                    <div class="cart_item_name">
+                                                        <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                                                            <t t-esc="line.product_id.name"/>
+                                                        </a>
+                                                    </div>
+
+                                                    <!-- Quantity & Unit Price -->
+                                                    <p class="cart_qty_amt">
+                                                        <span class="sc-product-quantity theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
+                                                        <span t-esc="line.price_unit"
+                                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    </p>
+
+                                                    <!-- Quantity Controls -->
+                                                    <div class="input-group dropdown-plus-out d-inline-flex me-2 mb-2 align-middle">
+                                                        <div class="css_quantity input-group input-group-sm">
+                                                            <t t-if="not line._is_not_sellable_line()">
+                                                                <!-- Minus -->
+                                                                <a href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                                    <i class="fa fa-minus"/>
+                                                                </a>
+                                                                <!-- Quantity input -->
+                                                                <input type="text"
+                                                                       class="js_quantity form-control quantity"
+                                                                       t-att-data-line-id="line.id"
+                                                                       t-att-data-product-id="line.product_id.id"
+                                                                       t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+                                                                <!-- Plus -->
+                                                                <a href="#" class="btn btn-link js_add_cart_json" aria-label="Add one" title="Add one">
+                                                                    <i class="fa fa-plus"/>
+                                                                </a>
+                                                            </t>
+                                                            <t t-else="">
+                                                                <span class="text-muted w-100" t-out="int(line.product_uom_qty)"/>
+                                                                <input type="hidden"
+                                                                       class="js_quantity form-control quantity"
+                                                                       t-att-data-line-id="line.id"
+                                                                       t-att-data-product-id="line.product_id.id"
+                                                                       t-att-value="line.product_uom_qty" />
+                                                            </t>
+                                                        </div>
+
+                                                        <!-- Remove Line Button -->
+                                                        <button class="sc-remove-line btn btn-light"
+                                                                title="remove"
+                                                                t-att-data-line-id="line.id"
+                                                                t-att-data-product-id="line.product_id.id">
+                                                            <i class="fa fa-trash-o"/>
+                                                        </button>
+                                                    </div>
+
+
+                                                    <!-- Subtotal -->
+                                                    <p class="cart_line_subtotal">
+                                                        Subtotal:
+                                                        <span t-esc="line.price_subtotal"
+                                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    </p>
+                                                </div>
+
+                                                <!-- Product Image -->
+                                                <div class="col-sm-3 cart_item_image">
+                                                    <span t-field="line.product_id.image_128"
+                                                          t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'img-fluid'}"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </t>
+
+                                    <!-- Cart Total and Buttons -->
+                                    <div class="cart_total_div">
+                                        <div class="d-flex justify-content-between p-3">
+                                            <h6 class="mb-0">Subtotal</h6>
+                                            <h6 t-field="website_sale_order.amount_untaxed" class="monetary_field mb-0" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                                        </div>
+                                        <div class="d-flex justify-content-between p-3 pt-0">
+                                            <h6 class="mb-0">Taxes</h6>
+                                            <h6 t-field="website_sale_order.amount_tax" class="monetary_field mb-0" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                                        </div>
+                                        <div class="button-box">
+                                            <a class="view-all btn btn-primary mb-2" href="/shop/cart">View all</a>
+                                            <a class="proceed btn btn-primary mb-2 d-flex justify-content-between align-items-center" href="/shop/checkout" style="gap: 1rem;">
+                                                <!-- Center Section: Total -->
+                                                <div class="text-start">
+                                                    <h6 class="mb-0 fw-bold">Total</h6>
+                                                    <h6 t-field="website_sale_order.amount_total"
+                                                        class="sc-cart-total monetary_field mb-0 fw-bold"
+                                                        style="white-space: nowrap;"
+                                                        t-options="{'widget': 'monetary', 'display_currency': website_sale_order.currency_id}"/>
+                                                </div>
+
+                                                <!-- Right Section: Checkout -->
+                                                <span class="fw-bold">Checkout</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="company_description">
+                    <p t-field="res_company.company_desc"/>
+                </div>
+
+                <div class="company_address">
+                    <p t-field="res_company.partner_id" t-options='{
+                        "widget": "contact",
+                        "fields": ["address"]}'/>
+                </div>
+
+                <div class="social-link">
+                    <ul>
+                        <li t-if="website.social_facebook">
+                            <a t-att-href="website.social_facebook">
+                                <i class="fa fa-facebook"/>
+                            </a>
+                        </li>
+                        <li t-if="website.social_twitter">
+                            <a t-att-href="website.social_twitter">
+                                <i class="fa fa-twitter"/>
+                            </a>
+                        </li>
+                        <li t-if="website.social_linkedin">
+                            <a t-att-href="website.social_linkedin">
+                                <i class="fa fa-linkedin"/>
+                            </a>
+                        </li>
+                        <li t-if="website.social_youtube">
+                            <a t-att-href="website.social_youtube">
+                                <i class="fa fa-youtube-play"/>
+                            </a>
+                        </li>
+                        <li t-if="website.social_instagram">
+                            <a t-att-href="website.social_instagram">
+                                <i class="fa fa-instagram"/>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </xpath>
     </template>
     <template  id="search_btn_primary_class_remove" inherit_id="website.website_search_box">
