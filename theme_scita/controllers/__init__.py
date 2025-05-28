@@ -3,3 +3,4 @@
 
 from . import main
 from . import amp_main
+from . import image_hotspot_controller

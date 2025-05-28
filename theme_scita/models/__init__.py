@@ -13,3 +13,4 @@ from . import pwa_config
 from . import deal_of_day_snippet
 from . import top_dealers_snippet
 from . import trending_products_snippet
+from . import image_hotspot
