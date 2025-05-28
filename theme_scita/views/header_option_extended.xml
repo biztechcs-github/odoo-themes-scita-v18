@@ -110,7 +110,7 @@
             <script src="/theme_scita/static/src/js/mobile_view.js" type="text/javascript"/>
         </xpath>
     </template> -->
-    <template active="False" id="product_details_categories" name="cat list">
+    <template id="product_details_categories" name="cat list">
         <li class="view-category-item">
             <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>
             <a t-att-href="'/shop/category/%s' % slug(category)">
@@ -125,22 +125,9 @@
             </div>
         </li>
     </template>
+
     <template active="False" id="theme_product_details_category" inherit_id="website.layout" name="category">
         <xpath expr="//footer" position="before">
-            <div class="collapse" id="product_category_list">
-                <div class="ab_ctaeg_view">
-                    <h3 class="ab_category_title">Categories</h3>
-                    <span class="ab-category-close d-md-none" data-bs-target="#product_category_list" data-bs-toggle="collapse">X</span>
-                </div>
-                <div class="accordion" id="ab_cat_drop_down">
-                    <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
-                        <t t-set="cat" t-value="website.get_categories(category)"/>
-                        <t t-as="category" t-foreach="cat.get('categ')">
-                            <t t-call="theme_scita.product_details_categories"/>
-                        </t>
-                    </ul>
-                </div>
-            </div>
             <div class="ab-mob-view d-flex flex-wrap d-md-none">
                 <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
                     <button class="btn btn-link" type="button">
@@ -155,6 +142,20 @@
                         <span class="fa fa-th-large"/>
                         <span class="name-text">Categories</span>
                     </button>
+                </div>
+                <div class="collapse" id="product_category_list">
+                    <div class="ab_ctaeg_view">
+                        <h3 class="ab_category_title">Categories</h3>
+                        <span class="ab-category-close d-md-none" data-bs-target="#product_category_list" data-bs-toggle="collapse">X</span>
+                    </div>
+                    <div class="accordion" id="ab_cat_drop_down">
+                        <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
+                            <t t-set="cat" t-value="website.get_categories(category)"/>
+                            <t t-as="category" t-foreach="cat.get('categ')">
+                                <t t-call="theme_scita.product_details_categories"/>
+                            </t>
+                        </ul>
+                    </div>
                 </div>
                 <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
                     <button class="btn btn-link" type="button">
