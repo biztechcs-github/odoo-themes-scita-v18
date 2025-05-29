@@ -173,6 +173,7 @@ AMP Support
             'theme_scita/static/src/js/lazy_load_button.js',
             'theme_scita/static/src/js/pwa_implementation.js',
             'theme_scita/static/src/js/quick_view.js',
+            'theme_scita/static/src/scss/mobile_category.scss',
             ('before', '/theme_scita/static/src/scss/comman.scss', 'theme_scita/static/src/scss/button/button_styles.scss'),
             ('before', '/theme_scita/static/src/scss/comman.scss', 'theme_scita/static/src/scss/product_hover_effect.scss'),
         ],
