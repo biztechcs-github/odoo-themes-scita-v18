@@ -2,7 +2,7 @@
 <odoo>
     <template id="product_bulk_price_btn" inherit_id="website_sale.product">
         <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
-                <p class="promo_code mt-3">Apply Code to get discount Code : 10pc</p>
+            <p class="promo_code mt-3">Apply Code to get discount Code : <span class="discount_code">10pc</span></p>
         </xpath>
         <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
             <t t-set="pricelist" t-value="website.pricelist_id"/>
