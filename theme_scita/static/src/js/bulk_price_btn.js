@@ -19,6 +19,15 @@ WebsiteSale.include({
         $qtyInput.val(qty).trigger('change');
         this._getCombinationInfo(ev);
     },
+     _onChangeAddQuantity: function (ev) {
+        var $input = $(ev.currentTarget);
+        var newQty = parseFloat($input.val() || 0, 10);
+        var $parent = $input.closest('.js_product');
+        $parent.find('.o_bulk_price_btn').removeClass('active');
+        $parent.find(`.o_bulk_price_btn[qty="${newQty}"]`).addClass('active');
+        this.onChangeAddQuantity(ev);
+
+    },
     onClickAddCartJSON: function (ev) {
         ev.preventDefault();
         var $link = $(ev.currentTarget);
