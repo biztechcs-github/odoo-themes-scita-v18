@@ -2083,6 +2083,13 @@
 				font-size: 16px;
 				position: absolute;
 				right: 4px;
+
+				.oe_search_found{
+					color: $secondary;
+					left: -72px;
+					position: absolute;
+					font-size: 14px;
+				}
 			}
 		}
 

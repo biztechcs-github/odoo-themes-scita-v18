@@ -120,6 +120,10 @@ $(document).ready(function(){
     animation.registry.fashion_multi_cat_custom_snippet = animation.Class.extend({
         selector: ".fashion_multi_category_slider",
         disabledInEditableMode: false,
+        events: {
+            "mouseenter .scita_attribute_li": "_onMouseEnterSwatch",
+            "mouseleave .css_attribute_color": "_onMouseLeave",
+        },
         start: function() {
             var self = this;
             if (this.editableMode) {
@@ -206,6 +210,32 @@ $(document).ready(function(){
                         });
                     }
                 });
+            }
+        },
+        _onMouseEnterSwatch: function (ev) {
+            const $swatch = $(ev.currentTarget);
+            const $product = $swatch.closest('.cs-product');
+            const $img = $product.find('img').first();            
+            this.image= $img;
+        
+            this.defaultSrc = $img.attr('data-default-img-src');
+            const previewSrc = $swatch.find('label').data('previewImgSrc');
+            
+            if (previewSrc) {
+                this._updateImgSrc(previewSrc, $img);
+                $swatch.addClass("active");
+            }
+        },
+        
+        _onMouseLeave: function () {
+             this._updateImgSrc(this.defaultSrc,this.image);
+        },
+        
+        _updateImgSrc: function (src, $img) {
+            if ($img && src) {
+                $img.attr('src', src);
+            } else {
+                console.warn("Image element or source is missing.");
             }
         }
     });
@@ -803,6 +833,10 @@ $(document).ready(function(){
     animation.registry.product_category_img_slider_config = animation.Class.extend({
         selector: ".multi_product_and_category_slider",
         disabledInEditableMode: false,
+        events: {
+            "mouseenter .scita_attribute_li": "_onMouseEnterSwatch",
+            "mouseleave .css_attribute_color": "_onMouseLeave",
+        },
         start: function() {
             var self = this;
             if (this.editableMode) {
@@ -842,11 +876,42 @@ $(document).ready(function(){
                     }
                 });
             }
+        },
+        _onMouseEnterSwatch: function (ev) {
+            const $swatch = $(ev.currentTarget);
+            const $product = $swatch.closest('.cs-product');
+            const $img = $product.find('img').first();            
+            this.image= $img;
+        
+            this.defaultSrc = $img.attr('data-default-img-src');        
+            const previewSrc = $swatch.find('label').data('previewImgSrc');            
+            
+            if (previewSrc) {
+                this._updateImgSrc(previewSrc, $img);
+                $swatch.addClass("active");
+            }
+        },
+        
+        _onMouseLeave: function () {
+             this._updateImgSrc(this.defaultSrc,this.image);
+        },
+        
+        _updateImgSrc: function (src, $img) {   
+                 
+            if ($img && src) {
+                $img.attr('src', src);
+            } else {
+                console.warn("Image element or source is missing.");
+            }
         }
     });
     animation.registry.sct_product_snippet_1 = animation.Class.extend({
         selector: ".sct_product_snippet_1",
         disabledInEditableMode: false,
+        events: {
+            "mouseenter .scita_attribute_li": "_onMouseEnterSwatch",
+            "mouseleave .css_attribute_color": "_onMouseLeave",
+        },
         start: function() {
             var self = this;
             if (this.editableMode) {
@@ -883,7 +948,33 @@ $(document).ready(function(){
                     }
                 });
             }
-        }
+        },
+        _onMouseEnterSwatch: function (ev) {
+            const $swatch = $(ev.currentTarget);
+            const $product = $swatch.closest('.cs-product');
+            const $img = $product.find('img').first();            
+            this.image= $img;
+        
+            this.defaultSrc = $img.attr('data-default-img-src');        
+            const previewSrc = $swatch.find('label').data('previewImgSrc');
+            
+            if (previewSrc) {
+                this._updateImgSrc(previewSrc, $img);
+                $swatch.addClass("active");
+            }
+        },
+        
+        _onMouseLeave: function () {
+             this._updateImgSrc(this.defaultSrc,this.image);
+        },
+        
+        _updateImgSrc: function (src, $img) {        
+            if ($img && src) {
+                $img.attr('src', src);
+            } else {
+                console.warn("Image element or source is missing.");
+            }
+        },
     });
     
     // // Dynamic Video banner js start
@@ -948,6 +1039,10 @@ $(document).ready(function(){
     animation.registry.dynamic_trending_products = animation.Class.extend({
         selector: ".oe_trending_products_section",
         disabledInEditableMode: false,
+        events: {
+            "mouseenter .scita_attribute_li": "_onMouseEnterSwatch",
+            "mouseleave .css_attribute_color": "_onMouseLeave",
+        },
         start: function(){
             var self = this;
             if (this.editableMode) {
@@ -1060,6 +1155,32 @@ $(document).ready(function(){
                         });
                     });
                 });
+            }
+        },
+        _onMouseEnterSwatch: function (ev) {
+            const $swatch = $(ev.currentTarget);
+            const $product = $swatch.closest('.cs-product');
+            const $img = $product.find('img').first();            
+            this.image= $img;
+        
+            this.defaultSrc = $img.attr('data-default-img-src');        
+            const previewSrc = $swatch.find('label').data('previewImgSrc');
+            
+            if (previewSrc) {
+                this._updateImgSrc(previewSrc, $img);
+                $swatch.addClass("active");
+            }
+        },
+        
+        _onMouseLeave: function () {
+             this._updateImgSrc(this.defaultSrc,this.image);
+        },
+        
+        _updateImgSrc: function (src, $img) {        
+            if ($img && src) {
+                $img.attr('src', src);
+            } else {
+                console.warn("Image element or source is missing.");
             }
         },
     });
