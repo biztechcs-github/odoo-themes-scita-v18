@@ -72,6 +72,7 @@ AMP Support
         'website_sale_wishlist',
         'hr',
         'website_blog',
+        'website_sale_loyalty'
     ],
     'data': [
         'security/ir.model.access.csv',
@@ -127,6 +128,7 @@ AMP Support
         'views/new_snippets.xml',
         'views/shop_page_attribute.xml',
         'views/theme_cusomization.xml',
+        'views/bulk_buy_product_discount.xml',
         'views/snippets/snippets.xml',
     ],
     'support': 'support@appjetty.com',
@@ -169,6 +171,7 @@ AMP Support
             'theme_scita/static/src/js/product_details.js',
             'theme_scita/static/src/js/see_more_brand.js',
             'theme_scita/static/src/js/header.js',
+            'theme_scita/static/src/js/bulk_price_btn.js',
             'theme_scita/static/src/scss/pwa_design.scss',
             'theme_scita/static/src/js/lazy_load_button.js',
             'theme_scita/static/src/js/pwa_implementation.js',
