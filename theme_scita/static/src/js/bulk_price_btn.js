@@ -26,7 +26,6 @@ WebsiteSale.include({
         $parent.find('.o_bulk_price_btn').removeClass('active');
         $parent.find(`.o_bulk_price_btn[qty="${newQty}"]`).addClass('active');
         this.onChangeAddQuantity(ev);
-
     },
     onClickAddCartJSON: function (ev) {
         ev.preventDefault();
