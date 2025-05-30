@@ -492,12 +492,20 @@ body #wrapwrap.o_portal {
 					position: relative;
 					background-color: rgba($secondary , 0.2);
 					color: $primary;
+					transition: 0.3s ease-in;
+					font-size: $font-size-base-scita;
+					@include min1340{
+						font-size: $font-size-base-scita + 2;
+					}
+					&:hover{
+						background-color: rgba($secondary , 0.3);
+					}
 					&::before{
 						content: "\f0c4";
 						font-family: "FontAwesome" !important;
 						font-size: $title + 6;
 						position: absolute;
-						top: -19px;
+						top: -21px;
 						left: 10px;
 						color: $primary;
 					}
@@ -506,9 +514,30 @@ body #wrapwrap.o_portal {
 					}
 					.d-flex{
 						@include align-content;
+						    
 					}
 					.a-submit{
 						line-height: 1 !important;
+						padding: 0;
+						background: transparent;
+						border: 0;
+						color: $primary;
+						position: absolute;
+						left: 0;
+						right: 0;
+						top: 0;
+						bottom: 0;
+						text-align: right;
+						@include jc-flex-end;
+						padding-right: 20px;
+						font-size: $font-size-base-scita;
+						@include min1340{
+							font-size: $font-size-base-scita + 2;
+						}
+					}
+					.text-break{
+						flex-grow: initial !important;
+						width: calc(100% - 60px);
 					}
 				}
 			}

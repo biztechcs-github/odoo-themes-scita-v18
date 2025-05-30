@@ -972,10 +972,54 @@
     			color: rgba($black, 0.6);
 			}
 			.o_bulk_price_btn{
-				padding: 6px 10px;
-				border-radius: 4px;
-				font-size: $font-body + 1;
-				line-height: 1;
+				padding: 7px 20px;
+				border-radius: 30px;
+				font-size: $font-body - 1;
+				line-height: 17px;
+				background-color: #fbdde4;
+				color: #f2496f;
+				border-color: #f2496f;
+				transition: 0.3s ease-in;
+				&.active, &:hover{
+					background-color: #f2496f;
+					color: #fbdde4;
+				}
+				&:nth-child(5n - 3){
+					background: #d5e8ff;
+					color: #27548A;
+					border-color: #27548A;
+					&.active, &:hover{
+						color: #d5e8ff;
+						background-color: #27548A;
+					}
+				}
+				&:nth-child(5n + 3){
+					background: #ffd3ca;
+					color: #ff4926;
+					border-color: #ff4926;
+					&.active, &:hover{
+						background: #ff4926;
+						color: #ffd3ca;
+					}
+				}
+				&:nth-child(5n + 4){
+					background: #d5d1ff;
+					color: #5e4ef5;
+					border-color: #5e4ef5;
+					&.active, &:hover{
+						background: #5e4ef5;
+						color: #d5d1ff;
+					}
+				}
+				&:nth-child(5n){
+					background: #f7ffca;
+					color: #73851b;
+					border-color: #73851b;
+					&.active, &:hover{
+						background: #73851b;
+						color: #f7ffca;
+					}
+				}
 			}
 		}
 		.promo_code {
