@@ -9451,13 +9451,13 @@ body #wrapwrap{
 
 	&#shop_quick_view_modal{
 		.modal-dialog{
-			max-width: 400px;
+			// max-width: 400px;
 			padding: 6rem 0;
 
-			@include min992{
-				max-height: 100dvh;
-				height: auto;
-			}
+			// @include min992{
+			// 	max-height: 100dvh;
+			// 	height: auto;
+			// }
 
 			.modal-content{
 				height: 100%;
