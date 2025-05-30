@@ -301,6 +301,60 @@
                                         </a>
                                     </li>
                                 </ul>
+<<<<<<< HEAD
+=======
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 sct-top-right-side">
+                            <t t-call="website.placeholder_header_search_box">
+                                <t t-set="_input_classes" t-valuef=""/>
+                                <t t-set="_submit_classes" t-valuef=""/>
+                                <t t-set="_button_classes" t-valuef=""/>
+                            </t>
+                            <t t-call="website.placeholder_header_social_links"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+
+    <template active="False" id="option_header_2" inherit_id="website.layout" name='Header option 2'>
+        <xpath expr="//header//nav" position="replace">
+            <t t-call="website.navbar">
+                <t t-set="_navbar_classes" t-valuef="d-none d-lg-block shadow-sm"/>
+                <t t-set="_navbar_expand_class" t-valuef="None"/>
+
+                <div class="oe_structure top-header">
+                    <div class="container">
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-lg-6 col-md-6 sct_left_side">
+                                <div class="h-left">
+                                    <ul class="head-cinfo">
+                                        <li t-if="res_company.phone" t-ignore="true">
+                                            <a t-attf-href="tel:#{res_company.phone}">
+                                                <i class="fa fa-phone"/>
+                                                <span t-field="res_company.phone"/>
+                                            </a>
+                                        </li>
+                                        <li t-if="res_company.email" t-ignore="true">
+                                            <a t-attf-href="mailto:#{res_company.email}">
+                                                <i class="fa fa-envelope-o"/>
+                                                <span t-field="res_company.email"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 sct-top-right-side">
+                                <t t-call="website.placeholder_header_search_box">
+                                    <t t-set="_input_classes" t-valuef=""/>
+                                    <t t-set="_submit_classes" t-valuef=""/>
+                                    <t t-set="_button_classes" t-valuef=""/>
+                                </t>
+                                <t t-call="website.placeholder_header_social_links"/>
+>>>>>>> eed40b3651918a10c31cf0b4fc424cada5ba8429
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-6 sct-top-right-side">

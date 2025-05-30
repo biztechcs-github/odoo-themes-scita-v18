@@ -9493,17 +9493,34 @@ body #wrapwrap{
 				right: 0;
 				top: 0;
 			}
+			.modal-body{
+				.quick{
+					height: 100%;
+
+					#product_detail{
+						height: 100%;
+
+						#product_detail_main{
+							height: 100%;
+
+						}
+					}
+				}
+			}
 			.quick_view_main_wrap{
 				padding: 0;
 
 				.sct_modal_image{
 					img{
 						padding: 10px;
-						border: 0;
-						border-radius: 10px 10px 0 0;
-						max-height: 250px;
+						// border: 0;
+						// border-radius: 10px 10px 0 0;
+						// max-height: 250px;
 						object-fit: contain;
 						width: 100%;
+						border-right: 1px solid #ddd;
+						height: 100%;
+						object-fit: contain;
 					}
 				}
 				.sct_product_detail{
@@ -9517,7 +9534,7 @@ body #wrapwrap{
 							padding-bottom: 0;
 	
 							.product_price{
-								border-bottom: 1px solid rgba($dark-color, 0.1);
+								// border-bottom: 1px solid rgba($dark-color, 0.1);
 								width: 100%;
 								padding-bottom: 5px;
 	
@@ -9536,6 +9553,8 @@ body #wrapwrap{
 								}
 							}
 							.js_add_cart_variants{
+								border: 0;
+
 								.variant_attribute{
 									.attribute_name{
 										padding-bottom: 5px;
@@ -9576,6 +9595,54 @@ body #wrapwrap{
 							}
 							#o_wsale_cta_wrapper{
 								#add_to_cart_wrap{
+									border-top: 1px solid #dee2e6;
+									.css_quantity{
+										margin: 0 15px 0 0 !important;
+										background-color: lighten($light-grey-color, 2%);
+										padding: 4px;
+										border-radius: 50px;
+
+										@media (min-width: 1024px) and (max-width: 1199px) {
+											margin-bottom: 10px !important;
+										}
+
+										@media (max-width: 767px) {
+											flex: 0 0 33.33%;
+											max-width: 33.33%;
+											margin: 0 10px 0 0 !important;
+
+										}
+										.btn{
+											border-radius: 50px;
+											padding: 6px 0px !important;
+											background-color: $light-color;
+											color: $secondary;
+											border: 0;
+											
+											@include min768{
+												padding: 6px 8px !important;
+											}
+											@include min992{
+												padding: 6px 12px !important;
+											}
+
+											&:hover {
+												background-color: $secondary;
+												color: $light-color;
+											}
+
+											@media (max-width: 768px) {
+												line-height: 1 !important;													
+											}
+										}
+										input{
+											padding: 0 3px;
+											border: 0;
+											background: transparent;
+											width: 100%;
+											max-width: 60px;
+										}
+									}
 									.btn.js_check_product{
 										padding: 7px 14px !important;
 										font-size: 16px;

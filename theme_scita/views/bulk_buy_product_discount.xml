@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_bulk_price_btn" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="after">
+            <p class="promo_code mt-3">Apply Code to get discount Code : <span class="discount_code">10pc</span></p>
+        </xpath>
+        <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="before">
+            <t t-set="pricelist" t-value="website.pricelist_id"/>
+            <t t-set="rules" t-value="pricelist.item_ids.filtered(lambda r: r.product_tmpl_id.id == product.id)"/>
+
+            <t t-if="rules">
+                <h5 class="mt-3 mb-2">Big savings with bulk buys</h5>
+                <div class="d-flex flex-wrap gap-2 mb-2">
+                    <t t-foreach="rules.sorted(key=lambda r: r.min_quantity)" t-as="rule">
+                        <a class="btn btn-outline-primary o_bulk_price_btn" t-att-qty="int(rule.min_quantity)">
+                            Buy
+                            <t t-out="int(rule.min_quantity)"/>
+                            at $
+                            <t t-out="'%.2f' % rule.fixed_price"/>
+                            / Unit
+                        </a>
+                    </t>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>

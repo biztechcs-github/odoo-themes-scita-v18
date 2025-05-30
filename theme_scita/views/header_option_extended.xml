@@ -104,12 +104,13 @@
         <field name="website_indexed">True</field>
         <field name="website_published">True</field>
     </record>
-    <!-- <template active="False" id="asset_mobile_category" inherit_id="website.assets_frontend" name="Frontend">
-        <xpath expr="//link[last()]" position="after">
-            <link href="/theme_scita/static/src/scss/mobile_category.scss" rel="stylesheet" type="text/scss"/>
-            <script src="/theme_scita/static/src/js/mobile_view.js" type="text/javascript"/>
-        </xpath>
-    </template> -->
+<!--    <template active="False" id="asset_mobile_category" inherit_id="website.assets_frontend" name="Frontend">-->
+<!--        <xpath expr="//link[last()]" position="after">-->
+<!--            <link href="/theme_scita/static/src/scss/mobile_category.scss" rel="stylesheet" type="text/scss"/>-->
+<!--            <script src="/theme_scita/static/src/js/mobile_view.js" type="text/javascript"/>-->
+<!--        </xpath>-->
+<!--    </template>-->
+<!--    <link href="/theme_scita/static/src/scss/mobile_category.scss" rel="stylesheet"/>-->
     <template id="product_details_categories" name="cat list">
         <li class="view-category-item">
             <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>

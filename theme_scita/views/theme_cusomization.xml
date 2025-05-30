@@ -57,7 +57,7 @@
                        data-img="/theme_scita/static/src/img/snippet_icon/header-1.png"/>
             <we-button title="Scita Header 2"
                        data-name="scita_header_2"
-                       data-customize-website-views="theme_scita.theme_product_details_category,theme_scita.option_header_mobile_2,theme_scita.option_header_2,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
+                       data-customize-website-views="theme_scita.option_header_mobile_2,theme_scita.option_header_2,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
                        data-customize-website-variable="'scita_header_2'"
                        data-img="/theme_scita/static/src/img/snippet_icon/header-2.png"/>
             <we-button title="Scita Header 3"

@@ -921,7 +921,7 @@
 				}
 
 			}
-			.o_add_wishlist, .o_add_compare, #add_to_cart, #buy_now {
+			.o_add_wishlist, .o_add_compare, .sct-price-option #add_to_cart, #buy_now {
 				color: $light-color;
 				font-size: $title;
 				background: $dark-color;
@@ -2429,6 +2429,14 @@
 			> *{
 				background-color: rgba($primary, 0.08);
 				// background-color: transparent;
+			}
+		}
+
+		.modal{
+			.modal-content{
+				header, main{
+					background-color: $light-color;
+				}
 			}
 		}
 	}

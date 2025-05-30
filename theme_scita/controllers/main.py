@@ -1506,19 +1506,8 @@ class PWASupport(http.Controller):
     @http.route("/theme_scita/shop/quick_view", type="json", auth="public", website=True)
     def scita_quick_view_data(self,product_id=None):
         product = request.env['product.template'].browse(int(product_id))
-        prod_available = {}
-        for prod in product:
-            variants_available = {
-                p['id']: p for p in prod.product_variant_ids.sudo().read(['free_qty'])
-            }
-            free_qty = 0
-            for p in prod.product_variant_ids:
-                free_qty += variants_available[p.id]['free_qty']
-            prod_available[prod.id] = {
-                'free_qty': int(free_qty),
-            }
         
-        return request.env['ir.ui.view']._render_template("theme_scita.shop_quick_view_modal", {'product':product, 'prod_available': prod_available})
+        return request.env['ir.ui.view']._render_template("theme_scita.shop_quick_view_modal", {'product':product})
         
     @http.route("/theme_scita/shop/cart_view", type="json", auth="public", website=True)
     def scita_cart_view_data(self,product_id=None):
