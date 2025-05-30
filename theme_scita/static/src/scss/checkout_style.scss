@@ -64,7 +64,7 @@
 }
 #cart_total {
 	a {
-		color: $light-color;
+		// color: $light-color;
 		font-weight: bold;
 	}
 	.btn {
@@ -415,6 +415,9 @@ body #wrapwrap.o_portal {
 						transform: translateY(0);
 						border: 0;
 						align-items: center;
+						&.css_quantity{
+							min-width: 33px;
+						}
 						.btn-link{
 							border: 0;
 							background-color: $light-color;
@@ -479,6 +482,35 @@ body #wrapwrap.o_portal {
 				box-shadow: none;
 				background-color: $primary;
 				border-color: $primary;
+			}
+		}
+		.oe_website_sale_gift_card{
+			form{
+				.alert{
+					margin-bottom: 0;
+					border: 2px dotted $primary;
+					position: relative;
+					background-color: rgba($secondary , 0.2);
+					color: $primary;
+					&::before{
+						content: "\f0c4";
+						font-family: "FontAwesome" !important;
+						font-size: $title + 6;
+						position: absolute;
+						top: -19px;
+						left: 10px;
+						color: $primary;
+					}
+					strong{
+						font-weight: 500;
+					}
+					.d-flex{
+						@include align-content;
+					}
+					.a-submit{
+						line-height: 1 !important;
+					}
+				}
 			}
 		}
 	}

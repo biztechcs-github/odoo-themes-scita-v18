@@ -966,6 +966,22 @@
 					box-shadow: none;
 				}
 			}
+			h5{
+				font-size: $font-body + 1;
+				font-weight: 600;
+    			color: rgba($black, 0.6);
+			}
+			.o_bulk_price_btn{
+				padding: 6px 10px;
+				border-radius: 4px;
+				font-size: $font-body + 1;
+				line-height: 1;
+			}
+		}
+		.promo_code {
+			.discount_code{
+				font-weight: 600;
+			}
 		}
 		#product_full_spec {
 			.sct_title {
@@ -3009,7 +3025,6 @@
 									.sct_input_btn{
 										flex: 0 0 100%;
 										max-width: 100%;
-										margin-top: 10px;
 
 										@media (min-width: 768px) {
 											flex: 0 0 350px;
