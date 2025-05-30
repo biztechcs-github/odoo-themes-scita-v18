@@ -496,4 +496,14 @@
             </t>
         </xpath>
     </template>
+        <template id="inject_hotspot_homepage" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='description_reviews_tabs_contents']" position="after">
+            <t t-set="hotspot" t-value="request.env['image.hotspot'].sudo().browse(3)"/>
+            <t t-set="record" t-value="{
+            'image': hotspot.image.decode('utf-8') if hotspot.image else '',
+            'hotspot_ids': hotspot.hotspot_ids
+            }"/>
+            <t t-call="theme_scita.image_hotspot_snippet"/>
+        </xpath>
+        </template>
 </odoo>

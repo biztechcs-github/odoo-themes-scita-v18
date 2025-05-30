@@ -1,23 +1,23 @@
 <odoo>
-  <template id="image_hotspot_template" name="Image Hotspot Page">
-    <t t-call="website.layout">
-      <div class="container mt-4">
-        <div style="position: relative; display: inline-block;">
-          <!-- Use the Base64-encoded image string -->
-          <img t-att-src="'data:image/png;base64,' + record['image']" style="width:400px; height:200px; object-fit: contain;"/>
-
-          <t t-foreach="record['hotspot_ids']" t-as="point">
-            <a t-if="point.link"
-               t-att-href="point.link"
-               target="_blank"
-               t-att-style="'position: absolute; top: {}%; left: {}%; transform: translate(-50%, -50%); text-decoration: none;'.format(point.y, point.x)">
-              <div class="badge bg-danger text-white p-2 rounded-circle" title="Click to visit">
-                <i class="fa fa-shopping-cart"></i>
-              </div>
-            </a>
-          </t>
-        </div>
+ <!-- views/image_hotspot_template.xml -->
+<template id="image_hotspot_snippet" name="Image Hotspot Snippet">
+  <t t-if="record">
+    <div class="container mt-4">
+      <div style="position: relative; display: inline-block;">
+        <img t-att-src="'data:image/png;base64,' + record['image']"
+             style="width:400px; height:200px; object-fit: contain;"/>
+        <t t-foreach="record['hotspot_ids']" t-as="point">
+          <a t-if="point.link"
+             t-att-href="point.link"
+             target="_blank"
+             t-att-style="'position: absolute; top: {}%; left: {}%; transform: translate(-50%, -50%); text-decoration: none;'.format(point.y, point.x)">
+            <div class="badge bg-danger text-white p-2 rounded-circle" title="Click to visit">
+              <i class="fa fa-shopping-cart"></i>
+            </div>
+          </a>
+        </t>
       </div>
-    </t>
-  </template>
+    </div>
+  </t>
+</template>
 </odoo>
