@@ -2,9 +2,23 @@
     .btn-primary {
         height: auto;
         cursor: pointer;
+
+        .btn-lg{
+            border-radius: 0;
+        }
     }
 }
 @if o-website-value('btn-style-template') == 'btn_style_2' {
+    .btn-secondary{
+        padding: 10px 14px;
+        line-height: 1;
+        font-size: 14px;
+
+        @include min768{
+            font-size: 16px;
+            padding: 14px 24px;
+        }
+    }
     .btn-primary{
         display: inline-flex;
         @include align-content;
@@ -52,6 +66,10 @@
     }
 }
 @if o-website-value('btn-style-template') == 'btn_style_3' {
+    .btn-secondary{
+        padding: 7px 18px;
+        font-size: $font-body + 1;
+    }
     .btn-primary {
         background: $light-color;
         border: 1px solid $primary;
@@ -74,6 +92,9 @@
     }
 }
 @if o-website-value('btn-style-template') == 'btn_style_4' {
+    .btn-secondary{
+        padding: 7px 18px;
+    }
     .btn-primary {
         background: $primary;
         background: linear-gradient(45deg,lighten($primary, 15%) 10%, darken($primary, 25%) 90%);

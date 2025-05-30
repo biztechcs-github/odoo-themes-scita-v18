@@ -558,6 +558,7 @@ body #wrapwrap{
 					font-weight: 500;
 					margin: 10px 0;
 					line-height: 1;
+					box-shadow: none;
 
 					&::after{
 						content: '';
@@ -1258,16 +1259,6 @@ body #wrapwrap{
 					margin-top: 15px;
 					
 					.btn{
-						padding: 6px 16px;
-						font-size: 16px;
-						border-radius: 30px;
-						border: 1px solid $dark-color;
-						line-height: 1.4;
-						
-						@include min992{
-							padding: 9px 20px;
-						}
-
 						img{
 							width: 10px;
 							margin-left: 5px;
@@ -1298,18 +1289,18 @@ body #wrapwrap{
 			&:hover{
 				.sct_img_link{
 					background-color: $primary;
-
 					img{
 						filter: brightness(0) invert(1);
 					}
+
 				}
-				.sct_deal_btn{
-					.btn{
-						background-color: $primary;
-						color: $light-color;
-						border-color: $primary;
-					}
-				}
+				// .sct_deal_btn{
+				// 	.btn{
+				// 		background-color: $primary;
+				// 		color: $light-color;
+				// 		border-color: $primary;
+				// 	}
+				// }
 			}
 		}
 	}
@@ -6871,17 +6862,17 @@ body #wrapwrap{
 					margin-right: 15px;
 					color: fade-out($dark-color, 0.5);
 				}
-				a {
-					border-radius: 50%;
-					background-color: $primary;
-					width: 40px;
-					height: 40px;
-					line-height: 40px;
-					color: $light-color;
-					padding: 0;
-					text-align: center;
-					display: inline-block;
-				}
+				// a {
+				// 	border-radius: 50%;
+				// 	background-color: $primary;
+				// 	width: 40px;
+				// 	height: 40px;
+				// 	line-height: 40px;
+				// 	color: $light-color;
+				// 	padding: 0;
+				// 	text-align: center;
+				// 	display: inline-block;
+				// }
 			}
 		}
 		.sct_cmp_info {
@@ -6890,25 +6881,25 @@ body #wrapwrap{
 				padding-top: 30px;
 				padding-left: 15px;
 			}
-			.sct_cst_btn {
-				.btn {
-					background-color: transparent;
-					border:none;
-					padding:0;
-					font-weight: bold;
-					color: $dark-color;
-					font-size: $title;
-					line-height: normal;
-					padding-top: 10px;
-					&:hover, &:focus, &:active{
-						border: none;
-						background:transparent;
-						outline: none;
-						box-shadow: none;
-						color: $primary;
-					}
-				}
-			}
+			// .sct_cst_btn {
+			// 	.btn {
+			// 		background-color: transparent;
+			// 		border:none;
+			// 		padding:0;
+			// 		font-weight: bold;
+			// 		color: $dark-color;
+			// 		font-size: $title;
+			// 		line-height: normal;
+			// 		padding-top: 10px;
+			// 		&:hover, &:focus, &:active{
+			// 			border: none;
+			// 			background:transparent;
+			// 			outline: none;
+			// 			box-shadow: none;
+			// 			color: $primary;
+			// 		}
+			// 	}
+			// }
 		}
 	}
 }
@@ -11648,7 +11639,7 @@ body #wrapwrap{
 				height: 170px;
 
 				@include min992{
-					height: inherit;
+					height: auto;
 				}
                 @include min1024{
                     padding: 24px 10px;
@@ -12280,6 +12271,20 @@ body #wrapwrap{
 						display: block;
 						padding: 10px;
 						height: 100%;
+
+						&.btn_unpub{
+							position: absolute;
+							top: 0;
+							height: auto;
+							background: #dc3545;
+							padding: 2px 10px;
+							left: 0;
+							right: 0;
+							margin: auto;
+							border-radius: 0;
+							border: 0;
+							font-size: 12px;
+						}
 					}
 				}
 				.pwd-desc{
