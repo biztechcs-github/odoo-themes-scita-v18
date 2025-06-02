@@ -1330,8 +1330,8 @@
                             <section id="product_detail" t-attf-class="container py-4 px-0 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}">
                                 <div class="row flex-column m-0" id="product_detail_main" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout">
                                     <div class="col-12 mt-md-4 mt-lg-0 px-0 sct_modal_image">
-                                        <img class="product_detail_img col-md-12" t-if="product_variant" t-att-src="'/web/image/product.product/%s/image_1920' % product_variant.id" alt="Product Image"/>
-                                        <img class="product_detail_img col-md-12" t-else="" t-att-src="'/web/image/product.template/%s/image_1920' % product.id" alt="Product Image"/>
+                                        <img class="product_detail_img col-md-12" t-if="product_variant" t-att-data-default-img-src="'/web/image/product.product/%s/image_1920' % product_variant.id" t-att-src="'/web/image/product.product/%s/image_1920' % product_variant.id" alt="Product Image"/>
+                                        <img class="product_detail_img col-md-12" t-else="" t-att-data-default-img-src="'/web/image/product.template/%s/image_1920' % product.id" t-att-src="'/web/image/product.template/%s/image_1920' % product.id" alt="Product Image"/>
                                     </div>
                                     <div class="col-12 mt-md-4 mt-lg-0 sct_product_detail" id="product_details">
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
@@ -1365,9 +1365,14 @@
                                                     <input type="hidden" class="product_id" name="product_id" t-att-value="product_variant.id" />
                                                     <input type="hidden" class="product_template_id" name="product_template_id" t-att-value="product.id" />
                                                     <input t-if="product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="product.public_categ_ids.ids[0]" />
+                                                    <!-- <t t-call="website_sale.variants">..
+                                                        <t t-set="ul_class" t-valuef="flex-column" />
+                                                        <t t-set="parent_combination" t-value="None" />
+                                                    </t> -->
                                                     <t t-call="website_sale.variants">
                                                         <t t-set="ul_class" t-valuef="flex-column" />
                                                         <t t-set="parent_combination" t-value="None" />
+                                                        <t t-set="combination" t-value="combination_info['combination']"/>
                                                     </t>
                                                 </t>
                                                 <p t-if="True" class="css_not_available_msg alert alert-warning">This combination does not exist.</p>
@@ -1382,7 +1387,7 @@
                                                             <i class="fa fa-plus"></i>
                                                         </a>
                                                     </div>
-                                                    <!-- **Quantity update end** -->
+                                                <!-- **Quantity update end** -->
                                                         <a data-animation-selector=".o_wsale_product_images" role="button" id="add_to_cart" t-attf-class="btn btn-primary js_check_product a-submit" href="#">
                                                             <i class="icon-basket me-2"/> 
                                                             Add to cart
