@@ -111,6 +111,7 @@
 <!--        </xpath>-->
 <!--    </template>-->
 <!--    <link href="/theme_scita/static/src/scss/mobile_category.scss" rel="stylesheet"/>-->
+
     <template id="product_details_categories" name="cat list">
         <li class="view-category-item">
             <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>
@@ -127,7 +128,7 @@
         </li>
     </template>
 
-    <template active="False" id="theme_product_details_category" inherit_id="website.layout" name="category">
+    <template id="theme_product_details_category" inherit_id="website.layout" name="category">
         <xpath expr="//footer" position="before">
             <div class="ab-mob-view d-flex flex-wrap d-md-none">
                 <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
