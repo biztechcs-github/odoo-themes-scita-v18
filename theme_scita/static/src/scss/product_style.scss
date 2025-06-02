@@ -972,54 +972,92 @@
     			color: rgba($black, 0.6);
 			}
 			.o_bulk_price_btn{
-				padding: 7px 20px;
-				border-radius: 30px;
+				padding: 12px 20px 8px;
+				border-radius: 10px;
 				font-size: $font-body - 1;
 				line-height: 17px;
-				background-color: #fbdde4;
-				color: #f2496f;
-				border-color: #f2496f;
 				transition: 0.3s ease-in;
-				&.active, &:hover{
-					background-color: #f2496f;
-					color: #fbdde4;
-				}
-				&:nth-child(5n - 3){
-					background: #d5e8ff;
-					color: #27548A;
-					border-color: #27548A;
-					&.active, &:hover{
-						color: #d5e8ff;
-						background-color: #27548A;
+				color: $primary;
+				border: 1px solid rgba($primary, 0.5);
+				position: relative;
+				
+				&:nth-child(3n - 1){
+					&::before{
+						content: "Most Popular";
+						position: absolute;
+						top: -10px;
+						right: 15px;
+						background: $primary;
+						color: $white;
+						border-radius: 20px;
+						padding: 0px 10px;
+						font-size: 10px;
+						border: 1px solid $primary;
+						transition: 0.3s ease-in;
 					}
 				}
-				&:nth-child(5n + 3){
-					background: #ffd3ca;
-					color: #ff4926;
-					border-color: #ff4926;
-					&.active, &:hover{
-						background: #ff4926;
-						color: #ffd3ca;
-					}
+				&:hover, &.active{
+					background-color: rgba($primary, 0.1);
+					
 				}
-				&:nth-child(5n + 4){
-					background: #d5d1ff;
-					color: #5e4ef5;
-					border-color: #5e4ef5;
-					&.active, &:hover{
-						background: #5e4ef5;
-						color: #d5d1ff;
-					}
+				.buy-tag{
+					background: rgba(156, 39, 176, 0.2);
+					padding: 0 4px;
+					border-radius: 4px;
+					font-size: $font-body - 3;
+					color: #9c27b0;
 				}
-				&:nth-child(5n){
-					background: #f7ffca;
-					color: #73851b;
-					border-color: #73851b;
-					&.active, &:hover{
-						background: #73851b;
-						color: #f7ffca;
-					}
+				.buy-price{
+					padding: 0 4px;
+					border-radius: 4px;
+					font-size: $font-body + 1;
+					font-weight: 600;
+					color: $primary;
 				}
+				
+				// background-color: #fbdde4;
+				// color: #f2496f;
+				// border-color: #f2496f;
+				// &.active, &:hover{
+				// 	background-color: #f2496f;
+				// 	color: #fbdde4;
+				// }
+				// &:nth-child(5n - 3){
+				// 	background: #d5e8ff;
+				// 	color: #27548A;
+				// 	border-color: #27548A;
+				// 	&.active, &:hover{
+				// 		color: #d5e8ff;
+				// 		background-color: #27548A;
+				// 	}
+				// }
+				// &:nth-child(5n + 3){
+				// 	background: #ffd3ca;
+				// 	color: #ff4926;
+				// 	border-color: #ff4926;
+				// 	&.active, &:hover{
+				// 		background: #ff4926;
+				// 		color: #ffd3ca;
+				// 	}
+				// }
+				// &:nth-child(5n + 4){
+				// 	background: #d5d1ff;
+				// 	color: #5e4ef5;
+				// 	border-color: #5e4ef5;
+				// 	&.active, &:hover{
+				// 		background: #5e4ef5;
+				// 		color: #d5d1ff;
+				// 	}
+				// }
+				// &:nth-child(5n){
+				// 	background: #f7ffca;
+				// 	color: #73851b;
+				// 	border-color: #73851b;
+				// 	&.active, &:hover{
+				// 		background: #73851b;
+				// 		color: #f7ffca;
+				// 	}
+				// }
 			}
 		}
 		.promo_code {
