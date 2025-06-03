@@ -103,11 +103,11 @@
                                         color: $black;
                                         border-color: $light-color !important;
                                     }
-                                    .badge{
-                                        background: $light-color !important;
-                                        color: $black !important;
-                                        border-color: $light-color !important;
-                                    }
+                                    // .badge{
+                                    //     background: $light-color !important;
+                                    //     color: $black !important;
+                                    //     border-color: $light-color !important;
+                                    // }
                                 }
                             }
                         }
@@ -423,9 +423,9 @@
                             
                             .badge{
                                 font-size: 9px;
-                                background: $black !important;
-                                border-color: $black !important;
-                                color: $light-color !important;
+                                // background: $black !important;
+                                // border-color: $black !important;
+                                // color: $light-color !important;
                                 top: -1px !important;
                                 right: -5px !important;
                             }
@@ -4345,6 +4345,8 @@ header{
                                 border-radius: 5px;
                                 border: 1px solid $light-grey-color;
                                 overflow: hidden;
+                                text-align: center;
+                                padding: 5px;
                             }
                             .cart_item_details{
                                 flex: 0 0 calc(100% - 100px);
