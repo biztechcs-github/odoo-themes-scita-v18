@@ -1061,8 +1061,20 @@
 			}
 		}
 		.promo_code {
+			border: 1px dashed $primary;
+			background: rgba($primary, 0.1);
+			color: $primary;
+			@include flex;
+			@include align-content;
+			padding: 10px 20px;
+			border-radius: 12px;
+			i{
+				font-size: $title + 4;
+    			margin-right: 10px;
+			}
 			.discount_code{
 				font-weight: 600;
+				margin:0 5px;
 			}
 		}
 		#product_full_spec {
