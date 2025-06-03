@@ -266,6 +266,9 @@
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
+        <xpath expr="//header" position="after">
+            <t t-call="theme_scita.cart_sidebar_template"/>
+        </xpath>
     </template>
 
     <template active="False" id="option_header_mobile_2" inherit_id="website.template_header_mobile" name='Header mobile option 2'>
@@ -302,9 +305,6 @@
                     </div>
                 </div>
             </div>
-        </xpath>
-        <xpath expr="//header" position="after">
-            <t t-call="theme_scita.cart_sidebar_template"/>
         </xpath>
     </template>
 
