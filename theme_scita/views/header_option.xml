@@ -152,7 +152,33 @@
             </li>
         </t>
     </template>
-    <template active="False" id="option_header_1" inherit_id="website.layout" name="Header option 1">
+
+    <template id="header_cart_link_sidebar" name="Header Cart Link">
+        <t t-nocache="The number of products is dynamic, this rendering cannot be cached."
+           t-nocache-_icon="_icon"
+           t-nocache-_text="_text"
+           t-nocache-_badge="_badge"
+           t-nocache-_badge_class="_badge_class"
+           t-nocache-_icon_wrap_class="_icon_wrap_class"
+           t-nocache-_text_class="_text_class"
+           t-nocache-_item_class="_item_class"
+           t-nocache-_link_class="_link_class">
+            <t t-set="website_sale_cart_quantity" t-value="request.session['website_sale_cart_quantity'] if 'website_sale_cart_quantity' in request.session else website.sale_get_order().cart_quantity or 0"/>
+            <t t-set="show_cart" t-value="website.has_ecommerce_access()"/>
+            <t t-if="website.is_view_active('website_sale.header_hide_empty_cart_link')">
+                <t t-set="show_cart" t-value="website_sale_cart_quantity" />
+            </t>
+            <li t-attf-class="#{_item_class} divider d-none"/> <!-- Make sure the cart and related menus are not folded (see autohideMenu) -->
+            <li t-attf-class="nav-items-icon o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">
+                <button type="button" class="nav-toggle-btn btn p-1 rounded-circle position-relative">
+                    <i t-if="_icon" class="lni lni-cart-1"></i>
+                    <sup t-attf-class="my_cart_quantity badge bg-primary #{_badge_class} #{'d-none' if (website_sale_cart_quantity == 0) else ''}" t-esc="website_sale_cart_quantity" t-att-data-order-id="request.session.get('sale_order_id', '')"/>
+                </button>
+            </li>
+        </t>
+    </template>
+
+    <template id="option_header_1" inherit_id="website.layout" name="Header option 1">
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
@@ -210,7 +236,7 @@
                         </t>
                         <div class="menu_right">
                             <ul class="list-inline">
-                                <t t-call="website_sale.header_cart_link">
+                                <t t-call="theme_scita.header_cart_link_sidebar">
                                     <t t-set="_icon" t-value="True"/>
                                     <t t-set="_item_class" t-value="''"/>
                                     <t t-set="_link_class" t-value="'top-link-checkout'"/>
@@ -276,6 +302,9 @@
                     </div>
                 </div>
             </div>
+        </xpath>
+        <xpath expr="//header" position="after">
+            <t t-call="theme_scita.cart_sidebar_template"/>
         </xpath>
     </template>
 
@@ -346,7 +375,7 @@
                                 <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
                                 <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                             </t>
-                            <t t-call="website_sale.header_cart_link">
+                            <t t-call="theme_scita.header_cart_link_sidebar">
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_item_class" t-value="''"/>
                                 <t t-set="_link_class" t-value="'top-link-checkout'"/>
@@ -357,7 +386,9 @@
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
-        
+        <xpath expr="//header" position="after">
+            <t t-call="theme_scita.cart_sidebar_template"/>
+        </xpath>
     </template>
     <template active="False" id="option_header_3" inherit_id="website.layout" name='Header option 3'>
         <xpath expr="//header//nav" position="replace">
@@ -446,7 +477,7 @@
                                             <t t-set="_icon_class" t-valuef="fa-stack"/>
                                             <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                                         </t>
-                                        <t t-call="website_sale.header_cart_link">
+                                        <t t-call="theme_scita.header_cart_link_sidebar">
                                             <t t-set="_icon" t-value="True"/>
                                             <t t-set="_item_class" t-value="''"/>
                                             <t t-set="_link_class" t-value="'top-link-checkout o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
@@ -488,6 +519,9 @@
                 </div>
             </t>
             <t t-call="website.template_header_mobile"/>
+        </xpath>
+        <xpath expr="//header" position="after">
+            <t t-call="theme_scita.cart_sidebar_template"/>
         </xpath>
     </template>
 
@@ -557,7 +591,7 @@
                                             <t t-set="_icon_class" t-valuef="fa-stack"/>
                                             <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                                         </t>
-                                        <t t-call="website_sale.header_cart_link">
+                                        <t t-call="theme_scita.header_cart_link_sidebar">
                                             <t t-set="_icon" t-value="True"/>
                                             <t t-set="_item_class" t-value="''"/>
                                             <t t-set="_link_class" t-value="'top-link-checkout'"/>
@@ -600,8 +634,11 @@
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
+        <xpath expr="//header" position="after">
+            <t t-call="theme_scita.cart_sidebar_template"/>
+        </xpath>
     </template>
-       <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
+    <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
@@ -669,7 +706,7 @@
                                 <t t-set="_link_class" t-value="'btn position-relative rounded-pill p-1 text-reset'"/>
                                 <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                             </t>
-                            <t t-call="website_sale.header_cart_link">
+                            <t t-call="theme_scita.header_cart_link_sidebar">
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_item_class" t-value="''"/>
                                 <t t-set="_link_class" t-value="'top-link-checkout'"/>
@@ -696,6 +733,185 @@
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
+        <xpath expr="//header" position="after">
+            <t t-call="theme_scita.cart_sidebar_template"/>
+        </xpath>
+    </template>
+    <template id="cart_sidebar_template" name="Custom Cart Sidebar">
+        <div class="cart_details">
+            <div id="cstm-nav-menu-toggle" class="scita-side-menu css_editable_mode_hidden o_hidden">
+                <div class="my-cart">
+                    <div class="cart-header">
+                        <div class="cart-title">
+                            <span id="mycart_collapse" data-target="#show-cart">
+                                My Cart
+                                <span class="theme_scita_cart_quantity my_cart_quantity"
+                                    t-esc="website.sale_get_order() and website.sale_get_order().cart_quantity or 0"/>
+                            </span>
+                        </div>
+                        <span id="close_cstm_nav_toggle">
+                            <i class="lni lni-xmark"></i>
+                        </span>
+                    </div>
+                    <!-- Cart Toggle with Quantity -->
+                    <!-- Cart Detail (Collapsible) -->
+                    <div id="show-cart" class="cart-content oe_website_sale">
+                        <div class="cart-list-wrap" t-if="website.sale_get_order() and website.sale_get_order().website_order_line">
+                            <div class="cart-item-list">
+                                <!-- Cart Lines -->
+                                <t t-foreach="website.sale_get_order() and website.sale_get_order().website_order_line" t-as="line">
+                                    <div class="cart-item" t-att-id="'scita_sidebar_line_'+ str(line.id)">
+                                        <div class="scita_cart_lines oe_website_sale_cart">
+                                        <!-- Product Image -->
+                                            <div class="cart_item_image">
+                                                <span t-field="line.product_id.image_128"
+                                                    t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'img-fluid'}"/>
+                                            </div>
+                                            <div class="cart_item_details">
+                                                <!-- Product Name -->
+                                                <div class="cart_item_name">
+                                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
+                                                        <t t-esc="line.product_id.name"/>
+                                                    </a>
+                                                </div>
+
+                                                <!-- Quantity & Unit Price -->
+                                                <p class="cart_qty_amt">
+                                                    <span class="sc-product-quantity theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
+                                                    <span t-esc="line.price_unit"
+                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                </p>
+
+                                                <!-- Subtotal -->
+                                                <p class="sc-product-subtotal cart_line_subtotal">
+                                                    <span t-esc="line.price_subtotal"
+                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                </p>
+                                                <!-- Quantity Controls -->
+                                                <div class="input-group dropdown-plus-out">
+                                                    <div class="css_quantity input-group input-group-sm">
+                                                        <t t-if="not line._is_not_sellable_line()">
+                                                            <!-- Minus -->
+                                                            <a href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
+                                                                <i class="fa fa-minus"/>
+                                                            </a>
+                                                            <!-- Quantity input -->
+                                                            <input type="text"
+                                                                class="js_quantity form-control quantity"
+                                                                t-att-data-line-id="line.id"
+                                                                t-att-data-product-id="line.product_id.id"
+                                                                t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
+                                                            <!-- Plus -->
+                                                            <a href="#" class="btn btn-link js_add_cart_json" aria-label="Add one" title="Add one">
+                                                                <i class="fa fa-plus"/>
+                                                            </a>
+                                                        </t>
+                                                        <t t-else="">
+                                                            <span class="text-muted w-100" t-out="int(line.product_uom_qty)"/>
+                                                            <input type="hidden"
+                                                                class="js_quantity form-control quantity"
+                                                                t-att-data-line-id="line.id"
+                                                                t-att-data-product-id="line.product_id.id"
+                                                                t-att-value="line.product_uom_qty" />
+                                                        </t>
+                                                    </div>
+
+                                                    <!-- Remove Line Button -->
+                                                    <button class="sc-remove-line btn btn-light"
+                                                            title="remove"
+                                                            t-att-data-line-id="line.id"
+                                                            t-att-data-product-id="line.product_id.id">
+                                                        <i class="fa fa-trash-o"/>
+                                                    </button>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </t>
+                            </div>
+
+
+                                <!-- Cart Total and Buttons -->
+                            <div class="cart-footer">
+                                <div class="cart_total_div">
+                                    <div class="cart-count-wrap">
+                                        <p class="total-text">Subtotal</p>
+                                        <span t-field="website.sale_get_order().amount_untaxed" class="sc-cart-subtotal monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                    </div>
+                                    <div class="cart-count-wrap">
+                                        <p class="total-text">Taxes</p>
+                                        <span t-field="website.sale_get_order().amount_tax" class="sc-cart-tax monetary_field mb-0" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                    </div>
+                                    <div class="total-wrap">
+                                                <p class="total-text">Total</p>
+                                                <p t-field="website.sale_get_order().amount_total"
+                                                    class="sc-cart-total monetary_field mb-0 fw-bold"
+                                                    style="white-space: nowrap;"
+                                                    t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
+                                            </div>
+                                    <div class="button-box">
+                                        <a class="view-all btn btn-primary" href="/shop/cart">View all</a>
+                                        <a class="proceed btn btn-primary" href="/shop/checkout">
+                                            Checkout
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="cart-address-box">
+
+                                    <div class="company_address">
+                                        <p t-field="res_company.partner_id" t-options='{
+                                            "widget": "contact",
+                                            "fields": ["address"]}'/>
+                                    </div>
+
+                                    <div class="social-link">
+                                        <ul>
+                                            <li t-if="website.social_facebook">
+                                                <a t-att-href="website.social_facebook">
+                                                    <i class="fa fa-facebook"/>
+                                                </a>
+                                            </li>
+                                            <li t-if="website.social_twitter">
+                                                <a t-att-href="website.social_twitter">
+                                                    <i class="fa fa-twitter"/>
+                                                </a>
+                                            </li>
+                                            <li t-if="website.social_linkedin">
+                                                <a t-att-href="website.social_linkedin">
+                                                    <i class="fa fa-linkedin"/>
+                                                </a>
+                                            </li>
+                                            <li t-if="website.social_youtube">
+                                                <a t-att-href="website.social_youtube">
+                                                    <i class="fa fa-youtube-play"/>
+                                                </a>
+                                            </li>
+                                            <li t-if="website.social_instagram">
+                                                <a t-att-href="website.social_instagram">
+                                                    <i class="fa fa-instagram"/>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <t t-else="">
+                                <div class="empty-cart-message text-center p-4">
+                                    <i class="fa fa-shopping-cart fa-3x mb-3 text-muted"/>
+                                    <h5>Your cart is empty</h5>
+                                    <p>Looks like you haven’t added anything to your cart yet.</p>
+                                    <a href="/shop" class="btn btn-primary mt-2">Start Shopping</a>
+                                </div>
+                            </t>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
     </template>
     <template  id="search_btn_primary_class_remove" inherit_id="website.website_search_box">
         <xpath expr="//button" position="attributes">

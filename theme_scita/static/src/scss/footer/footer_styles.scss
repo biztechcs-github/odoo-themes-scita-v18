@@ -1001,7 +1001,11 @@
     }
 }
 
- 
+ footer{
+    @media (max-width:767px) {
+        padding-bottom: 70px;
+    }
+ }
 .o_rtl{
     .js_language_selector {
         &.dropup{
