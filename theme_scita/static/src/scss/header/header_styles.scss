@@ -1786,6 +1786,55 @@
                 }
             }
         }
+        .o_navbar_mobile{
+            .offcanvas-body{
+                .navbar-nav{
+                    .category_dropdown{
+                        .nav-link{
+                            img{
+                                filter: invert(0.7);
+                            }
+                        }
+                        .megamenu_dropdown{
+                            .ul-menu-category-list{
+                                > li{
+                                    padding: 10px 20px 0;
+                                     > a{
+                                        font-weight: 600;
+                                        display: block;
+                                    }
+                                }
+                                .ca-sub{
+                                    padding: 0;
+                                    > a{                                        
+                                        margin: 5px 20px 0;
+                                    }
+                                    .sct_submenu_level{
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style-type: none;
+                                        .row{
+                                            margin: 0;
+                                        }
+                                        .sct_left_menu{
+                                            .d-flex{
+                                                .col-md-4{
+                                                    width: 50%;
+                                                    padding: 2px 5px 0;
+                                                }
+                                            }
+                                        }
+                                        .sct_right_image{
+                                            margin: 10px 0 0 ;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }   
 }
 @if o-website-value('header-template') == 'scita_header_4' {
@@ -2703,6 +2752,55 @@
                 }
             }
         }
+                .o_navbar_mobile{
+            .offcanvas-body{
+                .navbar-nav{
+                    .category_dropdown{
+                        .nav-link{
+                            img{
+                                filter: invert(0.7);
+                            }
+                        }
+                        .megamenu_dropdown{
+                            .ul-menu-category-list{
+                                > li{
+                                    padding: 10px 20px 0;
+                                     > a{
+                                        font-weight: 600;
+                                        display: block;
+                                    }
+                                }
+                                .ca-sub{
+                                    padding: 0;
+                                    > a{                                        
+                                        margin: 5px 20px 0;
+                                    }
+                                    .sct_submenu_level{
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style-type: none;
+                                        .row{
+                                            margin: 0;
+                                        }
+                                        .sct_left_menu{
+                                            .d-flex{
+                                                .col-md-4{
+                                                    width: 50%;
+                                                    padding: 2px 5px 0;
+                                                }
+                                            }
+                                        }
+                                        .sct_right_image{
+                                            margin: 10px 0 0 ;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 @if o-website-value('header-template') == 'scita_header_5' {
@@ -3121,12 +3219,15 @@ header{
             }
         }
         &.o_header_mobile{
-            padding: 0;
+            padding: 0 !important;
             #o_main_nav{
                 padding: 10px;
             }
             .o_navbar_mobile{
-                height: 100vh;
+                height: 100dvh;
+                .offcanvas-body{
+                    padding-bottom: 78px;
+                }
             }
             .o_header_mobile_buttons_wrap{
                 .offcanvas-header {
