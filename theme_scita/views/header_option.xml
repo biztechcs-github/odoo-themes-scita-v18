@@ -179,7 +179,7 @@
         </t>
     </template>
 
-    <template id="option_header_1" inherit_id="website.layout" name="Header option 1">
+    <template active='false' id="option_header_1" inherit_id="website.layout" name="Header option 1">
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
