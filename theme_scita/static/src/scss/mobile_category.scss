@@ -49,6 +49,17 @@
 				}
 			}
 		}
+		&.active{
+			.btn-link{
+				background-color: $secondary;
+
+				span{
+					&.fa{
+						color: $light-color;
+					}
+				}
+			}
+		}
 		&:hover{
 			.btn-link{
 				background-color: rgba($secondary, 0.3);
@@ -72,9 +83,9 @@
 	}
 }
 @media (max-width: 767px){
-	// .ab-btm-cat {
-	// 	padding-bottom: 68px;
-	// }
+	.ab-btm-cat {
+		padding-bottom: 68px;
+	}
 	#product_category_list {
 		position: fixed;
 		right: -100%;

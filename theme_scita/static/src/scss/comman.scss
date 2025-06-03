@@ -167,9 +167,6 @@ header{
 	.logo {
 		span {
 			display: block;
-			@media (max-width:991px) {
-				padding: 10px 0;				
-			}
 			/*@media (max-width: 767px){
 				img {
 					height: min-content !important;
@@ -661,7 +658,7 @@ header{
 				}
 				button{
 					&.btn.btn-link{
-						border: 1px solid $primary;
+						// border: 1px solid $primary;
 						margin: 5px 10px 0 0;
 
 						.fa{
@@ -2643,15 +2640,17 @@ body #wrapwrap::-webkit-scrollbar{
 				span{
 					&[name="sale_product_configurator_list_title"]{
 						font-size: $title;
-						margin-bottom: 14px !important;
+						margin-bottom: 20px !important;
 						display: block !important;
+						border-bottom: 1px solid rgba($dark-color, 0.1);
 						text-align: center;
+						padding-top: 20px;
+						margin-top: 0 !important;
 					}
 				}
 				.o_sale_product_configurator_table{
 					border-spacing: 0 10px;
     				border-collapse: separate;
-					border-bottom: 1px solid rgba($dark-color, 0.1);
 
 					tr{
 						td{
@@ -2676,19 +2675,30 @@ body #wrapwrap::-webkit-scrollbar{
 												padding: 0 5px;
 
 												.form-check{
+													@include flex;
+													@include justify-align-content;
+													padding-left: 0;
+													
 													.form-check-label{
 														font-size: $title - 3;
 														line-height: 1;
 														vertical-align: middle;
+														padding-left: 7px;
 													}
 													.form-check-input{
 														font-size: $title - 3;
-														margin-top: 7px;
+														margin-top: 6px;
+														float: none;
+														margin: 0;
+														order: -1;
 
 														&:checked{
 															background-color: transparent;
 														}
 													}
+												}
+												.o_sale_product_configurator_ptav_pills{
+													
 												}
 												.o_sale_product_configurator_ptav_color{
 													width: 25px;
@@ -2867,4 +2877,3 @@ common search for categories and products (22/05/2025)
 .chip:hover {
     border-color: #dc3545;
 }
-

@@ -756,18 +756,8 @@ header {
 /*Mega menu hover img effect*/
 header .menu_style_3 .mega-dropdown-menu {
 	.letter-spacing .inline-block {
-			.pro_thumb_bg {
-				.prod_img{ 
-					a{ 
-						padding: 0;
-						img {
-							@include transition(all, 0.5s, ease);
-							height: 100px;
-							width: auto;
-							object-fit: contain;
-					}
-				}
-			}
+		.pro_thumb_bg .prod_img img {
+			@include transition(all, 0.5s, ease);
 		}
 		&:hover {
 			.pro_thumb_bg .prod_img img {

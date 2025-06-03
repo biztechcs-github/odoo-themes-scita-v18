@@ -295,7 +295,7 @@ $(document).ready(function(){
                                     items: 6
                                 },
                                 1500: {
-                                    items: 7
+                                    items: 6
                                 },
                             },
                         });
@@ -512,6 +512,9 @@ $(document).ready(function(){
                                     },
                                     992: {
                                         items: 3,
+                                    },
+                                    1500: {
+                                        items: 4,
                                     }
                                 },
                             });

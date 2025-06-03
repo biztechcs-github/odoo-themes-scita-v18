@@ -468,7 +468,7 @@
 }
 @if o-website-value('footer-template') == 'Footer-6' {
     footer {
-        background-color: $dark-color;
+        background-color: darken($primary, 30%);
         .footer-content {
            .top-row {
                 padding: 25px 0;
@@ -494,6 +494,13 @@
                         width:30px;
                         height: 30px;
                         font-size: 16px;
+                        background: $light-color;
+                        color: darken($primary, 30%);
+
+                        &:hover{
+                            background-color: $black;
+                            color: $light-color;
+                        }
                         @media (max-width: 575px){
                             width: 25px;
                             height: 25px;
@@ -1001,11 +1008,7 @@
     }
 }
 
- footer{
-    @media (max-width:767px) {
-        padding-bottom: 70px;
-    }
- }
+ 
 .o_rtl{
     .js_language_selector {
         &.dropup{
