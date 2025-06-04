@@ -71,7 +71,6 @@ img {
 input.form-control {
 	height: unset;
 	transition: none;
-	// border-radius: 0;
 }
 .css_attribute_color input{
 	transition: none;
@@ -189,16 +188,6 @@ header{
 				@include transition(all, 0.5s, ease);
 				font-size: $head-label;
 			}
-			&#my_wish {
-				/*display: none !important;*/
-			}
-			&:hover{
-				.dropdown-menu {
-					// @media (min-width: 768px){
-					// 	display: block;
-					// }
-				}
-			}
 			&.o_extra_menu_items {
 				&:hover{
 					> .dropdown-menu {
@@ -207,26 +196,11 @@ header{
 						}
 					}
 				}
-				> .dropdown-menu.show {
-					// @media (min-width: 768px){
-					// 	display: block !important;
-					// 	li {
-					// 		&:hover{
-					// 			.dropdown-menu {
-					// 				display:none;
-					// 			}
-					// 		}
-					// 	}
-					// }
-				}
 			}
 			&.dropdown {
 				&:hover{
 					.dropdown-menu {
 						@media (min-width: 768px){
-							// display: block;
-							/*right: 0;
-							left: auto;*/
 							.dropdown-item {
 								padding: 5px 10px;
 								&:hover {
@@ -249,9 +223,6 @@ header{
 			&:focus, &:hover, &:active, &.active {
 				background:$dark-color;
 				color: $light-color !important;
-			}
-			+ .dropdown-item {
-				// border-top: 1px solid $dark-color;
 			}
 		}
 	}
@@ -485,7 +456,6 @@ header{
 	h4 {
 		font-size: $fot-label;
 		font-weight: bold;
-		// color: $body-color;
 		margin: 0;
 	}
 	ul{
@@ -602,7 +572,6 @@ header{
 			}
 			.td-wish-btn{
 				.o_wish_add{
-					// padding: 0 10px !important;
 					width: 100%;
 					background: $primary;
 					color: $light-color;
@@ -658,7 +627,6 @@ header{
 				}
 				button{
 					&.btn.btn-link{
-						// border: 1px solid $primary;
 						margin: 5px 10px 0 0;
 
 						.fa{
@@ -1585,7 +1553,6 @@ body.editor_enable {
 	font-weight: 600;
 	z-index: 2;
 	&.style1 {
-		// border-bottom: 2px solid $primary;
 		left: 10px;
 		right: auto;
 		background-color: $primary;

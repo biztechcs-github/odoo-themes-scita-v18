@@ -16,9 +16,6 @@
 	}
 }
 .oe_cart {
-	.form-control {
-		// border-radius: 0;
-	}
 	td {
 		a {
 			color: $primary;
@@ -518,7 +515,6 @@ body #wrapwrap.o_portal {
 				.o_wsale_scrollable_table{		
 					
 					@media (max-width: 991px){
-						// max-height: 300px;
 						padding-right: 15px !important;
 						width: 100%;
 					}
