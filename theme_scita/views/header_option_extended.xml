@@ -131,14 +131,7 @@
     <template id="theme_product_details_category" inherit_id="website.layout" name="category">
         <xpath expr="//footer" position="before">
             <div class="ab-mob-view d-flex flex-wrap d-md-none">
-                <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
-                    <button class="btn btn-link" type="button">
-                        <a class="redirect-home" href="/">
-                            <span class="fa fa-home"/>
-                            <span class="name-text">Home</span>
-                        </a>
-                    </button>
-                </div>
+               
                 <div class="ab-icons ab-category">
                     <button class="btn btn-link" data-bs-target="#product_category_list" data-bs-toggle="collapse" type="button">
                         <span class="fa fa-th-large"/>
@@ -164,6 +157,14 @@
                         <a class="redirect-cart-page" href="/shop/cart">
                             <span class="fa fa-shopping-bag"/>
                             <span class="name-text">Bag</span>
+                        </a>
+                    </button>
+                </div>
+                 <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
+                    <button class="btn btn-link" type="button">
+                        <a class="redirect-home" href="/">
+                            <span class="fa fa-home"/>
+                            <span class="name-text">Home</span>
                         </a>
                     </button>
                 </div>
