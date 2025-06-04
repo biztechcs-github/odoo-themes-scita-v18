@@ -34,6 +34,11 @@
 				width: 100%;
 				display: block;
 			}
+            svg{
+                fill: #929292;
+                height: 25px;
+                width: 25px;
+            }
 			span {
 				display: block;
 				color: #929292;
@@ -45,31 +50,25 @@
 					display: none;
 					font-weight: bold;
 					padding-top: 3px;
-					font-size: 14px;
+					font-size: 12px;
 					@media (max-width: 410px){
-						font-size: 12px;
+						font-size: 10px;
 					}
 				}
 			}
 		}
 		&:hover{
 			.btn-link{
-				background-color: rgba($secondary, 0.3);
-				span {
-					color: rgba($secondary, 0.9);
-				}
+				background-color: transparent;
 			}
 		}
 		&.active{
 			.btn-link{
 				background-color: $secondary;
-
-				span{
-					&.fa{
-						color: $light-color;
-					}
-				}
 			}
+            svg{
+                fill: $white;
+            }
 		}
 		
 	}
@@ -242,6 +241,11 @@
             }
         }
         .navbar{
+            .oe_structure{
+                @include min992{
+                    padding-bottom: 4px;
+                }
+            }
             .sct_text_block, > p{
                 background-color: rgba($primary, 0.4);
                 padding: 5px;
@@ -317,17 +321,6 @@
                 @media (max-width: 991px){
                     text-align: center;
                     margin-top: 10px;
-                }
-            }
-        }
-        .oe_structure{
-            .h-right{
-                .btn-primary{
-                    color: $light-color;
-
-                    &:hover{
-                        color: $secondary;
-                    }
                 }
             }
         }
@@ -639,13 +632,16 @@
         bottom: 0;
         padding: 8px 5px;
         .ab-icons{
-            border-bottom: 3px solid transparent;
+            .btn-link{
+                border-bottom: 2px solid transparent;
+                border-radius: 0;
+            }
             &.active{
-                border-bottom: 3px solid $primary;
                 .btn-link{
+                    border-bottom: 2px solid $primary;
                     background-color: transparent;
-                    span.fa{
-                        color: $primary;
+                    svg{
+                        fill: $primary;
                     }
                 }
             }
@@ -974,12 +970,13 @@
             &.active{
                 .btn-link{
                     background-color:transparent;
+                    svg{
+                        fill: $secondary;
+                    }
                     span{
-                        &.fa{
-                            color: $secondary;
-                        }
                         &.name-text{
                             color: $secondary;
+                            font-weight: 600;
                         }
                     }
                 }
@@ -998,6 +995,21 @@
         .navbar{
             padding: 0;
             box-shadow: none !important;
+            .o_header_language_selector{
+                .js_language_selector{
+                    .dropdown-toggle {                     
+                        color: $white !important;
+                    }
+                    .dropdown-menu {
+                        .dropdown-item{
+                            &:hover, &.active {
+                                background-color: $body-color !important;
+                                color: $white !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
         
         .header_belt{
@@ -1949,27 +1961,46 @@
         max-width: 100%;
         border-radius: 0;
         bottom: 0;
+        padding: 0 5px;
         .ab-icons{
             .btn-link{
                 border: 2px solid transparent;
                 background-color: transparent;
                 width: 100%;
+                height: initial;
                 span{
                     &.name-text{
                         display: block;
                     }
                 }      
             }
-            &.active{
+            &.ab-home{
                 .btn-link{
                     margin-top: -40px;
-                    background-color: $primary;
+                    background-color: $primary !important;
                     transform: scale(1.2);
                     border: 2px solid $white;
                     width: 50px;
+                    height: 50px;
+                    svg{
+                        fill: $white !important;
+                    }
                     span{
                         &.name-text{
                             display: none;
+                        }
+                    }                  
+                }
+            }
+            &.active{
+                .btn-link{   
+                    background-color: transparent;                 
+                    svg{
+                        fill: $primary;
+                    }
+                    span{
+                        &.name-text{
+                            color: $primary;
                         }
                     }                  
                 }
@@ -1989,6 +2020,21 @@
         .navbar{
             padding: 0;
             box-shadow: none !important;
+            .o_header_language_selector{
+                .js_language_selector{
+                    .dropdown-toggle {                     
+                        color: $white !important;
+                    }
+                    .dropdown-menu {
+                        .dropdown-item{
+                            &:hover, &.active {
+                                background-color: $body-color !important;
+                                color: $white !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
         
         .header_belt{
@@ -2952,27 +2998,26 @@
         .ab-icons{
             .btn-link{
                 background-color: transparent;
-                span{
-                    &.fa{
-                        color: rgba($white, 0.7);
-                    }
-                }      
+                svg{
+                    fill: rgba($white, 0.5);
+                }     
             }
-            &:hover{
+            &.ab-home{
                 .btn-link{
-                    background-color: $white;
+                    background-color: $secondary !important;
+                    outline: 2px solid $white;
+                    margin-top: -40px;
+                    svg{
+                        fill: $white !important;            
+                    }
                 }
             }
 
             &.active{
-                .btn-link{
-                    background-color: $secondary;
-                    outline: 3px solid $white;
-                    margin-top: -40px;
-                    span{
-                        &.fa{
-                            color: $white;            
-                        }
+                .btn-link{   
+                    background-color: transparent;               
+                    svg{
+                        fill: $white;            
                     }
                 }
             }
@@ -4027,6 +4072,11 @@ header{
 // All category + 2 level mega menu common design
 @if o-website-value('header-template') == 'scita_header_1' or o-website-value('header-template') == 'scita_header_2' or o-website-value('header-template') == 'scita_header_3' or o-website-value('header-template') == 'scita_header_4' or o-website-value('header-template') == 'scita_header_5'{
     header{
+        &.o_header_affixed{
+            @media (max-width: 767px) {
+                position: initial;
+            }
+        }
         .navbar{
             #o_main_nav{
                 li{
@@ -4300,6 +4350,37 @@ header{
                                     position: static !important;
                                     transform: translate(0) !important;
                                 }
+                            }
+                        }
+                    }
+                }
+            }
+            .o_header_language_selector{
+                .js_language_selector{
+                    .dropdown-toggle {
+                        padding: 5px;
+                        background: none;
+                        color: $black;
+                        border: 0;
+                        @include min992{
+                            padding: 0;
+                            span{
+                                font-size: $font-body + 1;
+                            }
+                        }
+                        &:after{
+                            transform: rotate(180deg);
+                        }
+                        &.show{
+                            &:after{
+                                transform: initial;
+                            }
+                        }
+                    }
+                    .dropdown-menu {
+                        .dropdown-item{
+                            &:hover{
+                                background-color: $light-grey-color;
                             }
                         }
                     }

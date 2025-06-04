@@ -76,12 +76,12 @@
 				.fa {
 					position: absolute;
 					right: 0;
-					top: 9px;
+					top: 12px;
 					color: black;
-					width: 20px;
-					height: 20px;
+					width: 30px;
 					text-align: center;
-					line-height: 20px;
+					@include flex;
+					@include justify-align-content;
 					z-index: 999;
 					&.fa-plus[aria-expanded="true"] {
 						&:before {
@@ -105,7 +105,8 @@
 					display: block;
 					color: black;
 					font-size: 0.875rem;
-					padding: 0.5rem 0;
+					padding: 10px 0;
+					width: calc(100% - 30px);
 				}
 			}
 		}
