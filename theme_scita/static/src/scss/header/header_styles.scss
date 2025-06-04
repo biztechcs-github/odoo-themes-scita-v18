@@ -241,6 +241,11 @@
             }
         }
         .navbar{
+            .oe_structure{
+                @include min992{
+                    padding-bottom: 4px;
+                }
+            }
             .sct_text_block, > p{
                 background-color: rgba($primary, 0.4);
                 padding: 5px;
@@ -316,17 +321,6 @@
                 @media (max-width: 991px){
                     text-align: center;
                     margin-top: 10px;
-                }
-            }
-        }
-        .oe_structure{
-            .h-right{
-                .btn-primary{
-                    color: $light-color;
-
-                    &:hover{
-                        color: $secondary;
-                    }
                 }
             }
         }

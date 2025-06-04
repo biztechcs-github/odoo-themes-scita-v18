@@ -46,7 +46,7 @@
                                     <h3 class="img_title">Man Collection</h3>
                                     <p class="sub_title">Designed to stand the test of time</p>
                                     <div class='sct_deal_btn'>
-                                        <a href="/shop" class="btn">Shop Now</a>
+                                        <a href="/shop" class="btn btn-primary">Shop Now</a>
                                     </div>
                                 </div>
                             </a>

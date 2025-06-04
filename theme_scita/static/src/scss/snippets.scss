@@ -558,6 +558,7 @@ body #wrapwrap{
 					font-weight: 500;
 					margin: 10px 0;
 					line-height: 1;
+					box-shadow: none;
 
 					&::after{
 						content: '';
@@ -1258,16 +1259,6 @@ body #wrapwrap{
 					margin-top: 15px;
 					
 					.btn{
-						padding: 6px 16px;
-						font-size: 16px;
-						border-radius: 30px;
-						border: 1px solid $dark-color;
-						line-height: 1.4;
-						
-						@include min992{
-							padding: 9px 20px;
-						}
-
 						img{
 							width: 10px;
 							margin-left: 5px;
@@ -1298,18 +1289,18 @@ body #wrapwrap{
 			&:hover{
 				.sct_img_link{
 					background-color: $primary;
-
 					img{
 						filter: brightness(0) invert(1);
 					}
+
 				}
-				.sct_deal_btn{
-					.btn{
-						background-color: $primary;
-						color: $light-color;
-						border-color: $primary;
-					}
-				}
+				// .sct_deal_btn{
+				// 	.btn{
+				// 		background-color: $primary;
+				// 		color: $light-color;
+				// 		border-color: $primary;
+				// 	}
+				// }
 			}
 		}
 	}
@@ -4741,6 +4732,7 @@ body #wrapwrap{
 				
 				img{
 					max-height: 300px;
+					object-fit: cover;
 					border-radius: 10px;
 				}
 				.fa{
@@ -6284,6 +6276,8 @@ body #wrapwrap{
 			
 			.sct_work_div{
 				margin: 0;
+				height: 100%;
+
 				.sct_work_box{
 					padding: 0;
 					background-color: $light-color;
@@ -6292,7 +6286,12 @@ body #wrapwrap{
 			.sct_work_icon {
 				@include min768{
 					position: relative;
-					height: 100%;
+					height: 450px;
+
+					@include min2100{
+						height: 100%;
+						max-height: 650px;
+					}
 
 					&::before{
 						content: " ";
@@ -6871,17 +6870,17 @@ body #wrapwrap{
 					margin-right: 15px;
 					color: fade-out($dark-color, 0.5);
 				}
-				a {
-					border-radius: 50%;
-					background-color: $primary;
-					width: 40px;
-					height: 40px;
-					line-height: 40px;
-					color: $light-color;
-					padding: 0;
-					text-align: center;
-					display: inline-block;
-				}
+				// a {
+				// 	border-radius: 50%;
+				// 	background-color: $primary;
+				// 	width: 40px;
+				// 	height: 40px;
+				// 	line-height: 40px;
+				// 	color: $light-color;
+				// 	padding: 0;
+				// 	text-align: center;
+				// 	display: inline-block;
+				// }
 			}
 		}
 		.sct_cmp_info {
@@ -6890,25 +6889,25 @@ body #wrapwrap{
 				padding-top: 30px;
 				padding-left: 15px;
 			}
-			.sct_cst_btn {
-				.btn {
-					background-color: transparent;
-					border:none;
-					padding:0;
-					font-weight: bold;
-					color: $dark-color;
-					font-size: $title;
-					line-height: normal;
-					padding-top: 10px;
-					&:hover, &:focus, &:active{
-						border: none;
-						background:transparent;
-						outline: none;
-						box-shadow: none;
-						color: $primary;
-					}
-				}
-			}
+			// .sct_cst_btn {
+			// 	.btn {
+			// 		background-color: transparent;
+			// 		border:none;
+			// 		padding:0;
+			// 		font-weight: bold;
+			// 		color: $dark-color;
+			// 		font-size: $title;
+			// 		line-height: normal;
+			// 		padding-top: 10px;
+			// 		&:hover, &:focus, &:active{
+			// 			border: none;
+			// 			background:transparent;
+			// 			outline: none;
+			// 			box-shadow: none;
+			// 			color: $primary;
+			// 		}
+			// 	}
+			// }
 		}
 	}
 }
@@ -7017,7 +7016,7 @@ body #wrapwrap{
 					max-width: 50%;
 					width: 50%;
 					padding: 30px 0;
-					padding-bottom: 11%;
+					// padding-bottom: 11%;
 					position: relative;
 					@include flex;
 					@include justify-content-column-flex;
@@ -7088,7 +7087,11 @@ body #wrapwrap{
 					}
 					.sct_prog_content {
 						@include justify-center-flex;
-						margin-top: -18%;			
+						// margin-top: -18%;		
+						position: absolute;
+						margin: 0;
+						left: 0;
+						right: 0;
 					}
 				}
 			}
@@ -7562,6 +7565,11 @@ body #wrapwrap{
 			height: 100%;
 		}
 	}
+	// .sct_section_title{
+	// 	.section-title{
+	// 		margin-bottom: 22px;
+	// 	}
+	// }
 }
 /*portfolio snippet 1 end*/
 /*portfolio snippet 2*/
@@ -8060,7 +8068,8 @@ body #wrapwrap{
 						height: 400px;
 					}
 					img {
-						width: 100%;
+						// width: 100%;
+						width: auto;
 						height: 100%;
 						object-fit: cover;
 					}
@@ -8910,6 +8919,8 @@ body #wrapwrap{
 			border: 1px solid transparent;
 			overflow: hidden;
 			margin-bottom: 10px;
+			width: 100%;
+
 			a{
 				height: 100%;
 				@include flex;
@@ -8923,6 +8934,8 @@ body #wrapwrap{
 
 				img{
 					border-radius: 20px;
+					height: 100%;
+					width: auto;
 				}
 			}
             .sct_cat_content {
@@ -9460,13 +9473,13 @@ body #wrapwrap{
 
 	&#shop_quick_view_modal{
 		.modal-dialog{
-			max-width: 400px;
+			// max-width: 400px;
 			padding: 6rem 0;
 
-			@include min992{
-				max-height: 100dvh;
-				height: auto;
-			}
+			// @include min992{
+			// 	max-height: 100dvh;
+			// 	height: auto;
+			// }
 
 			.modal-content{
 				height: 100%;
@@ -9480,17 +9493,34 @@ body #wrapwrap{
 				right: 0;
 				top: 0;
 			}
+			.modal-body{
+				.quick{
+					height: 100%;
+
+					#product_detail{
+						height: 100%;
+
+						#product_detail_main{
+							height: 100%;
+
+						}
+					}
+				}
+			}
 			.quick_view_main_wrap{
 				padding: 0;
 
 				.sct_modal_image{
 					img{
-						padding: 0;
-						border: 0;
-						border-radius: 10px 10px 0 0;
-						max-height: 250px;
-						object-fit: cover;
+						padding: 10px;
+						// border: 0;
+						// border-radius: 10px 10px 0 0;
+						// max-height: 250px;
+						object-fit: contain;
 						width: 100%;
+						border-right: 1px solid #ddd;
+						height: 100%;
+						object-fit: contain;
 					}
 				}
 				.sct_product_detail{
@@ -9504,7 +9534,7 @@ body #wrapwrap{
 							padding-bottom: 0;
 	
 							.product_price{
-								border-bottom: 1px solid rgba($dark-color, 0.1);
+								// border-bottom: 1px solid rgba($dark-color, 0.1);
 								width: 100%;
 								padding-bottom: 5px;
 	
@@ -9523,6 +9553,8 @@ body #wrapwrap{
 								}
 							}
 							.js_add_cart_variants{
+								border: 0;
+
 								.variant_attribute{
 									.attribute_name{
 										padding-bottom: 5px;
@@ -9563,6 +9595,54 @@ body #wrapwrap{
 							}
 							#o_wsale_cta_wrapper{
 								#add_to_cart_wrap{
+									border-top: 1px solid #dee2e6;
+									.css_quantity{
+										margin: 0 15px 0 0 !important;
+										background-color: lighten($light-grey-color, 2%);
+										padding: 4px;
+										border-radius: 50px;
+
+										@media (min-width: 1024px) and (max-width: 1199px) {
+											margin-bottom: 10px !important;
+										}
+
+										@media (max-width: 767px) {
+											flex: 0 0 33.33%;
+											max-width: 33.33%;
+											margin: 0 10px 0 0 !important;
+
+										}
+										.btn{
+											border-radius: 50px;
+											padding: 6px 0px !important;
+											background-color: $light-color;
+											color: $secondary;
+											border: 0;
+											
+											@include min768{
+												padding: 6px 8px !important;
+											}
+											@include min992{
+												padding: 6px 12px !important;
+											}
+
+											&:hover {
+												background-color: $secondary;
+												color: $light-color;
+											}
+
+											@media (max-width: 768px) {
+												line-height: 1 !important;													
+											}
+										}
+										input{
+											padding: 0 3px;
+											border: 0;
+											background: transparent;
+											width: 100%;
+											max-width: 60px;
+										}
+									}
 									.btn.js_check_product{
 										padding: 7px 14px !important;
 										font-size: 16px;
@@ -11626,7 +11706,6 @@ body #wrapwrap{
         padding: 60px 0 30px;
     }
 
-	
     .grid_product{
 		margin-bottom: 20px;
 		
@@ -11648,7 +11727,7 @@ body #wrapwrap{
 				height: 170px;
 
 				@include min992{
-					height: inherit;
+					height: auto;
 				}
                 @include min1024{
                     padding: 24px 10px;
@@ -12280,6 +12359,20 @@ body #wrapwrap{
 						display: block;
 						padding: 10px;
 						height: 100%;
+
+						&.btn_unpub{
+							position: absolute;
+							top: 0;
+							height: auto;
+							background: #dc3545;
+							padding: 2px 10px;
+							left: 0;
+							right: 0;
+							margin: auto;
+							border-radius: 0;
+							border: 0;
+							font-size: 12px;
+						}
 					}
 				}
 				.pwd-desc{
