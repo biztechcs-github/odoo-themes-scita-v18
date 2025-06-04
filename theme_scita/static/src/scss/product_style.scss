@@ -3211,6 +3211,7 @@
 				#product_detail_main{
 					.o_wsale_product_images{
 						margin: auto;
+						z-index: 11;
 						
 						@include min992{
 							padding: 0 20px 0 0;

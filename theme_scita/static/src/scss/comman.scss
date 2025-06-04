@@ -2085,6 +2085,71 @@ body header .navbar-expand-lg .navbar-collapse {
 	}
 }
 .o_searchbar_form {
+	.o_dropdown_menu{
+		border-radius: 10px;
+		> .p-3{
+			&:empty{
+				display: none;
+			}
+			&:has(> div:empty){
+				display: none;
+	
+				
+			}
+		}
+	
+		.dropdown-item{
+			&:nth-child(odd){
+				background-color: rgba($light-grey-color, 0.3);
+			}
+			&:hover{
+				background-color: rgba($primary, 0.09);
+				color: $dark-color !important;
+				
+				.o_search_result_item{
+					.o_search_result_item_detail, > div{
+						h6, .btn-link, .text-nowrap{
+							color: $dark-color!important;
+						}
+					}
+				}
+			}
+			.o_search_result_item{
+				.o_search_result_item_detail{
+					p{
+						font-size: 15px;
+					}
+					img{
+						border: 1px solid #ddd;
+						border-radius: 4px;
+						padding: 3px;
+						will-change: transform;
+						@include transition(all, .5s, ease-in);
+					}
+					.btn-link{
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	
+		button[type="submit"].dropdown-item{
+			position: sticky;
+			bottom: -1px;
+			z-index: 1;
+			background: $primary;
+			color: $light-color !important;
+			padding: 10px !important;
+			font-size: 18px;
+			border: 0;
+			border-top: 1px solid $primary;
+	
+			&:hover{
+				background: $light-color;
+				color: $primary !important;
+			}
+		}
+	}
 	~ .table-responsive {
 		margin: 20px 0;
 		height: 580px;
@@ -2172,65 +2237,6 @@ header{
 						b{
 							font-size: 16px;
 						}
-					}
-				}
-			}
-		}
-	}
-	.oe_structure{
-		.o_searchbar_form{
-			.o_dropdown_menu{
-				border-radius: 10px;
-
-				.dropdown-item{
-					&:nth-child(odd){
-						background-color: rgba($light-grey-color, 0.3);
-					}
-					&:hover{
-						background-color: rgba($primary, 0.09);
-						color: $dark-color !important;
-						
-						.o_search_result_item{
-							.o_search_result_item_detail{
-								h6, .btn-link{
-									color: $dark-color!important;
-								}
-							}
-						}
-					}
-					.o_search_result_item{
-						.o_search_result_item_detail{
-							p{
-								font-size: 15px;
-							}
-							img{
-								border: 1px solid #ddd;
-								border-radius: 4px;
-								padding: 3px;
-								will-change: transform;
-								@include transition(all, .5s, ease-in);
-							}
-							.btn-link{
-								padding-left: 0;
-							}
-						}
-					}
-				}
-		
-				button[type="submit"].dropdown-item{
-					position: sticky;
-					bottom: 0;
-					z-index: 1;
-					background: $primary;
-					color: $light-color !important;
-					padding: 10px !important;
-					font-size: 18px;
-					border: 0;
-					border-top: 1px solid $primary;
-		
-					&:hover{
-						background: $light-color;
-						color: $primary !important;
 					}
 				}
 			}
@@ -2835,7 +2841,7 @@ common search for categories and products (22/05/2025)
 .chip {
     display: inline-block;
     border: 1px solid #d1d1d1;
-    border-radius: 5;
+    border-radius: 10px;
     font-size: 14px;
     color: #242323;
     padding: 6px 12px;
