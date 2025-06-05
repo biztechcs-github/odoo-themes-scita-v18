@@ -187,14 +187,16 @@
         h4 {
             color: $light-color;
             margin-bottom: 25px;
+            text-transform: uppercase;
         }
         ul{
             li{
                 a {
-                    color: #d3d3d3;
+                    color: #d3d3d3 !important;
                     display: inline-block;
+                    font-weight: 400;
                     &:hover {
-                        color:$light-color;
+                        color:$light-color !important;
                     }
                 }
                 +li {
@@ -246,11 +248,11 @@
                     margin-bottom: 15px;
                 }
                 a {
-                    background: #6b6b6b;
+                    background: $white;
                     color: #141414;
                     &:hover{
-                        background:#424242;
-                        color: #6b6b6b;
+                        background:$primary;
+                        color: $white;
                     }
                 }
             }
@@ -993,6 +995,11 @@
     }
 }
 
+footer{
+    @media (max-width:767px) {
+        padding-bottom: 70px;
+    }
+ }
  
 .o_rtl{
     .js_language_selector {

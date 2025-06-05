@@ -166,11 +166,9 @@ header{
 	.logo {
 		span {
 			display: block;
-			/*@media (max-width: 767px){
-				img {
-					height: min-content !important;
-				}
-			}*/
+			@media (max-width:991px) {
+				padding: 10px 0;				
+			}
 		}
 	}
 	&.o_header_affix {
