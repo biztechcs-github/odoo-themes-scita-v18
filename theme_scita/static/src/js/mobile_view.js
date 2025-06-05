@@ -2,7 +2,14 @@
 
 
 $(document).ready(function () {
-    $('.ab-category').on("click",function() {
+    $('.ab-category').on("click",function(ev) {
+        var $link = $(ev.currentTarget);
+        if ($link.hasClass('active')) {
+            $link.removeClass('active');
+        } else {
+            $link.removeClass('active');
+            $link.addClass('active');
+        }
         $('body').addClass("sct_shop_box_overlay");
     });
     $('.ab-category-close').on("click",function() {
