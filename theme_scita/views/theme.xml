@@ -1319,7 +1319,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
                     </button>
                 </div>
-                <div class="modal-body pt-0">
+                <div class="modal-body">
                     <div class="row quick">
                         <t t-set="combination" t-value="product._get_first_possible_combination()"/>
                         <t t-set="combination_info" t-value="product._get_combination_info(combination, add_qty=add_qty)"/>
@@ -1328,12 +1328,12 @@
                         <t t-set="additional_title" t-value="product.name"/>
                         <div itemscope="itemscope" itemtype="http://schema.org/Product" id="wrap" class="js_sale quick_view_main_wrap">
                             <section id="product_detail" t-attf-class="container py-4 px-0 oe_website_sale #{'discount' if combination_info['has_discounted_price'] else ''}">
-                                <div class="row flex-column m-0" id="product_detail_main" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout">
-                                    <div class="col-12 mt-md-4 mt-lg-0 px-0 sct_modal_image">
-                                        <img class="product_detail_img col-md-12" t-if="product_variant" t-att-data-default-img-src="'/web/image/product.product/%s/image_1920' % product_variant.id" t-att-src="'/web/image/product.product/%s/image_1920' % product_variant.id" alt="Product Image"/>
-                                        <img class="product_detail_img col-md-12" t-else="" t-att-data-default-img-src="'/web/image/product.template/%s/image_1920' % product.id" t-att-src="'/web/image/product.template/%s/image_1920' % product.id" alt="Product Image"/>
+                                <div class="row m-0" id="product_detail_main" t-att-data-image_width="website.product_page_image_width" t-att-data-image_layout="website.product_page_image_layout">
+                                    <div class="col-12 col-md-5 mt-md-4 mt-lg-0 px-0 sct_modal_image">
+                                        <img class="product_detail_img col-md-12" t-if="product_variant" t-att-src="'/web/image/product.product/%s/image_1920' % product_variant.id" alt="Product Image"/>
+                                        <img class="product_detail_img col-md-12" t-else="" t-att-src="'/web/image/product.template/%s/image_1920' % product.id" alt="Product Image"/>
                                     </div>
-                                    <div class="col-12 mt-md-4 mt-lg-0 sct_product_detail" id="product_details">
+                                    <div class="col-12 col-md-7 mt-md-4 mt-lg-0 sct_product_detail" id="product_details">
                                         <t t-set="base_url" t-value="product.get_base_url()"/>
                                         <h1 itemprop="name" t-field="product.name" class="sct_prod_name">Product Name</h1>
                                         <span itemprop="url" style="display:none;" t-esc="base_url + product.website_url"/>

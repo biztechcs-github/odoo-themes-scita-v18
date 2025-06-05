@@ -464,6 +464,7 @@
                                         border: 0;
                                         margin: 0 3px;
                                         width: auto;
+                                        border-radius: 6px;
                                         @include transition(all, 0.3s, ease-in);
                                         
                                         @include min992{
@@ -658,6 +659,7 @@
                                 border: 0;
                                 margin: 0 3px;
                                 width: auto;
+                                border-radius: 6px;
                                 @include transition(all, 0.3s, ease-in);
                                 
                                 @include min992{
@@ -1235,6 +1237,7 @@
                                         border: 0;
                                         margin: 0 3px;
                                         width: auto;
+                                        border-radius: 6px;
                                         @include transition(all, 0.3s, ease-in);
                                         
                                         @include min992{
@@ -1429,6 +1432,7 @@
                                 border: 0;
                                 margin: 0 3px;
                                 width: auto;
+                                border-radius: 6px;
                                 @include transition(all, 0.3s, ease-in);
                                 
                                 @include min992{
