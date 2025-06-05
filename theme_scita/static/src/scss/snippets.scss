@@ -4738,10 +4738,10 @@ body #wrapwrap{
 			}
 
 			.service_icon{
-				max-height: 300px;
+				max-height: 350px;
 				
 				img{
-					max-height: 300px;
+					max-height: 350px;
 					border-radius: 10px;
 				}
 				.fa{
@@ -4819,15 +4819,6 @@ body #wrapwrap{
 			.sct_sers_box{
 				background: rgba($dark-grey-color, 0.7);
 				border-color: transparent;
-
-				.sct_top_block{
-					.service_icon{
-						max-height: 400px;
-						img{
-							max-height: 400px;
-						}
-					}
-				}
 			}
 		}
 	}
