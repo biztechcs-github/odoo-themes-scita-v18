@@ -2850,3 +2850,10 @@ common search for categories and products (22/05/2025)
 .chip:hover {
     border-color: #dc3545;
 }
+
+.container-fluid{
+	@include min1920{
+		max-width: 2100px;
+		width: 100%;
+	}
+}
