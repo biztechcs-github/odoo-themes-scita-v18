@@ -146,7 +146,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn" data-bs-dismiss="modal" id="cancel">Cancel</button>
-                        <button class="btn btn-danger" data-bs-dismiss="modal" id="img_data">Apply</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" id="img_data_hp">Apply</button>
                     </div>
                 </div>
             </div>

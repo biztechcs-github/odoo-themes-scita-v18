@@ -67,8 +67,10 @@ class ScitaSliderSettings(http.Controller):
             [('id', '=', int(slider_id))])
         values = {
             'slider_header': slider_header,
-            'slider_details': slider_header.hotspot_ids,
         }
+        values.update({
+            'slider_details': slider_header.hotspot_ids,
+        })
         return values
 
 

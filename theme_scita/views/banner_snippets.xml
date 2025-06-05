@@ -344,7 +344,7 @@
     
     <!-- Image hotspot snippets -->
     <template id="theme_scita_image_hotspot" name="Image Hotspot">
-        <section id="theme_scita_custom_image_hotspot" class="oe_img_hotspot categ_slider scita_image_hotspot" contentEditable="false" data-cat-slider-id=""  data-disp='banner'>
+        <section id="theme_scita_custom_image_hotspot" class="oe_img_hotspot categ_slider scita_image_hotspot" contentEditable="false" data-img-hotspot-id=""  data-disp='img_hotspot'>
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">Image Hotspot</h3>
@@ -355,7 +355,7 @@
     <template id="theme_scita_image_hotspot_option" inherit_id="website.snippet_options" name="Modify Options">
         <xpath expr="//div" position="after">
             <div data-js="oe_img_hotspot" data-selector=".oe_img_hotspot">
-                <we-button class="dropdown-item oe_img_hotspot" tabindex="-1" href="#" data-cat_slider="">Modify</we-button>
+               <we-button class="dropdown-item oe_img_hotspot" data-img_hotspot="">Modify</we-button>
             </div>
         </xpath>
     </template>
@@ -400,8 +400,7 @@
                                             </a>
                                         </div>
                                         <!-- Price -->
-                                        <span t-esc="point.product_id.list_price"/> ₹ <br/>
-                                        <span>Hover to preview</span>
+                                        <br/>₹ <span t-esc="point.product_id.list_price"/>
                                     </div>
                                 </div>
                             </t>
