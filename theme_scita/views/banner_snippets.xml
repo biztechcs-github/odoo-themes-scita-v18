@@ -344,7 +344,7 @@
     
     <!-- Image hotspot snippets -->
     <template id="theme_scita_image_hotspot" name="Image Hotspot">
-        <section id="theme_scita_custom_image_hotspot" class="oe_img_hotspot categ_slider scita_image_hotspot" contentEditable="false" data-cat-slider-id=""  data-disp='banner'>
+        <section id="theme_scita_custom_image_hotspot" class="image_hotspot_section oe_img_hotspot categ_slider scita_image_hotspot" contentEditable="false" data-cat-slider-id=""  data-disp='banner'>
             <div class="container">
                 <div class="block-title">
                     <h3 class="fancy">Image Hotspot</h3>
@@ -360,16 +360,15 @@
         </xpath>
     </template>
     <template id="theme_scita_image_hotspot_view" name="Image Hotspot">
-        <div class="container">
-            <div class="row top-row title-block section-title-wrapper">
-                <h2 class="col-md-12 section-title" t-if="not slider_header">
-                    Image Hotspot
-                </h2>
-                <h2 class="col-md-12 section-title" t-if="slider_header">
-                    <t t-esc="slider_header.name"/>
-                </h2>
-            </div>
-            <div class="image_hotspot_section">
+            <div class="container">
+                <div class="row top-row title-block section-title-wrapper">
+                    <h2 class="col-md-12 section-title" t-if="not slider_header">
+                        Image Hotspot
+                    </h2>
+                    <h2 class="col-md-12 section-title" t-if="slider_header">
+                        <t t-esc="slider_header.name"/>
+                    </h2>
+                </div>
                 <div class="row">
                     <div class="col-md-12">
                         <!-- Wrapper containing both image and hotspots -->
@@ -386,22 +385,26 @@
                                     </div>
                                     <div class="hotspot-tooltip">
                                         <!-- Product Image -->
-                                        <img t-if="point.product_id.image_1920"
-                                            t-att-src="'/web/image/product.template/' + str(point.product_id.id) + '/image_1920'"
-                                            style="max-width: 100px; height: auto; margin-bottom: 5px;"
-                                        />
-
-                                        <!-- Product Name with Link -->
-                                        <div>
-                                            <a t-att-href="'/shop/product/' + str(point.product_id.id)"
-                                                            t-att-target="'_blank' if point.open_in_new_tab else '_self'"
-                                            style="font-weight: bold; text-decoration: underline; color: #007bff;">
-                                            <t t-esc="point.product_id.name"/>
-                                            </a>
+                                    <div class="triangle-up">
+                                        <img src="/theme_scita/static/src/img/arrow-up.svg" alt="Up"  />
+                                    </div>
+                                    <div class="hotspot_box">
+                                        <div class="hotspot-product-img">
+                                            <img t-if="point.product_id.image_1920"
+                                                t-att-src="'/web/image/product.template/' + str(point.product_id.id) + '/image_1920'"                                                
+                                            />
+                                            <!-- Product Name with Link -->
+                                            <div class="hotspot_product_content">
+                                                <a t-att-href="'/shop/product/' + str(point.product_id.id)"
+                                                                t-att-target="'_blank' if point.open_in_new_tab else '_self'">                                            <t t-esc="point.product_id.name"/>
+                                                </a>
+                                                <!-- Price -->
+                                                <p class="hotspot-price">₹<span t-esc="point.product_id.list_price"/></p>
+                                            </div>
                                         </div>
-                                        <!-- Price -->
-                                        <span t-esc="point.product_id.list_price"/> ₹ <br/>
-                                        <span>Hover to preview</span>
+                                        <a href="/cart" class="btn"><i class="lni lni-cart-1"></i></a>
+                                    </div>
+
                                     </div>
                                 </div>
                             </t>
@@ -409,6 +412,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </template>
 </odoo>

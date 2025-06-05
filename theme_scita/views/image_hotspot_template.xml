@@ -1,8 +1,7 @@
 <odoo>
  <!-- views/image_hotspot_template.xml -->
-<template id="image_hotspot_snippet" name="Image Hotspot Snippet">
+<template id="image_hotspot_snippet" class="image_hotspot_section" name="Image Hotspot Snippet">
   <t t-if="record">
-  <div class="image_hotspot_section">
     <div class="container">
       <div class="image_hotspot_box">
         <img t-att-src="'data:image/png;base64,' + record['image']" />
@@ -18,7 +17,6 @@
         </t>
       </div>
     </div>
-  </div>
   </t>
 </template>
 </odoo>
