@@ -71,7 +71,7 @@ $(document).ready(function(){
             if (!this.editableMode) {
                 var slider_id = self.$target.attr('data-cat-slider-id');
                 rpc("/theme_scita/get_image_hotspot", {
-                    'slider-id': self.$target.attr('data-cat-slider-id') || '',
+                    'slider-id': self.$target.attr('data-img-hotspot-id') || '',
                 }).then(function(data) {
                     if (data) {
                         self.$target.empty();

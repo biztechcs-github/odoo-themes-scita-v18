@@ -52,6 +52,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                          <option value="trust_icon">Trust Icons Snippets</option>\
                          <option value="testimonial">Testimonial Snippets</option>\
                          <option value="timeline">Timeline Snippets</option>\
+                         <option value="img_hotspot">Image Hotspot Snippets</option>\
                      </select>\
                  </div>`
                  parent.innerHTML = html + parent.innerHTML;
@@ -87,7 +88,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                     "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                     "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                     "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                    "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                    "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                 ).parent().addClass("o_hidden");
                 $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5],[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10] , [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
 
@@ -124,9 +125,9 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
-                        $("#theme_scita_groups [data-snippet=sct_banner_1], [data-snippet=sct_banner_2], [data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2], [data-snippet=dynamic_video_banner],[data-snippet=theme_scita_image_hotspot]").parent().removeClass("o_hidden")
+                        $("#theme_scita_groups [data-snippet=sct_banner_1], [data-snippet=sct_banner_2], [data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2], [data-snippet=dynamic_video_banner]").parent().removeClass("o_hidden")
 
                      }
                      else if($("select#selSnippetCat").val()=='newsletter')
@@ -161,7 +162,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=it_sign_up_newsletter], [data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]").parent().removeClass("o_hidden")
 
@@ -199,7 +200,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3], [data-snippet=deal_of_day_banner_5]").parent().removeClass("o_hidden")
 
@@ -237,7 +238,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet], [data-snippet=blog_5_custom_snippet]").parent().removeClass("o_hidden")
 
@@ -275,7 +276,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=it_our_team], [data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5]").parent().removeClass("o_hidden")
 
@@ -351,7 +352,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=it_grids_service], [data-snippet=service_varient_7], [data-snippet=service_varient_11], [data-snippet=service_varient_14]").parent().removeClass("o_hidden")
 
@@ -389,7 +390,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=portfolio_snippet_1], [data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets]").parent().removeClass("o_hidden")
 
@@ -426,7 +427,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=health_advertisement_banner], [data-snippet=fashion_advertisement_banner_1], [data-snippet=retial_advertisement_banner_1], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3]").parent().removeClass("o_hidden")
 
@@ -465,7 +466,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_4column_v4], [data-snippet=s_theme_scita_pricing_table_1_3column_v5]").parent().removeClass("o_hidden")
 
@@ -504,7 +505,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=retial_trust_snippet_1], [data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3]").parent().removeClass("o_hidden")
 
@@ -542,7 +543,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=it_letstalk], [data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet]").parent().removeClass("o_hidden")
 
@@ -581,7 +582,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3], [data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5]").parent().removeClass("o_hidden")
 
@@ -619,7 +620,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=expertise_statistics_4], [data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11]").parent().removeClass("o_hidden")
 
@@ -658,7 +659,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet]").parent().removeClass("o_hidden")
 
@@ -696,7 +697,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=custom_scita_product_category_slider], [data-snippet=product_category_img_slider_config], [data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=theme_scita_category_slider_gray]").parent().removeClass("o_hidden")
 
@@ -734,7 +735,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=health_cash_study_snippet], [data-snippet=case_study_varient_2]").parent().removeClass("o_hidden")
 
@@ -772,7 +773,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet]").parent().removeClass("o_hidden")
 
@@ -810,7 +811,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4], [data-snippet=about_us_v_5], [data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10] , [data-snippet=content_snippets_v_11]").parent().removeClass("o_hidden")
 
@@ -849,7 +850,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=accordion_v_1], [data-snippet=accordion_v_2]").parent().removeClass("o_hidden")
 
@@ -887,7 +888,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3]").parent().removeClass("o_hidden")
 
@@ -926,7 +927,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6], [data-snippet=theme_scita_trending_products_snippet] , [data-snippet=sct_product_snippet_1]").parent().removeClass("o_hidden")
 
@@ -964,7 +965,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content]").parent().removeClass("o_hidden")
 
@@ -1002,11 +1003,48 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
                             "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
-                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
+                            "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
                         ).parent().addClass("o_hidden");
                         $("#theme_scita_groups [data-snippet=html_builder_snippet]").parent().removeClass("o_hidden")
 
                      }
+                     else if($("select#selSnippetCat").val()=='img_hotspot')
+                        {
+                           $(
+                               "#theme_scita_groups [data-snippet=timer_snippet_body], [data-snippet=sct_banner_1], [data-snippet=sct_banner_2],\n" +
+                               "[data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2],\n" +
+                               "[data-snippet=dynamic_video_banner], [data-snippet=retial_deal_of_day_banner_snippet_1], [data-snippet=deal_of_day_banner_3],\n" +
+                               "[data-snippet=deal_of_day_banner_5], [data-snippet=retial_promo_banner_snippet_1], [data-snippet=promo_banner_snippet_3],\n" +
+                               "[data-snippet=fashion_multi_cat_custom_snippet], [data-snippet=deal_seller_multi_product_custom_snippet], [data-snippet=deal_of_day_banner_6],\n" +
+                               "[data-snippet=brands_box_slider_4], [data-snippet=it_prod_brands], [data-snippet=fashion_static_brand_snippet],\n" +
+                               "[data-snippet=theme_scita_category_slider_3], [data-snippet=theme_scita_category_slider_4], [data-snippet=retial_advertisement_banner_1],\n" +
+                               "[data-snippet=fashion_advertisement_banner_1], [data-snippet=health_advertisement_banner], [data-snippet=health_testimonials_slider_1],\n" +
+                               "[data-snippet=testinomial_varient_2], [data-snippet=fashion_testimonials_slider_1], [data-snippet=it_testimonials_slider_1],\n" +
+                               "[data-snippet=testinomial_varient_1], [data-snippet=testinomial_varient_3], [data-snippet=testinomial_varient_4],\n" +
+                               "[data-snippet=testinomial_varient_5], [data-snippet=testinomial_varient_6], [data-snippet=health_cash_study_snippet],\n" +
+                               "[data-snippet=case_study_varient_2], [data-snippet=it_grids_service], [data-snippet=service_varient_7],\n" +
+                               "[data-snippet=service_varient_11], [data-snippet=service_varient_14], [data-snippet=s_theme_scita_pricing_table_1_4column_v4],\n" +
+                               "[data-snippet=s_theme_scita_pricing_table_1_4column_v2], [data-snippet=s_theme_scita_pricing_table_1_3column_v5], [data-snippet=it_our_team],\n" +
+                               "[data-snippet=our_team_varient_3], [data-snippet=our_team_varient_5], [data-snippet=retial_trust_snippet_1],\n" +
+                               "[data-snippet=fashion_trust_snippet_1], [data-snippet=policy_trust_snippet_v_3], [data-snippet=sct_product_snippet_1],\n" +
+                               "[data-snippet=theme_scita_trending_products_snippet], [data-snippet=how_it_work_v_1], [data-snippet=how_it_work_v_3],\n" +
+                               "[data-snippet=how_it_work_v_4], [data-snippet=how_it_work_v_5], [data-snippet=expertise_statistics_4],\n" +
+                               "[data-snippet=expertise_statistics_8], [data-snippet=expertise_statistics_11], [data-snippet=it_letstalk],\n" +
+                               "[data-snippet=contact_us_v_1], [data-snippet=contact_us_v_3], [data-snippet=health_location_snippet],\n" +
+                               "[data-snippet=content_snippets_v_4], [data-snippet=content_snippets_v_6], [data-snippet=content_snippets_v_10],[data-snippet=content_snippets_v_11],\n" +
+                               "[data-snippet=health_about_hospital], [data-snippet=about_us_v_3], [data-snippet=about_us_v_4],\n" +
+                               "[data-snippet=about_us_v_5], [data-snippet=accordion_v_1], [data-snippet=accordion_v_2],\n" +
+                               "[data-snippet=s_appjetty_google_map], [data-snippet=s_appjetty_google_map_content],\n" +
+                               "[data-snippet=theme_scita_blog_custom_snippet], [data-snippet=blog_4_custom_snippet], [data-snippet=blog_2_custom_snippet],\n" +
+                               "[data-snippet=blog_5_custom_snippet], [data-snippet=third_client_slider_snippet], [data-snippet=theme_scita_top_dealers_snippet],\n" +
+                               "[data-snippet=s_theme_scita_category_slider], [data-snippet=theme_scita_category_slider_gray], [data-snippet=product_category_img_slider_config],\n" +
+                               "[data-snippet=timeline_snippet_1], [data-snippet=timeline_snippet_3], [data-snippet=portfolio_snippet_1],\n" +
+                               "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
+                               "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5],[data-snippet=theme_scita_image_hotspot]"
+                           ).parent().addClass("o_hidden");
+                           $("#theme_scita_groups [data-snippet=theme_scita_image_hotspot]").parent().removeClass("o_hidden")
+   
+                        }
                  });
                  return;
              }
@@ -1120,9 +1158,9 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                 self.$modal.appendTo('body');
                 self.$modal.modal('show');
                 var $slider_type = self.$modal.find("#slider_type"),
-                    $category_slider_delete = self.$modal.find("#cancel"),
-                    $pro_cat_sub_data = self.$modal.find("#img_data");
-                rpc('theme_scita/hotspot', {}).then(function(res) {
+                $category_slider_delete = self.$modal.find("#cancel"),
+                $pro_cat_sub_data = self.$modal.find("#img_data_hp");
+                rpc('/theme_scita/hotspot', {}).then(function(res) {
                     $('#slider_type option[value!="0"]').remove();
                     $.each(res, function(y) {
                         $("select[id='slider_type']").append($('<option>', {
@@ -1134,7 +1172,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
 
                 $pro_cat_sub_data.on('click', function() {
                     var type = '';
-                    self.$target.attr('data-cat-slider-id', $slider_type.val());
+                    self.$target.attr('data-img-hotspot-id', $slider_type.val());
                     if ($('select#slider_type').find(":selected").text()) {
                         type = _t($('select#slider_type').find(":selected").text());
                     } else {

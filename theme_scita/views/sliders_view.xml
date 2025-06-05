@@ -321,7 +321,7 @@
         <field name="type">ir.actions.act_window</field>
     </record>
     <menuitem id="image_hotspot_menu"
-              name="Image Hotspot"
+              name="Image Hotspot Snippet Configuration"
               action="image_hotspot_action"
               parent="theme_scita.scita_menu_slider_config"
               sequence="80"/>
