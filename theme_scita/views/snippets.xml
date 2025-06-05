@@ -1187,6 +1187,7 @@
 				<t t-snippet="theme_scita.it_main_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Banner_snippet_1.svg"/>
                 <t t-snippet="theme_scita.banner_snippet_2" t-thumbnail="/theme_scita/static/src/img/snippet_icon/hero-image-snippet.png"/>
 				<t t-snippet="theme_scita.dynamic_video_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/video-banner.png"/>
+                <t t-snippet="theme_scita.theme_scita_image_hotspot"/>
 				
 				<!-- Deal of the Day snippets -->
 				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_1.svg"/>

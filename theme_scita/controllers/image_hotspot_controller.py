@@ -1,16 +1,13 @@
-# controllers/main.py
 from odoo import http
 from odoo.http import request
 
 class ImageHotspotController(http.Controller):
 
-    @http.route('/hotspot/page', type='http', auth='public', website=True)
-    def hotspot_page(self, **kwargs):
-        hotspot = request.env['image.hotspot'].sudo().browse(1)
-        image_base64 = hotspot.image.decode('utf-8') if hotspot.image else ''
-        return request.render('theme_scita.image_hotspot_page', {
-            'record': {
-                'image': image_base64,
-                'hotspot_ids': hotspot.hotspot_ids,
-            }
-        })
+    @http.route('/theme_scita/hotspot', type='json', auth="public", website=True)
+    def hotspot_get_options(self):
+        slider_options = []
+        option = request.env['image.hotspot'].search([], order="name asc")
+        for record in option:
+            slider_options.append({'id': record.id,
+                                   'name': record.name})
+        return slider_options

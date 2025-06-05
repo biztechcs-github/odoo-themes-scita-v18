@@ -60,6 +60,17 @@ class ScitaSliderSettings(http.Controller):
             'slider_details': slider_header.collections_category,
         })
         return values
+    
+    #  Image hotspot
+    def get_image_hotspot_data(self, slider_id):
+        slider_header = request.env['image.hotspot'].sudo().search(
+            [('id', '=', int(slider_id))])
+        values = {
+            'slider_header': slider_header,
+            'slider_details': slider_header.hotspot_ids,
+        }
+        return values
+
 
     def get_clients_data(self):
         client_data = request.env['res.partner'].sudo().search(
@@ -264,6 +275,7 @@ class ScitaSliderSettings(http.Controller):
                                    'name': record.name})
         print("\n\n\n\n\n\n\n\n\n\n\n\n   slider_options", slider_options)
         return slider_options
+    
 
     @http.route(['/theme_scita/category_get_dynamic_slider'], type='json', auth='public', website=True)
     def category_get_dynamic_slider(self, **post):
@@ -272,6 +284,15 @@ class ScitaSliderSettings(http.Controller):
             website = request.env['website'].get_current_website()
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_cat_slider_view", values)
+        
+    # Image Hotspot
+    @http.route(['/theme_scita/get_image_hotspot'], type='json', auth='public', website=True)
+    def get_image_hotspot(self, **post):
+        if post.get('slider-id'):
+            values = self.get_image_hotspot_data(post.get('slider-id'))
+            website = request.env['website'].get_current_website()
+            IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
+            return IrQweb._render("theme_scita.theme_scita_image_hotspot_view", values)
 
     @http.route(['/theme_scita/second_get_dynamic_cat_slider'], type='json', auth='public', website=True)
     def second_get_dynamic_cat_slider(self, **post):

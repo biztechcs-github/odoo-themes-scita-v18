@@ -126,7 +126,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                             "[data-snippet=portfolio_snippet_2], [data-snippet=it_portfolio_tabs_snippets], [data-snippet=it_sign_up_newsletter],\n" +
                             "[data-snippet=retail_sign_up_newsletter], [data-snippet=newsletter_varient_5]"
                         ).parent().addClass("o_hidden");
-                        $("#theme_scita_groups [data-snippet=sct_banner_1], [data-snippet=sct_banner_2], [data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2], [data-snippet=dynamic_video_banner]").parent().removeClass("o_hidden")
+                        $("#theme_scita_groups [data-snippet=sct_banner_1], [data-snippet=sct_banner_2], [data-snippet=retail_sct_banner_slider_1], [data-snippet=it_main_banner], [data-snippet=banner_snippet_2], [data-snippet=dynamic_video_banner],[data-snippet=theme_scita_image_hotspot]").parent().removeClass("o_hidden")
 
                      }
                      else if($("select#selSnippetCat").val()=='newsletter')
@@ -1070,6 +1070,75 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                         type = _t($('select#slider_type').find(":selected").text());
                     } else {
                         type = _t("Category Slider");
+                    }
+                    self.$target.empty().append('<div class="container">\
+                                                    <div class="block-title">\
+                                                        <h3 class="fancy">' + type + '</h3>\
+                                                    </div>\
+                                                </div>');
+                });
+                $category_slider_delete.on('click', function() {
+                    self.getParent()._onRemoveClick($.Event("click"))
+                })
+            } else {
+                return;
+            }
+        },
+    });
+
+    //image hotspot
+    options.registry.oe_img_hotspot = options.Class.extend({
+        start: function(editMode) {
+            var self = this;
+            this._super();
+            this.$target.removeClass("o_hidden");
+            this.$target.find(".oe_img_hotspot").empty();
+            if (!editMode) {
+                self.$el.find(".oe_img_hotspot").on("click", $.bind(self.img_hotspot, self));
+            }
+        },
+
+        onBuilt: function() {
+            var self = this;
+            this._super();
+            if (this.img_hotspot()) {
+                this.img_hotspot().fail(function() {
+                    self.getParent()._removeSnippet();
+                });
+            }
+        },
+
+        cleanForSave: function() {
+            $('.oe_img_hotspot').empty();
+        },
+
+        img_hotspot: function(type, value) {
+            var self = this;
+            
+            if (type != undefined && type == false || type == undefined) {
+                self.$modal = $(renderToElement("theme_scita.scita_dynamic_image_hotspot"));
+                self.$modal.appendTo('body');
+                self.$modal.modal('show');
+                var $slider_type = self.$modal.find("#slider_type"),
+                    $category_slider_delete = self.$modal.find("#cancel"),
+                    $pro_cat_sub_data = self.$modal.find("#img_data");
+                rpc('theme_scita/hotspot', {}).then(function(res) {
+                    $('#slider_type option[value!="0"]').remove();
+                    $.each(res, function(y) {
+                        $("select[id='slider_type']").append($('<option>', {
+                            value: res[y]["id"],
+                            text: res[y]["name"]
+                        }));
+                    });
+                });
+
+                $pro_cat_sub_data.on('click', function() {
+                    var type = '';
+                    self.$target.attr('data-cat-slider-id', $slider_type.val());
+                    if ($('select#slider_type').find(":selected").text()) {
+                        type = _t($('select#slider_type').find(":selected").text());
+                    } else {
+                        type = _t("Image Hotspot");
                     }
                     self.$target.empty().append('<div class="container">\
                                                     <div class="block-title">\

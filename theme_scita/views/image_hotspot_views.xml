@@ -13,7 +13,6 @@
             </list>
         </field>
     </record>
-
     <!-- Form view -->
    <record id="view_image_hotspot_form" model="ir.ui.view">
     <field name="name">image.hotspot.form</field>
@@ -28,11 +27,20 @@
                 <notebook>
                     <page string="Hotspot Points">
                         <field name="hotspot_ids">
+                            <list editable="bottom">
+                                <field name="id" readonly="1"/>
+                                <field name="x"/>
+                                <field name="y"/>
+                                <field name="product_id"/>
+                                <field name="open_in_new_tab"/>
+
+                            </list>
                             <form>
                                 <group>
                                     <field name="x"/>
                                     <field name="y"/>
-                                    <field name="link" widget="url"/>
+                                    <field name="product_id" domain="[('sale_ok', '=', True)]"/>
+                                    <field name="open_in_new_tab"/>
                                 </group>
                             </form>
                         </field>
@@ -42,16 +50,4 @@
         </form>
     </field>
    </record>
-
-    <!-- Action -->
-    <record id="action_image_hotspot" model="ir.actions.act_window">
-        <field name="name">Image Hotspots</field>
-        <field name="res_model">image.hotspot</field>
-        <field name="view_mode">list,form,kanban</field>
-        <field name="views" eval="[
-            (ref('theme_scita.view_image_hotspot_list'), 'list'),
-            (ref('theme_scita.view_image_hotspot_form'), 'form')
-        ]"/>
-    </record>
-    <menuitem id="menu_image_hotspot_root" parent="website.menu_site" sequence="10" action="theme_scita.action_image_hotspot"/>
 </odoo>

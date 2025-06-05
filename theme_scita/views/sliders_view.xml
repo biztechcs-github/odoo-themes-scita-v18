@@ -314,6 +314,17 @@
               action="multi_slider_action"
               parent="theme_scita.scita_menu_slider_config"
               sequence="70"/>
+    <record id="image_hotspot_action" model="ir.actions.act_window">
+        <field name="name">Hotspot</field>
+        <field name="res_model">image.hotspot</field>
+        <field name="view_mode">list,form</field>
+        <field name="type">ir.actions.act_window</field>
+    </record>
+    <menuitem id="image_hotspot_menu"
+              name="Image Hotspot"
+              action="image_hotspot_action"
+              parent="theme_scita.scita_menu_slider_config"
+              sequence="80"/>
     <!-- Product style tag Form View-->
         <record id="form_view_for_biztech_product_style_tag" model="ir.ui.view">
             <field name="name">Biztech Product Style Tag Form View</field>

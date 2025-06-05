@@ -13,7 +13,12 @@ class ImageHotspotPoint(models.Model):
     _name = 'image.hotspot.point'
     _description = 'Image Hotspot Point'
 
-    hotspot_id = fields.Many2one('image.hotspot', required=True)
+    hotspot_id = fields.Many2one('image.hotspot', required=True, ondelete='cascade')
     x = fields.Float("X Position (%)")
     y = fields.Float("Y Position (%)")
     link = fields.Char("URL")
+    product_id = fields.Many2one('product.template', string="Linked Product")
+    open_in_new_tab = fields.Boolean("Open in New Tab")
+
+
+
