@@ -74,7 +74,7 @@
                        data-name="scita_header_5"
                        data-customize-website-views="theme_scita.option_header_5,theme_scita.scita_header_cart_link,theme_scita.scita_header_wishlist_link,theme_scita.scita_header_search_box_icon,theme_scita.scita_header_mobile"
                        data-customize-website-variable="'scita_header_5'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/header17-5.png"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/header_5.svg"/>
         </xpath>
 
         <xpath expr='//div[@data-selector="#wrapwrap > footer"]//we-select[@data-variable="footer-template"]' position='inside'>

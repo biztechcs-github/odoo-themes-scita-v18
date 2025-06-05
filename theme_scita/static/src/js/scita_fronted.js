@@ -295,7 +295,7 @@ $(document).ready(function(){
                                     items: 6
                                 },
                                 1500: {
-                                    items: 7
+                                    items: 6
                                 },
                             },
                         });

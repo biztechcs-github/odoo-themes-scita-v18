@@ -2939,55 +2939,6 @@
                 }
             }
         }
-                .o_navbar_mobile{
-            .offcanvas-body{
-                .navbar-nav{
-                    .category_dropdown{
-                        .nav-link{
-                            img{
-                                filter: invert(0.7);
-                            }
-                        }
-                        .megamenu_dropdown{
-                            .ul-menu-category-list{
-                                > li{
-                                    padding: 10px 20px 0;
-                                     > a{
-                                        font-weight: 600;
-                                        display: block;
-                                    }
-                                }
-                                .ca-sub{
-                                    padding: 0;
-                                    > a{                                        
-                                        margin: 5px 20px 0;
-                                    }
-                                    .sct_submenu_level{
-                                        margin: 0;
-                                        padding: 0;
-                                        list-style-type: none;
-                                        .row{
-                                            margin: 0;
-                                        }
-                                        .sct_left_menu{
-                                            .d-flex{
-                                                .col-md-4{
-                                                    width: 50%;
-                                                    padding: 2px 5px 0;
-                                                }
-                                            }
-                                        }
-                                        .sct_right_image{
-                                            margin: 10px 0 0 ;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
     }
     .ab-mob-view{
         width: 100%;
@@ -3433,15 +3384,12 @@ header{
             }
         }
         &.o_header_mobile{
-            padding: 0 !important;
+            padding: 0;
             #o_main_nav{
                 padding: 10px;
             }
             .o_navbar_mobile{
-                height: 100dvh;
-                .offcanvas-body{
-                    padding-bottom: 78px;
-                }
+                height: 100vh;
             }
             .o_header_mobile_buttons_wrap{
                 .offcanvas-header {
@@ -3771,26 +3719,6 @@ header{
         .o_search_result_item_detail {
             .mb-0 {
                 white-space: initial;
-            }
-        }
-    }
-}
-.o_searchbar_form {
-    .o_dropdown_menu {
-        .dropdown-item {
-            &:hover {
-                .o_search_result_item {
-                    .o_search_result_item_detail {
-                        .h6 {
-                            color: $light-color !important;
-                        }
-                    }
-                }
-            }
-        }
-        button.dropdown-item {
-            &:hover {
-                color:$light-color !important;
             }
         }
     }
@@ -4436,26 +4364,7 @@ header{
                 margin-top: 10px;
                 border-radius: 30px;
                 box-shadow: 0 0 4px 0px $black;
-                padding: 20px 0;
-                a.dropdown-item{
-                    &:hover, &:focus{
-                        background: rgba($primary, 0.2);
-                    }
-                    .o_search_result_item {
-                        .o_search_result_item_detail{
-                            *{
-                                color: $black !important;
-                            }
-                        }
-                    }
-                }
-                button.dropdown-item{
-                    background: rgba($primary, 0.2);
-                    padding: 10px 0;
-                    margin-top: 10px;
-                    font-weight: 500;
-                    text-transform: capitalize;
-                }
+                padding: 20px 0 0;
             }
          
         }
