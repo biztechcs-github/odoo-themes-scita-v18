@@ -370,54 +370,54 @@
                     </h2>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
-                        <!-- Wrapper containing both image and hotspots -->
-                        <div class="hotspot-wrapper image_hotspot_box">
-                            <!-- Image -->
-                            <img src="/web/image/theme_scita.sct_banner_snippet_2"/>                
-                            <t t-foreach="slider_details" t-as="point">
-                                <div
-                                    t-att-style="'position: absolute; top: ' + str(point.y) + '%; left: ' + str(point.x) + '%; transform: translate(-50%, -50%); text-decoration: none;'"
-                                    class="hotspot-tooltip-wrapper"
-                                >
-                                    <div class="ripple-btn">
-                                        <span class="ripple-circle"></span>
-                                    </div>
-                                    <div class="hotspot-tooltip">
-                                        <!-- Product Image -->
-                                    <div class="triangle-up">
-                                        <img src="/theme_scita/static/src/img/arrow-up.svg" alt="Up"  />
-                                    </div>
-                                    <div class="hotspot_box">
-                                        <div class="hotspot-product-img">
-                                            <img t-if="point.product_id.image_1920"
-                                                t-att-src="'/web/image/product.template/' + str(point.product_id.id) + '/image_1920'"                                                
-                                            />
-                                            <!-- Product Name with Link -->
-                                            <div class="hotspot_product_content">
-                                                <a t-att-href="'/shop/product/' + str(point.product_id.id)"
-                                                                t-att-target="'_blank' if point.open_in_new_tab else '_self'">                                            <t t-esc="point.product_id.name"/>
-                                                </a>
-                                                <p class="hotspot-price">
-                                                    ₹<span t-esc="point.product_id.list_price"/>
-                                                    <t t-if="point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price">
-                                                        <span class="text-muted text-decoration-line-through ms-2">
-                                                            ₹<t t-esc="point.product_id.compare_list_price"/>
-                                                        </span>
-                                                    </t>
-                                                </p>
-                                            </div>
-                                        </div>
-                                        <!-- Price -->
-                                        <a href="/cart" class="btn"><i class="lni lni-cart-1"></i></a>
-                                    </div>
-
-                                    </div>
+                <div class="col-md-12">
+                    <!-- Wrapper containing both image and hotspots -->
+                    <div class="hotspot-wrapper image_hotspot_box">
+                        <!-- Image -->
+                        <img src="/web/image/theme_scita.sct_banner_snippet_2"/>                
+                        <t t-foreach="slider_details" t-as="point">
+                            <div
+                            t-att-style="'position: absolute; top: ' + str(point.y) + '%; left: ' + str(point.x) + '%; transform: translate(-50%, -50%); text-decoration: none;'"
+                            class="hotspot-tooltip-wrapper">
+                            <div class="ripple-btn">
+                                <span class="ripple-circle"></span>
+                            </div>
+                            <div class="hotspot-tooltip">
+                                <!-- Product Image -->
+                                <div class="triangle-up">
+                                    <img src="/theme_scita/static/src/img/arrow-up.svg" alt="Up"  />
                                 </div>
-                            </t>
-                        </div>
+                                <div class="hotspot_box">
+                                    <div class="hotspot-product-img">
+                                        <img t-if="point.product_id.image_1920"
+                                        t-att-src="'/web/image/product.template/' + str(point.product_id.id) + '/image_1920'"                                                
+                                        />
+                                        <!-- Product Name with Link -->
+                                        <div class="hotspot_product_content">
+                                        <a t-att-href="'/shop/product/' + str(point.product_id.id)"
+                                            t-att-target="'_blank' if point.open_in_new_tab else '_self'">
+                                            <t t-esc="point.product_id.name"/>
+                                        </a>
+                                        <p class="hotspot-price">
+                                            ₹<span t-esc="point.product_id.list_price"/>
+                                            <t t-if="point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price">
+                                                <span class="text-muted text-decoration-line-through ms-2">
+                                                    ₹
+                                                    <t t-esc="point.product_id.compare_list_price"/>
+                                                </span>
+                                            </t>
+                                        </p>
+                                        </div>
+                                    </div>
+                                    <!-- Price -->
+                                    <a href="/cart" class="btn"><i class="lni lni-cart-1"></i></a>
+                                </div>
+                            </div>
+                            </div>
+                        </t>
                     </div>
                 </div>
+            </div>
             </div>
     </template>
 </odoo>
