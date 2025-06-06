@@ -6466,7 +6466,6 @@ body #wrapwrap{
 						height: 40px;
 						width: auto;
 						object-fit: contain;
-						filter: invert(1);
 						@include min1200{
 							height: 60px;
 						}
