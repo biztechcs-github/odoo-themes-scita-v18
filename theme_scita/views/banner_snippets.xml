@@ -380,7 +380,7 @@
                                     t-att-style="'position: absolute; top: ' + str(point.y) + '%; left: ' + str(point.x) + '%; transform: translate(-50%, -50%); text-decoration: none;'"
                                     class="hotspot-tooltip-wrapper"
                                 >
-                                    <div class="ripple-btn" title="Click to view">
+                                    <div class="ripple-btn">
                                         <span class="ripple-circle"></span>
                                     </div>
                                     <div class="hotspot-tooltip">
@@ -398,8 +398,14 @@
                                                 <a t-att-href="'/shop/product/' + str(point.product_id.id)"
                                                                 t-att-target="'_blank' if point.open_in_new_tab else '_self'">                                            <t t-esc="point.product_id.name"/>
                                                 </a>
-                                                <!-- Price -->
-                                                <p class="hotspot-price">₹<span t-esc="point.product_id.list_price"/></p>
+                                                <p class="hotspot-price">
+                                                    ₹<span t-esc="point.product_id.list_price"/>
+                                                    <t t-if="point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price">
+                                                        <span class="text-muted text-decoration-line-through ms-2">
+                                                            ₹<t t-esc="point.product_id.compare_list_price"/>
+                                                        </span>
+                                                    </t>
+                                                </p>
                                             </div>
                                         </div>
                                         <!-- Price -->
