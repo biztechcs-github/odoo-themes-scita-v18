@@ -1326,6 +1326,7 @@ body #wrapwrap{
 				border-radius: 170px;
 				min-height: 470px;
 				object-fit: cover;
+				width: 100%;
 				
 				@include min768{
 					min-height: 370px;
@@ -4756,7 +4757,7 @@ body #wrapwrap{
 		}
 		&.sct_service_long_block{
 			.sct_sers_box{
-				background: rgba($dark-grey-color, 0.7);
+				background: rgba($light-color, 0.32);
 				border-color: transparent;
 			}
 		}
