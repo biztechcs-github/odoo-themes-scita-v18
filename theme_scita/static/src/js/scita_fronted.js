@@ -547,6 +547,9 @@ $(document).ready(function(){
                                     },
                                     992: {
                                         items: 3,
+                                    },
+                                    1500: {
+                                        items: 4,
                                     }
                                 },
                             });

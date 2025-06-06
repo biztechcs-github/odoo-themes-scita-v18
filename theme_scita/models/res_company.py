@@ -6,7 +6,7 @@ from odoo import api, fields, models
 
 class ResCompany(models.Model):
     _inherit = "res.company"
-    
+
     # Delivery location configuration
     delivery_icon = fields.Char(string='Icon', help='Delivery Icon')
     delivery_text = fields.Char(string='Title', help='Delivery Text',

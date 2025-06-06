@@ -1212,7 +1212,7 @@
 
 				
 
-				<t t-snippet="theme_scita.retial_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/retail-trending-offer.png"/>
+				<t t-snippet="theme_scita.retial_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/adv_snippet_1.svg"/>
 				<t t-snippet="theme_scita.fashion_advertisement_banner_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-adv.png"/>
 				<t t-snippet="theme_scita.health_advertisement_banner" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-hero-adv.png"/>
 

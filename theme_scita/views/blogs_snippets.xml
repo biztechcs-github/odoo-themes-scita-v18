@@ -76,7 +76,7 @@
             <div class='row sct_btm_row'>
                 <div class='col-md-12'>
                     <div class="sct_cst_btn">
-                        <a class="btn btn-primary scita_cstm_btn  btn-lg it_btn o_default_snippet_text" href="/blog">
+                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
                             <span>View More</span>
                         </a>
                     </div>

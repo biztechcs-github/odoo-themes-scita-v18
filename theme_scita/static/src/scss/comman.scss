@@ -71,7 +71,6 @@ img {
 input.form-control {
 	height: unset;
 	transition: none;
-	// border-radius: 0;
 }
 .css_attribute_color input{
 	transition: none;
@@ -167,11 +166,9 @@ header{
 	.logo {
 		span {
 			display: block;
-			/*@media (max-width: 767px){
-				img {
-					height: min-content !important;
-				}
-			}*/
+			@media (max-width:991px) {
+				padding: 10px 0;				
+			}
 		}
 	}
 	&.o_header_affix {
@@ -189,16 +186,6 @@ header{
 				@include transition(all, 0.5s, ease);
 				font-size: $head-label;
 			}
-			&#my_wish {
-				/*display: none !important;*/
-			}
-			&:hover{
-				.dropdown-menu {
-					// @media (min-width: 768px){
-					// 	display: block;
-					// }
-				}
-			}
 			&.o_extra_menu_items {
 				&:hover{
 					> .dropdown-menu {
@@ -207,26 +194,11 @@ header{
 						}
 					}
 				}
-				> .dropdown-menu.show {
-					// @media (min-width: 768px){
-					// 	display: block !important;
-					// 	li {
-					// 		&:hover{
-					// 			.dropdown-menu {
-					// 				display:none;
-					// 			}
-					// 		}
-					// 	}
-					// }
-				}
 			}
 			&.dropdown {
 				&:hover{
 					.dropdown-menu {
 						@media (min-width: 768px){
-							// display: block;
-							/*right: 0;
-							left: auto;*/
 							.dropdown-item {
 								padding: 5px 10px;
 								&:hover {
@@ -249,9 +221,6 @@ header{
 			&:focus, &:hover, &:active, &.active {
 				background:$dark-color;
 				color: $light-color !important;
-			}
-			+ .dropdown-item {
-				// border-top: 1px solid $dark-color;
 			}
 		}
 	}
@@ -485,7 +454,6 @@ header{
 	h4 {
 		font-size: $fot-label;
 		font-weight: bold;
-		// color: $body-color;
 		margin: 0;
 	}
 	ul{
@@ -602,7 +570,6 @@ header{
 			}
 			.td-wish-btn{
 				.o_wish_add{
-					// padding: 0 10px !important;
 					width: 100%;
 					background: $primary;
 					color: $light-color;
@@ -658,7 +625,6 @@ header{
 				}
 				button{
 					&.btn.btn-link{
-						border: 1px solid $primary;
 						margin: 5px 10px 0 0;
 
 						.fa{
@@ -1585,7 +1551,6 @@ body.editor_enable {
 	font-weight: 600;
 	z-index: 2;
 	&.style1 {
-		// border-bottom: 2px solid $primary;
 		left: 10px;
 		right: auto;
 		background-color: $primary;
@@ -2118,6 +2083,71 @@ body header .navbar-expand-lg .navbar-collapse {
 	}
 }
 .o_searchbar_form {
+	.o_dropdown_menu{
+		border-radius: 10px;
+		> .p-3{
+			&:empty{
+				display: none;
+			}
+			&:has(> div:empty){
+				display: none;
+	
+				
+			}
+		}
+	
+		.dropdown-item{
+			&:nth-child(odd){
+				background-color: rgba($light-grey-color, 0.3);
+			}
+			&:hover{
+				background-color: rgba($primary, 0.09);
+				color: $dark-color !important;
+				
+				.o_search_result_item{
+					.o_search_result_item_detail, > div{
+						h6, .btn-link, .text-nowrap{
+							color: $dark-color!important;
+						}
+					}
+				}
+			}
+			.o_search_result_item{
+				.o_search_result_item_detail{
+					p{
+						font-size: 15px;
+					}
+					img{
+						border: 1px solid #ddd;
+						border-radius: 4px;
+						padding: 3px;
+						will-change: transform;
+						@include transition(all, .5s, ease-in);
+					}
+					.btn-link{
+						padding-left: 0;
+					}
+				}
+			}
+		}
+	
+		button[type="submit"].dropdown-item{
+			position: sticky;
+			bottom: -1px;
+			z-index: 1;
+			background: $primary;
+			color: $light-color !important;
+			padding: 10px !important;
+			font-size: 18px;
+			border: 0;
+			border-top: 1px solid $primary;
+	
+			&:hover{
+				background: $light-color;
+				color: $primary !important;
+			}
+		}
+	}
 	~ .table-responsive {
 		margin: 20px 0;
 		height: 580px;
@@ -2205,65 +2235,6 @@ header{
 						b{
 							font-size: 16px;
 						}
-					}
-				}
-			}
-		}
-	}
-	.oe_structure{
-		.o_searchbar_form{
-			.o_dropdown_menu{
-				border-radius: 10px;
-
-				.dropdown-item{
-					&:nth-child(odd){
-						background-color: rgba($light-grey-color, 0.3);
-					}
-					&:hover{
-						background-color: rgba($primary, 0.09);
-						color: $dark-color !important;
-						
-						.o_search_result_item{
-							.o_search_result_item_detail{
-								h6, .btn-link{
-									color: $dark-color!important;
-								}
-							}
-						}
-					}
-					.o_search_result_item{
-						.o_search_result_item_detail{
-							p{
-								font-size: 15px;
-							}
-							img{
-								border: 1px solid #ddd;
-								border-radius: 4px;
-								padding: 3px;
-								will-change: transform;
-								@include transition(all, .5s, ease-in);
-							}
-							.btn-link{
-								padding-left: 0;
-							}
-						}
-					}
-				}
-		
-				button[type="submit"].dropdown-item{
-					position: sticky;
-					bottom: 0;
-					z-index: 1;
-					background: $primary;
-					color: $light-color !important;
-					padding: 10px !important;
-					font-size: 18px;
-					border: 0;
-					border-top: 1px solid $primary;
-		
-					&:hover{
-						background: $light-color;
-						color: $primary !important;
 					}
 				}
 			}
@@ -2640,15 +2611,17 @@ body #wrapwrap::-webkit-scrollbar{
 				span{
 					&[name="sale_product_configurator_list_title"]{
 						font-size: $title;
-						margin-bottom: 14px !important;
+						margin-bottom: 20px !important;
 						display: block !important;
+						border-bottom: 1px solid rgba($dark-color, 0.1);
 						text-align: center;
+						padding-top: 20px;
+						margin-top: 0 !important;
 					}
 				}
 				.o_sale_product_configurator_table{
 					border-spacing: 0 10px;
     				border-collapse: separate;
-					border-bottom: 1px solid rgba($dark-color, 0.1);
 
 					tr{
 						td{
@@ -2673,19 +2646,30 @@ body #wrapwrap::-webkit-scrollbar{
 												padding: 0 5px;
 
 												.form-check{
+													@include flex;
+													@include justify-align-content;
+													padding-left: 0;
+													
 													.form-check-label{
 														font-size: $title - 3;
 														line-height: 1;
 														vertical-align: middle;
+														padding-left: 7px;
 													}
 													.form-check-input{
 														font-size: $title - 3;
-														margin-top: 7px;
+														margin-top: 6px;
+														float: none;
+														margin: 0;
+														order: -1;
 
 														&:checked{
 															background-color: transparent;
 														}
 													}
+												}
+												.o_sale_product_configurator_ptav_pills{
+													
 												}
 												.o_sale_product_configurator_ptav_color{
 													width: 25px;
@@ -2855,7 +2839,7 @@ common search for categories and products (22/05/2025)
 .chip {
     display: inline-block;
     border: 1px solid #d1d1d1;
-    border-radius: 5;
+    border-radius: 10px;
     font-size: 14px;
     color: #242323;
     padding: 6px 12px;
@@ -2865,3 +2849,9 @@ common search for categories and products (22/05/2025)
     border-color: #dc3545;
 }
 
+.container-fluid{
+	@include min1920{
+		max-width: 2100px;
+		width: 100%;
+	}
+}

@@ -90,6 +90,17 @@ class ScitaSliderSettings(http.Controller):
         }
         return values
 
+    @http.route('/shop/cart/sidebar', type='json', auth='public', website=True)
+    def custom_cart_sidebar(self):
+        order = request.website.sale_get_order()
+        values = {
+            'website_sale_order': order,
+            'res_company': request.env.company,
+            'website': request.env['website'].get_current_website()
+        }
+        html = request.env['ir.ui.view']._render_template('theme_scita.cart_sidebar_template', values)
+        return {'html': html}
+
     #  Top Dealers Snippet Controller Start
     @http.route(['/theme_scita/top_dealers'], type="http", auth="public", website=True)
     def scita_get_top_dealers(self, **post):
