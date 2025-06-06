@@ -5,7 +5,6 @@ class ImageHotspot(models.Model):
     _description = 'Image Hotspot'
 
     name = fields.Char(string="Name", required=True)
-    image = fields.Image("Image")
     hotspot_ids = fields.One2many("image.hotspot.point", "hotspot_id", "Hotspots")
 
 

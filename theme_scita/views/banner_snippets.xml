@@ -374,7 +374,7 @@
                         <!-- Wrapper containing both image and hotspots -->
                         <div class="hotspot-wrapper image_hotspot_box">
                             <!-- Image -->
-                            <img t-att-src="website.image_url(slider_header, 'image')" class="img-fluid"/>                 
+                            <img src="/web/image/theme_scita.sct_banner_snippet_2"/>                
                             <t t-foreach="slider_details" t-as="point">
                                 <div
                                     t-att-style="'position: absolute; top: ' + str(point.y) + '%; left: ' + str(point.x) + '%; transform: translate(-50%, -50%); text-decoration: none;'"
@@ -403,7 +403,6 @@
                                             </div>
                                         </div>
                                         <!-- Price -->
-                                        <br/>₹ <span t-esc="point.product_id.list_price"/>
                                         <a href="/cart" class="btn"><i class="lni lni-cart-1"></i></a>
                                     </div>
 
