@@ -2464,6 +2464,11 @@
 			> *{
 				background-color: rgba($primary, 0.08);
 			}
+			&.o_header_is_scrolled{
+				> *{
+					background-color: $light-color;
+				}
+			}
 		}
 
 		.modal{
