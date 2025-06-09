@@ -775,95 +775,68 @@ body #wrapwrap.o_portal {
                 }
             }
         }
-		.hotspot-tooltip-wrapper{
-			.hotspot-tooltip{
-				position: absolute;
+    }
+}
+.popover{
+	--popover-max-width: auto;
+	.popover-body{
+		box-shadow: 1px 1px 30px 0px rgba(0,0,0,0.1);
+		padding: 0;
+
+		.hotspot-tooltip{
+			.triangle-up{
 				display: none;
-				transform: translateX(-47%);
-				top: calc(100% + 25px);
-				background: $white;
-				border-radius: 10px;
-				-webkit-box-shadow: 1px 1px 30px 5px rgba(0,0,0,0.1);
-						box-shadow: 1px 1px 30px 0px rgba(0,0,0,0.1);
-				@media (max-width: 1199px) {
-					transform: initial;
-					left: auto;
-					right: -25px;
+			}
+			.hotspot_box{
+				@include flex;
+			}
+			.hotspot-product-img{
+				@include flex;
+				padding: 10px 12px;
+				img{
+					height: 60px;
+					min-width: 60px;
+					width: 60px;
+					box-shadow: 0 0 4px 1px $light-grey-color;
+					background-color: $light-grey-color;
+					border-radius: 5px;
+					padding: 3px;
 				}
-				.triangle-up{
-					width: auto;
-					position: absolute;
-					top: -17px;
-					left: 0;
-					right: 0;
-					margin: auto;
-					text-align: center;
-					@media (max-width: 1199px) {
-						left: auto;
-						right: 20px;
-						top: -18px;
-					}
-					img{
-						height: 12px;
-    					width: auto;
-					}
-				}
-				.hotspot_box{
-					@include flex;
-				}
-				.hotspot-product-img{
-					@include flex;
-					padding: 10px 12px;
-					img{
-						height: 60px;
-						min-width: 60px;
-						width: 60px;
-						box-shadow: 0 0 4px 1px $light-grey-color;
-						background-color: $light-grey-color;
-						border-radius: 5px;
-						padding: 3px;
-					}
-					.hotspot_product_content{
-						margin: 0 12px;
-						a{
-							display: block;
-							color: $primary;
-							margin: 0 0 3px;
-							white-space: nowrap !important;
-							text-overflow: ellipsis;
-							overflow: hidden;
-							font-size: $title - 4;
-							max-width: 100px;
-							&:hover{
-								text-decoration: underline;
-							}
-						}
-						.hotspot-price{
-							margin: 0;
-							font-weight: 600;
-							font-size: $title - 4;
-							span{
-								margin-left: 5px;
-							}
+				.hotspot_product_content{
+					margin: 0 12px;
+					a{
+						display: block;
+						color: $primary;
+						margin: 0 0 3px;
+						white-space: nowrap !important;
+						text-overflow: ellipsis;
+						overflow: hidden;
+						font-size: $title - 4;
+						max-width: 100px;
+						&:hover{
+							text-decoration: underline;
 						}
 					}
-				}
-				.btn{
-					padding: 10px 19px;
-					font-size: $title + 6;
-					margin: 0;
-					background: $primary;
-					color: $white;
-					@include flex;
-					@include align-content;
-					border-radius: 0 10px 10px 0;
+					.hotspot-price{
+						margin: 0;
+						font-weight: 600;
+						font-size: $title - 4;
+						span{
+							margin-left: 5px;
+						}
+					}
 				}
 			}
-			&:hover{
-				.hotspot-tooltip{
-					display: block;
-				}
+			.btn{
+				padding: 10px 19px;
+				font-size: $title + 6;
+				margin: 0;
+				background: $primary;
+				color: $white;
+				@include flex;
+				@include align-content;
+				border-radius: 0 10px 10px 0;
 			}
 		}
-    }
+	}
 }
