@@ -782,7 +782,7 @@
 
                                     .fa{
                                         font-size: 19px;
-                                        color: $secondary;
+                                        color: $white;
                                     }
                                 }
                             }
@@ -1025,6 +1025,20 @@ footer{
     .sct-copyright-text {
         .o_footer_copyright_name {
             margin-right: 8px;
+        }
+    }
+}
+footer{
+    .list-inline{
+        background-color: $secondary;
+        .js_change_lang{
+            margin: 0 !important;
+            padding: 3px 10px;
+            color: $white !important;
+        }
+        .list-inline-item{
+            margin: 0;
+            color: $white;
         }
     }
 }
