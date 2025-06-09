@@ -125,6 +125,33 @@
             </div>
         </div>
     </t>
+    <!-- Image Hotspot model -->
+     <t t-name="theme_scita.scita_dynamic_image_hotspot">
+        <div aria-hidden="true" aria-labelledby="myModalLabel" t-attf-class="modal#{technical ? ' o_technical_modal' : ''}#{fullscreen ? ' o_modal_full': ''}" contenteditable="False" role="dialog" style="z-index:1050">
+            <div class="modal-dialog">
+                <div class="modal-content" id="s_media_block_modal">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Image Hotspot Configuration</h4>
+                        <button class="btn-close" data-bs-dismiss="modal" type="button"></button>
+                    </div>
+                    <div class="modal-body" contenteditable="false">
+                        <form class="form-horizontal" role="form">
+                            <div class="row">
+                                <label class="col-sm-3 control-label" for="slider_type">Type</label>
+                                <div class="form-group col-sm-9">
+                                    <select class="form-control" id="slider_type" name="slider_type"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn" data-bs-dismiss="modal" id="cancel">Cancel</button>
+                        <button class="btn btn-danger" data-bs-dismiss="modal" id="img_data_hp">Apply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
     <t t-name="theme_scita.multi_product_custom_slider_block">
         <div aria-hidden="true" aria-labelledby="myModalLabel" t-attf-class="modal#{technical ? ' o_technical_modal' : ''}#{fullscreen ? ' o_modal_full': ''}" contenteditable="False" role="dialog" style="z-index:1050">
             <div class="modal-dialog">

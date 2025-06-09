@@ -49,6 +49,42 @@ $(document).ready(function(){
             }
         }
     });
+
+    // Image Hotspot start
+    animation.registry.oe_img_hotspot = animation.Class.extend({
+        selector: ".oe_img_hotspot",
+        disabledInEditableMode: false,
+        start: function() {
+            var self = this;
+            if (this.editableMode) {
+                var $cate_slider = $('#wrapwrap').find('#theme_scita_custom_image_hotspot');
+                var cat_name = _t("Image Hotspot")
+                $cate_slider.each(function(){
+
+                    $(this).empty().append('<div class="container">\
+                                                    <div class="block-title">\
+                                                        <h3 class="fancy">' + cat_name + '</h3>\
+                                                    </div>\
+                                                </div>')
+                });
+            }
+            if (!this.editableMode) {
+                var slider_id = self.$target.attr('data-cat-slider-id');
+                rpc("/theme_scita/get_image_hotspot", {
+                    'slider-id': self.$target.attr('data-img-hotspot-id') || '',
+                }).then(function(data) {
+                    if (data) {
+                        self.$target.empty();
+                        self.$target.append(data);
+                        $('[data-bs-toggle="popover"]').popover();
+                        $(".oe_img_hotspot").removeClass('o_hidden');
+                    }
+                });
+            }
+        }
+    });
+
+    //end
     animation.registry.theme_scita_product_slider = animation.Class.extend({
         selector: ".oe_prod_slider",
         disabledInEditableMode: false,
