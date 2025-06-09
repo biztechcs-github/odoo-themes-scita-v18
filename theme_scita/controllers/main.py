@@ -286,7 +286,6 @@ class ScitaSliderSettings(http.Controller):
         for record in option:
             slider_options.append({'id': record.id,
                                    'name': record.name})
-        print("\n\n\n\n\n\n\n\n\n\n\n\n   slider_options", slider_options)
         return slider_options
     
 
