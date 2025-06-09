@@ -377,41 +377,40 @@
                         <img src="/web/image/theme_scita.sct_banner_snippet_2"/>                
                         <t t-foreach="slider_details" t-as="point">
                             <div
-                            t-att-style="'position: absolute; top: ' + str(point.y) + '%; left: ' + str(point.x) + '%; transform: translate(-50%, -50%); text-decoration: none;'"
-                            class="hotspot-tooltip-wrapper">
-                            <div class="ripple-btn">
-                                <span class="ripple-circle"></span>
-                            </div>
-                            <div class="hotspot-tooltip">
-                                <!-- Product Image -->
-                                <div class="triangle-up">
-                                    <img src="/theme_scita/static/src/img/arrow-up.svg" alt="Up"  />
+                                t-att-style="'position: absolute; top: ' + str(point.y) + '%; left: ' + str(point.x) + '%; transform: translate(-50%, -50%); text-decoration: none;'"
+                                class="hotspot-tooltip-wrapper"
+                            >
+                                <div
+                                    class="ripple-btn"
+                                    data-bs-toggle="popover"
+                                    data-bs-placement="auto"
+                                    data-bs-html="true"
+                                    data-bs-trigger="click"
+                                    data-bs-container="body"
+                                    t-att-data-bs-content="
+                                        '&lt;div class=&quot;hotspot-tooltip&quot;&gt;' +
+                                            '&lt;div class=&quot;triangle-up&quot;&gt;&lt;img src=&quot;/theme_scita/static/src/img/arrow-up.svg&quot; alt=&quot;Up&quot; /&gt;&lt;/div&gt;' +
+                                            '&lt;div class=&quot;hotspot_box&quot;&gt;' +
+                                                '&lt;div class=&quot;hotspot-product-img&quot;&gt;' +
+                                                    (('&lt;img src=&quot;/web/image/product.template/' + str(point.product_id.id) + '/image_1920&quot; /&gt;') if point.product_id.image_1920 else '') +
+                                                    '&lt;div class=&quot;hotspot_product_content&quot;&gt;' +
+                                                        '&lt;a href=&quot;/shop/product/' + str(point.product_id.id) + '&quot; target=&quot;' + ('_blank' if point.open_in_new_tab else '_self') + '&quot;&gt;' +
+                                                            point.product_id.name +
+                                                        '&lt;/a&gt;' +
+                                                        '&lt;p class=&quot;hotspot-price&quot;&gt;&#8377;' + str(point.product_id.list_price) +
+                                                            ((
+                                                                ' &lt;span class=&quot;text-muted text-decoration-line-through ms-2&quot;&gt;&#8377;' +
+                                                                str(point.product_id.compare_list_price) + '&lt;/span&gt;'
+                                                            ) if point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price else '') +
+                                                        '&lt;/p&gt;' +
+                                                    '&lt;/div&gt;' +
+                                                '&lt;/div&gt;' +
+                                                '&lt;a href=&quot;/cart&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;lni lni-cart-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;' +
+                                            '&lt;/div&gt;' +
+                                        '&lt;/div&gt;'"
+                                >
+                                    <span class="ripple-circle"></span>
                                 </div>
-                                <div class="hotspot_box">
-                                    <div class="hotspot-product-img">
-                                        <img t-if="point.product_id.image_1920"
-                                        t-att-src="'/web/image/product.template/' + str(point.product_id.id) + '/image_1920'"                                                
-                                        />
-                                        <!-- Product Name with Link -->
-                                        <div class="hotspot_product_content">
-                                            <a t-att-href="'/shop/product/' + str(point.product_id.id)"
-                                                t-att-target="'_blank' if point.open_in_new_tab else '_self'">
-                                                <t t-esc="point.product_id.name"/>
-                                            </a>
-                                            <p class="hotspot-price">
-                                                <span t-esc="point.product_id.list_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                <t t-if="point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price">
-                                                    <span class="text-muted text-decoration-line-through ms-2">
-                                                        <t t-esc="point.product_id.compare_list_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                    </span>
-                                                </t>
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <!-- Price -->
-                                    <a href="/cart" class="btn"><i class="lni lni-cart-1"></i></a>
-                                </div>
-                            </div>
                             </div>
                         </t>
                     </div>
