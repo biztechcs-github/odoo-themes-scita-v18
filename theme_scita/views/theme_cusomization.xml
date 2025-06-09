@@ -6,19 +6,19 @@
                 <we-button title="Buttons Style 1"
                        data-name="btn_style_1"
                        data-customize-website-variable="'btn_style_1'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-1.gif"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/Button-style1.svg"/>
                 <we-button title="Buttons Style 2"
                        data-name="btn_style_2"
                        data-customize-website-variable="'btn_style_2'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-2.gif"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/Button-style2.svg"/>
                 <we-button title="Buttons Style 3"
                        data-name="btn_style_3"
                        data-customize-website-variable="'btn_style_3'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-3.gif"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/Button-style3.svg"/>
                 <we-button title="Buttons Style 4"
                        data-name="btn_style_4"
                        data-customize-website-variable="'btn_style_4'"
-                       data-img="/theme_scita/static/src/img/snippet_icon/button-style-4.gif"/>
+                       data-img="/theme_scita/static/src/img/snippet_icon/Button-style4.svg"/>
             </we-select>
             <we-select string="Product Hover Style" data-variable="prod-hover-style" data-reload="/"  data-attribute-default-value="prod_hover_style_1">
                 <we-button title="Effect Style 1"
