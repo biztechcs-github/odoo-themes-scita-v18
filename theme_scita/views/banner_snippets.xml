@@ -394,19 +394,18 @@
                                         />
                                         <!-- Product Name with Link -->
                                         <div class="hotspot_product_content">
-                                        <a t-att-href="'/shop/product/' + str(point.product_id.id)"
-                                            t-att-target="'_blank' if point.open_in_new_tab else '_self'">
-                                            <t t-esc="point.product_id.name"/>
-                                        </a>
-                                        <p class="hotspot-price">
-                                            ₹<span t-esc="point.product_id.list_price"/>
-                                            <t t-if="point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price">
-                                                <span class="text-muted text-decoration-line-through ms-2">
-                                                    ₹
-                                                    <t t-esc="point.product_id.compare_list_price"/>
-                                                </span>
-                                            </t>
-                                        </p>
+                                            <a t-att-href="'/shop/product/' + str(point.product_id.id)"
+                                                t-att-target="'_blank' if point.open_in_new_tab else '_self'">
+                                                <t t-esc="point.product_id.name"/>
+                                            </a>
+                                            <p class="hotspot-price">
+                                                <span t-esc="point.product_id.list_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                <t t-if="point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price">
+                                                    <span class="text-muted text-decoration-line-through ms-2">
+                                                        <t t-esc="point.product_id.compare_list_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                                    </span>
+                                                </t>
+                                            </p>
                                         </div>
                                     </div>
                                     <!-- Price -->
