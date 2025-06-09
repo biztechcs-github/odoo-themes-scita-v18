@@ -76,6 +76,7 @@ $(document).ready(function(){
                     if (data) {
                         self.$target.empty();
                         self.$target.append(data);
+                        $('[data-bs-toggle="popover"]').popover();
                         $(".oe_img_hotspot").removeClass('o_hidden');
                     }
                 });
