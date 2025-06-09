@@ -16,8 +16,10 @@ class ImageHotspotPoint(models.Model):
     x = fields.Float("X Position (%)")
     y = fields.Float("Y Position (%)")
     link = fields.Char("URL")
-    product_id = fields.Many2one('product.template', string="Linked Product")
+    color = fields.Char(string="Color", default='#3C3C3C')
+    product_id = fields.Many2one(
+        'product.template',
+        string="Linked Product",
+        domain=[('type', 'in', ['product', 'consu'])]
+    )
     open_in_new_tab = fields.Boolean("Open in New Tab")
-
-
-

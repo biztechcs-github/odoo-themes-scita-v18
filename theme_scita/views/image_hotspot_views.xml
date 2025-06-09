@@ -30,6 +30,7 @@
                                 <field name="x"/>
                                 <field name="y"/>
                                 <field name="product_id"/>
+                                <field name="color" widget='color'/>
                                 <field name="open_in_new_tab"/>
 
                             </list>
@@ -38,6 +39,7 @@
                                     <field name="x"/>
                                     <field name="y"/>
                                     <field name="product_id" domain="[('sale_ok', '=', True)]"/>
+                                    <field name="color" widget='color'/>
                                     <field name="open_in_new_tab"/>
                                 </group>
                             </form>

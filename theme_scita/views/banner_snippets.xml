@@ -389,7 +389,6 @@
                                     data-bs-container="body"
                                     t-att-data-bs-content="
                                         '&lt;div class=&quot;hotspot-tooltip&quot;&gt;' +
-                                            '&lt;div class=&quot;triangle-up&quot;&gt;&lt;img src=&quot;/theme_scita/static/src/img/arrow-up.svg&quot; alt=&quot;Up&quot; /&gt;&lt;/div&gt;' +
                                             '&lt;div class=&quot;hotspot_box&quot;&gt;' +
                                                 '&lt;div class=&quot;hotspot-product-img&quot;&gt;' +
                                                     (('&lt;img src=&quot;/web/image/product.template/' + str(point.product_id.id) + '/image_1920&quot; /&gt;') if point.product_id.image_1920 else '') +
@@ -409,8 +408,15 @@
                                             '&lt;/div&gt;' +
                                         '&lt;/div&gt;'"
                                 >
-                                    <span class="ripple-circle"></span>
-                                </div>
+                                <t t-set="point_color" t-value="point.color or '#ffffff'"/>
+                               
+                                    <span
+                                        class="ripple-circle"
+                                        t-att-style="'background-color:' + point.color + ';'">
+                                        <span class="ripple-circle-before" t-att-style="'border-color:' + point.color + ';'"></span>
+                                        <span class="ripple-circle-after" t-att-style="'border-color:' + point.color + ';'"></span>
+                                    </span>
+                                </div>                                    
                             </div>
                         </t>
                     </div>
