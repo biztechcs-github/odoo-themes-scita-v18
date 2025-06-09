@@ -716,7 +716,19 @@
                     }
                 }
             }
-          
+           #o_main_nav{
+                .menu_right{
+                    li{
+                        a{                            
+                            .my_cart_quantity{
+                                @include min992{
+                                    top: -5px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+           }
         }
         .o_header_mobile{
             padding: 10px 0 !important;
@@ -933,12 +945,6 @@
                 padding: 5px 0;
             }
         }
-
-     /*   &:not(.o_header_no_transition){
-            #top_menu_container{
-                padding: 15px;
-            }
-        }*/
         #top_menu_container{
             .navbar-toggler {
                 background: #fff;
@@ -2284,6 +2290,7 @@
 
                     .my_cart_quantity, .my_wish_quantity{
                         font-size: 9px !important;
+                        line-height: 10px !important;
                         font-weight: normal !important;
                         width: 17px !important;
                         height: 17px !important;

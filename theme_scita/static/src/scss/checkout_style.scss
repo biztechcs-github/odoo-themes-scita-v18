@@ -737,6 +737,7 @@ body #wrapwrap.o_portal {
 			height: 100%;
 			object-fit: cover;
 		}
+
         .ripple-btn{
 			position: relative;
             .ripple-circle{
@@ -779,6 +780,7 @@ body #wrapwrap.o_portal {
 }
 .popover{
 	--popover-max-width: auto;
+	border: 0;
 	.popover-body{
 		box-shadow: 1px 1px 30px 0px rgba(0,0,0,0.1);
 		padding: 0;

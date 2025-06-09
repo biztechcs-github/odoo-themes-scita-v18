@@ -382,10 +382,11 @@
                             >
                                 <div
                                     class="ripple-btn"
+                                    tabindex="0"
                                     data-bs-toggle="popover"
                                     data-bs-placement="auto"
                                     data-bs-html="true"
-                                    data-bs-trigger="click"
+                                    data-bs-trigger="hover focus"
                                     data-bs-container="body"
                                     t-att-data-bs-content="
                                         '&lt;div class=&quot;hotspot-tooltip&quot;&gt;' +
