@@ -1,0 +1,78 @@
+    <odoo>
+    <template id="blog_slider_view_1" name="Static Blog Snippet">
+        <div class="container">
+            <div class='row sct_top_row'>
+                <div class='col-md-12'>
+                    <div class="block-title">
+                        <h2 class="section-title text-center">Blogs</h2>
+                        <p class="text-center">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row sct_mid_row justify-content-center'>
+                <!-- Blog Post 1 -->
+                <div class='col-lg-3 col-md-6 col-12'>
+                    <div class='blog-thumb' title="Beyond The Eye">
+                        <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_img'>
+                            <div class="section-post-media" style="background-image: url('/your_image_path_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                        </a>
+                        <div class='sct_blog_desc'>
+                            <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_title'>
+                                <h3 class='sct_blog_name'>Beyond The Eye</h3>
+                            </a>
+                            <div class="sct_blog_detail row align-items-center">
+                                <div class="col-8 blog_left_content">
+                                    <p class="date">June 09, 2025</p>
+                                    <p class="author">By Mitchell Admin</p>
+                                </div>
+                                <div class="col-4 blog_link text-end">
+                                    <a href="/blog/example-blog/post/beyond-the-eye" class="read_link arrow_link">
+                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class='col-lg-3 col-md-6 col-12'>
+                    <div class='blog-thumb' title="Buying A Telescope">
+                        <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_img'>
+                            <div class="section-post-media" style="background-image: url('/your_image_path_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                        </a>
+                        <div class='sct_blog_desc'>
+                            <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_title'>
+                                <h3 class='sct_blog_name'>Buying A Telescope</h3>
+                            </a>
+                            <div class="sct_blog_detail row align-items-center">
+                                <div class="col-8 blog_left_content">
+                                    <p class="date">June 09, 2025</p>
+                                    <p class="author">By Mitchell Admin</p>
+                                </div>
+                                <div class="col-4 blog_link text-end">
+                                    <a href="/blog/example-blog/post/buying-a-telescope" class="read_link arrow_link">
+                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row sct_btm_row'>
+                <div class='col-md-12 text-center'>
+                    <div class="sct_cst_btn">
+                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
+                            <span>View More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    
+</odoo>
+

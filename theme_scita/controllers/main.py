@@ -1557,3 +1557,9 @@ class PWASupport(http.Controller):
             website = request.env['website'].get_current_website()
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_deal_of_the_day_view", values)
+
+
+    @http.route(['/playground'], type='http', auth="public", website=True)
+    def playground(self, **kw):
+        # You can pass data if needed
+        return request.render("theme_scita.playground_template", {})
