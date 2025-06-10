@@ -408,7 +408,7 @@
                                                             '&lt;/p&gt;' +
                                                     '&lt;/div&gt;' +
                                                 '&lt;/div&gt;' +
-                                                '&lt;a href=&quot;/cart&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;lni lni-cart-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;' +
+                                                '&lt;a href=&quot;/shop/cart&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;lni lni-cart-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;' +
                                             '&lt;/div&gt;' +
                                         '&lt;/div&gt;'"
                                 >
