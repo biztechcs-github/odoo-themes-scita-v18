@@ -73,6 +73,49 @@
             </div>
         </div>
     </template>
+    <template id="blog_2_slider_view_2" name="Blog Snippet 2">
+        <div class="container">
+            <div class="row">
+                <div class="block-title col-12">
+                    <h2 class="fancy mb-3" t-if="not slider_header">Blog post slider</h2>
+                    <h2 class="fancy mb-3" t-if="slider_header">
+                        <t t-out="slider_header.name"/>
+                    </h2>
+                    <p class="sct_simple_text">
+                        <t t-out='slider_header.sub_title'/>
+                    </p>
+                </div>
+            </div>
+            <div id='blog_2_owl_carosel' class="owl-carousel" t-if="blog_slider_details">
+                <t t-as="slide" t-foreach="blog_slider_details">
+                    <div class="sct_blog_box">
+                        <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_img' t-if="slide.cover_properties">
+                            <t t-set="cover_property" t-value="json.loads(slide.cover_properties)"/>
+                            <div class="section-post-media" t-attf-style="background-image: #{cover_property.get('background-image', 'none')}" t-if="slide.cover_properties">
+                            </div>
+                            <div class='sct_base_class' t-att-title="slide.name">
+                                <div class="sct_blog_content_wrap">
+                                    <h3 t-field="slide.name"/>
+                                    <div class="sct_blog_content">
+                                        <t t-out="slide.subtitle"/>
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span t-out="slide.author_id.name"/></p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span>
+                                            <t t-out="datetime.date.strftime(slide.create_date, '%B %d,%Y')"/>
+                                        </p>
+                                    </div>
+                                </div>  
+                            </div>
+                        </a>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </template>
     
 </odoo>
 

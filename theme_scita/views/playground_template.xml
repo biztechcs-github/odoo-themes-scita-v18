@@ -51,14 +51,17 @@
                             <select id="dynamicSnippets" class="form-select">
                                 <optgroup label="Product Snippet">
                                     <option value="theme_scita.blog_slider_view_1" selected="selected">Blog snippet 1</option>
+                                    <option value="theme_scita.blog_2_slider_view_2" selected="selected">Blog slider 1</option>
                                 </optgroup>
                             </select>
                         </div>
                         <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
                             <div id="preview-theme_scita.blog_slider_view_1" class="snippet-container d-none">
-                                <t t-snippet="theme_scita.blog_slider_view_1"/>
+                                <t t-snippet="theme_scita.blog_2_slider_view_2"/>
                             </div>
-                            
+                            <div id="preview-theme_scita.blog_2_slider_view_2" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.blog_2_slider_view_2"/>
+                            </div>
                         </div>
                     </div>
                 </div>

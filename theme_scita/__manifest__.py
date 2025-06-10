@@ -132,7 +132,7 @@ AMP Support
         'views/snippets/snippets.xml',
         'views/image_hotspot_views.xml',
         'views/playground_template.xml',
-         'views/playground_priview.xml',
+         'views/playground_preview.xml',
     ],
     'support': 'support@appjetty.com',
     'live_test_url': 'https://theme-scita-v17.appjetty.com/',
