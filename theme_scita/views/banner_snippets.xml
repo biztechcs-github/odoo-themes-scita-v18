@@ -397,15 +397,18 @@
                                                         '&lt;a href=&quot;/shop/product/' + str(point.product_id.id) + '&quot; target=&quot;' + ('_blank' if point.open_in_new_tab else '_self') + '&quot;&gt;' +
                                                             point.product_id.name +
                                                         '&lt;/a&gt;' +
-                                                        '&lt;p class=&quot;hotspot-price&quot;&gt;&#8377;' + str(point.product_id.list_price) +
-                                                            ((
-                                                                ' &lt;span class=&quot;text-muted text-decoration-line-through ms-2&quot;&gt;&#8377;' +
-                                                                str(point.product_id.compare_list_price) + '&lt;/span&gt;'
-                                                            ) if point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price else '') +
-                                                        '&lt;/p&gt;' +
+                                                        '&lt;p class=&quot;hotspot-price&quot;&gt;' +
+                                                            website.currency_id.symbol + ' ' + str(point.product_id.list_price) +
+                                                            (
+                                                                ' &lt;span class=&quot;text-muted text-decoration-line-through ms-2&quot;&gt;' +
+                                                                website.currency_id.symbol + ' ' + str(point.product_id.compare_list_price) +
+                                                                '&lt;/span&gt;'
+                                                                if point.product_id.compare_list_price and point.product_id.compare_list_price > point.product_id.list_price else ''
+                                                            ) +
+                                                            '&lt;/p&gt;' +
                                                     '&lt;/div&gt;' +
                                                 '&lt;/div&gt;' +
-                                                '&lt;a href=&quot;/cart&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;lni lni-cart-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;' +
+                                                '&lt;a href=&quot;/shop/cart&quot; class=&quot;btn&quot;&gt;&lt;i class=&quot;lni lni-cart-1&quot;&gt;&lt;/i&gt;&lt;/a&gt;' +
                                             '&lt;/div&gt;' +
                                         '&lt;/div&gt;'"
                                 >
