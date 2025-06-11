@@ -247,7 +247,7 @@
             </div>
         </div>
     </template>
-    <template id="sct_product_snippet_1" name="Multi Product Snippet 1">
+    <template id="sct_product_snippet_1" name="Multi Product Snippet">
         <section class="sct_product_snippet_1" data-multi-cat-slider-type="" contentEditable="false" data-disp="multi_product">
             <div class="container">
                 <div class="row our-config-products">
@@ -825,7 +825,7 @@
     
 <!-- Fashion indtries start -->
     <!-- Multi Product slider snippet -->
-    <template id="fashion_multi_cat_custom_snippet" name="Multi Product Slider 2">
+    <template id="fashion_multi_cat_custom_snippet" name="Multi Product Slider">
         <section class="fashion_multi_category_slider" data-multi-cat-slider-type="" contentEditable="false" data-disp="multi_product">
             <div class="container">
                 <div class="row our-categories">
@@ -1190,17 +1190,20 @@
                 <t t-snippet="theme_scita.theme_scita_image_hotspot" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Image-Hotspot.svg"/>
 				
 				<!-- Deal of the Day snippets -->
-				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_1.svg"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_3.png"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_5" t-thumbnail="/theme_scita/static/src/img/snippet_icon/deal-of-the-day-5.png"/>
+                <!-- Product Snippet -->
+				<t t-snippet="theme_scita.retial_deal_of_day_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/Deal_of_the_Day_1.svg"/>
+				<t t-snippet="theme_scita.sct_product_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/furniture-feature-products.png"/>
 				<!-- Promo banners snippets -->
+				<t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>
 				<t t-snippet="theme_scita.retial_promo_banner_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/pro_banner_1.png"/>
 				<t t-snippet="theme_scita.promo_banner_snippet_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/promo-banner-3.png"/>
 				
 				<!-- Multi product tab slidres -->
-				<t t-snippet="theme_scita.fashion_multi_cat_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-ts-product.png"/>
 				<t t-snippet="theme_scita.deal_seller_multi_product_custom_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/grocery-bd-dealofday.png"/>
 				<t t-snippet="theme_scita.deal_of_day_banner_6" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-deal-of-day.png"/>
+				<t t-snippet="theme_scita.theme_scita_trending_products_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-trending-slider.png"/>
 				<!-- html builder -->
 				<!-- <t t-snippet="theme_scita.html_builder_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/multi_product.png"/> -->
 
@@ -1248,10 +1251,6 @@
 				<t t-snippet="theme_scita.fashion_trust_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust-icon-1.svg"/>
 				<t t-snippet="theme_scita.policy_trust_snippet_v_3" t-thumbnail="/theme_scita/static/src/img/snippet_icon/trust-icon-2.svg"/>
 				
-
-				<!-- Product Snippet -->
-				<t t-snippet="theme_scita.sct_product_snippet_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/furniture-feature-products.png"/>
-				<t t-snippet="theme_scita.theme_scita_trending_products_snippet" t-thumbnail="/theme_scita/static/src/img/snippet_icon/automobile-trending-slider.png"/>
 				<!-- How it work snippets -->
 
 				<t t-snippet="theme_scita.how_it_work_v_1" t-thumbnail="/theme_scita/static/src/img/snippet_icon/how-does-it-works-1.svg"/>

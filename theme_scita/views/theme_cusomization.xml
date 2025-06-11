@@ -90,11 +90,11 @@
                    data-customize-website-views="theme_scita.option_footer_3,theme_scita.scita_footer_copyright_with_payment"
                    data-customize-website-variable="'Footer-3'"
                    data-img="/theme_scita/static/src/img/snippet_icon/Footer-3.png"/>
-            <we-button title="Footer-6"
+            <we-button title="Footer-4"
                    data-customize-website-views="theme_scita.option_footer_6,theme_scita.scita_footer_copyright_with_payment"
                    data-customize-website-variable="'Footer-6'"
                    data-img="/theme_scita/static/src/img/snippet_icon/Footer-6.png"/>
-            <we-button title="Footer-27" data-customize-website-views="theme_scita.option_footer_27, theme_scita.scita_footer_copyright_with_payment" data-customize-website-variable="'Footer-27'" data-img="/theme_scita/static/src/img/snippet_icon/grocery-footer.png"/>
+            <we-button title="Footer-5" data-customize-website-views="theme_scita.option_footer_27, theme_scita.scita_footer_copyright_with_payment" data-customize-website-variable="'Footer-27'" data-img="/theme_scita/static/src/img/snippet_icon/grocery-footer.png"/>
         </xpath>
     </template>
 </odoo>

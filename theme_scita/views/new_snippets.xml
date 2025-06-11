@@ -2,7 +2,7 @@
 <odoo>
 
 
-	<template id="deal_seller_multi_product_custom_snippet" name="Multi Deal Product Slider 1">
+	<template id="deal_seller_multi_product_custom_snippet" name="Multi Deal Product Slider">
         <section class="deal_multi_product_slider" data-multi-cat-slider-type="" data-multi-deal-of-day-type="" contentEditable="false" data-disp="multi_product" data-disp1="deal_days">
             <div class="container">
                 <div class="row our-categories">
@@ -135,7 +135,7 @@
             </div>
         </div>
     </template>
-    <template id="deal_of_day_banner_6" name="Multi Deal Product Snippet 1">
+    <template id="deal_of_day_banner_6" name="Multi Deal Product Snippet">
         <section id="theme_scita_custom_deal_of_the_day" class="oe_deal_of_the_day s_theme_scita_deal_of_the_day" contentEditable="false" data-deal-snippet-id=""  data-disp="multi_product" data-disp1="deal_days">
             <div class="container">
                 <div class="block-title">
