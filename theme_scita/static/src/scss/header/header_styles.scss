@@ -176,7 +176,7 @@
         
                                     .my_cart_quantity{
                                         background: $light-color !important;
-                                        color: $black;
+                                        color: $black !important;
                                         border-color: $light-color !important;
                                     }
                                 }
@@ -630,7 +630,7 @@
         max-width: 100%;
         border-radius: 0;
         bottom: 0;
-        padding: 8px 5px;
+        padding: 10px 5px;
         .ab-icons{
             .btn-link{
                 border-bottom: 2px solid transparent;
@@ -2939,7 +2939,7 @@
                 }
             }
         }
-                .o_navbar_mobile{
+         .o_navbar_mobile{
             .offcanvas-body{
                 .navbar-nav{
                     .category_dropdown{
@@ -3110,7 +3110,7 @@
                             .o_wsale_my_cart{
                                 .my_cart_quantity{
                                 border-color: $secondary !important;
-                                top: 3px !important;
+                                top: -5px !important;
                             }
                         }
                     }
@@ -3175,8 +3175,7 @@
                         a{
                             border: 0;
                         }
-                        .my_wish_quantity{
-                        
+                        .my_wish_quantity{                        
                             border-color: $secondary !important;
                         }
                     }
@@ -3431,6 +3430,56 @@ header{
                     }
                 }
             }
+               .o_navbar_mobile{
+            .offcanvas-body{
+                .navbar-nav{
+                    .category_dropdown{
+                        .nav-link{
+                            img{
+                                filter: invert(0.7);
+                            }
+                        }
+                        .megamenu_dropdown{
+                            .ul-menu-category-list{
+                                > li{
+                                    padding: 10px 20px 0;
+                                     > a{
+                                        font-weight: 600;
+                                        display: block;
+                                    }
+                                }
+                                .ca-sub{
+                                    padding: 0;
+                                    > a{                                        
+                                        margin: 5px 20px 0;
+                                    }
+                                    .sct_submenu_level{
+                                        margin: 0;
+                                        padding: 0;
+                                        list-style-type: none;
+                                        .row{
+                                            margin: 0;
+                                        }
+                                        .sct_left_menu{
+                                            .d-flex{
+                                                .col-md-4{
+                                                    width: 50%;
+                                                    padding: 2px 5px 0;
+                                                }
+                                            }
+                                        }
+                                        .sct_right_image{
+                                            margin: 10px 0 0 ;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         }
         &.o_header_mobile{
             padding: 0 !important;
@@ -3442,6 +3491,7 @@ header{
                 .offcanvas-body{
                     padding-bottom: 78px;
                 }
+
             }
             .o_header_mobile_buttons_wrap{
                 .offcanvas-header {
@@ -3468,11 +3518,10 @@ header{
                             font-size: 9px;
                             top: 8px !important;
                             right: 5px !important;
-                            padding: 2px 3px;
+                            padding: 2px 4px;
                         }
                     }
                     .nav-link.btn{
-                        background: rgba($light-color, 0.4);
                         padding: 1px 4px !important;
                         border-radius: 0;
 
@@ -3771,26 +3820,6 @@ header{
         .o_search_result_item_detail {
             .mb-0 {
                 white-space: initial;
-            }
-        }
-    }
-}
-.o_searchbar_form {
-    .o_dropdown_menu {
-        .dropdown-item {
-            &:hover {
-                .o_search_result_item {
-                    .o_search_result_item_detail {
-                        .h6 {
-                            color: $light-color !important;
-                        }
-                    }
-                }
-            }
-        }
-        button.dropdown-item {
-            &:hover {
-                color:$light-color !important;
             }
         }
     }
@@ -4436,26 +4465,7 @@ header{
                 margin-top: 10px;
                 border-radius: 30px;
                 box-shadow: 0 0 4px 0px $black;
-                padding: 20px 0;
-                a.dropdown-item{
-                    &:hover, &:focus{
-                        background: rgba($primary, 0.2);
-                    }
-                    .o_search_result_item {
-                        .o_search_result_item_detail{
-                            *{
-                                color: $black !important;
-                            }
-                        }
-                    }
-                }
-                button.dropdown-item{
-                    background: rgba($primary, 0.2);
-                    padding: 10px 0;
-                    margin-top: 10px;
-                    font-weight: 500;
-                    text-transform: capitalize;
-                }
+                padding: 20px 0 0;
             }
          
         }

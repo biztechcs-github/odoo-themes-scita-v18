@@ -76,7 +76,6 @@
             margin-bottom: 25px; 
             li {
                 font-size: $fot-label;
-                // color: $body-color;
                 position: relative;
                 @media (max-width: 767px){
                     display: block;
@@ -188,14 +187,16 @@
         h4 {
             color: $light-color;
             margin-bottom: 25px;
+            text-transform: uppercase;
         }
         ul{
             li{
                 a {
-                    color: #d3d3d3;
+                    color: #d3d3d3 !important;
                     display: inline-block;
+                    font-weight: 400;
                     &:hover {
-                        color:$light-color;
+                        color:$light-color !important;
                     }
                 }
                 +li {
@@ -247,11 +248,11 @@
                     margin-bottom: 15px;
                 }
                 a {
-                    background: #6b6b6b;
+                    background: $white;
                     color: #141414;
                     &:hover{
-                        background:#424242;
-                        color: #6b6b6b;
+                        background:$primary;
+                        color: $white;
                     }
                 }
             }
@@ -379,7 +380,6 @@
         }
         .sct-fot-about {
             p {
-                // color: fade-out($body-color, 0.5);
                 font-weight: 600;
                 margin-bottom: 0;
             }
@@ -512,25 +512,18 @@
             .sct-middle-row {
                 padding: 30px 0;
                 h4 {
-                    // color: $light-color;
                     margin-bottom: 20px;
                     text-transform: uppercase;
                 }
-                p {
-                    // color: $light-color;
-                }
                 ul {
                     li {
-                        // color: $light-color;
                         font-size: 15px;
                         a {
-                            // color: $light-color;
                             &:hover {
                                 color:$primary;
                             }
                         }
                         span {
-                            // color: $light-color;
                         }
                         + li {
                             margin-top: 15px;
@@ -549,7 +542,6 @@
                             left: 0;
                             top: 2px;
                             font-size: 20px;
-                            // color: $light-grey-color;
                         }
                     }
                 }
@@ -587,7 +579,6 @@
 
                 }
                 .o_footer_copyright_name {
-                    // color: $light-color;
                     margin-bottom: 0;
                     font-size:$fot-label;
                     
@@ -641,7 +632,6 @@
 @if o-website-value('footer-template') == 'Footer-27' {
     footer.o_footer{
         background-color: darken($primary, 30%);
-        // background: #003B1D;
         color:rgba($light-color, 0.6);
         font-weight: normal;
 
@@ -789,12 +779,10 @@
                                     position: absolute;
                                     left: 0;
                                     top: 1px;
-                                    // width: 20px;
-                                    // height: 20px;
 
                                     .fa{
                                         font-size: 19px;
-                                        color: $secondary;
+                                        color: $white;
                                     }
                                 }
                             }
@@ -934,7 +922,6 @@
             .sct-payment-icons{
                 text-align: right;
                 @include flex;
-                // margin: 0 -5px;
                 order: 1;
                 margin-bottom: 10px;
                 @include min768{
@@ -1008,11 +995,12 @@
     }
 }
 
- footer{
+footer{
     @media (max-width:767px) {
         padding-bottom: 70px;
     }
  }
+ 
 .o_rtl{
     .js_language_selector {
         &.dropup{
@@ -1037,6 +1025,20 @@
     .sct-copyright-text {
         .o_footer_copyright_name {
             margin-right: 8px;
+        }
+    }
+}
+footer{
+    .list-inline{
+        background-color: $secondary;
+        .js_change_lang{
+            margin: 0 !important;
+            padding: 3px 10px;
+            color: $white !important;
+        }
+        .list-inline-item{
+            margin: 0;
+            color: $white;
         }
     }
 }

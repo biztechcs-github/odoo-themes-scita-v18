@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!-- List view -->
+    <record id="view_image_hotspot_list" model="ir.ui.view">
+        <field name="name">image.hotspot.list</field>
+        <field name="model">image.hotspot</field>
+        <field name="arch" type="xml">
+            <list string="Image Hotspot List View">
+                <field name="name"/>
+                <field name="hotspot_ids" widget="many2many_tags"/>
+            </list>
+        </field>
+    </record>
+    <!-- Form view -->
+   <record id="view_image_hotspot_form" model="ir.ui.view">
+    <field name="name">image.hotspot.form</field>
+    <field name="model">image.hotspot</field>
+    <field name="arch" type="xml">
+        <form string="Image Hotspot">
+            <sheet>
+                <group>
+                    <field name="name"/>
+                </group>
+                <notebook>
+                    <page string="Hotspot Points">
+                        <field name="hotspot_ids">
+                            <list editable="bottom">
+                                <field name="id" readonly="1"/>
+                                <field name="x"/>
+                                <field name="y"/>
+                                <field name="product_id"/>
+                                <field name="color" widget='color'/>
+                                <field name="open_in_new_tab"/>
+
+                            </list>
+                            <form>
+                                <group>
+                                    <field name="x"/>
+                                    <field name="y"/>
+                                    <field name="product_id" domain="[('sale_ok', '=', True)]"/>
+                                    <field name="color" widget='color'/>
+                                    <field name="open_in_new_tab"/>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+   </record>
+</odoo>

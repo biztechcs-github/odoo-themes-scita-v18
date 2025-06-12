@@ -123,6 +123,20 @@
 
     <template id="theme_product_details_category" inherit_id="website.layout" name="category">
         <xpath expr="//footer" position="before">
+            <div class="collapse" id="product_category_list">
+                <div class="ab_ctaeg_view">
+                    <h3 class="ab_category_title">Categories</h3>
+                    <span class="ab-category-close d-md-none" data-bs-target="#product_category_list" data-bs-toggle="collapse">X</span>
+                </div>
+                <div class="accordion" id="ab_cat_drop_down">
+                    <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
+                        <t t-set="cat" t-value="website.get_categories(category)"/>
+                        <t t-as="category" t-foreach="cat.get('categ')">
+                            <t t-call="theme_scita.product_details_categories"/>
+                        </t>
+                    </ul>
+                </div>
+            </div>
             <div class="ab-mob-view d-flex flex-wrap d-md-none">
                
                 <div class="ab-icons ab-category">
@@ -130,20 +144,6 @@
                         <svg xmlns="http://www.w3.org/2000/svg" id="Icon" enable-background="new 0 0 64 64" height="512" viewBox="0 0 64 64" width="512"><g><g><path d="m55.3 62h-13.6c-3.7 0-6.7-3-6.7-6.7v-18.3c0-1.1.9-2 2-2h18.3c3.7 0 6.7 3 6.7 6.7v13.6c0 3.7-3 6.7-6.7 6.7zm-16.3-23v16.3c0 1.5 1.2 2.7 2.7 2.7h13.6c1.5 0 2.7-1.2 2.7-2.7v-13.6c0-1.5-1.2-2.7-2.7-2.7z"/></g><g><path d="m22.3 62h-13.6c-3.7 0-6.7-3-6.7-6.7v-13.6c0-3.7 3-6.7 6.7-6.7h18.3c1.1 0 2 .9 2 2v18.3c0 3.7-3 6.7-6.7 6.7zm-13.6-23c-1.5 0-2.7 1.2-2.7 2.7v13.6c0 1.5 1.2 2.7 2.7 2.7h13.6c1.5 0 2.7-1.2 2.7-2.7v-16.3z"/></g><g><path d="m55.3 29h-18.3c-1.1 0-2-.9-2-2v-18.3c0-3.7 3-6.7 6.7-6.7h13.6c3.7 0 6.7 3 6.7 6.7v13.6c0 3.7-3 6.7-6.7 6.7zm-16.3-4h16.3c1.5 0 2.7-1.2 2.7-2.7v-13.6c0-1.5-1.2-2.7-2.7-2.7h-13.6c-1.5 0-2.7 1.2-2.7 2.7z"/></g><g><path d="m27 29h-18.3c-3.7 0-6.7-3-6.7-6.7v-13.6c0-3.7 3-6.7 6.7-6.7h13.6c3.7 0 6.7 3 6.7 6.7v18.3c0 1.1-.9 2-2 2zm-18.3-23c-1.5 0-2.7 1.2-2.7 2.7v13.6c0 1.5 1.2 2.7 2.7 2.7h16.3v-16.3c0-1.5-1.2-2.7-2.7-2.7z"/></g></g></svg>
                         <span class="name-text">Categories</span>
                     </button>
-                </div>
-                <div class="collapse" id="product_category_list">
-                    <div class="ab_ctaeg_view">
-                        <h3 class="ab_category_title">Categories</h3>
-                        <span class="ab-category-close d-md-none" data-bs-target="#product_category_list" data-bs-toggle="collapse">X</span>
-                    </div>
-                    <div class="accordion" id="ab_cat_drop_down">
-                        <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
-                            <t t-set="cat" t-value="website.get_categories(category)"/>
-                            <t t-as="category" t-foreach="cat.get('categ')">
-                                <t t-call="theme_scita.product_details_categories"/>
-                            </t>
-                        </ul>
-                    </div>
                 </div>
                 <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
                     <button class="btn btn-link" type="button">

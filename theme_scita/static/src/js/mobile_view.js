@@ -2,7 +2,7 @@
 
 
 $(document).ready(function () {
-    $('.ab-category').on("click",function() {
+    $('.ab-category').on("click",function(ev) {
         $('body').addClass("sct_shop_box_overlay");
     });
     $('.ab-category-close').on("click",function() {

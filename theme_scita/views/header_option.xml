@@ -2,109 +2,89 @@
 <odoo>
     <template id="scita_header_all_category_style" name="Scita All Categories Style">
         <div class="category_dropdown dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" id="allCategory" data-bs-toggle="dropdown"
-               aria-expanded="false">
-                <img src="/web/image/theme_scita.sct_menu_burger" alt="All Categories">
-                </img>
-                All Categories
-            </a>
-            <ul class="dropdown-menu megamenu_dropdown">
-                <ul class='ul-menu-category-list'>
-                    <!-- Level 1 -->
-                    <t t-as="category" t-foreach="website.get_all_categories()" t-cache="website.get_all_categories()">
-                        <li t-att-class="'ca-sub' if website.get_child_all_categories(category) else ''">
-                            <a t-att-href="'/shop/category/' + slug(category)">
-                                <span t-esc="category.name"/>
-                            </a>
-                            <!-- Level 2 -->
-                            <t t-set="child_cats" t-value="website.get_child_all_categories(category)"/>
-                            <t t-if="child_cats">
-                                <ul class='sct_submenu_level'>
-                                    <div class="row">
-                                        <div class='col-md-9 sct_left_menu'>
-                                            <div class='d-flex flex-wrap'>
-                                                <t t-as="child_cat" t-foreach="child_cats">
-                                                    <li t-att-class='"col-md-4"'>
-                                                        <a class='category_title'
-                                                           t-att-href="'/shop/category/' + slug(child_cat)">
-                                                            <t t-esc="child_cat.name"/>
-                                                        </a>
-
-                                                        <t t-set="child_of_child_cats"
-                                                           t-value="website.get_child_all_categories(child_cat)"/>
-                                                        <t t-if="child_of_child_cats">
-                                                            <t t-as="child_of_child_cat"
-                                                               t-foreach="child_of_child_cats">
-                                                                <a t-att-href="'/shop/category/' + slug(child_of_child_cat)">
-                                                                    <t t-esc="child_of_child_cat.name"/>
+                <a class="nav-link dropdown-toggle" href="#" role="button" id="allCategory" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="/web/image/theme_scita.sct_menu_burger" alt="All Categories">
+                    </img>
+                    All Categories
+                </a>
+                <ul class="dropdown-menu megamenu_dropdown">
+                    <ul class='ul-menu-category-list' >
+                        <!-- Level 1 -->
+                        <t t-as="category" t-foreach="website.get_all_categories()" t-cache="website.get_all_categories()">
+                            <li t-att-class="'ca-sub' if website.get_child_all_categories(category) else ''">
+                                <a t-att-href="'/shop/category/' + slug(category)">
+                                    <span t-esc="category.name"/>
+                                </a>
+                                <!-- Level 2 -->
+                                <t t-set="child_cats" t-value="website.get_child_all_categories(category)"/>
+                                <t t-if="child_cats">
+                                    <ul class='sct_submenu_level'>
+                                        <div class="row">
+                                            <div class='col-md-9 sct_left_menu'>
+                                                <div class='d-flex flex-wrap'>
+                                                    <t t-as="child_cat" t-foreach="child_cats">
+                                                        <li t-att-class='"col-md-4"'>
+                                                                <a class='category_title' t-att-href="'/shop/category/' + slug(child_cat)">
+                                                                    <t t-esc="child_cat.name"/>
                                                                 </a>
+                                                                
+                                                            <t t-set="child_of_child_cats" t-value="website.get_child_all_categories(child_cat)"/>
+                                                            <t t-if="child_of_child_cats">
+                                                                <t t-as="child_of_child_cat" t-foreach="child_of_child_cats">
+                                                                        <a t-att-href="'/shop/category/' + slug(child_of_child_cat)">
+                                                                            <t t-esc="child_of_child_cat.name"/>
+                                                                        </a>
+                                                                </t>
                                                             </t>
-                                                        </t>
-                                                    </li>
-                                                </t>
+                                                        </li>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                            <div class='col-md-3 sct_right_image'>
+                                                <a t-att-href="'/shop/category/%s' % slug(category)">
+                                                    <img class="img img-responsive" t-att-alt="category.name" t-att-src="website.image_url(category, 'image_1920', '300x250')" loading=""/>
+                                                </a>
                                             </div>
                                         </div>
-                                        <div class='col-md-3 sct_right_image'>
-                                            <a t-att-href="'/shop/category/%s' % slug(category)">
-                                                <img class="img img-responsive" t-att-alt="category.name"
-                                                     t-att-src="website.image_url(category, 'image_1920', '300x250')"
-                                                     loading=""/>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                </ul>
-                            </t>
-                        </li>
-                    </t>
+                                        
+                                    </ul>
+                                </t>
+                            </li>
+                        </t>
+                    </ul>
                 </ul>
-            </ul>
-        </div>
+            </div>
     </template>
 
-    <template id="scita_header_cart_link" name="Scita Header Cart" inherit_id="website_sale.header_cart_link"
-              active='False'>
+    <template id="scita_header_cart_link" name="Scita Header Cart" inherit_id="website_sale.header_cart_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
             <img class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" alt="Cart"/>
         </xpath>
     </template>
-    <template id="scita_header_wishlist_link" name="Scita Header Wishlist"
-              inherit_id="website_sale_wishlist.header_wishlist_link" active='False'>
+    <template id="scita_header_wishlist_link" name="Scita Header Wishlist" inherit_id="website_sale_wishlist.header_wishlist_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
             <img class='img img-fluid' src="/web/image/theme_scita.sct_wishlist_icon" alt="Wishlist"/>
         </xpath>
     </template>
-    <template id="scita_header_search_box_icon" name="Scita Header Search Box" inherit_id="website.header_search_box"
-              active='False'>
+    <template id="scita_header_search_box_icon" name="Scita Header Search Box" inherit_id="website.header_search_box" active='False'>
         <xpath expr='//a[@data-bs-target="#o_search_modal"]//i' position='replace'>
             <img class='img img-fluid' src="/web/image/theme_scita.sct_search_icon" alt="Wishlist"/>
         </xpath>
     </template>
-
+    
     <template id="scita_header_mobile" name="Scita Header Mobile" inherit_id="website.template_header_mobile">
         <xpath expr="//t[@t-call='website.placeholder_header_language_selector']" position="before">
-<<<<<<< Updated upstream
             <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
-=======
-<<<<<<< Updated upstream
-=======
-            <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)"/>
->>>>>>> Stashed changes
             <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
             <t t-call="website_sale.pricelist_list" t-cache="pricelist">
                 <t t-set="_classes" t-valuef="mb-3"/>
                 <t t-set="navClass" t-valuef="l"/>
             </t>
 
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
->>>>>>> Stashed changes
             <!-- Mobile header content -->
         </xpath>
     </template>
-    <template id="scita_header_all_category_mobile" name="Scita Header All Category For Mobile"
-              inherit_id="website.template_header_mobile" active='False'>
+    <template id="scita_header_all_category_mobile" name="Scita Header All Category For Mobile" inherit_id="website.template_header_mobile" active='False'>
         <xpath expr="//t[@t-call='website.navbar_nav']" position="before">
             <t t-call='theme_scita.scita_header_all_category_style'/>
         </xpath>
@@ -125,61 +105,46 @@
            t-nocache-_dropdown_menu_class="_dropdown_menu_class">
             <t t-set="is_connected" t-value="not user_id._is_public()"/>
             <li class="configuration">
-                <a class="top-link-wishlist account_icon" href="javascript:void(0);" id="user_account"
-                   title="My Profile">
+                <a class="top-link-wishlist account_icon" href="javascript:void(0);" id="user_account" title="My Profile">
                     <img class='img img-fluid' src="/web/image/theme_scita.sct_user_icon" alt="User"/>
                 </a>
                 <div class="toggle-config o_hidden">
                     <ul class="options">
-                        <t t-set="website_sale_pricelists"
-                           t-value="website.get_pricelist_available(show_visible=True)"/>
-                        <t t-set="hasPricelistDropdown"
-                           t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                        <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+                        <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
                         <t t-esc='sct_price_list'/>
                         <t t-call="website_sale.pricelist_list" t-cache="pricelist" t-if="_sct_price_list">
                             <t t-set="_classes" t-valuef="d-lg-inline mb-3"/>
                         </t>
                         <t t-call="website.placeholder_header_language_selector" t-if="_sct_lang_list">
-                            <t t-set="_btn_class"
-                               t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
+                            <t t-set="_btn_class" t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
                             <t t-set="_txt_class" t-valuef="me-auto small"/>
                             <t t-set="_flag_class" t-valuef="me-2"/>
                             <t t-set="_div_classes" t-valuef="dropup mb-3"/>
                             <t t-set="_dropdown_menu_class" t-valuef="w-100"/>
                         </t>
                         <li t-if="is_connected" class="personal-info">
-                            Welcome,
-                            <b>
-                                <t t-esc="user_id.name"/>
-                            </b>
+                            Welcome, <b><t t-esc="user_id.name"/></b>
                         </li>
                         <li t-if="is_connected" t-attf-class="#{_item_class} o_no_autohide_item">
-                            <a groups="base.group_user" href="/web" role="menuitem" class="dropdown-item ps-3"
-                               id="o_backend_user_dropdown_link">
-                                <i class="fa fa-fw fa-th me-1 small text-primary"/>
-                                Apps
+                            <a groups="base.group_user" href="/web" role="menuitem" class="dropdown-item ps-3" id="o_backend_user_dropdown_link">
+                                <i class="fa fa-fw fa-th me-1 small text-primary"/> Apps
                             </a>
                             <a href="/my/home" role="menuitem" class="dropdown-item ps-3">
-                                <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/>
-                                My Account
+                                <i class="fa fa-fw fa-id-card-o me-1 small text-primary"/> My Account
                             </a>
                             <div id="o_logout_divider" class="dropdown-divider"/>
-                            <a t-attf-href="/web/session/logout?redirect=/" role="menuitem" id="o_logout"
-                               class="dropdown-item ps-3">
-                                <i class="fa fa-fw fa-sign-out me-1 small text-primary"/>
-                                Logout
+                            <a t-attf-href="/web/session/logout?redirect=/" role="menuitem" id="o_logout" class="dropdown-item ps-3">
+                                <i class="fa fa-fw fa-sign-out me-1 small text-primary"/> Logout
                             </a>
                         </li>
                         <t t-call="portal.placeholder_user_sign_in">
                             <t t-set="_item_class" t-valuef="position-relative"/>
-                            <t t-set="_link_class"
-                               t-valuef="nav-link btn-sm fw-bold text-uppercase o_nav-link_secondary"/>
+                            <t t-set="_link_class" t-valuef="nav-link btn-sm fw-bold text-uppercase o_nav-link_secondary"/>
                         </t>
                         <t t-if="request.env['res.users']._get_signup_invitation_scope() == 'b2c'">
                             <li t-if="website.user_id == user_id" class='position-relative o_no_autohide_item'>
-                                <a href="/web/signup"
-                                   class="nav-link btn-sm fw-bold text-uppercase o_nav-link_secondary">Register
-                                </a>
+                                <a href="/web/signup" class="nav-link btn-sm fw-bold text-uppercase o_nav-link_secondary">Register</a>
                             </li>
                         </t>
                     </ul>
@@ -187,34 +152,7 @@
             </li>
         </t>
     </template>
-
-    <template id="header_cart_link_sidebar" name="Header Cart Link">
-        <t t-nocache="The number of products is dynamic, this rendering cannot be cached."
-           t-nocache-_icon="_icon"
-           t-nocache-_text="_text"
-           t-nocache-_badge="_badge"
-           t-nocache-_badge_class="_badge_class"
-           t-nocache-_icon_wrap_class="_icon_wrap_class"
-           t-nocache-_text_class="_text_class"
-           t-nocache-_item_class="_item_class"
-           t-nocache-_link_class="_link_class">
-            <t t-set="website_sale_cart_quantity" t-value="request.session['website_sale_cart_quantity'] if 'website_sale_cart_quantity' in request.session else website.sale_get_order().cart_quantity or 0"/>
-            <t t-set="show_cart" t-value="website.has_ecommerce_access()"/>
-            <t t-if="website.is_view_active('website_sale.header_hide_empty_cart_link')">
-                <t t-set="show_cart" t-value="website_sale_cart_quantity" />
-            </t>
-            <li t-attf-class="#{_item_class} divider d-none"/> <!-- Make sure the cart and related menus are not folded (see autohideMenu) -->
-            <li t-attf-class="nav-items-icon o_wsale_my_cart #{not show_cart and 'd-none'} #{_item_class}">
-                <button type="button" class="nav-toggle-btn account_icon btn p-1 rounded-circle position-relative">
-                    <!-- <i t-if="_icon" class="lni lni-cart-1"></i> -->
-                    <img t-if="_icon" class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" alt="Cart"/>
-                    <sup t-attf-class="my_cart_quantity badge position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill bg-primary #{_badge_class} #{'d-none' if (website_sale_cart_quantity == 0) else ''}" t-esc="website_sale_cart_quantity" t-att-data-order-id="request.session.get('sale_order_id', '')"/>
-                </button>
-            </li>
-        </t>
-    </template>
-
-    <template active='false' id="option_header_1" inherit_id="website.layout" name="Header option 1">
+    <template active="False" id="option_header_1" inherit_id="website.layout" name="Header option 1">
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
@@ -272,17 +210,15 @@
                         </t>
                         <div class="menu_right">
                             <ul class="list-inline">
-                                <t t-call="theme_scita.header_cart_link_sidebar">
+                                <t t-call="website_sale.header_cart_link">
                                     <t t-set="_icon" t-value="True"/>
                                     <t t-set="_item_class" t-value="''"/>
                                     <t t-set="_link_class" t-value="'top-link-checkout'"/>
                                 </t>
-                                <t t-call="website_sale_wishlist.header_wishlist_link">
+                                 <t t-call="website_sale_wishlist.header_wishlist_link">
                                     <t t-set="_icon" t-value="True"/>
-                                    <t t-set="_link_class"
-                                       t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
-                                    <t t-set="_badge_class"
-                                       t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                                    <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
+                                    <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                                 </t>
                                 <t t-call="website.placeholder_header_search_box">
                                     <t t-set="_layout" t-valuef="modal"/>
@@ -295,8 +231,7 @@
                                     <t t-set="_sct_lang_list" t-value="true"/>
                                     <t t-set="_icon" t-value="true"/>
                                     <t t-set="_icon_class" t-valuef="fa-stack"/>
-                                    <t t-set="_link_class"
-                                       t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
+                                    <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                                 </t>
                             </ul>
                         </div>
@@ -304,48 +239,6 @@
                 </div>
             </t>
             <t t-call="website.template_header_mobile"/>
-        </xpath>
-        <xpath expr="//header" position="after">
-            <t t-call="theme_scita.cart_sidebar_template"/>
-        </xpath>
-    </template>
-
-    <template active="False" id="option_header_mobile_2" inherit_id="website.template_header_mobile" name='Header mobile option 2'>
-        <xpath expr="//ul[hasclass('o_header_mobile_buttons_wrap')]/.." position="before">
-            <div class="oe_structure top-header">
-                <div class="container">
-                    <div class="row align-items-center justify-content-between">
-                        <div class="col-lg-6 col-md-6 sct_left_side">
-                            <div class="h-left">
-                                <ul class="head-cinfo">
-                                    <li t-if="res_company.phone" t-ignore="true">
-                                        <a t-attf-href="tel:#{res_company.phone}">
-                                            <i class="fa fa-phone"/>
-                                            <span t-field="res_company.phone"/>
-                                        </a>
-                                    </li>
-                                    <li t-if="res_company.email" t-ignore="true">
-                                        <a t-attf-href="mailto:#{res_company.email}">
-                                            <i class="fa fa-envelope-o"/>
-                                            <span t-field="res_company.email"/>
-                                        </a>
-                                    </li>
-                                </ul>
-<<<<<<< HEAD
-=======
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 sct-top-right-side">
-                            <t t-call="website.placeholder_header_search_box">
-                                <t t-set="_input_classes" t-valuef=""/>
-                                <t t-set="_submit_classes" t-valuef=""/>
-                                <t t-set="_button_classes" t-valuef=""/>
-                            </t>
-                            <t t-call="website.placeholder_header_social_links"/>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </xpath>
     </template>
 
@@ -384,110 +277,17 @@
                                     <t t-set="_button_classes" t-valuef=""/>
                                 </t>
                                 <t t-call="website.placeholder_header_social_links"/>
->>>>>>> eed40b3651918a10c31cf0b4fc424cada5ba8429
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 sct-top-right-side">
-                            <t t-call="website.placeholder_header_search_box">
-                                <t t-set="_input_classes" t-valuef=""/>
-                                <t t-set="_submit_classes" t-valuef=""/>
-                                <t t-set="_button_classes" t-valuef=""/>
-                            </t>
-                            <t t-call="website.placeholder_header_social_links"/>
                         </div>
                     </div>
                 </div>
-            </div>
-        </xpath>
-    </template>
 
-    <template id="product_details_categories_ani" name="cat list">
-        <li class="view-category-item">
-            <i class="fa fa-plus" data-bs-toggle="collapse" t-att-data-bs-target="'#collapse_category'+str(category.id)" t-if="category.child_id"/>
-            <a t-att-href="'/shop/category/%s' % slug(category)">
-                <span class="ab_categ_name" t-field="category.name"/>
-            </a>
-            <div class="collapse" t-att-id="'collapse_category'+str(category.id)" t-if="category.child_id">
-                <ul class="nav nav-pills flex-column nav-hierarchy" t-if="category.child_id">
-                    <t t-as="category" t-foreach="category.child_id">
-                        <t t-call="theme_scita.product_details_categories_ani"/>
+                <div id="o_main_nav" class="container d-flex justify-content-between align-items-center flex-nowrap">
+                    <t t-call="website.placeholder_header_brand">
+                        <t t-set="_link_class" t-valuef="me-4"/>
                     </t>
-                </ul>
-            </div>
-        </li>
-    </template>
-    <template active="False" id="option_header_2" inherit_id="website.layout" name='Header option 2'>
-        <xpath expr="//div[contains(@class, 'o_footer_copyright')]" position="after">
-            <div class="collapse" id="product_category_list">
-                <div class="ab_ctaeg_view">
-                    <h3 class="ab_category_title">Categories</h3>
-                    <span class="ab-category-close d-md-none" data-bs-target="#product_category_list" data-bs-toggle="collapse">X</span>
-                </div>
-                <div class="accordion" id="ab_cat_drop_down">
-                    <ul class="nav nav-pills nav-stacked view-category-list" id="o_shop_collapse_category">
-                        <t t-set="cat" t-value="website.get_categories(category)"/>
-                        <t t-as="category" t-foreach="cat.get('categ')">
-                            <t t-call="theme_scita.product_details_categories_ani"/>
-                        </t>
-                    </ul>
-                </div>
-            </div>
-            <div class="ab-mob-view d-flex flex-wrap d-md-none">
-
-                <div t-att-class="'ab-icons ab-home active' if request.httprequest.path == '/' else 'ab-icons ab-home' ">
-                    <button class="btn btn-link" type="button">
-                        <a class="redirect-home" href="/">
-                            <span class="fa fa-home"/>
-                            <span class="name-text">Home</span>
-                        </a>
-                    </button>
-                </div>
-                <div class="ab-icons ab-category">
-                    <button class="btn btn-link" data-bs-target="#product_category_list" data-bs-toggle="collapse" type="button">
-                        <span class="fa fa-th-large"/>
-                        <span class="name-text">Categories</span>
-                    </button>
-                </div>
-                <div t-att-class="'ab-icons ab-cart active' if request.httprequest.path == '/shop/cart' else 'ab-icons ab-cart' ">
-                    <button class="btn btn-link" type="button">
-                        <a class="redirect-cart-page" href="/shop/cart">
-                            <span class="fa fa-shopping-bag"/>
-                            <span class="name-text">Bag</span>
-                        </a>
-                    </button>
-                </div>
-                <div t-att-class="'ab-icons ab-help active' if request.httprequest.path == '/help' else 'ab-icons ab-help' ">
-                    <button class="btn btn-link" type="button">
-                        <a class="redirect-help" href="/help">
-                            <span class="fa fa-question-circle"/>
-                            <span class="name-text">Help</span>
-                        </a>
-                    </button>
-                </div>
-                <div t-att-class="'ab-icons ab-myaccount active' if request.httprequest.path == '/my/home' or request.httprequest.path == '/web/login'  else 'ab-icons ab-myaccount' ">
-                    <t t-if="not user_id._is_public()">
-                        <button class="btn btn-link" type="button">
-                            <a class="redirect-my-account" href="/my/home">
-                                <span class="fa fa-user-circle"/>
-                                <span class="name-text">Account</span>
-                            </a>
-                        </button>
-                    </t>
-<<<<<<< HEAD
-                    <t t-else="">
-                        <button class="btn btn-link d-md-none" type="button">
-                            <a class="redirect-my-account" href="/web/login">
-                                <span class="fa fa-user-circle"/>
-                                <span class="name-text">My Account</span>
-                            </a>
-                        </button>
-                    </t>
-                </div>
-            </div>
-=======
                     <t t-call="website.navbar_nav">
-                        <t t-set="_nav_class"
-                           t-valuef="me-auto scita_top_menu flex-row flex-grow-1 justify-content-center"/>
+                        <t t-set="_nav_class" t-valuef="me-auto scita_top_menu flex-row flex-grow-1 justify-content-center"/>
                         <t t-foreach="website.menu_id.child_id" t-as="submenu">
                             <t t-call="website.submenu">
                                 <t t-set="item_class" t-valuef="nav-item"/>
@@ -502,17 +302,14 @@
                                 <t t-set="_sct_lang_list" t-value="true"/>
                                 <t t-set="_icon" t-value="true"/>
                                 <t t-set="_icon_class" t-valuef="fa-stack"/>
-                                <t t-set="_link_class"
-                                   t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
+                                <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                             </t>
                             <t t-call="website_sale_wishlist.header_wishlist_link">
                                 <t t-set="_icon" t-value="True"/>
-                                <t t-set="_link_class"
-                                   t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
-                                <t t-set="_badge_class"
-                                   t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                                <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
+                                <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                             </t>
-                            <t t-call="theme_scita.header_cart_link_sidebar">
+                            <t t-call="website_sale.header_cart_link">
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_item_class" t-value="''"/>
                                 <t t-set="_link_class" t-value="'top-link-checkout'"/>
@@ -522,13 +319,9 @@
                 </div>
             </t>
             <t t-call="website.template_header_mobile"/>
->>>>>>> fc88e2fde35f797445c1396e421593cdbfb8e262
         </xpath>
-        <xpath expr="//header" position="after">
-            <t t-call="theme_scita.cart_sidebar_template"/>
-        </xpath>
+        
     </template>
-
     <template active="False" id="option_header_3" inherit_id="website.layout" name='Header option 3'>
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
@@ -544,18 +337,15 @@
                                 <ul class="d-flex align-items-center justify-content-md-end">
                                     <t t-call="website.placeholder_header_social_links"/>
                                     <li>
-                                        <t t-set="website_sale_pricelists"
-                                           t-value="website.get_pricelist_available(show_visible=True)"/>
-                                        <t t-set="hasPricelistDropdown"
-                                           t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                        <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+                                        <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
                                         <t t-call="website_sale.pricelist_list" t-cache="pricelist">
                                             <t t-set="navClass" t-valuef="l"/>
                                             <t t-set="_classes" t-valuef="d-lg-inline mb-3"/>
                                         </t>
                                     </li>
                                     <t t-call="website.placeholder_header_language_selector">
-                                        <t t-set="_btn_class"
-                                           t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
+                                        <t t-set="_btn_class" t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
                                         <t t-set="_txt_class" t-valuef="me-auto small"/>
                                         <t t-set="_flag_class" t-valuef="me-2"/>
                                         <t t-set="_div_classes" t-valuef="dropup mb-3"/>
@@ -563,8 +353,7 @@
                                     </t>
                                     <li>
                                         <a href="/my" title="Track Your Order">
-                                            <img src="/web/image/theme_scita.sct_track_order" alt="Track Your Order"/>
-                                            Track Your Order
+                                            <img src="/web/image/theme_scita.sct_track_order" alt="Track Your Order"/>Track Your Order
                                         </a>
                                     </li>
                                 </ul>
@@ -590,32 +379,21 @@
                                 <div class="h-cart d-flex align-items-center justify-content-end">
                                     <div class="delivery_details_header">
                                         <div class="delivery_icon">
-                                            <img class='img img-fluid' src="/web/image/theme_scita.sct_location_icon"
-                                                 alt="Location"/>
+                                            <img class='img img-fluid' src="/web/image/theme_scita.sct_location_icon" alt="Location"/>
                                         </div>
-                                        <t t-set="address_details"
-                                           t-value="website.get_user_address(request.env.user)"/>
-                                        <div class="delivery_name"
-                                             t-if="not request.env.user._is_public() and address_details['city']">
-                                            <span class='user_name'>Delivery to<t t-esc="request.env.user.name"/>,
-                                            </span>
+                                        <t t-set="address_details" t-value="website.get_user_address(request.env.user)"/>
+                                        <div class="delivery_name" t-if="not request.env.user._is_public() and address_details['city']">
+                                            <span class='user_name'>Delivery to <t t-esc="request.env.user.name"/>,</span>
                                             <div class="contact_address">
                                                 <!-- <span t-if="address_details['street']"  t-esc="address_details['street']"/><span t-if="address_details['street']" class='comma'>,</span>
                                                 <span t-if="address_details['street2']"  t-esc="address_details['street2']"/><span t-if="address_details['street2']" class='comma'>,</span> -->
-                                                <span t-if="address_details['city']" t-esc="address_details['city']"/>
-                                                <span t-if="address_details['city']" class='comma'></span>
-                                                <!--  <span t-if="address_details['state_id']"  t-esc="address_details['state_id']"/><span t-if="address_details['state_id']" class='comma'>,</span>
-                                                 <span t-if="address_details['country_id']" t-esc="address_details['country_id']"/> -->
-                                                <span t-if="address_details['zip']">-
-                                                    <t t-esc="address_details['zip']"/>
-                                                </span>
+                                                <span t-if="address_details['city']"  t-esc="address_details['city']"/><span t-if="address_details['city']" class='comma'></span>
+                                               <!--  <span t-if="address_details['state_id']"  t-esc="address_details['state_id']"/><span t-if="address_details['state_id']" class='comma'>,</span>
+                                                <span t-if="address_details['country_id']" t-esc="address_details['country_id']"/> --><span t-if="address_details['zip']">-<t t-esc="address_details['zip']"/></span>
                                             </div>
                                         </div>
-                                        <a class="delivery_name"
-                                           t-elif="not request.env.user._is_public() and not request.env.user.street"
-                                           href="/my/account">
-                                            <span class='user_name'>Hello<t t-esc="request.env.user.name"/>,
-                                            </span>
+                                        <a class="delivery_name" t-elif="not request.env.user._is_public() and not request.env.user.street" href="/my/account">
+                                            <span class='user_name'>Hello <t t-esc="request.env.user.name"/>,</span>
                                             <div class="contact_address">Select your address</div>
                                         </a>
                                         <a class="delivery_name" t-else="" href="/web/login">
@@ -629,24 +407,19 @@
                                             <t t-set="_sct_lang_list" t-value="false"/>
                                             <t t-set="_icon" t-value="true"/>
                                             <t t-set="_icon_class" t-valuef="fa-stack"/>
-                                            <t t-set="_link_class"
-                                               t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
+                                            <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                                         </t>
-                                        <t t-call="theme_scita.header_cart_link_sidebar">
+                                        <t t-call="website_sale.header_cart_link">
                                             <t t-set="_icon" t-value="True"/>
                                             <t t-set="_item_class" t-value="''"/>
-                                            <t t-set="_link_class"
-                                               t-value="'top-link-checkout o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
-                                            <t t-set="_badge_class"
-                                               t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                                            <t t-set="_link_class" t-value="'top-link-checkout o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
+                                            <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
 
                                         </t>
-                                        <t t-call="website_sale_wishlist.header_wishlist_link">
+                                         <t t-call="website_sale_wishlist.header_wishlist_link">
                                             <t t-set="_icon" t-value="True"/>
-                                            <t t-set="_link_class"
-                                               t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
-                                            <t t-set="_badge_class"
-                                               t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                                            <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
+                                            <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                                         </t>
                                     </ul>
                                 </div>
@@ -679,9 +452,6 @@
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
-        <xpath expr="//header" position="after">
-            <t t-call="theme_scita.cart_sidebar_template"/>
-        </xpath>
     </template>
 
 
@@ -697,8 +467,7 @@
                                 <t t-call="website.placeholder_header_text_element">
                                     <t t-set="_txt_elt_content" t-valuef="list"/>
                                     <t t-set="_div_class" t-valuef="mx-auto"/>
-                                    <t t-set="_item_class"
-                                       t-valuef="flex-basis-0 flex-grow-1 flex-shrink-0 sct_text_block"/>
+                                    <t t-set="_item_class" t-valuef="flex-basis-0 flex-grow-1 flex-shrink-0 sct_text_block"/>
                                 </t>
                             </div>
                             <div class="col-md-4 text-center">
@@ -707,18 +476,15 @@
                             <div class="col-md-4">
                                 <ul class="d-flex align-items-center justify-content-md-end">
                                     <li>
-                                        <t t-set="website_sale_pricelists"
-                                           t-value="website.get_pricelist_available(show_visible=True)"/>
-                                        <t t-set="hasPricelistDropdown"
-                                           t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                        <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+                                        <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
                                         <t t-call="website_sale.pricelist_list" t-cache="pricelist">
                                             <t t-set="navClass" t-valuef="l"/>
                                             <t t-set="_classes" t-valuef="d-lg-inline mb-3"/>
                                         </t>
                                     </li>
                                     <t t-call="website.placeholder_header_language_selector">
-                                        <t t-set="_btn_class"
-                                           t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
+                                        <t t-set="_btn_class" t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
                                         <t t-set="_txt_class" t-valuef="me-auto small"/>
                                         <t t-set="_flag_class" t-valuef="me-2"/>
                                         <t t-set="_div_classes" t-valuef="dropup mb-3"/>
@@ -752,20 +518,17 @@
                                             <t t-set="_sct_lang_list" t-value="false"/>
                                             <t t-set="_icon" t-value="true"/>
                                             <t t-set="_icon_class" t-valuef="fa-stack"/>
-                                            <t t-set="_link_class"
-                                               t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
+                                            <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                                         </t>
-                                        <t t-call="theme_scita.header_cart_link_sidebar">
+                                        <t t-call="website_sale.header_cart_link">
                                             <t t-set="_icon" t-value="True"/>
                                             <t t-set="_item_class" t-value="''"/>
                                             <t t-set="_link_class" t-value="'top-link-checkout'"/>
                                         </t>
-                                        <t t-call="website_sale_wishlist.header_wishlist_link">
+                                         <t t-call="website_sale_wishlist.header_wishlist_link">
                                             <t t-set="_icon" t-value="True"/>
-                                            <t t-set="_link_class"
-                                               t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
-                                            <t t-set="_badge_class"
-                                               t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                                            <t t-set="_link_class" t-value="'o_navlink_background_hover btn position-relative rounded-pill p-1 text-reset'"/>
+                                            <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                                         </t>
                                     </ul>
                                 </div>
@@ -800,11 +563,8 @@
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
-        <xpath expr="//header" position="after">
-            <t t-call="theme_scita.cart_sidebar_template"/>
-        </xpath>
     </template>
-    <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
+       <template active="False" id="option_header_5" inherit_id="website.layout" name='Header option 5'>
         <xpath expr="//header//nav" position="replace">
             <t t-call="website.navbar">
                 <t t-set="_navbar_classes" t-valuef="d-none d-lg-block"/>
@@ -814,10 +574,10 @@
                         <div class="row align-items-center justify-content-between belt_inner">
                             <div class="col-md-6">
                                 <t t-call="website.placeholder_header_text_element">
-                                    <t t-set="_txt_elt_content" t-valuef="list"/>
-                                    <t t-set="_div_class" t-valuef="mx-auto"/>
+                                    <t t-set="_txt_elt_content" t-valuef="list" />
+                                    <t t-set="_div_class" t-valuef="mx-auto" />
                                     <t t-set="_item_class"
-                                       t-valuef="flex-basis-0 flex-grow-1 flex-shrink-0 sct_text_block"/>
+                                        t-valuef="flex-basis-0 flex-grow-1 flex-shrink-0 sct_text_block" />
                                 </t>
                             </div>
 
@@ -825,42 +585,39 @@
                                 <ul class="d-flex align-items-center justify-content-md-end social-media-div">
 
 
-                                    <t t-call="website.placeholder_header_social_links"/>
+                                    <t t-call="website.placeholder_header_social_links" />
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-
+              
                 <div id="o_main_nav" class="container d-flex justify-content-between align-items-center">
                     <ul class="col-lg-4 header_search_modal">
                         <t t-call="website.placeholder_header_search_box">
-                            <t t-set="_layout" t-valuef="modal"/>
-                            <t t-set="_input_classes" t-valuef="border border-end-0 p-3"/>
-                            <t t-set="_submit_classes" t-valuef="border border-start-0 px-4 bg-o-color-4"/>
-                            <t t-set="_button_classes" t-valuef="o_navlink_background text-reset p-0"/>
+                                    <t t-set="_layout" t-valuef="modal"/>
+                                    <t t-set="_input_classes" t-valuef="border border-end-0 p-3"/>
+                                    <t t-set="_submit_classes" t-valuef="border border-start-0 px-4 bg-o-color-4"/>
+                                    <t t-set="_button_classes" t-valuef="o_navlink_background text-reset p-0"/>
                         </t>
                     </ul>
-                    <t t-call="website.placeholder_header_brand" t-valuef="m-auto">
+                     <t t-call="website.placeholder_header_brand" t-valuef="m-auto">
                         <t t-set="_link_class" t-valuef="m-0 col-lg-4"/>
                     </t>
                     <div class="col-lg-4 menu_right justify-content-lg-end">
                         <ul class="currency-lang-ul d-flex align-items-center">
                             <t t-call="website.placeholder_header_language_selector">
-                                <t t-set="_btn_class"
-                                   t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
+                                <t t-set="_btn_class" t-valuef="btn-outline-secondary d-flex align-items-center w-100 px-2"/>
                                 <t t-set="_txt_class" t-valuef="me-auto small"/>
                                 <t t-set="_flag_class" t-valuef="me-2"/>
                                 <t t-set="_div_classes" t-valuef="dropup"/>
                                 <t t-set="_dropdown_menu_class" t-valuef="w-100"/>
                             </t>
-                            <t t-set="website_sale_pricelists"
-                               t-value="website.get_pricelist_available(show_visible=True)"/>
-                            <t t-set="hasPricelistDropdown"
-                               t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
-                            <t t-call="website_sale.pricelist_list" t-cache="pricelist">
-                                <!-- <t t-set="_classes" t-valuef="d-lg-inline mb-3"/> -->
-                            </t>
+                            <t t-set="website_sale_pricelists" t-value="website.get_pricelist_available(show_visible=True)" />
+                                <t t-set="hasPricelistDropdown" t-value="website_sale_pricelists and len(website_sale_pricelists)&gt;1"/>
+                                <t t-call="website_sale.pricelist_list" t-cache="pricelist">
+                                    <!-- <t t-set="_classes" t-valuef="d-lg-inline mb-3"/> -->
+                                </t>
                         </ul>
                         <ul class="list-inline d-flex justify-content-end align-items-center sct-cart-list">
                             <t t-call="theme_scita.scita_user_dropdown">
@@ -868,16 +625,14 @@
                                 <t t-set="_sct_lang_list" t-value="false"/>
                                 <t t-set="_icon" t-value="true"/>
                                 <t t-set="_icon_class" t-valuef="fa-stack"/>
-                                <t t-set="_link_class"
-                                   t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
+                                <t t-set="_link_class" t-valuef="btn d-flex align-items-center rounded-circle p-1 pe-3 text-reset o_navlink_background"/>
                             </t>
                             <t t-call="website_sale_wishlist.header_wishlist_link">
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_link_class" t-value="'btn position-relative rounded-pill p-1 text-reset'"/>
-                                <t t-set="_badge_class"
-                                   t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
+                                <t t-set="_badge_class" t-value="'position-absolute top-0 end-0 mt-n1 me-n1 rounded-pill'"/>
                             </t>
-                            <t t-call="theme_scita.header_cart_link_sidebar">
+                            <t t-call="website_sale.header_cart_link">
                                 <t t-set="_icon" t-value="True"/>
                                 <t t-set="_item_class" t-value="''"/>
                                 <t t-set="_link_class" t-value="'top-link-checkout'"/>
@@ -897,200 +652,21 @@
                                     </t>
                                 </t>
                             </t>
-
+                            
                         </div>
                     </div>
                 </div>
             </t>
             <t t-call="website.template_header_mobile"/>
         </xpath>
-        <xpath expr="//header" position="after">
-            <t t-call="theme_scita.cart_sidebar_template"/>
-        </xpath>
     </template>
-    <template id="cart_sidebar_template" name="Custom Cart Sidebar">
-        <div class="cart_details">
-            <div id="cstm-nav-menu-toggle" class="scita-side-menu css_editable_mode_hidden o_hidden">
-                <div class="my-cart">
-                    <div class="cart-header">
-                        <div class="cart-title">
-                            <span id="mycart_collapse" data-target="#show-cart">
-                                My Cart
-                                <span class="theme_scita_cart_quantity my_cart_quantity"
-                                    t-esc="website.sale_get_order() and website.sale_get_order().cart_quantity or 0"/>
-                            </span>
-                        </div>
-                        <span id="close_cstm_nav_toggle">
-                            <i class="lni lni-xmark"></i>
-                        </span>
-                    </div>
-                    <!-- Cart Toggle with Quantity -->
-                    <!-- Cart Detail (Collapsible) -->
-                    <div id="show-cart" class="cart-content oe_website_sale">
-                        <div class="cart-list-wrap" t-if="website.sale_get_order() and website.sale_get_order().website_order_line">
-                            <div class="cart-item-list">
-                                <!-- Cart Lines -->
-                                <t t-foreach="website.sale_get_order() and website.sale_get_order().website_order_line" t-as="line">
-                                    <div class="cart-item" t-att-id="'scita_sidebar_line_'+ str(line.id)">
-                                        <div class="scita_cart_lines oe_website_sale_cart">
-                                        <!-- Product Image -->
-                                            <div class="cart_item_image">
-                                                <span t-field="line.product_id.image_128"
-                                                    t-options="{'widget': 'image', 'qweb_img_responsive': False, 'class': 'img-fluid'}"/>
-                                            </div>
-                                            <div class="cart_item_details">
-                                                <!-- Product Name -->
-                                                <div class="cart_item_name">
-                                                    <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                                        <t t-esc="line.product_id.name"/>
-                                                    </a>
-                                                </div>
-
-                                                <!-- Quantity & Unit Price -->
-                                                <p class="cart_qty_amt">
-                                                    <span class="sc-product-quantity theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
-                                                    <span t-esc="line.price_unit"
-                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                </p>
-
-                                                <!-- Subtotal -->
-                                                <p class="sc-product-subtotal cart_line_subtotal">
-                                                    <span t-esc="line.price_subtotal"
-                                                        t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
-                                                </p>
-                                                <!-- Quantity Controls -->
-                                                <div class="input-group dropdown-plus-out">
-                                                    <div class="css_quantity input-group input-group-sm">
-                                                        <t t-if="not line._is_not_sellable_line()">
-                                                            <!-- Minus -->
-                                                            <a href="#" class="btn btn-link js_add_cart_json" aria-label="Remove one" title="Remove one">
-                                                                <i class="fa fa-minus"/>
-                                                            </a>
-                                                            <!-- Quantity input -->
-                                                            <input type="text"
-                                                                class="js_quantity form-control quantity"
-                                                                t-att-data-line-id="line.id"
-                                                                t-att-data-product-id="line.product_id.id"
-                                                                t-att-value="int(line.product_uom_qty) == line.product_uom_qty and int(line.product_uom_qty) or line.product_uom_qty" />
-                                                            <!-- Plus -->
-                                                            <a href="#" class="btn btn-link js_add_cart_json" aria-label="Add one" title="Add one">
-                                                                <i class="fa fa-plus"/>
-                                                            </a>
-                                                        </t>
-                                                        <t t-else="">
-                                                            <span class="text-muted w-100" t-out="int(line.product_uom_qty)"/>
-                                                            <input type="hidden"
-                                                                class="js_quantity form-control quantity"
-                                                                t-att-data-line-id="line.id"
-                                                                t-att-data-product-id="line.product_id.id"
-                                                                t-att-value="line.product_uom_qty" />
-                                                        </t>
-                                                    </div>
-
-                                                    <!-- Remove Line Button -->
-                                                    <button class="sc-remove-line btn btn-light"
-                                                            title="remove"
-                                                            t-att-data-line-id="line.id"
-                                                            t-att-data-product-id="line.product_id.id">
-                                                        <i class="fa fa-trash-o"/>
-                                                    </button>
-                                                </div>
-
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </t>
-                            </div>
-
-
-                                <!-- Cart Total and Buttons -->
-                            <div class="cart-footer">
-                                <div class="cart_total_div">
-                                    <div class="cart-count-wrap">
-                                        <p class="total-text">Subtotal</p>
-                                        <span t-field="website.sale_get_order().amount_untaxed" class="sc-cart-subtotal monetary_field" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
-                                    </div>
-                                    <div class="cart-count-wrap">
-                                        <p class="total-text">Taxes</p>
-                                        <span t-field="website.sale_get_order().amount_tax" class="sc-cart-tax monetary_field mb-0" style="white-space: nowrap;" t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
-                                    </div>
-                                    <div class="total-wrap">
-                                                <p class="total-text">Total</p>
-                                                <p t-field="website.sale_get_order().amount_total"
-                                                    class="sc-cart-total monetary_field mb-0 fw-bold"
-                                                    style="white-space: nowrap;"
-                                                    t-options="{'widget': 'monetary', 'display_currency': website.sale_get_order().currency_id}"/>
-                                            </div>
-                                    <div class="button-box">
-                                        <a class="view-all btn btn-primary" href="/shop/cart">View all</a>
-                                        <a class="proceed btn btn-primary" href="/shop/checkout">
-                                            Checkout
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="cart-address-box">
-
-                                    <div class="company_address">
-                                        <p t-field="res_company.partner_id" t-options='{
-                                            "widget": "contact",
-                                            "fields": ["address"]}'/>
-                                    </div>
-
-                                    <div class="social-link">
-                                        <ul>
-                                            <li t-if="website.social_facebook">
-                                                <a t-att-href="website.social_facebook">
-                                                    <i class="fa fa-facebook"/>
-                                                </a>
-                                            </li>
-                                            <li t-if="website.social_twitter">
-                                                <a t-att-href="website.social_twitter">
-                                                    <i class="fa fa-twitter"/>
-                                                </a>
-                                            </li>
-                                            <li t-if="website.social_linkedin">
-                                                <a t-att-href="website.social_linkedin">
-                                                    <i class="fa fa-linkedin"/>
-                                                </a>
-                                            </li>
-                                            <li t-if="website.social_youtube">
-                                                <a t-att-href="website.social_youtube">
-                                                    <i class="fa fa-youtube-play"/>
-                                                </a>
-                                            </li>
-                                            <li t-if="website.social_instagram">
-                                                <a t-att-href="website.social_instagram">
-                                                    <i class="fa fa-instagram"/>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                         <t t-else="">
-                                <div class="empty-cart-message text-center p-4">
-                                    <i class="fa fa-shopping-cart fa-3x mb-3 text-muted"/>
-                                    <h5>Your cart is empty</h5>
-                                    <p>Looks like you haven’t added anything to your cart yet.</p>
-                                    <a href="/shop" class="btn btn-primary mt-2">Start Shopping</a>
-                                </div>
-                            </t>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </template>
-    <template id="search_btn_primary_class_remove" inherit_id="website.website_search_box">
+    <template  id="search_btn_primary_class_remove" inherit_id="website.website_search_box">
         <xpath expr="//button" position="attributes">
             <attribute name='class'>btn oe_search_button</attribute>
         </xpath>
     </template>
     <template id="wishlist_products">
-        <div t-if="not wishes">Your wishlist is empty!</div>
+        <div t-if="not wishes"> Your wishlist is empty! </div>
         <div t-if="wishes" id="wish_products" class="oe_website_header">
             <div class="wishlist-section">
                 <table class="table" id="o_wishlist_table">
@@ -1099,28 +675,16 @@
                             <tr t-att-data-wish-id='wish.id' t-att-data-product-id='wish.product_id.id'>
                                 <td class='td-img'>
                                     <a t-att-href="wish.product_id.website_url">
-                                        <img t-attf-src="/web/image/product.product/#{wish.product_id.id}/image_128"
-                                             class="img img-fluid" style="margin:auto;" alt="Product image"/>
+                                        <img t-attf-src="/web/image/product.product/#{wish.product_id.id}/image_128" class="img img-fluid" style="margin:auto;" alt="Product image"/>
                                     </a>
                                 </td>
                                 <td class='text-left'>
-                                    <strong>
-                                        <a t-att-href="wish.product_id.website_url">
-                                            <t t-esc="wish.product_id.display_name"/>
-                                        </a>
-                                    </strong>
-                                    <button type="button" class="btn btn-link o_wish_rm no-decoration">
-                                        <small>
-                                            <i class='fa fa-trash-o'></i>
-                                            Remove
-                                        </small>
-                                    </button>
+                                    <strong><a t-att-href="wish.product_id.website_url"><t t-esc="wish.product_id.display_name" /></a></strong>
+                                    <button type="button" class="btn btn-link o_wish_rm no-decoration"><small><i class='fa fa-trash-o'></i> Remove</small></button>
                                 </td>
                                 <td>
-                                    <t t-set="combination_info"
-                                       t-value="wish.product_id._get_combination_info_variant()"/>
-                                    <t t-esc="combination_info['price']"
-                                       t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
+                                    <t t-set="combination_info" t-value="wish.product_id._get_combination_info_variant()"/>
+                                    <t t-esc="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.pricelist_id.currency_id}"/>
                                 </td>
                             </tr>
                         </t>
@@ -1132,11 +696,10 @@
             </div>
         </div>
     </template>
-    <template id="custom_option_header_brand_logo" inherit_id="website.option_header_brand_logo">
+    <template  id="custom_option_header_brand_logo" inherit_id="website.option_header_brand_logo">
         <xpath expr="//a" position="replace">
             <a href="/" t-attf-class="navbar-brand logo #{_link_class}">
-                <span t-field="website.header_logo" t-options="{'widget': 'image'}" role="img"
-                      t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
+                <span t-field="website.header_logo" t-options="{'widget': 'image'}" role="img" t-att-aria-label="'Logo of %s' % website.name" t-att-title="website.name"/>
             </a>
         </xpath>
     </template>
@@ -1147,15 +710,12 @@
                     <div class="product-desc">
                         <t t-as="line" t-foreach="website_sale_order.website_order_line">
                             <div class="pd-row">
-                                <span class="product-img"
-                                      t-if="line.product_id and line.product_id.product_tmpl_id and line.product_id.product_tmpl_id.image_512">
+                                <span class="product-img" t-if="line.product_id and line.product_id.product_tmpl_id and line.product_id.product_tmpl_id.image_512">
                                     <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                        <span t-esc="line.product_id.image_512"
-                                              t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;, &quot;alt-field&quot;: &quot;name&quot;}"/>
+                                        <span t-esc="line.product_id.image_512" t-options="{&quot;widget&quot;: &quot;image&quot;, &quot;class&quot;: &quot;img-rounded&quot;, &quot;alt-field&quot;: &quot;name&quot;}"/>
                                     </a>
                                 </span>
-                                <span class="product-img"
-                                      t-if="line.product_id and line.product_id.product_tmpl_id and not line.product_id.product_tmpl_id.image_512">
+                                <span class="product-img" t-if="line.product_id and line.product_id.product_tmpl_id and not line.product_id.product_tmpl_id.image_512">
                                     <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
                                         <img src="/web/static/src/img/placeholder.png"/>
                                     </a>
@@ -1167,13 +727,10 @@
                                         </a>
                                     </p>
                                     <p>
-                                        <span class="theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x
-                                        <span t-esc="line.price_unit"
-                                              t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                        <span class="theme_scita_cart_quantity1" t-esc="int(line.product_uom_qty)"/>x 
+                                        <span t-esc="line.price_unit" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                         <span class="price">
-                                            <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">
-                                                Details
-                                            </a>
+                                            <a t-attf-href="/shop/product/#{ slug(line.product_id.product_tmpl_id) }">Details</a>
                                         </span>
                                     </p>
                                 </div>
@@ -1183,8 +740,7 @@
                             <div class="row" id="order_total">
                                 <label>Subtotal:</label>
                                 <span>
-                                    <span style="white-space: nowrap;" t-esc="website.sale_get_order().amount_total"
-                                          t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                                    <span style="white-space: nowrap;" t-esc="website.sale_get_order().amount_total" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
                                 </span>
                             </div>
                         </div>
