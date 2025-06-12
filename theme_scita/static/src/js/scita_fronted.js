@@ -331,7 +331,7 @@ $(document).ready(function(){
                                     items: 6
                                 },
                                 1500: {
-                                    items: 6
+                                    items: 7
                                 },
                             },
                         });

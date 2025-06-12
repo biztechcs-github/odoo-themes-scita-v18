@@ -75,6 +75,18 @@ class ScitaSliderSettings(http.Controller):
             'slider_details': slider_header.hotspot_ids,
         })
         return values
+    
+    @http.route('/get_product_info/<int:product_id>', type='json', auth="public", website=True)
+    def get_product_info(self, product_id):
+        product = request.env['product.template'].sudo().browse(product_id)
+        if not product.exists():
+            return {}
+
+        return {
+            'name': product.name,
+            'price': f"{product.list_price} {request.website.currency_id.symbol}",
+            'description': product.website_description or product.description_sale or '',
+        }
 
     def get_clients_data(self):
         client_data = request.env['res.partner'].sudo().search(
@@ -1587,4 +1599,8 @@ class PWASupport(http.Controller):
             website = request.env['website'].get_current_website()
             IrQweb = request.env['ir.qweb'].with_context(website_id=website.id, lang=website.default_lang_id.code)
             return IrQweb._render("theme_scita.theme_scita_deal_of_the_day_view", values)
-        return False
+
+    # @http.route(['/playground'], type='http', auth="public", website=True)
+    # def playground(self, **kw):
+    #     # You can pass data if needed
+    #     return request.render("theme_scita.playground_template", {})

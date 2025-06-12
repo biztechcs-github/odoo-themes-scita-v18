@@ -737,6 +737,7 @@ body #wrapwrap.o_portal {
 			height: 100%;
 			object-fit: cover;
 		}
+
         .ripple-btn{
 			position: relative;
             .ripple-circle{
@@ -779,6 +780,7 @@ body #wrapwrap.o_portal {
 }
 .popover{
 	--popover-max-width: auto;
+	border: 0;
 	.popover-body{
 		box-shadow: 1px 1px 30px 0px rgba(0,0,0,0.1);
 		padding: 0;
@@ -794,7 +796,7 @@ body #wrapwrap.o_portal {
 				@include flex;
 				padding: 10px 12px;
 				img{
-					height: 60px;
+					height: auto;
 					min-width: 60px;
 					width: 60px;
 					box-shadow: 0 0 4px 1px $light-grey-color;
@@ -840,3 +842,34 @@ body #wrapwrap.o_portal {
 		}
 	}
 }
+@keyframes popup-product {
+	0% {
+	  transform: scale(70%);
+	  opacity: 1;
+	}
+	100% {
+	  transform: scale(100%);
+	  opacity: 0;
+	}
+  }
+  
+  .popup-product {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 10; // ← Fix: use `:` not `=`
+	width: 80px;
+	height: 80px;
+	max-width: 80px;
+	max-height: 80px;
+	border-radius: 50%;
+	background: #dbb544;
+	animation: popup-product 0.9s ease-in-out infinite;
+  }
+  
+  .popup-product:hover {
+	width: 80px;
+	height: 80px;
+	background: #25c462;
+  }
+  

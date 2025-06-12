@@ -37,7 +37,7 @@ patch(snippetsEditor.SnippetsMenu.prototype, {
                          <option value="deal_days">Deal of the Day Snippets</option>\
                          <option value="google_map_snippet">Google Map Snippets</option>\
                          <option value="how_it_works">How It Works Snippets</option>\
-                         <option value="img_hotspot">Image Hotspot Snippets</option>\
+                         <!--<option value="img_hotspot">Image Hotspot Snippets</option>-->\
                          <!-- <option value="html_builder">HTML Snippet Builder</option> -->\
                          <option value="multi_product">Multi Product Snippets</option>\
                                                  <t t-if="request.env['ir.module.module'].sudo().search([\

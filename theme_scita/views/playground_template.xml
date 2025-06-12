@@ -1,0 +1,71 @@
+<odoo>
+    <template id="playground_template" name="Playground Page">
+        <t t-call="website.layout">
+            <div class="container mt-5">
+                <h2 class="text-center mb-4">Playground</h2>
+
+                <!-- Tabs Navigation -->
+                <ul class="nav nav-tabs" id="playgroundTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="static-tab" data-bs-toggle="tab" href="#static" role="tab">Static</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="dynamic-tab" data-bs-toggle="tab" href="#dynamic" role="tab">Dynamic</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content mt-3" id="playgroundTabContent">
+                    <div class="tab-pane fade show active" id="static" role="tabpanel">
+                        <div class="mb-3">
+                            <label for="staticSnippets" class="form-label fw-bold">Select a Static Snippet</label>
+                            <select id="staticSnippets" class="form-select">
+                                <optgroup label="Banner Snippets">
+                                    <option value="theme_scita.sct_banner_1" selected="selected">Banner Slider 1</option>
+                                    <option value="theme_scita.sct_banner_2">Banner Slider 2</option>
+                                </optgroup>
+                                <optgroup label="About Us Snippets">
+                                    <option value="theme_scita.health_about_hospital">About Us 1</option>
+                                    <option value="theme_scita.about_us_v_3">About Us 2</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
+                            <div id="preview-theme_scita.sct_banner_1" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.sct_banner_1"/>
+                            </div>
+                            <div id="preview-theme_scita.sct_banner_2" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.sct_banner_2"/>
+                            </div>
+                            <div id="preview-theme_scita.health_about_hospital" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.health_about_hospital"/>
+                            </div>
+                            <div id="preview-theme_scita.about_us_v_3" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.about_us_v_3"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="dynamic" role="tabpanel">
+                        <div class="mb-3">
+                            <label for="dynamicSnippets" class="form-label fw-bold">Select a Dynamic Snippet</label>
+                            <select id="dynamicSnippets" class="form-select">
+                                <optgroup label="Product Snippet">
+                                    <option value="theme_scita.blog_slider_view_1" selected="selected">Blog snippet 1</option>
+                                    <option value="theme_scita.blog_2_slider_view_2" selected="selected">Blog slider 1</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div id="snippetPreview" class="mt-4 border rounded p-3 bg-light">
+                            <div id="preview-theme_scita.blog_slider_view_1" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.blog_2_slider_view_2"/>
+                            </div>
+                            <div id="preview-theme_scita.blog_2_slider_view_2" class="snippet-container d-none">
+                                <t t-snippet="theme_scita.blog_2_slider_view_2"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

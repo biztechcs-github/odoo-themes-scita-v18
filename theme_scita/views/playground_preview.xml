@@ -1,0 +1,121 @@
+    <odoo>
+    <template id="blog_slider_view_1" name="Static Blog Snippet">
+        <div class="container">
+            <div class='row sct_top_row'>
+                <div class='col-md-12'>
+                    <div class="block-title">
+                        <h2 class="section-title text-center">Blogs</h2>
+                        <p class="text-center">Lorem ipsum is simply dummy text of the printing and typesetting industry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row sct_mid_row justify-content-center'>
+                <!-- Blog Post 1 -->
+                <div class='col-lg-3 col-md-6 col-12'>
+                    <div class='blog-thumb' title="Beyond The Eye">
+                        <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_img'>
+                            <div class="section-post-media" style="background-image: url('/your_image_path_1.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                        </a>
+                        <div class='sct_blog_desc'>
+                            <a href="/blog/example-blog/post/beyond-the-eye" class='it_blog_title'>
+                                <h3 class='sct_blog_name'>Beyond The Eye</h3>
+                            </a>
+                            <div class="sct_blog_detail row align-items-center">
+                                <div class="col-8 blog_left_content">
+                                    <p class="date">June 09, 2025</p>
+                                    <p class="author">By Mitchell Admin</p>
+                                </div>
+                                <div class="col-4 blog_link text-end">
+                                    <a href="/blog/example-blog/post/beyond-the-eye" class="read_link arrow_link">
+                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class='col-lg-3 col-md-6 col-12'>
+                    <div class='blog-thumb' title="Buying A Telescope">
+                        <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_img'>
+                            <div class="section-post-media" style="background-image: url('/your_image_path_2.jpg'); height: 240px; background-size: cover; background-position: center;"></div>
+                        </a>
+                        <div class='sct_blog_desc'>
+                            <a href="/blog/example-blog/post/buying-a-telescope" class='it_blog_title'>
+                                <h3 class='sct_blog_name'>Buying A Telescope</h3>
+                            </a>
+                            <div class="sct_blog_detail row align-items-center">
+                                <div class="col-8 blog_left_content">
+                                    <p class="date">June 09, 2025</p>
+                                    <p class="author">By Mitchell Admin</p>
+                                </div>
+                                <div class="col-4 blog_link text-end">
+                                    <a href="/blog/example-blog/post/buying-a-telescope" class="read_link arrow_link">
+                                        <img src="/theme_scita/static/src/img/arrow.svg" class="img img-fluid" alt='Blog Link'/>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='row sct_btm_row'>
+                <div class='col-md-12 text-center'>
+                    <div class="sct_cst_btn">
+                        <a class="btn btn-primary scita_cstm_btn it_btn o_default_snippet_text" href="/blog">
+                            <span>View More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template id="blog_2_slider_view_2" name="Blog Snippet 2">
+        <div class="container">
+            <div class="row">
+                <div class="block-title col-12">
+                    <h2 class="fancy mb-3" t-if="not slider_header">Blog post slider</h2>
+                    <h2 class="fancy mb-3" t-if="slider_header">
+                        <t t-out="slider_header.name"/>
+                    </h2>
+                    <p class="sct_simple_text">
+                        <t t-out='slider_header.sub_title'/>
+                    </p>
+                </div>
+            </div>
+            <div id='blog_2_owl_carosel' class="owl-carousel" t-if="blog_slider_details">
+                <t t-as="slide" t-foreach="blog_slider_details">
+                    <div class="sct_blog_box">
+                        <a t-attf-href="/blog/#{slug(slide.blog_id)}/post/#{slug(slide)}" class='it_blog_img' t-if="slide.cover_properties">
+                            <t t-set="cover_property" t-value="json.loads(slide.cover_properties)"/>
+                            <div class="section-post-media" t-attf-style="background-image: #{cover_property.get('background-image', 'none')}" t-if="slide.cover_properties">
+                            </div>
+                            <div class='sct_base_class' t-att-title="slide.name">
+                                <div class="sct_blog_content_wrap">
+                                    <h3 t-field="slide.name"/>
+                                    <div class="sct_blog_content">
+                                        <t t-out="slide.subtitle"/>
+                                    </div>
+                                </div>
+                                <div class="sct_blog_detail">
+                                    <div class="blog_left_content d-flex flex-wrap align-items-center justify-content-between">
+                                        <p class="author">By <span t-out="slide.author_id.name"/></p>
+                                        <p class="date">
+                                            <span class="icon-calendar"></span>
+                                            <t t-out="datetime.date.strftime(slide.create_date, '%B %d,%Y')"/>
+                                        </p>
+                                    </div>
+                                </div>  
+                            </div>
+                        </a>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </template>
+    
+</odoo>
+

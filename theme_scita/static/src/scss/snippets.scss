@@ -10883,7 +10883,7 @@ body #wrapwrap{
                                 .product{
                                     .disc{
                                         p , .price{
-                                            color: #78B33D;
+                                            color: $secondary;
                                             @include transition(all, 0.3s, ease-in);
                                         }
                                         
