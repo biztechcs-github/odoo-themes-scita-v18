@@ -321,7 +321,7 @@
         <section class="sct_banner_snippet" data-disp='banner'>
             <div class='container-fluid'>
                 <div class="row">
-                    <div class='col-md-12 sct_hero_banner text-center p-0'>
+                    <div class='col-md-12 sct_hero_banner text-center'>
                         <a href="/shop">
                             <img src="/web/image/theme_scita.sct_banner_snippet_2"/>
                         </a>
