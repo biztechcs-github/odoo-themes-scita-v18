@@ -25,8 +25,15 @@ class BlogSlider(models.Model):
                                    from here and it will be in milliseconds.''')
     collections_blog_post = fields.Many2many('blog.post', 'blogpost_slider_rel', 'slider_id',
                                              'post_id',
-                                             string="Collections of blog posts", required=True, domain="[('is_published', '=', True)]")
+                                             string="Collections of blog posts", required=True, 
+                                             domain="[('is_published', '=', True), ('website_id', '=', website_id)]")
 
+    website_id = fields.Many2one(
+        'website',
+        string="Website",
+        default=lambda self: self.env['website'].get_current_website(),
+        required=True
+    )
 
 class CategorySlider(models.Model):
     _name = 'category.slider.config'

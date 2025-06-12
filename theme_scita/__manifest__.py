@@ -77,7 +77,7 @@ AMP Support
     'data': [
         'security/ir.model.access.csv',
         'data/ir_asset.xml',
-        'data/menu_data.xml',
+        # 'data/menu_data.xml',
         'data/theme_scita_data.xml',
         'data/extra_pages_data.xml',
         'data/scita_image_data.xml',
