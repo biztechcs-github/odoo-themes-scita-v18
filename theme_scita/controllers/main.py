@@ -72,6 +72,18 @@ class ScitaSliderSettings(http.Controller):
             'slider_details': slider_header.hotspot_ids,
         })
         return values
+    
+    @http.route('/get_product_info/<int:product_id>', type='json', auth="public", website=True)
+    def get_product_info(self, product_id):
+        product = request.env['product.template'].sudo().browse(product_id)
+        if not product.exists():
+            return {}
+
+        return {
+            'name': product.name,
+            'price': f"{product.list_price} {request.website.currency_id.symbol}",
+            'description': product.website_description or product.description_sale or '',
+        }
 
 
     def get_clients_data(self):

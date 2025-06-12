@@ -320,11 +320,11 @@
         <field name="view_mode">list,form</field>
         <field name="type">ir.actions.act_window</field>
     </record>
-    <menuitem id="image_hotspot_menu"
+    <!-- <menuitem id="image_hotspot_menu"
               name="Image Hotspot Snippet Configuration"
               action="image_hotspot_action"
               parent="theme_scita.scita_menu_slider_config"
-              sequence="80"/>
+              sequence="80"/> -->
     <!-- Product style tag Form View-->
         <record id="form_view_for_biztech_product_style_tag" model="ir.ui.view">
             <field name="name">Biztech Product Style Tag Form View</field>
