@@ -15,7 +15,7 @@ import json
 class CustomAMP(WebsiteSale):
 
     @http.route(['/shop/product/amp/<model("product.template"):product>'],
-                type='http', auth="public", website=True)
+                type='http', auth="public", website=True, sitemap=False)
     def custom_amp_view(self, product, category='', search='', **post):
         if request.website.is_amp_enable:
             ProductCategory = request.env['product.public.category']

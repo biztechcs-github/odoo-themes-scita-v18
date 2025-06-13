@@ -2929,6 +2929,7 @@
 												border-radius: 50px;
 												background-color: $secondary;
 												color: $light-color;
+												line-height: 21px;
 												
 												@media (min-width: 768px) {
 													padding-right: 35px !important;
@@ -2942,8 +2943,9 @@
 
 												.lni{
 													margin-right: 3px;
-													vertical-align: text-top;
+													vertical-align: middle;
     												font-size: 17px;
+													line-height: 21px;
 												}
 											}
 											&.o_we_buy_now{
