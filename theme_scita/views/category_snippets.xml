@@ -79,7 +79,7 @@
                         <div class="item cs-cat">
                             <a t-att-href=" '/shop/category/%s' % slug(slide)">
                                 <div class="cs-img">
-                                    <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name"/>
+                                    <img t-att-alt="slide.name" t-att-src="website.image_url(slide, 'image_1920')" t-att-title="slide.name" height="150" />
                                 </div>
                                 <div class='sct_cat_content'>
                                     <p class="pwpi-title">

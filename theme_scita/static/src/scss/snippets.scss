@@ -126,6 +126,7 @@ body #wrapwrap{
 	.carousel-item{
 		border-radius: 25px;
 		overflow: hidden;
+		background-color: #efefef;
 	}
 	.content {
 		@include justify-align-content;
@@ -651,7 +652,7 @@ body #wrapwrap{
 				z-index: 1;
 				height: 100%;
 				@include flex;
-				flex-direction: column-reverse;
+				flex-direction: column;
 				@include content-sb;
 				background-color: #f8f3ef;
 				
@@ -1391,10 +1392,13 @@ body #wrapwrap{
 .retial_promo_banner_snippet_1 {
 	padding: 50px 0;
 	@include min992{
-		padding: 60px 0;
+		padding: 60px 0 40px;
 	}
 	.col-md-4 {
 		@include flex;
+		@include min768{
+			padding-bottom: 20px;
+		}
 		@media (max-width: 767px){
 			-webkit-box-pack: center;
 			-ms-flex-pack: center;
@@ -3655,6 +3659,7 @@ body #wrapwrap{
 					align-self: flex-start;
 					height: auto !important;
 					width: 100%;
+					margin: 5px 0;
 				}
 			}
 		}
@@ -9812,6 +9817,10 @@ body #wrapwrap{
         padding-bottom: 10px;
         a {
             display: block !important;
+
+			img{
+				width: 100%;
+			}
         }
     }
 }

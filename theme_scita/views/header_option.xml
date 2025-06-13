@@ -58,17 +58,17 @@
 
     <template id="scita_header_cart_link" name="Scita Header Cart" inherit_id="website_sale.header_cart_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
-            <img class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" alt="Cart"/>
+            <img class='img img-fluid' src="/web/image/theme_scita.sct_cart_icon" height="21" fetchpriority="high" loading="eager" alt="Cart"/>
         </xpath>
     </template>
     <template id="scita_header_wishlist_link" name="Scita Header Wishlist" inherit_id="website_sale_wishlist.header_wishlist_link" active='False'>
         <xpath expr='//i[@t-if="_icon"]' position='replace'>
-            <img class='img img-fluid' src="/web/image/theme_scita.sct_wishlist_icon" alt="Wishlist"/>
+            <img class='img img-fluid' src="/web/image/theme_scita.sct_wishlist_icon" height="20" fetchpriority="high" loading="eager" alt="Wishlist"/>
         </xpath>
     </template>
     <template id="scita_header_search_box_icon" name="Scita Header Search Box" inherit_id="website.header_search_box" active='False'>
         <xpath expr='//a[@data-bs-target="#o_search_modal"]//i' position='replace'>
-            <img class='img img-fluid' src="/web/image/theme_scita.sct_search_icon" alt="Wishlist"/>
+            <img class='img img-fluid' src="/web/image/theme_scita.sct_search_icon" height="20" fetchpriority="high" loading="eager" alt="Wishlist"/>
         </xpath>
     </template>
     
@@ -106,7 +106,7 @@
             <t t-set="is_connected" t-value="not user_id._is_public()"/>
             <li class="configuration">
                 <a class="top-link-wishlist account_icon" href="javascript:void(0);" id="user_account" title="My Profile">
-                    <img class='img img-fluid' src="/web/image/theme_scita.sct_user_icon" alt="User"/>
+                    <img class='img img-fluid' src="/web/image/theme_scita.sct_user_icon" height="20" fetchpriority="high" loading="eager" alt="User"/>
                 </a>
                 <div class="toggle-config o_hidden">
                     <ul class="options">

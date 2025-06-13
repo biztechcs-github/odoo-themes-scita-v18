@@ -156,18 +156,18 @@
         </section>
     </template>
 
-    <template id="promo_banner_snippet_3" name="Promotion Snippet 3">
+    <template id="promo_banner_snippet_3" name="Promotion Snippet 2">
         <section class="promo_banner_snippet_3" data-disp='advbanner'>
             <div class='container'>
                 <div class="row">
                     <div class='col-md-6 sct_promo_img_div'>
                         <a href='#'>
-                            <img src="/web/image/theme_scita.sct_promo_snippet_3_img_1" class="img img-fluid" alt="promo banner"/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="promo banner"/>
                         </a>
                     </div>
                     <div class='col-md-6 sct_promo_img_div'>
                         <a href='#'>
-                            <img src="/web/image/theme_scita.sct_promo_snippet_3_img_1" class="img img-fluid" alt="promo banner"/>
+                            <img src="/theme_scita/static/src/img/scita-placeholder.png" class="img img-fluid" alt="promo banner"/>
                         </a>
                     </div>
                 </div>
