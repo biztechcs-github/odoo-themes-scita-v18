@@ -662,19 +662,19 @@
                                                         <t t-out="slide.name"/>
                                                     </p>
                                                 </div>
-                                            </a>
+                                            </a>    
                                         </t>
                                         <t t-else="">
                                             <t t-set="combination_info"
                                                t-value="slide._get_combination_info(only_template=True, add_qty=add_qty or 1)"/>
                                             <div class="cs-product" data-publish="on">
-                                                <div class="cs-img">
+                                                <div class="cs-img position-relative">
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style1'"
                                                          t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position"
                                                          t-att-style="'border-bottom-color:%s' % slide.product_style_tag_id.color_code">
                                                         <span t-att-style="'color:%s' % slide.product_style_tag_id.font_color_code"
                                                               t-out="slide.product_style_tag_id.name"/>
-                                                    </div>
+                                                    </div>  
                                                     <div t-if="slide and slide.product_style_tag_id.style=='style2'"
                                                          t-att-class="'img_lbl %s' % slide.product_style_tag_id.style +' %s'% slide.product_style_tag_id.position"
                                                          t-att-style="'background-color: %s' % slide.product_style_tag_id.color_code">
@@ -717,7 +717,7 @@
                                                         <img t-att-alt="slide.name"
                                                              t-att-src="website.image_url(slide, 'image_1920')"
                                                              t-att-title="slide.name"
-                                                             t-att-data-default-img-src="website.image_url(slide, 'image_1920')"/>
+                                                             t-att-data-default-img-src="website.image_url(slide, 'image_1920')" class="h-100 w-100 position-absolute top-0 start-0 end-0 bottom-0"/>
                                                     </a>
                                                 </div>
 
