@@ -5333,6 +5333,11 @@ body #wrapwrap{
 
 /*newsletter snippet 2*/
 .newsletter_varient_5 {
+	.container-fluid{
+		@include min1920{
+			max-width: 100%;
+		}
+	}
 	.sct_btm_row {
 		.sct_news_box {
 			background: $primary;
