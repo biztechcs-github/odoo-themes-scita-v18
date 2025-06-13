@@ -1,1 +1,0 @@
-# odoo-themes-scita-v18
